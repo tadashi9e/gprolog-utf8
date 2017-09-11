@@ -1335,16 +1335,39 @@ Pl_Stream_Getc(StmInf *pstm)
 
   Before_Reading(pstm, file);
 
-  if (!PB_Is_Empty(pstm->pb_char))
-    {
-      PB_Pop(pstm->pb_char, c);
-    }
-  else
-    {
+  int mode = -1;
+  for(;;) {
+    int c0;
+    if (!PB_Is_Empty(pstm->pb_char)) {
+      PB_Pop(pstm->pb_char, c0);
+    } else {
       Start_Protect_Regs_For_Signal;
-      c = Basic_Call_Fct_Getc(pstm);
+      c0 = Basic_Call_Fct_Getc(pstm);
       Stop_Protect_Regs_For_Signal;
     }
+    if (c0 == EOF || c0 == '\n') {
+      c = c0;
+      break;
+    }
+    if (mode == -1) {
+      c = c0;
+      if (c0 < 0x80) {
+        break;
+      } else if (c0 < 0xE0) {
+        mode = 2;
+      } else if (c0 < 0xF0) {
+        mode = 3;
+      } else {
+        mode = 4;
+      }
+      continue;
+    }
+    c = (c << 8) | c0;
+    --mode;
+    if (mode <= 1) {
+      break;
+    }
+  }
   if (c == EOF)
     pstm->eof_reached = TRUE;
 
