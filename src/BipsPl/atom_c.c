@@ -141,7 +141,6 @@ Pl_Atom_Concat_3(WamWord atom1_word, WamWord atom2_word, WamWord atom3_word)
   char *str;
   int l;
 
-
   DEREF(atom1_word, word, tag_mask);
   if (tag_mask != TAG_REF_MASK && tag_mask != TAG_ATM_MASK)
     Pl_Err_Type(pl_type_atom, atom1_word);
@@ -215,7 +214,9 @@ Pl_Atom_Concat_3(WamWord atom1_word, WamWord atom2_word, WamWord atom3_word)
       A(0) = atom1_word;
       A(1) = atom2_word;
       A(2) = (WamWord) patom3;
-      A(3) = (WamWord) (patom3->name + 1);
+      char c = patom3->name[0];
+      int i = (c < 0x80) ? 1  : ((c < 0xE0) ? 2 : ((c < 0xF0) ? 3 : 4));
+      A(3) = (WamWord) (patom3->name + i);
       Pl_Create_Choice_Point((CodePtr) Prolog_Predicate(ATOM_CONCAT_ALT, 0), 4);
     }
 
@@ -256,7 +257,9 @@ Pl_Atom_Concat_Alt_0(void)
       AB(B, 1) = atom2_word;
       AB(B, 2) = (WamWord) patom3;
 #endif
-      AB(B, 3) = (WamWord) (p + 1);
+      char c = *p;
+      int i = (c < 0x80) ? 1  : ((c < 0xE0) ? 2 : ((c < 0xF0) ? 3 : 4));
+      AB(B, 3) = (WamWord) (p + i);
     }
 
   name = patom3->name;
