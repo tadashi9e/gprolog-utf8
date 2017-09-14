@@ -720,6 +720,7 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
 
 
         default:
+#if 0
           if ((unsigned) c > 255 || !isprint(c))
             {
               n = c;
@@ -729,6 +730,7 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
                 goto one_char;
               goto display_help;
             }
+#endif
 
           if (!New_Char(c, str, size, &pos, &end))
             goto error;

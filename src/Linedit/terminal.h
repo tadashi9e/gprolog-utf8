@@ -45,17 +45,17 @@
 #define KEY_DELETE                 0x7f
 
 #define KEY_ID(code)               KEY_ID2(KEY_MODIF_NONE, code)
-#define KEY_ID2(modif, code)       (((modif) << 9) | ((1 << 8) | ((code) & 0x7f)))
+#define KEY_ID2(modif, code)       (((modif) << 10) | ((1 << 9) | ((code) & 0xff)))
 
-#define GET_MODIF(x)               (((x) >> 9) & 7)
-#define GET_CODE(x)                ((x) & 0x1ff)
+#define GET_MODIF(x)               (((x) >> 10) & 7)
+#define GET_CODE(x)                ((x) & 0x3ff)
 
 
 #define KEY_CTRL(x)                ((x) & 0x1f)
 
-#define KEY_ESC(x)                 KEY_ID((1 << 7) | (x) | 0x20) /* 0x20 to be case insensitive */
-#define IS_ESC_COMB(x)             ((x) & (1 << 7))
-#define GET_ESC_COMB(x)            ((x) & 0x7f)
+#define KEY_ESC(x)                 KEY_ID((1 << 8) | (x) | 0x20) /* 0x20 to be case insensitive */
+#define IS_ESC_COMB(x)             ((x) & (1 << 8))
+#define GET_ESC_COMB(x)            ((x) & 0xff)
 
 
 
