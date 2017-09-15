@@ -1290,13 +1290,37 @@ Pl_Stream_Get_Key(StmInf *pstm, int echo, int catch_ctrl_c)
     }
   else
     {
-      Start_Protect_Regs_For_Signal;
-      if (simulate)
-	c = Basic_Call_Fct_Getc(pstm);
+      int c0;
+      int mode = -1;
+      for(;;) {
+        Start_Protect_Regs_For_Signal;
+        if (simulate) {
+          c0 = Basic_Call_Fct_Getc(pstm);
 #ifndef NO_USE_LINEDIT
-      else
-	c = TTY_Get_Key(echo, catch_ctrl_c);
+        } else {
+          c0 = TTY_Get_Key(echo, catch_ctrl_c);
 #endif
+        }
+        if (mode == -1) {
+          c = c0;
+          if (c0 < 0x80) {
+            break;
+          } else if (c0 < 0xE0) {
+            mode = 2;
+          } else if (c0 < 0xF0) {
+            mode = 3;
+          } else if (c0 < 0x100) {
+            mode = 4;
+          } else {
+            break;
+          }
+        }
+        c = (c << 8) | c0;
+        --mode;
+        if (mode <= 1) {
+          break;
+        }
+      }
       Stop_Protect_Regs_For_Signal;
     }
 
@@ -1357,8 +1381,10 @@ Pl_Stream_Getc(StmInf *pstm)
         mode = 2;
       } else if (c0 < 0xF0) {
         mode = 3;
-      } else {
+      } else if (c0 < 0x100) {
         mode = 4;
+      } else {
+        break;
       }
       continue;
     }
@@ -1406,9 +1432,31 @@ Pl_Stream_Ungetc(int c, StmInf *pstm)
 	PB_Pop(pstm->pb_line_pos, pstm->line_pos);
       else
 	pstm->line_pos = 0;	/* should not occur */
+      return;
     }
-  else if (pstm->line_pos > 0)	/* test should be useless */
-    pstm->line_pos--;
+  if (c < 0x80) {
+    if (pstm->line_pos > 0) {	/* test should be useless */
+      pstm->line_pos--;
+    }
+  } else if (c < 0xE000) {
+    if (pstm->line_pos > 1) {	/* test should be useless */
+      pstm->line_pos -= 2;
+    } else {
+      pstm->line_pos = 0;
+    }
+  } else if (c < 0xF00000) {
+    if (pstm->line_pos > 2) {	/* test should be useless */
+      pstm->line_pos -= 3;
+    } else {
+      pstm->line_pos = 0;
+    }
+  } else {
+    if (pstm->line_pos > 3) {	/* test should be useless */
+      pstm->line_pos -= 4;
+    } else {
+      pstm->line_pos = 0;
+    }
+  }
 }
 
 
@@ -1964,5 +2012,19 @@ Str_Stream_Putc(int c, StrSInf *str_stream)
       str_stream->ptr = str_stream->buff + size;
     }
 
-  *(str_stream->ptr)++ = c;
+  if (c < 0x80) {
+    *(str_stream->ptr)++ = c;
+  } else if (c < 0xE000) {
+    *(str_stream->ptr)++ = (c >> 8) & 0xff;
+    *(str_stream->ptr)++ = c;
+  } else if (c < 0xF00000) {
+    *(str_stream->ptr)++ = (c >> 16) & 0xff;
+    *(str_stream->ptr)++ = (c >> 8) & 0xff;
+    *(str_stream->ptr)++ = c;
+  } else {
+    *(str_stream->ptr)++ = (c >> 24) & 0xff;
+    *(str_stream->ptr)++ = (c >> 16) & 0xff;
+    *(str_stream->ptr)++ = (c >> 8) & 0xff;
+    *(str_stream->ptr)++ = c;
+  }
 }

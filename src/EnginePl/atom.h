@@ -81,8 +81,11 @@
 
 
 
-
+#if 0
 #define Is_Valid_Code(c)           ((PlULong) (c)-1 < 256-1)    /* 1 <= c < 256 */
+#else
+#define Is_Valid_Code(c) 1
+#endif
 #define Is_Valid_Byte(c)           ((PlULong) (c) < 256)	/* 0 <= c < 256 */
 #define Is_Valid_Atom(a)           ((PlULong) (a) < pl_max_atom && \
                                     pl_atom_tbl[(a)].name!=NULL)

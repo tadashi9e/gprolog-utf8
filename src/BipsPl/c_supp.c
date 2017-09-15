@@ -456,16 +456,29 @@ Pl_Rd_Char_Check(WamWord start_word)
 {
   WamWord word, tag_mask;
   int atom;
+  char *cp;
+  int len;
 
   DEREF(start_word, word, tag_mask);
   if (tag_mask == TAG_REF_MASK)
     Pl_Err_Instantiation();
 
   atom = UnTag_ATM(word);
-  if (tag_mask != TAG_ATM_MASK || pl_atom_tbl[atom].prop.length != 1)
+  if (tag_mask != TAG_ATM_MASK) {
     Pl_Err_Type(pl_type_character, word);
-
-  return pl_atom_tbl[atom].name[0];
+  }
+  cp = pl_atom_tbl[atom].name;
+  len = pl_atom_tbl[atom].prop.length;
+  if (*cp < 0x80 && len == 1) {
+    return *cp;
+  } else if (*cp < 0xE0 && len == 2) {
+    return (cp[0] << 8) | cp[1];
+  } else if (*cp < 0xF0 && len == 3) {
+    return (cp[0] << 16) | (cp[1] << 8) | cp[2];
+  } else if (              len == 4) {
+    return (cp[0] << 24) | (cp[1] << 16) | (cp[2] << 8) | cp[3];
+  }
+  Pl_Err_Type(pl_type_character, word);
 }
 
 
