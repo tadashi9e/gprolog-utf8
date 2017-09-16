@@ -124,7 +124,7 @@ Read_Next_Char(StmInf *pstm, Bool convert)
     {
       if (convert)
         c = Char_Conversion(c);
-      if (c >= 0x80) {
+      if ((c & 0xff) >= 0x80) {
         c_type = SL;
       } else {
         c_type = pl_char_type[c];
@@ -190,21 +190,21 @@ start_scan:
       s = pl_token.name;
       do
 	{
-    if (c < 0x80) {
-      *s++ = c;
-    } else if (c < 0xe000) {
-      *s++ = (c >> 8) & 0xff;
-      *s++ = (c & 0xff);
-    } else if (c < 0xF00000) {
-      *s++ = (c >> 16) & 0xff;
-      *s++ = (c >> 8) & 0xff;
-      *s++ = (c & 0xff);
-    } else {
-      *s++ = (c >> 24) & 0xff;
-      *s++ = (c >> 16) & 0xff;
-      *s++ = (c >> 8) & 0xff;
-      *s++ = (c & 0xff);
-    }
+          if (c < 0x80) {
+            *s++ = c;
+          } else if (c < 0xe000) {
+            *s++ = 0xff & (c >> 8);
+            *s++ = 0xff & (c     );
+          } else if (c < 0xF00000) {
+            *s++ = 0xff & (c >> 16);
+            *s++ = 0xff & (c >> 8 );
+            *s++ = 0xff & (c      );
+          } else {
+            *s++ = 0xff & (c >> 24);
+            *s++ = 0xff & (c >> 16);
+            *s++ = 0xff & (c >>  8);
+            *s++ = 0xff & (c      );
+          }
 	  Read_Next_Char(pstm, TRUE);
 	}
       while (c_type & (UL | CL | SL | DI));

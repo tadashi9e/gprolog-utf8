@@ -1302,22 +1302,22 @@ Pl_Stream_Get_Key(StmInf *pstm, int echo, int catch_ctrl_c)
 #endif
         }
         if (mode == -1) {
-          c = c0;
-          if (c0 < 0x80) {
+          if ((c0&0xff) < 0x80) {
+            c = c0;
             break;
-          } else if (c0 < 0xE0) {
+          }
+          c = 0;
+          if ((c0&0xff) < 0xE0) {
             mode = 2;
-          } else if (c0 < 0xF0) {
+          } else if ((c0&0xff) < 0xF0) {
             mode = 3;
-          } else if (c0 < 0x100) {
-            mode = 4;
           } else {
-            break;
+            mode = 4;
           }
         }
         c = (c << 8) | c0;
         --mode;
-        if (mode <= 1) {
+        if (mode <= 0) {
           break;
         }
       }
@@ -1374,23 +1374,22 @@ Pl_Stream_Getc(StmInf *pstm)
       break;
     }
     if (mode == -1) {
-      c = c0;
-      if (c0 < 0x80) {
-        break;
-      } else if (c0 < 0xE0) {
-        mode = 2;
-      } else if (c0 < 0xF0) {
-        mode = 3;
-      } else if (c0 < 0x100) {
-        mode = 4;
-      } else {
+      if ((c0&0xff) < 0x80) {
+        c = c0;
         break;
       }
-      continue;
+      c = 0;
+      if ((c0&0xff) < 0xE0) {
+        mode = 2;
+      } else if ((c0&0xff) < 0xF0) {
+        mode = 3;
+      } else {
+        mode = 4;
+      }
     }
     c = (c << 8) | c0;
     --mode;
-    if (mode <= 1) {
+    if (mode <= 0) {
       break;
     }
   }
@@ -2015,16 +2014,16 @@ Str_Stream_Putc(int c, StrSInf *str_stream)
   if (c < 0x80) {
     *(str_stream->ptr)++ = c;
   } else if (c < 0xE000) {
-    *(str_stream->ptr)++ = (c >> 8) & 0xff;
-    *(str_stream->ptr)++ = c;
+    *(str_stream->ptr)++ = 0xff & (c >> 8);
+    *(str_stream->ptr)++ = 0xff &  c      ;
   } else if (c < 0xF00000) {
-    *(str_stream->ptr)++ = (c >> 16) & 0xff;
-    *(str_stream->ptr)++ = (c >> 8) & 0xff;
-    *(str_stream->ptr)++ = c;
+    *(str_stream->ptr)++ = 0xff & (c >> 16);
+    *(str_stream->ptr)++ = 0xff & (c >>  8);
+    *(str_stream->ptr)++ = 0xff &  c       ;
   } else {
-    *(str_stream->ptr)++ = (c >> 24) & 0xff;
-    *(str_stream->ptr)++ = (c >> 16) & 0xff;
-    *(str_stream->ptr)++ = (c >> 8) & 0xff;
-    *(str_stream->ptr)++ = c;
+    *(str_stream->ptr)++ = 0xff & (c >> 24);
+    *(str_stream->ptr)++ = 0xff & (c >> 16);
+    *(str_stream->ptr)++ = 0xff & (c >>  8);
+    *(str_stream->ptr)++ = 0xff &  c       ;
   }
 }

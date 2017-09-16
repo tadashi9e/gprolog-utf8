@@ -457,6 +457,7 @@ Pl_Rd_Char_Check(WamWord start_word)
   WamWord word, tag_mask;
   int atom;
   char *cp;
+  int c;
   int len;
 
   DEREF(start_word, word, tag_mask);
@@ -468,12 +469,13 @@ Pl_Rd_Char_Check(WamWord start_word)
     Pl_Err_Type(pl_type_character, word);
   }
   cp = pl_atom_tbl[atom].name;
+  c = *cp & 0xff;
   len = pl_atom_tbl[atom].prop.length;
-  if (*cp < 0x80 && len == 1) {
+  if (c < 0x80 && len == 1) {
     return *cp;
-  } else if (*cp < 0xE0 && len == 2) {
+  } else if (c < 0xE0 && len == 2) {
     return (cp[0] << 8) | cp[1];
-  } else if (*cp < 0xF0 && len == 3) {
+  } else if (c < 0xF0 && len == 3) {
     return (cp[0] << 16) | (cp[1] << 8) | cp[2];
   } else if (              len == 4) {
     return (cp[0] << 24) | (cp[1] << 16) | (cp[2] << 8) | cp[3];
@@ -2035,12 +2037,40 @@ Pl_Un_Codes_Check(char *str, WamWord start_word)
 Bool
 Pl_Un_Codes(char *str, WamWord start_word)
 {
+  int c0;
+  int c = 0;
+  int mode = -1;
   for (; *str; str++)
     {
-      if (!Pl_Get_List(start_word) || !Pl_Unify_Integer(*str))
-	return FALSE;
-
-      start_word = Pl_Unify_Variable();
+      c0 = *str & 0xff;
+      if (mode < 0) {
+        if (c0 < 0x80) {
+          c = c0;
+          if (!Pl_Get_List(start_word) || !Pl_Unify_Integer(c)) {
+            return FALSE;
+          }
+          start_word = Pl_Unify_Variable();
+          break;
+        }
+        c = 0;
+        if (c0 < 0xE0) {
+          mode = 2;
+        } else if (c0 < 0xF0) {
+          mode = 3;
+        } else {
+          mode = 4;
+        }
+      }
+      c = (c << 8) | c0;
+      mode--;
+      if (mode <= 0) {
+        if (!Pl_Get_List(start_word) || !Pl_Unify_Integer(c)) {
+          return FALSE;
+        }
+        start_word = Pl_Unify_Variable();
+        mode = -1;
+        continue;
+      }
     }
 
   return Pl_Get_Nil(start_word);

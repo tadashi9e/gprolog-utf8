@@ -261,7 +261,11 @@ Add_Atom(char *name, int len, unsigned hash, AtomInf *patom, Bool allocate)
 
   for (p = name; *p; p++)
     {
-      c_type = pl_char_type[(unsigned char) *p];
+      if ((*p & 0xff) < 0x80) {
+        c_type = pl_char_type[(unsigned char) *p];
+      } else {
+        c_type = SL;
+      }
 
       if ((c_type & (UL | CL | SL | DI)) == 0)
 	identifier = FALSE;
@@ -279,9 +283,10 @@ Add_Atom(char *name, int len, unsigned hash, AtomInf *patom, Bool allocate)
   if (len > 1 && identifier)
     Pl_LE_Compl_Add_Word(name, len);
 #endif
-
-  if (pl_char_type[(unsigned char) *name] != SL)	/* small letter */
+  if ((*name & 0xff) < 0x80 &&
+      (pl_char_type[(unsigned char) *name] != SL)) {	/* small letter */
     identifier = FALSE;
+  }
 
 
   if (identifier)
@@ -321,7 +326,6 @@ Add_Atom(char *name, int len, unsigned hash, AtomInf *patom, Bool allocate)
 finish:
   prop.op_mask = 0;
   patom->prop = prop;
-
   return patom - pl_atom_tbl;
 }
 
