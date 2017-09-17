@@ -190,21 +190,7 @@ start_scan:
       s = pl_token.name;
       do
 	{
-          if (c < 0x80) {
-            *s++ = c;
-          } else if (c < 0xe000) {
-            *s++ = 0xff & (c >> 8);
-            *s++ = 0xff & (c     );
-          } else if (c < 0xF00000) {
-            *s++ = 0xff & (c >> 16);
-            *s++ = 0xff & (c >> 8 );
-            *s++ = 0xff & (c      );
-          } else {
-            *s++ = 0xff & (c >> 24);
-            *s++ = 0xff & (c >> 16);
-            *s++ = 0xff & (c >>  8);
-            *s++ = 0xff & (c      );
-          }
+          s += put_wchar_eof(s, pl_token.name+SCAN_BIG_BUFFER-s, c);
 	  Read_Next_Char(pstm, TRUE);
 	}
       while (c_type & (UL | CL | SL | DI));

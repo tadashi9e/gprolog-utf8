@@ -46,6 +46,7 @@
 #include <sys/stat.h>
 
 #include "../EnginePl/gp_config.h"
+#include "../EnginePl/engine_pl.h" /* for count_wchar_bytes */
 
 #define LE_DEFINE_HOOK_MACROS
 
@@ -382,8 +383,12 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
         case KEY_EXT_LEFT:
           if (pos == str)
             goto error;
-          BACKD(1);
-          pos--;
+          {
+            int i = 1;
+            while((pos-i > str) && ((pos[-i] & 0xc0) == 0x80)) {i++;} // seek UTF-8 char offset
+            BACKD(i);
+            pos -= i;
+          }
           continue;
 
 
@@ -391,8 +396,11 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
         case KEY_EXT_RIGHT:
           if (pos == end)
             goto error;
-          FORWD(1, pos);
-          pos++;
+          {
+            int i = count_wchar_bytes(pos);
+            FORWD(i, pos);
+            pos += i;
+          }
           continue;
 
 
@@ -401,13 +409,17 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
           if (pos == str)
             goto error;
         del_last:
-          for (p = pos; p < end; p++)
-            p[-1] = *p;
-          BACKD(1);
-          pos--;
-          end--;
-          DISPL(end - pos, pos);
-          ERASE(1);
+          {
+            int i = 1;
+            while((pos-i > str) && ((pos[-i] & 0xc0) == 0x80)) {i++;} // seek UTF-8 char offset
+            for (p = pos; p < end; p++)
+              p[-i] = *p;
+            BACKD(i);
+            pos -= i;
+            end -= i;
+            DISPL(end - pos, pos);
+            ERASE(1);
+          }
           BACKD(end - pos);
           continue;
 
@@ -417,8 +429,11 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
           if (pos == end)
             goto error;
           /* simply equivalent to ^F + BACKSPACE */
-          FORWD(1, pos);
-          pos++;
+          {
+            int i = count_wchar_bytes(pos);
+            FORWD(i, pos);
+            pos += i;
+          }
           goto del_last;
 
 
@@ -505,12 +520,20 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
 
         case KEY_ESC('B'):      /* go to previous word */
         case KEY_ID2(KEY_MODIF_CTRL, KEY_EXT_LEFT):
-          p = (pos == str) ? pos : pos - 1; /* to avoid start of a word */
-          p = Skip(p, str, 1, -1);      /* skip separators */
-          p = Skip(p, str, 0, -1);      /* skip non separators */
-          p = Skip(p, end, 1, +1);      /* skip separators */
-          BACKD(pos - p);
-          pos = p;
+          {
+            int i = 1;
+            if (pos == str) {
+              p = pos;
+            } else {
+              while((pos-i > str) && ((pos[-i] & 0xc0) == 0x80)) i++; // seek UTF-8 char offset
+              p = pos - i;
+            }
+            p = Skip(p, str, 1, -1);      /* skip separators */
+            p = Skip(p, str, 0, -1);      /* skip non separators */
+            p = Skip(p, end, 1, +1);      /* skip separators */
+            BACKD(pos - p);
+            pos = p;
+          }
           continue;
 
 

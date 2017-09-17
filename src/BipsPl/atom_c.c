@@ -44,8 +44,6 @@
 #include "bips_pl.h"
 
 
-
-
 /*---------------------------------*
  * Constants                       *
  *---------------------------------*/
@@ -214,9 +212,7 @@ Pl_Atom_Concat_3(WamWord atom1_word, WamWord atom2_word, WamWord atom3_word)
       A(0) = atom1_word;
       A(1) = atom2_word;
       A(2) = (WamWord) patom3;
-      int c = patom3->name[0] & 0xff;
-      int i = (c < 0x80) ? 1  : ((c < 0xE0) ? 2 : ((c < 0xF0) ? 3 : 4));
-      A(3) = (WamWord) (patom3->name + i);
+      A(3) = (WamWord) (patom3->name + count_wchar_bytes(patom3->name));
       Pl_Create_Choice_Point((CodePtr) Prolog_Predicate(ATOM_CONCAT_ALT, 0), 4);
     }
 
@@ -257,9 +253,7 @@ Pl_Atom_Concat_Alt_0(void)
       AB(B, 1) = atom2_word;
       AB(B, 2) = (WamWord) patom3;
 #endif
-      int c = *p & 0xff;
-      int i = (c < 0x80) ? 1  : ((c < 0xE0) ? 2 : ((c < 0xF0) ? 3 : 4));
-      AB(B, 3) = (WamWord) (p + i);
+      AB(B, 3) = (WamWord) (p + count_wchar_bytes(p));
     }
 
   name = patom3->name;

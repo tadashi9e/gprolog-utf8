@@ -741,10 +741,6 @@ Scanner(void)
       cur_line_p++;
       while (*cur_line_p != '"')
 	{
-#if 0
-	  if ((*p++ = *cur_line_p++) == '\\')
-	    *p++ = *cur_line_p++;
-#else
           int c = (*cur_line_p++) & 0xff;
           if (c < 0x80) {
             *p++ = c;
@@ -759,7 +755,6 @@ Scanner(void)
               p += sprintf(p, "\\%o", c);
             }
           }
-#endif
 	}
 
       cur_line_p++;

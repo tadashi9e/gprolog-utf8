@@ -609,3 +609,162 @@ Error_Table_Full(void)
   else
     Pl_Fatal_Error(ERR_TABLE_FULL_ENV, pl_max_atom, ENV_VAR_MAX_ATOM);
 }
+
+/*-------------------------------------------------------------------------*
+ * count_wchar_bytes                                                       *
+ *                                                                         *
+ *-------------------------------------------------------------------------*/
+int
+count_wchar_bytes(const char* s) {
+  int i;
+  int c;
+  if (s == NULL || s[0] == '\0') {
+    return 0;
+  }
+  c = s[0] & 0xff;
+  if ((c & 0xc0) == 0x80) {
+    /* detected broken character sequence */
+    for(i = 1;(s[i] & 0xc0) == 0x80;i++);
+    return i;
+  }
+  if (c < 0x80 || s[1] == '\0') {
+    return 1;
+  }
+  if (c < 0xE0 || s[2] == '\0') {
+    return 2;
+  }
+  if (c < 0xF0 || s[3] == '\0') {
+    return 3;
+  }
+  return 4;
+}
+
+int get_wchar_bytes(int c) {
+  if (c < 0x80) {
+    return 1;
+  }
+  if (c < 0xE000) {
+    return 2;
+  } else if (c < 0xF00000) {
+    return 3;
+  }
+  return 4;
+}
+
+int
+get_wchar(const char* s, int slen) {
+  int i;
+  int c;
+  if (s == NULL || s[0] == '\0' || slen < 1) {
+    return 0;
+  }
+  c = s[0] & 0xff;
+  if ((c & 0xc0) == 0x80) {
+    /* detected broken character sequence */
+    for(i = 1;i < slen && (s[i] & 0xc0) == 0x80;i++) {
+      c = (c << 8) | (s[i] & 0xff);
+    }
+    return c;
+  }
+  if (c < 0x80 || s[1] == '\0' || slen < 2) {
+    return c;
+  }
+  c = (c << 8) | (s[1] & 0xff);
+  if (c < 0xE0 || s[2] == '\0' || slen < 3) {
+    return c;
+  }
+  c = (c << 8) | (s[2] & 0xff);
+  if (c < 0xF0 || s[3] == '\0' || slen < 4) {
+    return c;
+  }
+  c = (c << 8) | (s[3] & 0xff);
+  return c;
+}
+
+int
+get_wchar_without_slen(const char* s) {
+  int i;
+  int c;
+  if (s == NULL || s[0] == '\0') {
+    return 0;
+  }
+  c = s[0] & 0xff;
+  if ((c & 0xc0) == 0x80) {
+    /* detected broken character sequence */
+    for(i = 1;(s[i] & 0xc0) == 0x80;i++) {
+      c = (c << 8) | (s[i] & 0xff);
+    }
+    return c;
+  }
+  if (c < 0x80 || s[1] == '\0') {
+    return c;
+  }
+  c = (c << 8) | (s[1] & 0xff);
+  if (c < 0xE0 || s[2] == '\0') {
+    return c;
+  }
+  c = (c << 8) | (s[2] & 0xff);
+  if (c < 0xF0 || s[3] == '\0') {
+    return c;
+  }
+  c = (c << 8) | (s[3] & 0xff);
+  return c;
+}
+
+int put_wchar(char* s, int slen, int c) {
+  if (slen > 0 && c < 0x80) {
+    s[0] = c;
+    return 1;
+  }
+  if (slen > 1 && c < 0xE000) {
+    s[0] = 0xff & (c >> 8);
+    s[1] = 0xff &  c      ;
+    return 2;
+  } else if (slen > 2 && c < 0xF00000) {
+    s[0] = 0xff & (c >> 16);
+    s[1] = 0xff & (c >>  8);
+    s[2] = 0xff &  c       ;
+    return 3;
+  } else if (slen > 3) {
+    s[0] = 0xff & (c >> 24);
+    s[1] = 0xff & (c >> 16);
+    s[2] = 0xff & (c >>  8);
+    s[3] = 0xff &  c       ;
+    return 4;
+  }
+  return 0;
+}
+
+int put_wchar_eof(char* s, int slen, int c) {
+  int i;
+  i = put_wchar(s, slen, c);
+  s[i] = '\0';
+  return i;
+}
+
+int fill_wchar(int* cp, int* modep, int c0) {
+  if (*modep == FILL_WCHAR_MODE_INIT) {
+    if ((c0 & 0xc0) == 0x80) {
+      *cp = c0;
+      return 1;
+    }
+    *cp = c0 & 0xff;
+    if ((c0 & 0xff) < 0x80) {
+      return 1;
+    } else if ((c0 & 0xff) < 0xE0) {
+      *modep = 1;
+    } else if ((c0 & 0xff) < 0xF0) {
+      *modep = 2;
+    } else {
+      *modep = 3;
+    }
+    return 0;
+  }
+  *cp = (*cp << 8) | (c0 & 0xff);
+  --(*modep);
+  if (*modep <= 0) {
+    *modep = FILL_WCHAR_MODE_INIT;
+    return 1;
+  }
+  return 0;
+}

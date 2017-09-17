@@ -210,3 +210,16 @@ int Pl_Find_Next_Atom(int last_atom);
 #define ATOM_CHAR(c)            (atom_char[(int) (unsigned char) (c)])
 
 #endif
+
+/* get wchar (or char) byte size at s */
+extern int count_wchar_bytes(const char* s);
+/* get wchar (or char) byte size of c */
+extern int get_wchar_bytes(int c);
+/* get wchar (or char) at s */
+extern int get_wchar(const char* s, int slen);
+extern int get_wchar_without_slen(const char* s);
+extern int put_wchar(char* s, int slen, int c);
+extern int put_wchar_eof(char* s, int slen, int c);
+
+#define FILL_WCHAR_MODE_INIT 0
+extern int fill_wchar(int* cp, int* modep, int c0);

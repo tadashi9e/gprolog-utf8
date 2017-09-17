@@ -174,22 +174,7 @@ Pl_Get_Char_2(WamWord sora_word, WamWord char_word)
   if (c < 0x80) {
     return Pl_Get_Atom((c == EOF) ? pl_atom_end_of_file : ATOM_CHAR(c), char_word);
   }
-  if (c < 0xE000) {
-    cs[0] = (c >> 8) & 0xff;
-    cs[1] = c & 0xff;
-    cs[2] = 0;
-  } else if (c < 0xF00000) {
-    cs[0] = (c >> 16) & 0xff;
-    cs[1] = (c >> 8) & 0xff;
-    cs[2] = c & 0xff;
-    cs[3] = 0;
-  } else {
-    cs[0] = (c >> 24) & 0xff;
-    cs[1] = (c >> 16) & 0xff;
-    cs[2] = (c >> 8) & 0xff;
-    cs[3] = c & 0xff;
-    cs[4] = 0;
-  }
+  put_wchar_eof(cs, sizeof(cs), c);
   return Pl_Get_Atom(Pl_Create_Allocate_Atom(cs), char_word);
 }
 

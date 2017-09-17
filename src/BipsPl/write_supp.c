@@ -601,7 +601,7 @@ Show_Atom(int context, int atom)
   Bool bracket = FALSE;
   int c, c_type;
   AtomProp prop;
-
+  int i;
 
   prop = pl_atom_tbl[atom].prop;
 
@@ -667,27 +667,20 @@ Show_Atom(int context, int atom)
 	      }
 	    else if (!isprint(*p))
 	      {
-#if 0
-		sprintf(str, "\\x%x\\", (unsigned) (unsigned char) *p);
-		Out_String(str);
-#else
-                if ((*p & 0xff) < 0x80) {
-                  sprintf(str, "\\x%x\\", (unsigned) (unsigned char) *p);
-                  Out_String(str);
-                } else if ((*p & 0xff) < 0xE0) {
-                  Out_Char((*p++) & 0xff);
-                  Out_Char((*p  ) & 0xff);
-                } else if ((*p & 0xff) < 0xF0) {
-                  Out_Char((*p++) & 0xff);
-                  Out_Char((*p++) & 0xff);
-                  Out_Char((*p  ) & 0xff);
-                } else {
-                  Out_Char((*p++) & 0xff);
-                  Out_Char((*p++) & 0xff);
-                  Out_Char((*p++) & 0xff);
+                i = count_wchar_bytes(p);
+                if (i == 1) {
+                  if (isprint(*p)) {
+                    Out_Char(*p);
+                  } else {
+                    sprintf(str, "\\x%x\\", (unsigned) (unsigned char) *p);
+                    Out_String(str);
+                  }
+                } else if (i > 1) {
+                  for(;i > 1;i--) {
+                    Out_Char((*p++) & 0xff);
+                  }
                   Out_Char((*p  ) & 0xff);
                 }
-#endif
 	      }
 	    else
 	      Out_Char(*p);
