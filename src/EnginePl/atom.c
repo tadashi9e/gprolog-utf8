@@ -639,6 +639,13 @@ count_wchar_bytes(const char* s) {
   return 4;
 }
 
+int
+count_wchar_bytes_back(const char* s) {
+  int i;
+  for (i = 1; (s[-i] & 0xc0) == 0x80;i++) {}
+  return i;
+}
+
 int get_wchar_bytes(int c) {
   if (c < 0x80) {
     return 1;

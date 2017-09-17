@@ -213,6 +213,8 @@ int Pl_Find_Next_Atom(int last_atom);
 
 /* get wchar (or char) byte size at s */
 extern int count_wchar_bytes(const char* s);
+/* get wchar (or char) byte size before s */
+extern int count_wchar_bytes_back(const char* s);
 /* get wchar (or char) byte size of c */
 extern int get_wchar_bytes(int c);
 /* get wchar (or char) at s */

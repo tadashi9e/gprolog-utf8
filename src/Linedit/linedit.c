@@ -82,7 +82,7 @@
 #define NO_USE_SELECT           /* no use select(2) for temporisation */
 #endif
 
-
+#define GO_HOME PUT_CHAR('\r')
 
 
 /*---------------------------------*
@@ -367,14 +367,19 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
         {
         case KEY_CTRL('A'):     /* go to begin of line */
         case KEY_EXT_HOME:
-          BACKD(pos - str);
+          GO_HOME;
+          FORWD(end - str, str);
+          ERASE(prompt_length);
+          GO_HOME;
           pos = str;
           continue;
 
 
         case KEY_CTRL('E'):     /* go to end of line */
         case KEY_EXT_END:
-          FORWD(end - pos, pos);
+          GO_HOME;
+          FORWD(end - str, str);
+          ERASE(prompt_length);
           pos = end;
           continue;
 
@@ -384,10 +389,13 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
           if (pos == str)
             goto error;
           {
-            int i = 1;
-            while((pos-i > str) && ((pos[-i] & 0xc0) == 0x80)) {i++;} // seek UTF-8 char offset
-            BACKD(i);
+            int i = count_wchar_bytes_back(pos);
+            GO_HOME;
+            FORWD(end - str, str);
+            ERASE(prompt_length);
+            GO_HOME;
             pos -= i;
+            FORWD(pos - str, str);
           }
           continue;
 
@@ -397,9 +405,13 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
           if (pos == end)
             goto error;
           {
+            GO_HOME;
+            FORWD(end - str, str);
+            ERASE(prompt_length);
+            GO_HOME;
             int i = count_wchar_bytes(pos);
-            FORWD(i, pos);
             pos += i;
+            FORWD(pos - str, str);
           }
           continue;
 
@@ -410,17 +422,17 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
             goto error;
         del_last:
           {
-            int i = 1;
-            while((pos-i > str) && ((pos[-i] & 0xc0) == 0x80)) {i++;} // seek UTF-8 char offset
-            for (p = pos; p < end; p++)
-              p[-i] = *p;
-            BACKD(i);
+            int i = count_wchar_bytes_back(pos);
+            memmove(pos-i, pos, end-pos);
             pos -= i;
             end -= i;
-            DISPL(end - pos, pos);
-            ERASE(1);
+            *end = '\0';
+            GO_HOME;
+            FORWD(end - str, str);
+            ERASE(i + prompt_length);
+            GO_HOME;
+            FORWD(pos - str, str);
           }
-          BACKD(end - pos);
           continue;
 
 
@@ -431,7 +443,9 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
           /* simply equivalent to ^F + BACKSPACE */
           {
             int i = count_wchar_bytes(pos);
-            FORWD(i, pos);
+            if (pos + i > end) {
+              goto error;
+            }
             pos += i;
           }
           goto del_last;
@@ -521,11 +535,10 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
         case KEY_ESC('B'):      /* go to previous word */
         case KEY_ID2(KEY_MODIF_CTRL, KEY_EXT_LEFT):
           {
-            int i = 1;
             if (pos == str) {
               p = pos;
             } else {
-              while((pos-i > str) && ((pos[-i] & 0xc0) == 0x80)) i++; // seek UTF-8 char offset
+              int i = count_wchar_bytes_back(pos);
               p = pos - i;
             }
             p = Skip(p, str, 1, -1);      /* skip separators */
