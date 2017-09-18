@@ -449,7 +449,7 @@ Pl_Rd_Boolean(WamWord start_word)
  * PL_RD_CHAR_CHECK                                                        *
  *                                                                         *
  *-------------------------------------------------------------------------*/
-int
+CHAR32_T
 Pl_Rd_Char_Check(WamWord start_word)
 {
   WamWord word, tag_mask;
@@ -771,6 +771,7 @@ Pl_Rd_Chars_Str_Check(WamWord start_word, char *str)
   WamWord save_start_word;
   WamWord *lst_adr;
   int n = 0;
+  CHAR32_T c;
 
   save_start_word = start_word;
 
@@ -789,7 +790,8 @@ Pl_Rd_Chars_Str_Check(WamWord start_word, char *str)
 
       lst_adr = UnTag_LST(word);
 
-      *str++ = Pl_Rd_Char_Check(Car(lst_adr));
+      c = Pl_Rd_Char_Check(Car(lst_adr));
+      str += put_wchar_without_slen(str, c);
       n++;
 
       start_word = Cdr(lst_adr);
@@ -812,6 +814,7 @@ Pl_Rd_Chars_Str(WamWord start_word, char *str)
   WamWord word, tag_mask;
   WamWord *lst_adr;
   int n = 0;
+  CHAR32_T c;
 
   for (;;)
     {
@@ -822,7 +825,8 @@ Pl_Rd_Chars_Str(WamWord start_word, char *str)
 
       lst_adr = UnTag_LST(word);
 
-      *str++ = Pl_Rd_Char_Check(Car(lst_adr));
+      c = Pl_Rd_Char_Check(Car(lst_adr));
+      str += put_wchar_without_slen(str, c);
       n++;
 
       start_word = Cdr(lst_adr);
@@ -2021,10 +2025,10 @@ Bool
 Pl_Un_Codes(char *str, WamWord start_word)
 {
   int i;
-  int c;
+  CHAR32_T c; /* sizeof(PlLong)==sizeof(intptr_t) >= sizeof(CHAR32_t) */
   while(*str) {
     i = count_wchar_bytes(str);
-    c = get_wchar_without_slen(str);
+    c = get_wchar(str, i);
     if (!Pl_Get_List(start_word) || !Pl_Unify_Integer(c)) {
       return FALSE;
     }

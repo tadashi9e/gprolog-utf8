@@ -147,13 +147,13 @@ static void TTY_Clearerr(void);
 
 #endif
 
-static int Basic_Call_Fct_Getc(StmInf *pstm);
+static CHAR32_T Basic_Call_Fct_Getc(StmInf *pstm);
 
 static void Basic_Call_Fct_Putc(int c, StmInf *pstm);
 
 static int Str_Stream_Getc(StrSInf *str_stream);
 
-static void Str_Stream_Putc(int c, StrSInf *str_stream);
+static void Str_Stream_Putc(CHAR32_T c, StrSInf *str_stream);
 
 
 
@@ -1208,10 +1208,10 @@ TTY_Clearerr(void)
  * BASIC_CALL_FCT_GETC                                                     *
  *                                                                         *
  *-------------------------------------------------------------------------*/
-static int
+static CHAR32_T
 Basic_Call_Fct_Getc(StmInf *pstm)
 {
-  int c;
+  CHAR32_T c;
   StmLst *m;
 #ifndef NO_USE_PIPED_STDIN_FOR_CONSULT
   if (SYS_VAR_SAY_GETC && pstm->file == (PlLong) stdin)
@@ -1271,7 +1271,7 @@ Pl_PB_Empty_Buffer(StmInf *pstm)
 int
 Pl_Stream_Get_Key(StmInf *pstm, int echo, int catch_ctrl_c)
 {
-  int c;
+  CHAR32_T c;
   PlLong file = pstm->file;
   Bool simulate;
 
@@ -1290,7 +1290,7 @@ Pl_Stream_Get_Key(StmInf *pstm, int echo, int catch_ctrl_c)
     }
   else
     {
-      int c0;
+      CHAR32_T c0;
       int mode = FILL_WCHAR_MODE_INIT;
       c = 0;
       for(;;) {
@@ -1339,10 +1339,10 @@ Pl_Stream_Get_Key(StmInf *pstm, int echo, int catch_ctrl_c)
  * PL_STREAM_GETC                                                          *
  *                                                                         *
  *-------------------------------------------------------------------------*/
-int
+CHAR32_T
 Pl_Stream_Getc(StmInf *pstm)
 {
-  int c;
+  CHAR32_T c;
   PlLong file = pstm->file;
 
   Before_Reading(pstm, file);
@@ -1388,7 +1388,7 @@ Pl_Stream_Getc(StmInf *pstm)
  * (when a Pl_Stream_Set_Position() is used the number of read '\n' is 0). *
  *-------------------------------------------------------------------------*/
 void
-Pl_Stream_Ungetc(int c, StmInf *pstm)
+Pl_Stream_Ungetc(CHAR32_T c, StmInf *pstm)
 {
   int i;
   PB_Push(pstm->pb_char, c);
@@ -1422,10 +1422,10 @@ Pl_Stream_Ungetc(int c, StmInf *pstm)
  * PL_STREAM_PEEKC                                                         *
  *                                                                         *
  *-------------------------------------------------------------------------*/
-int
+CHAR32_T
 Pl_Stream_Peekc(StmInf *pstm)
 {
-  int c;
+  CHAR32_T c;
   PlLong file = pstm->file;
 
 
@@ -1952,7 +1952,7 @@ Str_Stream_Getc(StrSInf *str_stream)
  *                                                                         *
  *-------------------------------------------------------------------------*/
 static void
-Str_Stream_Putc(int c, StrSInf *str_stream)
+Str_Stream_Putc(CHAR32_T c, StrSInf *str_stream)
 {
   int size = str_stream->ptr - str_stream->buff;
   int new_size;

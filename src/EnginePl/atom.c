@@ -646,7 +646,7 @@ count_wchar_bytes_back(const char* s) {
   return i;
 }
 
-int get_wchar_bytes(int c) {
+int get_wchar_bytes(CHAR32_T c) {
   if (c < 0x80) {
     return 1;
   }
@@ -658,11 +658,11 @@ int get_wchar_bytes(int c) {
   return 4;
 }
 
-int
+CHAR32_T
 get_wchar(const char* s, int slen) {
   int i;
-  int c;
-  if (s == NULL || s[0] == '\0' || slen < 1) {
+  CHAR32_T c;
+  if (s == NULL || slen < 1 || s[0] == '\0') {
     return 0;
   }
   c = s[0] & 0xff;
@@ -673,25 +673,25 @@ get_wchar(const char* s, int slen) {
     }
     return c;
   }
-  if (c < 0x80 || s[1] == '\0' || slen < 2) {
+  if (c < 0x80 || slen < 2 || s[1] == '\0') {
     return c;
   }
   c = (c << 8) | (s[1] & 0xff);
-  if (c < 0xE0 || s[2] == '\0' || slen < 3) {
+  if (c < 0xE0 || slen < 3 || s[2] == '\0') {
     return c;
   }
   c = (c << 8) | (s[2] & 0xff);
-  if (c < 0xF0 || s[3] == '\0' || slen < 4) {
+  if (c < 0xF0 || slen < 4 || s[3] == '\0') {
     return c;
   }
   c = (c << 8) | (s[3] & 0xff);
   return c;
 }
 
-int
+CHAR32_T
 get_wchar_without_slen(const char* s) {
   int i;
-  int c;
+  CHAR32_T c;
   if (s == NULL || s[0] == '\0') {
     return 0;
   }
@@ -718,7 +718,7 @@ get_wchar_without_slen(const char* s) {
   return c;
 }
 
-int put_wchar(char* s, int slen, int c) {
+int put_wchar(char* s, int slen, CHAR32_T c) {
   if (slen > 0 && c < 0x80) {
     s[0] = c;
     return 1;
@@ -742,14 +742,38 @@ int put_wchar(char* s, int slen, int c) {
   return 0;
 }
 
-int put_wchar_eof(char* s, int slen, int c) {
+int put_wchar_without_slen(char* s, CHAR32_T c) {
+  if (c < 0x80) {
+    s[0] = c;
+    return 1;
+  }
+  if (c < 0xE000) {
+    s[0] = 0xff & (c >> 8);
+    s[1] = 0xff &  c      ;
+    return 2;
+  } else if (c < 0xF00000) {
+    s[0] = 0xff & (c >> 16);
+    s[1] = 0xff & (c >>  8);
+    s[2] = 0xff &  c       ;
+    return 3;
+  } else {
+    s[0] = 0xff & (c >> 24);
+    s[1] = 0xff & (c >> 16);
+    s[2] = 0xff & (c >>  8);
+    s[3] = 0xff &  c       ;
+    return 4;
+  }
+  return 0;
+}
+
+int put_wchar_eof(char* s, int slen, CHAR32_T c) {
   int i;
   i = put_wchar(s, slen, c);
   s[i] = '\0';
   return i;
 }
 
-int fill_wchar(int* cp, int* modep, int c0) {
+int fill_wchar(CHAR32_T* cp, int* modep, CHAR32_T c0) {
   if (*modep == FILL_WCHAR_MODE_INIT) {
     if ((c0 & 0xc0) == 0x80) {
       *cp = c0;

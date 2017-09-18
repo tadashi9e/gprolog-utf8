@@ -156,7 +156,7 @@ Bool
 Pl_Get_Char_2(WamWord sora_word, WamWord char_word)
 {
   int stm;
-  int c;
+  CHAR32_T c;
   char cs[5];
 
   stm = (sora_word == NOT_A_WAM_WORD)
@@ -202,7 +202,7 @@ Bool
 Pl_Get_Code_2(WamWord sora_word, WamWord code_word)
 {
   int stm;
-  int c;
+  CHAR32_T c;
 
   stm = (sora_word == NOT_A_WAM_WORD)
     ? pl_stm_input : Pl_Get_Stream_Or_Alias(sora_word, STREAM_CHECK_INPUT);

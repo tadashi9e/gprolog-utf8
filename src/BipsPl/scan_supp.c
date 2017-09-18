@@ -62,7 +62,7 @@
  * Global Variables                *
  *---------------------------------*/
 
-static int c_orig, c;		/* for read */
+static CHAR32_T c_orig, c;		/* for read */
 static int c_type;
 
 static char *err_msg;
@@ -151,7 +151,7 @@ Read_Next_Char(StmInf *pstm, Bool convert)
 char *
 Pl_Scan_Token(StmInf *pstm, Bool comma_is_punct)
 {
-  int c0;
+  CHAR32_T c0;
   char *s;
   Bool layout_before = FALSE;
 

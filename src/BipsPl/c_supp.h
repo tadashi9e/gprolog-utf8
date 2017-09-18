@@ -76,7 +76,7 @@ int Pl_Rd_Boolean_Check(WamWord start_word);
 
 int Pl_Rd_Boolean(WamWord start_word);
 
-int Pl_Rd_Char_Check(WamWord start_word);
+CHAR32_T Pl_Rd_Char_Check(WamWord start_word);
 
 int Pl_Rd_Char(WamWord start_word);
 

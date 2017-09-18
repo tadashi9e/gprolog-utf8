@@ -378,11 +378,11 @@ void Pl_PB_Empty_Buffer(StmInf *pstm);
 
 int Pl_Stream_Get_Key(StmInf *pstm, Bool echo, Bool catch_ctrl_c);
 
-int Pl_Stream_Getc(StmInf *pstm);
+CHAR32_T Pl_Stream_Getc(StmInf *pstm);
 
-void Pl_Stream_Ungetc(int c, StmInf *pstm);
+void Pl_Stream_Ungetc(CHAR32_T c, StmInf *pstm);
 
-int Pl_Stream_Peekc(StmInf *pstm);
+CHAR32_T Pl_Stream_Peekc(StmInf *pstm);
 
 char *Pl_Stream_Gets(char *str, int size, StmInf *pstm);
 
