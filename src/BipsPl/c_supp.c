@@ -2027,7 +2027,7 @@ Pl_Un_Codes(char *str, WamWord start_word)
   int i;
   CHAR32_T c; /* sizeof(PlLong)==sizeof(intptr_t) >= sizeof(CHAR32_t) */
   while(*str) {
-    i = count_wchar_bytes(str);
+    i = count_wchar_bytes_without_slen(str);
     c = get_wchar(str, i);
     if (!Pl_Get_List(start_word) || !Pl_Unify_Integer(c)) {
       return FALSE;

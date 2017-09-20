@@ -667,7 +667,7 @@ Show_Atom(int context, int atom)
 	      }
 	    else if (!isprint(*p))
 	      {
-                i = count_wchar_bytes(p);
+                i = count_wchar_bytes(p, p - pl_atom_tbl[atom].name);
                 if (i == 1) {
                   if (isprint(*p)) {
                     Out_Char(*p);

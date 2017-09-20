@@ -611,11 +611,88 @@ Error_Table_Full(void)
 }
 
 /*-------------------------------------------------------------------------*
+ * contains_wchar                                                          *
+ *                                                                         *
+ *-------------------------------------------------------------------------*/
+int
+contains_wchar(const char* s, int slen) {
+  int i;
+  int c;
+  if (s == NULL || slen < 1) {
+    return 0;
+  }
+  for(i = 0;i < slen && s[i] != '\0';i++) {
+    c = s[i] & 0xff;
+    if (c < 0x80) {
+      continue;
+    }
+    return 1;
+  }
+  return 0;
+}
+int normalize_pos(int pos, const char* s) {
+  int i;
+  int c;
+  if (s == NULL) {
+    return 0;
+  }
+  for(i = 0;i < pos && s[i] != '\0';i++) {
+    c = s[i] & 0xff;
+    if (c < 0x80) {
+      continue;
+    }
+    if (s[i+1] == '\0') {
+      break;
+    }
+    if (c < 0xE0) {
+      i++;
+      continue;
+    }
+    if (s[i+2] == '\0') {
+      break;
+    }
+    if (c < 0xF0) {
+      i += 2;
+      continue;
+    }
+    if (s[i+3] == '\0') {
+      break;
+    }
+    i += 3;
+    continue;
+  }
+  return i;
+}
+/*-------------------------------------------------------------------------*
  * count_wchar_bytes                                                       *
  *                                                                         *
  *-------------------------------------------------------------------------*/
 int
-count_wchar_bytes(const char* s) {
+count_wchar_bytes(const char* s, int slen) {
+  int i;
+  int c;
+  if (s == NULL || slen < 1|| s[0] == '\0') {
+    return 0;
+  }
+  c = s[0] & 0xff;
+  if ((c & 0xc0) == 0x80) {
+    /* detected broken character sequence */
+    for(i = 1;i < slen && (s[i] & 0xc0) == 0x80;i++);
+    return i;
+  }
+  if (c < 0x80 || slen < 2 || s[1] == '\0') {
+    return 1;
+  }
+  if (c < 0xE0 || slen < 3 || s[2] == '\0') {
+    return 2;
+  }
+  if (c < 0xF0 || slen < 4 || s[3] == '\0') {
+    return 3;
+  }
+  return 4;
+}
+int
+count_wchar_bytes_without_slen(const char* s) {
   int i;
   int c;
   if (s == NULL || s[0] == '\0') {

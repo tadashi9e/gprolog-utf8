@@ -316,7 +316,14 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
       global_pos = pos;
       global_end = end;
 
-      c = Pl_LE_Get_Char();
+      CHAR32_T c = 0;
+      int mode = FILL_WCHAR_MODE_INIT;
+      for(;;) {
+        int c0 = Pl_LE_Get_Char();
+        if (fill_wchar(&c, &mode, c0)) {
+          break;
+        }
+      }
     one_char:
       *end = ' ';               /* to allow for separator test */
 
@@ -367,19 +374,27 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
         {
         case KEY_CTRL('A'):     /* go to begin of line */
         case KEY_EXT_HOME:
-          GO_HOME;
-          FORWD(end - str, str);
-          ERASE(prompt_length);
-          GO_HOME;
+          if (contains_wchar(str, end-str)) {
+            GO_HOME;
+            FORWD(end - str, str);
+            ERASE(prompt_length);
+            GO_HOME;
+          } else {
+            BACKD(pos - str);
+          }
           pos = str;
           continue;
 
 
         case KEY_CTRL('E'):     /* go to end of line */
         case KEY_EXT_END:
-          GO_HOME;
-          FORWD(end - str, str);
-          ERASE(prompt_length);
+          if (contains_wchar(str, end-str)) {
+            GO_HOME;
+            FORWD(end - str, str);
+            ERASE(prompt_length);
+          } else {
+            FORWD(end - pos, pos);
+          }
           pos = end;
           continue;
 
@@ -388,14 +403,17 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
         case KEY_EXT_LEFT:
           if (pos == str)
             goto error;
-          {
+          if (contains_wchar(str, end-str)) {
             int i = count_wchar_bytes_back(pos);
             GO_HOME;
             FORWD(end - str, str);
             ERASE(prompt_length);
             GO_HOME;
             pos -= i;
-            FORWD(pos - str, str);
+            FORWD(normalize_pos(pos - str, str), str);
+          } else {
+            BACKD(1);
+            pos--;
           }
           continue;
 
@@ -404,14 +422,17 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
         case KEY_EXT_RIGHT:
           if (pos == end)
             goto error;
-          {
+          if (contains_wchar(str, end-str)) {
             GO_HOME;
             FORWD(end - str, str);
             ERASE(prompt_length);
             GO_HOME;
-            int i = count_wchar_bytes(pos);
+            int i = count_wchar_bytes(pos, end-pos);
             pos += i;
-            FORWD(pos - str, str);
+            FORWD(normalize_pos(pos - str, str), str);
+          } else {
+            FORWD(1, pos);
+            pos++;
           }
           continue;
 
@@ -421,7 +442,7 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
           if (pos == str)
             goto error;
         del_last:
-          {
+          if (contains_wchar(str, end-str)) {
             int i = count_wchar_bytes_back(pos);
             memmove(pos-i, pos, end-pos);
             pos -= i;
@@ -431,7 +452,16 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
             FORWD(end - str, str);
             ERASE(i + prompt_length);
             GO_HOME;
-            FORWD(pos - str, str);
+            FORWD(normalize_pos(pos - str, str), str);
+          } else {
+            for (p = pos; p < end; p++)
+              p[-1] = *p;
+            BACKD(1);
+            pos--;
+            end--;
+            DISPL(end - pos, pos);
+            ERASE(1);
+            BACKD(end - pos);
           }
           continue;
 
@@ -441,12 +471,15 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
           if (pos == end)
             goto error;
           /* simply equivalent to ^F + BACKSPACE */
-          {
-            int i = count_wchar_bytes(pos);
+          if (contains_wchar(str, end-str)) {
+            int i = count_wchar_bytes(pos, end-pos);
             if (pos + i > end) {
               goto error;
             }
             pos += i;
+          } else {
+            FORWD(1, pos);
+            pos++;
           }
           goto del_last;
 
@@ -534,19 +567,20 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
 
         case KEY_ESC('B'):      /* go to previous word */
         case KEY_ID2(KEY_MODIF_CTRL, KEY_EXT_LEFT):
-          {
-            if (pos == str) {
-              p = pos;
-            } else {
+          if (pos == str) { /* to avoid start of a word */
+            p = pos;
+            if (contains_wchar(str, end-str)) {
               int i = count_wchar_bytes_back(pos);
               p = pos - i;
+            } else {
+              p = pos - 1;
             }
-            p = Skip(p, str, 1, -1);      /* skip separators */
-            p = Skip(p, str, 0, -1);      /* skip non separators */
-            p = Skip(p, end, 1, +1);      /* skip separators */
-            BACKD(pos - p);
-            pos = p;
           }
+          p = Skip(p, str, 1, -1);      /* skip separators */
+          p = Skip(p, str, 0, -1);      /* skip non separators */
+          p = Skip(p, end, 1, +1);      /* skip separators */
+          BACKD(pos - p);
+          pos = p;
           continue;
 
 
@@ -836,7 +870,15 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
           usleep(BRACKET_TIMMING);
 #endif
           pos = p;
-          FORWD(n, pos);
+          if (contains_wchar(str, end-str)) {
+            GO_HOME;
+            FORWD(end - str, str);
+            ERASE(prompt_length);
+            GO_HOME;
+            FORWD(normalize_pos(pos - str, str), str);
+          } else {
+            FORWD(n, pos);
+          }
           pos = q;
         bracket_exit:
           continue;
@@ -870,24 +912,46 @@ New_Char(int c, char *str, int size, char **p_pos, char **p_end)
   if ((ins_mode || pos == end) && end - str >= size)
     return 0;
 
-  if (!ins_mode)
-    {
-      *pos = (char) c;
-      if (++pos > end)
-        end = pos;
-      PUT_CHAR(c);
+  if (c >= 0x80 || contains_wchar(str, end-str)) {
+    int i = get_wchar_bytes(c);
+    if (!ins_mode) {
+      if (pos < end) {
+        int j = count_wchar_bytes(pos, end-pos);
+        memmove(pos + (i-j), pos, end-pos);
+        end += i-j;
+      }
+      put_wchar(pos, i, c);
+    } else {
+      memmove(pos + i, pos, end-pos);
+      put_wchar(pos, i, c);
+      pos += i;
+      end += i;
     }
-  else
-    {
-      for (p = end; p > pos; p--)
-        *p = p[-1];
-
-      *pos = (char) c;
-      end++;
-      DISPL(end - pos, pos);
-      pos++;
-      BACKD(end - pos);
-    }
+    GO_HOME;
+    FORWD(end - str, str);
+    ERASE(prompt_length);
+    GO_HOME;
+    FORWD(normalize_pos(pos - str, str), str);
+  } else {
+    if (!ins_mode)
+      {
+        *pos = (char) c;
+        if (++pos > end)
+          end = pos;
+        PUT_CHAR(c);
+      }
+    else
+      {
+        for (p = end; p > pos; p--)
+          *p = p[-1];
+        
+        *pos = (char) c;
+        end++;
+        DISPL(end - pos, pos);
+        pos++;
+        BACKD(end - pos);
+      }
+  }
 
   *p_pos = pos;
   *p_end = end;

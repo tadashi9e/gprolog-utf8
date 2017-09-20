@@ -212,7 +212,7 @@ Pl_Atom_Concat_3(WamWord atom1_word, WamWord atom2_word, WamWord atom3_word)
       A(0) = atom1_word;
       A(1) = atom2_word;
       A(2) = (WamWord) patom3;
-      A(3) = (WamWord) (patom3->name + count_wchar_bytes(patom3->name));
+      A(3) = (WamWord) (patom3->name + count_wchar_bytes_without_slen(patom3->name));
       Pl_Create_Choice_Point((CodePtr) Prolog_Predicate(ATOM_CONCAT_ALT, 0), 4);
     }
 
@@ -253,7 +253,7 @@ Pl_Atom_Concat_Alt_0(void)
       AB(B, 1) = atom2_word;
       AB(B, 2) = (WamWord) patom3;
 #endif
-      AB(B, 3) = (WamWord) (p + count_wchar_bytes(p));
+      AB(B, 3) = (WamWord) (p + count_wchar_bytes_without_slen(p));
     }
 
   name = patom3->name;

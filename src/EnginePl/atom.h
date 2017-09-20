@@ -217,8 +217,11 @@ int Pl_Find_Next_Atom(int last_atom);
 #define CHAR32_T int32_t
 /* #endif */
 
+extern int contains_wchar(const char* s, int slen);
+extern int normalize_pos(int pos, const char* s);
 /* get wchar (or char) byte size at s */
-extern int count_wchar_bytes(const char* s);
+extern int count_wchar_bytes(const char* s, int slen);
+extern int count_wchar_bytes_without_slen(const char* s);
 /* get wchar (or char) byte size before s */
 extern int count_wchar_bytes_back(const char* s);
 /* get wchar (or char) byte size of c */
