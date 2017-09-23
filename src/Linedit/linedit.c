@@ -518,9 +518,16 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
 
 
         case KEY_CTRL('Y'):     /* paste from clipboard */
-          for (p = clipboard; *p; p++)
-            if (!New_Char(*p, str, size, &pos, &end))
-              goto error;
+          {
+            for(p = clipboard;*p != '\0';) {
+              int len = count_wchar_bytes_without_slen(p);
+              CHAR32_T c = get_wchar(p, len);
+              if (!New_Char(c, str, size, &pos, &end)) {
+                goto error;
+              }
+              p += len;
+            }
+          }
           continue;
 
 
@@ -647,9 +654,17 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
           if (p == NULL)
             goto error;
 
-          while (rest_length--)
-            if (!New_Char(*p++, str, size, &pos, &end))
-              goto error;
+          {
+            while(*p != '\0' && rest_length > 0) {
+              int len = count_wchar_bytes_without_slen(p);
+              CHAR32_T c = get_wchar(p, len);
+              if (!New_Char(c, str, size, &pos, &end)) {
+                goto error;
+              }
+              p += len;
+              rest_length -= len;
+            }
+          }
 
           if (comp_first_match != comp_last_match)
             {
