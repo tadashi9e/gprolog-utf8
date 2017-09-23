@@ -102,7 +102,7 @@ Pl_Atom_Length_2(WamWord atom_word, WamWord length_word)
   int atom;
 
   atom = Pl_Rd_Atom_Check(atom_word);
-  return Pl_Un_Positive_Check(pl_atom_tbl[atom].prop.length, length_word);
+  return Pl_Un_Positive_Check(pl_atom_tbl[atom].prop.count, length_word);
 }
 
 

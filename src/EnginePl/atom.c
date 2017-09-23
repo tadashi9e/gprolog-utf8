@@ -278,6 +278,7 @@ Add_Atom(char *name, int len, unsigned hash, AtomInf *patom, Bool allocate)
     }
 
   prop.length = len;
+  prop.count = count_wchars(name, len);
 
 #ifndef NO_USE_LINEDIT
   if (len > 1 && identifier)
@@ -733,6 +734,21 @@ int get_wchar_bytes(CHAR32_T c) {
     return 3;
   }
   return 4;
+}
+
+int
+count_wchars(char* s, int slen) {
+  int count;
+  int i;
+  for(count = 0;slen > 0;count++) {
+    i = count_wchar_bytes(s, slen);
+    if (i < 1) {
+      break;
+    }
+    s += i;
+    slen -= i;
+  }
+  return count;
 }
 
 CHAR32_T

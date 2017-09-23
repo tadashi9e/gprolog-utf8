@@ -99,7 +99,8 @@
 
 typedef struct			/* Atom properties                */
 {				/* ------------------------------ */
-  unsigned length:16;		/* its length (in characters)     */
+  unsigned length:16;		/* its length (in bytess)         */
+  unsigned count:16;		/* its length (in characters)     */
   unsigned op_mask:4;		/* operator defined for the atom  */
   unsigned type:2;		/* IDENTIFIER GRAPHIC SOLO OTHER  */
   unsigned needs_quote:1;	/* needs ' around it ?            */
@@ -228,6 +229,8 @@ extern int count_wchar_bytes_back(const char* s);
 extern int get_wchar_bytes(CHAR32_T c);
 /* get wchar (or char) at s */
 extern CHAR32_T get_wchar(const char* s, int slen);
+/* count wchar(or char) characters from s to s+slen */
+extern int count_wchars(char* s, int slen);
 extern int put_wchar(char* s, int slen, CHAR32_T c);
 extern int put_wchar_without_slen(char* s, CHAR32_T c);
 extern int put_wchar_eof(char* s, int slen, CHAR32_T c);
