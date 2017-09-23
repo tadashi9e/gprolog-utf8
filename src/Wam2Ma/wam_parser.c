@@ -49,6 +49,7 @@
 #include "wam_protos.h"
 
 #include "../EnginePl/pl_long.h"
+#include "../EnginePl/pl_wchar.h"
 
 
 
@@ -558,6 +559,7 @@ Scanner(int complex_atom)
   PlLong i;
   double d;
   double strtod();
+  int j;
 
 
   for (;;)
@@ -643,11 +645,14 @@ Scanner(int complex_atom)
       return ATOM;
     }
 
-  if (isalpha(*cur_line_p) || *cur_line_p == '_')	/* atom */
+  if (count_wchar_bytes_without_slen(cur_line_p) > 1 || isalpha(*cur_line_p) || *cur_line_p == '_')	/* atom */
     {
       p = str_val;
-      while (isalnum(*cur_line_p) || *cur_line_p == '_')
-	*p++ = *cur_line_p++;
+      while ((j = count_wchar_bytes_without_slen(cur_line_p)) > 1 || isalnum(*cur_line_p) || *cur_line_p == '_') {
+	for(;j > 0;j--) {
+	  *p++ = *cur_line_p++;
+	}
+      }
 
       *p = '\0';
       return ATOM;

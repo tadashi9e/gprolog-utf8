@@ -46,7 +46,7 @@
 #include <sys/stat.h>
 
 #include "../EnginePl/gp_config.h"
-#include "../EnginePl/engine_pl.h" /* for count_wchar_bytes */
+#include "../EnginePl/pl_wchar.h"
 
 #define LE_DEFINE_HOOK_MACROS
 

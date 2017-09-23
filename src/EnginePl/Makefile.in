@@ -11,7 +11,7 @@ LIBNAME = $(LIB_ENGINE_PL)
 OBJLIB  = machine@OBJ_SUFFIX@ machine1@OBJ_SUFFIX@ stacks_sigsegv@OBJ_SUFFIX@ mem_alloc@OBJ_SUFFIX@ \
           misc@OBJ_SUFFIX@ hash_fct@OBJ_SUFFIX@ hash@OBJ_SUFFIX@ obj_chain@OBJ_SUFFIX@ \
           engine@OBJ_SUFFIX@ engine1@OBJ_SUFFIX@ wam_inst@OBJ_SUFFIX@ \
-          atom@OBJ_SUFFIX@ pred@OBJ_SUFFIX@ oper@OBJ_SUFFIX@ \
+          atom@OBJ_SUFFIX@  pl_wchar@OBJ_SUFFIX@ pred@OBJ_SUFFIX@ oper@OBJ_SUFFIX@ \
           if_no_fd@OBJ_SUFFIX@ main@OBJ_SUFFIX@
 
 all: config wam_regs.h cpp_headers@EXE_SUFFIX@ $(LIBNAME)
@@ -90,6 +90,8 @@ wam_inst@OBJ_SUFFIX@: wam_archi.h wam_inst.h wam_inst.c unify.c
 hash_fct@OBJ_SUFFIX@: hash_fct.h hash_fct1.c
 
 atom@OBJ_SUFFIX@: atom.h atom.c gp_config.h
+
+pl_wchar@OBJ_SUFFIX@: pl_wchar.h pl_wchar.c
 
 pred@OBJ_SUFFIX@: pred.h pred.c
 
