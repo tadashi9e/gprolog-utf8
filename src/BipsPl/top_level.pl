@@ -270,11 +270,33 @@ break :-
 
 
 
+'$starts_with_wchar'(A) :-
+    atom_codes(A, Cs),
+    Cs = [C|_],
+    C > 127.
+'$is_singleton_name'(A) :-
+    (
+	sub_atom(A, 0, 1, _, '_')
+     -> (
+	     sub_atom(A, 1, 1, _, A1)
+	  -> (
+		  '$starts_with_wchar'(A1)
+	       ->
+		   fail
+	       ;
+	       !, true
+	      )
+	  ;
+	  !, true
+	 )
+     ;
+     !, fail
+    ).
 
 '$remove_underscore_vars'([], []).
 
 '$remove_underscore_vars'([Name = Term|ToDispVars], ToDispVars1) :-
-	(   sub_atom(Name, 0, 1, _, '_')
+	(   '$is_singleton_name'(Name)
 	;   Term = '$VARNAME'(Name1),
 	    sub_atom(Name1, 0, 1, _, '_')),
 	!,

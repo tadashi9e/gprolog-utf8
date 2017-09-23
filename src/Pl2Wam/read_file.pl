@@ -1,3 +1,4 @@
+/* -*- mode:prolog -*- */
 /*-------------------------------------------------------------------------*
  * GNU Prolog                                                              *
  *                                                                         *
@@ -556,15 +557,35 @@ display_singletons(SingNames, PI) :-
 
 display_singletons(_, _).
 
-
-
+starts_with_wchar(A) :-
+    atom_codes(A, Cs),
+    Cs = [C|_],
+    C > 127.
+is_singleton_name(A) :-
+    (
+	sub_atom(A, 0, 1, _, '_')
+     -> (
+	     sub_atom(A, 1, 1, _, A1)
+	  -> (
+		  starts_with_wchar(A1)
+	       ->
+		   fail
+	       ;
+	       !, true
+	      )
+	  ;
+	  !, true
+	 )
+     ;
+     !, fail
+    ).
 
 get_singletons([], []).
 
 get_singletons([X = _|SingNames], Sing1) :-
-	(   sub_atom(X, 0, 1, _, '_') ->
-	    Sing1 = Sing
-	;   Sing1 = [X|Sing]
+	(   is_singleton_name(X)
+	 -> Sing1 = Sing
+	 ;  Sing1 = [X|Sing]
 	),
 	get_singletons(SingNames, Sing).
 
