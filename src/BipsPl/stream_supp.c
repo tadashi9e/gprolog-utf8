@@ -141,7 +141,7 @@ static Bool Remove_In_Stream_List(int stm, StmLst **p_start);
 
 static int TTY_Getc(void);
 
-static int TTY_Get_Key(Bool echo, Bool catch_ctrl_c);
+static CHAR32_T TTY_Get_Key(Bool echo, Bool catch_ctrl_c);
 
 static void TTY_Clearerr(void);
 
@@ -1107,14 +1107,17 @@ TTY_Getc(void)
  * TTY_GET_KEY                                                             *
  *                                                                         *
  *-------------------------------------------------------------------------*/
-static int
+static CHAR32_T
 TTY_Get_Key(Bool echo, Bool catch_ctrl_c)
 {
-  int c;
+  int i;
+  CHAR32_T c;
 
   if (tty_ptr != NULL)
     {
-      c = *tty_ptr++;
+      i = count_wchar_bytes_without_slen(tty_ptr);
+      c = get_wchar(tty_ptr, i);
+      tty_ptr += i;
 
       if (*tty_ptr == '\0')
 	{
@@ -1268,7 +1271,7 @@ Pl_PB_Empty_Buffer(StmInf *pstm)
  * PL_STREAM_GET_KEY                                                       *
  *                                                                         *
  *-------------------------------------------------------------------------*/
-int
+CHAR32_T
 Pl_Stream_Get_Key(StmInf *pstm, int echo, int catch_ctrl_c)
 {
   CHAR32_T c;
@@ -1290,25 +1293,13 @@ Pl_Stream_Get_Key(StmInf *pstm, int echo, int catch_ctrl_c)
     }
   else
     {
-      CHAR32_T c0;
-      int mode = FILL_WCHAR_MODE_INIT;
-      c = 0;
-      for(;;) {
-        Start_Protect_Regs_For_Signal;
-        if (simulate) {
-          c0 = Basic_Call_Fct_Getc(pstm);
+      Start_Protect_Regs_For_Signal;
+      if (simulate)
+	c = Basic_Call_Fct_Getc(pstm);
 #ifndef NO_USE_LINEDIT
-        } else {
-          c0 = TTY_Get_Key(echo, catch_ctrl_c);
+      else
+	c = TTY_Get_Key(echo, catch_ctrl_c);
 #endif
-        }
-        if (c0 == '\0') {
-          break;
-        }
-        if (fill_wchar(&c, &mode, c0)) {
-          break;
-        }
-      }
       Stop_Protect_Regs_For_Signal;
     }
 

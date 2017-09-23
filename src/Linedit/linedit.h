@@ -35,7 +35,7 @@
  * not, see http://www.gnu.org/licenses/.                                  *
  *-------------------------------------------------------------------------*/
 
-
+#include "../EnginePl/pl_wchar.h"
 
 /* Windows uses 2 codepages (which give the meaning of 0x80..0xFF chars):
  * "OEM codepages" for console programs and "ANSI codepages" for GUI programs.
@@ -154,7 +154,7 @@ char *Pl_LE_Compl_Init_Match(char *prefix, int *nb_match, int *max_lg);
 char *Pl_LE_Compl_Find_Match(int *is_last);
 
 
-int Pl_LE_Get_Key(int echo, int catch_ctrl_c);
+CHAR32_T Pl_LE_Get_Key(int echo, int catch_ctrl_c);
 
 
 int Pl_LE_Printf(char *format, ...);

@@ -46,7 +46,6 @@
 #include <sys/stat.h>
 
 #include "../EnginePl/gp_config.h"
-#include "../EnginePl/pl_wchar.h"
 
 #define LE_DEFINE_HOOK_MACROS
 
@@ -605,7 +604,7 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
         case KEY_ESC('C'):      /* capitalize word */
           p = pos;
           p = Skip(p, end, 1, +1);      /* skip separators */
-          if (islower(*p))
+          if (count_wchar_bytes(p, end-p) == 1 && islower(*p))
             *p = *p - 'a' + 'A';
           p = Skip(p, end, 0, +1);      /* skip non separators */
           DISPL(p - pos, pos);
@@ -1571,31 +1570,51 @@ Display_Help(void)
  * PL_LE_GET_KEY                                                           *
  *                                                                         *
  *-------------------------------------------------------------------------*/
-int
+CHAR32_T
 Pl_LE_Get_Key(int echo, int catch_ctrl_c)
 {
-  int c;
+  CHAR32_T c;
+  int c0;
+  int mode;
 
   Pl_LE_Initialize();
   prompt_length = 0;
 
 start:
+  c = 0;
+  mode = FILL_WCHAR_MODE_INIT;
   Pl_LE_Open_Terminal();
-
-  c = Pl_LE_Get_Char();
-  if (catch_ctrl_c && Pl_LE_Is_Interrupt_Key(c))
-    {
-      Pl_LE_Close_Terminal();
-      if ((ctrl_c_ret_val = Pl_Emit_Ctrl_C()) != 0)
-        return -2;
-      goto start;
+  for(;;) {
+    c0 = Pl_LE_Get_Char();
+    if (catch_ctrl_c && Pl_LE_Is_Interrupt_Key(c0))
+      {
+	Pl_LE_Close_Terminal();
+	if ((ctrl_c_ret_val = Pl_Emit_Ctrl_C()) != 0)
+	  return -2;
+	goto start;
+      }
+    
+    if (KEY_IS_EOF(c0))
+      c = EOF;
+    break;
+    if (fill_wchar(&c, &mode, c0)) {
+      break;
     }
-
-  if (KEY_IS_EOF(c))
-    c = EOF;
-
-  if (echo && (unsigned) c <= 255 && isprint(c))
-    PUT_CHAR(c);
+  }
+  if (echo) {
+    if ((unsigned) c < 0x80) {
+      if (isprint(c)) {
+	PUT_CHAR(c);
+      }
+    } else {
+      char s[MAX_WCHAR_BYTES+1];
+      int i;
+      put_wchar_eof(s, sizeof(s), c);
+      for(i = 0;s[i] != '\0';i++) {
+	PUT_CHAR(s[i]);
+      }
+    }
+  }
 
   Pl_LE_Close_Terminal();
 

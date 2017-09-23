@@ -72,7 +72,7 @@ Bool
 Pl_Get_Key_2(WamWord sora_word, WamWord code_word)
 {
   int stm;
-  int c;
+  CHAR32_T c;
 
   stm = (sora_word == NOT_A_WAM_WORD)
     ? pl_stm_input : Pl_Get_Stream_Or_Alias(sora_word, STREAM_CHECK_INPUT);
@@ -114,7 +114,7 @@ Bool
 Pl_Get_Key_No_Echo_2(WamWord sora_word, WamWord code_word)
 {
   int stm;
-  int c;
+  CHAR32_T c;
 
   stm = (sora_word == NOT_A_WAM_WORD)
     ? pl_stm_input : Pl_Get_Stream_Or_Alias(sora_word, STREAM_CHECK_INPUT);
@@ -157,7 +157,7 @@ Pl_Get_Char_2(WamWord sora_word, WamWord char_word)
 {
   int stm;
   CHAR32_T c;
-  char cs[5];
+  char cs[MAX_WCHAR_BYTES+1];
 
   stm = (sora_word == NOT_A_WAM_WORD)
     ? pl_stm_input : Pl_Get_Stream_Or_Alias(sora_word, STREAM_CHECK_INPUT);

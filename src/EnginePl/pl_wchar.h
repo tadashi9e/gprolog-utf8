@@ -22,6 +22,7 @@ extern int get_wchar_bytes(CHAR32_T c);
 extern CHAR32_T get_wchar(const char* s, int slen);
 /* count wchar(or char) characters from s to s+slen */
 extern int count_wchars(char* s, int slen);
+#define MAX_WCHAR_BYTES 4
 extern int put_wchar(char* s, int slen, CHAR32_T c);
 extern int put_wchar_without_slen(char* s, CHAR32_T c);
 extern int put_wchar_eof(char* s, int slen, CHAR32_T c);
