@@ -1596,7 +1596,6 @@ start:
     
     if (KEY_IS_EOF(c0))
       c = EOF;
-    break;
     if (fill_wchar(&c, &mode, c0)) {
       break;
     }
