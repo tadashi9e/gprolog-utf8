@@ -30,4 +30,5 @@ extern int put_wchar_eof(char* s, int slen, CHAR32_T c);
 #define FILL_WCHAR_MODE_INIT 0
 extern int fill_wchar(CHAR32_T* cp, int* modep, CHAR32_T c0);
 
+extern int wchar_bytes_of_chars(const char* s, int slen, int chars);
 #endif

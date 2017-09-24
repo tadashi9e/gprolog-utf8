@@ -282,3 +282,25 @@ int fill_wchar(CHAR32_T* cp, int* modep, CHAR32_T c0) {
   }
   return 0;
 }
+
+int
+wchar_bytes_of_chars(const char* s, int slen, int chars) {
+  int i;
+  int bytes;
+  bytes = 0;
+  while(chars > 0 && slen > 0) {
+    i = count_wchar_bytes(s, slen);
+    if (i < 1) {
+      break;
+    }
+    chars--;
+    bytes += i;
+    s += i;
+    slen -= i;
+  }
+  if (slen < 0 || chars > 0) {
+    return -1;
+  }
+  return bytes;
+}
+

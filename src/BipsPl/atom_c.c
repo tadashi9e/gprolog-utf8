@@ -310,12 +310,13 @@ Pl_Sub_Atom_5(WamWord atom_word, WamWord before_word, WamWord length_word,
   int length;
   PlLong b, l, a;
   int b1, l1, a1;
+  int b_index, l_index;
   Bool nondet;
   int mask = 0;
   char *str;
 
   patom = pl_atom_tbl + Pl_Rd_Atom_Check(atom_word);
-  length = patom->prop.length;
+  length = patom->prop.count;
 
 
   DEREF_LG(before_word, b);
@@ -340,6 +341,12 @@ Pl_Sub_Atom_5(WamWord atom_word, WamWord before_word, WamWord length_word,
       if (mask & 4)		/* B fixed */
 	{
 	  a = length - b - l;
+	  b_index = wchar_bytes_of_chars(patom->name, patom->prop.length, b);
+	  l_index = wchar_bytes_of_chars(patom->name + b_index,
+					 patom->prop.length - b_index, l);
+	  if (b_index < 0 || l_index < 0) {
+	    return FALSE;
+	  }
 	  return strncmp(patom->name + b, psub_atom->name, l) == 0 &&
 	    Pl_Get_Integer(a, after_word);
 	}
@@ -347,7 +354,13 @@ Pl_Sub_Atom_5(WamWord atom_word, WamWord before_word, WamWord length_word,
       if (mask & 1)		/* A fixed */
 	{
 	  b = length - l - a;
-	  return strncmp(patom->name + b, psub_atom->name, l) == 0 &&
+	  b_index = wchar_bytes_of_chars(patom->name, patom->prop.length, b);
+	  l_index = wchar_bytes_of_chars(patom->name + b_index,
+					 patom->prop.length - b_index, l);
+	  if (b_index < 0 || l_index < 0) {
+	    return FALSE;
+	  }
+	  return strncmp(patom->name + b_index, psub_atom->name, l_index) == 0 &&
 	    Pl_Get_Integer(b, before_word);
 	}
       mask = 8;			/* set sub_atom as fixed */
@@ -385,7 +398,11 @@ Pl_Sub_Atom_5(WamWord atom_word, WamWord before_word, WamWord length_word,
       break;
 
     default:			/* sub_atom fixed */
-      if ((str = strstr(patom->name + b, psub_atom->name)) == NULL)
+      b_index = wchar_bytes_of_chars(patom->name, patom->prop.length, b);
+      if (b_index < 0) {
+	return FALSE;
+      }
+      if ((str = strstr(patom->name + b_index, psub_atom->name)) == NULL)
 	return FALSE;
 
       b = str - patom->name;
@@ -416,9 +433,15 @@ Pl_Sub_Atom_5(WamWord atom_word, WamWord before_word, WamWord length_word,
 
   if (mask <= 7)
     {
-      MALLOC_STR(l);
-      strncpy(str, patom->name + b, l);
-      str[l] = '\0';
+      b_index = wchar_bytes_of_chars(patom->name, patom->prop.length, b);
+      l_index = wchar_bytes_of_chars(patom->name + b_index,
+				     patom->prop.length - b_index, l);
+      if (b_index < 0 || l_index < 0) {
+	return FALSE;
+      }
+      MALLOC_STR(l_index);
+      strncpy(str, patom->name + b_index, l_index);
+      str[l_index] = '\0';
       Pl_Get_Atom(Create_Malloc_Atom(str), sub_atom_word);
       Pl_Get_Integer(l, length_word);
     }
@@ -441,6 +464,7 @@ Pl_Sub_Atom_Alt_0(void)
   AtomInf *psub_atom;
   int b, l, a;
   int b1, l1, a1;
+  int b_index, l_index;
   int mask;
   char *str;
 
@@ -478,9 +502,15 @@ Pl_Sub_Atom_Alt_0(void)
 
   if (mask <= 7)
     {
-      MALLOC_STR(l);
-      strncpy(str, patom->name + b, l);
-      str[l] = '\0';
+      b_index = wchar_bytes_of_chars(patom->name, patom->prop.length, b);
+      l_index = wchar_bytes_of_chars(patom->name + b_index,
+				     patom->prop.length - b_index, l);
+      if (b_index < 0 || l_index < 0) {
+	return FALSE;
+      }
+      MALLOC_STR(l_index);
+      strncpy(str, patom->name + b_index, l_index);
+      str[l_index] = '\0';
       Pl_Get_Atom(Create_Malloc_Atom(str), sub_atom_word);
       Pl_Get_Integer(l, length_word);
     }
@@ -499,7 +529,8 @@ static Bool
 Compute_Next_BLA(int mask, AtomInf *patom, AtomInf *psub_atom,
 		 int b, int l, int a, int *b1, int *l1, int *a1)
 {
-  int length = patom->prop.length;
+  int b_index;
+  int length = patom->prop.count;
   char *str;
 
 
@@ -537,6 +568,10 @@ Compute_Next_BLA(int mask, AtomInf *patom, AtomInf *psub_atom,
       if (++b > length - l)
 	return FALSE;
 
+      b_index = wchar_bytes_of_chars(patom->name, patom->prop.length, b);
+      if (b_index < 0) {
+	return FALSE;
+      }
       if ((str = strstr(patom->name + b, psub_atom->name)) == NULL)
 	return FALSE;
 
