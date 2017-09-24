@@ -83,15 +83,15 @@ int Pl_Rd_Char(WamWord start_word);
 
 int Pl_Rd_In_Char_Check(WamWord start_word);
 
-int Pl_Rd_In_Char(WamWord start_word);
+CHAR32_T Pl_Rd_In_Char(WamWord start_word);
 
-int Pl_Rd_Code_Check(WamWord start_word);
+CHAR32_T Pl_Rd_Code_Check(WamWord start_word);
 
-int Pl_Rd_Code(WamWord start_word);
+CHAR32_T Pl_Rd_Code(WamWord start_word);
 
-int Pl_Rd_In_Code_Check(WamWord start_word);
+CHAR32_T Pl_Rd_In_Code_Check(WamWord start_word);
 
-int Pl_Rd_In_Code(WamWord start_word);
+CHAR32_T Pl_Rd_In_Code(WamWord start_word);
 
 int Pl_Rd_Byte_Check(WamWord start_word);
 

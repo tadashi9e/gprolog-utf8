@@ -517,7 +517,7 @@ Pl_Rd_In_Char_Check(WamWord start_word)
  * PL_RD_IN_CHAR                                                           *
  *                                                                         *
  *-------------------------------------------------------------------------*/
-int
+CHAR32_T
 Pl_Rd_In_Char(WamWord start_word)
 {
   WamWord word, tag_mask;
@@ -525,7 +525,12 @@ Pl_Rd_In_Char(WamWord start_word)
 
   DEREF(start_word, word, tag_mask);
   atom = UnTag_ATM(word);
-  return (atom != pl_atom_end_of_file) ? pl_atom_tbl[atom].name[0] : -1;
+  //return (atom != pl_atom_end_of_file) ? pl_atom_tbl[atom].name[0] : -1;
+  if (atom == pl_atom_end_of_file) {
+    return -1;
+  }
+  return get_wchar(pl_atom_tbl[atom].name,
+		   pl_atom_tbl[atom].prop.length);
 }
 
 
@@ -535,10 +540,10 @@ Pl_Rd_In_Char(WamWord start_word)
  * PL_RD_CODE_CHECK                                                        *
  *                                                                         *
  *-------------------------------------------------------------------------*/
-int
+CHAR32_T
 Pl_Rd_Code_Check(WamWord start_word)
 {
-  int c;
+  CHAR32_T c;
 
   c = Pl_Rd_Integer_Check(start_word);
   if (!Is_Valid_Code(c))
@@ -554,7 +559,7 @@ Pl_Rd_Code_Check(WamWord start_word)
  * PL_RD_CODE                                                              *
  *                                                                         *
  *-------------------------------------------------------------------------*/
-int
+CHAR32_T
 Pl_Rd_Code(WamWord start_word)
 {
   return Pl_Rd_Integer(start_word);
@@ -567,10 +572,10 @@ Pl_Rd_Code(WamWord start_word)
  * PL_RD_IN_CODE_CHECK                                                     *
  *                                                                         *
  *-------------------------------------------------------------------------*/
-int
+CHAR32_T
 Pl_Rd_In_Code_Check(WamWord start_word)
 {
-  int c;
+  CHAR32_T c;
 
   c = Pl_Rd_Integer_Check(start_word);
   if (c != -1 && !Is_Valid_Code(c))
@@ -586,7 +591,7 @@ Pl_Rd_In_Code_Check(WamWord start_word)
  * PL_RD_IN_CODE                                                           *
  *                                                                         *
  *-------------------------------------------------------------------------*/
-int
+CHAR32_T
 Pl_Rd_In_Code(WamWord start_word)
 {
   return Pl_Rd_Integer(start_word);
@@ -850,6 +855,7 @@ Pl_Rd_Codes_Str_Check(WamWord start_word, char *str)
   WamWord save_start_word;
   WamWord *lst_adr;
   int n = 0;
+  int i;
 
   save_start_word = start_word;
 
@@ -868,7 +874,8 @@ Pl_Rd_Codes_Str_Check(WamWord start_word, char *str)
 
       lst_adr = UnTag_LST(word);
 
-      *str++ = Pl_Rd_Code_Check(Car(lst_adr));
+      i = put_wchar_without_slen(str, Pl_Rd_Code_Check(Car(lst_adr)));
+      str += i;
       n++;
 
       start_word = Cdr(lst_adr);
