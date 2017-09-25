@@ -74,13 +74,13 @@ static char *err_msg;
  * Function Prototypes             *
  *---------------------------------*/
 
-static int Read_Next_Char(StmInf *pstm, Bool convert);
+static CHAR32_T Read_Next_Char(StmInf *pstm, Bool convert);
 
 static void Scan_Number(StmInf *pstm, Bool integer_only);
 
 static void Scan_Quoted(StmInf *pstm);
 
-static int Scan_Quoted_Char(StmInf *pstm, Bool convert, int c0, Bool no_escape);
+static CHAR32_T Scan_Quoted_Char(StmInf *pstm, Bool convert, CHAR32_T c0, Bool no_escape);
 
 
 
@@ -93,10 +93,10 @@ static int Scan_Quoted_Char(StmInf *pstm, Bool convert, int c0, Bool no_escape);
  * PL_SCAN_PEEK_CHAR                                                       *
  *                                                                         *
  *-------------------------------------------------------------------------*/
-int
+CHAR32_T
 Pl_Scan_Peek_Char(StmInf *pstm, Bool convert)
 {
-  int c_look;
+  CHAR32_T c_look;
 
   c_look = Pl_Stream_Peekc(pstm);
 
@@ -113,7 +113,7 @@ Pl_Scan_Peek_Char(StmInf *pstm, Bool convert)
  * READ_NEXT_CHAR                                                          *
  *                                                                         *
  *-------------------------------------------------------------------------*/
-static int
+static CHAR32_T
 Read_Next_Char(StmInf *pstm, Bool convert)
 {
   c_orig = c = Pl_Stream_Getc(pstm);
@@ -247,10 +247,10 @@ start_scan:
 
       pl_token.type = TOKEN_NAME;
       s = pl_token.name;
-      *s++ = c0;
+      s += put_wchar_without_slen(s, c0);
       while (c_type == GR)
 	{
-	  *s++ = c;
+	  s += put_wchar_without_slen(s, c);
 	  Read_Next_Char(pstm, TRUE);
 	}
       *s = '\0';
@@ -507,7 +507,7 @@ Scan_Number(StmInf *pstm, Bool integer_only)
 static void
 Scan_Quoted(StmInf *pstm)
 {
-  int c0;
+  CHAR32_T c0;
   char *s;
   Bool convert = (c_orig != '\'');
   Bool no_escape;
@@ -564,7 +564,7 @@ Scan_Quoted(StmInf *pstm)
 	}
 
       if (!error_found)
-	*s++ = c;
+	s += put_wchar_without_slen(s, c);
     }
 
   /* error */
@@ -607,8 +607,8 @@ Scan_Quoted(StmInf *pstm)
  * SCAN_QUOTED_CHAR                                                        *
  *                                                                         *
  *-------------------------------------------------------------------------*/
-static int
-Scan_Quoted_Char(StmInf *pstm, Bool convert, int c0, Bool no_escape)
+static CHAR32_T
+Scan_Quoted_Char(StmInf *pstm, Bool convert, CHAR32_T c0, Bool no_escape)
 {
   int radix;
   char *p, *f;
@@ -765,7 +765,7 @@ void
 Pl_Recover_After_Error(StmInf *pstm)
 #define Next_Char   Read_Next_Char(pstm, convert); if (c == EOF) return
 {
-  int c0;
+  CHAR32_T c0;
   Bool convert;
   Bool dot_found;
 
@@ -876,7 +876,7 @@ Pl_Scan_Next_Atom(StmInf *pstm)
       s = pl_token.name;
       do
 	{
-	  *s++ = c;
+	  s += put_wchar_without_slen(s, c);
 	  Read_Next_Char(pstm, TRUE);
 	}
       while (c_type & (UL | CL | SL | DI));
@@ -904,7 +904,7 @@ Pl_Scan_Next_Atom(StmInf *pstm)
       s = pl_token.name;
       while (c_type == GR)
 	{
-	  *s++ = c;
+	  s += put_wchar_without_slen(s, c);
 	  Read_Next_Char(pstm, TRUE);
 	}
       *s = '\0';

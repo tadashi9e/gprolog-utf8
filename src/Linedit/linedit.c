@@ -826,13 +826,15 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
           count_bracket[0] = count_bracket[1] = count_bracket[2] = 0;
           count_bracket[n]--;
 
-          p = pos - 1;
+          p = pos - count_wchar_bytes_back(pos);
           for (; count_bracket[n] != 0;)
             {
-              if (--p < str)
+	      int i = count_wchar_bytes_back(p);
+	      p -= i;
+              if (p < str)
                 goto bracket_exit;
 
-              c = *p;
+              c = get_wchar(p, i);
               if ((n1 = Search_Bracket(CLOSE_BRACKET, c)) >= 0)
                 {
                   count_bracket[n1]--;
@@ -857,7 +859,15 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
 
           n = pos - p;
           q = pos;
-          BACKD(n);
+	  if (contains_wchar(p, end-p)) {
+            GO_HOME;
+            FORWD(normalize_pos(end - str, str), str);
+            ERASE(prompt_length);
+            GO_HOME;
+	    FORWD(normalize_pos(p - str, str), str);
+	  } else {
+	    BACKD(n);
+	  }
 #if defined(_WIN32) && !defined(__CYGWIN__)
 
           {
@@ -886,11 +896,7 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
 #endif
           pos = p;
           if (contains_wchar(pos, end-pos)) {
-            GO_HOME;
-            FORWD(end - str, str);
-            ERASE(prompt_length);
-            GO_HOME;
-            FORWD(normalize_pos(pos - str, str), str);
+            FORWD(normalize_pos(end - pos, pos), pos);
           } else {
             FORWD(n, pos);
           }
