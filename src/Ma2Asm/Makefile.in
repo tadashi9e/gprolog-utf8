@@ -1,0 +1,89 @@
+GPLC   = @GPLC@
+CC     = @CC@ @CFLAGS_MACHINE@
+CFLAGS = @CFLAGS@
+LDLIBS = @LDLIBS@
+
+all: ma2asm@EXE_SUFFIX@
+
+ma_parser@OBJ_SUFFIX@: ma_parser.c ma_parser.h ma_protos.h
+	$(CC) $(CFLAGS) -c ma_parser.c
+
+ma2asm@OBJ_SUFFIX@: ma2asm.c ma_protos.h ma_parser.h ../Wam2Ma/bt_string.c \
+          ../TopComp/copying.c
+	$(CC) $(CFLAGS) -c ma2asm.c
+
+ma2asm_inst@OBJ_SUFFIX@: ma2asm_inst.c ma_parser.h ../EnginePl/wam_regs.h \
+               ix86_any.c powerpc_any.c sparc_any.c sparc64_any.c \
+               mips_irix.c alpha_any.c x86_64_any.c
+	$(CC) $(CFLAGS) -c ma2asm_inst.c
+
+ma2asm@EXE_SUFFIX@: ma2asm@OBJ_SUFFIX@ ma_parser@OBJ_SUFFIX@ \
+                    ma2asm_inst@OBJ_SUFFIX@ ma2asm_inst.c
+	$(CC) $(CFLAGS) @CC_EXE_NAME_OPT@ma2asm@EXE_SUFFIX@ ma2asm@OBJ_SUFFIX@ ma2asm_inst@OBJ_SUFFIX@ ma_parser@OBJ_SUFFIX@
+
+
+clean:
+	rm -f *@OBJ_SUFFIX@ *.ilk *.pdb *.pch *.idb *.exp ma2asm@EXE_SUFFIX@
+
+
+distclean: clean clean-chkma clean-extract_asm
+
+
+
+# for extract_asm
+
+extract_asm@EXE_SUFFIX@: extract_asm.c
+	$(CC) $(CFLAGS) @CC_EXE_NAME_OPT@extract_asm@EXE_SUFFIX@ extract_asm.c
+
+clean-extract_asm:
+	rm -f extract_asm@EXE_SUFFIX@
+
+
+check: chkma@EXE_SUFFIX@
+	@./chkma@EXE_SUFFIX@
+
+clean-check: clean-chkma
+
+
+
+# for chkma
+CHKMA_OBJS=chkma@OBJ_SUFFIX@ chkma_ma@OBJ_SUFFIX@ ../EnginePl/engine1@OBJ_SUFFIX@
+
+# use make FC=Y chkma to generate an fc check
+ 
+chkma@OBJ_SUFFIX@: chkma.c ../EnginePl/engine.c
+	if [ "$$FC" = "Y" ]; then FCFLAGS='-DFAST'; fi; \
+	$(GPLC) --c-compiler "$(CC)" -C "$(CFLAGS) $$FCFLAGS" -c chkma.c
+
+chkma_ma@ASM_SUFFIX@: chkma_ma.ma ma2asm@EXE_SUFFIX@
+	if [ "$$FC" != "Y" ]; then MAFLAGS='--ignore-fast'; fi; \
+	./ma2asm --comment $$MAFLAGS chkma_ma.ma
+
+chkma_ma@OBJ_SUFFIX@: chkma_ma@ASM_SUFFIX@
+	$(GPLC) -c chkma_ma@ASM_SUFFIX@
+
+chkma@EXE_SUFFIX@: $(CHKMA_OBJS)
+	$(GPLC) -o chkma@EXE_SUFFIX@ $(CHKMA_OBJS) --no-pl-lib
+
+clean-chkma:
+	rm -f chkma@OBJ_SUFFIX@ chkma_ma@ASM_SUFFIX@ chkma_ma@OBJ_SUFFIX@ chkma@EXE_SUFFIX@
+
+
+
+# for test
+
+t.wam: t.pl
+	$(GPLC) -W t.pl
+
+t.ma: t.wam
+	$(GPLC) -M --comment t.wam
+
+t@ASM_SUFFIX@: t.ma
+	$(GPLC) -S --comment t.ma
+
+t@EXE_SUFFIX@: t@ASM_SUFFIX@
+	$(GPLC) -o t@EXE_SUFFIX@ t@ASM_SUFFIX@  --no-fd-lib
+
+
+
+

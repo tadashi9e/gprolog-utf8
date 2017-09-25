@@ -1,0 +1,90 @@
+% compiler: GNU Prolog 1.4.5
+% file    : oper.pl
+
+
+file_name('/home/diaz/GP/src/BipsPl/oper.pl').
+
+
+predicate('$use_oper'/0,41,static,private,monofile,built_in,[
+    proceed]).
+
+
+predicate(op/3,43,static,private,monofile,built_in,[
+    allocate(3),
+    get_variable(y(0),0),
+    get_variable(y(1),1),
+    get_variable(y(2),2),
+    call_c('Pl_Set_Bip_Name_Untagged_2',[by_value],[op,3]),
+    put_value(y(2),0),
+    call('$check_atom_or_atom_list'/1),
+    put_value(y(2),0),
+    put_value(y(0),1),
+    put_value(y(1),2),
+    deallocate,
+    execute('$op/3_$aux1'/3)]).
+
+
+predicate('$op/3_$aux1'/3,43,static,private,monofile,local,[
+    pragma_arity(4),
+    get_current_choice(x(3)),
+    try_me_else(1),
+    get_variable(x(4),2),
+    get_variable(x(2),0),
+    call_c('Pl_Blt_Atom',[fast_call,boolean],[x(2)]),
+    cut(x(3)),
+    put_value(x(1),0),
+    put_value(x(4),1),
+    execute('$op2'/3),
+
+label(1),
+    trust_me_else_fail,
+    get_variable(x(3),2),
+    get_variable(x(2),1),
+    put_value(x(3),1),
+    execute('$op1'/3)]).
+
+
+predicate('$op1'/3,52,static,private,monofile,built_in,[
+    switch_on_term(1,2,fail,4,fail),
+
+label(1),
+    try_me_else(3),
+
+label(2),
+    get_nil(0),
+    proceed,
+
+label(3),
+    trust_me_else_fail,
+
+label(4),
+    allocate(3),
+    get_variable(y(1),1),
+    get_variable(y(2),2),
+    get_list(0),
+    unify_variable(x(2)),
+    unify_variable(y(0)),
+    put_value(y(2),0),
+    put_value(y(1),1),
+    call('$op2'/3),
+    put_value(y(0),0),
+    put_value(y(1),1),
+    put_value(y(2),2),
+    deallocate,
+    execute('$op1'/3)]).
+
+
+predicate('$op2'/3,59,static,private,monofile,built_in,[
+    call_c('Pl_Op_3',[],[x(0),x(1),x(2)]),
+    proceed]).
+
+
+predicate(current_op/3,65,static,private,monofile,built_in,[
+    call_c('Pl_Set_Bip_Name_Untagged_2',[by_value],[current_op,3]),
+    call_c('Pl_Current_Op_3',[boolean],[x(0),x(1),x(2)]),
+    proceed]).
+
+
+predicate('$current_op_alt'/0,70,static,private,monofile,built_in,[
+    call_c('Pl_Current_Op_Alt_0',[boolean],[]),
+    proceed]).
