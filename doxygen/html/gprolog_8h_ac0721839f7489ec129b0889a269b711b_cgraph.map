@@ -1,0 +1,8 @@
+<map id="Pl_Query_Next_Solution" name="Pl_Query_Next_Solution">
+<area shape="rect" id="node2" href="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907" title="Pl_Fatal_Error" alt="" coords="251,5,356,32"/>
+<area shape="rect" id="node3" href="$engine_8c.html#a0de468a80fd359dfd002a82936418292" title="Pl_Call_Prolog_Next_Sol" alt="" coords="219,56,388,83"/>
+<area shape="rect" id="node4" href="$engine_8c.html#accfe7947a971f240bf7b8b2bedc59e29" title="Call_Prolog_Fail" alt="" coords="451,5,568,32"/>
+<area shape="rect" id="node5" href="$engine_8c.html#ae7d5f8d0ac490ede3fcb48af7cceec55" title="Call_Prolog_Success" alt="" coords="436,56,583,83"/>
+<area shape="rect" id="node6" href="$engine_8c.html#a5f34f0c2b928a4bfe7057ced6cd446c8" title="Call_Next" alt="" coords="469,107,549,133"/>
+<area shape="rect" id="node7" href="$engine_8c.html#a598600283dd767c2b3d11e798384023c" title="Pl_Call_Compiled" alt="" coords="631,107,757,133"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="StartWinMain" name="StartWinMain">
+<area shape="rect" id="node2" href="$w32__console_8c.html#a3e359465ba75ec15014d5af9c09d3db9" title="CallMain" alt="" coords="155,5,228,32"/>
+<area shape="rect" id="node3" href="$w32__console_8c.html#a4df61e90931602252f4bd1addb17902f" title="W32GC_Start_Window" alt="" coords="276,5,435,32"/>
+<area shape="rect" id="node4" href="$w32gc__interf_8c.html#a9bbe083e9a45c3fda6abf2737bebc2ad" title="__declspec" alt="" coords="483,5,571,32"/>
+</map>

@@ -1,0 +1,33 @@
+<map id="Pl_Un_Integer_Check" name="Pl_Un_Integer_Check">
+<area shape="rect" id="node2" href="$fd__infos__c_8c.html#ac36ef27bfee174f9d1a151dfccf1d975" title="Pl_Fd_Vector_Max_1" alt="" coords="223,5,370,32"/>
+<area shape="rect" id="node3" href="$fd__infos__c_8c.html#afedac0242503ae15b2c89caa2c2e33b0" title="Pl_Fd_Max_Integer_1" alt="" coords="222,56,371,83"/>
+<area shape="rect" id="node4" href="$fd__infos__c_8c.html#a55c6e4732dcc7c02bbc681f958d05df9" title="Pl_Fd_Min_2" alt="" coords="247,107,346,133"/>
+<area shape="rect" id="node5" href="$fd__infos__c_8c.html#a768c3d5533fcf158c328b512dbece248" title="Pl_Fd_Max_2" alt="" coords="245,157,348,184"/>
+<area shape="rect" id="node6" href="$fd__infos__c_8c.html#a55dfc22514ea43a923c517675c7b61c1" title="Pl_Fd_Size_2" alt="" coords="245,208,348,235"/>
+<area shape="rect" id="node7" href="$error__supp_8c.html#a75a8763a198dd8a86eb3ab789fe7193c" title="Pl_Current_Bip_Name_2" alt="" coords="213,259,380,285"/>
+<area shape="rect" id="node8" href="$flag__c_8c.html#a6ad05ff788a54e9ef1dfb9f4d26e84c1" title="Pl_Argument_Counter_1" alt="" coords="215,309,379,336"/>
+<area shape="rect" id="node9" href="$os__interf__c_8c.html#a3f66e69a6e33bc97567b2cb9b3875d3b" title="Pl_Prolog_Pid_1" alt="" coords="237,360,356,387"/>
+<area shape="rect" id="node10" href="$pred__c_8c.html#a3ef58576cb838c67c3a49506fb64503b" title="Pl_Pred_Prop_Prolog\l_Line_3" alt="" coords="223,411,370,453"/>
+<area shape="rect" id="node11" href="$pred__c_8c.html#aedc71c481f3027bc3c62538eba50c034" title="Pl_Get_Predicate_File\l_Info_3" alt="" coords="221,477,373,518"/>
+<area shape="rect" id="node12" href="$pred__c_8c.html#a92ad169cc36094af38731f5f54522866" title="Pl_Father_Of_Aux_Name_3" alt="" coords="204,543,389,569"/>
+<area shape="rect" id="node13" href="$pred__c_8c.html#a1ab792a2bb64ef9bc2dce73d1c25d350" title="Pl_Pred_Without_Aux_4" alt="" coords="215,593,379,620"/>
+<area shape="rect" id="node14" href="$pretty__c_8c.html#a4be5ad090edc9bd9c38cff837b2165dc" title="Pl_Bind_Variables_4" alt="" coords="225,644,368,671"/>
+<area shape="rect" id="node15" href="$read__c_8c.html#a80c30280cb49b45006fa7818cc23f3a0" title="Pl_Last_Read_Start\l_Line_Column_2" alt="" coords="227,695,366,737"/>
+<area shape="rect" id="node16" href="$stat__c_8c.html#a31dd8b256e9eeead99b284ed63b00f5e" title="Pl_Statistics_User\l_Time_2" alt="" coords="231,761,362,802"/>
+<area shape="rect" id="node17" href="$stat__c_8c.html#a4f891eabace53eb4e94ea9169876ad53" title="Pl_Statistics_System\l_Time_2" alt="" coords="223,826,371,867"/>
+<area shape="rect" id="node18" href="$stat__c_8c.html#a3eeb78e65b2f48b2b312dc3a4fef60c4" title="Pl_Statistics_Cpu_Time_2" alt="" coords="208,892,385,919"/>
+<area shape="rect" id="node19" href="$stat__c_8c.html#a277189d0a636e952c60f12e51247097c" title="Pl_Statistics_Real\l_Time_2" alt="" coords="231,943,362,985"/>
+<area shape="rect" id="node20" href="$stat__c_8c.html#a3e68a8313e94fe52bad8685aa043d00a" title="Pl_Statistics_Local\l_Stack_2" alt="" coords="229,1009,364,1050"/>
+<area shape="rect" id="node21" href="$stat__c_8c.html#a6b8f5db640099bf819d980ca579282a5" title="Pl_Statistics_Global\l_Stack_2" alt="" coords="227,1074,367,1115"/>
+<area shape="rect" id="node22" href="$stat__c_8c.html#accf11520ef5ad301c8a2abcbe3a4d0a0" title="Pl_Statistics_Trail\l_Stack_2" alt="" coords="233,1139,361,1181"/>
+<area shape="rect" id="node23" href="$stat__c_8c.html#a6510983acb8cce07f69f6f5b15001fa5" title="Pl_Statistics_Cstr\l_Stack_2" alt="" coords="233,1205,361,1246"/>
+<area shape="rect" id="node24" href="$stat__c_8c.html#af83cd76463ab7672d40f1d9e76a7401a" title="Pl_Statistics_Atoms_2" alt="" coords="219,1271,374,1297"/>
+<area shape="rect" id="node25" href="$stat__c_8c.html#a70f11660e3724ecdaec39a13370c1e39" title="Pl_User_Time_1" alt="" coords="237,1321,356,1348"/>
+<area shape="rect" id="node26" href="$stat__c_8c.html#ad09f286fa8336a8ac65ffab3298e801c" title="Pl_System_Time_1" alt="" coords="229,1372,365,1399"/>
+<area shape="rect" id="node27" href="$stat__c_8c.html#ae151a14569d7fb2105a557689b0188d1" title="Pl_Cpu_Time_1" alt="" coords="239,1423,354,1449"/>
+<area shape="rect" id="node28" href="$stat__c_8c.html#ae7865ed4c6ebc4926d0b57663e352f8e" title="Pl_Real_Time_1" alt="" coords="237,1473,356,1500"/>
+<area shape="rect" id="node29" href="$stream__c_8c.html#a3e5ab2e50e18c0af5476e713b6122a9f" title="Pl_Character_Count_2" alt="" coords="219,1524,374,1551"/>
+<area shape="rect" id="node30" href="$stream__c_8c.html#a4ded2fa252b6333eb74ff3970de3c65a" title="Pl_Line_Count_2" alt="" coords="236,1575,357,1601"/>
+<area shape="rect" id="node31" href="$stream__c_8c.html#afc30783319e1cf6d6b5ab6762169ea66" title="Pl_Line_Position_2" alt="" coords="230,1625,363,1652"/>
+<area shape="rect" id="node32" href="$stream__c_8c.html#a03420885bcd36700b66847b0ad3d81b1" title="Pl_Stream_Line_Column_3" alt="" coords="207,1676,387,1703"/>
+</map>

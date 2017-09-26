@@ -1,0 +1,10 @@
+<map id="Pl_Execute_Directive" name="Pl_Execute_Directive">
+<area shape="rect" id="node2" href="$engine_8c.html#a3cc65f95d082c9905c9eaf0821ace5a6" title="Pl_Reset_Prolog" alt="" coords="201,69,321,96"/>
+<area shape="rect" id="node6" href="$engine_8c.html#a837196745e0fb6af03ee5e5d062e1087" title="Pl_Call_Prolog" alt="" coords="207,145,315,172"/>
+<area shape="rect" id="node3" href="$wam__inst_8c.html#a482d0f0a0b2ac53fc463aaa753ce071e" title="Pl_Create_Choice_Point" alt="" coords="369,5,535,32"/>
+<area shape="rect" id="node4" href="$engine_8c.html#accfe7947a971f240bf7b8b2bedc59e29" title="Call_Prolog_Fail" alt="" coords="393,107,511,133"/>
+<area shape="rect" id="node5" href="$if__no__fd_8c.html#af9ad0d76d0a941dd34530d628ec61eb0" title="Pl_Fd_Reset_Solver" alt="" coords="381,56,523,83"/>
+<area shape="rect" id="node7" href="$engine_8c.html#ae7d5f8d0ac490ede3fcb48af7cceec55" title="Call_Prolog_Success" alt="" coords="379,157,525,184"/>
+<area shape="rect" id="node8" href="$engine_8c.html#a5f34f0c2b928a4bfe7057ced6cd446c8" title="Call_Next" alt="" coords="412,208,492,235"/>
+<area shape="rect" id="node9" href="$engine_8c.html#a598600283dd767c2b3d11e798384023c" title="Pl_Call_Compiled" alt="" coords="583,208,709,235"/>
+</map>

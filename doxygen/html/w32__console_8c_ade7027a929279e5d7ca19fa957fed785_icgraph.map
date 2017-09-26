@@ -1,0 +1,8 @@
+<map id="W32GC_Confirm_Box" name="W32GC_Confirm_Box">
+<area shape="rect" id="node2" href="$w32__console_8c.html#ab023aa0285ba796fb7809eed2e6cdbe1" title="MainWndProc" alt="" coords="205,5,309,32"/>
+<area shape="rect" id="node3" href="$w32__console_8c.html#aea7abcb71562352e8ff9c3efd95c505b" title="InitApplication" alt="" coords="357,5,461,32"/>
+<area shape="rect" id="node4" href="$w32__console_8c.html#a2363368e7d52d5df8c4f20cb13283faa" title="StartWinMain" alt="" coords="509,5,611,32"/>
+<area shape="rect" id="node5" href="$w32__console_8c.html#a3e359465ba75ec15014d5af9c09d3db9" title="CallMain" alt="" coords="659,5,732,32"/>
+<area shape="rect" id="node6" href="$w32__console_8c.html#a4df61e90931602252f4bd1addb17902f" title="W32GC_Start_Window" alt="" coords="780,5,939,32"/>
+<area shape="rect" id="node7" href="$w32gc__interf_8c.html#a9bbe083e9a45c3fda6abf2737bebc2ad" title="__declspec" alt="" coords="987,5,1075,32"/>
+</map>

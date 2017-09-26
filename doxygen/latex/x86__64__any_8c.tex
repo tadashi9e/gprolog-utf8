@@ -1,0 +1,1300 @@
+\hypertarget{x86__64__any_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Ma2\+Asm/x86\+\_\+64\+\_\+any.c File Reference}
+\label{x86__64__any_8c}\index{gprolog-\/utf8-\/tree/src/\+Ma2\+Asm/x86\+\_\+64\+\_\+any.\+c@{gprolog-\/utf8-\/tree/src/\+Ma2\+Asm/x86\+\_\+64\+\_\+any.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$limits.\+h$>$}\\*
+Include dependency graph for x86\+\_\+64\+\_\+any.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{x86__64__any_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{x86__64__any_8c_a8c720c54e6ab91f424d665c5b37f1d6b}{S\+T\+R\+I\+N\+G\+\_\+\+P\+R\+E\+F\+IX}~\char`\"{}.LC\char`\"{}
+\item 
+\#define \hyperlink{x86__64__any_8c_ada9a77874dedbeffc497d6eeed5e0d8d}{D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+F\+IX}~\char`\"{}.L\+CD\char`\"{}
+\item 
+\#define \hyperlink{x86__64__any_8c_ac207b6eba0ba8876d0c7e1c65028cc3b}{UN}
+\item 
+\#define \hyperlink{x86__64__any_8c_abb6e60781697a0b28c8b22c59d0553f1}{C\+O\+N\+T\+\_\+\+L\+A\+B\+E\+L\+\_\+\+F\+MT}~\char`\"{}.Lcont\%\hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d}\char`\"{}
+\item 
+\#define \hyperlink{x86__64__any_8c_adb2bc22cce7596e0b93396df5cddae75}{M\+A\+X\+\_\+\+C\+\_\+\+A\+R\+G\+S\+\_\+\+I\+N\+\_\+\+C\+\_\+\+C\+O\+DE}~32 /$\ast$ must be a multiple of 2 $\ast$/
+\item 
+\#define \hyperlink{x86__64__any_8c_a681877fa8c8e5140125803f87afd7e82}{R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+P\+A\+CE}~\hyperlink{x86__64__any_8c_adb2bc22cce7596e0b93396df5cddae75}{M\+A\+X\+\_\+\+C\+\_\+\+A\+R\+G\+S\+\_\+\+I\+N\+\_\+\+C\+\_\+\+C\+O\+DE} $\ast$ 8
+\item 
+\#define \hyperlink{x86__64__any_8c_a32573baa313a96b77a0e07847900a4f7}{M\+A\+X\+\_\+\+D\+O\+U\+B\+L\+E\+S\+\_\+\+I\+N\+\_\+\+P\+R\+ED}~2048
+\item 
+\#define \hyperlink{x86__64__any_8c_a557323e852de6631ae631e874139066b}{M\+A\+X\+\_\+\+G\+P\+R\+\_\+\+A\+R\+GS}~6
+\item 
+\#define \hyperlink{x86__64__any_8c_abcb4f8ecb60ad4d83ff292942a905810}{M\+A\+X\+\_\+\+F\+P\+R\+\_\+\+A\+R\+GS}~8
+\item 
+\#define \hyperlink{x86__64__any_8c_a1b3b1b3e69e66914b7bf3fe9919380b1}{L\+I\+T\+T\+L\+E\+\_\+\+I\+NT}(X)~((X) $>$= I\+N\+T\+\_\+\+M\+IN \&\& (X) $<$= I\+N\+T\+\_\+\+M\+AX)
+\item 
+\#define \hyperlink{x86__64__any_8c_a808a2b40bb071c7adafdbcde40fa75be}{A\+S\+M\+\_\+\+R\+E\+G\+\_\+\+B\+A\+NK}~\char`\"{}\%r12\char`\"{}
+\item 
+\#define \hyperlink{x86__64__any_8c_accadab798a3097e17efea4945d477e54}{B\+E\+F\+O\+R\+E\+\_\+\+A\+RG}
+\item 
+\#define \hyperlink{x86__64__any_8c_ad8291d59fd3d8152b17e8923fb829981}{B\+E\+F\+O\+R\+E\+\_\+\+F\+P\+R\+\_\+\+A\+RG}
+\item 
+\#define \hyperlink{x86__64__any_8c_ade7cf776fdfaa125eb9b94061672bc40}{A\+F\+T\+E\+R\+\_\+\+A\+RG}~\}
+\item 
+\#define \hyperlink{x86__64__any_8c_ac28683ced1fb7bf8baff930dc14ada68}{A\+F\+T\+E\+R\+\_\+\+F\+P\+R\+\_\+\+A\+RG}~\}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static char $\ast$ \hyperlink{x86__64__any_8c_aab686898f03d34812752021cc286a934}{Off\+\_\+\+Reg\+\_\+\+Bank} (int offset)
+\item 
+void \hyperlink{x86__64__any_8c_ac7bdb0538e4f03ec069405cf88f1de4f}{Asm\+\_\+\+Start} (void)
+\item 
+void \hyperlink{x86__64__any_8c_a1ccda0b345383d8f415326878884a88c}{Asm\+\_\+\+Stop} (void)
+\item 
+void \hyperlink{x86__64__any_8c_a0c77cb830e2b388fcc1fb5322d5c3f13}{Code\+\_\+\+Start} (char $\ast$\hyperlink{asm__inst_8c_a2578bd67218e5f687fa6fce922a3e94a}{label}, int prolog, int global)
+\item 
+void \hyperlink{x86__64__any_8c_a44cf6322f99a0cd1547a49d3b55a8e8f}{Code\+\_\+\+Stop} (void)
+\item 
+void \hyperlink{x86__64__any_8c_a403d2e1c401f1ee3f0e08eea47524291}{Label} (char $\ast$\hyperlink{asm__inst_8c_a2578bd67218e5f687fa6fce922a3e94a}{label})
+\item 
+void \hyperlink{x86__64__any_8c_a53bd6fca87a2fd6ae394bd63c5689edf}{Reload\+\_\+\+E\+\_\+\+In\+\_\+\+Register} (void)
+\item 
+void \hyperlink{x86__64__any_8c_a5e5e17240bceefba89b5231952d11dcc}{Pl\+\_\+\+Jump} (char $\ast$\hyperlink{asm__inst_8c_a2578bd67218e5f687fa6fce922a3e94a}{label})
+\item 
+void \hyperlink{x86__64__any_8c_ac10bb2c52ddcf17419fddeddb95e9715}{Prep\+\_\+\+CP} (void)
+\item 
+void \hyperlink{x86__64__any_8c_a3d367a905c1c3e8f29b268511c43462b}{Here\+\_\+\+CP} (void)
+\item 
+void \hyperlink{x86__64__any_8c_ac518d1a29c3015b3aec79cfa4300c362}{Pl\+\_\+\+Call} (char $\ast$\hyperlink{asm__inst_8c_a2578bd67218e5f687fa6fce922a3e94a}{label})
+\item 
+void \hyperlink{x86__64__any_8c_aa0fe7f41cd1793244610e87d597040f6}{Pl\+\_\+\+Fail} (void)
+\item 
+void \hyperlink{x86__64__any_8c_a35f4c7f6dc292d72dd13b600d49c10e6}{Pl\+\_\+\+Ret} (void)
+\item 
+void \hyperlink{x86__64__any_8c_a5e0ace1e7130bd0ab39aff3803d03614}{Jump} (char $\ast$\hyperlink{asm__inst_8c_a2578bd67218e5f687fa6fce922a3e94a}{label})
+\item 
+void \hyperlink{x86__64__any_8c_a26b1354d98d85d34703d36af84a2fa7f}{Move\+\_\+\+From\+\_\+\+Reg\+\_\+X} (int index)
+\item 
+void \hyperlink{x86__64__any_8c_af58d895acfbf04e780eee5aa19d0ebd1}{Move\+\_\+\+From\+\_\+\+Reg\+\_\+Y} (int index)
+\item 
+void \hyperlink{x86__64__any_8c_af7adcc007169701f8e570e632559068f}{Move\+\_\+\+To\+\_\+\+Reg\+\_\+X} (int index)
+\item 
+void \hyperlink{x86__64__any_8c_a8dac9698ed961dd1619389ca09a5b0e4}{Move\+\_\+\+To\+\_\+\+Reg\+\_\+Y} (int index)
+\item 
+void \hyperlink{x86__64__any_8c_abed8844e5eb90398ed7d4e5ac92c96b4}{Call\+\_\+\+C\+\_\+\+Start} (char $\ast$\hyperlink{ma__parser_8c_ab87417d41e32059160c929d9fcf35365}{fct\+\_\+name}, int \hyperlink{ma__parser_8c_a78ccac598d091a161e6c2cb79411d8a2}{fc}, int \hyperlink{ma__parser_8c_abd4fd2dc8f31e9ec3b584efb645a456c}{nb\+\_\+args}, int \hyperlink{ma__parser_8c_a0a03c53bf7936e1f9417529c3493f6e9}{nb\+\_\+args\+\_\+in\+\_\+words}, char $\ast$$\ast$p\+\_\+inline)
+\item 
+int \hyperlink{x86__64__any_8c_a46b3150c744d1824cd10a2c6192d79cf}{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Int} (int offset, \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{wam__parser_8c_a6670ca905853ba21a62ce8d56a5142af}{int\+\_\+val})
+\item 
+int \hyperlink{x86__64__any_8c_a11185a9323ed03538b4967da01b3c5fd}{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Double} (int offset, double \hyperlink{wam__parser_8c_afa9ef2c0903ac85d9d829215999eaab8}{dbl\+\_\+val})
+\item 
+int \hyperlink{x86__64__any_8c_a48c333fd83686535d30e1577e7368134}{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+String} (int offset, int str\+\_\+no)
+\item 
+int \hyperlink{x86__64__any_8c_a964a096b28818e43f7e51dd5dd6f76f0}{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Mem\+\_\+L} (int offset, int adr\+\_\+of, char $\ast$\hyperlink{test__oc__defs_8h_abc1e86d7c344fe34ff09e72d4595ab7e}{name}, int index)
+\item 
+int \hyperlink{x86__64__any_8c_a2f2f15033fa151bd5b50ea330c95606f}{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Reg\+\_\+X} (int offset, int adr\+\_\+of, int index)
+\item 
+int \hyperlink{x86__64__any_8c_a9336ef2973a657cc4140763f6bca9b55}{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Reg\+\_\+Y} (int offset, int adr\+\_\+of, int index)
+\item 
+int \hyperlink{x86__64__any_8c_a44157a3aa7743bec9bd4c63203183253}{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Foreign\+\_\+L} (int offset, int adr\+\_\+of, int index)
+\item 
+int \hyperlink{x86__64__any_8c_a74eac647b8a008ece21cc0eeffe98ef5}{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Foreign\+\_\+D} (int offset, int adr\+\_\+of, int index)
+\item 
+void \hyperlink{x86__64__any_8c_a2a51a2665032be2de205e9bd9616f5bc}{Call\+\_\+\+C\+\_\+\+Invoke} (char $\ast$\hyperlink{ma__parser_8c_ab87417d41e32059160c929d9fcf35365}{fct\+\_\+name}, int \hyperlink{ma__parser_8c_a78ccac598d091a161e6c2cb79411d8a2}{fc}, int \hyperlink{ma__parser_8c_abd4fd2dc8f31e9ec3b584efb645a456c}{nb\+\_\+args}, int \hyperlink{ma__parser_8c_a0a03c53bf7936e1f9417529c3493f6e9}{nb\+\_\+args\+\_\+in\+\_\+words})
+\item 
+void \hyperlink{x86__64__any_8c_a27c073c1d4bfbaaec2dd6e47933bfea0}{Call\+\_\+\+C\+\_\+\+Stop} (char $\ast$\hyperlink{ma__parser_8c_ab87417d41e32059160c929d9fcf35365}{fct\+\_\+name}, int \hyperlink{ma__parser_8c_abd4fd2dc8f31e9ec3b584efb645a456c}{nb\+\_\+args}, char $\ast$$\ast$p\+\_\+inline)
+\item 
+void \hyperlink{x86__64__any_8c_a5b2d1ff8df86ea05b138d4fc226992e2}{Jump\+\_\+\+Ret} (void)
+\item 
+void \hyperlink{x86__64__any_8c_a931e4167eb65f76e8cffcd63c1404fa6}{Fail\+\_\+\+Ret} (void)
+\item 
+void \hyperlink{x86__64__any_8c_af58bf1aee8b9f42dedb80793943ab739}{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Mem\+\_\+L} (char $\ast$\hyperlink{test__oc__defs_8h_abc1e86d7c344fe34ff09e72d4595ab7e}{name}, int index)
+\item 
+void \hyperlink{x86__64__any_8c_a4fd1cd87c4569f850eb69124553ad1c9}{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Reg\+\_\+X} (int index)
+\item 
+void \hyperlink{x86__64__any_8c_a37f9d9f4b7eb11439b9beb940a5e676b}{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Reg\+\_\+Y} (int index)
+\item 
+void \hyperlink{x86__64__any_8c_a37323d79308784cb6bfa02eb3bffa5cd}{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Foreign\+\_\+L} (int index)
+\item 
+void \hyperlink{x86__64__any_8c_ae6a5584e8dfe8bc0f63859d1f33febda}{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Foreign\+\_\+D} (int index)
+\item 
+void \hyperlink{x86__64__any_8c_a1ffc91a7b44d25369f51bbaa3dc38f50}{Cmp\+\_\+\+Ret\+\_\+\+And\+\_\+\+Int} (\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{wam__parser_8c_a6670ca905853ba21a62ce8d56a5142af}{int\+\_\+val})
+\item 
+void \hyperlink{x86__64__any_8c_a03b5c60f9fcfa76f9de0046b8d568393}{Jump\+\_\+\+If\+\_\+\+Equal} (char $\ast$\hyperlink{asm__inst_8c_a2578bd67218e5f687fa6fce922a3e94a}{label})
+\item 
+void \hyperlink{x86__64__any_8c_ad36811c58a29aee0cc50ac87a3d9898c}{Jump\+\_\+\+If\+\_\+\+Greater} (char $\ast$\hyperlink{asm__inst_8c_a2578bd67218e5f687fa6fce922a3e94a}{label})
+\item 
+void \hyperlink{x86__64__any_8c_a992e1b5ed98586ba9c7577938f82eb60}{C\+\_\+\+Ret} (void)
+\item 
+void \hyperlink{x86__64__any_8c_a61198dec9eb0ba55cbe3479d85005e11}{Dico\+\_\+\+String\+\_\+\+Start} (int nb\+\_\+consts)
+\item 
+void \hyperlink{x86__64__any_8c_aa7f03f1ca3caa593971f2ae995715087}{Dico\+\_\+\+String} (int str\+\_\+no, char $\ast$asciiz)
+\item 
+void \hyperlink{x86__64__any_8c_ad2037dcc047c833a06d9c46b492db605}{Dico\+\_\+\+String\+\_\+\+Stop} (int nb\+\_\+consts)
+\item 
+void \hyperlink{x86__64__any_8c_a2771ed6bb9346a731160e143956db155}{Dico\+\_\+\+Long\+\_\+\+Start} (int nb\+\_\+longs)
+\item 
+void \hyperlink{x86__64__any_8c_a0c1626087462615c013827c662cb8214}{Dico\+\_\+\+Long} (char $\ast$\hyperlink{test__oc__defs_8h_abc1e86d7c344fe34ff09e72d4595ab7e}{name}, int global, \hyperlink{ma__parser_8h_a28a778aedb7441c6b9755e1882b58dc9}{V\+Type} vtype, \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} value)
+\item 
+void \hyperlink{x86__64__any_8c_ad2ae966bb58734e4908970a7598f5d2b}{Dico\+\_\+\+Long\+\_\+\+Stop} (int nb\+\_\+longs)
+\item 
+void \hyperlink{x86__64__any_8c_a054569cf4a25e8647de1bd86282a9efa}{Data\+\_\+\+Start} (char $\ast$\hyperlink{asm__inst_8c_a63c4dec3dbc86e19c52ddd516ddb7388}{initializer\+\_\+fct})
+\item 
+void \hyperlink{x86__64__any_8c_a2da9236f4909e45dcb96b2b216067d55}{Data\+\_\+\+Stop} (char $\ast$\hyperlink{asm__inst_8c_a63c4dec3dbc86e19c52ddd516ddb7388}{initializer\+\_\+fct})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{x86__64__any_8c_a2565edc60623a47babfa4ad73627ab03}{dbl\+\_\+tbl} \mbox{[}\hyperlink{x86__64__any_8c_a32573baa313a96b77a0e07847900a4f7}{M\+A\+X\+\_\+\+D\+O\+U\+B\+L\+E\+S\+\_\+\+I\+N\+\_\+\+P\+R\+ED}\mbox{]}
+\item 
+static int \hyperlink{x86__64__any_8c_a64bc3c328bd0d633d2775feaeface8c1}{nb\+\_\+dbl} = 0
+\item 
+static int \hyperlink{x86__64__any_8c_a3982f9e7f14aadf685ca83210803b58c}{dbl\+\_\+lc\+\_\+no} = 0
+\item 
+char \hyperlink{x86__64__any_8c_a8c994d29567e65fdad047cc190540899}{asm\+\_\+reg\+\_\+e} \mbox{[}20\mbox{]}
+\item 
+char \hyperlink{x86__64__any_8c_a3cfecb9c7eeaa4972507a3e30d95d683}{asm\+\_\+reg\+\_\+b} \mbox{[}20\mbox{]}
+\item 
+char \hyperlink{x86__64__any_8c_a50ef11b50838a44a931d8e559774a20d}{asm\+\_\+reg\+\_\+cp} \mbox{[}20\mbox{]}
+\item 
+int \hyperlink{x86__64__any_8c_a923d50f1e7153e69fa539c81d7113c68}{w\+\_\+label} = 0
+\item 
+static int \hyperlink{x86__64__any_8c_a2f2e6c469e9a6d5db17658bb7ad15da3}{gpr\+\_\+arg\+\_\+no}
+\item 
+static const char $\ast$ \hyperlink{x86__64__any_8c_a0f3d800ba00f089e57e4a42b4c7fda1d}{gpr\+\_\+arg} \mbox{[}\hyperlink{x86__64__any_8c_a557323e852de6631ae631e874139066b}{M\+A\+X\+\_\+\+G\+P\+R\+\_\+\+A\+R\+GS}\mbox{]}
+\item 
+static int \hyperlink{x86__64__any_8c_a926822bcd97234b23c6645373d11c69e}{fpr\+\_\+arg\+\_\+no}
+\item 
+static const char $\ast$ \hyperlink{x86__64__any_8c_a434da0119c6849819f203dcfe05efddb}{fpr\+\_\+arg} \mbox{[}\hyperlink{x86__64__any_8c_abcb4f8ecb60ad4d83ff292942a905810}{M\+A\+X\+\_\+\+F\+P\+R\+\_\+\+A\+R\+GS}\mbox{]}
+\item 
+int \hyperlink{x86__64__any_8c_a8f09d598648ca00c8bb7a5abd49a7476}{can\+\_\+produce\+\_\+pic\+\_\+code} = 1
+\item 
+char $\ast$ \hyperlink{x86__64__any_8c_acfd1f9bcf7912123ae1ac953119de6cb}{comment\+\_\+prefix} = \char`\"{}\#\char`\"{}
+\item 
+char $\ast$ \hyperlink{x86__64__any_8c_a9816ee0efa6bde03c3c33c41ea2d84b3}{local\+\_\+symb\+\_\+prefix} = \char`\"{}.L\char`\"{}
+\item 
+int \hyperlink{x86__64__any_8c_a771d075219378951666a9e6e3fe5d5d1}{strings\+\_\+need\+\_\+null} = 0
+\item 
+int \hyperlink{x86__64__any_8c_aab14a7673b7f756e8d608e02e79942b2}{call\+\_\+c\+\_\+reverse\+\_\+args} = 0
+\item 
+char $\ast$ \hyperlink{x86__64__any_8c_a29041d920c64ae96a4854b2ff75ef7f2}{inline\+\_\+asm\+\_\+data} \mbox{[}$\,$\mbox{]} = \{ N\+U\+LL \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!A\+F\+T\+E\+R\+\_\+\+A\+RG@{A\+F\+T\+E\+R\+\_\+\+A\+RG}}
+\index{A\+F\+T\+E\+R\+\_\+\+A\+RG@{A\+F\+T\+E\+R\+\_\+\+A\+RG}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{A\+F\+T\+E\+R\+\_\+\+A\+RG}{AFTER_ARG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+F\+T\+E\+R\+\_\+\+A\+RG~\}}\hypertarget{x86__64__any_8c_ade7cf776fdfaa125eb9b94061672bc40}{}\label{x86__64__any_8c_ade7cf776fdfaa125eb9b94061672bc40}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!A\+F\+T\+E\+R\+\_\+\+F\+P\+R\+\_\+\+A\+RG@{A\+F\+T\+E\+R\+\_\+\+F\+P\+R\+\_\+\+A\+RG}}
+\index{A\+F\+T\+E\+R\+\_\+\+F\+P\+R\+\_\+\+A\+RG@{A\+F\+T\+E\+R\+\_\+\+F\+P\+R\+\_\+\+A\+RG}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{A\+F\+T\+E\+R\+\_\+\+F\+P\+R\+\_\+\+A\+RG}{AFTER_FPR_ARG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+F\+T\+E\+R\+\_\+\+F\+P\+R\+\_\+\+A\+RG~\}}\hypertarget{x86__64__any_8c_ac28683ced1fb7bf8baff930dc14ada68}{}\label{x86__64__any_8c_ac28683ced1fb7bf8baff930dc14ada68}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!A\+S\+M\+\_\+\+R\+E\+G\+\_\+\+B\+A\+NK@{A\+S\+M\+\_\+\+R\+E\+G\+\_\+\+B\+A\+NK}}
+\index{A\+S\+M\+\_\+\+R\+E\+G\+\_\+\+B\+A\+NK@{A\+S\+M\+\_\+\+R\+E\+G\+\_\+\+B\+A\+NK}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{A\+S\+M\+\_\+\+R\+E\+G\+\_\+\+B\+A\+NK}{ASM_REG_BANK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+S\+M\+\_\+\+R\+E\+G\+\_\+\+B\+A\+NK~\char`\"{}\%r12\char`\"{}}\hypertarget{x86__64__any_8c_a808a2b40bb071c7adafdbcde40fa75be}{}\label{x86__64__any_8c_a808a2b40bb071c7adafdbcde40fa75be}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!B\+E\+F\+O\+R\+E\+\_\+\+A\+RG@{B\+E\+F\+O\+R\+E\+\_\+\+A\+RG}}
+\index{B\+E\+F\+O\+R\+E\+\_\+\+A\+RG@{B\+E\+F\+O\+R\+E\+\_\+\+A\+RG}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{B\+E\+F\+O\+R\+E\+\_\+\+A\+RG}{BEFORE_ARG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+E\+F\+O\+R\+E\+\_\+\+A\+RG}\hypertarget{x86__64__any_8c_accadab798a3097e17efea4945d477e54}{}\label{x86__64__any_8c_accadab798a3097e17efea4945d477e54}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                                                       \(\backslash\)
+  char r[10], *r\_aux;                                   \(\backslash\)
+  int r\_eq\_r\_aux = 0;                                   \(\backslash\)
+                                                        \(\backslash\)
+  if (\hyperlink{x86__64__any_8c_a2f2e6c469e9a6d5db17658bb7ad15da3}{gpr\_arg\_no} < \hyperlink{x86__64__any_8c_a557323e852de6631ae631e874139066b}{MAX\_GPR\_ARGS})                        \(\backslash\)
+    \{                                                   \(\backslash\)
+      strcpy(r, \hyperlink{x86__64__any_8c_a0f3d800ba00f089e57e4a42b4c7fda1d}{gpr\_arg}[\hyperlink{x86__64__any_8c_a2f2e6c469e9a6d5db17658bb7ad15da3}{gpr\_arg\_no}++]);                 \(\backslash\)
+      r\_aux = r;                                        \(\backslash\)
+      r\_eq\_r\_aux = 1;                                   \(\backslash\)
+    \}                                                   \(\backslash\)
+  else                                                  \(\backslash\)
+    \{                                                   \(\backslash\)
+      int nwords = offset - \hyperlink{x86__64__any_8c_a2f2e6c469e9a6d5db17658bb7ad15da3}{gpr\_arg\_no} - \hyperlink{x86__64__any_8c_a926822bcd97234b23c6645373d11c69e}{fpr\_arg\_no};    \(\backslash\)
+                                                        \(\backslash\)
+      sprintf(r, \textcolor{stringliteral}{"%d(%%rsp)"}, nwords * 8);              \(\backslash\)
+      r\_aux = \textcolor{stringliteral}{"%rax"};                                   \(\backslash\)
+    \}
+\end{DoxyCode}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!B\+E\+F\+O\+R\+E\+\_\+\+F\+P\+R\+\_\+\+A\+RG@{B\+E\+F\+O\+R\+E\+\_\+\+F\+P\+R\+\_\+\+A\+RG}}
+\index{B\+E\+F\+O\+R\+E\+\_\+\+F\+P\+R\+\_\+\+A\+RG@{B\+E\+F\+O\+R\+E\+\_\+\+F\+P\+R\+\_\+\+A\+RG}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{B\+E\+F\+O\+R\+E\+\_\+\+F\+P\+R\+\_\+\+A\+RG}{BEFORE_FPR_ARG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+E\+F\+O\+R\+E\+\_\+\+F\+P\+R\+\_\+\+A\+RG}\hypertarget{x86__64__any_8c_ad8291d59fd3d8152b17e8923fb829981}{}\label{x86__64__any_8c_ad8291d59fd3d8152b17e8923fb829981}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                                                       \(\backslash\)
+  char r[10], *r\_aux;                                   \(\backslash\)
+  int r\_eq\_r\_aux = 0;                                   \(\backslash\)
+                                                        \(\backslash\)
+  if (\hyperlink{x86__64__any_8c_a926822bcd97234b23c6645373d11c69e}{fpr\_arg\_no} < \hyperlink{x86__64__any_8c_abcb4f8ecb60ad4d83ff292942a905810}{MAX\_FPR\_ARGS})                        \(\backslash\)
+    \{                                                   \(\backslash\)
+      strcpy(r, \hyperlink{x86__64__any_8c_a434da0119c6849819f203dcfe05efddb}{fpr\_arg}[\hyperlink{x86__64__any_8c_a926822bcd97234b23c6645373d11c69e}{fpr\_arg\_no}++]);                 \(\backslash\)
+      r\_aux = r;                                        \(\backslash\)
+      r\_eq\_r\_aux = 1;                                   \(\backslash\)
+    \}                                                   \(\backslash\)
+  else                                                  \(\backslash\)
+    \{                                                   \(\backslash\)
+      int nwords = offset - \hyperlink{x86__64__any_8c_a2f2e6c469e9a6d5db17658bb7ad15da3}{gpr\_arg\_no} - \hyperlink{x86__64__any_8c_a926822bcd97234b23c6645373d11c69e}{fpr\_arg\_no};    \(\backslash\)
+                                                        \(\backslash\)
+      sprintf(r, \textcolor{stringliteral}{"%d(%%rsp)"}, nwords * 8);              \(\backslash\)
+      r\_aux = \textcolor{stringliteral}{"%xmm8"};                                  \(\backslash\)
+    \}
+\end{DoxyCode}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!C\+O\+N\+T\+\_\+\+L\+A\+B\+E\+L\+\_\+\+F\+MT@{C\+O\+N\+T\+\_\+\+L\+A\+B\+E\+L\+\_\+\+F\+MT}}
+\index{C\+O\+N\+T\+\_\+\+L\+A\+B\+E\+L\+\_\+\+F\+MT@{C\+O\+N\+T\+\_\+\+L\+A\+B\+E\+L\+\_\+\+F\+MT}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{C\+O\+N\+T\+\_\+\+L\+A\+B\+E\+L\+\_\+\+F\+MT}{CONT_LABEL_FMT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+N\+T\+\_\+\+L\+A\+B\+E\+L\+\_\+\+F\+MT~\char`\"{}.Lcont\%{\bf d}\char`\"{}}\hypertarget{x86__64__any_8c_abb6e60781697a0b28c8b22c59d0553f1}{}\label{x86__64__any_8c_abb6e60781697a0b28c8b22c59d0553f1}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+F\+IX@{D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+F\+IX}}
+\index{D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+F\+IX@{D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+F\+IX}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+F\+IX}{DOUBLE_PREFIX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+O\+U\+B\+L\+E\+\_\+\+P\+R\+E\+F\+IX~\char`\"{}.L\+CD\char`\"{}}\hypertarget{x86__64__any_8c_ada9a77874dedbeffc497d6eeed5e0d8d}{}\label{x86__64__any_8c_ada9a77874dedbeffc497d6eeed5e0d8d}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!L\+I\+T\+T\+L\+E\+\_\+\+I\+NT@{L\+I\+T\+T\+L\+E\+\_\+\+I\+NT}}
+\index{L\+I\+T\+T\+L\+E\+\_\+\+I\+NT@{L\+I\+T\+T\+L\+E\+\_\+\+I\+NT}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{L\+I\+T\+T\+L\+E\+\_\+\+I\+NT}{LITTLE_INT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+I\+T\+T\+L\+E\+\_\+\+I\+NT(
+\begin{DoxyParamCaption}
+\item[{}]{X}
+\end{DoxyParamCaption}
+)~((X) $>$= I\+N\+T\+\_\+\+M\+IN \&\& (X) $<$= I\+N\+T\+\_\+\+M\+AX)}\hypertarget{x86__64__any_8c_a1b3b1b3e69e66914b7bf3fe9919380b1}{}\label{x86__64__any_8c_a1b3b1b3e69e66914b7bf3fe9919380b1}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!M\+A\+X\+\_\+\+C\+\_\+\+A\+R\+G\+S\+\_\+\+I\+N\+\_\+\+C\+\_\+\+C\+O\+DE@{M\+A\+X\+\_\+\+C\+\_\+\+A\+R\+G\+S\+\_\+\+I\+N\+\_\+\+C\+\_\+\+C\+O\+DE}}
+\index{M\+A\+X\+\_\+\+C\+\_\+\+A\+R\+G\+S\+\_\+\+I\+N\+\_\+\+C\+\_\+\+C\+O\+DE@{M\+A\+X\+\_\+\+C\+\_\+\+A\+R\+G\+S\+\_\+\+I\+N\+\_\+\+C\+\_\+\+C\+O\+DE}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+X\+\_\+\+C\+\_\+\+A\+R\+G\+S\+\_\+\+I\+N\+\_\+\+C\+\_\+\+C\+O\+DE}{MAX_C_ARGS_IN_C_CODE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+C\+\_\+\+A\+R\+G\+S\+\_\+\+I\+N\+\_\+\+C\+\_\+\+C\+O\+DE~32 /$\ast$ must be a multiple of 2 $\ast$/}\hypertarget{x86__64__any_8c_adb2bc22cce7596e0b93396df5cddae75}{}\label{x86__64__any_8c_adb2bc22cce7596e0b93396df5cddae75}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!M\+A\+X\+\_\+\+D\+O\+U\+B\+L\+E\+S\+\_\+\+I\+N\+\_\+\+P\+R\+ED@{M\+A\+X\+\_\+\+D\+O\+U\+B\+L\+E\+S\+\_\+\+I\+N\+\_\+\+P\+R\+ED}}
+\index{M\+A\+X\+\_\+\+D\+O\+U\+B\+L\+E\+S\+\_\+\+I\+N\+\_\+\+P\+R\+ED@{M\+A\+X\+\_\+\+D\+O\+U\+B\+L\+E\+S\+\_\+\+I\+N\+\_\+\+P\+R\+ED}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+X\+\_\+\+D\+O\+U\+B\+L\+E\+S\+\_\+\+I\+N\+\_\+\+P\+R\+ED}{MAX_DOUBLES_IN_PRED}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+D\+O\+U\+B\+L\+E\+S\+\_\+\+I\+N\+\_\+\+P\+R\+ED~2048}\hypertarget{x86__64__any_8c_a32573baa313a96b77a0e07847900a4f7}{}\label{x86__64__any_8c_a32573baa313a96b77a0e07847900a4f7}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!M\+A\+X\+\_\+\+F\+P\+R\+\_\+\+A\+R\+GS@{M\+A\+X\+\_\+\+F\+P\+R\+\_\+\+A\+R\+GS}}
+\index{M\+A\+X\+\_\+\+F\+P\+R\+\_\+\+A\+R\+GS@{M\+A\+X\+\_\+\+F\+P\+R\+\_\+\+A\+R\+GS}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+X\+\_\+\+F\+P\+R\+\_\+\+A\+R\+GS}{MAX_FPR_ARGS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+F\+P\+R\+\_\+\+A\+R\+GS~8}\hypertarget{x86__64__any_8c_abcb4f8ecb60ad4d83ff292942a905810}{}\label{x86__64__any_8c_abcb4f8ecb60ad4d83ff292942a905810}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!M\+A\+X\+\_\+\+G\+P\+R\+\_\+\+A\+R\+GS@{M\+A\+X\+\_\+\+G\+P\+R\+\_\+\+A\+R\+GS}}
+\index{M\+A\+X\+\_\+\+G\+P\+R\+\_\+\+A\+R\+GS@{M\+A\+X\+\_\+\+G\+P\+R\+\_\+\+A\+R\+GS}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+X\+\_\+\+G\+P\+R\+\_\+\+A\+R\+GS}{MAX_GPR_ARGS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+G\+P\+R\+\_\+\+A\+R\+GS~6}\hypertarget{x86__64__any_8c_a557323e852de6631ae631e874139066b}{}\label{x86__64__any_8c_a557323e852de6631ae631e874139066b}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+P\+A\+CE@{R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+P\+A\+CE}}
+\index{R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+P\+A\+CE@{R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+P\+A\+CE}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+P\+A\+CE}{RESERVED_STACK_SPACE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+S\+E\+R\+V\+E\+D\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+P\+A\+CE~{\bf M\+A\+X\+\_\+\+C\+\_\+\+A\+R\+G\+S\+\_\+\+I\+N\+\_\+\+C\+\_\+\+C\+O\+DE} $\ast$ 8}\hypertarget{x86__64__any_8c_a681877fa8c8e5140125803f87afd7e82}{}\label{x86__64__any_8c_a681877fa8c8e5140125803f87afd7e82}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!S\+T\+R\+I\+N\+G\+\_\+\+P\+R\+E\+F\+IX@{S\+T\+R\+I\+N\+G\+\_\+\+P\+R\+E\+F\+IX}}
+\index{S\+T\+R\+I\+N\+G\+\_\+\+P\+R\+E\+F\+IX@{S\+T\+R\+I\+N\+G\+\_\+\+P\+R\+E\+F\+IX}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{S\+T\+R\+I\+N\+G\+\_\+\+P\+R\+E\+F\+IX}{STRING_PREFIX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+R\+I\+N\+G\+\_\+\+P\+R\+E\+F\+IX~\char`\"{}.LC\char`\"{}}\hypertarget{x86__64__any_8c_a8c720c54e6ab91f424d665c5b37f1d6b}{}\label{x86__64__any_8c_a8c720c54e6ab91f424d665c5b37f1d6b}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!UN@{UN}}
+\index{UN@{UN}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{UN}{UN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define UN}\hypertarget{x86__64__any_8c_ac207b6eba0ba8876d0c7e1c65028cc3b}{}\label{x86__64__any_8c_ac207b6eba0ba8876d0c7e1c65028cc3b}
+
+
+\subsection{Function Documentation}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Asm\+\_\+\+Start@{Asm\+\_\+\+Start}}
+\index{Asm\+\_\+\+Start@{Asm\+\_\+\+Start}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Asm\+\_\+\+Start(void)}{Asm_Start(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Asm\+\_\+\+Start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_ac7bdb0538e4f03ec069405cf88f1de4f}{}\label{x86__64__any_8c_ac7bdb0538e4f03ec069405cf88f1de4f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{x86__64__any_8c_ac7bdb0538e4f03ec069405cf88f1de4f_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Asm\+\_\+\+Stop@{Asm\+\_\+\+Stop}}
+\index{Asm\+\_\+\+Stop@{Asm\+\_\+\+Stop}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Asm\+\_\+\+Stop(void)}{Asm_Stop(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Asm\+\_\+\+Stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a1ccda0b345383d8f415326878884a88c}{}\label{x86__64__any_8c_a1ccda0b345383d8f415326878884a88c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{x86__64__any_8c_a1ccda0b345383d8f415326878884a88c_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!C\+\_\+\+Ret@{C\+\_\+\+Ret}}
+\index{C\+\_\+\+Ret@{C\+\_\+\+Ret}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{C\+\_\+\+Ret(void)}{C_Ret(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void C\+\_\+\+Ret (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a992e1b5ed98586ba9c7577938f82eb60}{}\label{x86__64__any_8c_a992e1b5ed98586ba9c7577938f82eb60}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{x86__64__any_8c_a992e1b5ed98586ba9c7577938f82eb60_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Double@{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Double}}
+\index{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Double@{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Double}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Double(int offset, double dbl\+\_\+val)}{Call_C_Arg_Double(int offset, double dbl_val)}}]{\setlength{\rightskip}{0pt plus 5cm}int Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Double (
+\begin{DoxyParamCaption}
+\item[{int}]{offset, }
+\item[{double}]{dbl\+\_\+val}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a11185a9323ed03538b4967da01b3c5fd}{}\label{x86__64__any_8c_a11185a9323ed03538b4967da01b3c5fd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{x86__64__any_8c_a11185a9323ed03538b4967da01b3c5fd_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Foreign\+\_\+D@{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Foreign\+\_\+D}}
+\index{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Foreign\+\_\+D@{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Foreign\+\_\+D}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Foreign\+\_\+\+D(int offset, int adr\+\_\+of, int index)}{Call_C_Arg_Foreign_D(int offset, int adr_of, int index)}}]{\setlength{\rightskip}{0pt plus 5cm}int Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Foreign\+\_\+D (
+\begin{DoxyParamCaption}
+\item[{int}]{offset, }
+\item[{int}]{adr\+\_\+of, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a74eac647b8a008ece21cc0eeffe98ef5}{}\label{x86__64__any_8c_a74eac647b8a008ece21cc0eeffe98ef5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{x86__64__any_8c_a74eac647b8a008ece21cc0eeffe98ef5_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Foreign\+\_\+L@{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Foreign\+\_\+L}}
+\index{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Foreign\+\_\+L@{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Foreign\+\_\+L}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Foreign\+\_\+\+L(int offset, int adr\+\_\+of, int index)}{Call_C_Arg_Foreign_L(int offset, int adr_of, int index)}}]{\setlength{\rightskip}{0pt plus 5cm}int Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Foreign\+\_\+L (
+\begin{DoxyParamCaption}
+\item[{int}]{offset, }
+\item[{int}]{adr\+\_\+of, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a44157a3aa7743bec9bd4c63203183253}{}\label{x86__64__any_8c_a44157a3aa7743bec9bd4c63203183253}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{x86__64__any_8c_a44157a3aa7743bec9bd4c63203183253_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Int@{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Int}}
+\index{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Int@{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Int}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Int(int offset, Pl\+Long int\+\_\+val)}{Call_C_Arg_Int(int offset, PlLong int_val)}}]{\setlength{\rightskip}{0pt plus 5cm}int Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Int (
+\begin{DoxyParamCaption}
+\item[{int}]{offset, }
+\item[{{\bf Pl\+Long}}]{int\+\_\+val}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a46b3150c744d1824cd10a2c6192d79cf}{}\label{x86__64__any_8c_a46b3150c744d1824cd10a2c6192d79cf}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{x86__64__any_8c_a46b3150c744d1824cd10a2c6192d79cf_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Mem\+\_\+L@{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Mem\+\_\+L}}
+\index{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Mem\+\_\+L@{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Mem\+\_\+L}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Mem\+\_\+\+L(int offset, int adr\+\_\+of, char $\ast$name, int index)}{Call_C_Arg_Mem_L(int offset, int adr_of, char *name, int index)}}]{\setlength{\rightskip}{0pt plus 5cm}int Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Mem\+\_\+L (
+\begin{DoxyParamCaption}
+\item[{int}]{offset, }
+\item[{int}]{adr\+\_\+of, }
+\item[{char $\ast$}]{name, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a964a096b28818e43f7e51dd5dd6f76f0}{}\label{x86__64__any_8c_a964a096b28818e43f7e51dd5dd6f76f0}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{x86__64__any_8c_a964a096b28818e43f7e51dd5dd6f76f0_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Reg\+\_\+X@{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Reg\+\_\+X}}
+\index{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Reg\+\_\+X@{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Reg\+\_\+X}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Reg\+\_\+\+X(int offset, int adr\+\_\+of, int index)}{Call_C_Arg_Reg_X(int offset, int adr_of, int index)}}]{\setlength{\rightskip}{0pt plus 5cm}int Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Reg\+\_\+X (
+\begin{DoxyParamCaption}
+\item[{int}]{offset, }
+\item[{int}]{adr\+\_\+of, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a2f2f15033fa151bd5b50ea330c95606f}{}\label{x86__64__any_8c_a2f2f15033fa151bd5b50ea330c95606f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{x86__64__any_8c_a2f2f15033fa151bd5b50ea330c95606f_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Reg\+\_\+Y@{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Reg\+\_\+Y}}
+\index{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Reg\+\_\+Y@{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Reg\+\_\+Y}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Reg\+\_\+\+Y(int offset, int adr\+\_\+of, int index)}{Call_C_Arg_Reg_Y(int offset, int adr_of, int index)}}]{\setlength{\rightskip}{0pt plus 5cm}int Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+Reg\+\_\+Y (
+\begin{DoxyParamCaption}
+\item[{int}]{offset, }
+\item[{int}]{adr\+\_\+of, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a9336ef2973a657cc4140763f6bca9b55}{}\label{x86__64__any_8c_a9336ef2973a657cc4140763f6bca9b55}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{x86__64__any_8c_a9336ef2973a657cc4140763f6bca9b55_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+String@{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+String}}
+\index{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+String@{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+String}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+String(int offset, int str\+\_\+no)}{Call_C_Arg_String(int offset, int str_no)}}]{\setlength{\rightskip}{0pt plus 5cm}int Call\+\_\+\+C\+\_\+\+Arg\+\_\+\+String (
+\begin{DoxyParamCaption}
+\item[{int}]{offset, }
+\item[{int}]{str\+\_\+no}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a48c333fd83686535d30e1577e7368134}{}\label{x86__64__any_8c_a48c333fd83686535d30e1577e7368134}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{x86__64__any_8c_a48c333fd83686535d30e1577e7368134_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Call\+\_\+\+C\+\_\+\+Invoke@{Call\+\_\+\+C\+\_\+\+Invoke}}
+\index{Call\+\_\+\+C\+\_\+\+Invoke@{Call\+\_\+\+C\+\_\+\+Invoke}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Call\+\_\+\+C\+\_\+\+Invoke(char $\ast$fct\+\_\+name, int fc, int nb\+\_\+args, int nb\+\_\+args\+\_\+in\+\_\+words)}{Call_C_Invoke(char *fct_name, int fc, int nb_args, int nb_args_in_words)}}]{\setlength{\rightskip}{0pt plus 5cm}void Call\+\_\+\+C\+\_\+\+Invoke (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{fct\+\_\+name, }
+\item[{int}]{fc, }
+\item[{int}]{nb\+\_\+args, }
+\item[{int}]{nb\+\_\+args\+\_\+in\+\_\+words}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a2a51a2665032be2de205e9bd9616f5bc}{}\label{x86__64__any_8c_a2a51a2665032be2de205e9bd9616f5bc}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{x86__64__any_8c_a2a51a2665032be2de205e9bd9616f5bc_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Call\+\_\+\+C\+\_\+\+Start@{Call\+\_\+\+C\+\_\+\+Start}}
+\index{Call\+\_\+\+C\+\_\+\+Start@{Call\+\_\+\+C\+\_\+\+Start}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Call\+\_\+\+C\+\_\+\+Start(char $\ast$fct\+\_\+name, int fc, int nb\+\_\+args, int nb\+\_\+args\+\_\+in\+\_\+words, char $\ast$$\ast$p\+\_\+inline)}{Call_C_Start(char *fct_name, int fc, int nb_args, int nb_args_in_words, char **p_inline)}}]{\setlength{\rightskip}{0pt plus 5cm}void Call\+\_\+\+C\+\_\+\+Start (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{fct\+\_\+name, }
+\item[{int}]{fc, }
+\item[{int}]{nb\+\_\+args, }
+\item[{int}]{nb\+\_\+args\+\_\+in\+\_\+words, }
+\item[{char $\ast$$\ast$}]{p\+\_\+inline}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_abed8844e5eb90398ed7d4e5ac92c96b4}{}\label{x86__64__any_8c_abed8844e5eb90398ed7d4e5ac92c96b4}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Call\+\_\+\+C\+\_\+\+Stop@{Call\+\_\+\+C\+\_\+\+Stop}}
+\index{Call\+\_\+\+C\+\_\+\+Stop@{Call\+\_\+\+C\+\_\+\+Stop}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Call\+\_\+\+C\+\_\+\+Stop(char $\ast$fct\+\_\+name, int nb\+\_\+args, char $\ast$$\ast$p\+\_\+inline)}{Call_C_Stop(char *fct_name, int nb_args, char **p_inline)}}]{\setlength{\rightskip}{0pt plus 5cm}void Call\+\_\+\+C\+\_\+\+Stop (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{fct\+\_\+name, }
+\item[{int}]{nb\+\_\+args, }
+\item[{char $\ast$$\ast$}]{p\+\_\+inline}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a27c073c1d4bfbaaec2dd6e47933bfea0}{}\label{x86__64__any_8c_a27c073c1d4bfbaaec2dd6e47933bfea0}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Cmp\+\_\+\+Ret\+\_\+\+And\+\_\+\+Int@{Cmp\+\_\+\+Ret\+\_\+\+And\+\_\+\+Int}}
+\index{Cmp\+\_\+\+Ret\+\_\+\+And\+\_\+\+Int@{Cmp\+\_\+\+Ret\+\_\+\+And\+\_\+\+Int}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Cmp\+\_\+\+Ret\+\_\+\+And\+\_\+\+Int(\+Pl\+Long int\+\_\+val)}{Cmp_Ret_And_Int(PlLong int_val)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cmp\+\_\+\+Ret\+\_\+\+And\+\_\+\+Int (
+\begin{DoxyParamCaption}
+\item[{{\bf Pl\+Long}}]{int\+\_\+val}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a1ffc91a7b44d25369f51bbaa3dc38f50}{}\label{x86__64__any_8c_a1ffc91a7b44d25369f51bbaa3dc38f50}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{x86__64__any_8c_a1ffc91a7b44d25369f51bbaa3dc38f50_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Code\+\_\+\+Start@{Code\+\_\+\+Start}}
+\index{Code\+\_\+\+Start@{Code\+\_\+\+Start}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Code\+\_\+\+Start(char $\ast$label, int prolog, int global)}{Code_Start(char *label, int prolog, int global)}}]{\setlength{\rightskip}{0pt plus 5cm}void Code\+\_\+\+Start (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{label, }
+\item[{int}]{prolog, }
+\item[{int}]{global}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a0c77cb830e2b388fcc1fb5322d5c3f13}{}\label{x86__64__any_8c_a0c77cb830e2b388fcc1fb5322d5c3f13}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{x86__64__any_8c_a0c77cb830e2b388fcc1fb5322d5c3f13_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Code\+\_\+\+Stop@{Code\+\_\+\+Stop}}
+\index{Code\+\_\+\+Stop@{Code\+\_\+\+Stop}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Code\+\_\+\+Stop(void)}{Code_Stop(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Code\+\_\+\+Stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a44cf6322f99a0cd1547a49d3b55a8e8f}{}\label{x86__64__any_8c_a44cf6322f99a0cd1547a49d3b55a8e8f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{x86__64__any_8c_a44cf6322f99a0cd1547a49d3b55a8e8f_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Data\+\_\+\+Start@{Data\+\_\+\+Start}}
+\index{Data\+\_\+\+Start@{Data\+\_\+\+Start}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Data\+\_\+\+Start(char $\ast$initializer\+\_\+fct)}{Data_Start(char *initializer_fct)}}]{\setlength{\rightskip}{0pt plus 5cm}void Data\+\_\+\+Start (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{initializer\+\_\+fct}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a054569cf4a25e8647de1bd86282a9efa}{}\label{x86__64__any_8c_a054569cf4a25e8647de1bd86282a9efa}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{x86__64__any_8c_a054569cf4a25e8647de1bd86282a9efa_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Data\+\_\+\+Stop@{Data\+\_\+\+Stop}}
+\index{Data\+\_\+\+Stop@{Data\+\_\+\+Stop}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Data\+\_\+\+Stop(char $\ast$initializer\+\_\+fct)}{Data_Stop(char *initializer_fct)}}]{\setlength{\rightskip}{0pt plus 5cm}void Data\+\_\+\+Stop (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{initializer\+\_\+fct}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a2da9236f4909e45dcb96b2b216067d55}{}\label{x86__64__any_8c_a2da9236f4909e45dcb96b2b216067d55}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Dico\+\_\+\+Long@{Dico\+\_\+\+Long}}
+\index{Dico\+\_\+\+Long@{Dico\+\_\+\+Long}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Dico\+\_\+\+Long(char $\ast$name, int global, V\+Type vtype, Pl\+Long value)}{Dico_Long(char *name, int global, VType vtype, PlLong value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Dico\+\_\+\+Long (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{int}]{global, }
+\item[{{\bf V\+Type}}]{vtype, }
+\item[{{\bf Pl\+Long}}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a0c1626087462615c013827c662cb8214}{}\label{x86__64__any_8c_a0c1626087462615c013827c662cb8214}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{x86__64__any_8c_a0c1626087462615c013827c662cb8214_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Dico\+\_\+\+Long\+\_\+\+Start@{Dico\+\_\+\+Long\+\_\+\+Start}}
+\index{Dico\+\_\+\+Long\+\_\+\+Start@{Dico\+\_\+\+Long\+\_\+\+Start}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Dico\+\_\+\+Long\+\_\+\+Start(int nb\+\_\+longs)}{Dico_Long_Start(int nb_longs)}}]{\setlength{\rightskip}{0pt plus 5cm}void Dico\+\_\+\+Long\+\_\+\+Start (
+\begin{DoxyParamCaption}
+\item[{int}]{nb\+\_\+longs}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a2771ed6bb9346a731160e143956db155}{}\label{x86__64__any_8c_a2771ed6bb9346a731160e143956db155}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{x86__64__any_8c_a2771ed6bb9346a731160e143956db155_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Dico\+\_\+\+Long\+\_\+\+Stop@{Dico\+\_\+\+Long\+\_\+\+Stop}}
+\index{Dico\+\_\+\+Long\+\_\+\+Stop@{Dico\+\_\+\+Long\+\_\+\+Stop}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Dico\+\_\+\+Long\+\_\+\+Stop(int nb\+\_\+longs)}{Dico_Long_Stop(int nb_longs)}}]{\setlength{\rightskip}{0pt plus 5cm}void Dico\+\_\+\+Long\+\_\+\+Stop (
+\begin{DoxyParamCaption}
+\item[{int}]{nb\+\_\+longs}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_ad2ae966bb58734e4908970a7598f5d2b}{}\label{x86__64__any_8c_ad2ae966bb58734e4908970a7598f5d2b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{x86__64__any_8c_ad2ae966bb58734e4908970a7598f5d2b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Dico\+\_\+\+String@{Dico\+\_\+\+String}}
+\index{Dico\+\_\+\+String@{Dico\+\_\+\+String}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Dico\+\_\+\+String(int str\+\_\+no, char $\ast$asciiz)}{Dico_String(int str_no, char *asciiz)}}]{\setlength{\rightskip}{0pt plus 5cm}void Dico\+\_\+\+String (
+\begin{DoxyParamCaption}
+\item[{int}]{str\+\_\+no, }
+\item[{char $\ast$}]{asciiz}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_aa7f03f1ca3caa593971f2ae995715087}{}\label{x86__64__any_8c_aa7f03f1ca3caa593971f2ae995715087}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{x86__64__any_8c_aa7f03f1ca3caa593971f2ae995715087_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Dico\+\_\+\+String\+\_\+\+Start@{Dico\+\_\+\+String\+\_\+\+Start}}
+\index{Dico\+\_\+\+String\+\_\+\+Start@{Dico\+\_\+\+String\+\_\+\+Start}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Dico\+\_\+\+String\+\_\+\+Start(int nb\+\_\+consts)}{Dico_String_Start(int nb_consts)}}]{\setlength{\rightskip}{0pt plus 5cm}void Dico\+\_\+\+String\+\_\+\+Start (
+\begin{DoxyParamCaption}
+\item[{int}]{nb\+\_\+consts}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a61198dec9eb0ba55cbe3479d85005e11}{}\label{x86__64__any_8c_a61198dec9eb0ba55cbe3479d85005e11}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{x86__64__any_8c_a61198dec9eb0ba55cbe3479d85005e11_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Dico\+\_\+\+String\+\_\+\+Stop@{Dico\+\_\+\+String\+\_\+\+Stop}}
+\index{Dico\+\_\+\+String\+\_\+\+Stop@{Dico\+\_\+\+String\+\_\+\+Stop}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Dico\+\_\+\+String\+\_\+\+Stop(int nb\+\_\+consts)}{Dico_String_Stop(int nb_consts)}}]{\setlength{\rightskip}{0pt plus 5cm}void Dico\+\_\+\+String\+\_\+\+Stop (
+\begin{DoxyParamCaption}
+\item[{int}]{nb\+\_\+consts}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_ad2037dcc047c833a06d9c46b492db605}{}\label{x86__64__any_8c_ad2037dcc047c833a06d9c46b492db605}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Fail\+\_\+\+Ret@{Fail\+\_\+\+Ret}}
+\index{Fail\+\_\+\+Ret@{Fail\+\_\+\+Ret}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Fail\+\_\+\+Ret(void)}{Fail_Ret(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fail\+\_\+\+Ret (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a931e4167eb65f76e8cffcd63c1404fa6}{}\label{x86__64__any_8c_a931e4167eb65f76e8cffcd63c1404fa6}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{x86__64__any_8c_a931e4167eb65f76e8cffcd63c1404fa6_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Here\+\_\+\+CP@{Here\+\_\+\+CP}}
+\index{Here\+\_\+\+CP@{Here\+\_\+\+CP}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Here\+\_\+\+C\+P(void)}{Here_CP(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Here\+\_\+\+CP (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a3d367a905c1c3e8f29b268511c43462b}{}\label{x86__64__any_8c_a3d367a905c1c3e8f29b268511c43462b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{x86__64__any_8c_a3d367a905c1c3e8f29b268511c43462b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{x86__64__any_8c_a3d367a905c1c3e8f29b268511c43462b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Jump@{Jump}}
+\index{Jump@{Jump}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Jump(char $\ast$label)}{Jump(char *label)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jump (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{label}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a5e0ace1e7130bd0ab39aff3803d03614}{}\label{x86__64__any_8c_a5e0ace1e7130bd0ab39aff3803d03614}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{x86__64__any_8c_a5e0ace1e7130bd0ab39aff3803d03614_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Jump\+\_\+\+If\+\_\+\+Equal@{Jump\+\_\+\+If\+\_\+\+Equal}}
+\index{Jump\+\_\+\+If\+\_\+\+Equal@{Jump\+\_\+\+If\+\_\+\+Equal}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Jump\+\_\+\+If\+\_\+\+Equal(char $\ast$label)}{Jump_If_Equal(char *label)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jump\+\_\+\+If\+\_\+\+Equal (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{label}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a03b5c60f9fcfa76f9de0046b8d568393}{}\label{x86__64__any_8c_a03b5c60f9fcfa76f9de0046b8d568393}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{x86__64__any_8c_a03b5c60f9fcfa76f9de0046b8d568393_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Jump\+\_\+\+If\+\_\+\+Greater@{Jump\+\_\+\+If\+\_\+\+Greater}}
+\index{Jump\+\_\+\+If\+\_\+\+Greater@{Jump\+\_\+\+If\+\_\+\+Greater}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Jump\+\_\+\+If\+\_\+\+Greater(char $\ast$label)}{Jump_If_Greater(char *label)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jump\+\_\+\+If\+\_\+\+Greater (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{label}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_ad36811c58a29aee0cc50ac87a3d9898c}{}\label{x86__64__any_8c_ad36811c58a29aee0cc50ac87a3d9898c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{x86__64__any_8c_ad36811c58a29aee0cc50ac87a3d9898c_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Jump\+\_\+\+Ret@{Jump\+\_\+\+Ret}}
+\index{Jump\+\_\+\+Ret@{Jump\+\_\+\+Ret}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Jump\+\_\+\+Ret(void)}{Jump_Ret(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Jump\+\_\+\+Ret (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a5b2d1ff8df86ea05b138d4fc226992e2}{}\label{x86__64__any_8c_a5b2d1ff8df86ea05b138d4fc226992e2}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{x86__64__any_8c_a5b2d1ff8df86ea05b138d4fc226992e2_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Label@{Label}}
+\index{Label@{Label}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Label(char $\ast$label)}{Label(char *label)}}]{\setlength{\rightskip}{0pt plus 5cm}void Label (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{label}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a403d2e1c401f1ee3f0e08eea47524291}{}\label{x86__64__any_8c_a403d2e1c401f1ee3f0e08eea47524291}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{x86__64__any_8c_a403d2e1c401f1ee3f0e08eea47524291_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{x86__64__any_8c_a403d2e1c401f1ee3f0e08eea47524291_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Move\+\_\+\+From\+\_\+\+Reg\+\_\+X@{Move\+\_\+\+From\+\_\+\+Reg\+\_\+X}}
+\index{Move\+\_\+\+From\+\_\+\+Reg\+\_\+X@{Move\+\_\+\+From\+\_\+\+Reg\+\_\+X}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Move\+\_\+\+From\+\_\+\+Reg\+\_\+\+X(int index)}{Move_From_Reg_X(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}void Move\+\_\+\+From\+\_\+\+Reg\+\_\+X (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a26b1354d98d85d34703d36af84a2fa7f}{}\label{x86__64__any_8c_a26b1354d98d85d34703d36af84a2fa7f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{x86__64__any_8c_a26b1354d98d85d34703d36af84a2fa7f_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Move\+\_\+\+From\+\_\+\+Reg\+\_\+Y@{Move\+\_\+\+From\+\_\+\+Reg\+\_\+Y}}
+\index{Move\+\_\+\+From\+\_\+\+Reg\+\_\+Y@{Move\+\_\+\+From\+\_\+\+Reg\+\_\+Y}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Move\+\_\+\+From\+\_\+\+Reg\+\_\+\+Y(int index)}{Move_From_Reg_Y(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}void Move\+\_\+\+From\+\_\+\+Reg\+\_\+Y (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_af58d895acfbf04e780eee5aa19d0ebd1}{}\label{x86__64__any_8c_af58d895acfbf04e780eee5aa19d0ebd1}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{x86__64__any_8c_af58d895acfbf04e780eee5aa19d0ebd1_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Foreign\+\_\+D@{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Foreign\+\_\+D}}
+\index{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Foreign\+\_\+D@{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Foreign\+\_\+D}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Foreign\+\_\+\+D(int index)}{Move_Ret_To_Foreign_D(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}void Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Foreign\+\_\+D (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_ae6a5584e8dfe8bc0f63859d1f33febda}{}\label{x86__64__any_8c_ae6a5584e8dfe8bc0f63859d1f33febda}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{x86__64__any_8c_ae6a5584e8dfe8bc0f63859d1f33febda_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Foreign\+\_\+L@{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Foreign\+\_\+L}}
+\index{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Foreign\+\_\+L@{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Foreign\+\_\+L}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Foreign\+\_\+\+L(int index)}{Move_Ret_To_Foreign_L(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}void Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Foreign\+\_\+L (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a37323d79308784cb6bfa02eb3bffa5cd}{}\label{x86__64__any_8c_a37323d79308784cb6bfa02eb3bffa5cd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{x86__64__any_8c_a37323d79308784cb6bfa02eb3bffa5cd_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Mem\+\_\+L@{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Mem\+\_\+L}}
+\index{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Mem\+\_\+L@{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Mem\+\_\+L}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Mem\+\_\+\+L(char $\ast$name, int index)}{Move_Ret_To_Mem_L(char *name, int index)}}]{\setlength{\rightskip}{0pt plus 5cm}void Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Mem\+\_\+L (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_af58bf1aee8b9f42dedb80793943ab739}{}\label{x86__64__any_8c_af58bf1aee8b9f42dedb80793943ab739}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{x86__64__any_8c_af58bf1aee8b9f42dedb80793943ab739_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Reg\+\_\+X@{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Reg\+\_\+X}}
+\index{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Reg\+\_\+X@{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Reg\+\_\+X}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Reg\+\_\+\+X(int index)}{Move_Ret_To_Reg_X(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}void Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Reg\+\_\+X (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a4fd1cd87c4569f850eb69124553ad1c9}{}\label{x86__64__any_8c_a4fd1cd87c4569f850eb69124553ad1c9}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{x86__64__any_8c_a4fd1cd87c4569f850eb69124553ad1c9_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Reg\+\_\+Y@{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Reg\+\_\+Y}}
+\index{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Reg\+\_\+Y@{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Reg\+\_\+Y}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Reg\+\_\+\+Y(int index)}{Move_Ret_To_Reg_Y(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}void Move\+\_\+\+Ret\+\_\+\+To\+\_\+\+Reg\+\_\+Y (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a37f9d9f4b7eb11439b9beb940a5e676b}{}\label{x86__64__any_8c_a37f9d9f4b7eb11439b9beb940a5e676b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{x86__64__any_8c_a37f9d9f4b7eb11439b9beb940a5e676b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Move\+\_\+\+To\+\_\+\+Reg\+\_\+X@{Move\+\_\+\+To\+\_\+\+Reg\+\_\+X}}
+\index{Move\+\_\+\+To\+\_\+\+Reg\+\_\+X@{Move\+\_\+\+To\+\_\+\+Reg\+\_\+X}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Move\+\_\+\+To\+\_\+\+Reg\+\_\+\+X(int index)}{Move_To_Reg_X(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}void Move\+\_\+\+To\+\_\+\+Reg\+\_\+X (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_af7adcc007169701f8e570e632559068f}{}\label{x86__64__any_8c_af7adcc007169701f8e570e632559068f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{x86__64__any_8c_af7adcc007169701f8e570e632559068f_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Move\+\_\+\+To\+\_\+\+Reg\+\_\+Y@{Move\+\_\+\+To\+\_\+\+Reg\+\_\+Y}}
+\index{Move\+\_\+\+To\+\_\+\+Reg\+\_\+Y@{Move\+\_\+\+To\+\_\+\+Reg\+\_\+Y}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Move\+\_\+\+To\+\_\+\+Reg\+\_\+\+Y(int index)}{Move_To_Reg_Y(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}void Move\+\_\+\+To\+\_\+\+Reg\+\_\+Y (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a8dac9698ed961dd1619389ca09a5b0e4}{}\label{x86__64__any_8c_a8dac9698ed961dd1619389ca09a5b0e4}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{x86__64__any_8c_a8dac9698ed961dd1619389ca09a5b0e4_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Off\+\_\+\+Reg\+\_\+\+Bank@{Off\+\_\+\+Reg\+\_\+\+Bank}}
+\index{Off\+\_\+\+Reg\+\_\+\+Bank@{Off\+\_\+\+Reg\+\_\+\+Bank}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Off\+\_\+\+Reg\+\_\+\+Bank(int offset)}{Off_Reg_Bank(int offset)}}]{\setlength{\rightskip}{0pt plus 5cm}static char $\ast$ Off\+\_\+\+Reg\+\_\+\+Bank (
+\begin{DoxyParamCaption}
+\item[{int}]{offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{x86__64__any_8c_aab686898f03d34812752021cc286a934}{}\label{x86__64__any_8c_aab686898f03d34812752021cc286a934}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{x86__64__any_8c_aab686898f03d34812752021cc286a934_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Pl\+\_\+\+Call@{Pl\+\_\+\+Call}}
+\index{Pl\+\_\+\+Call@{Pl\+\_\+\+Call}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Call(char $\ast$label)}{Pl_Call(char *label)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Call (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{label}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_ac518d1a29c3015b3aec79cfa4300c362}{}\label{x86__64__any_8c_ac518d1a29c3015b3aec79cfa4300c362}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{x86__64__any_8c_ac518d1a29c3015b3aec79cfa4300c362_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Pl\+\_\+\+Fail@{Pl\+\_\+\+Fail}}
+\index{Pl\+\_\+\+Fail@{Pl\+\_\+\+Fail}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Fail(void)}{Pl_Fail(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Fail (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_aa0fe7f41cd1793244610e87d597040f6}{}\label{x86__64__any_8c_aa0fe7f41cd1793244610e87d597040f6}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{x86__64__any_8c_aa0fe7f41cd1793244610e87d597040f6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{x86__64__any_8c_aa0fe7f41cd1793244610e87d597040f6_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Pl\+\_\+\+Jump@{Pl\+\_\+\+Jump}}
+\index{Pl\+\_\+\+Jump@{Pl\+\_\+\+Jump}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Jump(char $\ast$label)}{Pl_Jump(char *label)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Jump (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{label}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a5e5e17240bceefba89b5231952d11dcc}{}\label{x86__64__any_8c_a5e5e17240bceefba89b5231952d11dcc}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{x86__64__any_8c_a5e5e17240bceefba89b5231952d11dcc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{x86__64__any_8c_a5e5e17240bceefba89b5231952d11dcc_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Pl\+\_\+\+Ret@{Pl\+\_\+\+Ret}}
+\index{Pl\+\_\+\+Ret@{Pl\+\_\+\+Ret}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Ret(void)}{Pl_Ret(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Ret (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a35f4c7f6dc292d72dd13b600d49c10e6}{}\label{x86__64__any_8c_a35f4c7f6dc292d72dd13b600d49c10e6}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{x86__64__any_8c_a35f4c7f6dc292d72dd13b600d49c10e6_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Prep\+\_\+\+CP@{Prep\+\_\+\+CP}}
+\index{Prep\+\_\+\+CP@{Prep\+\_\+\+CP}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Prep\+\_\+\+C\+P(void)}{Prep_CP(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Prep\+\_\+\+CP (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_ac10bb2c52ddcf17419fddeddb95e9715}{}\label{x86__64__any_8c_ac10bb2c52ddcf17419fddeddb95e9715}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{x86__64__any_8c_ac10bb2c52ddcf17419fddeddb95e9715_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{x86__64__any_8c_ac10bb2c52ddcf17419fddeddb95e9715_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!Reload\+\_\+\+E\+\_\+\+In\+\_\+\+Register@{Reload\+\_\+\+E\+\_\+\+In\+\_\+\+Register}}
+\index{Reload\+\_\+\+E\+\_\+\+In\+\_\+\+Register@{Reload\+\_\+\+E\+\_\+\+In\+\_\+\+Register}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{Reload\+\_\+\+E\+\_\+\+In\+\_\+\+Register(void)}{Reload_E_In_Register(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Reload\+\_\+\+E\+\_\+\+In\+\_\+\+Register (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{x86__64__any_8c_a53bd6fca87a2fd6ae394bd63c5689edf}{}\label{x86__64__any_8c_a53bd6fca87a2fd6ae394bd63c5689edf}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{x86__64__any_8c_a53bd6fca87a2fd6ae394bd63c5689edf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!asm\+\_\+reg\+\_\+b@{asm\+\_\+reg\+\_\+b}}
+\index{asm\+\_\+reg\+\_\+b@{asm\+\_\+reg\+\_\+b}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{asm\+\_\+reg\+\_\+b}{asm_reg_b}}]{\setlength{\rightskip}{0pt plus 5cm}char asm\+\_\+reg\+\_\+b\mbox{[}20\mbox{]}}\hypertarget{x86__64__any_8c_a3cfecb9c7eeaa4972507a3e30d95d683}{}\label{x86__64__any_8c_a3cfecb9c7eeaa4972507a3e30d95d683}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!asm\+\_\+reg\+\_\+cp@{asm\+\_\+reg\+\_\+cp}}
+\index{asm\+\_\+reg\+\_\+cp@{asm\+\_\+reg\+\_\+cp}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{asm\+\_\+reg\+\_\+cp}{asm_reg_cp}}]{\setlength{\rightskip}{0pt plus 5cm}char asm\+\_\+reg\+\_\+cp\mbox{[}20\mbox{]}}\hypertarget{x86__64__any_8c_a50ef11b50838a44a931d8e559774a20d}{}\label{x86__64__any_8c_a50ef11b50838a44a931d8e559774a20d}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!asm\+\_\+reg\+\_\+e@{asm\+\_\+reg\+\_\+e}}
+\index{asm\+\_\+reg\+\_\+e@{asm\+\_\+reg\+\_\+e}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{asm\+\_\+reg\+\_\+e}{asm_reg_e}}]{\setlength{\rightskip}{0pt plus 5cm}char asm\+\_\+reg\+\_\+e\mbox{[}20\mbox{]}}\hypertarget{x86__64__any_8c_a8c994d29567e65fdad047cc190540899}{}\label{x86__64__any_8c_a8c994d29567e65fdad047cc190540899}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!call\+\_\+c\+\_\+reverse\+\_\+args@{call\+\_\+c\+\_\+reverse\+\_\+args}}
+\index{call\+\_\+c\+\_\+reverse\+\_\+args@{call\+\_\+c\+\_\+reverse\+\_\+args}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{call\+\_\+c\+\_\+reverse\+\_\+args}{call_c_reverse_args}}]{\setlength{\rightskip}{0pt plus 5cm}int call\+\_\+c\+\_\+reverse\+\_\+args = 0}\hypertarget{x86__64__any_8c_aab14a7673b7f756e8d608e02e79942b2}{}\label{x86__64__any_8c_aab14a7673b7f756e8d608e02e79942b2}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!can\+\_\+produce\+\_\+pic\+\_\+code@{can\+\_\+produce\+\_\+pic\+\_\+code}}
+\index{can\+\_\+produce\+\_\+pic\+\_\+code@{can\+\_\+produce\+\_\+pic\+\_\+code}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{can\+\_\+produce\+\_\+pic\+\_\+code}{can_produce_pic_code}}]{\setlength{\rightskip}{0pt plus 5cm}int can\+\_\+produce\+\_\+pic\+\_\+code = 1}\hypertarget{x86__64__any_8c_a8f09d598648ca00c8bb7a5abd49a7476}{}\label{x86__64__any_8c_a8f09d598648ca00c8bb7a5abd49a7476}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!comment\+\_\+prefix@{comment\+\_\+prefix}}
+\index{comment\+\_\+prefix@{comment\+\_\+prefix}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{comment\+\_\+prefix}{comment_prefix}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ comment\+\_\+prefix = \char`\"{}\#\char`\"{}}\hypertarget{x86__64__any_8c_acfd1f9bcf7912123ae1ac953119de6cb}{}\label{x86__64__any_8c_acfd1f9bcf7912123ae1ac953119de6cb}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!dbl\+\_\+lc\+\_\+no@{dbl\+\_\+lc\+\_\+no}}
+\index{dbl\+\_\+lc\+\_\+no@{dbl\+\_\+lc\+\_\+no}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{dbl\+\_\+lc\+\_\+no}{dbl_lc_no}}]{\setlength{\rightskip}{0pt plus 5cm}int dbl\+\_\+lc\+\_\+no = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{x86__64__any_8c_a3982f9e7f14aadf685ca83210803b58c}{}\label{x86__64__any_8c_a3982f9e7f14aadf685ca83210803b58c}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!dbl\+\_\+tbl@{dbl\+\_\+tbl}}
+\index{dbl\+\_\+tbl@{dbl\+\_\+tbl}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{dbl\+\_\+tbl}{dbl_tbl}}]{\setlength{\rightskip}{0pt plus 5cm}double dbl\+\_\+tbl\mbox{[}{\bf M\+A\+X\+\_\+\+D\+O\+U\+B\+L\+E\+S\+\_\+\+I\+N\+\_\+\+P\+R\+ED}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{x86__64__any_8c_a2565edc60623a47babfa4ad73627ab03}{}\label{x86__64__any_8c_a2565edc60623a47babfa4ad73627ab03}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!fpr\+\_\+arg@{fpr\+\_\+arg}}
+\index{fpr\+\_\+arg@{fpr\+\_\+arg}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{fpr\+\_\+arg}{fpr_arg}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ fpr\+\_\+arg\mbox{[}{\bf M\+A\+X\+\_\+\+F\+P\+R\+\_\+\+A\+R\+GS}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{x86__64__any_8c_a434da0119c6849819f203dcfe05efddb}{}\label{x86__64__any_8c_a434da0119c6849819f203dcfe05efddb}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  \textcolor{stringliteral}{"%xmm0"}, \textcolor{stringliteral}{"%xmm1"}, \textcolor{stringliteral}{"%xmm2"}, \textcolor{stringliteral}{"%xmm3"},
+  \textcolor{stringliteral}{"%xmm4"}, \textcolor{stringliteral}{"%xmm5"}, \textcolor{stringliteral}{"%xmm6"}, \textcolor{stringliteral}{"%xmm7"}
+\}
+\end{DoxyCode}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!fpr\+\_\+arg\+\_\+no@{fpr\+\_\+arg\+\_\+no}}
+\index{fpr\+\_\+arg\+\_\+no@{fpr\+\_\+arg\+\_\+no}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{fpr\+\_\+arg\+\_\+no}{fpr_arg_no}}]{\setlength{\rightskip}{0pt plus 5cm}int fpr\+\_\+arg\+\_\+no\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{x86__64__any_8c_a926822bcd97234b23c6645373d11c69e}{}\label{x86__64__any_8c_a926822bcd97234b23c6645373d11c69e}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!gpr\+\_\+arg@{gpr\+\_\+arg}}
+\index{gpr\+\_\+arg@{gpr\+\_\+arg}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{gpr\+\_\+arg}{gpr_arg}}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ gpr\+\_\+arg\mbox{[}{\bf M\+A\+X\+\_\+\+G\+P\+R\+\_\+\+A\+R\+GS}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{x86__64__any_8c_a0f3d800ba00f089e57e4a42b4c7fda1d}{}\label{x86__64__any_8c_a0f3d800ba00f089e57e4a42b4c7fda1d}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  \textcolor{stringliteral}{"%rdi"}, \textcolor{stringliteral}{"%rsi"}, \textcolor{stringliteral}{"%rdx"},
+  \textcolor{stringliteral}{"%rcx"}, \textcolor{stringliteral}{"%r8"}, \textcolor{stringliteral}{"%r9"}
+\}
+\end{DoxyCode}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!gpr\+\_\+arg\+\_\+no@{gpr\+\_\+arg\+\_\+no}}
+\index{gpr\+\_\+arg\+\_\+no@{gpr\+\_\+arg\+\_\+no}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{gpr\+\_\+arg\+\_\+no}{gpr_arg_no}}]{\setlength{\rightskip}{0pt plus 5cm}int gpr\+\_\+arg\+\_\+no\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{x86__64__any_8c_a2f2e6c469e9a6d5db17658bb7ad15da3}{}\label{x86__64__any_8c_a2f2e6c469e9a6d5db17658bb7ad15da3}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!inline\+\_\+asm\+\_\+data@{inline\+\_\+asm\+\_\+data}}
+\index{inline\+\_\+asm\+\_\+data@{inline\+\_\+asm\+\_\+data}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{inline\+\_\+asm\+\_\+data}{inline_asm_data}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ inline\+\_\+asm\+\_\+data\mbox{[}$\,$\mbox{]} = \{ N\+U\+LL \}}\hypertarget{x86__64__any_8c_a29041d920c64ae96a4854b2ff75ef7f2}{}\label{x86__64__any_8c_a29041d920c64ae96a4854b2ff75ef7f2}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!local\+\_\+symb\+\_\+prefix@{local\+\_\+symb\+\_\+prefix}}
+\index{local\+\_\+symb\+\_\+prefix@{local\+\_\+symb\+\_\+prefix}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{local\+\_\+symb\+\_\+prefix}{local_symb_prefix}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ local\+\_\+symb\+\_\+prefix = \char`\"{}.L\char`\"{}}\hypertarget{x86__64__any_8c_a9816ee0efa6bde03c3c33c41ea2d84b3}{}\label{x86__64__any_8c_a9816ee0efa6bde03c3c33c41ea2d84b3}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!nb\+\_\+dbl@{nb\+\_\+dbl}}
+\index{nb\+\_\+dbl@{nb\+\_\+dbl}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{nb\+\_\+dbl}{nb_dbl}}]{\setlength{\rightskip}{0pt plus 5cm}int nb\+\_\+dbl = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{x86__64__any_8c_a64bc3c328bd0d633d2775feaeface8c1}{}\label{x86__64__any_8c_a64bc3c328bd0d633d2775feaeface8c1}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!strings\+\_\+need\+\_\+null@{strings\+\_\+need\+\_\+null}}
+\index{strings\+\_\+need\+\_\+null@{strings\+\_\+need\+\_\+null}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{strings\+\_\+need\+\_\+null}{strings_need_null}}]{\setlength{\rightskip}{0pt plus 5cm}int strings\+\_\+need\+\_\+null = 0}\hypertarget{x86__64__any_8c_a771d075219378951666a9e6e3fe5d5d1}{}\label{x86__64__any_8c_a771d075219378951666a9e6e3fe5d5d1}
+\index{x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}!w\+\_\+label@{w\+\_\+label}}
+\index{w\+\_\+label@{w\+\_\+label}!x86\+\_\+64\+\_\+any.\+c@{x86\+\_\+64\+\_\+any.\+c}}
+\subsubsection[{\texorpdfstring{w\+\_\+label}{w_label}}]{\setlength{\rightskip}{0pt plus 5cm}int w\+\_\+label = 0}\hypertarget{x86__64__any_8c_a923d50f1e7153e69fa539c81d7113c68}{}\label{x86__64__any_8c_a923d50f1e7153e69fa539c81d7113c68}

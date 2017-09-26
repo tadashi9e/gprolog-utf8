@@ -1,0 +1,24 @@
+<map id="Init_Stream_Struct" name="Init_Stream_Struct">
+<area shape="rect" id="node2" href="$stream__supp_8h.html#a4d7fa50881abdd578ce6b4da9611415c" title="Pl_Add_Stream" alt="" coords="196,309,309,336"/>
+<area shape="rect" id="node16" href="$stream__supp_8h.html#abc6cb27a35dbac2ebfa72acf4808b2ce" title="Pl_Add_Str_Stream" alt="" coords="184,403,321,429"/>
+<area shape="rect" id="node3" href="$src__rdr__c_8c.html#ae6f2889304119849adebc18b8d5a305e" title="Pl_SR_Open_File_2" alt="" coords="912,309,1052,336"/>
+<area shape="rect" id="node4" href="$stream__supp_8h.html#af51b9456aea611c5b52f856cdbe23b50" title="Pl_Add_Stream_For_Stdio_Desc" alt="" coords="369,157,584,184"/>
+<area shape="rect" id="node5" href="$os__interf__c_8c.html#a9d0485252a3b1c89182aa8c836af7343" title="Pl_Popen_3" alt="" coords="688,259,780,285"/>
+<area shape="rect" id="node6" href="$os__interf__c_8c.html#aded08a658582be142616062585180aaa" title="Pl_Exec_5" alt="" coords="691,5,777,32"/>
+<area shape="rect" id="node7" href="$os__interf__c_8c.html#ab3f1eca6ee6babddf88815166e3c08ee" title="Pl_Create_Pipe_2" alt="" coords="671,56,797,83"/>
+<area shape="rect" id="node8" href="$sockets__c_8c.html#a0d079005d2c64521c4431e8652047ec1" title="Create_Socket_Streams" alt="" coords="651,107,817,133"/>
+<area shape="rect" id="node12" href="$stream__supp_8c.html#a46a2de744d0ab922af4d2edc06e1ac48" title="Init_Stream_Supp" alt="" coords="671,157,797,184"/>
+<area shape="rect" id="node13" href="$stream__supp_8h.html#a4b575b16d8ce4212e975f935d57851f2" title="Pl_Add_Stream_For_Stdio_File" alt="" coords="632,208,836,235"/>
+<area shape="rect" id="node9" href="$sockets__c_8c.html#abbe3fb80935b07d8fb995acffb3c9c94" title="Pl_Socket_Connect_4" alt="" coords="906,107,1058,133"/>
+<area shape="rect" id="node10" href="$sockets__c_8c.html#ae82e005638fc6d4c1cc9bb0fe3b3c6e3" title="Pl_Socket_Accept_4" alt="" coords="910,157,1054,184"/>
+<area shape="rect" id="node11" href="$sockets__c_8c.html#a6f439469b5fd39d24f5bca6ee6e0ba33" title="Pl_Assoc_Socket_Streams_3" alt="" coords="884,56,1080,83"/>
+<area shape="rect" id="node14" href="$src__rdr__c_8c.html#a260024335c542b6e1dacb6252ab5e1cc" title="Pl_SR_New_Pass_1" alt="" coords="909,259,1055,285"/>
+<area shape="rect" id="node15" href="$stream__c_8c.html#a2c2540e03dfb396a35d223d58ea53a29" title="Pl_Open_3" alt="" coords="939,208,1025,235"/>
+<area shape="rect" id="node17" href="$atom__c_8c.html#a45d43288afc4447eb5e8a1bced9fd5a3" title="String_To_Number" alt="" coords="411,492,542,519"/>
+<area shape="rect" id="node22" href="$stream__c_8c.html#a5509c863559e52e3f79d862fdb121edb" title="Pl_Open_Input_Term\l_Stream_2" alt="" coords="404,361,549,402"/>
+<area shape="rect" id="node23" href="$stream__c_8c.html#a70d91f642e6a102021db762b75f5c635" title="Pl_Open_Output_Term\l_Stream_1" alt="" coords="399,426,554,467"/>
+<area shape="rect" id="node18" href="$atom__c_8c.html#adc47dd028d6500b7136923c50fb7f0ab" title="Pl_Number_Atom_2" alt="" coords="665,568,803,595"/>
+<area shape="rect" id="node19" href="$atom__c_8c.html#a227fc472d79309e81af1f91e7e236951" title="Pl_Number_Chars_2" alt="" coords="663,416,805,443"/>
+<area shape="rect" id="node20" href="$atom__c_8c.html#ae89fe3df220d385008f49c583dc41d32" title="Pl_Number_Codes_2" alt="" coords="661,467,807,493"/>
+<area shape="rect" id="node21" href="$atom__c_8c.html#af3d13cb1d0fbb3208789ea87cf806fdb" title="Pl_Name_2" alt="" coords="937,492,1027,519"/>
+</map>

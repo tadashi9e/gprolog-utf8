@@ -1,0 +1,6 @@
+<map id="Pl_Get_Seed_1" name="Pl_Get_Seed_1">
+<area shape="rect" id="node2" href="$c__supp_8c.html#ad6f32d98f18c6b1b7934bb638d419ce1" title="Pl_Un_Positive_Check" alt="" coords="167,5,324,32"/>
+<area shape="rect" id="node5" href="$machine_8c.html#acf03bc71bbd6ccb26adcb2e34faf0ce0" title="Pl_M_Get_Seed" alt="" coords="187,56,304,83"/>
+<area shape="rect" id="node3" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="372,5,481,32"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="529,5,688,32"/>
+</map>

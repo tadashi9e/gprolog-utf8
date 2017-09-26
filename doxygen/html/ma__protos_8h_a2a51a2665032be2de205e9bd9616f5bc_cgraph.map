@@ -1,0 +1,10 @@
+<map id="Call_C_Invoke" name="Call_C_Invoke">
+<area shape="rect" id="node2" href="$alpha__any_8c.html#a47200cdbe6a906cbd8270942885940bb" title="make_inline" alt="" coords="163,56,254,83"/>
+<area shape="rect" id="node6" href="$ma2asm_8c.html#afeaa1e73d1371e09e196c12b114b9845" title="Inst_Printf" alt="" coords="167,107,250,133"/>
+<area shape="rect" id="node7" href="$sparc64__any_8c.html#a7884ec03fffa38e282f499d97aac3ee2" title="Delay_Printf" alt="" coords="161,157,256,184"/>
+<area shape="rect" id="node8" href="$ma2asm_8c.html#a9608e324baa0506520d6ae9b95ae89ab" title="Inst_Out" alt="" coords="310,208,382,235"/>
+<area shape="rect" id="node9" href="$sparc64__any_8c.html#af1a4fc459f26b9d58dafcea4773ef9b1" title="Delay_Flush" alt="" coords="161,259,256,285"/>
+<area shape="rect" id="node3" href="$ma2asm_8c.html#a0851dc0f6e6cf307d543061b3c1ae48d" title="String_Out" alt="" coords="304,5,388,32"/>
+<area shape="rect" id="node4" href="$ma2asm_8c.html#a5aaee1ed1c841a25da8a192705cc7352" title="Int_Out" alt="" coords="313,56,379,83"/>
+<area shape="rect" id="node5" href="$ma2asm_8c.html#af174ca051a6c219ac02476adf7c11b61" title="Char_Out" alt="" coords="307,107,385,133"/>
+</map>

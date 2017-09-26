@@ -1,0 +1,24 @@
+<map id="gprolog&#45;utf8&#45;tree/src/Ma2Asm/chkma.c" name="gprolog&#45;utf8&#45;tree/src/Ma2Asm/chkma.c">
+<area shape="rect" id="node4" href="$pl__long_8h.html" title="../EnginePl/pl_long.h" alt="" coords="46,319,189,345"/>
+<area shape="rect" id="node7" href="$engine_8c.html" title="../EnginePl/engine.c" alt="" coords="1873,95,2012,121"/>
+<area shape="rect" id="node10" href="$set__locale_8h.html" title="set_locale.h" alt="" coords="1813,169,1905,196"/>
+<area shape="rect" id="node13" href="$engine__pl_8h.html" title="engine_pl.h" alt="" coords="784,169,872,196"/>
+<area shape="rect" id="node31" href="$linedit_8h.html" title="../Linedit/linedit.h" alt="" coords="1667,169,1789,196"/>
+<area shape="rect" id="node33" href="$prolog__path_8c.html" title="../TopComp/prolog_path.c" alt="" coords="2297,169,2471,196"/>
+<area shape="rect" id="node14" href="$pl__params_8h.html" title="pl_params.h" alt="" coords="1499,244,1592,271"/>
+<area shape="rect" id="node15" href="$hash__fct_8h.html" title="hash_fct.h" alt="" coords="385,319,468,345"/>
+<area shape="rect" id="node16" href="$hash_8h.html" title="hash.h" alt="" coords="328,244,389,271"/>
+<area shape="rect" id="node17" href="$bool_8h.html" title="bool.h" alt="" coords="265,319,322,345"/>
+<area shape="rect" id="node20" href="$engine_8h.html" title="engine.h" alt="" coords="702,244,773,271"/>
+<area shape="rect" id="node21" href="$atom_8h.html" title="atom.h" alt="" coords="797,244,859,271"/>
+<area shape="rect" id="node22" href="$pred_8h.html" title="pred.h" alt="" coords="884,244,943,271"/>
+<area shape="rect" id="node23" href="$misc_8h.html" title="misc.h" alt="" coords="1413,244,1475,271"/>
+<area shape="rect" id="node24" href="$oper_8h.html" title="oper.h" alt="" coords="967,244,1025,271"/>
+<area shape="rect" id="node25" href="$machine1_8h.html" title="machine1.h" alt="" coords="1667,244,1757,271"/>
+<area shape="rect" id="node26" href="$machine_8h.html" title="machine.h" alt="" coords="221,244,304,271"/>
+<area shape="rect" id="node27" href="$stacks__sigsegv_8h.html" title="stacks_sigsegv.h" alt="" coords="1049,244,1173,271"/>
+<area shape="rect" id="node28" href="$obj__chain_8h.html" title="obj_chain.h" alt="" coords="59,244,147,271"/>
+<area shape="rect" id="node29" href="$wam__inst_8h.html" title="wam_inst.h" alt="" coords="1197,244,1286,271"/>
+<area shape="rect" id="node30" href="$if__no__fd_8h.html" title="if_no_fd.h" alt="" coords="1310,244,1389,271"/>
+<area shape="rect" id="node32" href="$pl__wchar_8h.html" title="../EnginePl/pl_wchar.h" alt="" coords="1702,319,1855,345"/>
+</map>

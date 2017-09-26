@@ -1,0 +1,5 @@
+<map id="Load_Long_Into_Reg" name="Load_Long_Into_Reg">
+<area shape="rect" id="node2" href="$sparc64__any_8c.html#a7c17750a2367a1023769b227884b760c" title="Synthetize_Setx" alt="" coords="199,5,317,32"/>
+<area shape="rect" id="node3" href="$sparc64__any_8c.html#a7884ec03fffa38e282f499d97aac3ee2" title="Delay_Printf" alt="" coords="365,5,460,32"/>
+<area shape="rect" id="node4" href="$ma2asm_8c.html#a9608e324baa0506520d6ae9b95ae89ab" title="Inst_Out" alt="" coords="508,5,580,32"/>
+</map>

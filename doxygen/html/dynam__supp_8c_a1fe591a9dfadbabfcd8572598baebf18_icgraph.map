@@ -1,0 +1,12 @@
+<map id="Index_From_First_Arg" name="Index_From_First_Arg">
+<area shape="rect" id="node2" href="$dynam__supp_8h.html#ac515f897a0c90f972786f9d16a14ddd5" title="Pl_Add_Dynamic_Clause" alt="" coords="204,19,375,45"/>
+<area shape="rect" id="node4" href="$dynam__supp_8h.html#ad7b836ca5b36d7839115b035aa0d1944" title="Pl_Scan_Dynamic_Pred" alt="" coords="207,95,371,121"/>
+<area shape="rect" id="node3" href="$assert__c_8c.html#a797deea264dcd97e69d345f7f1e189aa" title="Pl_Assert_5" alt="" coords="451,5,544,32"/>
+<area shape="rect" id="node5" href="$assert__c_8c.html#a8515a7d3fed2843f6596cff3dcf0b19a" title="Pl_Clause_3" alt="" coords="449,56,545,83"/>
+<area shape="rect" id="node6" href="$assert__c_8c.html#a3bb1c6a0ff26397bf50be7d9c49d64a6" title="Pl_Retract_2" alt="" coords="448,107,547,133"/>
+<area shape="rect" id="node7" href="$bc__supp_8h.html#a8a045e53639fe083b9e018f119e754e4" title="Pl_BC_Emulate_Pred" alt="" coords="423,157,572,184"/>
+<area shape="rect" id="node8" href="$bc__supp_8c.html#a972dcf547f043fb0988173c77a2f521f" title="Pl_BC_Call_Terminal\l_Pred_3" alt="" coords="629,91,775,133"/>
+<area shape="rect" id="node9" href="$bc__supp_8c.html#af5eb08f345855ac14975d4366243dbc5" title="BC_Emulate_Pred_Alt" alt="" coords="625,157,779,184"/>
+<area shape="rect" id="node10" href="$bc__supp_8c.html#a3eaaadb92bd63dd9a3f63436a81a3dcc" title="Pl_BC_Emulate_Cont_0" alt="" coords="620,208,784,235"/>
+<area shape="rect" id="node11" href="$call__args__c_8c.html#af6fb473d73263063c7c2361e4c6a8981" title="Pl_Call_Closure" alt="" coords="644,259,760,285"/>
+</map>

@@ -1,0 +1,140 @@
+\hypertarget{obj__chain_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/obj\+\_\+chain.c File Reference}
+\label{obj__chain_8c}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/obj\+\_\+chain.\+c@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/obj\+\_\+chain.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}pl\+\_\+params.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gp\+\_\+config.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}obj\+\_\+chain.\+h\char`\"{}}\\*
+Include dependency graph for obj\+\_\+chain.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{obj__chain_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structObjInf}{Obj\+Inf}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{obj__chain_8c_a8808898405593e2f5ee851f28ddb4243}{D\+B\+G\+P\+R\+I\+N\+TF}~\hyperlink{test__noecho_8c_a3cb9f0894fab1c8fbb0753c9c7c2a8d9}{printf}
+\item 
+\#define \hyperlink{obj__chain_8c_ace3fdf7cadf886c0c42753a766702117}{F\+O\+R\+\_\+\+E\+A\+C\+H\+\_\+\+O\+B\+J\+\_\+\+F\+R\+O\+M\+\_\+\+L\+A\+S\+T\+\_\+\+T\+O\+\_\+\+F\+I\+R\+ST}~for(\hyperlink{chkma_8c_a6389b0bf0138857012de69e968d26c43}{i} = 0; \hyperlink{chkma_8c_a6389b0bf0138857012de69e968d26c43}{i} $<$ \hyperlink{obj__chain_8c_a14ecc80e06c4ba0e0b8ec595963cefe8}{nb\+\_\+obj}; \hyperlink{chkma_8c_a6389b0bf0138857012de69e968d26c43}{i}++)
+\item 
+\#define \hyperlink{obj__chain_8c_a51b2a50f7b45d657d960dbb243138cd3}{F\+O\+R\+\_\+\+E\+A\+C\+H\+\_\+\+O\+B\+J\+\_\+\+F\+R\+O\+M\+\_\+\+F\+I\+R\+S\+T\+\_\+\+T\+O\+\_\+\+L\+A\+ST}~for(\hyperlink{chkma_8c_a6389b0bf0138857012de69e968d26c43}{i} = \hyperlink{obj__chain_8c_a14ecc80e06c4ba0e0b8ec595963cefe8}{nb\+\_\+obj}; -\/-\/\hyperlink{chkma_8c_a6389b0bf0138857012de69e968d26c43}{i} $>$= 0; )
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{obj__chain_8c_a190fea7904d7245d4fdc5e9404a07907}{Pl\+\_\+\+Fatal\+\_\+\+Error} (char $\ast$\hyperlink{hexfilter_8c_a5407a229a5e1a319d75fb29542c83eae}{format},...)
+\item 
+void \hyperlink{obj__chain_8c_a061044c2c361926012bb09518f4428fa}{Pl\+\_\+\+Find\+\_\+\+Linked\+\_\+\+Objects} (void)
+\item 
+void \hyperlink{obj__chain_8c_a3b1f427fcf16e89ad83deb20cce086ec}{Pl\+\_\+\+New\+\_\+\+Object} (void($\ast$fct\+\_\+obj\+\_\+init)(), void($\ast$fct\+\_\+exec\+\_\+system)(), void($\ast$fct\+\_\+exec\+\_\+user)())
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structObjInf}{Obj\+Inf} \hyperlink{obj__chain_8c_ab9e87b35f71ecf7032d65903124a0880}{obj\+\_\+tbl} \mbox{[}\hyperlink{pl__params_8h_a7083b26c57d956d72197b9428d8e4894}{M\+A\+X\+\_\+\+O\+B\+J\+E\+CT}\mbox{]}
+\item 
+static int \hyperlink{obj__chain_8c_a14ecc80e06c4ba0e0b8ec595963cefe8}{nb\+\_\+obj} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{obj\+\_\+chain.\+c@{obj\+\_\+chain.\+c}!D\+B\+G\+P\+R\+I\+N\+TF@{D\+B\+G\+P\+R\+I\+N\+TF}}
+\index{D\+B\+G\+P\+R\+I\+N\+TF@{D\+B\+G\+P\+R\+I\+N\+TF}!obj\+\_\+chain.\+c@{obj\+\_\+chain.\+c}}
+\subsubsection[{\texorpdfstring{D\+B\+G\+P\+R\+I\+N\+TF}{DBGPRINTF}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+B\+G\+P\+R\+I\+N\+TF~{\bf printf}}\hypertarget{obj__chain_8c_a8808898405593e2f5ee851f28ddb4243}{}\label{obj__chain_8c_a8808898405593e2f5ee851f28ddb4243}
+\index{obj\+\_\+chain.\+c@{obj\+\_\+chain.\+c}!F\+O\+R\+\_\+\+E\+A\+C\+H\+\_\+\+O\+B\+J\+\_\+\+F\+R\+O\+M\+\_\+\+F\+I\+R\+S\+T\+\_\+\+T\+O\+\_\+\+L\+A\+ST@{F\+O\+R\+\_\+\+E\+A\+C\+H\+\_\+\+O\+B\+J\+\_\+\+F\+R\+O\+M\+\_\+\+F\+I\+R\+S\+T\+\_\+\+T\+O\+\_\+\+L\+A\+ST}}
+\index{F\+O\+R\+\_\+\+E\+A\+C\+H\+\_\+\+O\+B\+J\+\_\+\+F\+R\+O\+M\+\_\+\+F\+I\+R\+S\+T\+\_\+\+T\+O\+\_\+\+L\+A\+ST@{F\+O\+R\+\_\+\+E\+A\+C\+H\+\_\+\+O\+B\+J\+\_\+\+F\+R\+O\+M\+\_\+\+F\+I\+R\+S\+T\+\_\+\+T\+O\+\_\+\+L\+A\+ST}!obj\+\_\+chain.\+c@{obj\+\_\+chain.\+c}}
+\subsubsection[{\texorpdfstring{F\+O\+R\+\_\+\+E\+A\+C\+H\+\_\+\+O\+B\+J\+\_\+\+F\+R\+O\+M\+\_\+\+F\+I\+R\+S\+T\+\_\+\+T\+O\+\_\+\+L\+A\+ST}{FOR_EACH_OBJ_FROM_FIRST_TO_LAST}}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+O\+R\+\_\+\+E\+A\+C\+H\+\_\+\+O\+B\+J\+\_\+\+F\+R\+O\+M\+\_\+\+F\+I\+R\+S\+T\+\_\+\+T\+O\+\_\+\+L\+A\+ST~for({\bf i} = {\bf nb\+\_\+obj}; -\/-\/{\bf i} $>$= 0; )}\hypertarget{obj__chain_8c_a51b2a50f7b45d657d960dbb243138cd3}{}\label{obj__chain_8c_a51b2a50f7b45d657d960dbb243138cd3}
+\index{obj\+\_\+chain.\+c@{obj\+\_\+chain.\+c}!F\+O\+R\+\_\+\+E\+A\+C\+H\+\_\+\+O\+B\+J\+\_\+\+F\+R\+O\+M\+\_\+\+L\+A\+S\+T\+\_\+\+T\+O\+\_\+\+F\+I\+R\+ST@{F\+O\+R\+\_\+\+E\+A\+C\+H\+\_\+\+O\+B\+J\+\_\+\+F\+R\+O\+M\+\_\+\+L\+A\+S\+T\+\_\+\+T\+O\+\_\+\+F\+I\+R\+ST}}
+\index{F\+O\+R\+\_\+\+E\+A\+C\+H\+\_\+\+O\+B\+J\+\_\+\+F\+R\+O\+M\+\_\+\+L\+A\+S\+T\+\_\+\+T\+O\+\_\+\+F\+I\+R\+ST@{F\+O\+R\+\_\+\+E\+A\+C\+H\+\_\+\+O\+B\+J\+\_\+\+F\+R\+O\+M\+\_\+\+L\+A\+S\+T\+\_\+\+T\+O\+\_\+\+F\+I\+R\+ST}!obj\+\_\+chain.\+c@{obj\+\_\+chain.\+c}}
+\subsubsection[{\texorpdfstring{F\+O\+R\+\_\+\+E\+A\+C\+H\+\_\+\+O\+B\+J\+\_\+\+F\+R\+O\+M\+\_\+\+L\+A\+S\+T\+\_\+\+T\+O\+\_\+\+F\+I\+R\+ST}{FOR_EACH_OBJ_FROM_LAST_TO_FIRST}}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+O\+R\+\_\+\+E\+A\+C\+H\+\_\+\+O\+B\+J\+\_\+\+F\+R\+O\+M\+\_\+\+L\+A\+S\+T\+\_\+\+T\+O\+\_\+\+F\+I\+R\+ST~for({\bf i} = 0; {\bf i} $<$ {\bf nb\+\_\+obj}; {\bf i}++)}\hypertarget{obj__chain_8c_ace3fdf7cadf886c0c42753a766702117}{}\label{obj__chain_8c_ace3fdf7cadf886c0c42753a766702117}
+
+
+\subsection{Function Documentation}
+\index{obj\+\_\+chain.\+c@{obj\+\_\+chain.\+c}!Pl\+\_\+\+Fatal\+\_\+\+Error@{Pl\+\_\+\+Fatal\+\_\+\+Error}}
+\index{Pl\+\_\+\+Fatal\+\_\+\+Error@{Pl\+\_\+\+Fatal\+\_\+\+Error}!obj\+\_\+chain.\+c@{obj\+\_\+chain.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Fatal\+\_\+\+Error(char $\ast$format,...)}{Pl_Fatal_Error(char *format,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Fatal\+\_\+\+Error (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{obj__chain_8c_a190fea7904d7245d4fdc5e9404a07907}{}\label{obj__chain_8c_a190fea7904d7245d4fdc5e9404a07907}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{obj__chain_8c_a190fea7904d7245d4fdc5e9404a07907_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{obj__chain_8c_a190fea7904d7245d4fdc5e9404a07907_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{obj\+\_\+chain.\+c@{obj\+\_\+chain.\+c}!Pl\+\_\+\+Find\+\_\+\+Linked\+\_\+\+Objects@{Pl\+\_\+\+Find\+\_\+\+Linked\+\_\+\+Objects}}
+\index{Pl\+\_\+\+Find\+\_\+\+Linked\+\_\+\+Objects@{Pl\+\_\+\+Find\+\_\+\+Linked\+\_\+\+Objects}!obj\+\_\+chain.\+c@{obj\+\_\+chain.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Find\+\_\+\+Linked\+\_\+\+Objects(void)}{Pl_Find_Linked_Objects(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Find\+\_\+\+Linked\+\_\+\+Objects (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{obj__chain_8c_a061044c2c361926012bb09518f4428fa}{}\label{obj__chain_8c_a061044c2c361926012bb09518f4428fa}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{obj__chain_8c_a061044c2c361926012bb09518f4428fa_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{obj\+\_\+chain.\+c@{obj\+\_\+chain.\+c}!Pl\+\_\+\+New\+\_\+\+Object@{Pl\+\_\+\+New\+\_\+\+Object}}
+\index{Pl\+\_\+\+New\+\_\+\+Object@{Pl\+\_\+\+New\+\_\+\+Object}!obj\+\_\+chain.\+c@{obj\+\_\+chain.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+New\+\_\+\+Object(void($\ast$fct\+\_\+obj\+\_\+init)(), void($\ast$fct\+\_\+exec\+\_\+system)(), void($\ast$fct\+\_\+exec\+\_\+user)())}{Pl_New_Object(void(*fct_obj_init)(), void(*fct_exec_system)(), void(*fct_exec_user)())}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+New\+\_\+\+Object (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)()}]{fct\+\_\+obj\+\_\+init, }
+\item[{void($\ast$)()}]{fct\+\_\+exec\+\_\+system, }
+\item[{void($\ast$)()}]{fct\+\_\+exec\+\_\+user}
+\end{DoxyParamCaption}
+)}\hypertarget{obj__chain_8c_a3b1f427fcf16e89ad83deb20cce086ec}{}\label{obj__chain_8c_a3b1f427fcf16e89ad83deb20cce086ec}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{obj__chain_8c_a3b1f427fcf16e89ad83deb20cce086ec_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{obj\+\_\+chain.\+c@{obj\+\_\+chain.\+c}!nb\+\_\+obj@{nb\+\_\+obj}}
+\index{nb\+\_\+obj@{nb\+\_\+obj}!obj\+\_\+chain.\+c@{obj\+\_\+chain.\+c}}
+\subsubsection[{\texorpdfstring{nb\+\_\+obj}{nb_obj}}]{\setlength{\rightskip}{0pt plus 5cm}int nb\+\_\+obj = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{obj__chain_8c_a14ecc80e06c4ba0e0b8ec595963cefe8}{}\label{obj__chain_8c_a14ecc80e06c4ba0e0b8ec595963cefe8}
+\index{obj\+\_\+chain.\+c@{obj\+\_\+chain.\+c}!obj\+\_\+tbl@{obj\+\_\+tbl}}
+\index{obj\+\_\+tbl@{obj\+\_\+tbl}!obj\+\_\+chain.\+c@{obj\+\_\+chain.\+c}}
+\subsubsection[{\texorpdfstring{obj\+\_\+tbl}{obj_tbl}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Obj\+Inf} obj\+\_\+tbl\mbox{[}{\bf M\+A\+X\+\_\+\+O\+B\+J\+E\+CT}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{obj__chain_8c_ab9e87b35f71ecf7032d65903124a0880}{}\label{obj__chain_8c_ab9e87b35f71ecf7032d65903124a0880}

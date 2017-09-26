@@ -1,0 +1,6 @@
+<map id="Createw32_consoleWndClassWnd" name="Createw32_consoleWndClassWnd">
+<area shape="rect" id="node2" href="$w32__console_8c.html#a2363368e7d52d5df8c4f20cb13283faa" title="StartWinMain" alt="" coords="279,5,380,32"/>
+<area shape="rect" id="node3" href="$w32__console_8c.html#a3e359465ba75ec15014d5af9c09d3db9" title="CallMain" alt="" coords="428,5,501,32"/>
+<area shape="rect" id="node4" href="$w32__console_8c.html#a4df61e90931602252f4bd1addb17902f" title="W32GC_Start_Window" alt="" coords="549,5,708,32"/>
+<area shape="rect" id="node5" href="$w32gc__interf_8c.html#a9bbe083e9a45c3fda6abf2737bebc2ad" title="__declspec" alt="" coords="756,5,844,32"/>
+</map>

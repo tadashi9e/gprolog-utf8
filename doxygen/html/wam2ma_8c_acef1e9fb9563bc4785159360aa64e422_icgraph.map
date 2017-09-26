@@ -1,0 +1,5 @@
+<map id="Create_Switch_Table" name="Create_Switch_Table">
+<area shape="rect" id="node2" href="$wam__protos_8h.html#acb73e0f1d5bf4c281f31c7c43987c0e3" title="F_switch_on_atom" alt="" coords="211,5,343,32"/>
+<area shape="rect" id="node3" href="$wam__protos_8h.html#aaf2a81d4cbc891f827dc26bc11987fd0" title="F_switch_on_integer" alt="" coords="206,56,349,83"/>
+<area shape="rect" id="node4" href="$wam__protos_8h.html#a2eb6951194ca628883e9ccb93d35b35d" title="F_switch_on_structure" alt="" coords="200,107,355,133"/>
+</map>

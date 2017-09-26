@@ -1,0 +1,10 @@
+<map id="Pl_Length_Alt_0" name="Pl_Length_Alt_0">
+<area shape="rect" id="node2" href="$wam__inst_8c.html#a1f8b77617ef38000ca80700aaefbc694" title="Pl_Delete_Choice_Point" alt="" coords="171,5,335,32"/>
+<area shape="rect" id="node3" href="$wam__inst_8c.html#ac053eb26fdee8a8e71ea9a5ac4079ab0" title="Pl_Get_List" alt="" coords="208,56,299,83"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#a10bbafcdb34c6e41f239954f493e7cf0" title="Pl_Unify_Void" alt="" coords="201,107,306,133"/>
+<area shape="rect" id="node5" href="$wam__inst_8c.html#ab11181944ecf328d3ade45d83f7744d8" title="Pl_Unify_Variable" alt="" coords="190,157,317,184"/>
+<area shape="rect" id="node6" href="$wam__inst_8c.html#a482d0f0a0b2ac53fc463aaa753ce071e" title="Pl_Create_Choice_Point" alt="" coords="171,208,336,235"/>
+<area shape="rect" id="node7" href="$wam__inst_8c.html#a4ab2a67fe680997c88472c007bafbcbd" title="Pl_Get_Nil" alt="" coords="211,259,296,285"/>
+<area shape="rect" id="node8" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="199,309,308,336"/>
+<area shape="rect" id="node9" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="384,309,543,336"/>
+</map>

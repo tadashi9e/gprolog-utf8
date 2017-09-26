@@ -1,0 +1,2025 @@
+\hypertarget{w32__console_8c}{}\section{gprolog-\/utf8-\/tree/src/\+W32\+G\+U\+I\+Cons/w32\+\_\+console.c File Reference}
+\label{w32__console_8c}\index{gprolog-\/utf8-\/tree/src/\+W32\+G\+U\+I\+Cons/w32\+\_\+console.\+c@{gprolog-\/utf8-\/tree/src/\+W32\+G\+U\+I\+Cons/w32\+\_\+console.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$malloc.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/gp\+\_\+config.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/pl\+\_\+params.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/set\+\_\+locale.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}w32gc\+\_\+interf.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+Top\+Comp/prolog\+\_\+path.\+c\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+Top\+Comp/copying.\+c\char`\"{}}\\*
+{\ttfamily \#include $<$windows.\+h$>$}\\*
+{\ttfamily \#include $<$windowsx.\+h$>$}\\*
+{\ttfamily \#include $<$commctrl.\+h$>$}\\*
+{\ttfamily \#include $<$richedit.\+h$>$}\\*
+{\ttfamily \#include $<$shlobj.\+h$>$}\\*
+{\ttfamily \#include $<$shellapi.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}w32\+\_\+resource.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+Linedit/terminal.\+h\char`\"{}}\\*
+Include dependency graph for w32\+\_\+console.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{w32__console_8c_acf069f0fc03570b5ed8422750b0aafa7}{G\+U\+I\+\_\+\+V\+E\+R\+S\+I\+ON}~\char`\"{}1.\+1\char`\"{}
+\item 
+\#define \hyperlink{w32__console_8c_a57c6c70ece6093c49b2692c69ab5c922}{A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+I\+N\+F\+O\+R\+M\+A\+T\+I\+ON}
+\item 
+\#define \hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT}~\hyperlink{w32gc__interf_8c_a9bbe083e9a45c3fda6abf2737bebc2ad}{\+\_\+\+\_\+declspec}(dllexport)
+\item 
+\#define \hyperlink{w32__console_8c_a3fbf7274e17f273bfe132d9b35bf96d7}{Get\+Window\+Long\+Ptr}~Get\+Window\+Long
+\item 
+\#define \hyperlink{w32__console_8c_a48d1cb04a874eb4e82d978ae86a302ea}{Set\+Window\+Long\+Ptr}~Set\+Window\+Long
+\item 
+\#define \hyperlink{w32__console_8c_ac19dc430014ff623502e32b3b95e1134}{E\+D\+I\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+I\+ZE}~64000  /$\ast$ 0 does not work ! why ? $\ast$/
+\item 
+\#define \hyperlink{w32__console_8c_a8ed1e7ba38d06388e0e4741e39cbafec}{F\+I\+X\+\_\+\+T\+AB}~1
+\item 
+\#define \hyperlink{w32__console_8c_aab9eb160c9a465f92b2d123e7a00c610}{F\+I\+X\+\_\+\+CR}~2
+\item 
+\#define \hyperlink{w32__console_8c_a2c79da19077479e21777cd357a7842a5}{F\+I\+X\+\_\+\+B\+A\+C\+K\+S\+L\+A\+SH}~4
+\item 
+\#define \hyperlink{w32__console_8c_ab30193333ec5fd850e20bd1cad031cb0}{F\+I\+X\+\_\+\+Q\+U\+O\+TE}~8
+\item 
+\#define \hyperlink{w32__console_8c_ae492e578712b8c7f07d15a1c6c3bf37a}{Queue\+\_\+\+Is\+\_\+\+Empty}()~(\hyperlink{w32__console_8c_a130462e376d7e818e17fbaee36ab9309}{queue\+\_\+start} == \hyperlink{w32__console_8c_aeda2fce60f1165daeb74c28670a34063}{queue\+\_\+end})
+\item 
+\#define \hyperlink{w32__console_8c_a6737ee7b5ea0ac73f105b8ee8dd5cda3}{Enqueue}(\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c})
+\item 
+\#define \hyperlink{w32__console_8c_ae57c6e94b29ba4f046754f13534d40f2}{Dequeue}(\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c})
+\item 
+\#define \hyperlink{w32__console_8c_ace316e675504594e0f63c695242e2a5c}{S\+E\+T\+\_\+\+C\+H\+E\+C\+K\+E\+D\+\_\+\+O\+PT}(idm\+\_\+cmd,  \hyperlink{asm__inst_8c_ab34e69421408185f58b36de8d423a006}{var})~Check\+Menu\+Item(Get\+Menu(\hyperlink{w32__console_8c_a7b31e2c83a58b4f57da29cfccdb751a8}{hwnd\+Main}), idm\+\_\+cmd, (\hyperlink{asm__inst_8c_ab34e69421408185f58b36de8d423a006}{var}) ? M\+F\+\_\+\+C\+H\+E\+C\+K\+ED \+: M\+F\+\_\+\+U\+N\+C\+H\+E\+C\+K\+ED)
+\item 
+\#define \hyperlink{w32__console_8c_abc28f423fed6c771b854e93038972afa}{R\+E\+A\+D\+\_\+\+I\+N\+T\+\_\+\+R\+EG}(key\+\_\+name,  \hyperlink{asm__inst_8c_ab34e69421408185f58b36de8d423a006}{var})
+\item 
+\#define \hyperlink{w32__console_8c_a2b7ebcfb7892dec3cafc6267edff239b}{W\+R\+I\+T\+E\+\_\+\+I\+N\+T\+\_\+\+R\+EG}(key\+\_\+name,  \hyperlink{asm__inst_8c_ab34e69421408185f58b36de8d423a006}{var})
+\item 
+\#define \hyperlink{w32__console_8c_a06234f3c89ef0fc2ba1a128321b85828}{R\+E\+A\+D\+\_\+\+B\+O\+O\+L\+\_\+\+R\+EG}(key\+\_\+name,  \hyperlink{asm__inst_8c_ab34e69421408185f58b36de8d423a006}{var})
+\item 
+\#define \hyperlink{w32__console_8c_ad718da836385b5c755aa86493304f587}{W\+R\+I\+T\+E\+\_\+\+B\+O\+O\+L\+\_\+\+R\+EG}(key\+\_\+name,  \hyperlink{asm__inst_8c_ab34e69421408185f58b36de8d423a006}{var})
+\item 
+\#define \hyperlink{w32__console_8c_aef06b46147307a11fc762b30bb229f01}{Is\+\_\+\+A\+\_\+\+Sep}(\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c})~(!isprint(\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}) $\vert$$\vert$ (strchr(\hyperlink{linedit_8c_ae54ada72039696c7eac21836d63200cf}{separators}, \hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}) != N\+U\+LL))
+\item 
+\#define \hyperlink{w32__console_8c_ae1da5dc7c49629b4721c13e6a911d5b3}{B\+I\+F\+\_\+\+N\+E\+W\+D\+I\+A\+L\+O\+G\+S\+T\+Y\+LE}~0x40
+\item 
+\#define \hyperlink{w32__console_8c_ad09fdb35794db4325f9a0f9421803d57}{B\+I\+F\+\_\+\+N\+O\+N\+E\+W\+F\+O\+L\+D\+E\+R\+B\+U\+T\+T\+ON}~0x0200
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{w32__console_8c_a3e359465ba75ec15014d5af9c09d3db9}{Call\+Main} (void $\ast$unused)
+\item 
+static int \hyperlink{w32__console_8c_a2363368e7d52d5df8c4f20cb13283faa}{Start\+Win\+Main} (H\+I\+N\+S\+T\+A\+N\+CE h\+Instance, H\+I\+N\+S\+T\+A\+N\+CE h\+Prev\+Instance, L\+P\+S\+TR lp\+Cmd\+Line, \hyperlink{gprolog_8h_afeeffe52c8fd59db7c61cf8b02042dbf}{I\+NT} n\+Cmd\+Show)
+\item 
+static B\+O\+OL \hyperlink{w32__console_8c_aea7abcb71562352e8ff9c3efd95c505b}{Init\+Application} (void)
+\item 
+static H\+W\+ND \hyperlink{w32__console_8c_a866478de98e81fa4cceb82aab8c66fbc}{Createw32\+\_\+console\+Wnd\+Class\+Wnd} (void)
+\item 
+static L\+R\+E\+S\+U\+LT C\+A\+L\+L\+B\+A\+CK \hyperlink{w32__console_8c_ab023aa0285ba796fb7809eed2e6cdbe1}{Main\+Wnd\+Proc} (H\+W\+ND hwnd, U\+I\+NT msg, W\+P\+A\+R\+AM w\+Param, L\+P\+A\+R\+AM l\+Param)
+\item 
+static void \hyperlink{w32__console_8c_aabb62b5ceb8b73f54c4478021cedf130}{Main\+Wnd\+Proc\+\_\+\+On\+Command} (H\+W\+ND hwnd, int id, H\+W\+ND hwnd\+Ctl, U\+I\+NT code\+Notify)
+\item 
+static void \hyperlink{w32__console_8c_a4d3fc2c91e2a42d1ee0ab9afb8b25934}{Create\+\_\+\+Edit\+\_\+\+Control} (H\+W\+ND hwnd)
+\item 
+static void \hyperlink{w32__console_8c_ae21b20c73fc3d1b2301ac435d6ffefb8}{Sub\+Class\+Edit\+Field} (H\+W\+ND hwnd)
+\item 
+static L\+R\+E\+S\+U\+LT C\+A\+L\+L\+B\+A\+CK \hyperlink{w32__console_8c_a86a613d9f9c5724324a80eb7ad8fd162}{Sub\+Class\+Edit} (H\+W\+ND hwnd, U\+I\+NT msg, W\+P\+A\+R\+AM mp1, L\+P\+A\+R\+AM mp2)
+\item 
+static int C\+A\+L\+L\+B\+A\+CK \hyperlink{w32__console_8c_a0a91b0a1e1c66bf3281ebb8e4685481b}{Word\+Break\+Proc} (L\+P\+T\+S\+TR lpcb, int ich\+Current, int cch, int code)
+\item 
+static void \hyperlink{w32__console_8c_af8f874a72209a2c5b9ccc57df9c3684b}{Toggle\+\_\+\+Wrap\+\_\+\+Mode} (H\+W\+ND hwnd)
+\item 
+static H\+F\+O\+NT \hyperlink{w32__console_8c_a6981804399e0771b70ed8e1317a00e2f}{Create\+\_\+\+Courier\+\_\+\+Font} (void)
+\item 
+static int \hyperlink{w32__console_8c_a7c91e9cff6dac8c36df5af92834243bc}{Change\+\_\+\+Font} (H\+W\+ND hwnd)
+\item 
+B\+O\+OL C\+A\+L\+L\+B\+A\+CK \hyperlink{w32__console_8c_ade8a187e0ceb600d466b550f1b17f4ec}{Stack\+Sizes\+Proc} (H\+W\+ND hwnd\+Dlg, U\+I\+NT message, W\+P\+A\+R\+AM w\+Param, L\+P\+A\+R\+AM l\+Param)
+\item 
+static void \hyperlink{w32__console_8c_ac2f0c6854b2fdc538e0878a2654760ca}{Load\+\_\+\+Options} (void)
+\item 
+static void \hyperlink{w32__console_8c_ad53ee08377d881b92e3d61bb96d3b5f3}{Save\+\_\+\+Options} (void)
+\item 
+static void \hyperlink{w32__console_8c_a5bbc75ac922723070433ae4d2efe0b59}{Activate\+\_\+\+Options} (void)
+\item 
+static char $\ast$ \hyperlink{w32__console_8c_add48de04cc579f7ed8c1e507afce16c6}{Get\+\_\+\+Current\+\_\+\+Word} (int select\+\_\+it)
+\item 
+static void \hyperlink{w32__console_8c_a5cafa6fe226996300727eef685e6cde5}{Consult\+\_\+\+File} (void)
+\item 
+static void \hyperlink{w32__console_8c_a5d40c37d966c85af95f36eef239c98c8}{Change\+\_\+\+Directory} (void)
+\item 
+static void \hyperlink{w32__console_8c_aafaddbdf6d5871b5d2deaee1a7e37f42}{Insert\+\_\+\+File\+\_\+\+Name} (void)
+\item 
+static char $\ast$ \hyperlink{w32__console_8c_ace1e5e9b3f8bf6cbf289895447a94cd7}{Get\+\_\+\+Selected\+\_\+\+File\+\_\+\+Name} (char $\ast$title, char $\ast$default\+\_\+ext, char $\ast$filter)
+\item 
+static char $\ast$ \hyperlink{w32__console_8c_a637e0b7a2536a792abc63915a1bf671b}{Get\+\_\+\+Selected\+\_\+\+Directory} (char $\ast$title, int new\+\_\+folder)
+\item 
+static void \hyperlink{w32__console_8c_a4429f5179fe290e7469506c6287a46a5}{Show\+\_\+\+Help} (char $\ast$word)
+\item 
+static int \hyperlink{w32__console_8c_a7c82a573b5e01698b2f8e86d4cef3702}{Get\+\_\+\+C\+H\+M\+\_\+\+Help\+\_\+\+Path} (char $\ast$path)
+\item 
+static int W\+I\+N\+A\+PI \hyperlink{w32__console_8c_a6b34de0106a84c3f3eacfdf7fe989a17}{Browse\+Callback\+Proc} (H\+W\+ND hwnd, U\+I\+NT u\+Msg, L\+P\+A\+R\+AM lp, L\+P\+A\+R\+AM p\+Data)
+\item 
+static void \hyperlink{w32__console_8c_af041f75cf92908627d2a76f3a70f0c4a}{Add\+\_\+\+Clipboard\+\_\+\+To\+\_\+\+Queue} (void)
+\item 
+static void \hyperlink{w32__console_8c_a7a3267ed0ece9abb97a70487dc99aa75}{Add\+\_\+\+String\+\_\+\+To\+\_\+\+Queue} (char $\ast$str, int mask\+\_\+fix)
+\item 
+static void \hyperlink{w32__console_8c_aa1aefedc2452b3120b0d25c9a860fddc}{Add\+\_\+\+Char\+\_\+\+To\+\_\+\+Queue} (int \hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c})
+\item 
+static void \hyperlink{w32__console_8c_a4a4fa92ab96c87a9fedbe477e80d38a0}{Set\+\_\+\+Selection} (int \hyperlink{w32__console_8c_a8a939f223d43e3bc0b6a7620fe1a96f3}{posit}, int n)
+\item 
+static void \hyperlink{w32__console_8c_a20fd5ae61889213d2ac79b90f0f942f8}{Set\+\_\+\+Caret\+\_\+\+Position} (int \hyperlink{w32__console_8c_a8a939f223d43e3bc0b6a7620fe1a96f3}{posit})
+\item 
+static int \hyperlink{w32__console_8c_a8c4b08848ce838a6ff53832a1530670e}{Move\+\_\+\+Caret\+\_\+\+To} (int start\+\_\+or\+\_\+end)
+\item 
+static void \hyperlink{w32__console_8c_a3480ea2b3116aeb824aac0df6d68da83}{Move\+\_\+\+Caret\+\_\+\+From\+\_\+\+Mouse} (int if\+\_\+no\+\_\+selection)
+\item 
+static int \hyperlink{w32__console_8c_adaf1402815a745cc420a50b850400d4e}{Delete\+\_\+\+Selection} (void)
+\item 
+static void \hyperlink{w32__console_8c_a2764af0c7408a134e5da5fa101b6dabe}{Display\+\_\+\+Text} (char $\ast$str, int n)
+\item 
+static void \hyperlink{w32__console_8c_a24b183b30fc00a737da1b325dfbfa594}{Flush\+\_\+\+Buffer} (void)
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} void \hyperlink{w32__console_8c_aec67ee32e036f2e6746534f1cb82a6d9}{W32\+G\+C\+\_\+\+Set\+\_\+\+Line\+\_\+\+Buffering} (int is\+\_\+buffered)
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} void \hyperlink{w32__console_8c_a40f2319783fd8cca8c94dbc1bfba2dae}{W32\+G\+C\+\_\+\+Backd} (int n)
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} int \hyperlink{w32__console_8c_ade7027a929279e5d7ca19fa957fed785}{W32\+G\+C\+\_\+\+Confirm\+\_\+\+Box} (char $\ast$titre, char $\ast$msg)
+\item 
+static B\+O\+OL \hyperlink{w32__console_8c_add18d3d84266c63a2fc07cf8455c9d5e}{Launched\+\_\+\+From\+\_\+\+Command\+\_\+\+Line} ()
+\item 
+static H\+W\+ND \hyperlink{w32__console_8c_a8b13ccc50432e414ecfecda6cacd0dfa}{Find\+\_\+\+Text\+\_\+\+Console\+\_\+\+Handle} (void)
+\item 
+static void \hyperlink{w32__console_8c_a948b886d5f9fafc8cf18ecae879b4144}{Show\+\_\+\+Text\+\_\+\+Console} (int show)
+\item 
+B\+O\+OL \hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} W\+I\+N\+A\+PI \hyperlink{w32__console_8c_abe8f0cf3e565df4cbd4487a438eb3ee7}{Dll\+Main} (H\+I\+N\+S\+T\+A\+N\+CE h\+D\+L\+L\+Inst, D\+W\+O\+RD fdw\+Reason, L\+P\+V\+O\+ID lpv\+Reserved)
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} int \hyperlink{w32__console_8c_a4df61e90931602252f4bd1addb17902f}{W32\+G\+C\+\_\+\+Start\+\_\+\+Window} (char $\ast$($\ast$get\+\_\+separators)(), int($\ast$get\+\_\+prompt\+\_\+length)(), \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long}($\ast$\hyperlink{foreign__supp_8c_aa08c95993500d96dc53ae633e27f315b}{query\+\_\+stack})())
+\item 
+static char $\ast$ \hyperlink{w32__console_8c_a42d2133edfa796e46154e68d25b8b43e}{Make\+\_\+\+Windows\+\_\+\+Filter} (char $\ast$filter)
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} int \hyperlink{w32__console_8c_a340ee7a93b3c3b393238222859313625}{W32\+G\+C\+\_\+\+Kbd\+\_\+\+Is\+\_\+\+Not\+\_\+\+Empty} ()
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} int \hyperlink{w32__console_8c_a1d8d56ad4f4ce8b339273e699c3811ac}{W32\+G\+C\+\_\+\+Get\+\_\+\+Char0} ()
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} int \hyperlink{w32__console_8c_a99b873fa48556d9748c27ed3c1780103}{W32\+G\+C\+\_\+\+Get\+\_\+\+Line\+\_\+\+Buffering} (void)
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} void \hyperlink{w32__console_8c_a20ec3600d3c3a15b3c44a9e6f8b1fb83}{W32\+G\+C\+\_\+\+Flush} (F\+I\+LE $\ast$\hyperlink{asm_8c_ad1351d85ffec3c1176dc31d8e8f8e28a}{f})
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} void \hyperlink{w32__console_8c_ab7e93fe5f4ce7f900e82d8329b82a57c}{W32\+G\+C\+\_\+\+Put\+\_\+\+Char} (int \hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c})
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} void \hyperlink{w32__console_8c_a132f06d797d267f7df0c665c859d46d5}{W32\+G\+C\+\_\+\+Forwd} (int n)
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} void \hyperlink{w32__console_8c_a3e0fd465d2d216a3886763f28a47c4de}{W32\+G\+C\+\_\+\+Displ} (int n, char $\ast$str)
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} void \hyperlink{w32__console_8c_a44456e0e0343737fa2419814cf095fa4}{W32\+G\+C\+\_\+\+Displ\+\_\+\+Str} (char $\ast$str)
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} void \hyperlink{w32__console_8c_a53ddd44d5c72b248fb0ecc605c361119}{W32\+G\+C\+\_\+\+Erase} (int n)
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} void \hyperlink{w32__console_8c_a59efe54538c83ad8a72dca36ebcf3b18}{W32\+G\+C\+\_\+\+Emit\+\_\+\+Beep} ()
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} void \hyperlink{w32__console_8c_aa27293fb8640c27d098277994bd4fc59}{W32\+G\+C\+\_\+\+Ins\+\_\+\+Mode} (int \hyperlink{linedit_8c_af6054f9caaba8712308609a0844a9e70}{ins\+\_\+mode})
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} void \hyperlink{w32__console_8c_aba4a32927a06c37c6c76611ecd0c1e64}{W32\+G\+C\+\_\+\+Screen\+\_\+\+Size} (int $\ast$row, int $\ast$col)
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} void \hyperlink{w32__console_8c_a9e93dd695aaf00e23322cda24b7e07a1}{W32\+G\+C\+\_\+\+Message\+\_\+\+Box} (char $\ast$title, char $\ast$msg, int type)
+\item 
+\hyperlink{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{D\+L\+L\+E\+X\+P\+O\+RT} void \hyperlink{w32__console_8c_afc50d91c42cd0286326088650538cc45}{W32\+G\+C\+\_\+\+Exit\+\_\+\+Process} (int \hyperlink{ctrl__c_8c_a9339caf9d89a9cb57727dfe245702ae3}{ret\+\_\+val})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static char $\ast$($\ast$ \hyperlink{w32__console_8c_aa9decc35e741e2f749bcaa8b338dda90}{fct\+\_\+get\+\_\+separators} )()
+\item 
+static int($\ast$ \hyperlink{w32__console_8c_a6aff9b701f87bbf7e005ec38095a9116}{fct\+\_\+get\+\_\+prompt\+\_\+length} )()
+\item 
+static \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long}($\ast$ \hyperlink{w32__console_8c_a72efd317f68e847ac19e4f1a2f12f93a}{fct\+\_\+query\+\_\+stack} )()
+\item 
+static unsigned int \hyperlink{w32__console_8c_aa4dd3f36c2a92e8efb0c8b92db7981fc}{queue} \mbox{[}\hyperlink{w32__console_8c_ac19dc430014ff623502e32b3b95e1134}{E\+D\+I\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+I\+ZE}\mbox{]}
+\item 
+static int \hyperlink{w32__console_8c_a130462e376d7e818e17fbaee36ab9309}{queue\+\_\+start}
+\item 
+static int \hyperlink{w32__console_8c_aeda2fce60f1165daeb74c28670a34063}{queue\+\_\+end}
+\item 
+static C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+S\+E\+C\+T\+I\+ON \hyperlink{w32__console_8c_a49cf636c22333a5b11269b18ecd413af}{cs\+\_\+queue}
+\item 
+static H\+A\+N\+D\+LE \hyperlink{w32__console_8c_a08fb49174d441f4883b1067701f8bc0f}{event\+\_\+window\+\_\+is\+\_\+ready}
+\item 
+static H\+A\+N\+D\+LE \hyperlink{w32__console_8c_af364d92811ea148030885d97cc6d2570}{event\+\_\+char\+\_\+in\+\_\+queue}
+\item 
+static H\+W\+ND \hyperlink{w32__console_8c_a7b31e2c83a58b4f57da29cfccdb751a8}{hwnd\+Main}
+\item 
+static H\+W\+ND \hyperlink{w32__console_8c_ae848139b7357ff8c2ca231ffa22f6636}{hwnd\+Edit\+Control}
+\item 
+static W\+N\+D\+P\+R\+OC \hyperlink{w32__console_8c_a72d95b856bc2d5e2b3ea9281344cbb2c}{lp\+E\+Proc}
+\item 
+static H\+I\+N\+S\+T\+A\+N\+CE \hyperlink{w32__console_8c_a44f41244c97693b2fbd5244bcb1e86ec}{h\+Inst}
+\item 
+static L\+O\+G\+F\+O\+NT \hyperlink{w32__console_8c_ad553b145a9bcaedd4ddb5093d08c8104}{current\+Font}
+\item 
+static H\+F\+O\+NT \hyperlink{w32__console_8c_a0b01dd58c861d0bc8dcdf6ecf1502dfd}{h\+Font}
+\item 
+static int \hyperlink{w32__console_8c_aca569d36aa232224c8ca050363a2ce8a}{show\+\_\+console} = 0
+\item 
+static H\+W\+ND \hyperlink{w32__console_8c_aad3a95a4cae8fb5684a3a2116aa28d9b}{hwnd\+\_\+console}
+\item 
+static int \hyperlink{w32__console_8c_a3dc3a4d635377fce94a20da547f4d1b0}{in\+\_\+get\+\_\+char} = 0
+\item 
+static int \hyperlink{w32__console_8c_a878f3f3d850896d83f2868a42e3b6f3c}{last\+\_\+is\+\_\+read} = 0
+\item 
+static int \hyperlink{w32__console_8c_a8a939f223d43e3bc0b6a7620fe1a96f3}{posit} = 0
+\item 
+static int \hyperlink{w32__console_8c_a1044b5bbe83238e8353308c71b657e1f}{ec\+\_\+start} = 0
+\item 
+static int \hyperlink{w32__console_8c_a7adc77618ddc9e96a5d706b31cdb0055}{win\+\_\+x} = C\+W\+\_\+\+U\+S\+E\+D\+E\+F\+A\+U\+LT
+\item 
+static int \hyperlink{w32__console_8c_ab577378f1d1499870c2e7c66d8e3680b}{win\+\_\+y} = C\+W\+\_\+\+U\+S\+E\+D\+E\+F\+A\+U\+LT
+\item 
+static int \hyperlink{w32__console_8c_a3f05049836bf74dcfbc800d417bedec3}{win\+\_\+width} = C\+W\+\_\+\+U\+S\+E\+D\+E\+F\+A\+U\+LT
+\item 
+static int \hyperlink{w32__console_8c_a043cefe0d8f27979f9813b61305f1407}{win\+\_\+height} = C\+W\+\_\+\+U\+S\+E\+D\+E\+F\+A\+U\+LT
+\item 
+static int \hyperlink{w32__console_8c_ae55b6626ef48177853d0894d8a447a09}{copy\+\_\+on\+\_\+sel} = 1
+\item 
+static int \hyperlink{w32__console_8c_a6e7c54f50c625be4f19dca3485d20fec}{wrap\+\_\+mode} = 0
+\item 
+static int \hyperlink{w32__console_8c_ab46ebb6770dcfd263133118bb3adaf72}{line\+\_\+buffering} = 1
+\item 
+static int \hyperlink{w32__console_8c_ae7429d1de733311552908d4fa0ab92e8}{beep\+\_\+on\+\_\+error} = 0
+\item 
+static char \hyperlink{w32__console_8c_aa28212b08422538341ecd03851778db5}{wr\+\_\+buffer} \mbox{[}10240\mbox{]}
+\item 
+static char $\ast$ \hyperlink{w32__console_8c_ad913bdd51d2c5876d16c8ade97f3cc5a}{wr\+\_\+buffer\+\_\+ptr} = \hyperlink{w32__console_8c_aa28212b08422538341ecd03851778db5}{wr\+\_\+buffer}
+\item 
+static int \hyperlink{w32__console_8c_adf5fb5320c00c57c7d929680e160e324}{dont\+\_\+use\+\_\+selection}
+\item 
+static char \hyperlink{w32__console_8c_a731d5dcfe9120b187986a80721bf13b5}{buff\+\_\+pathname} \mbox{[}M\+A\+X\+\_\+\+P\+A\+TH\mbox{]}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>int \hyperlink{w32__console_8c_ad6976f4a0b11231ce391b697d4ea991f}{idc\_desc}\\
+\>int \hyperlink{w32__console_8c_a0104557b82a0b69508c764e7dd27ec11}{idc\_def\_sz}\\
+\>int \hyperlink{w32__console_8c_a4aee89870c73cea78910689f038e4fda}{idc\_env\_var\_name}\\
+\>int \hyperlink{w32__console_8c_ac9cd6285541bdff0d201dc1e8d9032d3}{idc\_env\_var\_sz}\\
+\>int \hyperlink{w32__console_8c_a34ef715b9d996208c32c0c0d2c884ec0}{idc\_reg\_sz}\\
+\>int \hyperlink{w32__console_8c_a76f385f177632b681dbbbda86f48fa51}{idc\_cur\_sz}\\
+\} \hyperlink{w32__console_8c_a0b13ed54d70dd76975017af6857b3812}{stk} \mbox{[}$\,$\mbox{]}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+I\+N\+F\+O\+R\+M\+A\+T\+I\+ON@{A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+I\+N\+F\+O\+R\+M\+A\+T\+I\+ON}}
+\index{A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+I\+N\+F\+O\+R\+M\+A\+T\+I\+ON@{A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+I\+N\+F\+O\+R\+M\+A\+T\+I\+ON}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+I\+N\+F\+O\+R\+M\+A\+T\+I\+ON}{ADDITIONAL_INFORMATION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+D\+D\+I\+T\+I\+O\+N\+A\+L\+\_\+\+I\+N\+F\+O\+R\+M\+A\+T\+I\+ON}\hypertarget{w32__console_8c_a57c6c70ece6093c49b2692c69ab5c922}{}\label{w32__console_8c_a57c6c70ece6093c49b2692c69ab5c922}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{stringliteral}{"Windows GUI Console version "} \hyperlink{w32__console_8c_acf069f0fc03570b5ed8422750b0aafa7}{GUI\_VERSION} \textcolor{stringliteral}{"\(\backslash\)n"} \(\backslash\)
+  \textcolor{stringliteral}{"By Jacob Navia and Daniel Diaz\(\backslash\)n\(\backslash\)n"}
+\end{DoxyCode}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!B\+I\+F\+\_\+\+N\+E\+W\+D\+I\+A\+L\+O\+G\+S\+T\+Y\+LE@{B\+I\+F\+\_\+\+N\+E\+W\+D\+I\+A\+L\+O\+G\+S\+T\+Y\+LE}}
+\index{B\+I\+F\+\_\+\+N\+E\+W\+D\+I\+A\+L\+O\+G\+S\+T\+Y\+LE@{B\+I\+F\+\_\+\+N\+E\+W\+D\+I\+A\+L\+O\+G\+S\+T\+Y\+LE}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{B\+I\+F\+\_\+\+N\+E\+W\+D\+I\+A\+L\+O\+G\+S\+T\+Y\+LE}{BIF_NEWDIALOGSTYLE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+I\+F\+\_\+\+N\+E\+W\+D\+I\+A\+L\+O\+G\+S\+T\+Y\+LE~0x40}\hypertarget{w32__console_8c_ae1da5dc7c49629b4721c13e6a911d5b3}{}\label{w32__console_8c_ae1da5dc7c49629b4721c13e6a911d5b3}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!B\+I\+F\+\_\+\+N\+O\+N\+E\+W\+F\+O\+L\+D\+E\+R\+B\+U\+T\+T\+ON@{B\+I\+F\+\_\+\+N\+O\+N\+E\+W\+F\+O\+L\+D\+E\+R\+B\+U\+T\+T\+ON}}
+\index{B\+I\+F\+\_\+\+N\+O\+N\+E\+W\+F\+O\+L\+D\+E\+R\+B\+U\+T\+T\+ON@{B\+I\+F\+\_\+\+N\+O\+N\+E\+W\+F\+O\+L\+D\+E\+R\+B\+U\+T\+T\+ON}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{B\+I\+F\+\_\+\+N\+O\+N\+E\+W\+F\+O\+L\+D\+E\+R\+B\+U\+T\+T\+ON}{BIF_NONEWFOLDERBUTTON}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+I\+F\+\_\+\+N\+O\+N\+E\+W\+F\+O\+L\+D\+E\+R\+B\+U\+T\+T\+ON~0x0200}\hypertarget{w32__console_8c_ad09fdb35794db4325f9a0f9421803d57}{}\label{w32__console_8c_ad09fdb35794db4325f9a0f9421803d57}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Dequeue@{Dequeue}}
+\index{Dequeue@{Dequeue}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Dequeue}{Dequeue}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Dequeue(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf c}}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_ae57c6e94b29ba4f046754f13534d40f2}{}\label{w32__console_8c_ae57c6e94b29ba4f046754f13534d40f2}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}                                                    \(\backslash\)
+    \{                                                   \hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{\(\backslash\)}
+\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{      c} = \hyperlink{w32__console_8c_aa4dd3f36c2a92e8efb0c8b92db7981fc}{queue}[\hyperlink{w32__console_8c_a130462e376d7e818e17fbaee36ab9309}{queue\_start}];                           \hyperlink{w32__console_8c_a130462e376d7e818e17fbaee36ab9309}{\(\backslash\)}
+\hyperlink{w32__console_8c_a130462e376d7e818e17fbaee36ab9309}{      queue\_start} = (\hyperlink{w32__console_8c_a130462e376d7e818e17fbaee36ab9309}{queue\_start} + 1) % \textcolor{keyword}{sizeof}(\hyperlink{w32__console_8c_aa4dd3f36c2a92e8efb0c8b92db7981fc}{queue});  \(\backslash\)
+    \}                                                   \(\backslash\)
+  while(0)
+\end{DoxyCode}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!D\+L\+L\+E\+X\+P\+O\+RT@{D\+L\+L\+E\+X\+P\+O\+RT}}
+\index{D\+L\+L\+E\+X\+P\+O\+RT@{D\+L\+L\+E\+X\+P\+O\+RT}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{D\+L\+L\+E\+X\+P\+O\+RT}{DLLEXPORT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+L\+L\+E\+X\+P\+O\+RT~{\bf \+\_\+\+\_\+declspec}(dllexport)}\hypertarget{w32__console_8c_a808e08638be3cba36e36759e5b150de0}{}\label{w32__console_8c_a808e08638be3cba36e36759e5b150de0}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!E\+D\+I\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+I\+ZE@{E\+D\+I\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+I\+ZE}}
+\index{E\+D\+I\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+I\+ZE@{E\+D\+I\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+I\+ZE}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{E\+D\+I\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+I\+ZE}{EDIT_FIELD_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+D\+I\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+I\+ZE~64000  /$\ast$ 0 does not work ! why ? $\ast$/}\hypertarget{w32__console_8c_ac19dc430014ff623502e32b3b95e1134}{}\label{w32__console_8c_ac19dc430014ff623502e32b3b95e1134}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Enqueue@{Enqueue}}
+\index{Enqueue@{Enqueue}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Enqueue}{Enqueue}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Enqueue(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf c}}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_a6737ee7b5ea0ac73f105b8ee8dd5cda3}{}\label{w32__console_8c_a6737ee7b5ea0ac73f105b8ee8dd5cda3}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}                                                    \(\backslash\)
+    \{                                                   \hyperlink{w32__console_8c_aa4dd3f36c2a92e8efb0c8b92db7981fc}{\(\backslash\)}
+\hyperlink{w32__console_8c_aa4dd3f36c2a92e8efb0c8b92db7981fc}{      queue}[\hyperlink{w32__console_8c_aeda2fce60f1165daeb74c28670a34063}{queue\_end}] = \hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c};                             \hyperlink{w32__console_8c_aeda2fce60f1165daeb74c28670a34063}{\(\backslash\)}
+\hyperlink{w32__console_8c_aeda2fce60f1165daeb74c28670a34063}{      queue\_end} = (\hyperlink{w32__console_8c_aeda2fce60f1165daeb74c28670a34063}{queue\_end} + 1) % \textcolor{keyword}{sizeof}(\hyperlink{w32__console_8c_aa4dd3f36c2a92e8efb0c8b92db7981fc}{queue});      \(\backslash\)
+      if (\hyperlink{w32__console_8c_aeda2fce60f1165daeb74c28670a34063}{queue\_end} == \hyperlink{w32__console_8c_a130462e376d7e818e17fbaee36ab9309}{queue\_start})                     \hyperlink{w32__console_8c_a130462e376d7e818e17fbaee36ab9309}{\(\backslash\)}
+\hyperlink{w32__console_8c_a130462e376d7e818e17fbaee36ab9309}{        queue\_start} = (\hyperlink{w32__console_8c_a130462e376d7e818e17fbaee36ab9309}{queue\_start} + 1) % \textcolor{keyword}{sizeof}(
+      \hyperlink{w32__console_8c_aa4dd3f36c2a92e8efb0c8b92db7981fc}{queue});\(\backslash\)
+    \}                                                   \(\backslash\)
+  while(0)
+\end{DoxyCode}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!F\+I\+X\+\_\+\+B\+A\+C\+K\+S\+L\+A\+SH@{F\+I\+X\+\_\+\+B\+A\+C\+K\+S\+L\+A\+SH}}
+\index{F\+I\+X\+\_\+\+B\+A\+C\+K\+S\+L\+A\+SH@{F\+I\+X\+\_\+\+B\+A\+C\+K\+S\+L\+A\+SH}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{F\+I\+X\+\_\+\+B\+A\+C\+K\+S\+L\+A\+SH}{FIX_BACKSLASH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+I\+X\+\_\+\+B\+A\+C\+K\+S\+L\+A\+SH~4}\hypertarget{w32__console_8c_a2c79da19077479e21777cd357a7842a5}{}\label{w32__console_8c_a2c79da19077479e21777cd357a7842a5}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!F\+I\+X\+\_\+\+CR@{F\+I\+X\+\_\+\+CR}}
+\index{F\+I\+X\+\_\+\+CR@{F\+I\+X\+\_\+\+CR}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{F\+I\+X\+\_\+\+CR}{FIX_CR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+I\+X\+\_\+\+CR~2}\hypertarget{w32__console_8c_aab9eb160c9a465f92b2d123e7a00c610}{}\label{w32__console_8c_aab9eb160c9a465f92b2d123e7a00c610}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!F\+I\+X\+\_\+\+Q\+U\+O\+TE@{F\+I\+X\+\_\+\+Q\+U\+O\+TE}}
+\index{F\+I\+X\+\_\+\+Q\+U\+O\+TE@{F\+I\+X\+\_\+\+Q\+U\+O\+TE}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{F\+I\+X\+\_\+\+Q\+U\+O\+TE}{FIX_QUOTE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+I\+X\+\_\+\+Q\+U\+O\+TE~8}\hypertarget{w32__console_8c_ab30193333ec5fd850e20bd1cad031cb0}{}\label{w32__console_8c_ab30193333ec5fd850e20bd1cad031cb0}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!F\+I\+X\+\_\+\+T\+AB@{F\+I\+X\+\_\+\+T\+AB}}
+\index{F\+I\+X\+\_\+\+T\+AB@{F\+I\+X\+\_\+\+T\+AB}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{F\+I\+X\+\_\+\+T\+AB}{FIX_TAB}}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+I\+X\+\_\+\+T\+AB~1}\hypertarget{w32__console_8c_a8ed1e7ba38d06388e0e4741e39cbafec}{}\label{w32__console_8c_a8ed1e7ba38d06388e0e4741e39cbafec}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Get\+Window\+Long\+Ptr@{Get\+Window\+Long\+Ptr}}
+\index{Get\+Window\+Long\+Ptr@{Get\+Window\+Long\+Ptr}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Get\+Window\+Long\+Ptr}{GetWindowLongPtr}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Get\+Window\+Long\+Ptr~Get\+Window\+Long}\hypertarget{w32__console_8c_a3fbf7274e17f273bfe132d9b35bf96d7}{}\label{w32__console_8c_a3fbf7274e17f273bfe132d9b35bf96d7}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!G\+U\+I\+\_\+\+V\+E\+R\+S\+I\+ON@{G\+U\+I\+\_\+\+V\+E\+R\+S\+I\+ON}}
+\index{G\+U\+I\+\_\+\+V\+E\+R\+S\+I\+ON@{G\+U\+I\+\_\+\+V\+E\+R\+S\+I\+ON}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{G\+U\+I\+\_\+\+V\+E\+R\+S\+I\+ON}{GUI_VERSION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+U\+I\+\_\+\+V\+E\+R\+S\+I\+ON~\char`\"{}1.\+1\char`\"{}}\hypertarget{w32__console_8c_acf069f0fc03570b5ed8422750b0aafa7}{}\label{w32__console_8c_acf069f0fc03570b5ed8422750b0aafa7}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Is\+\_\+\+A\+\_\+\+Sep@{Is\+\_\+\+A\+\_\+\+Sep}}
+\index{Is\+\_\+\+A\+\_\+\+Sep@{Is\+\_\+\+A\+\_\+\+Sep}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Is\+\_\+\+A\+\_\+\+Sep}{Is_A_Sep}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Is\+\_\+\+A\+\_\+\+Sep(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf c}}
+\end{DoxyParamCaption}
+)~(!isprint({\bf c}) $\vert$$\vert$ (strchr({\bf separators}, {\bf c}) != N\+U\+LL))}\hypertarget{w32__console_8c_aef06b46147307a11fc762b30bb229f01}{}\label{w32__console_8c_aef06b46147307a11fc762b30bb229f01}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Queue\+\_\+\+Is\+\_\+\+Empty@{Queue\+\_\+\+Is\+\_\+\+Empty}}
+\index{Queue\+\_\+\+Is\+\_\+\+Empty@{Queue\+\_\+\+Is\+\_\+\+Empty}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Queue\+\_\+\+Is\+\_\+\+Empty}{Queue_Is_Empty}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Queue\+\_\+\+Is\+\_\+\+Empty(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~({\bf queue\+\_\+start} == {\bf queue\+\_\+end})}\hypertarget{w32__console_8c_ae492e578712b8c7f07d15a1c6c3bf37a}{}\label{w32__console_8c_ae492e578712b8c7f07d15a1c6c3bf37a}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!R\+E\+A\+D\+\_\+\+B\+O\+O\+L\+\_\+\+R\+EG@{R\+E\+A\+D\+\_\+\+B\+O\+O\+L\+\_\+\+R\+EG}}
+\index{R\+E\+A\+D\+\_\+\+B\+O\+O\+L\+\_\+\+R\+EG@{R\+E\+A\+D\+\_\+\+B\+O\+O\+L\+\_\+\+R\+EG}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{R\+E\+A\+D\+\_\+\+B\+O\+O\+L\+\_\+\+R\+EG}{READ_BOOL_REG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+A\+D\+\_\+\+B\+O\+O\+L\+\_\+\+R\+EG(
+\begin{DoxyParamCaption}
+\item[{}]{key\+\_\+name, }
+\item[{}]{{\bf var}}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_a06234f3c89ef0fc2ba1a128321b85828}{}\label{w32__console_8c_a06234f3c89ef0fc2ba1a128321b85828}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                                                               \(\backslash\)
+  unsigned \textcolor{keywordtype}{char} \hyperlink{chkma_8c_ad5c67729c64bef3313e8f565dc73e6dd}{x};                                              \(\backslash\)
+  if (Read\_Windows\_Registry(key\_name, REG\_BINARY, &x, 1))       \hyperlink{asm__inst_8c_ab34e69421408185f58b36de8d423a006}{\(\backslash\)}
+\hyperlink{asm__inst_8c_ab34e69421408185f58b36de8d423a006}{    var} = \hyperlink{chkma_8c_ad5c67729c64bef3313e8f565dc73e6dd}{x};                                                    \(\backslash\)
+\}
+\end{DoxyCode}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!R\+E\+A\+D\+\_\+\+I\+N\+T\+\_\+\+R\+EG@{R\+E\+A\+D\+\_\+\+I\+N\+T\+\_\+\+R\+EG}}
+\index{R\+E\+A\+D\+\_\+\+I\+N\+T\+\_\+\+R\+EG@{R\+E\+A\+D\+\_\+\+I\+N\+T\+\_\+\+R\+EG}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{R\+E\+A\+D\+\_\+\+I\+N\+T\+\_\+\+R\+EG}{READ_INT_REG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+A\+D\+\_\+\+I\+N\+T\+\_\+\+R\+EG(
+\begin{DoxyParamCaption}
+\item[{}]{key\+\_\+name, }
+\item[{}]{{\bf var}}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_abc28f423fed6c771b854e93038972afa}{}\label{w32__console_8c_abc28f423fed6c771b854e93038972afa}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                                                               \(\backslash\)
+  DWORD \hyperlink{chkma_8c_ad5c67729c64bef3313e8f565dc73e6dd}{x};                                                      \(\backslash\)
+  if (Read\_Windows\_Registry(key\_name, REG\_DWORD, &x, \textcolor{keyword}{sizeof}(x)))\hyperlink{asm__inst_8c_ab34e69421408185f58b36de8d423a006}{\(\backslash\)}
+\hyperlink{asm__inst_8c_ab34e69421408185f58b36de8d423a006}{    var} = \hyperlink{chkma_8c_ad5c67729c64bef3313e8f565dc73e6dd}{x};                                                    \(\backslash\)
+\}
+\end{DoxyCode}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!S\+E\+T\+\_\+\+C\+H\+E\+C\+K\+E\+D\+\_\+\+O\+PT@{S\+E\+T\+\_\+\+C\+H\+E\+C\+K\+E\+D\+\_\+\+O\+PT}}
+\index{S\+E\+T\+\_\+\+C\+H\+E\+C\+K\+E\+D\+\_\+\+O\+PT@{S\+E\+T\+\_\+\+C\+H\+E\+C\+K\+E\+D\+\_\+\+O\+PT}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{S\+E\+T\+\_\+\+C\+H\+E\+C\+K\+E\+D\+\_\+\+O\+PT}{SET_CHECKED_OPT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+T\+\_\+\+C\+H\+E\+C\+K\+E\+D\+\_\+\+O\+PT(
+\begin{DoxyParamCaption}
+\item[{}]{idm\+\_\+cmd, }
+\item[{}]{{\bf var}}
+\end{DoxyParamCaption}
+)~Check\+Menu\+Item(Get\+Menu({\bf hwnd\+Main}), idm\+\_\+cmd, ({\bf var}) ? M\+F\+\_\+\+C\+H\+E\+C\+K\+ED \+: M\+F\+\_\+\+U\+N\+C\+H\+E\+C\+K\+ED)}\hypertarget{w32__console_8c_ace316e675504594e0f63c695242e2a5c}{}\label{w32__console_8c_ace316e675504594e0f63c695242e2a5c}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Set\+Window\+Long\+Ptr@{Set\+Window\+Long\+Ptr}}
+\index{Set\+Window\+Long\+Ptr@{Set\+Window\+Long\+Ptr}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Set\+Window\+Long\+Ptr}{SetWindowLongPtr}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Set\+Window\+Long\+Ptr~Set\+Window\+Long}\hypertarget{w32__console_8c_a48d1cb04a874eb4e82d978ae86a302ea}{}\label{w32__console_8c_a48d1cb04a874eb4e82d978ae86a302ea}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W\+R\+I\+T\+E\+\_\+\+B\+O\+O\+L\+\_\+\+R\+EG@{W\+R\+I\+T\+E\+\_\+\+B\+O\+O\+L\+\_\+\+R\+EG}}
+\index{W\+R\+I\+T\+E\+\_\+\+B\+O\+O\+L\+\_\+\+R\+EG@{W\+R\+I\+T\+E\+\_\+\+B\+O\+O\+L\+\_\+\+R\+EG}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+B\+O\+O\+L\+\_\+\+R\+EG}{WRITE_BOOL_REG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+R\+I\+T\+E\+\_\+\+B\+O\+O\+L\+\_\+\+R\+EG(
+\begin{DoxyParamCaption}
+\item[{}]{key\+\_\+name, }
+\item[{}]{{\bf var}}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_ad718da836385b5c755aa86493304f587}{}\label{w32__console_8c_ad718da836385b5c755aa86493304f587}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                                                               \(\backslash\)
+  unsigned \textcolor{keywordtype}{char} \hyperlink{chkma_8c_ad5c67729c64bef3313e8f565dc73e6dd}{x} = (\textcolor{keywordtype}{unsigned} char) \hyperlink{asm__inst_8c_ab34e69421408185f58b36de8d423a006}{var};                        \(\backslash\)
+  Write\_Windows\_Registry(key\_name, REG\_BINARY, &x, 1);          \(\backslash\)
+\}
+\end{DoxyCode}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W\+R\+I\+T\+E\+\_\+\+I\+N\+T\+\_\+\+R\+EG@{W\+R\+I\+T\+E\+\_\+\+I\+N\+T\+\_\+\+R\+EG}}
+\index{W\+R\+I\+T\+E\+\_\+\+I\+N\+T\+\_\+\+R\+EG@{W\+R\+I\+T\+E\+\_\+\+I\+N\+T\+\_\+\+R\+EG}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+I\+N\+T\+\_\+\+R\+EG}{WRITE_INT_REG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+R\+I\+T\+E\+\_\+\+I\+N\+T\+\_\+\+R\+EG(
+\begin{DoxyParamCaption}
+\item[{}]{key\+\_\+name, }
+\item[{}]{{\bf var}}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_a2b7ebcfb7892dec3cafc6267edff239b}{}\label{w32__console_8c_a2b7ebcfb7892dec3cafc6267edff239b}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                                                               \(\backslash\)
+  DWORD \hyperlink{chkma_8c_ad5c67729c64bef3313e8f565dc73e6dd}{x} = (DWORD) \hyperlink{asm__inst_8c_ab34e69421408185f58b36de8d423a006}{var};                                        \(\backslash\)
+  Write\_Windows\_Registry(key\_name, REG\_DWORD, &x, \textcolor{keyword}{sizeof}(x));   \(\backslash\)
+\}
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Activate\+\_\+\+Options@{Activate\+\_\+\+Options}}
+\index{Activate\+\_\+\+Options@{Activate\+\_\+\+Options}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Activate\+\_\+\+Options(void)}{Activate_Options(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Activate\+\_\+\+Options (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a5bbc75ac922723070433ae4d2efe0b59}{}\label{w32__console_8c_a5bbc75ac922723070433ae4d2efe0b59}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a5bbc75ac922723070433ae4d2efe0b59_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a5bbc75ac922723070433ae4d2efe0b59_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Add\+\_\+\+Char\+\_\+\+To\+\_\+\+Queue@{Add\+\_\+\+Char\+\_\+\+To\+\_\+\+Queue}}
+\index{Add\+\_\+\+Char\+\_\+\+To\+\_\+\+Queue@{Add\+\_\+\+Char\+\_\+\+To\+\_\+\+Queue}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Add\+\_\+\+Char\+\_\+\+To\+\_\+\+Queue(int c)}{Add_Char_To_Queue(int c)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Add\+\_\+\+Char\+\_\+\+To\+\_\+\+Queue (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_aa1aefedc2452b3120b0d25c9a860fddc}{}\label{w32__console_8c_aa1aefedc2452b3120b0d25c9a860fddc}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_aa1aefedc2452b3120b0d25c9a860fddc_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Add\+\_\+\+Clipboard\+\_\+\+To\+\_\+\+Queue@{Add\+\_\+\+Clipboard\+\_\+\+To\+\_\+\+Queue}}
+\index{Add\+\_\+\+Clipboard\+\_\+\+To\+\_\+\+Queue@{Add\+\_\+\+Clipboard\+\_\+\+To\+\_\+\+Queue}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Add\+\_\+\+Clipboard\+\_\+\+To\+\_\+\+Queue(void)}{Add_Clipboard_To_Queue(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Add\+\_\+\+Clipboard\+\_\+\+To\+\_\+\+Queue (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_af041f75cf92908627d2a76f3a70f0c4a}{}\label{w32__console_8c_af041f75cf92908627d2a76f3a70f0c4a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_af041f75cf92908627d2a76f3a70f0c4a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_af041f75cf92908627d2a76f3a70f0c4a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Add\+\_\+\+String\+\_\+\+To\+\_\+\+Queue@{Add\+\_\+\+String\+\_\+\+To\+\_\+\+Queue}}
+\index{Add\+\_\+\+String\+\_\+\+To\+\_\+\+Queue@{Add\+\_\+\+String\+\_\+\+To\+\_\+\+Queue}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Add\+\_\+\+String\+\_\+\+To\+\_\+\+Queue(char $\ast$str, int mask\+\_\+fix)}{Add_String_To_Queue(char *str, int mask_fix)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Add\+\_\+\+String\+\_\+\+To\+\_\+\+Queue (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{int}]{mask\+\_\+fix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a7a3267ed0ece9abb97a70487dc99aa75}{}\label{w32__console_8c_a7a3267ed0ece9abb97a70487dc99aa75}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a7a3267ed0ece9abb97a70487dc99aa75_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Browse\+Callback\+Proc@{Browse\+Callback\+Proc}}
+\index{Browse\+Callback\+Proc@{Browse\+Callback\+Proc}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Browse\+Callback\+Proc(\+H\+W\+N\+D hwnd, U\+I\+N\+T u\+Msg, L\+P\+A\+R\+A\+M lp, L\+P\+A\+R\+A\+M p\+Data)}{BrowseCallbackProc(HWND hwnd, UINT uMsg, LPARAM lp, LPARAM pData)}}]{\setlength{\rightskip}{0pt plus 5cm}static int W\+I\+N\+A\+PI Browse\+Callback\+Proc (
+\begin{DoxyParamCaption}
+\item[{H\+W\+ND}]{hwnd, }
+\item[{U\+I\+NT}]{u\+Msg, }
+\item[{L\+P\+A\+R\+AM}]{lp, }
+\item[{L\+P\+A\+R\+AM}]{p\+Data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a6b34de0106a84c3f3eacfdf7fe989a17}{}\label{w32__console_8c_a6b34de0106a84c3f3eacfdf7fe989a17}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a6b34de0106a84c3f3eacfdf7fe989a17_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Call\+Main@{Call\+Main}}
+\index{Call\+Main@{Call\+Main}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Call\+Main(void $\ast$unused)}{CallMain(void *unused)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Call\+Main (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{unused}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a3e359465ba75ec15014d5af9c09d3db9}{}\label{w32__console_8c_a3e359465ba75ec15014d5af9c09d3db9}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a3e359465ba75ec15014d5af9c09d3db9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a3e359465ba75ec15014d5af9c09d3db9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Change\+\_\+\+Directory@{Change\+\_\+\+Directory}}
+\index{Change\+\_\+\+Directory@{Change\+\_\+\+Directory}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Change\+\_\+\+Directory(void)}{Change_Directory(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Change\+\_\+\+Directory (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a5d40c37d966c85af95f36eef239c98c8}{}\label{w32__console_8c_a5d40c37d966c85af95f36eef239c98c8}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a5d40c37d966c85af95f36eef239c98c8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a5d40c37d966c85af95f36eef239c98c8_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Change\+\_\+\+Font@{Change\+\_\+\+Font}}
+\index{Change\+\_\+\+Font@{Change\+\_\+\+Font}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Change\+\_\+\+Font(\+H\+W\+N\+D hwnd)}{Change_Font(HWND hwnd)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Change\+\_\+\+Font (
+\begin{DoxyParamCaption}
+\item[{H\+W\+ND}]{hwnd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a7c91e9cff6dac8c36df5af92834243bc}{}\label{w32__console_8c_a7c91e9cff6dac8c36df5af92834243bc}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a7c91e9cff6dac8c36df5af92834243bc_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Consult\+\_\+\+File@{Consult\+\_\+\+File}}
+\index{Consult\+\_\+\+File@{Consult\+\_\+\+File}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Consult\+\_\+\+File(void)}{Consult_File(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Consult\+\_\+\+File (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a5cafa6fe226996300727eef685e6cde5}{}\label{w32__console_8c_a5cafa6fe226996300727eef685e6cde5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a5cafa6fe226996300727eef685e6cde5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a5cafa6fe226996300727eef685e6cde5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Create\+\_\+\+Courier\+\_\+\+Font@{Create\+\_\+\+Courier\+\_\+\+Font}}
+\index{Create\+\_\+\+Courier\+\_\+\+Font@{Create\+\_\+\+Courier\+\_\+\+Font}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Create\+\_\+\+Courier\+\_\+\+Font(void)}{Create_Courier_Font(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static H\+F\+O\+NT Create\+\_\+\+Courier\+\_\+\+Font (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a6981804399e0771b70ed8e1317a00e2f}{}\label{w32__console_8c_a6981804399e0771b70ed8e1317a00e2f}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a6981804399e0771b70ed8e1317a00e2f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Create\+\_\+\+Edit\+\_\+\+Control@{Create\+\_\+\+Edit\+\_\+\+Control}}
+\index{Create\+\_\+\+Edit\+\_\+\+Control@{Create\+\_\+\+Edit\+\_\+\+Control}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Create\+\_\+\+Edit\+\_\+\+Control(\+H\+W\+N\+D hwnd)}{Create_Edit_Control(HWND hwnd)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Create\+\_\+\+Edit\+\_\+\+Control (
+\begin{DoxyParamCaption}
+\item[{H\+W\+ND}]{hwnd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a4d3fc2c91e2a42d1ee0ab9afb8b25934}{}\label{w32__console_8c_a4d3fc2c91e2a42d1ee0ab9afb8b25934}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a4d3fc2c91e2a42d1ee0ab9afb8b25934_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a4d3fc2c91e2a42d1ee0ab9afb8b25934_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Createw32\+\_\+console\+Wnd\+Class\+Wnd@{Createw32\+\_\+console\+Wnd\+Class\+Wnd}}
+\index{Createw32\+\_\+console\+Wnd\+Class\+Wnd@{Createw32\+\_\+console\+Wnd\+Class\+Wnd}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Createw32\+\_\+console\+Wnd\+Class\+Wnd(void)}{Createw32_consoleWndClassWnd(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static H\+W\+ND Createw32\+\_\+console\+Wnd\+Class\+Wnd (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a866478de98e81fa4cceb82aab8c66fbc}{}\label{w32__console_8c_a866478de98e81fa4cceb82aab8c66fbc}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a866478de98e81fa4cceb82aab8c66fbc_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Delete\+\_\+\+Selection@{Delete\+\_\+\+Selection}}
+\index{Delete\+\_\+\+Selection@{Delete\+\_\+\+Selection}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Delete\+\_\+\+Selection(void)}{Delete_Selection(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Delete\+\_\+\+Selection (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_adaf1402815a745cc420a50b850400d4e}{}\label{w32__console_8c_adaf1402815a745cc420a50b850400d4e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_adaf1402815a745cc420a50b850400d4e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_adaf1402815a745cc420a50b850400d4e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Display\+\_\+\+Text@{Display\+\_\+\+Text}}
+\index{Display\+\_\+\+Text@{Display\+\_\+\+Text}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Display\+\_\+\+Text(char $\ast$str, int n)}{Display_Text(char *str, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Display\+\_\+\+Text (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a2764af0c7408a134e5da5fa101b6dabe}{}\label{w32__console_8c_a2764af0c7408a134e5da5fa101b6dabe}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a2764af0c7408a134e5da5fa101b6dabe_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{w32__console_8c_a2764af0c7408a134e5da5fa101b6dabe_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Dll\+Main@{Dll\+Main}}
+\index{Dll\+Main@{Dll\+Main}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Dll\+Main(\+H\+I\+N\+S\+T\+A\+N\+C\+E h\+D\+L\+L\+Inst, D\+W\+O\+R\+D fdw\+Reason, L\+P\+V\+O\+I\+D lpv\+Reserved)}{DllMain(HINSTANCE hDLLInst, DWORD fdwReason, LPVOID lpvReserved)}}]{\setlength{\rightskip}{0pt plus 5cm}B\+O\+OL {\bf D\+L\+L\+E\+X\+P\+O\+RT} W\+I\+N\+A\+PI Dll\+Main (
+\begin{DoxyParamCaption}
+\item[{H\+I\+N\+S\+T\+A\+N\+CE}]{h\+D\+L\+L\+Inst, }
+\item[{D\+W\+O\+RD}]{fdw\+Reason, }
+\item[{L\+P\+V\+O\+ID}]{lpv\+Reserved}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_abe8f0cf3e565df4cbd4487a438eb3ee7}{}\label{w32__console_8c_abe8f0cf3e565df4cbd4487a438eb3ee7}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Find\+\_\+\+Text\+\_\+\+Console\+\_\+\+Handle@{Find\+\_\+\+Text\+\_\+\+Console\+\_\+\+Handle}}
+\index{Find\+\_\+\+Text\+\_\+\+Console\+\_\+\+Handle@{Find\+\_\+\+Text\+\_\+\+Console\+\_\+\+Handle}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Find\+\_\+\+Text\+\_\+\+Console\+\_\+\+Handle(void)}{Find_Text_Console_Handle(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static H\+W\+ND Find\+\_\+\+Text\+\_\+\+Console\+\_\+\+Handle (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a8b13ccc50432e414ecfecda6cacd0dfa}{}\label{w32__console_8c_a8b13ccc50432e414ecfecda6cacd0dfa}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a8b13ccc50432e414ecfecda6cacd0dfa_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Flush\+\_\+\+Buffer@{Flush\+\_\+\+Buffer}}
+\index{Flush\+\_\+\+Buffer@{Flush\+\_\+\+Buffer}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Flush\+\_\+\+Buffer(void)}{Flush_Buffer(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Flush\+\_\+\+Buffer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a24b183b30fc00a737da1b325dfbfa594}{}\label{w32__console_8c_a24b183b30fc00a737da1b325dfbfa594}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a24b183b30fc00a737da1b325dfbfa594_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a24b183b30fc00a737da1b325dfbfa594_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Get\+\_\+\+C\+H\+M\+\_\+\+Help\+\_\+\+Path@{Get\+\_\+\+C\+H\+M\+\_\+\+Help\+\_\+\+Path}}
+\index{Get\+\_\+\+C\+H\+M\+\_\+\+Help\+\_\+\+Path@{Get\+\_\+\+C\+H\+M\+\_\+\+Help\+\_\+\+Path}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Get\+\_\+\+C\+H\+M\+\_\+\+Help\+\_\+\+Path(char $\ast$path)}{Get_CHM_Help_Path(char *path)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Get\+\_\+\+C\+H\+M\+\_\+\+Help\+\_\+\+Path (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a7c82a573b5e01698b2f8e86d4cef3702}{}\label{w32__console_8c_a7c82a573b5e01698b2f8e86d4cef3702}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a7c82a573b5e01698b2f8e86d4cef3702_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a7c82a573b5e01698b2f8e86d4cef3702_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Get\+\_\+\+Current\+\_\+\+Word@{Get\+\_\+\+Current\+\_\+\+Word}}
+\index{Get\+\_\+\+Current\+\_\+\+Word@{Get\+\_\+\+Current\+\_\+\+Word}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Get\+\_\+\+Current\+\_\+\+Word(int select\+\_\+it)}{Get_Current_Word(int select_it)}}]{\setlength{\rightskip}{0pt plus 5cm}static char $\ast$ Get\+\_\+\+Current\+\_\+\+Word (
+\begin{DoxyParamCaption}
+\item[{int}]{select\+\_\+it}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_add48de04cc579f7ed8c1e507afce16c6}{}\label{w32__console_8c_add48de04cc579f7ed8c1e507afce16c6}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_add48de04cc579f7ed8c1e507afce16c6_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Get\+\_\+\+Selected\+\_\+\+Directory@{Get\+\_\+\+Selected\+\_\+\+Directory}}
+\index{Get\+\_\+\+Selected\+\_\+\+Directory@{Get\+\_\+\+Selected\+\_\+\+Directory}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Get\+\_\+\+Selected\+\_\+\+Directory(char $\ast$title, int new\+\_\+folder)}{Get_Selected_Directory(char *title, int new_folder)}}]{\setlength{\rightskip}{0pt plus 5cm}static char $\ast$ Get\+\_\+\+Selected\+\_\+\+Directory (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{title, }
+\item[{int}]{new\+\_\+folder}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a637e0b7a2536a792abc63915a1bf671b}{}\label{w32__console_8c_a637e0b7a2536a792abc63915a1bf671b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{w32__console_8c_a637e0b7a2536a792abc63915a1bf671b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a637e0b7a2536a792abc63915a1bf671b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Get\+\_\+\+Selected\+\_\+\+File\+\_\+\+Name@{Get\+\_\+\+Selected\+\_\+\+File\+\_\+\+Name}}
+\index{Get\+\_\+\+Selected\+\_\+\+File\+\_\+\+Name@{Get\+\_\+\+Selected\+\_\+\+File\+\_\+\+Name}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Get\+\_\+\+Selected\+\_\+\+File\+\_\+\+Name(char $\ast$title, char $\ast$default\+\_\+ext, char $\ast$filter)}{Get_Selected_File_Name(char *title, char *default_ext, char *filter)}}]{\setlength{\rightskip}{0pt plus 5cm}static char $\ast$ Get\+\_\+\+Selected\+\_\+\+File\+\_\+\+Name (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{title, }
+\item[{char $\ast$}]{default\+\_\+ext, }
+\item[{char $\ast$}]{filter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_ace1e5e9b3f8bf6cbf289895447a94cd7}{}\label{w32__console_8c_ace1e5e9b3f8bf6cbf289895447a94cd7}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_ace1e5e9b3f8bf6cbf289895447a94cd7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_ace1e5e9b3f8bf6cbf289895447a94cd7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Init\+Application@{Init\+Application}}
+\index{Init\+Application@{Init\+Application}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Init\+Application(void)}{InitApplication(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static B\+O\+OL Init\+Application (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_aea7abcb71562352e8ff9c3efd95c505b}{}\label{w32__console_8c_aea7abcb71562352e8ff9c3efd95c505b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_aea7abcb71562352e8ff9c3efd95c505b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_aea7abcb71562352e8ff9c3efd95c505b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Insert\+\_\+\+File\+\_\+\+Name@{Insert\+\_\+\+File\+\_\+\+Name}}
+\index{Insert\+\_\+\+File\+\_\+\+Name@{Insert\+\_\+\+File\+\_\+\+Name}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Insert\+\_\+\+File\+\_\+\+Name(void)}{Insert_File_Name(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Insert\+\_\+\+File\+\_\+\+Name (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_aafaddbdf6d5871b5d2deaee1a7e37f42}{}\label{w32__console_8c_aafaddbdf6d5871b5d2deaee1a7e37f42}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_aafaddbdf6d5871b5d2deaee1a7e37f42_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_aafaddbdf6d5871b5d2deaee1a7e37f42_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Launched\+\_\+\+From\+\_\+\+Command\+\_\+\+Line@{Launched\+\_\+\+From\+\_\+\+Command\+\_\+\+Line}}
+\index{Launched\+\_\+\+From\+\_\+\+Command\+\_\+\+Line@{Launched\+\_\+\+From\+\_\+\+Command\+\_\+\+Line}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Launched\+\_\+\+From\+\_\+\+Command\+\_\+\+Line()}{Launched_From_Command_Line()}}]{\setlength{\rightskip}{0pt plus 5cm}static int Launched\+\_\+\+From\+\_\+\+Command\+\_\+\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_add18d3d84266c63a2fc07cf8455c9d5e}{}\label{w32__console_8c_add18d3d84266c63a2fc07cf8455c9d5e}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_add18d3d84266c63a2fc07cf8455c9d5e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Load\+\_\+\+Options@{Load\+\_\+\+Options}}
+\index{Load\+\_\+\+Options@{Load\+\_\+\+Options}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Load\+\_\+\+Options(void)}{Load_Options(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Load\+\_\+\+Options (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_ac2f0c6854b2fdc538e0878a2654760ca}{}\label{w32__console_8c_ac2f0c6854b2fdc538e0878a2654760ca}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{w32__console_8c_ac2f0c6854b2fdc538e0878a2654760ca_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_ac2f0c6854b2fdc538e0878a2654760ca_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Main\+Wnd\+Proc@{Main\+Wnd\+Proc}}
+\index{Main\+Wnd\+Proc@{Main\+Wnd\+Proc}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Main\+Wnd\+Proc(\+H\+W\+N\+D hwnd, U\+I\+N\+T msg, W\+P\+A\+R\+A\+M w\+Param, L\+P\+A\+R\+A\+M l\+Param)}{MainWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)}}]{\setlength{\rightskip}{0pt plus 5cm}static L\+R\+E\+S\+U\+LT C\+A\+L\+L\+B\+A\+CK Main\+Wnd\+Proc (
+\begin{DoxyParamCaption}
+\item[{H\+W\+ND}]{hwnd, }
+\item[{U\+I\+NT}]{msg, }
+\item[{W\+P\+A\+R\+AM}]{w\+Param, }
+\item[{L\+P\+A\+R\+AM}]{l\+Param}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_ab023aa0285ba796fb7809eed2e6cdbe1}{}\label{w32__console_8c_ab023aa0285ba796fb7809eed2e6cdbe1}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_ab023aa0285ba796fb7809eed2e6cdbe1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_ab023aa0285ba796fb7809eed2e6cdbe1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Main\+Wnd\+Proc\+\_\+\+On\+Command@{Main\+Wnd\+Proc\+\_\+\+On\+Command}}
+\index{Main\+Wnd\+Proc\+\_\+\+On\+Command@{Main\+Wnd\+Proc\+\_\+\+On\+Command}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Main\+Wnd\+Proc\+\_\+\+On\+Command(\+H\+W\+N\+D hwnd, int id, H\+W\+N\+D hwnd\+Ctl, U\+I\+N\+T code\+Notify)}{MainWndProc_OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Main\+Wnd\+Proc\+\_\+\+On\+Command (
+\begin{DoxyParamCaption}
+\item[{H\+W\+ND}]{hwnd, }
+\item[{int}]{id, }
+\item[{H\+W\+ND}]{hwnd\+Ctl, }
+\item[{U\+I\+NT}]{code\+Notify}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_aabb62b5ceb8b73f54c4478021cedf130}{}\label{w32__console_8c_aabb62b5ceb8b73f54c4478021cedf130}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_aabb62b5ceb8b73f54c4478021cedf130_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_aabb62b5ceb8b73f54c4478021cedf130_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Make\+\_\+\+Windows\+\_\+\+Filter@{Make\+\_\+\+Windows\+\_\+\+Filter}}
+\index{Make\+\_\+\+Windows\+\_\+\+Filter@{Make\+\_\+\+Windows\+\_\+\+Filter}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Make\+\_\+\+Windows\+\_\+\+Filter(char $\ast$filter)}{Make_Windows_Filter(char *filter)}}]{\setlength{\rightskip}{0pt plus 5cm}static char$\ast$ Make\+\_\+\+Windows\+\_\+\+Filter (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{filter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a42d2133edfa796e46154e68d25b8b43e}{}\label{w32__console_8c_a42d2133edfa796e46154e68d25b8b43e}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a42d2133edfa796e46154e68d25b8b43e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Move\+\_\+\+Caret\+\_\+\+From\+\_\+\+Mouse@{Move\+\_\+\+Caret\+\_\+\+From\+\_\+\+Mouse}}
+\index{Move\+\_\+\+Caret\+\_\+\+From\+\_\+\+Mouse@{Move\+\_\+\+Caret\+\_\+\+From\+\_\+\+Mouse}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Move\+\_\+\+Caret\+\_\+\+From\+\_\+\+Mouse(int if\+\_\+no\+\_\+selection)}{Move_Caret_From_Mouse(int if_no_selection)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Move\+\_\+\+Caret\+\_\+\+From\+\_\+\+Mouse (
+\begin{DoxyParamCaption}
+\item[{int}]{if\+\_\+no\+\_\+selection}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a3480ea2b3116aeb824aac0df6d68da83}{}\label{w32__console_8c_a3480ea2b3116aeb824aac0df6d68da83}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a3480ea2b3116aeb824aac0df6d68da83_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a3480ea2b3116aeb824aac0df6d68da83_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Move\+\_\+\+Caret\+\_\+\+To@{Move\+\_\+\+Caret\+\_\+\+To}}
+\index{Move\+\_\+\+Caret\+\_\+\+To@{Move\+\_\+\+Caret\+\_\+\+To}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Move\+\_\+\+Caret\+\_\+\+To(int start\+\_\+or\+\_\+end)}{Move_Caret_To(int start_or_end)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Move\+\_\+\+Caret\+\_\+\+To (
+\begin{DoxyParamCaption}
+\item[{int}]{start\+\_\+or\+\_\+end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a8c4b08848ce838a6ff53832a1530670e}{}\label{w32__console_8c_a8c4b08848ce838a6ff53832a1530670e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{w32__console_8c_a8c4b08848ce838a6ff53832a1530670e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a8c4b08848ce838a6ff53832a1530670e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Save\+\_\+\+Options@{Save\+\_\+\+Options}}
+\index{Save\+\_\+\+Options@{Save\+\_\+\+Options}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Save\+\_\+\+Options(void)}{Save_Options(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Save\+\_\+\+Options (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_ad53ee08377d881b92e3d61bb96d3b5f3}{}\label{w32__console_8c_ad53ee08377d881b92e3d61bb96d3b5f3}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_ad53ee08377d881b92e3d61bb96d3b5f3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Set\+\_\+\+Caret\+\_\+\+Position@{Set\+\_\+\+Caret\+\_\+\+Position}}
+\index{Set\+\_\+\+Caret\+\_\+\+Position@{Set\+\_\+\+Caret\+\_\+\+Position}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Set\+\_\+\+Caret\+\_\+\+Position(int posit)}{Set_Caret_Position(int posit)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Set\+\_\+\+Caret\+\_\+\+Position (
+\begin{DoxyParamCaption}
+\item[{int}]{posit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a20fd5ae61889213d2ac79b90f0f942f8}{}\label{w32__console_8c_a20fd5ae61889213d2ac79b90f0f942f8}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{w32__console_8c_a20fd5ae61889213d2ac79b90f0f942f8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a20fd5ae61889213d2ac79b90f0f942f8_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Set\+\_\+\+Selection@{Set\+\_\+\+Selection}}
+\index{Set\+\_\+\+Selection@{Set\+\_\+\+Selection}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Set\+\_\+\+Selection(int posit, int n)}{Set_Selection(int posit, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Set\+\_\+\+Selection (
+\begin{DoxyParamCaption}
+\item[{int}]{posit, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a4a4fa92ab96c87a9fedbe477e80d38a0}{}\label{w32__console_8c_a4a4fa92ab96c87a9fedbe477e80d38a0}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a4a4fa92ab96c87a9fedbe477e80d38a0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Show\+\_\+\+Help@{Show\+\_\+\+Help}}
+\index{Show\+\_\+\+Help@{Show\+\_\+\+Help}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Show\+\_\+\+Help(char $\ast$word)}{Show_Help(char *word)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Show\+\_\+\+Help (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a4429f5179fe290e7469506c6287a46a5}{}\label{w32__console_8c_a4429f5179fe290e7469506c6287a46a5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a4429f5179fe290e7469506c6287a46a5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a4429f5179fe290e7469506c6287a46a5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Show\+\_\+\+Text\+\_\+\+Console@{Show\+\_\+\+Text\+\_\+\+Console}}
+\index{Show\+\_\+\+Text\+\_\+\+Console@{Show\+\_\+\+Text\+\_\+\+Console}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Show\+\_\+\+Text\+\_\+\+Console(int show)}{Show_Text_Console(int show)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Show\+\_\+\+Text\+\_\+\+Console (
+\begin{DoxyParamCaption}
+\item[{int}]{show}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a948b886d5f9fafc8cf18ecae879b4144}{}\label{w32__console_8c_a948b886d5f9fafc8cf18ecae879b4144}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a948b886d5f9fafc8cf18ecae879b4144_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Stack\+Sizes\+Proc@{Stack\+Sizes\+Proc}}
+\index{Stack\+Sizes\+Proc@{Stack\+Sizes\+Proc}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Stack\+Sizes\+Proc(\+H\+W\+N\+D hwnd\+Dlg, U\+I\+N\+T message, W\+P\+A\+R\+A\+M w\+Param, L\+P\+A\+R\+A\+M l\+Param)}{StackSizesProc(HWND hwndDlg, UINT message, WPARAM wParam, LPARAM lParam)}}]{\setlength{\rightskip}{0pt plus 5cm}B\+O\+OL C\+A\+L\+L\+B\+A\+CK Stack\+Sizes\+Proc (
+\begin{DoxyParamCaption}
+\item[{H\+W\+ND}]{hwnd\+Dlg, }
+\item[{U\+I\+NT}]{message, }
+\item[{W\+P\+A\+R\+AM}]{w\+Param, }
+\item[{L\+P\+A\+R\+AM}]{l\+Param}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_ade8a187e0ceb600d466b550f1b17f4ec}{}\label{w32__console_8c_ade8a187e0ceb600d466b550f1b17f4ec}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_ade8a187e0ceb600d466b550f1b17f4ec_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Start\+Win\+Main@{Start\+Win\+Main}}
+\index{Start\+Win\+Main@{Start\+Win\+Main}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Start\+Win\+Main(\+H\+I\+N\+S\+T\+A\+N\+C\+E h\+Instance, H\+I\+N\+S\+T\+A\+N\+C\+E h\+Prev\+Instance, L\+P\+S\+T\+R lp\+Cmd\+Line, I\+N\+T n\+Cmd\+Show)}{StartWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, INT nCmdShow)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Start\+Win\+Main (
+\begin{DoxyParamCaption}
+\item[{H\+I\+N\+S\+T\+A\+N\+CE}]{h\+Instance, }
+\item[{H\+I\+N\+S\+T\+A\+N\+CE}]{h\+Prev\+Instance, }
+\item[{L\+P\+S\+TR}]{lp\+Cmd\+Line, }
+\item[{{\bf I\+NT}}]{n\+Cmd\+Show}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a2363368e7d52d5df8c4f20cb13283faa}{}\label{w32__console_8c_a2363368e7d52d5df8c4f20cb13283faa}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a2363368e7d52d5df8c4f20cb13283faa_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a2363368e7d52d5df8c4f20cb13283faa_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Sub\+Class\+Edit@{Sub\+Class\+Edit}}
+\index{Sub\+Class\+Edit@{Sub\+Class\+Edit}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Sub\+Class\+Edit(\+H\+W\+N\+D hwnd, U\+I\+N\+T msg, W\+P\+A\+R\+A\+M mp1, L\+P\+A\+R\+A\+M mp2)}{SubClassEdit(HWND hwnd, UINT msg, WPARAM mp1, LPARAM mp2)}}]{\setlength{\rightskip}{0pt plus 5cm}static L\+R\+E\+S\+U\+LT C\+A\+L\+L\+B\+A\+CK Sub\+Class\+Edit (
+\begin{DoxyParamCaption}
+\item[{H\+W\+ND}]{hwnd, }
+\item[{U\+I\+NT}]{msg, }
+\item[{W\+P\+A\+R\+AM}]{mp1, }
+\item[{L\+P\+A\+R\+AM}]{mp2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a86a613d9f9c5724324a80eb7ad8fd162}{}\label{w32__console_8c_a86a613d9f9c5724324a80eb7ad8fd162}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a86a613d9f9c5724324a80eb7ad8fd162_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a86a613d9f9c5724324a80eb7ad8fd162_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Sub\+Class\+Edit\+Field@{Sub\+Class\+Edit\+Field}}
+\index{Sub\+Class\+Edit\+Field@{Sub\+Class\+Edit\+Field}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Sub\+Class\+Edit\+Field(\+H\+W\+N\+D hwnd)}{SubClassEditField(HWND hwnd)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Sub\+Class\+Edit\+Field (
+\begin{DoxyParamCaption}
+\item[{H\+W\+ND}]{hwnd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_ae21b20c73fc3d1b2301ac435d6ffefb8}{}\label{w32__console_8c_ae21b20c73fc3d1b2301ac435d6ffefb8}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_ae21b20c73fc3d1b2301ac435d6ffefb8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_ae21b20c73fc3d1b2301ac435d6ffefb8_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Toggle\+\_\+\+Wrap\+\_\+\+Mode@{Toggle\+\_\+\+Wrap\+\_\+\+Mode}}
+\index{Toggle\+\_\+\+Wrap\+\_\+\+Mode@{Toggle\+\_\+\+Wrap\+\_\+\+Mode}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Toggle\+\_\+\+Wrap\+\_\+\+Mode(\+H\+W\+N\+D hwnd)}{Toggle_Wrap_Mode(HWND hwnd)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Toggle\+\_\+\+Wrap\+\_\+\+Mode (
+\begin{DoxyParamCaption}
+\item[{H\+W\+ND}]{hwnd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_af8f874a72209a2c5b9ccc57df9c3684b}{}\label{w32__console_8c_af8f874a72209a2c5b9ccc57df9c3684b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_af8f874a72209a2c5b9ccc57df9c3684b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_af8f874a72209a2c5b9ccc57df9c3684b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Backd@{W32\+G\+C\+\_\+\+Backd}}
+\index{W32\+G\+C\+\_\+\+Backd@{W32\+G\+C\+\_\+\+Backd}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Backd(int n)}{W32GC_Backd(int n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} void W32\+G\+C\+\_\+\+Backd (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_a40f2319783fd8cca8c94dbc1bfba2dae}{}\label{w32__console_8c_a40f2319783fd8cca8c94dbc1bfba2dae}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a40f2319783fd8cca8c94dbc1bfba2dae_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a40f2319783fd8cca8c94dbc1bfba2dae_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Confirm\+\_\+\+Box@{W32\+G\+C\+\_\+\+Confirm\+\_\+\+Box}}
+\index{W32\+G\+C\+\_\+\+Confirm\+\_\+\+Box@{W32\+G\+C\+\_\+\+Confirm\+\_\+\+Box}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Confirm\+\_\+\+Box(char $\ast$titre, char $\ast$msg)}{W32GC_Confirm_Box(char *titre, char *msg)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} int W32\+G\+C\+\_\+\+Confirm\+\_\+\+Box (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{titre, }
+\item[{char $\ast$}]{msg}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_ade7027a929279e5d7ca19fa957fed785}{}\label{w32__console_8c_ade7027a929279e5d7ca19fa957fed785}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_ade7027a929279e5d7ca19fa957fed785_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_ade7027a929279e5d7ca19fa957fed785_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Displ@{W32\+G\+C\+\_\+\+Displ}}
+\index{W32\+G\+C\+\_\+\+Displ@{W32\+G\+C\+\_\+\+Displ}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Displ(int n, char $\ast$str)}{W32GC_Displ(int n, char *str)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} void W32\+G\+C\+\_\+\+Displ (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_a3e0fd465d2d216a3886763f28a47c4de}{}\label{w32__console_8c_a3e0fd465d2d216a3886763f28a47c4de}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a3e0fd465d2d216a3886763f28a47c4de_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Displ\+\_\+\+Str@{W32\+G\+C\+\_\+\+Displ\+\_\+\+Str}}
+\index{W32\+G\+C\+\_\+\+Displ\+\_\+\+Str@{W32\+G\+C\+\_\+\+Displ\+\_\+\+Str}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Displ\+\_\+\+Str(char $\ast$str)}{W32GC_Displ_Str(char *str)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} void W32\+G\+C\+\_\+\+Displ\+\_\+\+Str (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_a44456e0e0343737fa2419814cf095fa4}{}\label{w32__console_8c_a44456e0e0343737fa2419814cf095fa4}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a44456e0e0343737fa2419814cf095fa4_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Emit\+\_\+\+Beep@{W32\+G\+C\+\_\+\+Emit\+\_\+\+Beep}}
+\index{W32\+G\+C\+\_\+\+Emit\+\_\+\+Beep@{W32\+G\+C\+\_\+\+Emit\+\_\+\+Beep}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Emit\+\_\+\+Beep()}{W32GC_Emit_Beep()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} void W32\+G\+C\+\_\+\+Emit\+\_\+\+Beep (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_a59efe54538c83ad8a72dca36ebcf3b18}{}\label{w32__console_8c_a59efe54538c83ad8a72dca36ebcf3b18}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Erase@{W32\+G\+C\+\_\+\+Erase}}
+\index{W32\+G\+C\+\_\+\+Erase@{W32\+G\+C\+\_\+\+Erase}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Erase(int n)}{W32GC_Erase(int n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} void W32\+G\+C\+\_\+\+Erase (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_a53ddd44d5c72b248fb0ecc605c361119}{}\label{w32__console_8c_a53ddd44d5c72b248fb0ecc605c361119}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a53ddd44d5c72b248fb0ecc605c361119_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Exit\+\_\+\+Process@{W32\+G\+C\+\_\+\+Exit\+\_\+\+Process}}
+\index{W32\+G\+C\+\_\+\+Exit\+\_\+\+Process@{W32\+G\+C\+\_\+\+Exit\+\_\+\+Process}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Exit\+\_\+\+Process(int ret\+\_\+val)}{W32GC_Exit_Process(int ret_val)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} void W32\+G\+C\+\_\+\+Exit\+\_\+\+Process (
+\begin{DoxyParamCaption}
+\item[{int}]{ret\+\_\+val}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_afc50d91c42cd0286326088650538cc45}{}\label{w32__console_8c_afc50d91c42cd0286326088650538cc45}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_afc50d91c42cd0286326088650538cc45_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Flush@{W32\+G\+C\+\_\+\+Flush}}
+\index{W32\+G\+C\+\_\+\+Flush@{W32\+G\+C\+\_\+\+Flush}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Flush(\+F\+I\+L\+E $\ast$f)}{W32GC_Flush(FILE *f)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} void W32\+G\+C\+\_\+\+Flush (
+\begin{DoxyParamCaption}
+\item[{F\+I\+LE $\ast$}]{f}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_a20ec3600d3c3a15b3c44a9e6f8b1fb83}{}\label{w32__console_8c_a20ec3600d3c3a15b3c44a9e6f8b1fb83}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a20ec3600d3c3a15b3c44a9e6f8b1fb83_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Forwd@{W32\+G\+C\+\_\+\+Forwd}}
+\index{W32\+G\+C\+\_\+\+Forwd@{W32\+G\+C\+\_\+\+Forwd}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Forwd(int n)}{W32GC_Forwd(int n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} void W32\+G\+C\+\_\+\+Forwd (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_a132f06d797d267f7df0c665c859d46d5}{}\label{w32__console_8c_a132f06d797d267f7df0c665c859d46d5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a132f06d797d267f7df0c665c859d46d5_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Get\+\_\+\+Char0@{W32\+G\+C\+\_\+\+Get\+\_\+\+Char0}}
+\index{W32\+G\+C\+\_\+\+Get\+\_\+\+Char0@{W32\+G\+C\+\_\+\+Get\+\_\+\+Char0}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Get\+\_\+\+Char0()}{W32GC_Get_Char0()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} int W32\+G\+C\+\_\+\+Get\+\_\+\+Char0 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_a1d8d56ad4f4ce8b339273e699c3811ac}{}\label{w32__console_8c_a1d8d56ad4f4ce8b339273e699c3811ac}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a1d8d56ad4f4ce8b339273e699c3811ac_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Get\+\_\+\+Line\+\_\+\+Buffering@{W32\+G\+C\+\_\+\+Get\+\_\+\+Line\+\_\+\+Buffering}}
+\index{W32\+G\+C\+\_\+\+Get\+\_\+\+Line\+\_\+\+Buffering@{W32\+G\+C\+\_\+\+Get\+\_\+\+Line\+\_\+\+Buffering}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Get\+\_\+\+Line\+\_\+\+Buffering(void)}{W32GC_Get_Line_Buffering(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} int W32\+G\+C\+\_\+\+Get\+\_\+\+Line\+\_\+\+Buffering (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_a99b873fa48556d9748c27ed3c1780103}{}\label{w32__console_8c_a99b873fa48556d9748c27ed3c1780103}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Ins\+\_\+\+Mode@{W32\+G\+C\+\_\+\+Ins\+\_\+\+Mode}}
+\index{W32\+G\+C\+\_\+\+Ins\+\_\+\+Mode@{W32\+G\+C\+\_\+\+Ins\+\_\+\+Mode}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Ins\+\_\+\+Mode(int ins\+\_\+mode)}{W32GC_Ins_Mode(int ins_mode)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} void W32\+G\+C\+\_\+\+Ins\+\_\+\+Mode (
+\begin{DoxyParamCaption}
+\item[{int}]{ins\+\_\+mode}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_aa27293fb8640c27d098277994bd4fc59}{}\label{w32__console_8c_aa27293fb8640c27d098277994bd4fc59}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Kbd\+\_\+\+Is\+\_\+\+Not\+\_\+\+Empty@{W32\+G\+C\+\_\+\+Kbd\+\_\+\+Is\+\_\+\+Not\+\_\+\+Empty}}
+\index{W32\+G\+C\+\_\+\+Kbd\+\_\+\+Is\+\_\+\+Not\+\_\+\+Empty@{W32\+G\+C\+\_\+\+Kbd\+\_\+\+Is\+\_\+\+Not\+\_\+\+Empty}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Kbd\+\_\+\+Is\+\_\+\+Not\+\_\+\+Empty()}{W32GC_Kbd_Is_Not_Empty()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} int W32\+G\+C\+\_\+\+Kbd\+\_\+\+Is\+\_\+\+Not\+\_\+\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_a340ee7a93b3c3b393238222859313625}{}\label{w32__console_8c_a340ee7a93b3c3b393238222859313625}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Message\+\_\+\+Box@{W32\+G\+C\+\_\+\+Message\+\_\+\+Box}}
+\index{W32\+G\+C\+\_\+\+Message\+\_\+\+Box@{W32\+G\+C\+\_\+\+Message\+\_\+\+Box}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Message\+\_\+\+Box(char $\ast$title, char $\ast$msg, int type)}{W32GC_Message_Box(char *title, char *msg, int type)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} void W32\+G\+C\+\_\+\+Message\+\_\+\+Box (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{title, }
+\item[{char $\ast$}]{msg, }
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_a9e93dd695aaf00e23322cda24b7e07a1}{}\label{w32__console_8c_a9e93dd695aaf00e23322cda24b7e07a1}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a9e93dd695aaf00e23322cda24b7e07a1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a9e93dd695aaf00e23322cda24b7e07a1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Put\+\_\+\+Char@{W32\+G\+C\+\_\+\+Put\+\_\+\+Char}}
+\index{W32\+G\+C\+\_\+\+Put\+\_\+\+Char@{W32\+G\+C\+\_\+\+Put\+\_\+\+Char}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Put\+\_\+\+Char(int c)}{W32GC_Put_Char(int c)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} void W32\+G\+C\+\_\+\+Put\+\_\+\+Char (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_ab7e93fe5f4ce7f900e82d8329b82a57c}{}\label{w32__console_8c_ab7e93fe5f4ce7f900e82d8329b82a57c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_ab7e93fe5f4ce7f900e82d8329b82a57c_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Screen\+\_\+\+Size@{W32\+G\+C\+\_\+\+Screen\+\_\+\+Size}}
+\index{W32\+G\+C\+\_\+\+Screen\+\_\+\+Size@{W32\+G\+C\+\_\+\+Screen\+\_\+\+Size}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Screen\+\_\+\+Size(int $\ast$row, int $\ast$col)}{W32GC_Screen_Size(int *row, int *col)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} void W32\+G\+C\+\_\+\+Screen\+\_\+\+Size (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{row, }
+\item[{int $\ast$}]{col}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_aba4a32927a06c37c6c76611ecd0c1e64}{}\label{w32__console_8c_aba4a32927a06c37c6c76611ecd0c1e64}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Set\+\_\+\+Line\+\_\+\+Buffering@{W32\+G\+C\+\_\+\+Set\+\_\+\+Line\+\_\+\+Buffering}}
+\index{W32\+G\+C\+\_\+\+Set\+\_\+\+Line\+\_\+\+Buffering@{W32\+G\+C\+\_\+\+Set\+\_\+\+Line\+\_\+\+Buffering}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Set\+\_\+\+Line\+\_\+\+Buffering(int is\+\_\+buffered)}{W32GC_Set_Line_Buffering(int is_buffered)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} void W32\+G\+C\+\_\+\+Set\+\_\+\+Line\+\_\+\+Buffering (
+\begin{DoxyParamCaption}
+\item[{int}]{is\+\_\+buffered}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_aec67ee32e036f2e6746534f1cb82a6d9}{}\label{w32__console_8c_aec67ee32e036f2e6746534f1cb82a6d9}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_aec67ee32e036f2e6746534f1cb82a6d9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_aec67ee32e036f2e6746534f1cb82a6d9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!W32\+G\+C\+\_\+\+Start\+\_\+\+Window@{W32\+G\+C\+\_\+\+Start\+\_\+\+Window}}
+\index{W32\+G\+C\+\_\+\+Start\+\_\+\+Window@{W32\+G\+C\+\_\+\+Start\+\_\+\+Window}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{W32\+G\+C\+\_\+\+Start\+\_\+\+Window(char $\ast$($\ast$get\+\_\+separators)(), int($\ast$get\+\_\+prompt\+\_\+length)(), Pl\+Long($\ast$query\+\_\+stack)())}{W32GC_Start_Window(char *(*get_separators)(), int(*get_prompt_length)(), PlLong(*query_stack)())}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+L\+L\+E\+X\+P\+O\+RT} int W32\+G\+C\+\_\+\+Start\+\_\+\+Window (
+\begin{DoxyParamCaption}
+\item[{char $\ast$($\ast$)()}]{get\+\_\+separators, }
+\item[{int($\ast$)()}]{get\+\_\+prompt\+\_\+length, }
+\item[{{\bf Pl\+Long}($\ast$)()}]{query\+\_\+stack}
+\end{DoxyParamCaption}
+)}\hypertarget{w32__console_8c_a4df61e90931602252f4bd1addb17902f}{}\label{w32__console_8c_a4df61e90931602252f4bd1addb17902f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a4df61e90931602252f4bd1addb17902f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{w32__console_8c_a4df61e90931602252f4bd1addb17902f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!Word\+Break\+Proc@{Word\+Break\+Proc}}
+\index{Word\+Break\+Proc@{Word\+Break\+Proc}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{Word\+Break\+Proc(\+L\+P\+T\+S\+T\+R lpcb, int ich\+Current, int cch, int code)}{WordBreakProc(LPTSTR lpcb, int ichCurrent, int cch, int code)}}]{\setlength{\rightskip}{0pt plus 5cm}static int C\+A\+L\+L\+B\+A\+CK Word\+Break\+Proc (
+\begin{DoxyParamCaption}
+\item[{L\+P\+T\+S\+TR}]{lpcb, }
+\item[{int}]{ich\+Current, }
+\item[{int}]{cch, }
+\item[{int}]{code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a0a91b0a1e1c66bf3281ebb8e4685481b}{}\label{w32__console_8c_a0a91b0a1e1c66bf3281ebb8e4685481b}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{w32__console_8c_a0a91b0a1e1c66bf3281ebb8e4685481b_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!beep\+\_\+on\+\_\+error@{beep\+\_\+on\+\_\+error}}
+\index{beep\+\_\+on\+\_\+error@{beep\+\_\+on\+\_\+error}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{beep\+\_\+on\+\_\+error}{beep_on_error}}]{\setlength{\rightskip}{0pt plus 5cm}int beep\+\_\+on\+\_\+error = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_ae7429d1de733311552908d4fa0ab92e8}{}\label{w32__console_8c_ae7429d1de733311552908d4fa0ab92e8}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!buff\+\_\+pathname@{buff\+\_\+pathname}}
+\index{buff\+\_\+pathname@{buff\+\_\+pathname}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{buff\+\_\+pathname}{buff_pathname}}]{\setlength{\rightskip}{0pt plus 5cm}char buff\+\_\+pathname\mbox{[}M\+A\+X\+\_\+\+P\+A\+TH\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a731d5dcfe9120b187986a80721bf13b5}{}\label{w32__console_8c_a731d5dcfe9120b187986a80721bf13b5}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!copy\+\_\+on\+\_\+sel@{copy\+\_\+on\+\_\+sel}}
+\index{copy\+\_\+on\+\_\+sel@{copy\+\_\+on\+\_\+sel}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{copy\+\_\+on\+\_\+sel}{copy_on_sel}}]{\setlength{\rightskip}{0pt plus 5cm}int copy\+\_\+on\+\_\+sel = 1\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_ae55b6626ef48177853d0894d8a447a09}{}\label{w32__console_8c_ae55b6626ef48177853d0894d8a447a09}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!cs\+\_\+queue@{cs\+\_\+queue}}
+\index{cs\+\_\+queue@{cs\+\_\+queue}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{cs\+\_\+queue}{cs_queue}}]{\setlength{\rightskip}{0pt plus 5cm}C\+R\+I\+T\+I\+C\+A\+L\+\_\+\+S\+E\+C\+T\+I\+ON cs\+\_\+queue\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a49cf636c22333a5b11269b18ecd413af}{}\label{w32__console_8c_a49cf636c22333a5b11269b18ecd413af}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!current\+Font@{current\+Font}}
+\index{current\+Font@{current\+Font}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{current\+Font}{currentFont}}]{\setlength{\rightskip}{0pt plus 5cm}L\+O\+G\+F\+O\+NT current\+Font\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_ad553b145a9bcaedd4ddb5093d08c8104}{}\label{w32__console_8c_ad553b145a9bcaedd4ddb5093d08c8104}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!dont\+\_\+use\+\_\+selection@{dont\+\_\+use\+\_\+selection}}
+\index{dont\+\_\+use\+\_\+selection@{dont\+\_\+use\+\_\+selection}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{dont\+\_\+use\+\_\+selection}{dont_use_selection}}]{\setlength{\rightskip}{0pt plus 5cm}int dont\+\_\+use\+\_\+selection\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_adf5fb5320c00c57c7d929680e160e324}{}\label{w32__console_8c_adf5fb5320c00c57c7d929680e160e324}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!ec\+\_\+start@{ec\+\_\+start}}
+\index{ec\+\_\+start@{ec\+\_\+start}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{ec\+\_\+start}{ec_start}}]{\setlength{\rightskip}{0pt plus 5cm}int ec\+\_\+start = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a1044b5bbe83238e8353308c71b657e1f}{}\label{w32__console_8c_a1044b5bbe83238e8353308c71b657e1f}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!event\+\_\+char\+\_\+in\+\_\+queue@{event\+\_\+char\+\_\+in\+\_\+queue}}
+\index{event\+\_\+char\+\_\+in\+\_\+queue@{event\+\_\+char\+\_\+in\+\_\+queue}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{event\+\_\+char\+\_\+in\+\_\+queue}{event_char_in_queue}}]{\setlength{\rightskip}{0pt plus 5cm}H\+A\+N\+D\+LE event\+\_\+char\+\_\+in\+\_\+queue\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_af364d92811ea148030885d97cc6d2570}{}\label{w32__console_8c_af364d92811ea148030885d97cc6d2570}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!event\+\_\+window\+\_\+is\+\_\+ready@{event\+\_\+window\+\_\+is\+\_\+ready}}
+\index{event\+\_\+window\+\_\+is\+\_\+ready@{event\+\_\+window\+\_\+is\+\_\+ready}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{event\+\_\+window\+\_\+is\+\_\+ready}{event_window_is_ready}}]{\setlength{\rightskip}{0pt plus 5cm}H\+A\+N\+D\+LE event\+\_\+window\+\_\+is\+\_\+ready\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a08fb49174d441f4883b1067701f8bc0f}{}\label{w32__console_8c_a08fb49174d441f4883b1067701f8bc0f}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!fct\+\_\+get\+\_\+prompt\+\_\+length@{fct\+\_\+get\+\_\+prompt\+\_\+length}}
+\index{fct\+\_\+get\+\_\+prompt\+\_\+length@{fct\+\_\+get\+\_\+prompt\+\_\+length}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{fct\+\_\+get\+\_\+prompt\+\_\+length}{fct_get_prompt_length}}]{\setlength{\rightskip}{0pt plus 5cm}int($\ast$ fct\+\_\+get\+\_\+prompt\+\_\+length) ()\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a6aff9b701f87bbf7e005ec38095a9116}{}\label{w32__console_8c_a6aff9b701f87bbf7e005ec38095a9116}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!fct\+\_\+get\+\_\+separators@{fct\+\_\+get\+\_\+separators}}
+\index{fct\+\_\+get\+\_\+separators@{fct\+\_\+get\+\_\+separators}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{fct\+\_\+get\+\_\+separators}{fct_get_separators}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$($\ast$ fct\+\_\+get\+\_\+separators) ()\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_aa9decc35e741e2f749bcaa8b338dda90}{}\label{w32__console_8c_aa9decc35e741e2f749bcaa8b338dda90}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!fct\+\_\+query\+\_\+stack@{fct\+\_\+query\+\_\+stack}}
+\index{fct\+\_\+query\+\_\+stack@{fct\+\_\+query\+\_\+stack}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{fct\+\_\+query\+\_\+stack}{fct_query_stack}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long}($\ast$ fct\+\_\+query\+\_\+stack) ()\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a72efd317f68e847ac19e4f1a2f12f93a}{}\label{w32__console_8c_a72efd317f68e847ac19e4f1a2f12f93a}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!h\+Font@{h\+Font}}
+\index{h\+Font@{h\+Font}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{h\+Font}{hFont}}]{\setlength{\rightskip}{0pt plus 5cm}H\+F\+O\+NT h\+Font\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a0b01dd58c861d0bc8dcdf6ecf1502dfd}{}\label{w32__console_8c_a0b01dd58c861d0bc8dcdf6ecf1502dfd}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!h\+Inst@{h\+Inst}}
+\index{h\+Inst@{h\+Inst}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{h\+Inst}{hInst}}]{\setlength{\rightskip}{0pt plus 5cm}H\+I\+N\+S\+T\+A\+N\+CE h\+Inst\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a44f41244c97693b2fbd5244bcb1e86ec}{}\label{w32__console_8c_a44f41244c97693b2fbd5244bcb1e86ec}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!hwnd\+\_\+console@{hwnd\+\_\+console}}
+\index{hwnd\+\_\+console@{hwnd\+\_\+console}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{hwnd\+\_\+console}{hwnd_console}}]{\setlength{\rightskip}{0pt plus 5cm}H\+W\+ND hwnd\+\_\+console\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_aad3a95a4cae8fb5684a3a2116aa28d9b}{}\label{w32__console_8c_aad3a95a4cae8fb5684a3a2116aa28d9b}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!hwnd\+Edit\+Control@{hwnd\+Edit\+Control}}
+\index{hwnd\+Edit\+Control@{hwnd\+Edit\+Control}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{hwnd\+Edit\+Control}{hwndEditControl}}]{\setlength{\rightskip}{0pt plus 5cm}H\+W\+ND hwnd\+Edit\+Control\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_ae848139b7357ff8c2ca231ffa22f6636}{}\label{w32__console_8c_ae848139b7357ff8c2ca231ffa22f6636}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!hwnd\+Main@{hwnd\+Main}}
+\index{hwnd\+Main@{hwnd\+Main}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{hwnd\+Main}{hwndMain}}]{\setlength{\rightskip}{0pt plus 5cm}H\+W\+ND hwnd\+Main\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a7b31e2c83a58b4f57da29cfccdb751a8}{}\label{w32__console_8c_a7b31e2c83a58b4f57da29cfccdb751a8}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!idc\+\_\+cur\+\_\+sz@{idc\+\_\+cur\+\_\+sz}}
+\index{idc\+\_\+cur\+\_\+sz@{idc\+\_\+cur\+\_\+sz}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{idc\+\_\+cur\+\_\+sz}{idc_cur_sz}}]{\setlength{\rightskip}{0pt plus 5cm}int idc\+\_\+cur\+\_\+sz}\hypertarget{w32__console_8c_a76f385f177632b681dbbbda86f48fa51}{}\label{w32__console_8c_a76f385f177632b681dbbbda86f48fa51}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!idc\+\_\+def\+\_\+sz@{idc\+\_\+def\+\_\+sz}}
+\index{idc\+\_\+def\+\_\+sz@{idc\+\_\+def\+\_\+sz}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{idc\+\_\+def\+\_\+sz}{idc_def_sz}}]{\setlength{\rightskip}{0pt plus 5cm}int idc\+\_\+def\+\_\+sz}\hypertarget{w32__console_8c_a0104557b82a0b69508c764e7dd27ec11}{}\label{w32__console_8c_a0104557b82a0b69508c764e7dd27ec11}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!idc\+\_\+desc@{idc\+\_\+desc}}
+\index{idc\+\_\+desc@{idc\+\_\+desc}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{idc\+\_\+desc}{idc_desc}}]{\setlength{\rightskip}{0pt plus 5cm}int idc\+\_\+desc}\hypertarget{w32__console_8c_ad6976f4a0b11231ce391b697d4ea991f}{}\label{w32__console_8c_ad6976f4a0b11231ce391b697d4ea991f}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!idc\+\_\+env\+\_\+var\+\_\+name@{idc\+\_\+env\+\_\+var\+\_\+name}}
+\index{idc\+\_\+env\+\_\+var\+\_\+name@{idc\+\_\+env\+\_\+var\+\_\+name}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{idc\+\_\+env\+\_\+var\+\_\+name}{idc_env_var_name}}]{\setlength{\rightskip}{0pt plus 5cm}int idc\+\_\+env\+\_\+var\+\_\+name}\hypertarget{w32__console_8c_a4aee89870c73cea78910689f038e4fda}{}\label{w32__console_8c_a4aee89870c73cea78910689f038e4fda}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!idc\+\_\+env\+\_\+var\+\_\+sz@{idc\+\_\+env\+\_\+var\+\_\+sz}}
+\index{idc\+\_\+env\+\_\+var\+\_\+sz@{idc\+\_\+env\+\_\+var\+\_\+sz}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{idc\+\_\+env\+\_\+var\+\_\+sz}{idc_env_var_sz}}]{\setlength{\rightskip}{0pt plus 5cm}int idc\+\_\+env\+\_\+var\+\_\+sz}\hypertarget{w32__console_8c_ac9cd6285541bdff0d201dc1e8d9032d3}{}\label{w32__console_8c_ac9cd6285541bdff0d201dc1e8d9032d3}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!idc\+\_\+reg\+\_\+sz@{idc\+\_\+reg\+\_\+sz}}
+\index{idc\+\_\+reg\+\_\+sz@{idc\+\_\+reg\+\_\+sz}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{idc\+\_\+reg\+\_\+sz}{idc_reg_sz}}]{\setlength{\rightskip}{0pt plus 5cm}int idc\+\_\+reg\+\_\+sz}\hypertarget{w32__console_8c_a34ef715b9d996208c32c0c0d2c884ec0}{}\label{w32__console_8c_a34ef715b9d996208c32c0c0d2c884ec0}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!in\+\_\+get\+\_\+char@{in\+\_\+get\+\_\+char}}
+\index{in\+\_\+get\+\_\+char@{in\+\_\+get\+\_\+char}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{in\+\_\+get\+\_\+char}{in_get_char}}]{\setlength{\rightskip}{0pt plus 5cm}int in\+\_\+get\+\_\+char = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a3dc3a4d635377fce94a20da547f4d1b0}{}\label{w32__console_8c_a3dc3a4d635377fce94a20da547f4d1b0}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!last\+\_\+is\+\_\+read@{last\+\_\+is\+\_\+read}}
+\index{last\+\_\+is\+\_\+read@{last\+\_\+is\+\_\+read}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{last\+\_\+is\+\_\+read}{last_is_read}}]{\setlength{\rightskip}{0pt plus 5cm}int last\+\_\+is\+\_\+read = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a878f3f3d850896d83f2868a42e3b6f3c}{}\label{w32__console_8c_a878f3f3d850896d83f2868a42e3b6f3c}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!line\+\_\+buffering@{line\+\_\+buffering}}
+\index{line\+\_\+buffering@{line\+\_\+buffering}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{line\+\_\+buffering}{line_buffering}}]{\setlength{\rightskip}{0pt plus 5cm}int line\+\_\+buffering = 1\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_ab46ebb6770dcfd263133118bb3adaf72}{}\label{w32__console_8c_ab46ebb6770dcfd263133118bb3adaf72}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!lp\+E\+Proc@{lp\+E\+Proc}}
+\index{lp\+E\+Proc@{lp\+E\+Proc}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{lp\+E\+Proc}{lpEProc}}]{\setlength{\rightskip}{0pt plus 5cm}W\+N\+D\+P\+R\+OC lp\+E\+Proc\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a72d95b856bc2d5e2b3ea9281344cbb2c}{}\label{w32__console_8c_a72d95b856bc2d5e2b3ea9281344cbb2c}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!posit@{posit}}
+\index{posit@{posit}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{posit}{posit}}]{\setlength{\rightskip}{0pt plus 5cm}int posit = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a8a939f223d43e3bc0b6a7620fe1a96f3}{}\label{w32__console_8c_a8a939f223d43e3bc0b6a7620fe1a96f3}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!queue@{queue}}
+\index{queue@{queue}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{queue}{queue}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int queue\mbox{[}{\bf E\+D\+I\+T\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+I\+ZE}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_aa4dd3f36c2a92e8efb0c8b92db7981fc}{}\label{w32__console_8c_aa4dd3f36c2a92e8efb0c8b92db7981fc}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!queue\+\_\+end@{queue\+\_\+end}}
+\index{queue\+\_\+end@{queue\+\_\+end}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{queue\+\_\+end}{queue_end}}]{\setlength{\rightskip}{0pt plus 5cm}int queue\+\_\+end\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_aeda2fce60f1165daeb74c28670a34063}{}\label{w32__console_8c_aeda2fce60f1165daeb74c28670a34063}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!queue\+\_\+start@{queue\+\_\+start}}
+\index{queue\+\_\+start@{queue\+\_\+start}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{queue\+\_\+start}{queue_start}}]{\setlength{\rightskip}{0pt plus 5cm}int queue\+\_\+start\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a130462e376d7e818e17fbaee36ab9309}{}\label{w32__console_8c_a130462e376d7e818e17fbaee36ab9309}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!show\+\_\+console@{show\+\_\+console}}
+\index{show\+\_\+console@{show\+\_\+console}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{show\+\_\+console}{show_console}}]{\setlength{\rightskip}{0pt plus 5cm}int show\+\_\+console = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_aca569d36aa232224c8ca050363a2ce8a}{}\label{w32__console_8c_aca569d36aa232224c8ca050363a2ce8a}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!stk@{stk}}
+\index{stk@{stk}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{stk}{stk}}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   stk\mbox{[}$\,$\mbox{]}}\hypertarget{w32__console_8c_a0b13ed54d70dd76975017af6857b3812}{}\label{w32__console_8c_a0b13ed54d70dd76975017af6857b3812}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  \{ \hyperlink{w32__resource_8h_a5fa4706cab2733bf0e3ee8095deb5642}{IDC\_STACK\_DESC0}, \hyperlink{w32__resource_8h_a9b44135501f4db17713c35c1c708260f}{IDC\_DEF\_SZ0}, \hyperlink{w32__resource_8h_a0d78ebb80e7cb6a90589262c5749513b}{IDC\_ENV\_VAR\_NAME0}, 
+      \hyperlink{w32__resource_8h_a33922cd2663572eba710cda02114b6eb}{IDC\_ENV\_SZ0}, \hyperlink{w32__resource_8h_a5f755704a2178d9b9e8b6684fbf503b1}{IDC\_REG\_SZ0}, \hyperlink{w32__resource_8h_a235cfb17c798c4f82546b8ef126574a6}{IDC\_CUR\_SZ0} \},
+  \{ \hyperlink{w32__resource_8h_a40dbe58af47fb650a6787954a94a8c66}{IDC\_STACK\_DESC1}, \hyperlink{w32__resource_8h_a3bd11765f7e4c59e66a8cbadcef0bb98}{IDC\_DEF\_SZ1}, \hyperlink{w32__resource_8h_a70033bc02610bdc70b3ce5d658ddf7eb}{IDC\_ENV\_VAR\_NAME1}, 
+      \hyperlink{w32__resource_8h_a7d3456640621588616d33572afeed084}{IDC\_ENV\_SZ1}, \hyperlink{w32__resource_8h_ac285b8ae0ae5714d638dba24e0ed1f76}{IDC\_REG\_SZ1}, \hyperlink{w32__resource_8h_a663dc03b0ca0c94a3d6e7514fd9c164f}{IDC\_CUR\_SZ1} \},
+  \{ \hyperlink{w32__resource_8h_ae0628251c7d2804fb9b0959abeb7085d}{IDC\_STACK\_DESC2}, \hyperlink{w32__resource_8h_ab6979e9ab4ac006c5c6b27919132cb87}{IDC\_DEF\_SZ2}, \hyperlink{w32__resource_8h_a303b8b167463c3cec63124acfd5c4cda}{IDC\_ENV\_VAR\_NAME2}, 
+      \hyperlink{w32__resource_8h_a21462e701d8eb43493eb942013d07d9d}{IDC\_ENV\_SZ2}, \hyperlink{w32__resource_8h_a33d0ddabaf302c3cbf53cb25ddf68a6e}{IDC\_REG\_SZ2}, \hyperlink{w32__resource_8h_aa66814a080e9e18bd4876f20bd88829e}{IDC\_CUR\_SZ2} \},
+  \{ \hyperlink{w32__resource_8h_a02c3c2fb1f2ad3eeca2f7624eae19ed6}{IDC\_STACK\_DESC3}, \hyperlink{w32__resource_8h_a16a2cfa71a3e255b41b560ad67a48a45}{IDC\_DEF\_SZ3}, \hyperlink{w32__resource_8h_adaeb14f88e546cbaabe6dc79cedaff57}{IDC\_ENV\_VAR\_NAME3}, 
+      \hyperlink{w32__resource_8h_aa2aa490744dbb21d5c3809924487ecb9}{IDC\_ENV\_SZ3}, \hyperlink{w32__resource_8h_a230fccd754df35166a5048c831226487}{IDC\_REG\_SZ3}, \hyperlink{w32__resource_8h_aa8447197fdc4886aee01afbe4cfd7cd4}{IDC\_CUR\_SZ3} \},
+  
+  \{ \hyperlink{w32__resource_8h_ac5ac33d5dbcfa7c24008b7c6a2def856}{IDC\_STACK\_DESC4}, \hyperlink{w32__resource_8h_a8e6d6d4ed5faddd9710ec0735b2e813d}{IDC\_DEF\_SZ4}, \hyperlink{w32__resource_8h_a499e31fa81897d475728000114c6f9fa}{IDC\_ENV\_VAR\_NAME4}, 
+      \hyperlink{w32__resource_8h_afb67c2c09eff1fffd70316c73e386e4c}{IDC\_ENV\_SZ4}, \hyperlink{w32__resource_8h_a1180d38ba2068094fdcdc7b86400fef3}{IDC\_REG\_SZ4}, \hyperlink{w32__resource_8h_a17feae9873f211123788fe70a73afb06}{IDC\_CUR\_SZ4} \}
+\}
+\end{DoxyCode}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!win\+\_\+height@{win\+\_\+height}}
+\index{win\+\_\+height@{win\+\_\+height}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{win\+\_\+height}{win_height}}]{\setlength{\rightskip}{0pt plus 5cm}int win\+\_\+height = C\+W\+\_\+\+U\+S\+E\+D\+E\+F\+A\+U\+LT\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a043cefe0d8f27979f9813b61305f1407}{}\label{w32__console_8c_a043cefe0d8f27979f9813b61305f1407}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!win\+\_\+width@{win\+\_\+width}}
+\index{win\+\_\+width@{win\+\_\+width}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{win\+\_\+width}{win_width}}]{\setlength{\rightskip}{0pt plus 5cm}int win\+\_\+width = C\+W\+\_\+\+U\+S\+E\+D\+E\+F\+A\+U\+LT\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a3f05049836bf74dcfbc800d417bedec3}{}\label{w32__console_8c_a3f05049836bf74dcfbc800d417bedec3}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!win\+\_\+x@{win\+\_\+x}}
+\index{win\+\_\+x@{win\+\_\+x}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{win\+\_\+x}{win_x}}]{\setlength{\rightskip}{0pt plus 5cm}int win\+\_\+x = C\+W\+\_\+\+U\+S\+E\+D\+E\+F\+A\+U\+LT\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a7adc77618ddc9e96a5d706b31cdb0055}{}\label{w32__console_8c_a7adc77618ddc9e96a5d706b31cdb0055}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!win\+\_\+y@{win\+\_\+y}}
+\index{win\+\_\+y@{win\+\_\+y}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{win\+\_\+y}{win_y}}]{\setlength{\rightskip}{0pt plus 5cm}int win\+\_\+y = C\+W\+\_\+\+U\+S\+E\+D\+E\+F\+A\+U\+LT\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_ab577378f1d1499870c2e7c66d8e3680b}{}\label{w32__console_8c_ab577378f1d1499870c2e7c66d8e3680b}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!wr\+\_\+buffer@{wr\+\_\+buffer}}
+\index{wr\+\_\+buffer@{wr\+\_\+buffer}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{wr\+\_\+buffer}{wr_buffer}}]{\setlength{\rightskip}{0pt plus 5cm}char wr\+\_\+buffer\mbox{[}10240\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_aa28212b08422538341ecd03851778db5}{}\label{w32__console_8c_aa28212b08422538341ecd03851778db5}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!wr\+\_\+buffer\+\_\+ptr@{wr\+\_\+buffer\+\_\+ptr}}
+\index{wr\+\_\+buffer\+\_\+ptr@{wr\+\_\+buffer\+\_\+ptr}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{wr\+\_\+buffer\+\_\+ptr}{wr_buffer_ptr}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ wr\+\_\+buffer\+\_\+ptr = {\bf wr\+\_\+buffer}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_ad913bdd51d2c5876d16c8ade97f3cc5a}{}\label{w32__console_8c_ad913bdd51d2c5876d16c8ade97f3cc5a}
+\index{w32\+\_\+console.\+c@{w32\+\_\+console.\+c}!wrap\+\_\+mode@{wrap\+\_\+mode}}
+\index{wrap\+\_\+mode@{wrap\+\_\+mode}!w32\+\_\+console.\+c@{w32\+\_\+console.\+c}}
+\subsubsection[{\texorpdfstring{wrap\+\_\+mode}{wrap_mode}}]{\setlength{\rightskip}{0pt plus 5cm}int wrap\+\_\+mode = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{w32__console_8c_a6e7c54f50c625be4f19dca3485d20fec}{}\label{w32__console_8c_a6e7c54f50c625be4f19dca3485d20fec}

@@ -1,0 +1,8 @@
+<map id="Code_Start" name="Code_Start">
+<area shape="rect" id="node2" href="$alpha__any_8c.html#a44cf6322f99a0cd1547a49d3b55a8e8f" title="Code_Stop" alt="" coords="145,5,232,32"/>
+<area shape="rect" id="node3" href="$ma2asm_8c.html#afeaa1e73d1371e09e196c12b114b9845" title="Inst_Printf" alt="" coords="147,56,230,83"/>
+<area shape="rect" id="node4" href="$alpha__any_8c.html#a403d2e1c401f1ee3f0e08eea47524291" title="Label" alt="" coords="162,107,215,133"/>
+<area shape="rect" id="node5" href="$ma2asm_8c.html#a55647b9192e0e0e7eb3e53f712402558" title="Label_Printf" alt="" coords="143,157,234,184"/>
+<area shape="rect" id="node6" href="$sparc64__any_8c.html#a7884ec03fffa38e282f499d97aac3ee2" title="Delay_Printf" alt="" coords="141,208,236,235"/>
+<area shape="rect" id="node7" href="$ma2asm_8c.html#a9608e324baa0506520d6ae9b95ae89ab" title="Inst_Out" alt="" coords="284,208,356,235"/>
+</map>

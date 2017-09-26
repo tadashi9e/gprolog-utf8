@@ -1,0 +1,10 @@
+<map id="Emit_Obj_Initializer" name="Emit_Obj_Initializer">
+<area shape="rect" id="node2" href="$wam2ma_8c.html#a372e9ab684b569db6f4fe9d63342d3df" title="Label_Printf" alt="" coords="227,5,317,32"/>
+<area shape="rect" id="node3" href="$wam2ma_8c.html#a3cd8f58f2bf669fecf3c585a066f9d8b" title="Inst_Printf" alt="" coords="432,132,515,159"/>
+<area shape="rect" id="node4" href="$bt__string_8c.html#a32730363f7e247e6938b78cdb73fa6a5" title="BT_String_List" alt="" coords="218,259,326,285"/>
+<area shape="rect" id="node6" href="$wam2ma_8c.html#ad20a34130d14dbc900550ea80ffa05ac" title="Emit_One_Atom" alt="" coords="213,107,331,133"/>
+<area shape="rect" id="node7" href="$wam2ma_8c.html#a34738711c6e9bc0b977f963f55119add" title="Emit_One_Atom_Tagged" alt="" coords="188,208,356,235"/>
+<area shape="rect" id="node9" href="$wam2ma_8c.html#a5a3454243493573a03a1a5d2c67d5bdc" title="Emit_One_F_N_Tagged" alt="" coords="191,157,353,184"/>
+<area shape="rect" id="node5" href="$bt__string_8c.html#ac069f943d565dd3ae285acd23f2fa322" title="BT_String_List_Rec" alt="" coords="404,259,543,285"/>
+<area shape="rect" id="node8" href="$bt__string_8c.html#a47df4899cd0db82d0843dbf52aa5e103" title="BT_String_Lookup" alt="" coords="409,208,538,235"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Call_C_Arg_Foreign_L" name="Call_C_Arg_Foreign_L">
+<area shape="rect" id="node2" href="$sparc64__any_8c.html#ac8081cdc260d72a598c1486b62353af2" title="Load_Mem_Into_Reg" alt="" coords="207,31,353,57"/>
+<area shape="rect" id="node3" href="$sparc64__any_8c.html#a094fd54e2a708195a6a463d35639eb70" title="Load_Long_Into_Reg" alt="" coords="401,5,547,32"/>
+<area shape="rect" id="node5" href="$sparc64__any_8c.html#a7884ec03fffa38e282f499d97aac3ee2" title="Delay_Printf" alt="" coords="761,31,856,57"/>
+<area shape="rect" id="node4" href="$sparc64__any_8c.html#a7c17750a2367a1023769b227884b760c" title="Synthetize_Setx" alt="" coords="595,5,713,32"/>
+<area shape="rect" id="node6" href="$ma2asm_8c.html#a9608e324baa0506520d6ae9b95ae89ab" title="Inst_Out" alt="" coords="904,31,976,57"/>
+</map>

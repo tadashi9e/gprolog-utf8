@@ -1,0 +1,18 @@
+<map id="Pl_Scan_Token" name="Pl_Scan_Token">
+<area shape="rect" id="node2" href="$scan__supp_8c.html#a9994769011c3e729e2561a540c16f5ed" title="Read_Next_Char" alt="" coords="543,157,666,184"/>
+<area shape="rect" id="node8" href="$pl__wchar_8c.html#a0e3acef785ce9c91e56ba566193d4cee" title="put_wchar_eof" alt="" coords="168,309,275,336"/>
+<area shape="rect" id="node10" href="$scan__supp_8c.html#a97a43a27fe148ffedc5fe4c492f41a2e" title="Scan_Number" alt="" coords="169,107,274,133"/>
+<area shape="rect" id="node16" href="$scan__supp_8c.html#ac57078c4fd0ab69843bb44bb178265a1" title="Scan_Quoted" alt="" coords="171,157,272,184"/>
+<area shape="rect" id="node17" href="$pl__wchar_8c.html#aff43479f3fd642f29282b8a434c29265" title="put_wchar_without_slen" alt="" coords="323,208,485,235"/>
+<area shape="rect" id="node3" href="$stream__supp_8c.html#a8889ae46064e72cc556ee7ba019f482f" title="Pl_Stream_Getc" alt="" coords="728,157,847,184"/>
+<area shape="rect" id="node4" href="$stream__supp_8c.html#a60433157a606a8a781ead4648af6cc87" title="Basic_Call_Fct_Getc" alt="" coords="899,107,1045,133"/>
+<area shape="rect" id="node7" href="$pl__wchar_8c.html#a5df5e221fa5cbadce849a7e73c5dc4ad" title="fill_wchar" alt="" coords="933,157,1011,184"/>
+<area shape="rect" id="node5" href="$stream__supp_8c.html#a84ba976a14dadde6efb09d408c88873a" title="Pl_Stream_Putc" alt="" coords="1093,107,1211,133"/>
+<area shape="rect" id="node6" href="$stream__supp_8c.html#a06ceb4f7e59898ddb42f1fa50d29d140" title="Basic_Call_Fct_Putc" alt="" coords="1259,107,1404,133"/>
+<area shape="rect" id="node9" href="$pl__wchar_8c.html#a31bcb7c7ad4174170702cb4399feb8e3" title="put_wchar" alt="" coords="363,309,445,336"/>
+<area shape="rect" id="node11" href="$scan__supp_8c.html#ab16df185444492d1129adb51cfd5e773" title="Pl_Scan_Peek_Char" alt="" coords="533,107,676,133"/>
+<area shape="rect" id="node13" href="$scan__supp_8c.html#a6fc11b3b4150040b547e7b574bdacd24" title="Scan_Quoted_Char" alt="" coords="336,157,472,184"/>
+<area shape="rect" id="node14" href="$stream__supp_8c.html#a79661c2e041ef8be17715b28650d2780" title="Pl_Stream_Ungetc" alt="" coords="338,5,470,32"/>
+<area shape="rect" id="node12" href="$stream__supp_8c.html#ae26778bf27551f6b4137131b6eb9766d" title="Pl_Stream_Peekc" alt="" coords="724,107,851,133"/>
+<area shape="rect" id="node15" href="$pl__wchar_8c.html#addb2416249b2b193fb9f904199551a92" title="get_wchar_bytes" alt="" coords="544,5,665,32"/>
+</map>

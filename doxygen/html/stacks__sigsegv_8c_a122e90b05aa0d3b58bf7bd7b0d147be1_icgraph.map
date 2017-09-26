@@ -1,0 +1,6 @@
+<map id="Virtual_Mem_Alloc" name="Virtual_Mem_Alloc">
+<area shape="rect" id="node2" href="$stacks__sigsegv_8h.html#aee65d332f1e4ff3a8796bda38d329766" title="Pl_Allocate_Stacks" alt="" coords="184,5,320,32"/>
+<area shape="rect" id="node3" href="$gprolog_8h.html#a79163a775d949cf493a9f7b28bf4fc09" title="Pl_Start_Prolog" alt="" coords="368,5,481,32"/>
+<area shape="rect" id="node4" href="$main_8c.html#a335bb6fe70cf4c383aec5baef5f39e47" title="Main_Wrapper" alt="" coords="529,5,636,32"/>
+<area shape="rect" id="node5" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="684,5,735,32"/>
+</map>

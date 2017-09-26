@@ -1,0 +1,106 @@
+\hypertarget{callinf__supp_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/callinf\+\_\+supp.c File Reference}
+\label{callinf__supp_8c}\index{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/callinf\+\_\+supp.\+c@{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/callinf\+\_\+supp.\+c}}
+{\ttfamily \#include \char`\"{}engine\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bips\+\_\+pl.\+h\char`\"{}}\\*
+Include dependency graph for callinf\+\_\+supp.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{callinf__supp_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{callinf__supp_8c_af87dd369efca7598e6e7d368c12b1b15}{Pl\+\_\+\+Save\+\_\+\+Call\+\_\+\+Info\+\_\+3} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} func\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} arity\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} debug\+\_\+call\+\_\+word)
+\item 
+void \hyperlink{callinf__supp_8c_a601ca7438244c4963e1e1fddfd0792f1}{Pl\+\_\+\+Load\+\_\+\+Call\+\_\+\+Info\+\_\+\+Arg\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} arg\+\_\+no\+\_\+word)
+\item 
+void \hyperlink{callinf__supp_8c_ac4c5857363907252ca923c9553b11e30}{Pl\+\_\+\+Call\+\_\+\+Info\+\_\+\+Bip\+\_\+\+Name\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} call\+\_\+info\+\_\+word)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{callinf__supp_8c_aebdd632489ac181c6807bbefa78b0739}{save\+\_\+call\+\_\+info}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{callinf\+\_\+supp.\+c@{callinf\+\_\+supp.\+c}!Pl\+\_\+\+Call\+\_\+\+Info\+\_\+\+Bip\+\_\+\+Name\+\_\+1@{Pl\+\_\+\+Call\+\_\+\+Info\+\_\+\+Bip\+\_\+\+Name\+\_\+1}}
+\index{Pl\+\_\+\+Call\+\_\+\+Info\+\_\+\+Bip\+\_\+\+Name\+\_\+1@{Pl\+\_\+\+Call\+\_\+\+Info\+\_\+\+Bip\+\_\+\+Name\+\_\+1}!callinf\+\_\+supp.\+c@{callinf\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Call\+\_\+\+Info\+\_\+\+Bip\+\_\+\+Name\+\_\+1(\+Wam\+Word call\+\_\+info\+\_\+word)}{Pl_Call_Info_Bip_Name_1(WamWord call_info_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Call\+\_\+\+Info\+\_\+\+Bip\+\_\+\+Name\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{call\+\_\+info\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{callinf__supp_8c_ac4c5857363907252ca923c9553b11e30}{}\label{callinf__supp_8c_ac4c5857363907252ca923c9553b11e30}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{callinf__supp_8c_ac4c5857363907252ca923c9553b11e30_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{callinf__supp_8c_ac4c5857363907252ca923c9553b11e30_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{callinf\+\_\+supp.\+c@{callinf\+\_\+supp.\+c}!Pl\+\_\+\+Load\+\_\+\+Call\+\_\+\+Info\+\_\+\+Arg\+\_\+1@{Pl\+\_\+\+Load\+\_\+\+Call\+\_\+\+Info\+\_\+\+Arg\+\_\+1}}
+\index{Pl\+\_\+\+Load\+\_\+\+Call\+\_\+\+Info\+\_\+\+Arg\+\_\+1@{Pl\+\_\+\+Load\+\_\+\+Call\+\_\+\+Info\+\_\+\+Arg\+\_\+1}!callinf\+\_\+supp.\+c@{callinf\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Load\+\_\+\+Call\+\_\+\+Info\+\_\+\+Arg\+\_\+1(\+Wam\+Word arg\+\_\+no\+\_\+word)}{Pl_Load_Call_Info_Arg_1(WamWord arg_no_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Load\+\_\+\+Call\+\_\+\+Info\+\_\+\+Arg\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{arg\+\_\+no\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{callinf__supp_8c_a601ca7438244c4963e1e1fddfd0792f1}{}\label{callinf__supp_8c_a601ca7438244c4963e1e1fddfd0792f1}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{callinf__supp_8c_a601ca7438244c4963e1e1fddfd0792f1_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{callinf\+\_\+supp.\+c@{callinf\+\_\+supp.\+c}!Pl\+\_\+\+Save\+\_\+\+Call\+\_\+\+Info\+\_\+3@{Pl\+\_\+\+Save\+\_\+\+Call\+\_\+\+Info\+\_\+3}}
+\index{Pl\+\_\+\+Save\+\_\+\+Call\+\_\+\+Info\+\_\+3@{Pl\+\_\+\+Save\+\_\+\+Call\+\_\+\+Info\+\_\+3}!callinf\+\_\+supp.\+c@{callinf\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Save\+\_\+\+Call\+\_\+\+Info\+\_\+3(\+Wam\+Word func\+\_\+word, Wam\+Word arity\+\_\+word, Wam\+Word debug\+\_\+call\+\_\+word)}{Pl_Save_Call_Info_3(WamWord func_word, WamWord arity_word, WamWord debug_call_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Save\+\_\+\+Call\+\_\+\+Info\+\_\+3 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{func\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{arity\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{debug\+\_\+call\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{callinf__supp_8c_af87dd369efca7598e6e7d368c12b1b15}{}\label{callinf__supp_8c_af87dd369efca7598e6e7d368c12b1b15}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{callinf__supp_8c_af87dd369efca7598e6e7d368c12b1b15_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{callinf\+\_\+supp.\+c@{callinf\+\_\+supp.\+c}!save\+\_\+call\+\_\+info@{save\+\_\+call\+\_\+info}}
+\index{save\+\_\+call\+\_\+info@{save\+\_\+call\+\_\+info}!callinf\+\_\+supp.\+c@{callinf\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{save\+\_\+call\+\_\+info}{save_call_info}}]{\setlength{\rightskip}{0pt plus 5cm}int save\+\_\+call\+\_\+info\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{callinf__supp_8c_aebdd632489ac181c6807bbefa78b0739}{}\label{callinf__supp_8c_aebdd632489ac181c6807bbefa78b0739}

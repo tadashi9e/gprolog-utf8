@@ -1,0 +1,367 @@
+\hypertarget{decode__hexa_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Top\+Comp/decode\+\_\+hexa.c File Reference}
+\label{decode__hexa_8c}\index{gprolog-\/utf8-\/tree/src/\+Top\+Comp/decode\+\_\+hexa.\+c@{gprolog-\/utf8-\/tree/src/\+Top\+Comp/decode\+\_\+hexa.\+c}}
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+Include dependency graph for decode\+\_\+hexa.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{decode__hexa_8c__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{decode__hexa_8c__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{decode__hexa_8c_a063e7a196c557dbf748423639d8d662f}{A\+U\+X\+\_\+\+S\+TR}~\char`\"{}\+\_\+\$aux\char`\"{}
+\item 
+\#define \hyperlink{decode__hexa_8c_acda42a34159d2abb6cbe623275e9a220}{Letter}(\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c})~(((\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}) $>$= \textquotesingle{}a\textquotesingle{} \&\& (\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}) $<$= \textquotesingle{}z\textquotesingle{}) $\vert$$\vert$ ((\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}) $>$= \textquotesingle{}A\textquotesingle{} \&\& (\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}) $<$= \textquotesingle{}Z\textquotesingle{}))
+\item 
+\#define \hyperlink{decode__hexa_8c_a1bb33c8ae3faeb6595e42d84b28a3bcb}{Letter\+\_\+\+Digit}(\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c})~(\hyperlink{decode__hexa_8c_acda42a34159d2abb6cbe623275e9a220}{Letter}(\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}) $\vert$$\vert$ isdigit(\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}))
+\item 
+\#define \hyperlink{decode__hexa_8c_a9cb90e07cbb6341127e143e98dc19238}{Hexa\+\_\+\+Digit}(\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c})~(isdigit(\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}) $\vert$$\vert$ ((\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}) $>$= \textquotesingle{}A\textquotesingle{} \&\& (\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}) $<$= \textquotesingle{}\hyperlink{powerpc__any_8c_aec1979d936ce5c296ac7d603766caa6b}{F}\textquotesingle{}))
+\item 
+\#define \hyperlink{decode__hexa_8c_aa7db27eb5e688a7385c0c0cdb47f3653}{Hex\+\_\+\+Num}(\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c})~(isdigit(\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}) ? (\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}) -\/ \textquotesingle{}0\textquotesingle{} \+: (\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}) -\/ \textquotesingle{}A\textquotesingle{} + 10)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{decode__hexa_8c_a8a7fa7613a1d5fd2eede3eac2b5c3e14}{String\+\_\+\+Needs\+\_\+\+Encoding} (char $\ast$str)
+\item 
+static char $\ast$ \hyperlink{decode__hexa_8c_af030172e978318216d4d40234f0a3287}{Encode\+\_\+\+String} (char $\ast$str, char $\ast$\hyperlink{sparc64__any_8c_a718512b34ac927fdf021953ca4bb1967}{buff})
+\item 
+static char $\ast$ \hyperlink{decode__hexa_8c_a6cd498a8932910b95ff7330b6eec3635}{Copy\+\_\+\+Not\+\_\+\+Encoded\+\_\+\+String} (char $\ast$str, char $\ast$\hyperlink{sparc64__any_8c_a718512b34ac927fdf021953ca4bb1967}{buff})
+\item 
+static char $\ast$ \hyperlink{decode__hexa_8c_afc598f5c3844d4b1f2626a1e9d832502}{Decode\+\_\+\+String} (char $\ast$str, char $\ast$\hyperlink{sparc64__any_8c_a718512b34ac927fdf021953ca4bb1967}{buff})
+\item 
+static void \hyperlink{decode__hexa_8c_a73e82cee47b73949cbe8a0b906f560fe}{Quote\+\_\+\+If\+\_\+\+Needed} (char $\ast$str)
+\item 
+static char $\ast$ \hyperlink{decode__hexa_8c_acd8783daa9bbff9929bb74aa27d219e6}{Parse\+\_\+\+Atom} (char $\ast$src, char $\ast$dst)
+\item 
+char $\ast$ \hyperlink{decode__hexa_8c_a0aad39c0b4397f86ad4f9b31a906dc98}{Encode\+\_\+\+Hexa} (char $\ast$module, char $\ast$pred, int arity, char $\ast$str)
+\item 
+char $\ast$ \hyperlink{decode__hexa_8c_ac1bdc1aebcecaa025eef86983e0345aa}{Encode\+\_\+\+Hexa\+\_\+\+Line} (char $\ast$str, char $\ast$\hyperlink{hexfilter_8c_a5407a229a5e1a319d75fb29542c83eae}{format}, int \hyperlink{hexfilter_8c_a665742fa37af08ce14b0971ef7d82c4b}{strict})
+\item 
+char $\ast$ \hyperlink{decode__hexa_8c_ae547227b9f8687b00400668f4aeae951}{Decode\+\_\+\+Hexa} (char $\ast$str, int \hyperlink{hexfilter_8c_a665742fa37af08ce14b0971ef7d82c4b}{strict}, int \hyperlink{hexfilter_8c_a87d4891edf5ac7e11483646d83ba4e78}{quote}, int \hyperlink{hexfilter_8c_a26b0b14d5681b6ab0fc22e80019e20ab}{decode\+\_\+aux}, char $\ast$module, char $\ast$pred, int $\ast$arity, int $\ast$aux\+\_\+no)
+\item 
+char $\ast$ \hyperlink{decode__hexa_8c_a557b9e6f8b78d63874887b366cbc35ed}{Decode\+\_\+\+Hexa\+\_\+\+Line} (char $\ast$str, char $\ast$\hyperlink{hexfilter_8c_a5407a229a5e1a319d75fb29542c83eae}{format}, int \hyperlink{hexfilter_8c_a665742fa37af08ce14b0971ef7d82c4b}{strict}, int \hyperlink{hexfilter_8c_a87d4891edf5ac7e11483646d83ba4e78}{quote}, int \hyperlink{hexfilter_8c_a26b0b14d5681b6ab0fc22e80019e20ab}{decode\+\_\+aux})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static char \hyperlink{decode__hexa_8c_a42654449bae2c0e29ffb0c8b723aa4b1}{pl\+\_\+escape\+\_\+symbol} \mbox{[}$\,$\mbox{]} = \char`\"{}abfnrtv\char`\"{}
+\item 
+static char \hyperlink{decode__hexa_8c_a074d3a080ca74d8670f0f808738e6e60}{pl\+\_\+escape\+\_\+char} \mbox{[}$\,$\mbox{]} = \char`\"{}\textbackslash{}a\textbackslash{}b\textbackslash{}f\textbackslash{}n\textbackslash{}r\textbackslash{}t\textbackslash{}v\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}!A\+U\+X\+\_\+\+S\+TR@{A\+U\+X\+\_\+\+S\+TR}}
+\index{A\+U\+X\+\_\+\+S\+TR@{A\+U\+X\+\_\+\+S\+TR}!decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}}
+\subsubsection[{\texorpdfstring{A\+U\+X\+\_\+\+S\+TR}{AUX_STR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+U\+X\+\_\+\+S\+TR~\char`\"{}\+\_\+\$aux\char`\"{}}\hypertarget{decode__hexa_8c_a063e7a196c557dbf748423639d8d662f}{}\label{decode__hexa_8c_a063e7a196c557dbf748423639d8d662f}
+\index{decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}!Hex\+\_\+\+Num@{Hex\+\_\+\+Num}}
+\index{Hex\+\_\+\+Num@{Hex\+\_\+\+Num}!decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}}
+\subsubsection[{\texorpdfstring{Hex\+\_\+\+Num}{Hex_Num}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Hex\+\_\+\+Num(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf c}}
+\end{DoxyParamCaption}
+)~(isdigit({\bf c}) ? ({\bf c}) -\/ \textquotesingle{}0\textquotesingle{} \+: ({\bf c}) -\/ \textquotesingle{}A\textquotesingle{} + 10)}\hypertarget{decode__hexa_8c_aa7db27eb5e688a7385c0c0cdb47f3653}{}\label{decode__hexa_8c_aa7db27eb5e688a7385c0c0cdb47f3653}
+\index{decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}!Hexa\+\_\+\+Digit@{Hexa\+\_\+\+Digit}}
+\index{Hexa\+\_\+\+Digit@{Hexa\+\_\+\+Digit}!decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}}
+\subsubsection[{\texorpdfstring{Hexa\+\_\+\+Digit}{Hexa_Digit}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Hexa\+\_\+\+Digit(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf c}}
+\end{DoxyParamCaption}
+)~(isdigit({\bf c}) $\vert$$\vert$ (({\bf c}) $>$= \textquotesingle{}A\textquotesingle{} \&\& ({\bf c}) $<$= \textquotesingle{}{\bf F}\textquotesingle{}))}\hypertarget{decode__hexa_8c_a9cb90e07cbb6341127e143e98dc19238}{}\label{decode__hexa_8c_a9cb90e07cbb6341127e143e98dc19238}
+\index{decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}!Letter@{Letter}}
+\index{Letter@{Letter}!decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}}
+\subsubsection[{\texorpdfstring{Letter}{Letter}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Letter(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf c}}
+\end{DoxyParamCaption}
+)~((({\bf c}) $>$= \textquotesingle{}a\textquotesingle{} \&\& ({\bf c}) $<$= \textquotesingle{}z\textquotesingle{}) $\vert$$\vert$ (({\bf c}) $>$= \textquotesingle{}A\textquotesingle{} \&\& ({\bf c}) $<$= \textquotesingle{}Z\textquotesingle{}))}\hypertarget{decode__hexa_8c_acda42a34159d2abb6cbe623275e9a220}{}\label{decode__hexa_8c_acda42a34159d2abb6cbe623275e9a220}
+\index{decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}!Letter\+\_\+\+Digit@{Letter\+\_\+\+Digit}}
+\index{Letter\+\_\+\+Digit@{Letter\+\_\+\+Digit}!decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}}
+\subsubsection[{\texorpdfstring{Letter\+\_\+\+Digit}{Letter_Digit}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Letter\+\_\+\+Digit(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf c}}
+\end{DoxyParamCaption}
+)~({\bf Letter}({\bf c}) $\vert$$\vert$ isdigit({\bf c}))}\hypertarget{decode__hexa_8c_a1bb33c8ae3faeb6595e42d84b28a3bcb}{}\label{decode__hexa_8c_a1bb33c8ae3faeb6595e42d84b28a3bcb}
+
+
+\subsection{Function Documentation}
+\index{decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}!Copy\+\_\+\+Not\+\_\+\+Encoded\+\_\+\+String@{Copy\+\_\+\+Not\+\_\+\+Encoded\+\_\+\+String}}
+\index{Copy\+\_\+\+Not\+\_\+\+Encoded\+\_\+\+String@{Copy\+\_\+\+Not\+\_\+\+Encoded\+\_\+\+String}!decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}}
+\subsubsection[{\texorpdfstring{Copy\+\_\+\+Not\+\_\+\+Encoded\+\_\+\+String(char $\ast$str, char $\ast$buff)}{Copy_Not_Encoded_String(char *str, char *buff)}}]{\setlength{\rightskip}{0pt plus 5cm}static char $\ast$ Copy\+\_\+\+Not\+\_\+\+Encoded\+\_\+\+String (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{char $\ast$}]{buff}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{decode__hexa_8c_a6cd498a8932910b95ff7330b6eec3635}{}\label{decode__hexa_8c_a6cd498a8932910b95ff7330b6eec3635}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{decode__hexa_8c_a6cd498a8932910b95ff7330b6eec3635_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}!Decode\+\_\+\+Hexa@{Decode\+\_\+\+Hexa}}
+\index{Decode\+\_\+\+Hexa@{Decode\+\_\+\+Hexa}!decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}}
+\subsubsection[{\texorpdfstring{Decode\+\_\+\+Hexa(char $\ast$str, int strict, int quote, int decode\+\_\+aux, char $\ast$module, char $\ast$pred, int $\ast$arity, int $\ast$aux\+\_\+no)}{Decode_Hexa(char *str, int strict, int quote, int decode_aux, char *module, char *pred, int *arity, int *aux_no)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Decode\+\_\+\+Hexa (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{int}]{strict, }
+\item[{int}]{quote, }
+\item[{int}]{decode\+\_\+aux, }
+\item[{char $\ast$}]{module, }
+\item[{char $\ast$}]{pred, }
+\item[{int $\ast$}]{arity, }
+\item[{int $\ast$}]{aux\+\_\+no}
+\end{DoxyParamCaption}
+)}\hypertarget{decode__hexa_8c_ae547227b9f8687b00400668f4aeae951}{}\label{decode__hexa_8c_ae547227b9f8687b00400668f4aeae951}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{decode__hexa_8c_ae547227b9f8687b00400668f4aeae951_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{decode__hexa_8c_ae547227b9f8687b00400668f4aeae951_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}!Decode\+\_\+\+Hexa\+\_\+\+Line@{Decode\+\_\+\+Hexa\+\_\+\+Line}}
+\index{Decode\+\_\+\+Hexa\+\_\+\+Line@{Decode\+\_\+\+Hexa\+\_\+\+Line}!decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}}
+\subsubsection[{\texorpdfstring{Decode\+\_\+\+Hexa\+\_\+\+Line(char $\ast$str, char $\ast$format, int strict, int quote, int decode\+\_\+aux)}{Decode_Hexa_Line(char *str, char *format, int strict, int quote, int decode_aux)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Decode\+\_\+\+Hexa\+\_\+\+Line (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{char $\ast$}]{format, }
+\item[{int}]{strict, }
+\item[{int}]{quote, }
+\item[{int}]{decode\+\_\+aux}
+\end{DoxyParamCaption}
+)}\hypertarget{decode__hexa_8c_a557b9e6f8b78d63874887b366cbc35ed}{}\label{decode__hexa_8c_a557b9e6f8b78d63874887b366cbc35ed}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{decode__hexa_8c_a557b9e6f8b78d63874887b366cbc35ed_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{decode__hexa_8c_a557b9e6f8b78d63874887b366cbc35ed_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}!Decode\+\_\+\+String@{Decode\+\_\+\+String}}
+\index{Decode\+\_\+\+String@{Decode\+\_\+\+String}!decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}}
+\subsubsection[{\texorpdfstring{Decode\+\_\+\+String(char $\ast$str, char $\ast$buff)}{Decode_String(char *str, char *buff)}}]{\setlength{\rightskip}{0pt plus 5cm}static char $\ast$ Decode\+\_\+\+String (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{char $\ast$}]{buff}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{decode__hexa_8c_afc598f5c3844d4b1f2626a1e9d832502}{}\label{decode__hexa_8c_afc598f5c3844d4b1f2626a1e9d832502}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{decode__hexa_8c_afc598f5c3844d4b1f2626a1e9d832502_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}!Encode\+\_\+\+Hexa@{Encode\+\_\+\+Hexa}}
+\index{Encode\+\_\+\+Hexa@{Encode\+\_\+\+Hexa}!decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}}
+\subsubsection[{\texorpdfstring{Encode\+\_\+\+Hexa(char $\ast$module, char $\ast$pred, int arity, char $\ast$str)}{Encode_Hexa(char *module, char *pred, int arity, char *str)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Encode\+\_\+\+Hexa (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{module, }
+\item[{char $\ast$}]{pred, }
+\item[{int}]{arity, }
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\hypertarget{decode__hexa_8c_a0aad39c0b4397f86ad4f9b31a906dc98}{}\label{decode__hexa_8c_a0aad39c0b4397f86ad4f9b31a906dc98}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{decode__hexa_8c_a0aad39c0b4397f86ad4f9b31a906dc98_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{decode__hexa_8c_a0aad39c0b4397f86ad4f9b31a906dc98_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}!Encode\+\_\+\+Hexa\+\_\+\+Line@{Encode\+\_\+\+Hexa\+\_\+\+Line}}
+\index{Encode\+\_\+\+Hexa\+\_\+\+Line@{Encode\+\_\+\+Hexa\+\_\+\+Line}!decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}}
+\subsubsection[{\texorpdfstring{Encode\+\_\+\+Hexa\+\_\+\+Line(char $\ast$str, char $\ast$format, int strict)}{Encode_Hexa_Line(char *str, char *format, int strict)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Encode\+\_\+\+Hexa\+\_\+\+Line (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{char $\ast$}]{format, }
+\item[{int}]{strict}
+\end{DoxyParamCaption}
+)}\hypertarget{decode__hexa_8c_ac1bdc1aebcecaa025eef86983e0345aa}{}\label{decode__hexa_8c_ac1bdc1aebcecaa025eef86983e0345aa}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{decode__hexa_8c_ac1bdc1aebcecaa025eef86983e0345aa_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{decode__hexa_8c_ac1bdc1aebcecaa025eef86983e0345aa_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}!Encode\+\_\+\+String@{Encode\+\_\+\+String}}
+\index{Encode\+\_\+\+String@{Encode\+\_\+\+String}!decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}}
+\subsubsection[{\texorpdfstring{Encode\+\_\+\+String(char $\ast$str, char $\ast$buff)}{Encode_String(char *str, char *buff)}}]{\setlength{\rightskip}{0pt plus 5cm}static char $\ast$ Encode\+\_\+\+String (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{char $\ast$}]{buff}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{decode__hexa_8c_af030172e978318216d4d40234f0a3287}{}\label{decode__hexa_8c_af030172e978318216d4d40234f0a3287}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{decode__hexa_8c_af030172e978318216d4d40234f0a3287_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}!Parse\+\_\+\+Atom@{Parse\+\_\+\+Atom}}
+\index{Parse\+\_\+\+Atom@{Parse\+\_\+\+Atom}!decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}}
+\subsubsection[{\texorpdfstring{Parse\+\_\+\+Atom(char $\ast$src, char $\ast$dst)}{Parse_Atom(char *src, char *dst)}}]{\setlength{\rightskip}{0pt plus 5cm}static char $\ast$ Parse\+\_\+\+Atom (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{src, }
+\item[{char $\ast$}]{dst}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{decode__hexa_8c_acd8783daa9bbff9929bb74aa27d219e6}{}\label{decode__hexa_8c_acd8783daa9bbff9929bb74aa27d219e6}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{decode__hexa_8c_acd8783daa9bbff9929bb74aa27d219e6_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}!Quote\+\_\+\+If\+\_\+\+Needed@{Quote\+\_\+\+If\+\_\+\+Needed}}
+\index{Quote\+\_\+\+If\+\_\+\+Needed@{Quote\+\_\+\+If\+\_\+\+Needed}!decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}}
+\subsubsection[{\texorpdfstring{Quote\+\_\+\+If\+\_\+\+Needed(char $\ast$str)}{Quote_If_Needed(char *str)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Quote\+\_\+\+If\+\_\+\+Needed (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{decode__hexa_8c_a73e82cee47b73949cbe8a0b906f560fe}{}\label{decode__hexa_8c_a73e82cee47b73949cbe8a0b906f560fe}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{decode__hexa_8c_a73e82cee47b73949cbe8a0b906f560fe_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}!String\+\_\+\+Needs\+\_\+\+Encoding@{String\+\_\+\+Needs\+\_\+\+Encoding}}
+\index{String\+\_\+\+Needs\+\_\+\+Encoding@{String\+\_\+\+Needs\+\_\+\+Encoding}!decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}}
+\subsubsection[{\texorpdfstring{String\+\_\+\+Needs\+\_\+\+Encoding(char $\ast$str)}{String_Needs_Encoding(char *str)}}]{\setlength{\rightskip}{0pt plus 5cm}static int String\+\_\+\+Needs\+\_\+\+Encoding (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{decode__hexa_8c_a8a7fa7613a1d5fd2eede3eac2b5c3e14}{}\label{decode__hexa_8c_a8a7fa7613a1d5fd2eede3eac2b5c3e14}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{decode__hexa_8c_a8a7fa7613a1d5fd2eede3eac2b5c3e14_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}!pl\+\_\+escape\+\_\+char@{pl\+\_\+escape\+\_\+char}}
+\index{pl\+\_\+escape\+\_\+char@{pl\+\_\+escape\+\_\+char}!decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}}
+\subsubsection[{\texorpdfstring{pl\+\_\+escape\+\_\+char}{pl_escape_char}}]{\setlength{\rightskip}{0pt plus 5cm}char pl\+\_\+escape\+\_\+char\mbox{[}$\,$\mbox{]} = \char`\"{}\textbackslash{}a\textbackslash{}b\textbackslash{}f\textbackslash{}n\textbackslash{}r\textbackslash{}t\textbackslash{}v\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{decode__hexa_8c_a074d3a080ca74d8670f0f808738e6e60}{}\label{decode__hexa_8c_a074d3a080ca74d8670f0f808738e6e60}
+\index{decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}!pl\+\_\+escape\+\_\+symbol@{pl\+\_\+escape\+\_\+symbol}}
+\index{pl\+\_\+escape\+\_\+symbol@{pl\+\_\+escape\+\_\+symbol}!decode\+\_\+hexa.\+c@{decode\+\_\+hexa.\+c}}
+\subsubsection[{\texorpdfstring{pl\+\_\+escape\+\_\+symbol}{pl_escape_symbol}}]{\setlength{\rightskip}{0pt plus 5cm}char pl\+\_\+escape\+\_\+symbol\mbox{[}$\,$\mbox{]} = \char`\"{}abfnrtv\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{decode__hexa_8c_a42654449bae2c0e29ffb0c8b723aa4b1}{}\label{decode__hexa_8c_a42654449bae2c0e29ffb0c8b723aa4b1}

@@ -1,0 +1,23 @@
+<map id="Pl_Un_Atom_Check" name="Pl_Un_Atom_Check">
+<area shape="rect" id="node2" href="$gprolog_8h.html#ae4e7f7b10f8b7d2bccb1b6b99c334bf6" title="Pl_Un_Compound_Check" alt="" coords="208,5,381,32"/>
+<area shape="rect" id="node3" href="$gprolog_8h.html#a824776c341aae8359784b62ded2c8349" title="Pl_Un_Compound" alt="" coords="231,56,359,83"/>
+<area shape="rect" id="node5" href="$gprolog_8h.html#ae965665a65d25dee396b7500d15c4ec9" title="Pl_Un_Callable_Check" alt="" coords="216,107,373,133"/>
+<area shape="rect" id="node6" href="$error__supp_8c.html#a75a8763a198dd8a86eb3ab789fe7193c" title="Pl_Current_Bip_Name_2" alt="" coords="211,157,378,184"/>
+<area shape="rect" id="node7" href="$file__c_8c.html#a75587386067a0455fe0fc145edd38378" title="Pl_Prolog_File_Name_2" alt="" coords="213,208,376,235"/>
+<area shape="rect" id="node8" href="$flag__c_8c.html#a81c8114bd8203be5c8802170b8214c8a" title="Pl_Argument_Value_2" alt="" coords="219,259,370,285"/>
+<area shape="rect" id="node9" href="$os__interf__c_8c.html#a9ded9a348055d1611f52bc399baadae8" title="Pl_File_Prop_Type_2" alt="" coords="221,309,368,336"/>
+<area shape="rect" id="node10" href="$pred__c_8c.html#ac221e2f1356cd1adb352abe4ab1a71a1" title="Pl_Pred_Prop_Prolog\l_File_3" alt="" coords="221,361,368,402"/>
+<area shape="rect" id="node11" href="$pred__c_8c.html#aedc71c481f3027bc3c62538eba50c034" title="Pl_Get_Predicate_File\l_Info_3" alt="" coords="219,426,371,467"/>
+<area shape="rect" id="node12" href="$pred__c_8c.html#a92ad169cc36094af38731f5f54522866" title="Pl_Father_Of_Aux_Name_3" alt="" coords="202,492,387,519"/>
+<area shape="rect" id="node13" href="$pred__c_8c.html#a1ab792a2bb64ef9bc2dce73d1c25d350" title="Pl_Pred_Without_Aux_4" alt="" coords="213,543,377,569"/>
+<area shape="rect" id="node14" href="$pred__c_8c.html#ad5b6a73a755dbad8b85a60fb6880e0a5" title="Pl_Make_Aux_Name_4" alt="" coords="215,593,374,620"/>
+<area shape="rect" id="node15" href="$src__rdr__c_8c.html#adb4107b9df4d84a2e61a823923c76212" title="Pl_SR_Get_File_Name_2" alt="" coords="209,644,381,671"/>
+<area shape="rect" id="node16" href="$stream__c_8c.html#a1a66f0555dc22778c05d8da39704ddd8" title="Pl_Stream_Prop_File\l_Name_2" alt="" coords="222,695,367,737"/>
+<area shape="rect" id="node17" href="$stream__c_8c.html#a87c33e1295c5b425f9d89f284c315793" title="Pl_Stream_Prop_Mode_2" alt="" coords="209,761,380,788"/>
+<area shape="rect" id="node18" href="$stream__c_8c.html#a115567d97a1b6f3c8d82ecf1028ee3e5" title="Pl_Stream_Prop_Type_2" alt="" coords="211,812,378,839"/>
+<area shape="rect" id="node19" href="$stream__c_8c.html#a674fec0d52cc97ad64bad0077515118e" title="Pl_Stream_Prop_Reposition_2" alt="" coords="195,863,395,889"/>
+<area shape="rect" id="node20" href="$stream__c_8c.html#a13c6ec86ee5a3cd77e073a5c76ee817d" title="Pl_Stream_Prop_Eof\l_Action_2" alt="" coords="223,914,367,955"/>
+<area shape="rect" id="node21" href="$stream__c_8c.html#a1cd8fdfa356a9ab448670ff6406f89c5" title="Pl_Stream_Prop_Buffering_2" alt="" coords="199,980,390,1007"/>
+<area shape="rect" id="node22" href="$stream__c_8c.html#acc4a57806cb036858a6feebd70954ce5" title="Pl_Stream_Prop_End\l_Of_Stream_2" alt="" coords="221,1031,368,1073"/>
+<area shape="rect" id="node4" href="$gprolog_8h.html#a22e0854aaa6a0238383dfd5d6f84a556" title="Pl_Un_Callable" alt="" coords="443,56,555,83"/>
+</map>

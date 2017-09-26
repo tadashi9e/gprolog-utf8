@@ -1,0 +1,14 @@
+<map id="gprolog&#45;utf8&#45;tree/src/Linedit/linedit.h" name="gprolog&#45;utf8&#45;tree/src/Linedit/linedit.h">
+<area shape="rect" id="node2" href="$consult__c_8c.html" title="gprolog&#45;utf8&#45;tree/src\l/BipsPl/consult_c.c" alt="" coords="5,95,144,136"/>
+<area shape="rect" id="node3" href="$le__interf__c_8c.html" title="gprolog&#45;utf8&#45;tree/src\l/BipsPl/le_interf_c.c" alt="" coords="168,95,307,136"/>
+<area shape="rect" id="node4" href="$stream__c_8c.html" title="gprolog&#45;utf8&#45;tree/src\l/BipsPl/stream_c.c" alt="" coords="331,95,469,136"/>
+<area shape="rect" id="node5" href="$stream__supp_8c.html" title="gprolog&#45;utf8&#45;tree/src\l/BipsPl/stream_supp.c" alt="" coords="493,95,648,136"/>
+<area shape="rect" id="node6" href="$atom_8c.html" title="gprolog&#45;utf8&#45;tree/src\l/EnginePl/atom.c" alt="" coords="672,95,811,136"/>
+<area shape="rect" id="node7" href="$engine_8c.html" title="gprolog&#45;utf8&#45;tree/src\l/EnginePl/engine.c" alt="" coords="835,95,973,136"/>
+<area shape="rect" id="node9" href="$misc_8c.html" title="gprolog&#45;utf8&#45;tree/src\l/EnginePl/misc.c" alt="" coords="997,95,1136,136"/>
+<area shape="rect" id="node10" href="$linedit_8c.html" title="gprolog&#45;utf8&#45;tree/src\l/Linedit/linedit.c" alt="" coords="1160,95,1299,136"/>
+<area shape="rect" id="node11" href="$terminal_8c.html" title="gprolog&#45;utf8&#45;tree/src\l/Linedit/terminal.c" alt="" coords="1323,95,1461,136"/>
+<area shape="rect" id="node12" href="$test__linedit_8c.html" title="gprolog&#45;utf8&#45;tree/src\l/Linedit/test_linedit.c" alt="" coords="1486,95,1629,136"/>
+<area shape="rect" id="node13" href="$test__noecho_8c.html" title="gprolog&#45;utf8&#45;tree/src\l/Linedit/test_noecho.c" alt="" coords="1653,95,1803,136"/>
+<area shape="rect" id="node8" href="$chkma_8c.html" title="gprolog&#45;utf8&#45;tree/src\l/Ma2Asm/chkma.c" alt="" coords="835,184,973,225"/>
+</map>

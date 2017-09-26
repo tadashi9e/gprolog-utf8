@@ -1,0 +1,114 @@
+\hypertarget{stacks__sigsegv_8h}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/stacks\+\_\+sigsegv.h File Reference}
+\label{stacks__sigsegv_8h}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/stacks\+\_\+sigsegv.\+h@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/stacks\+\_\+sigsegv.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int($\ast$ \hyperlink{stacks__sigsegv_8h_ad377ab7a13d4474ba7d50f8c81d733e2}{Segv\+Hdlr}) (void $\ast$bad\+\_\+addr)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{stacks__sigsegv_8h_aee65d332f1e4ff3a8796bda38d329766}{Pl\+\_\+\+Allocate\+\_\+\+Stacks} (void)
+\item 
+void \hyperlink{stacks__sigsegv_8h_ab5ca8f915e148142d8a80723e05fad13}{Pl\+\_\+\+Push\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler} (\hyperlink{stacks__sigsegv_8h_ad377ab7a13d4474ba7d50f8c81d733e2}{Segv\+Hdlr} handler)
+\item 
+void \hyperlink{stacks__sigsegv_8h_a25eb5bda540ece4a8cee10c4f61324a6}{Pl\+\_\+\+Pop\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{stacks\+\_\+sigsegv.\+h@{stacks\+\_\+sigsegv.\+h}!Segv\+Hdlr@{Segv\+Hdlr}}
+\index{Segv\+Hdlr@{Segv\+Hdlr}!stacks\+\_\+sigsegv.\+h@{stacks\+\_\+sigsegv.\+h}}
+\subsubsection[{\texorpdfstring{Segv\+Hdlr}{SegvHdlr}}]{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ Segv\+Hdlr) (void $\ast$bad\+\_\+addr)}\hypertarget{stacks__sigsegv_8h_ad377ab7a13d4474ba7d50f8c81d733e2}{}\label{stacks__sigsegv_8h_ad377ab7a13d4474ba7d50f8c81d733e2}
+
+
+\subsection{Function Documentation}
+\index{stacks\+\_\+sigsegv.\+h@{stacks\+\_\+sigsegv.\+h}!Pl\+\_\+\+Allocate\+\_\+\+Stacks@{Pl\+\_\+\+Allocate\+\_\+\+Stacks}}
+\index{Pl\+\_\+\+Allocate\+\_\+\+Stacks@{Pl\+\_\+\+Allocate\+\_\+\+Stacks}!stacks\+\_\+sigsegv.\+h@{stacks\+\_\+sigsegv.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Allocate\+\_\+\+Stacks(void)}{Pl_Allocate_Stacks(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Allocate\+\_\+\+Stacks (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{stacks__sigsegv_8h_aee65d332f1e4ff3a8796bda38d329766}{}\label{stacks__sigsegv_8h_aee65d332f1e4ff3a8796bda38d329766}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8h_aee65d332f1e4ff3a8796bda38d329766_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8h_aee65d332f1e4ff3a8796bda38d329766_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{stacks\+\_\+sigsegv.\+h@{stacks\+\_\+sigsegv.\+h}!Pl\+\_\+\+Pop\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{Pl\+\_\+\+Pop\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}}
+\index{Pl\+\_\+\+Pop\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{Pl\+\_\+\+Pop\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}!stacks\+\_\+sigsegv.\+h@{stacks\+\_\+sigsegv.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Pop\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler(void)}{Pl_Pop_SIGSEGV_Handler(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Pop\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{stacks__sigsegv_8h_a25eb5bda540ece4a8cee10c4f61324a6}{}\label{stacks__sigsegv_8h_a25eb5bda540ece4a8cee10c4f61324a6}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{stacks__sigsegv_8h_a25eb5bda540ece4a8cee10c4f61324a6_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{stacks\+\_\+sigsegv.\+h@{stacks\+\_\+sigsegv.\+h}!Pl\+\_\+\+Push\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{Pl\+\_\+\+Push\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}}
+\index{Pl\+\_\+\+Push\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{Pl\+\_\+\+Push\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}!stacks\+\_\+sigsegv.\+h@{stacks\+\_\+sigsegv.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Push\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler(\+Segv\+Hdlr handler)}{Pl_Push_SIGSEGV_Handler(SegvHdlr handler)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Push\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf Segv\+Hdlr}}]{handler}
+\end{DoxyParamCaption}
+)}\hypertarget{stacks__sigsegv_8h_ab5ca8f915e148142d8a80723e05fad13}{}\label{stacks__sigsegv_8h_ab5ca8f915e148142d8a80723e05fad13}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{stacks__sigsegv_8h_ab5ca8f915e148142d8a80723e05fad13_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8h_ab5ca8f915e148142d8a80723e05fad13_icgraph}
+\end{center}
+\end{figure}
+
+

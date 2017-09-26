@@ -1,0 +1,8 @@
+<map id="Pl_Scan_Choice_Point_Info_3" name="Pl_Scan_Choice_Point_Info_3">
+<area shape="rect" id="node2" href="$dynam__supp_8c.html#a14572baef3906b29061528ec3b68b604" title="Pl_Scan_Choice_Point_Pred" alt="" coords="209,5,400,32"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#a78229c8d23053191e0fee7952757f9c7" title="Pl_Get_Atom" alt="" coords="255,56,355,83"/>
+<area shape="rect" id="node6" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="250,107,359,133"/>
+<area shape="rect" id="node3" href="$dynam__supp_8c.html#ada397d60e8eb1e3a362345953eae0efd" title="Get_Scan_Choice_Point" alt="" coords="448,5,613,32"/>
+<area shape="rect" id="node5" href="$wam__inst_8c.html#a89d8aba44029f2a5f548a2ae5f6eb574" title="Pl_Get_Atom_Tagged" alt="" coords="455,56,606,83"/>
+<area shape="rect" id="node7" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="451,107,610,133"/>
+</map>

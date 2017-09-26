@@ -1,0 +1,21 @@
+<map id="Get_Prolog_Path_From_Exec" name="Get_Prolog_Path_From_Exec">
+<area shape="rect" id="node2" href="$prolog__path_8c.html#ab1fba1889b5219b65cfaedf8df2d4217" title="Get_Prolog_Path" alt="" coords="248,56,369,83"/>
+<area shape="rect" id="node3" href="$gprolog_8h.html#a79163a775d949cf493a9f7b28bf4fc09" title="Pl_Start_Prolog" alt="" coords="435,5,549,32"/>
+<area shape="rect" id="node6" href="$prolog__path_8c.html#ab3203706c871e28d9b94c003406956a6" title="Search_Path" alt="" coords="443,56,541,83"/>
+<area shape="rect" id="node7" href="$top__comp_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="467,107,517,133"/>
+<area shape="rect" id="node8" href="$w32__console_8c.html#a7c82a573b5e01698b2f8e86d4cef3702" title="Get_CHM_Help_Path" alt="" coords="417,157,567,184"/>
+<area shape="rect" id="node4" href="$main_8c.html#a335bb6fe70cf4c383aec5baef5f39e47" title="Main_Wrapper" alt="" coords="615,5,721,32"/>
+<area shape="rect" id="node5" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="795,5,846,32"/>
+<area shape="rect" id="node9" href="$w32__console_8c.html#a4429f5179fe290e7469506c6287a46a5" title="Show_Help" alt="" coords="623,157,713,184"/>
+<area shape="rect" id="node10" href="$w32__console_8c.html#aabb62b5ceb8b73f54c4478021cedf130" title="MainWndProc_OnCommand" alt="" coords="1473,183,1661,209"/>
+<area shape="rect" id="node17" href="$w32__console_8c.html#a86a613d9f9c5724324a80eb7ad8fd162" title="SubClassEdit" alt="" coords="769,183,872,209"/>
+<area shape="rect" id="node11" href="$w32__console_8c.html#ab023aa0285ba796fb7809eed2e6cdbe1" title="MainWndProc" alt="" coords="1709,208,1813,235"/>
+<area shape="rect" id="node12" href="$w32__console_8c.html#aea7abcb71562352e8ff9c3efd95c505b" title="InitApplication" alt="" coords="1861,208,1965,235"/>
+<area shape="rect" id="node13" href="$w32__console_8c.html#a2363368e7d52d5df8c4f20cb13283faa" title="StartWinMain" alt="" coords="2013,208,2115,235"/>
+<area shape="rect" id="node14" href="$w32__console_8c.html#a3e359465ba75ec15014d5af9c09d3db9" title="CallMain" alt="" coords="2163,208,2236,235"/>
+<area shape="rect" id="node15" href="$w32__console_8c.html#a4df61e90931602252f4bd1addb17902f" title="W32GC_Start_Window" alt="" coords="2284,208,2443,235"/>
+<area shape="rect" id="node16" href="$w32gc__interf_8c.html#a9bbe083e9a45c3fda6abf2737bebc2ad" title="__declspec" alt="" coords="2491,208,2579,235"/>
+<area shape="rect" id="node18" href="$w32__console_8c.html#ae21b20c73fc3d1b2301ac435d6ffefb8" title="SubClassEditField" alt="" coords="920,183,1051,209"/>
+<area shape="rect" id="node19" href="$w32__console_8c.html#a4d3fc2c91e2a42d1ee0ab9afb8b25934" title="Create_Edit_Control" alt="" coords="1099,183,1239,209"/>
+<area shape="rect" id="node20" href="$w32__console_8c.html#af8f874a72209a2c5b9ccc57df9c3684b" title="Toggle_Wrap_Mode" alt="" coords="1287,183,1425,209"/>
+</map>

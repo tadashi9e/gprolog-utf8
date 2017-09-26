@@ -1,0 +1,10 @@
+<map id="Switch_Ret" name="Switch_Ret">
+<area shape="rect" id="node2" href="$ma2asm_8c.html#aaeb4aa55dcb92f57b7d957ef783a3d6d" title="Switch_Cmp_Int" alt="" coords="144,56,263,83"/>
+<area shape="rect" id="node3" href="$ma2asm_8c.html#a0f86decae28359b4f5374e06ca747d77" title="Switch_Rec" alt="" coords="157,107,250,133"/>
+<area shape="rect" id="node4" href="$ma2asm_8c.html#a7791dcc03f2955522896de584658d93f" title="Switch_Equal" alt="" coords="319,31,421,57"/>
+<area shape="rect" id="node7" href="$alpha__any_8c.html#aa0fe7f41cd1793244610e87d597040f6" title="Pl_Fail" alt="" coords="339,81,401,108"/>
+<area shape="rect" id="node8" href="$alpha__any_8c.html#ad36811c58a29aee0cc50ac87a3d9898c" title="Jump_If_Greater" alt="" coords="311,132,429,159"/>
+<area shape="rect" id="node9" href="$alpha__any_8c.html#a403d2e1c401f1ee3f0e08eea47524291" title="Label" alt="" coords="343,183,397,209"/>
+<area shape="rect" id="node5" href="$alpha__any_8c.html#a1ffc91a7b44d25369f51bbaa3dc38f50" title="Cmp_Ret_And_Int" alt="" coords="477,5,608,32"/>
+<area shape="rect" id="node6" href="$alpha__any_8c.html#a03b5c60f9fcfa76f9de0046b8d568393" title="Jump_If_Equal" alt="" coords="488,56,597,83"/>
+</map>

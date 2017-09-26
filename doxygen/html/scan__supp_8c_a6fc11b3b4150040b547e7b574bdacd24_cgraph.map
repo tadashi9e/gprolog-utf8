@@ -1,0 +1,10 @@
+<map id="Scan_Quoted_Char" name="Scan_Quoted_Char">
+<area shape="rect" id="node2" href="$scan__supp_8c.html#a9994769011c3e729e2561a540c16f5ed" title="Read_Next_Char" alt="" coords="199,5,322,32"/>
+<area shape="rect" id="node8" href="$scan__supp_8c.html#ab16df185444492d1129adb51cfd5e773" title="Pl_Scan_Peek_Char" alt="" coords="189,56,332,83"/>
+<area shape="rect" id="node3" href="$stream__supp_8c.html#a8889ae46064e72cc556ee7ba019f482f" title="Pl_Stream_Getc" alt="" coords="384,5,503,32"/>
+<area shape="rect" id="node4" href="$stream__supp_8c.html#a60433157a606a8a781ead4648af6cc87" title="Basic_Call_Fct_Getc" alt="" coords="555,56,701,83"/>
+<area shape="rect" id="node7" href="$pl__wchar_8c.html#a5df5e221fa5cbadce849a7e73c5dc4ad" title="fill_wchar" alt="" coords="589,5,667,32"/>
+<area shape="rect" id="node5" href="$stream__supp_8c.html#a84ba976a14dadde6efb09d408c88873a" title="Pl_Stream_Putc" alt="" coords="749,56,867,83"/>
+<area shape="rect" id="node6" href="$stream__supp_8c.html#a06ceb4f7e59898ddb42f1fa50d29d140" title="Basic_Call_Fct_Putc" alt="" coords="915,56,1060,83"/>
+<area shape="rect" id="node9" href="$stream__supp_8c.html#ae26778bf27551f6b4137131b6eb9766d" title="Pl_Stream_Peekc" alt="" coords="380,56,507,83"/>
+</map>

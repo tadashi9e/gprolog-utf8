@@ -1,0 +1,13 @@
+<map id="Pl_Scan_Next_Number" name="Pl_Scan_Next_Number">
+<area shape="rect" id="node2" href="$parse__supp_8h.html#a6dee3d87ffc597008cca75377d83941a" title="Pl_Read_Integer" alt="" coords="215,63,334,89"/>
+<area shape="rect" id="node5" href="$parse__supp_8h.html#a1da6276bc31218b63244d301ab4a99ed" title="Pl_Read_Number" alt="" coords="212,132,337,159"/>
+<area shape="rect" id="node3" href="$read__c_8c.html#a14bbc5a3af49c6886c57ee78621ff1e3" title="Pl_Read_Integer_2" alt="" coords="388,25,521,52"/>
+<area shape="rect" id="node4" href="$read__c_8c.html#ae19bb85f1617f7425c24f5cacddbd7bd" title="Pl_Read_Integer_1" alt="" coords="579,5,712,32"/>
+<area shape="rect" id="node6" href="$atom__c_8c.html#a45d43288afc4447eb5e8a1bced9fd5a3" title="String_To_Number" alt="" coords="389,132,520,159"/>
+<area shape="rect" id="node11" href="$read__c_8c.html#a4a0be861138c0d1650ecaf8eca9f5dfe" title="Pl_Read_Number_2" alt="" coords="385,208,524,235"/>
+<area shape="rect" id="node7" href="$atom__c_8c.html#adc47dd028d6500b7136923c50fb7f0ab" title="Pl_Number_Atom_2" alt="" coords="576,56,715,83"/>
+<area shape="rect" id="node8" href="$atom__c_8c.html#a227fc472d79309e81af1f91e7e236951" title="Pl_Number_Chars_2" alt="" coords="574,107,717,133"/>
+<area shape="rect" id="node9" href="$atom__c_8c.html#ae89fe3df220d385008f49c583dc41d32" title="Pl_Number_Codes_2" alt="" coords="572,157,719,184"/>
+<area shape="rect" id="node10" href="$atom__c_8c.html#af3d13cb1d0fbb3208789ea87cf806fdb" title="Pl_Name_2" alt="" coords="767,183,857,209"/>
+<area shape="rect" id="node12" href="$read__c_8c.html#aea7ddb23f461a2a00c6303b7499f1c0e" title="Pl_Read_Number_1" alt="" coords="576,259,715,285"/>
+</map>

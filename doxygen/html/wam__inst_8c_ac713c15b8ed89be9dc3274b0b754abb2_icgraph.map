@@ -1,0 +1,19 @@
+<map id="Pl_Update_Choice_Point" name="Pl_Update_Choice_Point">
+<area shape="rect" id="node2" href="$all__solut__c_8c.html#a07dd00e4533dbc5655aa94855b9481b5" title="Pl_Group_Solutions\l_Alt_0" alt="" coords="249,5,386,47"/>
+<area shape="rect" id="node3" href="$atom__c_8c.html#a20d1d088c0b4095c4588e17240cea3ec" title="Pl_Atom_Concat_Alt_0" alt="" coords="238,71,397,98"/>
+<area shape="rect" id="node4" href="$atom__c_8c.html#a9c6fff8cb94ad68c1b2b305877f80c2e" title="Pl_Sub_Atom_Alt_0" alt="" coords="248,122,387,149"/>
+<area shape="rect" id="node5" href="$atom__c_8c.html#a7484177a22e34d7b9159e032caab9409" title="Pl_Current_Atom_Alt_0" alt="" coords="238,173,397,199"/>
+<area shape="rect" id="node6" href="$control__c_8c.html#a6f719095fb16cd33a79ed3834666cebe" title="Pl_Between_Alt_0" alt="" coords="253,223,382,250"/>
+<area shape="rect" id="node7" href="$dynam__supp_8c.html#a40b9fab632a61aea2e1a52ad1c1fa4c8" title="Pl_Scan_Dynamic_Pred\l_Alt_0" alt="" coords="235,275,399,316"/>
+<area shape="rect" id="node8" href="$flag__c_8c.html#acd4e53ca1a7c6dd6b4e6fcd41f98fccd" title="Pl_Environ_Alt_0" alt="" coords="256,341,379,367"/>
+<area shape="rect" id="node9" href="$flag__supp_8c.html#a47e5a8fa31fe461f7a572fb3cb9a04ef" title="Pl_Current_Prolog_Flag\l_Alt_0" alt="" coords="237,392,397,433"/>
+<area shape="rect" id="node10" href="$foreign__supp_8h.html#a827897d3717540ec6b266c06a056f153" title="Pl_Foreign_Update_Choice" alt="" coords="227,458,408,485"/>
+<area shape="rect" id="node11" href="$le__interf__c_8c.html#aca516783a0ef22403cb285304846d760" title="Pl_Find_Linedit_Completion\l_Alt_0" alt="" coords="225,509,409,551"/>
+<area shape="rect" id="node12" href="$oper__c_8c.html#afdfda6f5d74b65babe5aedbc19308e9f" title="Pl_Current_Op_Alt_0" alt="" coords="245,575,390,602"/>
+<area shape="rect" id="node13" href="$pred__c_8c.html#a01cb3a6f81bedee27c4dcbf6d0374a67" title="Pl_Current_Predicate\l_Alt_0" alt="" coords="244,627,391,668"/>
+<area shape="rect" id="node14" href="$read__c_8c.html#adddc430e5e88e012c550457c8a9684b6" title="Pl_Current_Char_Conversion\l_Alt_0" alt="" coords="221,692,413,733"/>
+<area shape="rect" id="node15" href="$src__rdr__c_8c.html#af808df13a8ac1643d9a4d49bcbba9e7e" title="Pl_SR_Current_Descriptor\l_Alt_0" alt="" coords="229,757,406,799"/>
+<area shape="rect" id="node16" href="$stream__c_8c.html#a3d6d021c3b3a14e6278150a973ef56e1" title="Pl_Current_Stream_Alt_0" alt="" coords="232,823,403,850"/>
+<area shape="rect" id="node17" href="$stream__c_8c.html#a3d23162aace704e466af30efd75c7abd" title="Pl_Current_Alias_Alt_0" alt="" coords="239,874,396,901"/>
+<area shape="rect" id="node18" href="$stream__c_8c.html#aa4b280c0a39000c6c32597c5c0c9a51b" title="Pl_Current_Mirror_Alt_0" alt="" coords="237,925,398,951"/>
+</map>

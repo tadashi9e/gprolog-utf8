@@ -1,0 +1,26 @@
+<map id="Pl_Term_Compare" name="Pl_Term_Compare">
+<area shape="rect" id="node2" href="$all__solut__c_8c.html#a3e6bceec422ba491a8e6ec73bfa0b847" title="Group" alt="" coords="218,64,275,91"/>
+<area shape="rect" id="node5" href="$sort__c_8c.html#a03f56c532b4a8217cfcecc4ad9e19c61" title="Pl_Sort_List_2" alt="" coords="379,123,486,149"/>
+<area shape="rect" id="node6" href="$sort__c_8c.html#a18f1db53fe1ee85ee9918f3688b5993d" title="Pl_Sort_List_1" alt="" coords="379,173,486,200"/>
+<area shape="rect" id="node7" href="$sort__c_8c.html#a3bf14b28a3c378d29134ef6a6ba5ff5f" title="Keysort_Cmp" alt="" coords="195,173,298,200"/>
+<area shape="rect" id="node8" href="$term__inl__c_8c.html#aa295f561168dc984341c206c4ab94922" title="Pl_Blt_Term_Eq" alt="" coords="188,275,305,301"/>
+<area shape="rect" id="node14" href="$term__inl__c_8c.html#ae3e9ef5481206e9ecd7470a80593cf43" title="Pl_Blt_Term_Neq" alt="" coords="184,325,309,352"/>
+<area shape="rect" id="node16" href="$term__inl__c_8c.html#a2cf790907e6718109c7ce2e2dbc2d724" title="Pl_Blt_Term_Lt" alt="" coords="191,376,303,403"/>
+<area shape="rect" id="node18" href="$term__inl__c_8c.html#aa9a46b92d5f24fdddc0c1e1e024aa001" title="Pl_Blt_Term_Lte" alt="" coords="187,427,306,453"/>
+<area shape="rect" id="node20" href="$term__inl__c_8c.html#a081203516dd97d18e7628950ae393afe" title="Pl_Blt_Term_Gt" alt="" coords="189,477,304,504"/>
+<area shape="rect" id="node22" href="$term__inl__c_8c.html#a62e2f4fb76a85d7350373d169835a5c8" title="Pl_Blt_Term_Gte" alt="" coords="185,528,308,555"/>
+<area shape="rect" id="node24" href="$term__inl__c_8c.html#ad9c946f9d62782e3534ce8a9a43aec56" title="Pl_Blt_Compare" alt="" coords="188,579,305,605"/>
+<area shape="rect" id="node3" href="$all__solut__c_8c.html#a16447e10c9e117cb4aff442b1d56903b" title="Pl_Group_Solutions_3" alt="" coords="357,5,508,32"/>
+<area shape="rect" id="node4" href="$all__solut__c_8c.html#a07dd00e4533dbc5655aa94855b9481b5" title="Pl_Group_Solutions\l_Alt_0" alt="" coords="364,57,501,98"/>
+<area shape="rect" id="node9" href="$expand__c_8c.html#af084492be314929addf18ebcc67be49c" title="Dcg_Body" alt="" coords="391,224,474,251"/>
+<area shape="rect" id="node13" href="$gprolog_8h.html#a4693ec3cfd3c6b5c9460dbea61ee32f1" title="Pl_Builtin_Term_Eq" alt="" coords="364,275,501,301"/>
+<area shape="rect" id="node10" href="$expand__c_8c.html#aefca070056ab2a59b8fb4135bd0b509c" title="Pl_Dcg_Trans_Rule_2" alt="" coords="557,148,711,175"/>
+<area shape="rect" id="node11" href="$expand__c_8c.html#a8a779e231d96c019202ad054984edce2" title="Pl_Dcg_Trans_Body_4" alt="" coords="556,199,712,225"/>
+<area shape="rect" id="node12" href="$expand__c_8c.html#a577f182aace32318466bf8ad517913e6" title="Dcg_Body_On_Stack" alt="" coords="560,249,708,276"/>
+<area shape="rect" id="node15" href="$gprolog_8h.html#a6b997d1ce1baf53e7e1759d9e41e589a" title="Pl_Builtin_Term_Neq" alt="" coords="360,325,505,352"/>
+<area shape="rect" id="node17" href="$gprolog_8h.html#a80d45f131d31822d3af3a7ec920f8cfe" title="Pl_Builtin_Term_Lt" alt="" coords="367,376,499,403"/>
+<area shape="rect" id="node19" href="$gprolog_8h.html#a30746c5f18eec4438b1ac67ef3b9a4ed" title="Pl_Builtin_Term_Lte" alt="" coords="363,427,502,453"/>
+<area shape="rect" id="node21" href="$gprolog_8h.html#a6fcafe3ee85adfdf02ee9a978b3a286f" title="Pl_Builtin_Term_Gt" alt="" coords="365,477,500,504"/>
+<area shape="rect" id="node23" href="$gprolog_8h.html#a80020b22abd35a6d132feaf895c960a7" title="Pl_Builtin_Term_Gte" alt="" coords="361,528,504,555"/>
+<area shape="rect" id="node25" href="$gprolog_8h.html#aef4d1378e13f84e204e79c8b4141a6fb" title="Pl_Builtin_Compare" alt="" coords="364,579,501,605"/>
+</map>

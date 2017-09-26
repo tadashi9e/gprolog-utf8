@@ -1,0 +1,143 @@
+\hypertarget{WIN32__all__SIGSEGV_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/\+W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+GV.c File Reference}
+\label{WIN32__all__SIGSEGV_8c}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/\+W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/\+W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}}
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$windows.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+Include dependency graph for W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{WIN32__all__SIGSEGV_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__excp__lst}{\+\_\+excp\+\_\+lst}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct__excp__lst}{\+\_\+excp\+\_\+lst} \hyperlink{WIN32__all__SIGSEGV_8c_aef37a45b4dae3538f179cb1427a27e2c}{excp\+\_\+lst}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+D\+I\+S\+P\+O\+S\+I\+T\+I\+ON \hyperlink{WIN32__all__SIGSEGV_8c_aff57b61c9a61895362fd2e2bb4695697}{Exception\+Wrapper} (E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+R\+E\+C\+O\+RD $\ast$excp\+\_\+rec, void $\ast$establisher\+\_\+frame, C\+O\+N\+T\+E\+XT $\ast$context\+\_\+rec, void $\ast$dispatcher\+\_\+cxt)
+\item 
+int \hyperlink{WIN32__all__SIGSEGV_8c_a4c916d9693901fcb0c68c92b534fe0a9}{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler} (int sig)
+\item 
+E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+D\+I\+S\+P\+O\+S\+I\+T\+I\+ON \hyperlink{WIN32__all__SIGSEGV_8c_aa1aba4f4ffb5f769c410df5065e59939}{Exception\+Handler} (E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+R\+E\+C\+O\+RD $\ast$excp\+\_\+rec, void $\ast$establisher\+\_\+frame, C\+O\+N\+T\+E\+XT $\ast$context\+\_\+rec, void $\ast$dispatcher\+\_\+cxt)
+\item 
+int \hyperlink{WIN32__all__SIGSEGV_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} $\ast$ \hyperlink{WIN32__all__SIGSEGV_8c_a6544295392cd9948a0e24e7072012319}{fault\+\_\+addr}
+\item 
+int \hyperlink{WIN32__all__SIGSEGV_8c_a2df8914184cddeed49ac0b633472d973}{bar} =1
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}!excp\+\_\+lst@{excp\+\_\+lst}}
+\index{excp\+\_\+lst@{excp\+\_\+lst}!W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}}
+\subsubsection[{\texorpdfstring{excp\+\_\+lst}{excp_lst}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \+\_\+excp\+\_\+lst}  {\bf excp\+\_\+lst}}\hypertarget{WIN32__all__SIGSEGV_8c_aef37a45b4dae3538f179cb1427a27e2c}{}\label{WIN32__all__SIGSEGV_8c_aef37a45b4dae3538f179cb1427a27e2c}
+
+
+\subsection{Function Documentation}
+\index{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}!Exception\+Handler@{Exception\+Handler}}
+\index{Exception\+Handler@{Exception\+Handler}!W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}}
+\subsubsection[{\texorpdfstring{Exception\+Handler(\+E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+R\+E\+C\+O\+R\+D $\ast$excp\+\_\+rec, void $\ast$establisher\+\_\+frame, C\+O\+N\+T\+E\+X\+T $\ast$context\+\_\+rec, void $\ast$dispatcher\+\_\+cxt)}{ExceptionHandler(EXCEPTION_RECORD *excp_rec, void *establisher_frame, CONTEXT *context_rec, void *dispatcher_cxt)}}]{\setlength{\rightskip}{0pt plus 5cm}E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+D\+I\+S\+P\+O\+S\+I\+T\+I\+ON Exception\+Handler (
+\begin{DoxyParamCaption}
+\item[{E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+R\+E\+C\+O\+RD $\ast$}]{excp\+\_\+rec, }
+\item[{void $\ast$}]{establisher\+\_\+frame, }
+\item[{C\+O\+N\+T\+E\+XT $\ast$}]{context\+\_\+rec, }
+\item[{void $\ast$}]{dispatcher\+\_\+cxt}
+\end{DoxyParamCaption}
+)}\hypertarget{WIN32__all__SIGSEGV_8c_aa1aba4f4ffb5f769c410df5065e59939}{}\label{WIN32__all__SIGSEGV_8c_aa1aba4f4ffb5f769c410df5065e59939}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{WIN32__all__SIGSEGV_8c_aa1aba4f4ffb5f769c410df5065e59939_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}!Exception\+Wrapper@{Exception\+Wrapper}}
+\index{Exception\+Wrapper@{Exception\+Wrapper}!W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}}
+\subsubsection[{\texorpdfstring{Exception\+Wrapper(\+E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+R\+E\+C\+O\+R\+D $\ast$excp\+\_\+rec, void $\ast$establisher\+\_\+frame, C\+O\+N\+T\+E\+X\+T $\ast$context\+\_\+rec, void $\ast$dispatcher\+\_\+cxt)}{ExceptionWrapper(EXCEPTION_RECORD *excp_rec, void *establisher_frame, CONTEXT *context_rec, void *dispatcher_cxt)}}]{\setlength{\rightskip}{0pt plus 5cm}E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+D\+I\+S\+P\+O\+S\+I\+T\+I\+ON Exception\+Wrapper (
+\begin{DoxyParamCaption}
+\item[{E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+R\+E\+C\+O\+RD $\ast$}]{excp\+\_\+rec, }
+\item[{void $\ast$}]{establisher\+\_\+frame, }
+\item[{C\+O\+N\+T\+E\+XT $\ast$}]{context\+\_\+rec, }
+\item[{void $\ast$}]{dispatcher\+\_\+cxt}
+\end{DoxyParamCaption}
+)}\hypertarget{WIN32__all__SIGSEGV_8c_aff57b61c9a61895362fd2e2bb4695697}{}\label{WIN32__all__SIGSEGV_8c_aff57b61c9a61895362fd2e2bb4695697}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{WIN32__all__SIGSEGV_8c_aff57b61c9a61895362fd2e2bb4695697_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}!main@{main}}
+\index{main@{main}!W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}}
+\subsubsection[{\texorpdfstring{main()}{main()}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{WIN32__all__SIGSEGV_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\label{WIN32__all__SIGSEGV_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{WIN32__all__SIGSEGV_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}!S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}}
+\index{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}!W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}}
+\subsubsection[{\texorpdfstring{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler(int sig)}{SIGSEGV_Handler(int sig)}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler (
+\begin{DoxyParamCaption}
+\item[{int}]{sig}
+\end{DoxyParamCaption}
+)}\hypertarget{WIN32__all__SIGSEGV_8c_a4c916d9693901fcb0c68c92b534fe0a9}{}\label{WIN32__all__SIGSEGV_8c_a4c916d9693901fcb0c68c92b534fe0a9}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{WIN32__all__SIGSEGV_8c_a4c916d9693901fcb0c68c92b534fe0a9_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}!bar@{bar}}
+\index{bar@{bar}!W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}}
+\subsubsection[{\texorpdfstring{bar}{bar}}]{\setlength{\rightskip}{0pt plus 5cm}int bar =1}\hypertarget{WIN32__all__SIGSEGV_8c_a2df8914184cddeed49ac0b633472d973}{}\label{WIN32__all__SIGSEGV_8c_a2df8914184cddeed49ac0b633472d973}
+\index{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}!fault\+\_\+addr@{fault\+\_\+addr}}
+\index{fault\+\_\+addr@{fault\+\_\+addr}!W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+all\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}}
+\subsubsection[{\texorpdfstring{fault\+\_\+addr}{fault_addr}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long}$\ast$ fault\+\_\+addr}\hypertarget{WIN32__all__SIGSEGV_8c_a6544295392cd9948a0e24e7072012319}{}\label{WIN32__all__SIGSEGV_8c_a6544295392cd9948a0e24e7072012319}

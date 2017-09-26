@@ -1,0 +1,25 @@
+<map id="Try_Portray" name="Try_Portray">
+<area shape="rect" id="node2" href="$pred_8c.html#aa8ebf08b93ec7e4bde2c544c70ba4c39" title="Pl_Lookup_Pred" alt="" coords="146,88,263,115"/>
+<area shape="rect" id="node3" href="$atom_8c.html#a068c993d95113a2ba7643918e68eedb3" title="Pl_Create_Atom" alt="" coords="145,139,264,165"/>
+<area shape="rect" id="node4" href="$error__supp_8c.html#ac4b8eee4e76280eba5880e9eb1ac520e" title="Pl_Err_Resource" alt="" coords="144,189,265,216"/>
+<area shape="rect" id="node20" href="$engine_8c.html#a837196745e0fb6af03ee5e5d062e1087" title="Pl_Call_Prolog" alt="" coords="151,265,259,292"/>
+<area shape="rect" id="node5" href="$error__supp_8c.html#aef1341aeb3ceb943d8e9d7d6f77b0582" title="Update_Cur_From_C_Bip" alt="" coords="320,139,492,165"/>
+<area shape="rect" id="node19" href="$engine_8c.html#ae0fcb6df66410fd57c52a0ba16527642" title="Pl_Execute_A_Continuation" alt="" coords="313,189,499,216"/>
+<area shape="rect" id="node6" href="$atom_8c.html#a76a3983dda97458000ed903b9bc94f6c" title="Pl_Create_Allocate_Atom" alt="" coords="547,139,719,165"/>
+<area shape="rect" id="node7" href="$atom_8c.html#a9ed09c0173fe0a0e6d0f90ec363687fe" title="Hash_String" alt="" coords="769,63,863,89"/>
+<area shape="rect" id="node12" href="$atom_8c.html#ad4222685eae3cdb0315df48a8a7e89fc" title="Locate_Atom" alt="" coords="767,139,865,165"/>
+<area shape="rect" id="node13" href="$atom_8c.html#abe628ad301508c0ed926cfb4bc791818" title="Add_Atom" alt="" coords="775,201,857,228"/>
+<area shape="rect" id="node8" href="$hash__fct_8c.html#a59393adcfbeeda198a890af25f29cf7c" title="Pl_Hash_Buffer" alt="" coords="941,59,1056,85"/>
+<area shape="rect" id="node9" href="$hash__fct_8c.html#abe414d7525a1bb4fcb8e4fd757498cb9" title="Hash_Initialize" alt="" coords="1145,5,1253,32"/>
+<area shape="rect" id="node10" href="$hash__fct_8c.html#a8b1af6cc6089ce3e2e3dc0a8a0d55e90" title="Hash_Buffer" alt="" coords="1152,56,1247,83"/>
+<area shape="rect" id="node11" href="$hash__fct_8c.html#aa33bb265b03bb03aa455241e374409f7" title="Hash_Finalize" alt="" coords="1147,107,1252,133"/>
+<area shape="rect" id="node14" href="$atom_8c.html#a37c733b7022eab8b9b95f0182591ee15" title="Error_Table_Full" alt="" coords="940,157,1057,184"/>
+<area shape="rect" id="node16" href="$pl__wchar_8c.html#a55a0d7269a65645bbd4c978385b0c7a3" title="count_wchars" alt="" coords="947,208,1050,235"/>
+<area shape="rect" id="node18" href="$linedit_8c.html#ab2a8db946ffd8187b5216ff4ac8cbe7c" title="Pl_LE_Compl_Add_Word" alt="" coords="913,259,1084,285"/>
+<area shape="rect" id="node15" href="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907" title="Pl_Fatal_Error" alt="" coords="1147,157,1252,184"/>
+<area shape="rect" id="node17" href="$pl__wchar_8c.html#afa9feb443cef2f8da40dd45a8c0e273d" title="count_wchar_bytes" alt="" coords="1132,208,1267,235"/>
+<area shape="rect" id="node21" href="$engine_8c.html#accfe7947a971f240bf7b8b2bedc59e29" title="Call_Prolog_Fail" alt="" coords="347,240,465,267"/>
+<area shape="rect" id="node22" href="$engine_8c.html#ae7d5f8d0ac490ede3fcb48af7cceec55" title="Call_Prolog_Success" alt="" coords="333,291,479,317"/>
+<area shape="rect" id="node23" href="$engine_8c.html#a5f34f0c2b928a4bfe7057ced6cd446c8" title="Call_Next" alt="" coords="366,341,446,368"/>
+<area shape="rect" id="node24" href="$engine_8c.html#a598600283dd767c2b3d11e798384023c" title="Pl_Call_Compiled" alt="" coords="569,341,696,368"/>
+</map>

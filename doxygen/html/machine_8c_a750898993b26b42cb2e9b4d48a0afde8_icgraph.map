@@ -1,0 +1,7 @@
+<map id="Host_Name_From_Alias" name="Host_Name_From_Alias">
+<area shape="rect" id="node2" href="$machine_8h.html#a210eac90420e943ad8d00077090228f7" title="Pl_M_Host_Name_From_Name" alt="" coords="219,56,427,83"/>
+<area shape="rect" id="node5" href="$machine_8h.html#a9933e53d707e91be57b69927792d6f8b" title="Pl_M_Host_Name_From_Adr" alt="" coords="226,107,419,133"/>
+<area shape="rect" id="node3" href="$os__interf__c_8c.html#a4324525419034fbe31a887925737400f" title="Pl_Host_Name_1" alt="" coords="497,5,623,32"/>
+<area shape="rect" id="node4" href="$sockets__c_8c.html#aa1e6e178356d10d68da051d34dff64f1" title="Pl_Socket_Bind_2" alt="" coords="495,56,625,83"/>
+<area shape="rect" id="node6" href="$sockets__c_8c.html#a02b387d3828d48e5aa3a61314d715eb6" title="Pl_Hostname_Address_2" alt="" coords="475,107,645,133"/>
+</map>

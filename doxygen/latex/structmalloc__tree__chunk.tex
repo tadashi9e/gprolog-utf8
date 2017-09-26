@@ -12,29 +12,46 @@ Collaboration diagram for malloc\+\_\+tree\+\_\+chunk\+:\nopagebreak
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-size\+\_\+t {\bfseries prev\+\_\+foot}\hypertarget{structmalloc__tree__chunk_a0b7e321702857b18f5013a3182b99262}{}\label{structmalloc__tree__chunk_a0b7e321702857b18f5013a3182b99262}
-
+size\+\_\+t \hyperlink{structmalloc__tree__chunk_a0b7e321702857b18f5013a3182b99262}{prev\+\_\+foot}
 \item 
-size\+\_\+t {\bfseries head}\hypertarget{structmalloc__tree__chunk_a1737b1a78f4bfbf0047210e3f3fd014d}{}\label{structmalloc__tree__chunk_a1737b1a78f4bfbf0047210e3f3fd014d}
-
+size\+\_\+t \hyperlink{structmalloc__tree__chunk_a1737b1a78f4bfbf0047210e3f3fd014d}{head}
 \item 
-struct \hyperlink{structmalloc__tree__chunk}{malloc\+\_\+tree\+\_\+chunk} $\ast$ {\bfseries fd}\hypertarget{structmalloc__tree__chunk_a5584ad2f70ef7ad1a5eb5f55820e3fe9}{}\label{structmalloc__tree__chunk_a5584ad2f70ef7ad1a5eb5f55820e3fe9}
-
+struct \hyperlink{structmalloc__tree__chunk}{malloc\+\_\+tree\+\_\+chunk} $\ast$ \hyperlink{structmalloc__tree__chunk_a5584ad2f70ef7ad1a5eb5f55820e3fe9}{fd}
 \item 
-struct \hyperlink{structmalloc__tree__chunk}{malloc\+\_\+tree\+\_\+chunk} $\ast$ {\bfseries bk}\hypertarget{structmalloc__tree__chunk_a862e6cafa961c1f63d4b10d67480cba0}{}\label{structmalloc__tree__chunk_a862e6cafa961c1f63d4b10d67480cba0}
-
+struct \hyperlink{structmalloc__tree__chunk}{malloc\+\_\+tree\+\_\+chunk} $\ast$ \hyperlink{structmalloc__tree__chunk_a862e6cafa961c1f63d4b10d67480cba0}{bk}
 \item 
-struct \hyperlink{structmalloc__tree__chunk}{malloc\+\_\+tree\+\_\+chunk} $\ast$ {\bfseries child} \mbox{[}2\mbox{]}\hypertarget{structmalloc__tree__chunk_a560fa0afc644c1e05f4fab62818ab6cd}{}\label{structmalloc__tree__chunk_a560fa0afc644c1e05f4fab62818ab6cd}
-
+struct \hyperlink{structmalloc__tree__chunk}{malloc\+\_\+tree\+\_\+chunk} $\ast$ \hyperlink{structmalloc__tree__chunk_a560fa0afc644c1e05f4fab62818ab6cd}{child} \mbox{[}2\mbox{]}
 \item 
-struct \hyperlink{structmalloc__tree__chunk}{malloc\+\_\+tree\+\_\+chunk} $\ast$ {\bfseries parent}\hypertarget{structmalloc__tree__chunk_ae15ae9af5d9c57488718f0649868b7fe}{}\label{structmalloc__tree__chunk_ae15ae9af5d9c57488718f0649868b7fe}
-
+struct \hyperlink{structmalloc__tree__chunk}{malloc\+\_\+tree\+\_\+chunk} $\ast$ \hyperlink{structmalloc__tree__chunk_ae15ae9af5d9c57488718f0649868b7fe}{parent}
 \item 
-bindex\+\_\+t {\bfseries index}\hypertarget{structmalloc__tree__chunk_a3015f2a8d6cc5cdb7abaf34e902c46a4}{}\label{structmalloc__tree__chunk_a3015f2a8d6cc5cdb7abaf34e902c46a4}
-
+\hyperlink{dl__malloc_8c_a4c04048d19db75c080e5f0ab19d45f8f}{bindex\+\_\+t} \hyperlink{structmalloc__tree__chunk_a3015f2a8d6cc5cdb7abaf34e902c46a4}{index}
 \end{DoxyCompactItemize}
+
+
+\subsection{Field Documentation}
+\index{malloc\+\_\+tree\+\_\+chunk@{malloc\+\_\+tree\+\_\+chunk}!bk@{bk}}
+\index{bk@{bk}!malloc\+\_\+tree\+\_\+chunk@{malloc\+\_\+tree\+\_\+chunk}}
+\subsubsection[{\texorpdfstring{bk}{bk}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf malloc\+\_\+tree\+\_\+chunk}$\ast$ malloc\+\_\+tree\+\_\+chunk\+::bk}\hypertarget{structmalloc__tree__chunk_a862e6cafa961c1f63d4b10d67480cba0}{}\label{structmalloc__tree__chunk_a862e6cafa961c1f63d4b10d67480cba0}
+\index{malloc\+\_\+tree\+\_\+chunk@{malloc\+\_\+tree\+\_\+chunk}!child@{child}}
+\index{child@{child}!malloc\+\_\+tree\+\_\+chunk@{malloc\+\_\+tree\+\_\+chunk}}
+\subsubsection[{\texorpdfstring{child}{child}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf malloc\+\_\+tree\+\_\+chunk}$\ast$ malloc\+\_\+tree\+\_\+chunk\+::child\mbox{[}2\mbox{]}}\hypertarget{structmalloc__tree__chunk_a560fa0afc644c1e05f4fab62818ab6cd}{}\label{structmalloc__tree__chunk_a560fa0afc644c1e05f4fab62818ab6cd}
+\index{malloc\+\_\+tree\+\_\+chunk@{malloc\+\_\+tree\+\_\+chunk}!fd@{fd}}
+\index{fd@{fd}!malloc\+\_\+tree\+\_\+chunk@{malloc\+\_\+tree\+\_\+chunk}}
+\subsubsection[{\texorpdfstring{fd}{fd}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf malloc\+\_\+tree\+\_\+chunk}$\ast$ malloc\+\_\+tree\+\_\+chunk\+::fd}\hypertarget{structmalloc__tree__chunk_a5584ad2f70ef7ad1a5eb5f55820e3fe9}{}\label{structmalloc__tree__chunk_a5584ad2f70ef7ad1a5eb5f55820e3fe9}
+\index{malloc\+\_\+tree\+\_\+chunk@{malloc\+\_\+tree\+\_\+chunk}!head@{head}}
+\index{head@{head}!malloc\+\_\+tree\+\_\+chunk@{malloc\+\_\+tree\+\_\+chunk}}
+\subsubsection[{\texorpdfstring{head}{head}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t malloc\+\_\+tree\+\_\+chunk\+::head}\hypertarget{structmalloc__tree__chunk_a1737b1a78f4bfbf0047210e3f3fd014d}{}\label{structmalloc__tree__chunk_a1737b1a78f4bfbf0047210e3f3fd014d}
+\index{malloc\+\_\+tree\+\_\+chunk@{malloc\+\_\+tree\+\_\+chunk}!index@{index}}
+\index{index@{index}!malloc\+\_\+tree\+\_\+chunk@{malloc\+\_\+tree\+\_\+chunk}}
+\subsubsection[{\texorpdfstring{index}{index}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bindex\+\_\+t} malloc\+\_\+tree\+\_\+chunk\+::index}\hypertarget{structmalloc__tree__chunk_a3015f2a8d6cc5cdb7abaf34e902c46a4}{}\label{structmalloc__tree__chunk_a3015f2a8d6cc5cdb7abaf34e902c46a4}
+\index{malloc\+\_\+tree\+\_\+chunk@{malloc\+\_\+tree\+\_\+chunk}!parent@{parent}}
+\index{parent@{parent}!malloc\+\_\+tree\+\_\+chunk@{malloc\+\_\+tree\+\_\+chunk}}
+\subsubsection[{\texorpdfstring{parent}{parent}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf malloc\+\_\+tree\+\_\+chunk}$\ast$ malloc\+\_\+tree\+\_\+chunk\+::parent}\hypertarget{structmalloc__tree__chunk_ae15ae9af5d9c57488718f0649868b7fe}{}\label{structmalloc__tree__chunk_ae15ae9af5d9c57488718f0649868b7fe}
+\index{malloc\+\_\+tree\+\_\+chunk@{malloc\+\_\+tree\+\_\+chunk}!prev\+\_\+foot@{prev\+\_\+foot}}
+\index{prev\+\_\+foot@{prev\+\_\+foot}!malloc\+\_\+tree\+\_\+chunk@{malloc\+\_\+tree\+\_\+chunk}}
+\subsubsection[{\texorpdfstring{prev\+\_\+foot}{prev_foot}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t malloc\+\_\+tree\+\_\+chunk\+::prev\+\_\+foot}\hypertarget{structmalloc__tree__chunk_a0b7e321702857b18f5013a3182b99262}{}\label{structmalloc__tree__chunk_a0b7e321702857b18f5013a3182b99262}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-gprolog-\/utf8-\/tree/src/\+Engine\+Pl/dl\+\_\+malloc.\+c\end{DoxyCompactItemize}
+gprolog-\/utf8-\/tree/src/\+Engine\+Pl/\hyperlink{dl__malloc_8c}{dl\+\_\+malloc.\+c}\end{DoxyCompactItemize}

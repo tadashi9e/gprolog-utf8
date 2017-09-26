@@ -1,0 +1,486 @@
+\hypertarget{hash__fct_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/hash\+\_\+fct.c File Reference}
+\label{hash__fct_8c}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/hash\+\_\+fct.\+c@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/hash\+\_\+fct.\+c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}engine\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hash\+\_\+fct.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hash\+\_\+fct1.\+c\char`\"{}}\\*
+Include dependency graph for hash\+\_\+fct.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash__fct_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{hash__fct_8c_ac74f032ef1032847a8f931fff5175e00}{H\+A\+S\+H\+\_\+\+F\+C\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+\_\+\+S\+E\+ED}~1688943522 /$\ast$ any number is OK $\ast$/
+\item 
+\#define \hyperlink{hash__fct_8c_ac032d233a8ebfcd82fd49d0824eefb18}{F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE}
+\item 
+\#define \hyperlink{hash__fct_8c_a26e832eb897a85447fbb2ecab6be638f}{H\+A\+S\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+F\+CT}~Hash\+\_\+\+Buffer\+\_\+\+Aligned
+\item 
+\#define \hyperlink{hash__fct_8c_a26e832eb897a85447fbb2ecab6be638f}{H\+A\+S\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+F\+CT}~Hash\+\_\+\+Buffer\+\_\+\+Unaligned
+\item 
+\#define \hyperlink{hash__fct_8c_a9f8a8b9e2365bf9d6f3b355e17cb4deb}{U\+S\+E\+\_\+32\+B\+I\+T\+S\+\_\+\+A\+L\+I\+G\+N\+M\+E\+NT}
+\item 
+\#define \hyperlink{hash__fct_8c_a539f2dd258b96fac8f4dc9bc139d75c9}{D\+B\+L\+\_\+\+M\+A\+X\+\_\+\+E\+XP}~1024
+\item 
+\#define \hyperlink{hash__fct_8c_aeb343417fe0051b641fc7921022c7b0d}{D\+B\+L\+\_\+\+M\+A\+N\+T\+\_\+\+D\+IG}~53
+\item 
+\#define \hyperlink{hash__fct_8c_a30654b4b67d97c42ca3f9b6052dda916}{U\+I\+N\+T64\+\_\+\+M\+AX}~((uint64\+\_\+t) -\/1)
+\item 
+\#define \hyperlink{hash__fct_8c_ac441f219c1d0f60b3f606e0e6f31abd2}{M\+U\+LT}~((uint64\+\_\+t) 1 $<$$<$ 63)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{hash__fct_8c_ac032d233a8ebfcd82fd49d0824eefb18}{F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE} uint32\+\_\+t \hyperlink{hash__fct_8c_a708b6c5d73a1851b9c32c0bf9731677c}{R\+O\+T\+L32} (uint32\+\_\+t \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, int8\+\_\+t r)
+\item 
+static \hyperlink{hash__fct_8c_ac032d233a8ebfcd82fd49d0824eefb18}{F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE} uint64\+\_\+t \hyperlink{hash__fct_8c_a246b1d9428b0dd1a375cf7b8848393d6}{R\+O\+T\+L64} (uint64\+\_\+t \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, int8\+\_\+t r)
+\item 
+static \hyperlink{hash__fct_8c_ac032d233a8ebfcd82fd49d0824eefb18}{F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE} uint32\+\_\+t \hyperlink{hash__fct_8c_abe414d7525a1bb4fcb8e4fd757498cb9}{Hash\+\_\+\+Initialize} (void)
+\item 
+static \hyperlink{hash__fct_8c_ac032d233a8ebfcd82fd49d0824eefb18}{F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE} uint32\+\_\+t \hyperlink{hash__fct_8c_a246d57a2057081601cbdf7866a5bb741}{Hash\+\_\+\+Block} (uint32\+\_\+t k1, uint32\+\_\+t h1)
+\item 
+static \hyperlink{hash__fct_8c_ac032d233a8ebfcd82fd49d0824eefb18}{F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE} uint32\+\_\+t \hyperlink{hash__fct_8c_aa33bb265b03bb03aa455241e374409f7}{Hash\+\_\+\+Finalize} (uint32\+\_\+t h, int len)
+\item 
+uint32\+\_\+t \hyperlink{hash__fct_8c_a8b1af6cc6089ce3e2e3dc0a8a0d55e90}{Hash\+\_\+\+Buffer} (const void $\ast$key, int len, uint32\+\_\+t seed)
+\item 
+uint32\+\_\+t \hyperlink{hash__fct_8c_acdd5094f58e4c6e2b0176654b7f20e1c}{bswap\+\_\+32} (uint32\+\_\+t \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+static uint32\+\_\+t \hyperlink{hash__fct_8c_a4cd4c65b12eda281caa975103d28a59b}{htole32} (uint32\+\_\+t \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+uint32\+\_\+t \hyperlink{hash__fct_8c_a59393adcfbeeda198a890af25f29cf7c}{Pl\+\_\+\+Hash\+\_\+\+Buffer} (const void $\ast$data, int len)
+\item 
+void \hyperlink{hash__fct_8c_ad016aa10ac5c6dc13d37e35b0f3ca994}{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Init} (\hyperlink{structHashIncrInfo}{Hash\+Incr\+Info} $\ast$hi)
+\item 
+void \hyperlink{hash__fct_8c_a4d8d5808e7eca2f4e1080e4d0e49ee08}{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Buffer} (\hyperlink{structHashIncrInfo}{Hash\+Incr\+Info} $\ast$hi, const void $\ast$data, int len)
+\item 
+void \hyperlink{hash__fct_8c_abf96783738086d9801acda7b7774da0d}{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Int32} (\hyperlink{structHashIncrInfo}{Hash\+Incr\+Info} $\ast$hi, uint32\+\_\+t \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+void \hyperlink{hash__fct_8c_a0c0765d9acb2a093ab0ba2ddf2db3889}{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Int64} (\hyperlink{structHashIncrInfo}{Hash\+Incr\+Info} $\ast$hi, uint64\+\_\+t \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+void \hyperlink{hash__fct_8c_a6587ebf9a68dd6d3d72d4c910cf68108}{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Double} (\hyperlink{structHashIncrInfo}{Hash\+Incr\+Info} $\ast$hi, double \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+uint32\+\_\+t \hyperlink{hash__fct_8c_ae6950aabdc9e0e998bc66b17fd1be80d}{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Term} (\hyperlink{structHashIncrInfo}{Hash\+Incr\+Info} $\ast$hi)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!D\+B\+L\+\_\+\+M\+A\+N\+T\+\_\+\+D\+IG@{D\+B\+L\+\_\+\+M\+A\+N\+T\+\_\+\+D\+IG}}
+\index{D\+B\+L\+\_\+\+M\+A\+N\+T\+\_\+\+D\+IG@{D\+B\+L\+\_\+\+M\+A\+N\+T\+\_\+\+D\+IG}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{D\+B\+L\+\_\+\+M\+A\+N\+T\+\_\+\+D\+IG}{DBL_MANT_DIG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+B\+L\+\_\+\+M\+A\+N\+T\+\_\+\+D\+IG~53}\hypertarget{hash__fct_8c_aeb343417fe0051b641fc7921022c7b0d}{}\label{hash__fct_8c_aeb343417fe0051b641fc7921022c7b0d}
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!D\+B\+L\+\_\+\+M\+A\+X\+\_\+\+E\+XP@{D\+B\+L\+\_\+\+M\+A\+X\+\_\+\+E\+XP}}
+\index{D\+B\+L\+\_\+\+M\+A\+X\+\_\+\+E\+XP@{D\+B\+L\+\_\+\+M\+A\+X\+\_\+\+E\+XP}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{D\+B\+L\+\_\+\+M\+A\+X\+\_\+\+E\+XP}{DBL_MAX_EXP}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+B\+L\+\_\+\+M\+A\+X\+\_\+\+E\+XP~1024}\hypertarget{hash__fct_8c_a539f2dd258b96fac8f4dc9bc139d75c9}{}\label{hash__fct_8c_a539f2dd258b96fac8f4dc9bc139d75c9}
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE@{F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE}}
+\index{F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE@{F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE}{FORCE_INLINE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE}\hypertarget{hash__fct_8c_ac032d233a8ebfcd82fd49d0824eefb18}{}\label{hash__fct_8c_ac032d233a8ebfcd82fd49d0824eefb18}
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!H\+A\+S\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+F\+CT@{H\+A\+S\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+F\+CT}}
+\index{H\+A\+S\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+F\+CT@{H\+A\+S\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+F\+CT}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{H\+A\+S\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+F\+CT}{HASH_BUFFER_FCT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+A\+S\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+F\+CT~Hash\+\_\+\+Buffer\+\_\+\+Aligned}\hypertarget{hash__fct_8c_a26e832eb897a85447fbb2ecab6be638f}{}\label{hash__fct_8c_a26e832eb897a85447fbb2ecab6be638f}
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!H\+A\+S\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+F\+CT@{H\+A\+S\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+F\+CT}}
+\index{H\+A\+S\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+F\+CT@{H\+A\+S\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+F\+CT}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{H\+A\+S\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+F\+CT}{HASH_BUFFER_FCT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+A\+S\+H\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+F\+CT~Hash\+\_\+\+Buffer\+\_\+\+Unaligned}\hypertarget{hash__fct_8c_a26e832eb897a85447fbb2ecab6be638f}{}\label{hash__fct_8c_a26e832eb897a85447fbb2ecab6be638f}
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!H\+A\+S\+H\+\_\+\+F\+C\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+\_\+\+S\+E\+ED@{H\+A\+S\+H\+\_\+\+F\+C\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+\_\+\+S\+E\+ED}}
+\index{H\+A\+S\+H\+\_\+\+F\+C\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+\_\+\+S\+E\+ED@{H\+A\+S\+H\+\_\+\+F\+C\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+\_\+\+S\+E\+ED}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{H\+A\+S\+H\+\_\+\+F\+C\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+\_\+\+S\+E\+ED}{HASH_FCT_INITIAL_SEED}}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+A\+S\+H\+\_\+\+F\+C\+T\+\_\+\+I\+N\+I\+T\+I\+A\+L\+\_\+\+S\+E\+ED~1688943522 /$\ast$ any number is OK $\ast$/}\hypertarget{hash__fct_8c_ac74f032ef1032847a8f931fff5175e00}{}\label{hash__fct_8c_ac74f032ef1032847a8f931fff5175e00}
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!M\+U\+LT@{M\+U\+LT}}
+\index{M\+U\+LT@{M\+U\+LT}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{M\+U\+LT}{MULT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+U\+LT~((uint64\+\_\+t) 1 $<$$<$ 63)}\hypertarget{hash__fct_8c_ac441f219c1d0f60b3f606e0e6f31abd2}{}\label{hash__fct_8c_ac441f219c1d0f60b3f606e0e6f31abd2}
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!U\+I\+N\+T64\+\_\+\+M\+AX@{U\+I\+N\+T64\+\_\+\+M\+AX}}
+\index{U\+I\+N\+T64\+\_\+\+M\+AX@{U\+I\+N\+T64\+\_\+\+M\+AX}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{U\+I\+N\+T64\+\_\+\+M\+AX}{UINT64_MAX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+I\+N\+T64\+\_\+\+M\+AX~((uint64\+\_\+t) -\/1)}\hypertarget{hash__fct_8c_a30654b4b67d97c42ca3f9b6052dda916}{}\label{hash__fct_8c_a30654b4b67d97c42ca3f9b6052dda916}
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!U\+S\+E\+\_\+32\+B\+I\+T\+S\+\_\+\+A\+L\+I\+G\+N\+M\+E\+NT@{U\+S\+E\+\_\+32\+B\+I\+T\+S\+\_\+\+A\+L\+I\+G\+N\+M\+E\+NT}}
+\index{U\+S\+E\+\_\+32\+B\+I\+T\+S\+\_\+\+A\+L\+I\+G\+N\+M\+E\+NT@{U\+S\+E\+\_\+32\+B\+I\+T\+S\+\_\+\+A\+L\+I\+G\+N\+M\+E\+NT}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{U\+S\+E\+\_\+32\+B\+I\+T\+S\+\_\+\+A\+L\+I\+G\+N\+M\+E\+NT}{USE_32BITS_ALIGNMENT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+E\+\_\+32\+B\+I\+T\+S\+\_\+\+A\+L\+I\+G\+N\+M\+E\+NT}\hypertarget{hash__fct_8c_a9f8a8b9e2365bf9d6f3b355e17cb4deb}{}\label{hash__fct_8c_a9f8a8b9e2365bf9d6f3b355e17cb4deb}
+
+
+\subsection{Function Documentation}
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!bswap\+\_\+32@{bswap\+\_\+32}}
+\index{bswap\+\_\+32@{bswap\+\_\+32}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{bswap\+\_\+32(uint32\+\_\+t x)}{bswap_32(uint32_t x)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t bswap\+\_\+32 (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{hash__fct_8c_acdd5094f58e4c6e2b0176654b7f20e1c}{}\label{hash__fct_8c_acdd5094f58e4c6e2b0176654b7f20e1c}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash__fct_8c_acdd5094f58e4c6e2b0176654b7f20e1c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!Hash\+\_\+\+Block@{Hash\+\_\+\+Block}}
+\index{Hash\+\_\+\+Block@{Hash\+\_\+\+Block}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{Hash\+\_\+\+Block(uint32\+\_\+t k1, uint32\+\_\+t h1)}{Hash_Block(uint32_t k1, uint32_t h1)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE} uint32\+\_\+t Hash\+\_\+\+Block (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{k1, }
+\item[{uint32\+\_\+t}]{h1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{hash__fct_8c_a246d57a2057081601cbdf7866a5bb741}{}\label{hash__fct_8c_a246d57a2057081601cbdf7866a5bb741}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{hash__fct_8c_a246d57a2057081601cbdf7866a5bb741_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash__fct_8c_a246d57a2057081601cbdf7866a5bb741_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!Hash\+\_\+\+Buffer@{Hash\+\_\+\+Buffer}}
+\index{Hash\+\_\+\+Buffer@{Hash\+\_\+\+Buffer}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{Hash\+\_\+\+Buffer(const void $\ast$key, int len, uint32\+\_\+t seed)}{Hash_Buffer(const void *key, int len, uint32_t seed)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Hash\+\_\+\+Buffer (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{key, }
+\item[{int}]{len, }
+\item[{uint32\+\_\+t}]{seed}
+\end{DoxyParamCaption}
+)}\hypertarget{hash__fct_8c_a8b1af6cc6089ce3e2e3dc0a8a0d55e90}{}\label{hash__fct_8c_a8b1af6cc6089ce3e2e3dc0a8a0d55e90}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{hash__fct_8c_a8b1af6cc6089ce3e2e3dc0a8a0d55e90_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!Hash\+\_\+\+Finalize@{Hash\+\_\+\+Finalize}}
+\index{Hash\+\_\+\+Finalize@{Hash\+\_\+\+Finalize}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{Hash\+\_\+\+Finalize(uint32\+\_\+t h, int len)}{Hash_Finalize(uint32_t h, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE} uint32\+\_\+t Hash\+\_\+\+Finalize (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{h, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{hash__fct_8c_aa33bb265b03bb03aa455241e374409f7}{}\label{hash__fct_8c_aa33bb265b03bb03aa455241e374409f7}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{hash__fct_8c_aa33bb265b03bb03aa455241e374409f7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!Hash\+\_\+\+Initialize@{Hash\+\_\+\+Initialize}}
+\index{Hash\+\_\+\+Initialize@{Hash\+\_\+\+Initialize}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{Hash\+\_\+\+Initialize(void)}{Hash_Initialize(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE} uint32\+\_\+t Hash\+\_\+\+Initialize (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{hash__fct_8c_abe414d7525a1bb4fcb8e4fd757498cb9}{}\label{hash__fct_8c_abe414d7525a1bb4fcb8e4fd757498cb9}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{hash__fct_8c_abe414d7525a1bb4fcb8e4fd757498cb9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!htole32@{htole32}}
+\index{htole32@{htole32}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{htole32(uint32\+\_\+t x)}{htole32(uint32_t x)}}]{\setlength{\rightskip}{0pt plus 5cm}static uint32\+\_\+t htole32 (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{hash__fct_8c_a4cd4c65b12eda281caa975103d28a59b}{}\label{hash__fct_8c_a4cd4c65b12eda281caa975103d28a59b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{hash__fct_8c_a4cd4c65b12eda281caa975103d28a59b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash__fct_8c_a4cd4c65b12eda281caa975103d28a59b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!Pl\+\_\+\+Hash\+\_\+\+Buffer@{Pl\+\_\+\+Hash\+\_\+\+Buffer}}
+\index{Pl\+\_\+\+Hash\+\_\+\+Buffer@{Pl\+\_\+\+Hash\+\_\+\+Buffer}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+Buffer(const void $\ast$data, int len)}{Pl_Hash_Buffer(const void *data, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Pl\+\_\+\+Hash\+\_\+\+Buffer (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{data, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{hash__fct_8c_a59393adcfbeeda198a890af25f29cf7c}{}\label{hash__fct_8c_a59393adcfbeeda198a890af25f29cf7c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{hash__fct_8c_a59393adcfbeeda198a890af25f29cf7c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{hash__fct_8c_a59393adcfbeeda198a890af25f29cf7c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Buffer@{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Buffer}}
+\index{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Buffer@{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Buffer}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Buffer(\+Hash\+Incr\+Info $\ast$hi, const void $\ast$data, int len)}{Pl_Hash_Incr_Buffer(HashIncrInfo *hi, const void *data, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf Hash\+Incr\+Info} $\ast$}]{hi, }
+\item[{const void $\ast$}]{data, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{hash__fct_8c_a4d8d5808e7eca2f4e1080e4d0e49ee08}{}\label{hash__fct_8c_a4d8d5808e7eca2f4e1080e4d0e49ee08}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{hash__fct_8c_a4d8d5808e7eca2f4e1080e4d0e49ee08_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Double@{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Double}}
+\index{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Double@{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Double}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Double(\+Hash\+Incr\+Info $\ast$hi, double x)}{Pl_Hash_Incr_Double(HashIncrInfo *hi, double x)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Double (
+\begin{DoxyParamCaption}
+\item[{{\bf Hash\+Incr\+Info} $\ast$}]{hi, }
+\item[{double}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{hash__fct_8c_a6587ebf9a68dd6d3d72d4c910cf68108}{}\label{hash__fct_8c_a6587ebf9a68dd6d3d72d4c910cf68108}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash__fct_8c_a6587ebf9a68dd6d3d72d4c910cf68108_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash__fct_8c_a6587ebf9a68dd6d3d72d4c910cf68108_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Init@{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Init}}
+\index{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Init@{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Init}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Init(\+Hash\+Incr\+Info $\ast$hi)}{Pl_Hash_Incr_Init(HashIncrInfo *hi)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf Hash\+Incr\+Info} $\ast$}]{hi}
+\end{DoxyParamCaption}
+)}\hypertarget{hash__fct_8c_ad016aa10ac5c6dc13d37e35b0f3ca994}{}\label{hash__fct_8c_ad016aa10ac5c6dc13d37e35b0f3ca994}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{hash__fct_8c_ad016aa10ac5c6dc13d37e35b0f3ca994_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash__fct_8c_ad016aa10ac5c6dc13d37e35b0f3ca994_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Int32@{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Int32}}
+\index{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Int32@{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Int32}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Int32(\+Hash\+Incr\+Info $\ast$hi, uint32\+\_\+t x)}{Pl_Hash_Incr_Int32(HashIncrInfo *hi, uint32_t x)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Int32 (
+\begin{DoxyParamCaption}
+\item[{{\bf Hash\+Incr\+Info} $\ast$}]{hi, }
+\item[{uint32\+\_\+t}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{hash__fct_8c_abf96783738086d9801acda7b7774da0d}{}\label{hash__fct_8c_abf96783738086d9801acda7b7774da0d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash__fct_8c_abf96783738086d9801acda7b7774da0d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash__fct_8c_abf96783738086d9801acda7b7774da0d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Int64@{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Int64}}
+\index{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Int64@{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Int64}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Int64(\+Hash\+Incr\+Info $\ast$hi, uint64\+\_\+t x)}{Pl_Hash_Incr_Int64(HashIncrInfo *hi, uint64_t x)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Int64 (
+\begin{DoxyParamCaption}
+\item[{{\bf Hash\+Incr\+Info} $\ast$}]{hi, }
+\item[{uint64\+\_\+t}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{hash__fct_8c_a0c0765d9acb2a093ab0ba2ddf2db3889}{}\label{hash__fct_8c_a0c0765d9acb2a093ab0ba2ddf2db3889}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash__fct_8c_a0c0765d9acb2a093ab0ba2ddf2db3889_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash__fct_8c_a0c0765d9acb2a093ab0ba2ddf2db3889_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Term@{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Term}}
+\index{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Term@{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Term}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Term(\+Hash\+Incr\+Info $\ast$hi)}{Pl_Hash_Incr_Term(HashIncrInfo *hi)}}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Pl\+\_\+\+Hash\+\_\+\+Incr\+\_\+\+Term (
+\begin{DoxyParamCaption}
+\item[{{\bf Hash\+Incr\+Info} $\ast$}]{hi}
+\end{DoxyParamCaption}
+)}\hypertarget{hash__fct_8c_ae6950aabdc9e0e998bc66b17fd1be80d}{}\label{hash__fct_8c_ae6950aabdc9e0e998bc66b17fd1be80d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{hash__fct_8c_ae6950aabdc9e0e998bc66b17fd1be80d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash__fct_8c_ae6950aabdc9e0e998bc66b17fd1be80d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!R\+O\+T\+L32@{R\+O\+T\+L32}}
+\index{R\+O\+T\+L32@{R\+O\+T\+L32}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{R\+O\+T\+L32(uint32\+\_\+t x, int8\+\_\+t r)}{ROTL32(uint32_t x, int8_t r)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE} uint32\+\_\+t R\+O\+T\+L32 (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{x, }
+\item[{int8\+\_\+t}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{hash__fct_8c_a708b6c5d73a1851b9c32c0bf9731677c}{}\label{hash__fct_8c_a708b6c5d73a1851b9c32c0bf9731677c}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash__fct_8c_a708b6c5d73a1851b9c32c0bf9731677c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}!R\+O\+T\+L64@{R\+O\+T\+L64}}
+\index{R\+O\+T\+L64@{R\+O\+T\+L64}!hash\+\_\+fct.\+c@{hash\+\_\+fct.\+c}}
+\subsubsection[{\texorpdfstring{R\+O\+T\+L64(uint64\+\_\+t x, int8\+\_\+t r)}{ROTL64(uint64_t x, int8_t r)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf F\+O\+R\+C\+E\+\_\+\+I\+N\+L\+I\+NE} uint64\+\_\+t R\+O\+T\+L64 (
+\begin{DoxyParamCaption}
+\item[{uint64\+\_\+t}]{x, }
+\item[{int8\+\_\+t}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{hash__fct_8c_a246b1d9428b0dd1a375cf7b8848393d6}{}\label{hash__fct_8c_a246b1d9428b0dd1a375cf7b8848393d6}

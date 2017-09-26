@@ -1,0 +1,21 @@
+<map id="gprolog&#45;utf8&#45;tree/src/EnginePl/misc.c" name="gprolog&#45;utf8&#45;tree/src/EnginePl/misc.c">
+<area shape="rect" id="node3" href="$machine_8h.html" title="machine.h" alt="" coords="28,169,111,196"/>
+<area shape="rect" id="node9" href="$engine__pl_8h.html" title="engine_pl.h" alt="" coords="871,95,959,121"/>
+<area shape="rect" id="node27" href="$linedit_8h.html" title="../Linedit/linedit.h" alt="" coords="1854,95,1976,121"/>
+<area shape="rect" id="node4" href="$bool_8h.html" title="bool.h" alt="" coords="81,244,138,271"/>
+<area shape="rect" id="node10" href="$pl__params_8h.html" title="pl_params.h" alt="" coords="1520,169,1614,196"/>
+<area shape="rect" id="node11" href="$hash__fct_8h.html" title="hash_fct.h" alt="" coords="1356,244,1439,271"/>
+<area shape="rect" id="node13" href="$hash_8h.html" title="hash.h" alt="" coords="186,169,247,196"/>
+<area shape="rect" id="node16" href="$engine_8h.html" title="engine.h" alt="" coords="509,169,580,196"/>
+<area shape="rect" id="node17" href="$atom_8h.html" title="atom.h" alt="" coords="604,169,666,196"/>
+<area shape="rect" id="node18" href="$pred_8h.html" title="pred.h" alt="" coords="691,169,750,196"/>
+<area shape="rect" id="node19" href="$misc_8h.html" title="misc.h" alt="" coords="1435,169,1496,196"/>
+<area shape="rect" id="node20" href="$oper_8h.html" title="oper.h" alt="" coords="886,169,944,196"/>
+<area shape="rect" id="node21" href="$machine1_8h.html" title="machine1.h" alt="" coords="1638,169,1728,196"/>
+<area shape="rect" id="node22" href="$stacks__sigsegv_8h.html" title="stacks_sigsegv.h" alt="" coords="1020,169,1144,196"/>
+<area shape="rect" id="node23" href="$obj__chain_8h.html" title="obj_chain.h" alt="" coords="774,169,862,196"/>
+<area shape="rect" id="node25" href="$wam__inst_8h.html" title="wam_inst.h" alt="" coords="1168,169,1257,196"/>
+<area shape="rect" id="node26" href="$if__no__fd_8h.html" title="if_no_fd.h" alt="" coords="1281,169,1360,196"/>
+<area shape="rect" id="node24" href="$pl__long_8h.html" title="pl_long.h" alt="" coords="855,244,930,271"/>
+<area shape="rect" id="node28" href="$pl__wchar_8h.html" title="../EnginePl/pl_wchar.h" alt="" coords="1794,244,1948,271"/>
+</map>

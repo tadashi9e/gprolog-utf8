@@ -1,0 +1,28 @@
+<map id="TTY_Get_Key" name="TTY_Get_Key">
+<area shape="rect" id="node2" href="$pl__wchar_8c.html#a118e1ed8186e82a376d922702a7a8a82" title="count_wchar_bytes_without_slen" alt="" coords="159,575,373,601"/>
+<area shape="rect" id="node3" href="$pl__wchar_8c.html#aae8b097c7c2a9e49a67ea8a905051904" title="get_wchar" alt="" coords="225,625,307,652"/>
+<area shape="rect" id="node4" href="$linedit_8c.html#a4f1c0c59dd4227be9ac33ccc96c7d8d9" title="Pl_LE_Get_Key" alt="" coords="209,676,323,703"/>
+<area shape="rect" id="node26" href="$engine_8c.html#ae0fcb6df66410fd57c52a0ba16527642" title="Pl_Execute_A_Continuation" alt="" coords="173,727,359,753"/>
+<area shape="rect" id="node27" href="$linedit_8c.html#a984bc5e9cc15fffd69d6a5a95aedbe05" title="Pl_LE_Get_Ctrl_C_Return\l_Value" alt="" coords="178,778,354,819"/>
+<area shape="rect" id="node5" href="$linedit_8h.html#ac18d0902bdc62942c4bd445ee73d6be3" title="Pl_LE_Initialize" alt="" coords="445,309,557,336"/>
+<area shape="rect" id="node18" href="$terminal_8c.html#a8f4c06bf782ce1bb4449753a4ca99403" title="Pl_LE_Open_Terminal" alt="" coords="425,549,577,576"/>
+<area shape="rect" id="node19" href="$terminal_8c.html#ab03c9c3058c416b43852eb4ad9d30971" title="Pl_LE_Get_Char" alt="" coords="441,600,561,627"/>
+<area shape="rect" id="node20" href="$terminal_8c.html#a37099f929a26503fda2d259a8e20b938" title="Pl_LE_Is_Interrupt_Key" alt="" coords="421,651,581,677"/>
+<area shape="rect" id="node21" href="$terminal_8c.html#a27adb2b5e5dd607c0b7bd5bd10ca2281" title="Pl_LE_Close_Terminal" alt="" coords="424,701,579,728"/>
+<area shape="rect" id="node22" href="$ctrl__c_8c.html#a54ec36423ca739ef1e56e092deb57ad1" title="Pl_Emit_Ctrl_C" alt="" coords="445,752,558,779"/>
+<area shape="rect" id="node23" href="$pl__wchar_8c.html#a5df5e221fa5cbadce849a7e73c5dc4ad" title="fill_wchar" alt="" coords="463,803,540,829"/>
+<area shape="rect" id="node24" href="$pl__wchar_8c.html#a0e3acef785ce9c91e56ba566193d4cee" title="put_wchar_eof" alt="" coords="448,853,555,880"/>
+<area shape="rect" id="node6" href="$terminal_8c.html#acae08e63a234477bf1257da8b7aed42c" title="Parse_Env_Var" alt="" coords="662,5,775,32"/>
+<area shape="rect" id="node7" href="$terminal_8c.html#a469ee04c4859e98fe1f6db021e90bfb9" title="Pl_LE_Screen_Size" alt="" coords="649,563,788,589"/>
+<area shape="rect" id="node8" href="$terminal_8c.html#aad5032ec003db7a3e1a4ead642d2b1c9" title="Pl_LE_Kbd_Is_Not_Empty" alt="" coords="629,56,808,83"/>
+<area shape="rect" id="node9" href="$terminal_8c.html#a590b70bbd0e7ba502d794565a3652c9f" title="Pl_LE_Put_Char" alt="" coords="856,436,975,463"/>
+<area shape="rect" id="node10" href="$terminal_8c.html#a3ad10c9f5ddd471af1f250302534f4dd" title="LE_Get_Char0" alt="" coords="665,157,773,184"/>
+<area shape="rect" id="node11" href="$terminal_8c.html#a6cb08cdfcbb59cbdd3d55c4b3e282c6c" title="Pl_LE_Ins_Mode" alt="" coords="658,208,779,235"/>
+<area shape="rect" id="node12" href="$terminal_8c.html#aa38becdbe98fa5a404ff0ef7d9bbeb34" title="Pl_LE_Emit_Beep" alt="" coords="655,259,783,285"/>
+<area shape="rect" id="node13" href="$terminal_8c.html#a5509aba58312f5bbb8ab5392cc98a19c" title="Backd" alt="" coords="689,309,748,336"/>
+<area shape="rect" id="node14" href="$terminal_8c.html#ad618abf9b110b77f60d00d7406fc31e1" title="Forwd" alt="" coords="689,360,748,387"/>
+<area shape="rect" id="node15" href="$terminal_8c.html#a1df289842cb88ce5520533c6a2797a4a" title="Displ" alt="" coords="693,411,745,437"/>
+<area shape="rect" id="node16" href="$terminal_8c.html#affbb006cd6d0f1e67633b91508894e9d" title="Erase" alt="" coords="691,461,747,488"/>
+<area shape="rect" id="node17" href="$terminal_8c.html#a8123f431a3b3a083d2f9b5f4396a31ee" title="Displ_Str" alt="" coords="681,512,757,539"/>
+<area shape="rect" id="node25" href="$pl__wchar_8c.html#a31bcb7c7ad4174170702cb4399feb8e3" title="put_wchar" alt="" coords="677,853,760,880"/>
+</map>

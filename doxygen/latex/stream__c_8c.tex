@@ -1,0 +1,1218 @@
+\hypertarget{stream__c_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/stream\+\_\+c.c File Reference}
+\label{stream__c_8c}\index{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/stream\+\_\+c.\+c@{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/stream\+\_\+c.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$fcntl.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}engine\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bips\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}linedit.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$sys/fcntl.\+h$>$}\\*
+Include dependency graph for stream\+\_\+c.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structTermSInf}{Term\+S\+Inf}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{stream__c_8c_acf04f7f165e5fef83a092b133a5d34f6}{T\+E\+R\+M\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+CK}~1024
+\item 
+\#define \hyperlink{stream__c_8c_a62ccd3773000f3958c5288d3e169ea7d}{E\+R\+R\+\_\+\+N\+E\+E\+D\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+\_\+\+C\+L\+O\+SE}~\char`\"{}special stream\+: needs appropriate close predicate\char`\"{}
+\item 
+\#define \hyperlink{stream__c_8c_aaa1bae2f913aeb7f326c90fecda2e276}{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+S\+T\+R\+E\+AM}~\char`\"{}cannot close stream\char`\"{}
+\item 
+\#define \hyperlink{stream__c_8c_a4278779f55784df776693bdfab360dd2}{C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+A\+LT}~X1\+\_\+2463757272656\+E745\+F73747265616\+D5\+F616\+C74
+\item 
+\#define \hyperlink{stream__c_8c_a1e745dc61ae67db2c37012cd649ad68d}{C\+U\+R\+R\+E\+N\+T\+\_\+\+A\+L\+I\+A\+S\+\_\+\+A\+LT}~X1\+\_\+2463757272656\+E745\+F616\+C6961735\+F616\+C74
+\item 
+\#define \hyperlink{stream__c_8c_a63b8d78eea6eef0d11409982baf81c50}{C\+U\+R\+R\+E\+N\+T\+\_\+\+M\+I\+R\+R\+O\+R\+\_\+\+A\+LT}~X1\+\_\+2463757272656\+E745\+F6\+D6972726\+F725\+F616\+C74
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{stream__c_8c_a704dd0def54dc2a792a99b19423b57e0}{Prolog\+\_\+\+Prototype} (\hyperlink{stream__c_8c_a4278779f55784df776693bdfab360dd2}{C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+A\+LT}, 0)
+\item 
+\hyperlink{stream__c_8c_a4bddc6ec851260bf488d135f5920eb55}{Prolog\+\_\+\+Prototype} (\hyperlink{stream__c_8c_a1e745dc61ae67db2c37012cd649ad68d}{C\+U\+R\+R\+E\+N\+T\+\_\+\+A\+L\+I\+A\+S\+\_\+\+A\+LT}, 0)
+\item 
+\hyperlink{stream__c_8c_a8ca249b62ad32be58cd6dc919a3dcf28}{Prolog\+\_\+\+Prototype} (\hyperlink{stream__c_8c_a63b8d78eea6eef0d11409982baf81c50}{C\+U\+R\+R\+E\+N\+T\+\_\+\+M\+I\+R\+R\+O\+R\+\_\+\+A\+LT}, 0)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a5d7f37589f5627ae81424330514666a5}{Pl\+\_\+\+Current\+\_\+\+Input\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_aa8c4bee50e4c90c52685d41c17bf71af}{Pl\+\_\+\+Current\+\_\+\+Output\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word)
+\item 
+void \hyperlink{stream__c_8c_a283d91ddf7faed2395df4115754ff8ad}{Pl\+\_\+\+Set\+\_\+\+Input\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word)
+\item 
+void \hyperlink{stream__c_8c_a5a02fbfc1e98c123b6a8a8b0c6999529}{Pl\+\_\+\+Set\+\_\+\+Output\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word)
+\item 
+void \hyperlink{stream__c_8c_af47cd068e76f4b350063d90d6d11eebe}{Pl\+\_\+\+Set\+\_\+\+Top\+\_\+\+Level\+\_\+\+Streams\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+in\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+out\+\_\+word)
+\item 
+void \hyperlink{stream__c_8c_aec4fdccf1721ad40d97b76c5b5615084}{Pl\+\_\+\+Set\+\_\+\+Debugger\+\_\+\+Streams\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+in\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+out\+\_\+word)
+\item 
+void \hyperlink{stream__c_8c_a2c2540e03dfb396a35d223d58ea53a29}{Pl\+\_\+\+Open\+\_\+3} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} source\+\_\+sink\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} mode\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a07a4b2f8aa5e4ab6c8cdbb2cb9553a03}{Pl\+\_\+\+Test\+\_\+\+Alias\+\_\+\+Not\+\_\+\+Assigned\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} alias\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a8c6a4bdd7b32b8c0f846490197596aa5}{Pl\+\_\+\+From\+\_\+\+Alias\+\_\+\+To\+\_\+\+Stream\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} alias\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_ace3c9e531ef6f560a00d1a4bdcb21eb9}{Pl\+\_\+\+Add\+\_\+\+Stream\+\_\+\+Alias\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} alias\+\_\+word)
+\item 
+void \hyperlink{stream__c_8c_a0d12ec0c2509b4d9520b270b45ed1525}{Pl\+\_\+\+Check\+\_\+\+Valid\+\_\+\+Mirror\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} mirror\+\_\+word)
+\item 
+void \hyperlink{stream__c_8c_a3b929a4a3cf237eb6eb02cd485de7086}{Pl\+\_\+\+Add\+\_\+\+Stream\+\_\+\+Mirror\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} mirror\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a925be7a08d34f184b103ff1efc954888}{Pl\+\_\+\+Remove\+\_\+\+Stream\+\_\+\+Mirror\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} mirror\+\_\+word)
+\item 
+void \hyperlink{stream__c_8c_a289f603e7feaeef905b26e6229358bd5}{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Type\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} is\+\_\+text\+\_\+word)
+\item 
+void \hyperlink{stream__c_8c_a8c8df70ccd628b2ce0b6facf525d861b}{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Eof\+\_\+\+Action\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} action\+\_\+word)
+\item 
+void \hyperlink{stream__c_8c_a3904fe10fcd57975321f61a8011252eb}{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Buffering\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} buff\+\_\+mode\+\_\+word)
+\item 
+void \hyperlink{stream__c_8c_a4c24c2f444575a196cc4a5be2e687743}{Pl\+\_\+\+Close\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word)
+\item 
+void \hyperlink{stream__c_8c_a01dbc066c1deba3a188650ba699b7f01}{Pl\+\_\+\+Close\+\_\+\+Stm} (int stm, \hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} force)
+\item 
+void \hyperlink{stream__c_8c_aadb81e220893821e8d8ad6c94faa68d0}{Pl\+\_\+\+P\+B\+\_\+\+Empty\+\_\+\+Buffer\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word)
+\item 
+void \hyperlink{stream__c_8c_aec3c3a64b4e8e368887c4ed04ee83049}{Pl\+\_\+\+Flush\+\_\+\+Output\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word)
+\item 
+void \hyperlink{stream__c_8c_a8460338be0ae06063a99b120d99e24bd}{Pl\+\_\+\+Flush\+\_\+\+Output\+\_\+0} (void)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_ab53e571b7707a2b02d02995c642961a2}{Pl\+\_\+\+Current\+\_\+\+Stream\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a3d6d021c3b3a14e6278150a973ef56e1}{Pl\+\_\+\+Current\+\_\+\+Stream\+\_\+\+Alt\+\_\+0} (void)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a1a66f0555dc22778c05d8da39704ddd8}{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+File\+\_\+\+Name\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} file\+\_\+name\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a87c33e1295c5b425f9d89f284c315793}{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Mode\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} mode\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a97ce6dc0fe156afbdcec2a1dcace9894}{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Input\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a50a41c1b9089e2d5b0e82457fe79a810}{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Output\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a115567d97a1b6f3c8d82ecf1028ee3e5}{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Type\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} type\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a674fec0d52cc97ad64bad0077515118e}{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Reposition\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} reposition\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a13c6ec86ee5a3cd77e073a5c76ee817d}{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Eof\+\_\+\+Action\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} eof\+\_\+action\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a1cd8fdfa356a9ab448670ff6406f89c5}{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Buffering\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} buffering\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_acc4a57806cb036858a6feebd70954ce5}{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} end\+\_\+of\+\_\+stream\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a7cdf9dcd94f5788a2b5d555a5e8f58e2}{Pl\+\_\+\+At\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a1b01afba2f1fde7bd9aa362a02d6f1be}{Pl\+\_\+\+At\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+0} (void)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a1ed531369714c0718703dfe2f168b2ed}{Pl\+\_\+\+Current\+\_\+\+Alias\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} alias\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a3d23162aace704e466af30efd75c7abd}{Pl\+\_\+\+Current\+\_\+\+Alias\+\_\+\+Alt\+\_\+0} (void)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a2056125096f3a4aa02fc3ca1b408bf01}{Pl\+\_\+\+Current\+\_\+\+Mirror\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} m\+\_\+stm\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_aa4b280c0a39000c6c32597c5c0c9a51b}{Pl\+\_\+\+Current\+\_\+\+Mirror\+\_\+\+Alt\+\_\+0} (void)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_af6cb5700cffd1306c174e146faa0dda3}{Pl\+\_\+\+Stream\+\_\+\+Position\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} position\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_af9827ad8d4f8405c1cb8318b622862a5}{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Position\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} position\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a2f37a839880302862efe1de5aa672ace}{Pl\+\_\+\+Seek\+\_\+4} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} whence\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} offset\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} new\+\_\+loc\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a3e5ab2e50e18c0af5476e713b6122a9f}{Pl\+\_\+\+Character\+\_\+\+Count\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} count\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a4ded2fa252b6333eb74ff3970de3c65a}{Pl\+\_\+\+Line\+\_\+\+Count\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} count\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_afc30783319e1cf6d6b5ab6762169ea66}{Pl\+\_\+\+Line\+\_\+\+Position\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} count\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a03420885bcd36700b66847b0ad3d81b1}{Pl\+\_\+\+Stream\+\_\+\+Line\+\_\+\+Column\+\_\+3} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} line\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} col\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a5e125ed0ecc63db35c19ae74af3e5311}{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Line\+\_\+\+Column\+\_\+3} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} line\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} col\+\_\+word)
+\item 
+void \hyperlink{stream__c_8c_a5509c863559e52e3f79d862fdb121edb}{Pl\+\_\+\+Open\+\_\+\+Input\+\_\+\+Term\+\_\+\+Stream\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sink\+\_\+term\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word)
+\item 
+void \hyperlink{stream__c_8c_a8b751483479b30807efdda8bd1664c5b}{Pl\+\_\+\+Close\+\_\+\+Input\+\_\+\+Term\+\_\+\+Stream\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word)
+\item 
+void \hyperlink{stream__c_8c_a70d91f642e6a102021db762b75f5c635}{Pl\+\_\+\+Open\+\_\+\+Output\+\_\+\+Term\+\_\+\+Stream\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{stream__c_8c_a1f13fab2c67dc519c098795427b0cc02}{Pl\+\_\+\+Close\+\_\+\+Output\+\_\+\+Term\+\_\+\+Stream\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sink\+\_\+term\+\_\+word)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!C\+U\+R\+R\+E\+N\+T\+\_\+\+A\+L\+I\+A\+S\+\_\+\+A\+LT@{C\+U\+R\+R\+E\+N\+T\+\_\+\+A\+L\+I\+A\+S\+\_\+\+A\+LT}}
+\index{C\+U\+R\+R\+E\+N\+T\+\_\+\+A\+L\+I\+A\+S\+\_\+\+A\+LT@{C\+U\+R\+R\+E\+N\+T\+\_\+\+A\+L\+I\+A\+S\+\_\+\+A\+LT}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{C\+U\+R\+R\+E\+N\+T\+\_\+\+A\+L\+I\+A\+S\+\_\+\+A\+LT}{CURRENT_ALIAS_ALT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+U\+R\+R\+E\+N\+T\+\_\+\+A\+L\+I\+A\+S\+\_\+\+A\+LT~X1\+\_\+2463757272656\+E745\+F616\+C6961735\+F616\+C74}\hypertarget{stream__c_8c_a1e745dc61ae67db2c37012cd649ad68d}{}\label{stream__c_8c_a1e745dc61ae67db2c37012cd649ad68d}
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!C\+U\+R\+R\+E\+N\+T\+\_\+\+M\+I\+R\+R\+O\+R\+\_\+\+A\+LT@{C\+U\+R\+R\+E\+N\+T\+\_\+\+M\+I\+R\+R\+O\+R\+\_\+\+A\+LT}}
+\index{C\+U\+R\+R\+E\+N\+T\+\_\+\+M\+I\+R\+R\+O\+R\+\_\+\+A\+LT@{C\+U\+R\+R\+E\+N\+T\+\_\+\+M\+I\+R\+R\+O\+R\+\_\+\+A\+LT}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{C\+U\+R\+R\+E\+N\+T\+\_\+\+M\+I\+R\+R\+O\+R\+\_\+\+A\+LT}{CURRENT_MIRROR_ALT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+U\+R\+R\+E\+N\+T\+\_\+\+M\+I\+R\+R\+O\+R\+\_\+\+A\+LT~X1\+\_\+2463757272656\+E745\+F6\+D6972726\+F725\+F616\+C74}\hypertarget{stream__c_8c_a63b8d78eea6eef0d11409982baf81c50}{}\label{stream__c_8c_a63b8d78eea6eef0d11409982baf81c50}
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+A\+LT@{C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+A\+LT}}
+\index{C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+A\+LT@{C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+A\+LT}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+A\+LT}{CURRENT_STREAM_ALT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+A\+LT~X1\+\_\+2463757272656\+E745\+F73747265616\+D5\+F616\+C74}\hypertarget{stream__c_8c_a4278779f55784df776693bdfab360dd2}{}\label{stream__c_8c_a4278779f55784df776693bdfab360dd2}
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+S\+T\+R\+E\+AM@{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+S\+T\+R\+E\+AM}}
+\index{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+S\+T\+R\+E\+AM@{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+S\+T\+R\+E\+AM}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+S\+T\+R\+E\+AM}{ERR_CANNOT_CLOSE_STREAM}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+C\+L\+O\+S\+E\+\_\+\+S\+T\+R\+E\+AM~\char`\"{}cannot close stream\char`\"{}}\hypertarget{stream__c_8c_aaa1bae2f913aeb7f326c90fecda2e276}{}\label{stream__c_8c_aaa1bae2f913aeb7f326c90fecda2e276}
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!E\+R\+R\+\_\+\+N\+E\+E\+D\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+\_\+\+C\+L\+O\+SE@{E\+R\+R\+\_\+\+N\+E\+E\+D\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+\_\+\+C\+L\+O\+SE}}
+\index{E\+R\+R\+\_\+\+N\+E\+E\+D\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+\_\+\+C\+L\+O\+SE@{E\+R\+R\+\_\+\+N\+E\+E\+D\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+\_\+\+C\+L\+O\+SE}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+\+N\+E\+E\+D\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+\_\+\+C\+L\+O\+SE}{ERR_NEEDS_SPECIAL_CLOSE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+\_\+\+N\+E\+E\+D\+S\+\_\+\+S\+P\+E\+C\+I\+A\+L\+\_\+\+C\+L\+O\+SE~\char`\"{}special stream\+: needs appropriate close predicate\char`\"{}}\hypertarget{stream__c_8c_a62ccd3773000f3958c5288d3e169ea7d}{}\label{stream__c_8c_a62ccd3773000f3958c5288d3e169ea7d}
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!T\+E\+R\+M\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+CK@{T\+E\+R\+M\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+CK}}
+\index{T\+E\+R\+M\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+CK@{T\+E\+R\+M\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+CK}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{T\+E\+R\+M\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+CK}{TERM_STREAM_WRITE_BLOCK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+E\+R\+M\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+CK~1024}\hypertarget{stream__c_8c_acf04f7f165e5fef83a092b133a5d34f6}{}\label{stream__c_8c_acf04f7f165e5fef83a092b133a5d34f6}
+
+
+\subsection{Function Documentation}
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Add\+\_\+\+Stream\+\_\+\+Alias\+\_\+2@{Pl\+\_\+\+Add\+\_\+\+Stream\+\_\+\+Alias\+\_\+2}}
+\index{Pl\+\_\+\+Add\+\_\+\+Stream\+\_\+\+Alias\+\_\+2@{Pl\+\_\+\+Add\+\_\+\+Stream\+\_\+\+Alias\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Add\+\_\+\+Stream\+\_\+\+Alias\+\_\+2(\+Wam\+Word sora\+\_\+word, Wam\+Word alias\+\_\+word)}{Pl_Add_Stream_Alias_2(WamWord sora_word, WamWord alias_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Add\+\_\+\+Stream\+\_\+\+Alias\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{alias\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_ace3c9e531ef6f560a00d1a4bdcb21eb9}{}\label{stream__c_8c_ace3c9e531ef6f560a00d1a4bdcb21eb9}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_ace3c9e531ef6f560a00d1a4bdcb21eb9_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Add\+\_\+\+Stream\+\_\+\+Mirror\+\_\+2@{Pl\+\_\+\+Add\+\_\+\+Stream\+\_\+\+Mirror\+\_\+2}}
+\index{Pl\+\_\+\+Add\+\_\+\+Stream\+\_\+\+Mirror\+\_\+2@{Pl\+\_\+\+Add\+\_\+\+Stream\+\_\+\+Mirror\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Add\+\_\+\+Stream\+\_\+\+Mirror\+\_\+2(\+Wam\+Word sora\+\_\+word, Wam\+Word mirror\+\_\+word)}{Pl_Add_Stream_Mirror_2(WamWord sora_word, WamWord mirror_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Add\+\_\+\+Stream\+\_\+\+Mirror\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{mirror\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a3b929a4a3cf237eb6eb02cd485de7086}{}\label{stream__c_8c_a3b929a4a3cf237eb6eb02cd485de7086}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a3b929a4a3cf237eb6eb02cd485de7086_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+At\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+0@{Pl\+\_\+\+At\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+0}}
+\index{Pl\+\_\+\+At\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+0@{Pl\+\_\+\+At\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+0}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+At\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+0(void)}{Pl_At_End_Of_Stream_0(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+At\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+0 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a1b01afba2f1fde7bd9aa362a02d6f1be}{}\label{stream__c_8c_a1b01afba2f1fde7bd9aa362a02d6f1be}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a1b01afba2f1fde7bd9aa362a02d6f1be_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+At\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+1@{Pl\+\_\+\+At\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+1}}
+\index{Pl\+\_\+\+At\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+1@{Pl\+\_\+\+At\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+1}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+At\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+1(\+Wam\+Word sora\+\_\+word)}{Pl_At_End_Of_Stream_1(WamWord sora_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+At\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a7cdf9dcd94f5788a2b5d555a5e8f58e2}{}\label{stream__c_8c_a7cdf9dcd94f5788a2b5d555a5e8f58e2}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a7cdf9dcd94f5788a2b5d555a5e8f58e2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a7cdf9dcd94f5788a2b5d555a5e8f58e2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Character\+\_\+\+Count\+\_\+2@{Pl\+\_\+\+Character\+\_\+\+Count\+\_\+2}}
+\index{Pl\+\_\+\+Character\+\_\+\+Count\+\_\+2@{Pl\+\_\+\+Character\+\_\+\+Count\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Character\+\_\+\+Count\+\_\+2(\+Wam\+Word sora\+\_\+word, Wam\+Word count\+\_\+word)}{Pl_Character_Count_2(WamWord sora_word, WamWord count_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Character\+\_\+\+Count\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{count\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a3e5ab2e50e18c0af5476e713b6122a9f}{}\label{stream__c_8c_a3e5ab2e50e18c0af5476e713b6122a9f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a3e5ab2e50e18c0af5476e713b6122a9f_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Check\+\_\+\+Valid\+\_\+\+Mirror\+\_\+1@{Pl\+\_\+\+Check\+\_\+\+Valid\+\_\+\+Mirror\+\_\+1}}
+\index{Pl\+\_\+\+Check\+\_\+\+Valid\+\_\+\+Mirror\+\_\+1@{Pl\+\_\+\+Check\+\_\+\+Valid\+\_\+\+Mirror\+\_\+1}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Check\+\_\+\+Valid\+\_\+\+Mirror\+\_\+1(\+Wam\+Word mirror\+\_\+word)}{Pl_Check_Valid_Mirror_1(WamWord mirror_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Check\+\_\+\+Valid\+\_\+\+Mirror\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{mirror\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a0d12ec0c2509b4d9520b270b45ed1525}{}\label{stream__c_8c_a0d12ec0c2509b4d9520b270b45ed1525}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a0d12ec0c2509b4d9520b270b45ed1525_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Close\+\_\+1@{Pl\+\_\+\+Close\+\_\+1}}
+\index{Pl\+\_\+\+Close\+\_\+1@{Pl\+\_\+\+Close\+\_\+1}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Close\+\_\+1(\+Wam\+Word sora\+\_\+word)}{Pl_Close_1(WamWord sora_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Close\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a4c24c2f444575a196cc4a5be2e687743}{}\label{stream__c_8c_a4c24c2f444575a196cc4a5be2e687743}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a4c24c2f444575a196cc4a5be2e687743_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Close\+\_\+\+Input\+\_\+\+Term\+\_\+\+Stream\+\_\+1@{Pl\+\_\+\+Close\+\_\+\+Input\+\_\+\+Term\+\_\+\+Stream\+\_\+1}}
+\index{Pl\+\_\+\+Close\+\_\+\+Input\+\_\+\+Term\+\_\+\+Stream\+\_\+1@{Pl\+\_\+\+Close\+\_\+\+Input\+\_\+\+Term\+\_\+\+Stream\+\_\+1}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Close\+\_\+\+Input\+\_\+\+Term\+\_\+\+Stream\+\_\+1(\+Wam\+Word sora\+\_\+word)}{Pl_Close_Input_Term_Stream_1(WamWord sora_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Close\+\_\+\+Input\+\_\+\+Term\+\_\+\+Stream\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a8b751483479b30807efdda8bd1664c5b}{}\label{stream__c_8c_a8b751483479b30807efdda8bd1664c5b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a8b751483479b30807efdda8bd1664c5b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Close\+\_\+\+Output\+\_\+\+Term\+\_\+\+Stream\+\_\+2@{Pl\+\_\+\+Close\+\_\+\+Output\+\_\+\+Term\+\_\+\+Stream\+\_\+2}}
+\index{Pl\+\_\+\+Close\+\_\+\+Output\+\_\+\+Term\+\_\+\+Stream\+\_\+2@{Pl\+\_\+\+Close\+\_\+\+Output\+\_\+\+Term\+\_\+\+Stream\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Close\+\_\+\+Output\+\_\+\+Term\+\_\+\+Stream\+\_\+2(\+Wam\+Word sora\+\_\+word, Wam\+Word sink\+\_\+term\+\_\+word)}{Pl_Close_Output_Term_Stream_2(WamWord sora_word, WamWord sink_term_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Close\+\_\+\+Output\+\_\+\+Term\+\_\+\+Stream\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{sink\+\_\+term\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a1f13fab2c67dc519c098795427b0cc02}{}\label{stream__c_8c_a1f13fab2c67dc519c098795427b0cc02}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a1f13fab2c67dc519c098795427b0cc02_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Close\+\_\+\+Stm@{Pl\+\_\+\+Close\+\_\+\+Stm}}
+\index{Pl\+\_\+\+Close\+\_\+\+Stm@{Pl\+\_\+\+Close\+\_\+\+Stm}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Close\+\_\+\+Stm(int stm, Bool force)}{Pl_Close_Stm(int stm, Bool force)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Close\+\_\+\+Stm (
+\begin{DoxyParamCaption}
+\item[{int}]{stm, }
+\item[{{\bf Bool}}]{force}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a01dbc066c1deba3a188650ba699b7f01}{}\label{stream__c_8c_a01dbc066c1deba3a188650ba699b7f01}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a01dbc066c1deba3a188650ba699b7f01_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{stream__c_8c_a01dbc066c1deba3a188650ba699b7f01_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Current\+\_\+\+Alias\+\_\+2@{Pl\+\_\+\+Current\+\_\+\+Alias\+\_\+2}}
+\index{Pl\+\_\+\+Current\+\_\+\+Alias\+\_\+2@{Pl\+\_\+\+Current\+\_\+\+Alias\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Current\+\_\+\+Alias\+\_\+2(\+Wam\+Word stm\+\_\+word, Wam\+Word alias\+\_\+word)}{Pl_Current_Alias_2(WamWord stm_word, WamWord alias_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Current\+\_\+\+Alias\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{alias\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a1ed531369714c0718703dfe2f168b2ed}{}\label{stream__c_8c_a1ed531369714c0718703dfe2f168b2ed}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a1ed531369714c0718703dfe2f168b2ed_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Current\+\_\+\+Alias\+\_\+\+Alt\+\_\+0@{Pl\+\_\+\+Current\+\_\+\+Alias\+\_\+\+Alt\+\_\+0}}
+\index{Pl\+\_\+\+Current\+\_\+\+Alias\+\_\+\+Alt\+\_\+0@{Pl\+\_\+\+Current\+\_\+\+Alias\+\_\+\+Alt\+\_\+0}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Current\+\_\+\+Alias\+\_\+\+Alt\+\_\+0(void)}{Pl_Current_Alias_Alt_0(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Current\+\_\+\+Alias\+\_\+\+Alt\+\_\+0 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a3d23162aace704e466af30efd75c7abd}{}\label{stream__c_8c_a3d23162aace704e466af30efd75c7abd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a3d23162aace704e466af30efd75c7abd_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Current\+\_\+\+Input\+\_\+1@{Pl\+\_\+\+Current\+\_\+\+Input\+\_\+1}}
+\index{Pl\+\_\+\+Current\+\_\+\+Input\+\_\+1@{Pl\+\_\+\+Current\+\_\+\+Input\+\_\+1}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Current\+\_\+\+Input\+\_\+1(\+Wam\+Word stm\+\_\+word)}{Pl_Current_Input_1(WamWord stm_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Current\+\_\+\+Input\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a5d7f37589f5627ae81424330514666a5}{}\label{stream__c_8c_a5d7f37589f5627ae81424330514666a5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a5d7f37589f5627ae81424330514666a5_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Current\+\_\+\+Mirror\+\_\+2@{Pl\+\_\+\+Current\+\_\+\+Mirror\+\_\+2}}
+\index{Pl\+\_\+\+Current\+\_\+\+Mirror\+\_\+2@{Pl\+\_\+\+Current\+\_\+\+Mirror\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Current\+\_\+\+Mirror\+\_\+2(\+Wam\+Word stm\+\_\+word, Wam\+Word m\+\_\+stm\+\_\+word)}{Pl_Current_Mirror_2(WamWord stm_word, WamWord m_stm_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Current\+\_\+\+Mirror\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{m\+\_\+stm\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a2056125096f3a4aa02fc3ca1b408bf01}{}\label{stream__c_8c_a2056125096f3a4aa02fc3ca1b408bf01}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a2056125096f3a4aa02fc3ca1b408bf01_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Current\+\_\+\+Mirror\+\_\+\+Alt\+\_\+0@{Pl\+\_\+\+Current\+\_\+\+Mirror\+\_\+\+Alt\+\_\+0}}
+\index{Pl\+\_\+\+Current\+\_\+\+Mirror\+\_\+\+Alt\+\_\+0@{Pl\+\_\+\+Current\+\_\+\+Mirror\+\_\+\+Alt\+\_\+0}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Current\+\_\+\+Mirror\+\_\+\+Alt\+\_\+0(void)}{Pl_Current_Mirror_Alt_0(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Current\+\_\+\+Mirror\+\_\+\+Alt\+\_\+0 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_aa4b280c0a39000c6c32597c5c0c9a51b}{}\label{stream__c_8c_aa4b280c0a39000c6c32597c5c0c9a51b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_aa4b280c0a39000c6c32597c5c0c9a51b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Current\+\_\+\+Output\+\_\+1@{Pl\+\_\+\+Current\+\_\+\+Output\+\_\+1}}
+\index{Pl\+\_\+\+Current\+\_\+\+Output\+\_\+1@{Pl\+\_\+\+Current\+\_\+\+Output\+\_\+1}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Current\+\_\+\+Output\+\_\+1(\+Wam\+Word stm\+\_\+word)}{Pl_Current_Output_1(WamWord stm_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Current\+\_\+\+Output\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_aa8c4bee50e4c90c52685d41c17bf71af}{}\label{stream__c_8c_aa8c4bee50e4c90c52685d41c17bf71af}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_aa8c4bee50e4c90c52685d41c17bf71af_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Current\+\_\+\+Stream\+\_\+1@{Pl\+\_\+\+Current\+\_\+\+Stream\+\_\+1}}
+\index{Pl\+\_\+\+Current\+\_\+\+Stream\+\_\+1@{Pl\+\_\+\+Current\+\_\+\+Stream\+\_\+1}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Current\+\_\+\+Stream\+\_\+1(\+Wam\+Word stm\+\_\+word)}{Pl_Current_Stream_1(WamWord stm_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Current\+\_\+\+Stream\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_ab53e571b7707a2b02d02995c642961a2}{}\label{stream__c_8c_ab53e571b7707a2b02d02995c642961a2}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_ab53e571b7707a2b02d02995c642961a2_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Current\+\_\+\+Stream\+\_\+\+Alt\+\_\+0@{Pl\+\_\+\+Current\+\_\+\+Stream\+\_\+\+Alt\+\_\+0}}
+\index{Pl\+\_\+\+Current\+\_\+\+Stream\+\_\+\+Alt\+\_\+0@{Pl\+\_\+\+Current\+\_\+\+Stream\+\_\+\+Alt\+\_\+0}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Current\+\_\+\+Stream\+\_\+\+Alt\+\_\+0(void)}{Pl_Current_Stream_Alt_0(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Current\+\_\+\+Stream\+\_\+\+Alt\+\_\+0 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a3d6d021c3b3a14e6278150a973ef56e1}{}\label{stream__c_8c_a3d6d021c3b3a14e6278150a973ef56e1}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a3d6d021c3b3a14e6278150a973ef56e1_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Flush\+\_\+\+Output\+\_\+0@{Pl\+\_\+\+Flush\+\_\+\+Output\+\_\+0}}
+\index{Pl\+\_\+\+Flush\+\_\+\+Output\+\_\+0@{Pl\+\_\+\+Flush\+\_\+\+Output\+\_\+0}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Flush\+\_\+\+Output\+\_\+0(void)}{Pl_Flush_Output_0(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Flush\+\_\+\+Output\+\_\+0 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a8460338be0ae06063a99b120d99e24bd}{}\label{stream__c_8c_a8460338be0ae06063a99b120d99e24bd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a8460338be0ae06063a99b120d99e24bd_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Flush\+\_\+\+Output\+\_\+1@{Pl\+\_\+\+Flush\+\_\+\+Output\+\_\+1}}
+\index{Pl\+\_\+\+Flush\+\_\+\+Output\+\_\+1@{Pl\+\_\+\+Flush\+\_\+\+Output\+\_\+1}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Flush\+\_\+\+Output\+\_\+1(\+Wam\+Word sora\+\_\+word)}{Pl_Flush_Output_1(WamWord sora_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Flush\+\_\+\+Output\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_aec3c3a64b4e8e368887c4ed04ee83049}{}\label{stream__c_8c_aec3c3a64b4e8e368887c4ed04ee83049}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_aec3c3a64b4e8e368887c4ed04ee83049_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{stream__c_8c_aec3c3a64b4e8e368887c4ed04ee83049_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+From\+\_\+\+Alias\+\_\+\+To\+\_\+\+Stream\+\_\+2@{Pl\+\_\+\+From\+\_\+\+Alias\+\_\+\+To\+\_\+\+Stream\+\_\+2}}
+\index{Pl\+\_\+\+From\+\_\+\+Alias\+\_\+\+To\+\_\+\+Stream\+\_\+2@{Pl\+\_\+\+From\+\_\+\+Alias\+\_\+\+To\+\_\+\+Stream\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+From\+\_\+\+Alias\+\_\+\+To\+\_\+\+Stream\+\_\+2(\+Wam\+Word alias\+\_\+word, Wam\+Word stm\+\_\+word)}{Pl_From_Alias_To_Stream_2(WamWord alias_word, WamWord stm_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+From\+\_\+\+Alias\+\_\+\+To\+\_\+\+Stream\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{alias\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a8c6a4bdd7b32b8c0f846490197596aa5}{}\label{stream__c_8c_a8c6a4bdd7b32b8c0f846490197596aa5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a8c6a4bdd7b32b8c0f846490197596aa5_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Line\+\_\+\+Count\+\_\+2@{Pl\+\_\+\+Line\+\_\+\+Count\+\_\+2}}
+\index{Pl\+\_\+\+Line\+\_\+\+Count\+\_\+2@{Pl\+\_\+\+Line\+\_\+\+Count\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Line\+\_\+\+Count\+\_\+2(\+Wam\+Word sora\+\_\+word, Wam\+Word count\+\_\+word)}{Pl_Line_Count_2(WamWord sora_word, WamWord count_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Line\+\_\+\+Count\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{count\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a4ded2fa252b6333eb74ff3970de3c65a}{}\label{stream__c_8c_a4ded2fa252b6333eb74ff3970de3c65a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a4ded2fa252b6333eb74ff3970de3c65a_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Line\+\_\+\+Position\+\_\+2@{Pl\+\_\+\+Line\+\_\+\+Position\+\_\+2}}
+\index{Pl\+\_\+\+Line\+\_\+\+Position\+\_\+2@{Pl\+\_\+\+Line\+\_\+\+Position\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Line\+\_\+\+Position\+\_\+2(\+Wam\+Word sora\+\_\+word, Wam\+Word count\+\_\+word)}{Pl_Line_Position_2(WamWord sora_word, WamWord count_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Line\+\_\+\+Position\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{count\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_afc30783319e1cf6d6b5ab6762169ea66}{}\label{stream__c_8c_afc30783319e1cf6d6b5ab6762169ea66}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_afc30783319e1cf6d6b5ab6762169ea66_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Open\+\_\+3@{Pl\+\_\+\+Open\+\_\+3}}
+\index{Pl\+\_\+\+Open\+\_\+3@{Pl\+\_\+\+Open\+\_\+3}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Open\+\_\+3(\+Wam\+Word source\+\_\+sink\+\_\+word, Wam\+Word mode\+\_\+word, Wam\+Word stm\+\_\+word)}{Pl_Open_3(WamWord source_sink_word, WamWord mode_word, WamWord stm_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Open\+\_\+3 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{source\+\_\+sink\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{mode\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a2c2540e03dfb396a35d223d58ea53a29}{}\label{stream__c_8c_a2c2540e03dfb396a35d223d58ea53a29}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a2c2540e03dfb396a35d223d58ea53a29_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Open\+\_\+\+Input\+\_\+\+Term\+\_\+\+Stream\+\_\+2@{Pl\+\_\+\+Open\+\_\+\+Input\+\_\+\+Term\+\_\+\+Stream\+\_\+2}}
+\index{Pl\+\_\+\+Open\+\_\+\+Input\+\_\+\+Term\+\_\+\+Stream\+\_\+2@{Pl\+\_\+\+Open\+\_\+\+Input\+\_\+\+Term\+\_\+\+Stream\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Open\+\_\+\+Input\+\_\+\+Term\+\_\+\+Stream\+\_\+2(\+Wam\+Word sink\+\_\+term\+\_\+word, Wam\+Word stm\+\_\+word)}{Pl_Open_Input_Term_Stream_2(WamWord sink_term_word, WamWord stm_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Open\+\_\+\+Input\+\_\+\+Term\+\_\+\+Stream\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sink\+\_\+term\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a5509c863559e52e3f79d862fdb121edb}{}\label{stream__c_8c_a5509c863559e52e3f79d862fdb121edb}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a5509c863559e52e3f79d862fdb121edb_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Open\+\_\+\+Output\+\_\+\+Term\+\_\+\+Stream\+\_\+1@{Pl\+\_\+\+Open\+\_\+\+Output\+\_\+\+Term\+\_\+\+Stream\+\_\+1}}
+\index{Pl\+\_\+\+Open\+\_\+\+Output\+\_\+\+Term\+\_\+\+Stream\+\_\+1@{Pl\+\_\+\+Open\+\_\+\+Output\+\_\+\+Term\+\_\+\+Stream\+\_\+1}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Open\+\_\+\+Output\+\_\+\+Term\+\_\+\+Stream\+\_\+1(\+Wam\+Word stm\+\_\+word)}{Pl_Open_Output_Term_Stream_1(WamWord stm_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Open\+\_\+\+Output\+\_\+\+Term\+\_\+\+Stream\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a70d91f642e6a102021db762b75f5c635}{}\label{stream__c_8c_a70d91f642e6a102021db762b75f5c635}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a70d91f642e6a102021db762b75f5c635_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+P\+B\+\_\+\+Empty\+\_\+\+Buffer\+\_\+1@{Pl\+\_\+\+P\+B\+\_\+\+Empty\+\_\+\+Buffer\+\_\+1}}
+\index{Pl\+\_\+\+P\+B\+\_\+\+Empty\+\_\+\+Buffer\+\_\+1@{Pl\+\_\+\+P\+B\+\_\+\+Empty\+\_\+\+Buffer\+\_\+1}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+P\+B\+\_\+\+Empty\+\_\+\+Buffer\+\_\+1(\+Wam\+Word sora\+\_\+word)}{Pl_PB_Empty_Buffer_1(WamWord sora_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+P\+B\+\_\+\+Empty\+\_\+\+Buffer\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_aadb81e220893821e8d8ad6c94faa68d0}{}\label{stream__c_8c_aadb81e220893821e8d8ad6c94faa68d0}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_aadb81e220893821e8d8ad6c94faa68d0_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Remove\+\_\+\+Stream\+\_\+\+Mirror\+\_\+2@{Pl\+\_\+\+Remove\+\_\+\+Stream\+\_\+\+Mirror\+\_\+2}}
+\index{Pl\+\_\+\+Remove\+\_\+\+Stream\+\_\+\+Mirror\+\_\+2@{Pl\+\_\+\+Remove\+\_\+\+Stream\+\_\+\+Mirror\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Remove\+\_\+\+Stream\+\_\+\+Mirror\+\_\+2(\+Wam\+Word sora\+\_\+word, Wam\+Word mirror\+\_\+word)}{Pl_Remove_Stream_Mirror_2(WamWord sora_word, WamWord mirror_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Remove\+\_\+\+Stream\+\_\+\+Mirror\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{mirror\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a925be7a08d34f184b103ff1efc954888}{}\label{stream__c_8c_a925be7a08d34f184b103ff1efc954888}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a925be7a08d34f184b103ff1efc954888_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Seek\+\_\+4@{Pl\+\_\+\+Seek\+\_\+4}}
+\index{Pl\+\_\+\+Seek\+\_\+4@{Pl\+\_\+\+Seek\+\_\+4}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Seek\+\_\+4(\+Wam\+Word sora\+\_\+word, Wam\+Word whence\+\_\+word, Wam\+Word offset\+\_\+word, Wam\+Word new\+\_\+loc\+\_\+word)}{Pl_Seek_4(WamWord sora_word, WamWord whence_word, WamWord offset_word, WamWord new_loc_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Seek\+\_\+4 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{whence\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{offset\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{new\+\_\+loc\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a2f37a839880302862efe1de5aa672ace}{}\label{stream__c_8c_a2f37a839880302862efe1de5aa672ace}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a2f37a839880302862efe1de5aa672ace_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Set\+\_\+\+Debugger\+\_\+\+Streams\+\_\+2@{Pl\+\_\+\+Set\+\_\+\+Debugger\+\_\+\+Streams\+\_\+2}}
+\index{Pl\+\_\+\+Set\+\_\+\+Debugger\+\_\+\+Streams\+\_\+2@{Pl\+\_\+\+Set\+\_\+\+Debugger\+\_\+\+Streams\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Set\+\_\+\+Debugger\+\_\+\+Streams\+\_\+2(\+Wam\+Word sora\+\_\+in\+\_\+word, Wam\+Word sora\+\_\+out\+\_\+word)}{Pl_Set_Debugger_Streams_2(WamWord sora_in_word, WamWord sora_out_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Set\+\_\+\+Debugger\+\_\+\+Streams\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+in\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{sora\+\_\+out\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_aec4fdccf1721ad40d97b76c5b5615084}{}\label{stream__c_8c_aec4fdccf1721ad40d97b76c5b5615084}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_aec4fdccf1721ad40d97b76c5b5615084_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Set\+\_\+\+Input\+\_\+1@{Pl\+\_\+\+Set\+\_\+\+Input\+\_\+1}}
+\index{Pl\+\_\+\+Set\+\_\+\+Input\+\_\+1@{Pl\+\_\+\+Set\+\_\+\+Input\+\_\+1}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Set\+\_\+\+Input\+\_\+1(\+Wam\+Word sora\+\_\+word)}{Pl_Set_Input_1(WamWord sora_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Set\+\_\+\+Input\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a283d91ddf7faed2395df4115754ff8ad}{}\label{stream__c_8c_a283d91ddf7faed2395df4115754ff8ad}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a283d91ddf7faed2395df4115754ff8ad_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Set\+\_\+\+Output\+\_\+1@{Pl\+\_\+\+Set\+\_\+\+Output\+\_\+1}}
+\index{Pl\+\_\+\+Set\+\_\+\+Output\+\_\+1@{Pl\+\_\+\+Set\+\_\+\+Output\+\_\+1}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Set\+\_\+\+Output\+\_\+1(\+Wam\+Word sora\+\_\+word)}{Pl_Set_Output_1(WamWord sora_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Set\+\_\+\+Output\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a5a02fbfc1e98c123b6a8a8b0c6999529}{}\label{stream__c_8c_a5a02fbfc1e98c123b6a8a8b0c6999529}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a5a02fbfc1e98c123b6a8a8b0c6999529_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Buffering\+\_\+2@{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Buffering\+\_\+2}}
+\index{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Buffering\+\_\+2@{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Buffering\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Buffering\+\_\+2(\+Wam\+Word sora\+\_\+word, Wam\+Word buff\+\_\+mode\+\_\+word)}{Pl_Set_Stream_Buffering_2(WamWord sora_word, WamWord buff_mode_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Buffering\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{buff\+\_\+mode\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a3904fe10fcd57975321f61a8011252eb}{}\label{stream__c_8c_a3904fe10fcd57975321f61a8011252eb}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a3904fe10fcd57975321f61a8011252eb_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Eof\+\_\+\+Action\+\_\+2@{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Eof\+\_\+\+Action\+\_\+2}}
+\index{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Eof\+\_\+\+Action\+\_\+2@{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Eof\+\_\+\+Action\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Eof\+\_\+\+Action\+\_\+2(\+Wam\+Word sora\+\_\+word, Wam\+Word action\+\_\+word)}{Pl_Set_Stream_Eof_Action_2(WamWord sora_word, WamWord action_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Eof\+\_\+\+Action\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{action\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a8c8df70ccd628b2ce0b6facf525d861b}{}\label{stream__c_8c_a8c8df70ccd628b2ce0b6facf525d861b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a8c8df70ccd628b2ce0b6facf525d861b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Line\+\_\+\+Column\+\_\+3@{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Line\+\_\+\+Column\+\_\+3}}
+\index{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Line\+\_\+\+Column\+\_\+3@{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Line\+\_\+\+Column\+\_\+3}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Line\+\_\+\+Column\+\_\+3(\+Wam\+Word sora\+\_\+word, Wam\+Word line\+\_\+word, Wam\+Word col\+\_\+word)}{Pl_Set_Stream_Line_Column_3(WamWord sora_word, WamWord line_word, WamWord col_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Line\+\_\+\+Column\+\_\+3 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{line\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{col\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a5e125ed0ecc63db35c19ae74af3e5311}{}\label{stream__c_8c_a5e125ed0ecc63db35c19ae74af3e5311}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a5e125ed0ecc63db35c19ae74af3e5311_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Position\+\_\+2@{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Position\+\_\+2}}
+\index{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Position\+\_\+2@{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Position\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Position\+\_\+2(\+Wam\+Word sora\+\_\+word, Wam\+Word position\+\_\+word)}{Pl_Set_Stream_Position_2(WamWord sora_word, WamWord position_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Position\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{position\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_af9827ad8d4f8405c1cb8318b622862a5}{}\label{stream__c_8c_af9827ad8d4f8405c1cb8318b622862a5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_af9827ad8d4f8405c1cb8318b622862a5_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Type\+\_\+2@{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Type\+\_\+2}}
+\index{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Type\+\_\+2@{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Type\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Type\+\_\+2(\+Wam\+Word sora\+\_\+word, Wam\+Word is\+\_\+text\+\_\+word)}{Pl_Set_Stream_Type_2(WamWord sora_word, WamWord is_text_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Set\+\_\+\+Stream\+\_\+\+Type\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{is\+\_\+text\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a289f603e7feaeef905b26e6229358bd5}{}\label{stream__c_8c_a289f603e7feaeef905b26e6229358bd5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a289f603e7feaeef905b26e6229358bd5_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Set\+\_\+\+Top\+\_\+\+Level\+\_\+\+Streams\+\_\+2@{Pl\+\_\+\+Set\+\_\+\+Top\+\_\+\+Level\+\_\+\+Streams\+\_\+2}}
+\index{Pl\+\_\+\+Set\+\_\+\+Top\+\_\+\+Level\+\_\+\+Streams\+\_\+2@{Pl\+\_\+\+Set\+\_\+\+Top\+\_\+\+Level\+\_\+\+Streams\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Set\+\_\+\+Top\+\_\+\+Level\+\_\+\+Streams\+\_\+2(\+Wam\+Word sora\+\_\+in\+\_\+word, Wam\+Word sora\+\_\+out\+\_\+word)}{Pl_Set_Top_Level_Streams_2(WamWord sora_in_word, WamWord sora_out_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Set\+\_\+\+Top\+\_\+\+Level\+\_\+\+Streams\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+in\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{sora\+\_\+out\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_af47cd068e76f4b350063d90d6d11eebe}{}\label{stream__c_8c_af47cd068e76f4b350063d90d6d11eebe}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_af47cd068e76f4b350063d90d6d11eebe_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Stream\+\_\+\+Line\+\_\+\+Column\+\_\+3@{Pl\+\_\+\+Stream\+\_\+\+Line\+\_\+\+Column\+\_\+3}}
+\index{Pl\+\_\+\+Stream\+\_\+\+Line\+\_\+\+Column\+\_\+3@{Pl\+\_\+\+Stream\+\_\+\+Line\+\_\+\+Column\+\_\+3}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Stream\+\_\+\+Line\+\_\+\+Column\+\_\+3(\+Wam\+Word sora\+\_\+word, Wam\+Word line\+\_\+word, Wam\+Word col\+\_\+word)}{Pl_Stream_Line_Column_3(WamWord sora_word, WamWord line_word, WamWord col_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Stream\+\_\+\+Line\+\_\+\+Column\+\_\+3 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{line\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{col\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a03420885bcd36700b66847b0ad3d81b1}{}\label{stream__c_8c_a03420885bcd36700b66847b0ad3d81b1}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a03420885bcd36700b66847b0ad3d81b1_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Stream\+\_\+\+Position\+\_\+2@{Pl\+\_\+\+Stream\+\_\+\+Position\+\_\+2}}
+\index{Pl\+\_\+\+Stream\+\_\+\+Position\+\_\+2@{Pl\+\_\+\+Stream\+\_\+\+Position\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Stream\+\_\+\+Position\+\_\+2(\+Wam\+Word sora\+\_\+word, Wam\+Word position\+\_\+word)}{Pl_Stream_Position_2(WamWord sora_word, WamWord position_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Stream\+\_\+\+Position\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{position\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_af6cb5700cffd1306c174e146faa0dda3}{}\label{stream__c_8c_af6cb5700cffd1306c174e146faa0dda3}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_af6cb5700cffd1306c174e146faa0dda3_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Buffering\+\_\+2@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Buffering\+\_\+2}}
+\index{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Buffering\+\_\+2@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Buffering\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Buffering\+\_\+2(\+Wam\+Word buffering\+\_\+word, Wam\+Word stm\+\_\+word)}{Pl_Stream_Prop_Buffering_2(WamWord buffering_word, WamWord stm_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Buffering\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{buffering\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a1cd8fdfa356a9ab448670ff6406f89c5}{}\label{stream__c_8c_a1cd8fdfa356a9ab448670ff6406f89c5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a1cd8fdfa356a9ab448670ff6406f89c5_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+2@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+2}}
+\index{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+2@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+2(\+Wam\+Word end\+\_\+of\+\_\+stream\+\_\+word, Wam\+Word stm\+\_\+word)}{Pl_Stream_Prop_End_Of_Stream_2(WamWord end_of_stream_word, WamWord stm_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+End\+\_\+\+Of\+\_\+\+Stream\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{end\+\_\+of\+\_\+stream\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_acc4a57806cb036858a6feebd70954ce5}{}\label{stream__c_8c_acc4a57806cb036858a6feebd70954ce5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_acc4a57806cb036858a6feebd70954ce5_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Eof\+\_\+\+Action\+\_\+2@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Eof\+\_\+\+Action\+\_\+2}}
+\index{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Eof\+\_\+\+Action\+\_\+2@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Eof\+\_\+\+Action\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Eof\+\_\+\+Action\+\_\+2(\+Wam\+Word eof\+\_\+action\+\_\+word, Wam\+Word stm\+\_\+word)}{Pl_Stream_Prop_Eof_Action_2(WamWord eof_action_word, WamWord stm_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Eof\+\_\+\+Action\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{eof\+\_\+action\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a13c6ec86ee5a3cd77e073a5c76ee817d}{}\label{stream__c_8c_a13c6ec86ee5a3cd77e073a5c76ee817d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a13c6ec86ee5a3cd77e073a5c76ee817d_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+File\+\_\+\+Name\+\_\+2@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+File\+\_\+\+Name\+\_\+2}}
+\index{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+File\+\_\+\+Name\+\_\+2@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+File\+\_\+\+Name\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+File\+\_\+\+Name\+\_\+2(\+Wam\+Word file\+\_\+name\+\_\+word, Wam\+Word stm\+\_\+word)}{Pl_Stream_Prop_File_Name_2(WamWord file_name_word, WamWord stm_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+File\+\_\+\+Name\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{file\+\_\+name\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a1a66f0555dc22778c05d8da39704ddd8}{}\label{stream__c_8c_a1a66f0555dc22778c05d8da39704ddd8}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a1a66f0555dc22778c05d8da39704ddd8_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Input\+\_\+1@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Input\+\_\+1}}
+\index{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Input\+\_\+1@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Input\+\_\+1}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Input\+\_\+1(\+Wam\+Word stm\+\_\+word)}{Pl_Stream_Prop_Input_1(WamWord stm_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Input\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a97ce6dc0fe156afbdcec2a1dcace9894}{}\label{stream__c_8c_a97ce6dc0fe156afbdcec2a1dcace9894}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a97ce6dc0fe156afbdcec2a1dcace9894_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Mode\+\_\+2@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Mode\+\_\+2}}
+\index{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Mode\+\_\+2@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Mode\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Mode\+\_\+2(\+Wam\+Word mode\+\_\+word, Wam\+Word stm\+\_\+word)}{Pl_Stream_Prop_Mode_2(WamWord mode_word, WamWord stm_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Mode\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{mode\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a87c33e1295c5b425f9d89f284c315793}{}\label{stream__c_8c_a87c33e1295c5b425f9d89f284c315793}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a87c33e1295c5b425f9d89f284c315793_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Output\+\_\+1@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Output\+\_\+1}}
+\index{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Output\+\_\+1@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Output\+\_\+1}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Output\+\_\+1(\+Wam\+Word stm\+\_\+word)}{Pl_Stream_Prop_Output_1(WamWord stm_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Output\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a50a41c1b9089e2d5b0e82457fe79a810}{}\label{stream__c_8c_a50a41c1b9089e2d5b0e82457fe79a810}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a50a41c1b9089e2d5b0e82457fe79a810_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Reposition\+\_\+2@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Reposition\+\_\+2}}
+\index{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Reposition\+\_\+2@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Reposition\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Reposition\+\_\+2(\+Wam\+Word reposition\+\_\+word, Wam\+Word stm\+\_\+word)}{Pl_Stream_Prop_Reposition_2(WamWord reposition_word, WamWord stm_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Reposition\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{reposition\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a674fec0d52cc97ad64bad0077515118e}{}\label{stream__c_8c_a674fec0d52cc97ad64bad0077515118e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a674fec0d52cc97ad64bad0077515118e_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Type\+\_\+2@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Type\+\_\+2}}
+\index{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Type\+\_\+2@{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Type\+\_\+2}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Type\+\_\+2(\+Wam\+Word type\+\_\+word, Wam\+Word stm\+\_\+word)}{Pl_Stream_Prop_Type_2(WamWord type_word, WamWord stm_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Stream\+\_\+\+Prop\+\_\+\+Type\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{type\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{stm\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a115567d97a1b6f3c8d82ecf1028ee3e5}{}\label{stream__c_8c_a115567d97a1b6f3c8d82ecf1028ee3e5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a115567d97a1b6f3c8d82ecf1028ee3e5_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Pl\+\_\+\+Test\+\_\+\+Alias\+\_\+\+Not\+\_\+\+Assigned\+\_\+1@{Pl\+\_\+\+Test\+\_\+\+Alias\+\_\+\+Not\+\_\+\+Assigned\+\_\+1}}
+\index{Pl\+\_\+\+Test\+\_\+\+Alias\+\_\+\+Not\+\_\+\+Assigned\+\_\+1@{Pl\+\_\+\+Test\+\_\+\+Alias\+\_\+\+Not\+\_\+\+Assigned\+\_\+1}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Test\+\_\+\+Alias\+\_\+\+Not\+\_\+\+Assigned\+\_\+1(\+Wam\+Word alias\+\_\+word)}{Pl_Test_Alias_Not_Assigned_1(WamWord alias_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Test\+\_\+\+Alias\+\_\+\+Not\+\_\+\+Assigned\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{alias\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a07a4b2f8aa5e4ab6c8cdbb2cb9553a03}{}\label{stream__c_8c_a07a4b2f8aa5e4ab6c8cdbb2cb9553a03}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stream__c_8c_a07a4b2f8aa5e4ab6c8cdbb2cb9553a03_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}}
+\index{Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Prolog\+\_\+\+Prototype(\+C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+A\+L\+T, 0)}{Prolog_Prototype(CURRENT_STREAM_ALT, 0)}}]{\setlength{\rightskip}{0pt plus 5cm}Prolog\+\_\+\+Prototype (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+U\+R\+R\+E\+N\+T\+\_\+\+S\+T\+R\+E\+A\+M\+\_\+\+A\+LT}}]{, }
+\item[{0}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a704dd0def54dc2a792a99b19423b57e0}{}\label{stream__c_8c_a704dd0def54dc2a792a99b19423b57e0}
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}}
+\index{Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Prolog\+\_\+\+Prototype(\+C\+U\+R\+R\+E\+N\+T\+\_\+\+A\+L\+I\+A\+S\+\_\+\+A\+L\+T, 0)}{Prolog_Prototype(CURRENT_ALIAS_ALT, 0)}}]{\setlength{\rightskip}{0pt plus 5cm}Prolog\+\_\+\+Prototype (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+U\+R\+R\+E\+N\+T\+\_\+\+A\+L\+I\+A\+S\+\_\+\+A\+LT}}]{, }
+\item[{0}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a4bddc6ec851260bf488d135f5920eb55}{}\label{stream__c_8c_a4bddc6ec851260bf488d135f5920eb55}
+\index{stream\+\_\+c.\+c@{stream\+\_\+c.\+c}!Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}}
+\index{Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}!stream\+\_\+c.\+c@{stream\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Prolog\+\_\+\+Prototype(\+C\+U\+R\+R\+E\+N\+T\+\_\+\+M\+I\+R\+R\+O\+R\+\_\+\+A\+L\+T, 0)}{Prolog_Prototype(CURRENT_MIRROR_ALT, 0)}}]{\setlength{\rightskip}{0pt plus 5cm}Prolog\+\_\+\+Prototype (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+U\+R\+R\+E\+N\+T\+\_\+\+M\+I\+R\+R\+O\+R\+\_\+\+A\+LT}}]{, }
+\item[{0}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{stream__c_8c_a8ca249b62ad32be58cd6dc919a3dcf28}{}\label{stream__c_8c_a8ca249b62ad32be58cd6dc919a3dcf28}

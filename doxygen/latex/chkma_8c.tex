@@ -1,0 +1,2084 @@
+\hypertarget{chkma_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Ma2\+Asm/chkma.c File Reference}
+\label{chkma_8c}\index{gprolog-\/utf8-\/tree/src/\+Ma2\+Asm/chkma.\+c@{gprolog-\/utf8-\/tree/src/\+Ma2\+Asm/chkma.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/pl\+\_\+long.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/engine.\+c\char`\"{}}\\*
+Include dependency graph for chkma.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC}~/$\ast$ define FC to force arch\+\_\+dep.\+h to \hyperlink{test__oc__defs_8h_a196206e0ab201e18d79c3878336d7d20}{no} use FC $\ast$/
+\item 
+\#define \hyperlink{chkma_8c_a400fb68510bb049da097c0fbe34641ac}{I\+F\+\_\+\+N\+O\+\_\+\+F\+D\+\_\+\+F\+I\+LE}
+\item 
+\#define \hyperlink{chkma_8c_ab605c0d8baa1e2525ffcc094e07298f2}{M\+A\+\_\+\+A\+R\+R\+AY}~\hyperlink{asm__inst_8c_a84903a83c3a7121fcfaf688b9da1fa7c}{ma\+\_\+array}
+\item 
+\#define \hyperlink{chkma_8c_a952cc1e93577435a55bab93fbb8ad489}{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R1}~\hyperlink{asm__inst_8c_a89e41394a3f0c27244d5d13be9c998d7}{ma\+\_\+global\+\_\+var1}
+\item 
+\#define \hyperlink{chkma_8c_a0c0bff4135f343ed5581770b19a77b37}{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R2}~\hyperlink{asm__inst_8c_adc1a572b78ca3e63bd52056121b8101f}{ma\+\_\+global\+\_\+var2}
+\item 
+\#define \hyperlink{chkma_8c_ac882a2c03a5069fae87a052321749c62}{P\+R\+I\+N\+T\+R\+ET}~void $\ast$adr = \+\_\+\+Address\+Of\+Return\+Address(); \hyperlink{test__noecho_8c_a3cb9f0894fab1c8fbb0753c9c7c2a8d9}{printf}(\char`\"{}adr return\+: \%p\textbackslash{}n\char`\"{}, adr)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{chkma_8c_a80df6af1f5f785eba43a399bcb235ce4}{test\+\_\+initializer} (void)
+\item 
+void \hyperlink{chkma_8c_a2cc5fafed315346492fef226d1a2e8c2}{test\+\_\+declaration} (void)
+\item 
+void \hyperlink{chkma_8c_afdc34f951eac2e28d54d54d0cac728fc}{test\+\_\+pl\+\_\+jump\+\_\+and\+\_\+pl\+\_\+ret} (void)
+\item 
+void \hyperlink{chkma_8c_abafc5a619639ccc16e15a55c4d8ad7d5}{ma\+\_\+test\+\_\+pl\+\_\+jump\+\_\+and\+\_\+pl\+\_\+ret} (void)
+\item 
+void \hyperlink{chkma_8c_a429b39b345f6255f1e8f58ea76215758}{test\+\_\+pl\+\_\+call\+\_\+and\+\_\+pl\+\_\+ret\+\_\+and\+\_\+pl\+\_\+fail} (void)
+\item 
+void \hyperlink{chkma_8c_ae22476b49f64ab3fe8787ef2131611b0}{ma\+\_\+test\+\_\+pl\+\_\+call\+\_\+and\+\_\+pl\+\_\+ret\+\_\+and\+\_\+pl\+\_\+fail} (void)
+\item 
+void \hyperlink{chkma_8c_a75a1ef7b86dfe5c8ec9b79b767cb809c}{test\+\_\+prep\+\_\+cp\+\_\+and\+\_\+here\+\_\+cp} (void)
+\item 
+void \hyperlink{chkma_8c_a1858554fa2ea3daaac68285497b202f2}{ma\+\_\+test\+\_\+prep\+\_\+cp\+\_\+and\+\_\+here\+\_\+cp} (void)
+\item 
+void \hyperlink{chkma_8c_afa550abc2913f0b7b2ad33d22f782ee3}{test\+\_\+jump\+\_\+and\+\_\+c\+\_\+ret} (void)
+\item 
+void \hyperlink{chkma_8c_a2123f72a1b32a1ca6964f0dfa08fcc75}{ma\+\_\+test\+\_\+jump\+\_\+and\+\_\+c\+\_\+ret} (void)
+\item 
+void \hyperlink{chkma_8c_a4c00f8935f46c3442227c222aa880df7}{test\+\_\+call\+\_\+c} (void)
+\item 
+void \hyperlink{chkma_8c_a1d705bf72055c5532140150e428a37b3}{ma\+\_\+test\+\_\+call\+\_\+c} (void)
+\item 
+void \hyperlink{chkma_8c_a9b96d56f6e08fc3b46e2ce5065603cbc}{test\+\_\+move\+\_\+x\+\_\+y} (void)
+\item 
+void \hyperlink{chkma_8c_a3f3cda18c1706c82ae4e7e6fd8e7c35f}{ma\+\_\+test\+\_\+move\+\_\+x\+\_\+y} (void)
+\item 
+void \hyperlink{chkma_8c_a0ed90d6f9231b7ca83b76b79f7bd7c70}{test\+\_\+move\+\_\+y\+\_\+x} (void)
+\item 
+void \hyperlink{chkma_8c_a6f3c15faff7cb4571d1e8149e4daee76}{ma\+\_\+test\+\_\+move\+\_\+y\+\_\+x} (void)
+\item 
+void \hyperlink{chkma_8c_a8b3174f03a9950bcc9b44aa4d7b61971}{test\+\_\+arg\+\_\+int} (void)
+\item 
+void \hyperlink{chkma_8c_ad49a4573579bc9bd93685011504d469c}{ma\+\_\+test\+\_\+arg\+\_\+int} (void)
+\item 
+void \hyperlink{chkma_8c_a1a4f378356fc0efd6ddc75ea80576804}{test\+\_\+arg\+\_\+double} (void)
+\item 
+void \hyperlink{chkma_8c_ad03fa4ed475f170abaaf34c8740d5a8c}{ma\+\_\+test\+\_\+arg\+\_\+double} (void)
+\item 
+void \hyperlink{chkma_8c_a2bb8f61e6ce11ab8768e80c296e47a94}{test\+\_\+arg\+\_\+mixed} (void)
+\item 
+void \hyperlink{chkma_8c_a0eb5558dbc11484895958ad50b2f163e}{ma\+\_\+test\+\_\+arg\+\_\+mixed} (void)
+\item 
+void \hyperlink{chkma_8c_a1d1d2915d3118297322173e39c660a9b}{test\+\_\+arg\+\_\+string} (void)
+\item 
+void \hyperlink{chkma_8c_a51c3765aaeb51ac839376852e788ecb0}{ma\+\_\+test\+\_\+arg\+\_\+string} (void)
+\item 
+void \hyperlink{chkma_8c_aa8aea4130a97898dbdb116e533875af2}{test\+\_\+arg\+\_\+mem\+\_\+l} (void)
+\item 
+void \hyperlink{chkma_8c_ada4ed805a01a93a7cfdb2be625c37100}{ma\+\_\+test\+\_\+arg\+\_\+mem\+\_\+l} (void)
+\item 
+void \hyperlink{chkma_8c_a5aae0127af15184938e37c2ba07b49df}{test\+\_\+arg\+\_\+x} (void)
+\item 
+void \hyperlink{chkma_8c_a66fc58b89654a31db7de924418e3a9a9}{ma\+\_\+test\+\_\+arg\+\_\+x} (void)
+\item 
+void \hyperlink{chkma_8c_ab3e49deca4451d48dd31a376cb2cb92f}{test\+\_\+arg\+\_\+y} (void)
+\item 
+void \hyperlink{chkma_8c_a09f559e84924ab889ee5cdafc05359c7}{ma\+\_\+test\+\_\+arg\+\_\+y} (void)
+\item 
+void \hyperlink{chkma_8c_a61e3fd8668cfd47802dc53a90d121430}{test\+\_\+arg\+\_\+fl\+\_\+array} (void)
+\item 
+void \hyperlink{chkma_8c_ae5f6d126df88d3cd478d639c74a8b438}{ma\+\_\+test\+\_\+arg\+\_\+fl\+\_\+array} (void)
+\item 
+void \hyperlink{chkma_8c_ae4b313d2738c2d3c3694982515b86387}{test\+\_\+arg\+\_\+fd\+\_\+array} (void)
+\item 
+void \hyperlink{chkma_8c_afdc9c56ac8b4d3a0af170ed9986bdfb7}{ma\+\_\+test\+\_\+arg\+\_\+fd\+\_\+array} (void)
+\item 
+void \hyperlink{chkma_8c_ad2716c4958ccbcea53aed5adb333b3bd}{test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args} (void)
+\item 
+void \hyperlink{chkma_8c_af1f2709e7389a522e96e4e9f8c00c1d8}{ma\+\_\+test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args} (void)
+\item 
+void \hyperlink{chkma_8c_a502fe39ca1ad5994c9c50c157266e7fb}{test\+\_\+jump\+\_\+ret} (void)
+\item 
+void \hyperlink{chkma_8c_a6827f53fad6063c4e343d009b24e3dea}{ma\+\_\+test\+\_\+jump\+\_\+ret} (void)
+\item 
+void \hyperlink{chkma_8c_ae95800f327f1b609991b18ab76ed85a8}{test\+\_\+fail\+\_\+ret} (void)
+\item 
+void \hyperlink{chkma_8c_a71cc4f403b44156b571130f2d3194089}{ma\+\_\+test\+\_\+fail\+\_\+ret} (void)
+\item 
+void \hyperlink{chkma_8c_a6c759f036d3389b0ed1b52be674e6af6}{test\+\_\+move\+\_\+ret\+\_\+mem} (void)
+\item 
+void \hyperlink{chkma_8c_a6d30c15cbcbe4777774b387de1766938}{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+mem} (void)
+\item 
+void \hyperlink{chkma_8c_aafc45423d0c5ab55ee3506251ad63195}{test\+\_\+move\+\_\+ret\+\_\+x} (void)
+\item 
+void \hyperlink{chkma_8c_a1f82088f69e252ad49698a8fc7b5b9f1}{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+x} (void)
+\item 
+void \hyperlink{chkma_8c_a1fa90b0c7c85c20f6f9f89314fe196b2}{test\+\_\+move\+\_\+ret\+\_\+y} (void)
+\item 
+void \hyperlink{chkma_8c_ad10e2fc3113f95468e50027d828d9e94}{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+y} (void)
+\item 
+void \hyperlink{chkma_8c_a22a5aa029ae8d73cdfd80f7cd8686bc0}{test\+\_\+move\+\_\+ret\+\_\+fl} (void)
+\item 
+void \hyperlink{chkma_8c_a67701fe4c1a814984a221bdc89740039}{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+fl} (void)
+\item 
+void \hyperlink{chkma_8c_a53bdf687f1036373afc8292b8095839a}{test\+\_\+move\+\_\+ret\+\_\+fd} (void)
+\item 
+void \hyperlink{chkma_8c_a7e0c9e98149c852c0cb76309cb547f9f}{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+fd} (void)
+\item 
+void \hyperlink{chkma_8c_a10685090078bd9a4d309a87995d2961a}{test\+\_\+switch\+\_\+ret} (void)
+\item 
+void \hyperlink{chkma_8c_ae9f71a0ebefa8b9fca63efff41191a4d}{ma\+\_\+test\+\_\+switch\+\_\+ret} (void)
+\item 
+int \hyperlink{chkma_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{chkma_8c_a172941209fb638e181c03f334a8221e2}{Init\+\_\+\+CP} (Wam\+Cont p)
+\item 
+void \hyperlink{chkma_8c_a76395f6148da26c58ecf673b337a7cab}{Write\+\_\+\+Long} (\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+void \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_a5ea448aac9af14293394d05ca8fcfd9d}{Allocate} (int \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+void \hyperlink{chkma_8c_a9a6d61b202713bc92fa4570d25cf8082}{Save\+\_\+\+CP} ()
+\item 
+void \hyperlink{chkma_8c_a5fdb8fbc2ffb0a1d6b11c6aaafab2a4e}{Restore\+\_\+\+CP} ()
+\item 
+void \hyperlink{chkma_8c_a518288848eb2471573b6581060452931}{error} (void)
+\item 
+void \hyperlink{chkma_8c_a76794c8328cf0a40fb30d8e2167b03ba}{Call\+\_\+\+Pl} (void($\ast$code)(), int must\+\_\+succeed)
+\item 
+void \hyperlink{chkma_8c_a87e18bdc6cbbf5ca2a4353ba4c64534f}{Initializer} (void)
+\item 
+void \hyperlink{chkma_8c_a3d2f3b8a40dc1e50bd8238aa82993258}{Several\+\_\+\+Calls} ()
+\item 
+void \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_ad8ebbe8c970d2820bbc61c630c849ee6}{test\+\_\+call\+\_\+c1} (void)
+\item 
+void \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_a2baf23d8877ebd75aed3f49dd20bc6b9}{test\+\_\+arg\+\_\+int1} (int a, int b, int \hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}, int \hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d})
+\item 
+void \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_ae9ef97c28dd4e69f2589ac1236aa7e3b}{test\+\_\+arg\+\_\+double1} (double a, double b, double \hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}, double \hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d}, double e, double \hyperlink{asm_8c_ad1351d85ffec3c1176dc31d8e8f8e28a}{f})
+\item 
+void \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_a58159fd46a8a2e924aa7181a8d12bd56}{test\+\_\+arg\+\_\+mixed1} (int ai, double a, double b, int bi, int ci, double \hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}, int di)
+\item 
+void \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_a22f7f0a0440311771c4a234e3b2e6316}{test\+\_\+arg\+\_\+string1} (char $\ast$a, char $\ast$b)
+\item 
+void \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_a6312cb984c61f2f1238044ba21aedc63}{test\+\_\+arg\+\_\+mem\+\_\+l1} (\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} a, \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} b, \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} $\ast$\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}, \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d}, \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} e, \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} $\ast$\hyperlink{asm_8c_ad1351d85ffec3c1176dc31d8e8f8e28a}{f})
+\item 
+void \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_ac4be535391923fcddd7444307c3d046c}{test\+\_\+arg\+\_\+x1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} a, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$b, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} \hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$\hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d})
+\item 
+void \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_a1858eabb5a326f8e9c87b2b62a64f61e}{test\+\_\+arg\+\_\+y1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} a, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$b, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} \hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$\hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d})
+\item 
+void \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_a4b545b177d86fb478b074a8bde93ceab}{test\+\_\+arg\+\_\+fl\+\_\+array1} (\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} a, \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} b, \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} $\ast$\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}, \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} $\ast$\hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d})
+\item 
+void \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_aed6464aab7b035cbf7c958a83e44679c}{test\+\_\+arg\+\_\+fd\+\_\+array1} (double a, double b, double $\ast$\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}, double $\ast$\hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d})
+\item 
+void \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_a777ecd243e571163cbfbc95191d19cee}{test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} n0, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} n1, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} n2, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} n3, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} n4, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} n5, void($\ast$a)(), \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} b, int \hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}, int \hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d}, double e, char $\ast$\hyperlink{asm_8c_ad1351d85ffec3c1176dc31d8e8f8e28a}{f}, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} \hyperlink{asm_8c_a89db5465c8320ec25b0e6401c052b871}{g}, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$h, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} \hyperlink{chkma_8c_a6389b0bf0138857012de69e968d26c43}{i}, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$j, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} k, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$l, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} m, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$n, double o)
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_aa71a992bd48cbb620133cf75ca486cda}{test\+\_\+jump\+\_\+ret1} (\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} addr)
+\item 
+void \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_a63b6c547f57b982a3f25f08bf7bca85d}{test\+\_\+jump\+\_\+ret2} (void)
+\item 
+int \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_a5f5171dd0f6256053f95848e5fc0e91f}{test\+\_\+fail\+\_\+ret1} (void)
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_a4e6fe25d8020b3187b979426427f0785}{test\+\_\+move\+\_\+ret\+\_\+mem1} (void)
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_ad11d147765389fff88b50e1512df58c4}{test\+\_\+move\+\_\+ret\+\_\+x1} (void)
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_a72e9700c352dc6071cdfb16880a6d491}{test\+\_\+move\+\_\+ret\+\_\+y1} (void)
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_a0e6d64f561a1abe49ed76b459855e71e}{test\+\_\+move\+\_\+ret\+\_\+fl1} (void)
+\item 
+double \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_a006222cef8a1d20b4b6d729cbf72400c}{test\+\_\+move\+\_\+ret\+\_\+fd1} (void)
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_aa93abbc9b8f1d1726a1a0211892f5bd1}{test\+\_\+switch\+\_\+ret1} (void)
+\item 
+void \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_a6b4f50d21ac24ebc317abf9d4b97cab5}{test\+\_\+switch\+\_\+ret2} (int k)
+\item 
+void \hyperlink{chkma_8c_a8ed160600ffd92b54cd6e0f16201c04e}{Pl\+\_\+\+Init\+\_\+\+Atom} (void)
+\item 
+void \hyperlink{chkma_8c_a3a22badced4bdb778f20f64863192492}{Pl\+\_\+\+Init\+\_\+\+Oper} (void)
+\item 
+void \hyperlink{chkma_8c_aa0fb875bb38ef710cad2276c7c843dc0}{Pl\+\_\+\+Init\+\_\+\+Pred} (void)
+\item 
+void \hyperlink{chkma_8c_a7ade20c3e93babe3edde8f66a51e3127}{Pl\+\_\+\+Init\+\_\+\+Machine} (void)
+\item 
+void \hyperlink{chkma_8c_a061044c2c361926012bb09518f4428fa}{Pl\+\_\+\+Find\+\_\+\+Linked\+\_\+\+Objects} (void)
+\item 
+void \hyperlink{chkma_8c_a5113d6cfce9dd34c6baf1037046b9839}{Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Engine} (void)
+\item 
+int \hyperlink{chkma_8c_a068c993d95113a2ba7643918e68eedb3}{Pl\+\_\+\+Create\+\_\+\+Atom} (char $\ast$\hyperlink{test__oc__defs_8h_abc1e86d7c344fe34ff09e72d4595ab7e}{name})
+\item 
+\hyperlink{structPredInf}{Pred\+Inf} $\ast$\hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_aa8ebf08b93ec7e4bde2c544c70ba4c39}{Pl\+\_\+\+Lookup\+\_\+\+Pred} (int func, int arity)
+\item 
+void \hyperlink{chkma_8c_aee65d332f1e4ff3a8796bda38d329766}{Pl\+\_\+\+Allocate\+\_\+\+Stacks} (void)
+\item 
+void \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{chkma_8c_a482d0f0a0b2ac53fc463aaa753ce071e}{Pl\+\_\+\+Create\+\_\+\+Choice\+\_\+\+Point} (Code\+Ptr codep\+\_\+alt, int arity)
+\item 
+void \hyperlink{chkma_8c_a1f64da6d81a7799fe8411fffab098569}{Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Solver} (void)
+\item 
+void \hyperlink{chkma_8c_af9ad0d76d0a941dd34530d628ec61eb0}{Pl\+\_\+\+Fd\+\_\+\+Reset\+\_\+\+Solver} (void)
+\item 
+void \hyperlink{chkma_8c_a7c259af09b573fc4349c293d4af50e1f}{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler} (void)
+\item 
+int \hyperlink{chkma_8c_a9aa302a514197c55c9c8b52fb59ae9f3}{Is\+\_\+\+Win32\+\_\+\+S\+E\+GV} (void $\ast$exp)
+\item 
+void \hyperlink{chkma_8c_a190fea7904d7245d4fdc5e9404a07907}{Pl\+\_\+\+Fatal\+\_\+\+Error} (char $\ast$\hyperlink{hexfilter_8c_a5407a229a5e1a319d75fb29542c83eae}{format},...)
+\item 
+void $\ast$ \hyperlink{chkma_8c_aae9007e689a787822f7c6e98322ed456}{Pl\+\_\+\+Dummy\+\_\+\+Ptr} (void $\ast$p)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{gprolog_8h_acb2c90983d7f8b591a1c86ba37348702}{Pl\+U\+Long} \hyperlink{chkma_8c_a623b089b0facf4a785bad3017e240bcf}{pl\+\_\+max\+\_\+atom}
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{chkma_8c_a9933bd583c1707970de6ee3d5ab93741}{pl\+\_\+foreign\+\_\+long} \mbox{[}\hyperlink{pl__params_8h_aaae9c63825d082f85ec725f9f23a147d}{N\+B\+\_\+\+O\+F\+\_\+\+X\+\_\+\+R\+E\+GS}\mbox{]}
+\item 
+double \hyperlink{chkma_8c_a160a0ecc4175c7e2772fcf0f922c1587}{pl\+\_\+foreign\+\_\+double} \mbox{[}\hyperlink{pl__params_8h_aaae9c63825d082f85ec725f9f23a147d}{N\+B\+\_\+\+O\+F\+\_\+\+X\+\_\+\+R\+E\+GS}\mbox{]}
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} $\ast$ \hyperlink{chkma_8c_a0149438fae9995190d7fef39bcc10c3f}{pl\+\_\+base\+\_\+fl} = \hyperlink{asm__inst_8c_a92bf4c8f10e5d60698ec28f7a0735ed2}{pl\+\_\+foreign\+\_\+long}
+\item 
+double $\ast$ \hyperlink{chkma_8c_ad72cf4e5a6ffef14f3ee54de4f8553de}{pl\+\_\+base\+\_\+fd} = \hyperlink{asm__inst_8c_a122c0e7b25e917dc95bed412a67708d0}{pl\+\_\+foreign\+\_\+double}
+\item 
+\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} \hyperlink{chkma_8c_a44ace8f43d7bffc6f83773835fb3415f}{stack} \mbox{[}4096\mbox{]}
+\item 
+int \hyperlink{chkma_8c_a86b667e9fcefc20145a0052a662dd961}{initialised} = 0
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{chkma_8c_ad5c67729c64bef3313e8f565dc73e6dd}{x}
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{chkma_8c_aa96d8953c54e24349f29acbf80a9edfc}{ret}
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{chkma_8c_a7899c63ad5592627cb29aec57c84f63c}{swt} \mbox{[}$\,$\mbox{]} = \{ 0, 4, 15, 4095, 123456, 2456789, -\/1 \}
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{chkma_8c_a6389b0bf0138857012de69e968d26c43}{i}
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{chkma_8c_aa8e282dc32f8797cd77fae84019aaa0e}{M\+A\+\_\+\+A\+R\+R\+AY} \mbox{[}5000\mbox{]}
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{chkma_8c_a0c0ab17dd1f15620c30a7b7fe2f6dd61}{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R1}
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{chkma_8c_a97ba36aee7874bddc25638d51030edc2}{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R2}
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{chkma_8c_a9a49eb8cc0fa07176e7bfa6b18911058}{M\+A\+\_\+\+L\+O\+C\+A\+L\+\_\+\+V\+A\+R2}
+\item 
+void($\ast$ \hyperlink{chkma_8c_a9cbc66f6e914c92097ad77eead93e15e}{tbl} \mbox{[}$\,$\mbox{]})()
+\item 
+Wam\+Cont \hyperlink{chkma_8c_a4d1bb72de726596da68bd2532a807007}{save\+\_\+\+CP}
+\item 
+\hyperlink{structAtomInf}{Atom\+Inf} $\ast$ \hyperlink{chkma_8c_ae19bc058a52e904b7be9a3b9f2fdd996}{pl\+\_\+atom\+\_\+tbl}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{chkma.\+c@{chkma.\+c}!FC@{FC}}
+\index{FC@{FC}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{FC}{FC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define FC~/$\ast$ define FC to force arch\+\_\+dep.\+h to {\bf no} use FC $\ast$/}\hypertarget{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{}\label{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}
+\index{chkma.\+c@{chkma.\+c}!I\+F\+\_\+\+N\+O\+\_\+\+F\+D\+\_\+\+F\+I\+LE@{I\+F\+\_\+\+N\+O\+\_\+\+F\+D\+\_\+\+F\+I\+LE}}
+\index{I\+F\+\_\+\+N\+O\+\_\+\+F\+D\+\_\+\+F\+I\+LE@{I\+F\+\_\+\+N\+O\+\_\+\+F\+D\+\_\+\+F\+I\+LE}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{I\+F\+\_\+\+N\+O\+\_\+\+F\+D\+\_\+\+F\+I\+LE}{IF_NO_FD_FILE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+F\+\_\+\+N\+O\+\_\+\+F\+D\+\_\+\+F\+I\+LE}\hypertarget{chkma_8c_a400fb68510bb049da097c0fbe34641ac}{}\label{chkma_8c_a400fb68510bb049da097c0fbe34641ac}
+\index{chkma.\+c@{chkma.\+c}!M\+A\+\_\+\+A\+R\+R\+AY@{M\+A\+\_\+\+A\+R\+R\+AY}}
+\index{M\+A\+\_\+\+A\+R\+R\+AY@{M\+A\+\_\+\+A\+R\+R\+AY}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+\_\+\+A\+R\+R\+AY}{MA_ARRAY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+\_\+\+A\+R\+R\+AY~{\bf ma\+\_\+array}}\hypertarget{chkma_8c_ab605c0d8baa1e2525ffcc094e07298f2}{}\label{chkma_8c_ab605c0d8baa1e2525ffcc094e07298f2}
+\index{chkma.\+c@{chkma.\+c}!M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R1@{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R1}}
+\index{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R1@{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R1}{MA_GLOBAL_VAR1}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R1~{\bf ma\+\_\+global\+\_\+var1}}\hypertarget{chkma_8c_a952cc1e93577435a55bab93fbb8ad489}{}\label{chkma_8c_a952cc1e93577435a55bab93fbb8ad489}
+\index{chkma.\+c@{chkma.\+c}!M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R2@{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R2}}
+\index{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R2@{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R2}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R2}{MA_GLOBAL_VAR2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R2~{\bf ma\+\_\+global\+\_\+var2}}\hypertarget{chkma_8c_a0c0bff4135f343ed5581770b19a77b37}{}\label{chkma_8c_a0c0bff4135f343ed5581770b19a77b37}
+\index{chkma.\+c@{chkma.\+c}!P\+R\+I\+N\+T\+R\+ET@{P\+R\+I\+N\+T\+R\+ET}}
+\index{P\+R\+I\+N\+T\+R\+ET@{P\+R\+I\+N\+T\+R\+ET}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{P\+R\+I\+N\+T\+R\+ET}{PRINTRET}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+I\+N\+T\+R\+ET~void $\ast$adr = \+\_\+\+Address\+Of\+Return\+Address(); {\bf printf}(\char`\"{}adr return\+: \%p\textbackslash{}n\char`\"{}, adr)}\hypertarget{chkma_8c_ac882a2c03a5069fae87a052321749c62}{}\label{chkma_8c_ac882a2c03a5069fae87a052321749c62}
+
+
+\subsection{Function Documentation}
+\index{chkma.\+c@{chkma.\+c}!Allocate@{Allocate}}
+\index{Allocate@{Allocate}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Allocate(int x)}{Allocate(int x)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf FC} Allocate (
+\begin{DoxyParamCaption}
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a5ea448aac9af14293394d05ca8fcfd9d}{}\label{chkma_8c_a5ea448aac9af14293394d05ca8fcfd9d}
+\index{chkma.\+c@{chkma.\+c}!Call\+\_\+\+Pl@{Call\+\_\+\+Pl}}
+\index{Call\+\_\+\+Pl@{Call\+\_\+\+Pl}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Call\+\_\+\+Pl(void($\ast$code)(), int must\+\_\+succeed)}{Call_Pl(void(*code)(), int must_succeed)}}]{\setlength{\rightskip}{0pt plus 5cm}void Call\+\_\+\+Pl (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)()}]{code, }
+\item[{int}]{must\+\_\+succeed}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a76794c8328cf0a40fb30d8e2167b03ba}{}\label{chkma_8c_a76794c8328cf0a40fb30d8e2167b03ba}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a76794c8328cf0a40fb30d8e2167b03ba_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{chkma_8c_a76794c8328cf0a40fb30d8e2167b03ba_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!error@{error}}
+\index{error@{error}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{error(void)}{error(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void error (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a518288848eb2471573b6581060452931}{}\label{chkma_8c_a518288848eb2471573b6581060452931}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{chkma_8c_a518288848eb2471573b6581060452931_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!Init\+\_\+\+CP@{Init\+\_\+\+CP}}
+\index{Init\+\_\+\+CP@{Init\+\_\+\+CP}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Init\+\_\+\+C\+P(\+Wam\+Cont p)}{Init_CP(WamCont p)}}]{\setlength{\rightskip}{0pt plus 5cm}void Init\+\_\+\+CP (
+\begin{DoxyParamCaption}
+\item[{Wam\+Cont}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a172941209fb638e181c03f334a8221e2}{}\label{chkma_8c_a172941209fb638e181c03f334a8221e2}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{chkma_8c_a172941209fb638e181c03f334a8221e2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!Initializer@{Initializer}}
+\index{Initializer@{Initializer}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Initializer(void)}{Initializer(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Initializer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a87e18bdc6cbbf5ca2a4353ba4c64534f}{}\label{chkma_8c_a87e18bdc6cbbf5ca2a4353ba4c64534f}
+\index{chkma.\+c@{chkma.\+c}!Is\+\_\+\+Win32\+\_\+\+S\+E\+GV@{Is\+\_\+\+Win32\+\_\+\+S\+E\+GV}}
+\index{Is\+\_\+\+Win32\+\_\+\+S\+E\+GV@{Is\+\_\+\+Win32\+\_\+\+S\+E\+GV}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Is\+\_\+\+Win32\+\_\+\+S\+E\+G\+V(void $\ast$exp)}{Is_Win32_SEGV(void *exp)}}]{\setlength{\rightskip}{0pt plus 5cm}int Is\+\_\+\+Win32\+\_\+\+S\+E\+GV (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{exp}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a9aa302a514197c55c9c8b52fb59ae9f3}{}\label{chkma_8c_a9aa302a514197c55c9c8b52fb59ae9f3}
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+arg\+\_\+double@{ma\+\_\+test\+\_\+arg\+\_\+double}}
+\index{ma\+\_\+test\+\_\+arg\+\_\+double@{ma\+\_\+test\+\_\+arg\+\_\+double}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+arg\+\_\+double(void)}{ma_test_arg_double(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+arg\+\_\+double (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_ad03fa4ed475f170abaaf34c8740d5a8c}{}\label{chkma_8c_ad03fa4ed475f170abaaf34c8740d5a8c}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{chkma_8c_ad03fa4ed475f170abaaf34c8740d5a8c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+arg\+\_\+fd\+\_\+array@{ma\+\_\+test\+\_\+arg\+\_\+fd\+\_\+array}}
+\index{ma\+\_\+test\+\_\+arg\+\_\+fd\+\_\+array@{ma\+\_\+test\+\_\+arg\+\_\+fd\+\_\+array}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+arg\+\_\+fd\+\_\+array(void)}{ma_test_arg_fd_array(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+arg\+\_\+fd\+\_\+array (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_afdc9c56ac8b4d3a0af170ed9986bdfb7}{}\label{chkma_8c_afdc9c56ac8b4d3a0af170ed9986bdfb7}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{chkma_8c_afdc9c56ac8b4d3a0af170ed9986bdfb7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+arg\+\_\+fl\+\_\+array@{ma\+\_\+test\+\_\+arg\+\_\+fl\+\_\+array}}
+\index{ma\+\_\+test\+\_\+arg\+\_\+fl\+\_\+array@{ma\+\_\+test\+\_\+arg\+\_\+fl\+\_\+array}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+arg\+\_\+fl\+\_\+array(void)}{ma_test_arg_fl_array(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+arg\+\_\+fl\+\_\+array (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_ae5f6d126df88d3cd478d639c74a8b438}{}\label{chkma_8c_ae5f6d126df88d3cd478d639c74a8b438}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{chkma_8c_ae5f6d126df88d3cd478d639c74a8b438_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+arg\+\_\+int@{ma\+\_\+test\+\_\+arg\+\_\+int}}
+\index{ma\+\_\+test\+\_\+arg\+\_\+int@{ma\+\_\+test\+\_\+arg\+\_\+int}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+arg\+\_\+int(void)}{ma_test_arg_int(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+arg\+\_\+int (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_ad49a4573579bc9bd93685011504d469c}{}\label{chkma_8c_ad49a4573579bc9bd93685011504d469c}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{chkma_8c_ad49a4573579bc9bd93685011504d469c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+arg\+\_\+mem\+\_\+l@{ma\+\_\+test\+\_\+arg\+\_\+mem\+\_\+l}}
+\index{ma\+\_\+test\+\_\+arg\+\_\+mem\+\_\+l@{ma\+\_\+test\+\_\+arg\+\_\+mem\+\_\+l}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+arg\+\_\+mem\+\_\+l(void)}{ma_test_arg_mem_l(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+arg\+\_\+mem\+\_\+l (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_ada4ed805a01a93a7cfdb2be625c37100}{}\label{chkma_8c_ada4ed805a01a93a7cfdb2be625c37100}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_ada4ed805a01a93a7cfdb2be625c37100_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+arg\+\_\+mixed@{ma\+\_\+test\+\_\+arg\+\_\+mixed}}
+\index{ma\+\_\+test\+\_\+arg\+\_\+mixed@{ma\+\_\+test\+\_\+arg\+\_\+mixed}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+arg\+\_\+mixed(void)}{ma_test_arg_mixed(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+arg\+\_\+mixed (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a0eb5558dbc11484895958ad50b2f163e}{}\label{chkma_8c_a0eb5558dbc11484895958ad50b2f163e}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{chkma_8c_a0eb5558dbc11484895958ad50b2f163e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+arg\+\_\+string@{ma\+\_\+test\+\_\+arg\+\_\+string}}
+\index{ma\+\_\+test\+\_\+arg\+\_\+string@{ma\+\_\+test\+\_\+arg\+\_\+string}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+arg\+\_\+string(void)}{ma_test_arg_string(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+arg\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a51c3765aaeb51ac839376852e788ecb0}{}\label{chkma_8c_a51c3765aaeb51ac839376852e788ecb0}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{chkma_8c_a51c3765aaeb51ac839376852e788ecb0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+arg\+\_\+x@{ma\+\_\+test\+\_\+arg\+\_\+x}}
+\index{ma\+\_\+test\+\_\+arg\+\_\+x@{ma\+\_\+test\+\_\+arg\+\_\+x}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+arg\+\_\+x(void)}{ma_test_arg_x(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+arg\+\_\+x (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a66fc58b89654a31db7de924418e3a9a9}{}\label{chkma_8c_a66fc58b89654a31db7de924418e3a9a9}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{chkma_8c_a66fc58b89654a31db7de924418e3a9a9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+arg\+\_\+y@{ma\+\_\+test\+\_\+arg\+\_\+y}}
+\index{ma\+\_\+test\+\_\+arg\+\_\+y@{ma\+\_\+test\+\_\+arg\+\_\+y}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+arg\+\_\+y(void)}{ma_test_arg_y(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+arg\+\_\+y (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a09f559e84924ab889ee5cdafc05359c7}{}\label{chkma_8c_a09f559e84924ab889ee5cdafc05359c7}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{chkma_8c_a09f559e84924ab889ee5cdafc05359c7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+call\+\_\+c@{ma\+\_\+test\+\_\+call\+\_\+c}}
+\index{ma\+\_\+test\+\_\+call\+\_\+c@{ma\+\_\+test\+\_\+call\+\_\+c}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+call\+\_\+c(void)}{ma_test_call_c(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+call\+\_\+c (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a1d705bf72055c5532140150e428a37b3}{}\label{chkma_8c_a1d705bf72055c5532140150e428a37b3}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{chkma_8c_a1d705bf72055c5532140150e428a37b3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args@{ma\+\_\+test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args}}
+\index{ma\+\_\+test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args@{ma\+\_\+test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args(void)}{ma_test_call_c_lot_args(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_af1f2709e7389a522e96e4e9f8c00c1d8}{}\label{chkma_8c_af1f2709e7389a522e96e4e9f8c00c1d8}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_af1f2709e7389a522e96e4e9f8c00c1d8_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+fail\+\_\+ret@{ma\+\_\+test\+\_\+fail\+\_\+ret}}
+\index{ma\+\_\+test\+\_\+fail\+\_\+ret@{ma\+\_\+test\+\_\+fail\+\_\+ret}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+fail\+\_\+ret(void)}{ma_test_fail_ret(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+fail\+\_\+ret (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a71cc4f403b44156b571130f2d3194089}{}\label{chkma_8c_a71cc4f403b44156b571130f2d3194089}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{chkma_8c_a71cc4f403b44156b571130f2d3194089_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+jump\+\_\+and\+\_\+c\+\_\+ret@{ma\+\_\+test\+\_\+jump\+\_\+and\+\_\+c\+\_\+ret}}
+\index{ma\+\_\+test\+\_\+jump\+\_\+and\+\_\+c\+\_\+ret@{ma\+\_\+test\+\_\+jump\+\_\+and\+\_\+c\+\_\+ret}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+jump\+\_\+and\+\_\+c\+\_\+ret(void)}{ma_test_jump_and_c_ret(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+jump\+\_\+and\+\_\+c\+\_\+ret (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a2123f72a1b32a1ca6964f0dfa08fcc75}{}\label{chkma_8c_a2123f72a1b32a1ca6964f0dfa08fcc75}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{chkma_8c_a2123f72a1b32a1ca6964f0dfa08fcc75_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+jump\+\_\+ret@{ma\+\_\+test\+\_\+jump\+\_\+ret}}
+\index{ma\+\_\+test\+\_\+jump\+\_\+ret@{ma\+\_\+test\+\_\+jump\+\_\+ret}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+jump\+\_\+ret(void)}{ma_test_jump_ret(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+jump\+\_\+ret (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a6827f53fad6063c4e343d009b24e3dea}{}\label{chkma_8c_a6827f53fad6063c4e343d009b24e3dea}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{chkma_8c_a6827f53fad6063c4e343d009b24e3dea_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+fd@{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+fd}}
+\index{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+fd@{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+fd}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+fd(void)}{ma_test_move_ret_fd(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+fd (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a7e0c9e98149c852c0cb76309cb547f9f}{}\label{chkma_8c_a7e0c9e98149c852c0cb76309cb547f9f}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{chkma_8c_a7e0c9e98149c852c0cb76309cb547f9f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+fl@{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+fl}}
+\index{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+fl@{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+fl}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+fl(void)}{ma_test_move_ret_fl(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+fl (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a67701fe4c1a814984a221bdc89740039}{}\label{chkma_8c_a67701fe4c1a814984a221bdc89740039}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{chkma_8c_a67701fe4c1a814984a221bdc89740039_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+mem@{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+mem}}
+\index{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+mem@{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+mem}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+mem(void)}{ma_test_move_ret_mem(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+mem (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a6d30c15cbcbe4777774b387de1766938}{}\label{chkma_8c_a6d30c15cbcbe4777774b387de1766938}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{chkma_8c_a6d30c15cbcbe4777774b387de1766938_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+x@{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+x}}
+\index{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+x@{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+x}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+x(void)}{ma_test_move_ret_x(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+x (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a1f82088f69e252ad49698a8fc7b5b9f1}{}\label{chkma_8c_a1f82088f69e252ad49698a8fc7b5b9f1}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{chkma_8c_a1f82088f69e252ad49698a8fc7b5b9f1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+y@{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+y}}
+\index{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+y@{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+y}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+y(void)}{ma_test_move_ret_y(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+move\+\_\+ret\+\_\+y (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_ad10e2fc3113f95468e50027d828d9e94}{}\label{chkma_8c_ad10e2fc3113f95468e50027d828d9e94}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{chkma_8c_ad10e2fc3113f95468e50027d828d9e94_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+move\+\_\+x\+\_\+y@{ma\+\_\+test\+\_\+move\+\_\+x\+\_\+y}}
+\index{ma\+\_\+test\+\_\+move\+\_\+x\+\_\+y@{ma\+\_\+test\+\_\+move\+\_\+x\+\_\+y}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+move\+\_\+x\+\_\+y(void)}{ma_test_move_x_y(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+move\+\_\+x\+\_\+y (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a3f3cda18c1706c82ae4e7e6fd8e7c35f}{}\label{chkma_8c_a3f3cda18c1706c82ae4e7e6fd8e7c35f}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{chkma_8c_a3f3cda18c1706c82ae4e7e6fd8e7c35f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+move\+\_\+y\+\_\+x@{ma\+\_\+test\+\_\+move\+\_\+y\+\_\+x}}
+\index{ma\+\_\+test\+\_\+move\+\_\+y\+\_\+x@{ma\+\_\+test\+\_\+move\+\_\+y\+\_\+x}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+move\+\_\+y\+\_\+x(void)}{ma_test_move_y_x(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+move\+\_\+y\+\_\+x (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a6f3c15faff7cb4571d1e8149e4daee76}{}\label{chkma_8c_a6f3c15faff7cb4571d1e8149e4daee76}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{chkma_8c_a6f3c15faff7cb4571d1e8149e4daee76_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+pl\+\_\+call\+\_\+and\+\_\+pl\+\_\+ret\+\_\+and\+\_\+pl\+\_\+fail@{ma\+\_\+test\+\_\+pl\+\_\+call\+\_\+and\+\_\+pl\+\_\+ret\+\_\+and\+\_\+pl\+\_\+fail}}
+\index{ma\+\_\+test\+\_\+pl\+\_\+call\+\_\+and\+\_\+pl\+\_\+ret\+\_\+and\+\_\+pl\+\_\+fail@{ma\+\_\+test\+\_\+pl\+\_\+call\+\_\+and\+\_\+pl\+\_\+ret\+\_\+and\+\_\+pl\+\_\+fail}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+pl\+\_\+call\+\_\+and\+\_\+pl\+\_\+ret\+\_\+and\+\_\+pl\+\_\+fail(void)}{ma_test_pl_call_and_pl_ret_and_pl_fail(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+pl\+\_\+call\+\_\+and\+\_\+pl\+\_\+ret\+\_\+and\+\_\+pl\+\_\+fail (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_ae22476b49f64ab3fe8787ef2131611b0}{}\label{chkma_8c_ae22476b49f64ab3fe8787ef2131611b0}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{chkma_8c_ae22476b49f64ab3fe8787ef2131611b0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+pl\+\_\+jump\+\_\+and\+\_\+pl\+\_\+ret@{ma\+\_\+test\+\_\+pl\+\_\+jump\+\_\+and\+\_\+pl\+\_\+ret}}
+\index{ma\+\_\+test\+\_\+pl\+\_\+jump\+\_\+and\+\_\+pl\+\_\+ret@{ma\+\_\+test\+\_\+pl\+\_\+jump\+\_\+and\+\_\+pl\+\_\+ret}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+pl\+\_\+jump\+\_\+and\+\_\+pl\+\_\+ret(void)}{ma_test_pl_jump_and_pl_ret(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+pl\+\_\+jump\+\_\+and\+\_\+pl\+\_\+ret (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_abafc5a619639ccc16e15a55c4d8ad7d5}{}\label{chkma_8c_abafc5a619639ccc16e15a55c4d8ad7d5}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_abafc5a619639ccc16e15a55c4d8ad7d5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+prep\+\_\+cp\+\_\+and\+\_\+here\+\_\+cp@{ma\+\_\+test\+\_\+prep\+\_\+cp\+\_\+and\+\_\+here\+\_\+cp}}
+\index{ma\+\_\+test\+\_\+prep\+\_\+cp\+\_\+and\+\_\+here\+\_\+cp@{ma\+\_\+test\+\_\+prep\+\_\+cp\+\_\+and\+\_\+here\+\_\+cp}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+prep\+\_\+cp\+\_\+and\+\_\+here\+\_\+cp(void)}{ma_test_prep_cp_and_here_cp(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+prep\+\_\+cp\+\_\+and\+\_\+here\+\_\+cp (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a1858554fa2ea3daaac68285497b202f2}{}\label{chkma_8c_a1858554fa2ea3daaac68285497b202f2}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a1858554fa2ea3daaac68285497b202f2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!ma\+\_\+test\+\_\+switch\+\_\+ret@{ma\+\_\+test\+\_\+switch\+\_\+ret}}
+\index{ma\+\_\+test\+\_\+switch\+\_\+ret@{ma\+\_\+test\+\_\+switch\+\_\+ret}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ma\+\_\+test\+\_\+switch\+\_\+ret(void)}{ma_test_switch_ret(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void ma\+\_\+test\+\_\+switch\+\_\+ret (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_ae9f71a0ebefa8b9fca63efff41191a4d}{}\label{chkma_8c_ae9f71a0ebefa8b9fca63efff41191a4d}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{chkma_8c_ae9f71a0ebefa8b9fca63efff41191a4d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!main@{main}}
+\index{main@{main}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a0ddf1224851353fc92bfbff6f499fa97}{}\label{chkma_8c_a0ddf1224851353fc92bfbff6f499fa97}
+\index{chkma.\+c@{chkma.\+c}!Pl\+\_\+\+Allocate\+\_\+\+Stacks@{Pl\+\_\+\+Allocate\+\_\+\+Stacks}}
+\index{Pl\+\_\+\+Allocate\+\_\+\+Stacks@{Pl\+\_\+\+Allocate\+\_\+\+Stacks}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Allocate\+\_\+\+Stacks(void)}{Pl_Allocate_Stacks(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Allocate\+\_\+\+Stacks (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_aee65d332f1e4ff3a8796bda38d329766}{}\label{chkma_8c_aee65d332f1e4ff3a8796bda38d329766}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_aee65d332f1e4ff3a8796bda38d329766_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!Pl\+\_\+\+Create\+\_\+\+Atom@{Pl\+\_\+\+Create\+\_\+\+Atom}}
+\index{Pl\+\_\+\+Create\+\_\+\+Atom@{Pl\+\_\+\+Create\+\_\+\+Atom}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Create\+\_\+\+Atom(char $\ast$name)}{Pl_Create_Atom(char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Create\+\_\+\+Atom (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a068c993d95113a2ba7643918e68eedb3}{}\label{chkma_8c_a068c993d95113a2ba7643918e68eedb3}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a068c993d95113a2ba7643918e68eedb3_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!Pl\+\_\+\+Create\+\_\+\+Choice\+\_\+\+Point@{Pl\+\_\+\+Create\+\_\+\+Choice\+\_\+\+Point}}
+\index{Pl\+\_\+\+Create\+\_\+\+Choice\+\_\+\+Point@{Pl\+\_\+\+Create\+\_\+\+Choice\+\_\+\+Point}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Create\+\_\+\+Choice\+\_\+\+Point(\+Code\+Ptr codep\+\_\+alt, int arity)}{Pl_Create_Choice_Point(CodePtr codep_alt, int arity)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf FC} Pl\+\_\+\+Create\+\_\+\+Choice\+\_\+\+Point (
+\begin{DoxyParamCaption}
+\item[{Code\+Ptr}]{codep\+\_\+alt, }
+\item[{int}]{arity}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a482d0f0a0b2ac53fc463aaa753ce071e}{}\label{chkma_8c_a482d0f0a0b2ac53fc463aaa753ce071e}
+\index{chkma.\+c@{chkma.\+c}!Pl\+\_\+\+Dummy\+\_\+\+Ptr@{Pl\+\_\+\+Dummy\+\_\+\+Ptr}}
+\index{Pl\+\_\+\+Dummy\+\_\+\+Ptr@{Pl\+\_\+\+Dummy\+\_\+\+Ptr}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Dummy\+\_\+\+Ptr(void $\ast$p)}{Pl_Dummy_Ptr(void *p)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Pl\+\_\+\+Dummy\+\_\+\+Ptr (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_aae9007e689a787822f7c6e98322ed456}{}\label{chkma_8c_aae9007e689a787822f7c6e98322ed456}
+\index{chkma.\+c@{chkma.\+c}!Pl\+\_\+\+Fatal\+\_\+\+Error@{Pl\+\_\+\+Fatal\+\_\+\+Error}}
+\index{Pl\+\_\+\+Fatal\+\_\+\+Error@{Pl\+\_\+\+Fatal\+\_\+\+Error}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Fatal\+\_\+\+Error(char $\ast$format,...)}{Pl_Fatal_Error(char *format,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Fatal\+\_\+\+Error (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a190fea7904d7245d4fdc5e9404a07907}{}\label{chkma_8c_a190fea7904d7245d4fdc5e9404a07907}
+\index{chkma.\+c@{chkma.\+c}!Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Engine@{Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Engine}}
+\index{Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Engine@{Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Engine}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Engine(void)}{Pl_Fd_Init_Engine(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Engine (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a5113d6cfce9dd34c6baf1037046b9839}{}\label{chkma_8c_a5113d6cfce9dd34c6baf1037046b9839}
+\index{chkma.\+c@{chkma.\+c}!Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Solver@{Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Solver}}
+\index{Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Solver@{Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Solver}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Solver(void)}{Pl_Fd_Init_Solver(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Solver (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a1f64da6d81a7799fe8411fffab098569}{}\label{chkma_8c_a1f64da6d81a7799fe8411fffab098569}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a1f64da6d81a7799fe8411fffab098569_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!Pl\+\_\+\+Fd\+\_\+\+Reset\+\_\+\+Solver@{Pl\+\_\+\+Fd\+\_\+\+Reset\+\_\+\+Solver}}
+\index{Pl\+\_\+\+Fd\+\_\+\+Reset\+\_\+\+Solver@{Pl\+\_\+\+Fd\+\_\+\+Reset\+\_\+\+Solver}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Fd\+\_\+\+Reset\+\_\+\+Solver(void)}{Pl_Fd_Reset_Solver(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Fd\+\_\+\+Reset\+\_\+\+Solver (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_af9ad0d76d0a941dd34530d628ec61eb0}{}\label{chkma_8c_af9ad0d76d0a941dd34530d628ec61eb0}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{chkma_8c_af9ad0d76d0a941dd34530d628ec61eb0_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!Pl\+\_\+\+Find\+\_\+\+Linked\+\_\+\+Objects@{Pl\+\_\+\+Find\+\_\+\+Linked\+\_\+\+Objects}}
+\index{Pl\+\_\+\+Find\+\_\+\+Linked\+\_\+\+Objects@{Pl\+\_\+\+Find\+\_\+\+Linked\+\_\+\+Objects}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Find\+\_\+\+Linked\+\_\+\+Objects(void)}{Pl_Find_Linked_Objects(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Find\+\_\+\+Linked\+\_\+\+Objects (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a061044c2c361926012bb09518f4428fa}{}\label{chkma_8c_a061044c2c361926012bb09518f4428fa}
+\index{chkma.\+c@{chkma.\+c}!Pl\+\_\+\+Init\+\_\+\+Atom@{Pl\+\_\+\+Init\+\_\+\+Atom}}
+\index{Pl\+\_\+\+Init\+\_\+\+Atom@{Pl\+\_\+\+Init\+\_\+\+Atom}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Init\+\_\+\+Atom(void)}{Pl_Init_Atom(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Init\+\_\+\+Atom (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a8ed160600ffd92b54cd6e0f16201c04e}{}\label{chkma_8c_a8ed160600ffd92b54cd6e0f16201c04e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{chkma_8c_a8ed160600ffd92b54cd6e0f16201c04e_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!Pl\+\_\+\+Init\+\_\+\+Machine@{Pl\+\_\+\+Init\+\_\+\+Machine}}
+\index{Pl\+\_\+\+Init\+\_\+\+Machine@{Pl\+\_\+\+Init\+\_\+\+Machine}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Init\+\_\+\+Machine(void)}{Pl_Init_Machine(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Init\+\_\+\+Machine (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a7ade20c3e93babe3edde8f66a51e3127}{}\label{chkma_8c_a7ade20c3e93babe3edde8f66a51e3127}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a7ade20c3e93babe3edde8f66a51e3127_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!Pl\+\_\+\+Init\+\_\+\+Oper@{Pl\+\_\+\+Init\+\_\+\+Oper}}
+\index{Pl\+\_\+\+Init\+\_\+\+Oper@{Pl\+\_\+\+Init\+\_\+\+Oper}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Init\+\_\+\+Oper(void)}{Pl_Init_Oper(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Init\+\_\+\+Oper (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a3a22badced4bdb778f20f64863192492}{}\label{chkma_8c_a3a22badced4bdb778f20f64863192492}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{chkma_8c_a3a22badced4bdb778f20f64863192492_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!Pl\+\_\+\+Init\+\_\+\+Pred@{Pl\+\_\+\+Init\+\_\+\+Pred}}
+\index{Pl\+\_\+\+Init\+\_\+\+Pred@{Pl\+\_\+\+Init\+\_\+\+Pred}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Init\+\_\+\+Pred(void)}{Pl_Init_Pred(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Init\+\_\+\+Pred (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_aa0fb875bb38ef710cad2276c7c843dc0}{}\label{chkma_8c_aa0fb875bb38ef710cad2276c7c843dc0}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_aa0fb875bb38ef710cad2276c7c843dc0_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!Pl\+\_\+\+Lookup\+\_\+\+Pred@{Pl\+\_\+\+Lookup\+\_\+\+Pred}}
+\index{Pl\+\_\+\+Lookup\+\_\+\+Pred@{Pl\+\_\+\+Lookup\+\_\+\+Pred}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Lookup\+\_\+\+Pred(int func, int arity)}{Pl_Lookup_Pred(int func, int arity)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pred\+Inf}$\ast$ {\bf FC} Pl\+\_\+\+Lookup\+\_\+\+Pred (
+\begin{DoxyParamCaption}
+\item[{int}]{func, }
+\item[{int}]{arity}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_aa8ebf08b93ec7e4bde2c544c70ba4c39}{}\label{chkma_8c_aa8ebf08b93ec7e4bde2c544c70ba4c39}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_aa8ebf08b93ec7e4bde2c544c70ba4c39_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!Restore\+\_\+\+CP@{Restore\+\_\+\+CP}}
+\index{Restore\+\_\+\+CP@{Restore\+\_\+\+CP}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Restore\+\_\+\+C\+P()}{Restore_CP()}}]{\setlength{\rightskip}{0pt plus 5cm}void Restore\+\_\+\+CP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a5fdb8fbc2ffb0a1d6b11c6aaafab2a4e}{}\label{chkma_8c_a5fdb8fbc2ffb0a1d6b11c6aaafab2a4e}
+\index{chkma.\+c@{chkma.\+c}!Save\+\_\+\+CP@{Save\+\_\+\+CP}}
+\index{Save\+\_\+\+CP@{Save\+\_\+\+CP}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Save\+\_\+\+C\+P()}{Save_CP()}}]{\setlength{\rightskip}{0pt plus 5cm}void Save\+\_\+\+CP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a9a6d61b202713bc92fa4570d25cf8082}{}\label{chkma_8c_a9a6d61b202713bc92fa4570d25cf8082}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{chkma_8c_a9a6d61b202713bc92fa4570d25cf8082_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!Several\+\_\+\+Calls@{Several\+\_\+\+Calls}}
+\index{Several\+\_\+\+Calls@{Several\+\_\+\+Calls}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Several\+\_\+\+Calls()}{Several_Calls()}}]{\setlength{\rightskip}{0pt plus 5cm}void Several\+\_\+\+Calls (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a3d2f3b8a40dc1e50bd8238aa82993258}{}\label{chkma_8c_a3d2f3b8a40dc1e50bd8238aa82993258}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{chkma_8c_a3d2f3b8a40dc1e50bd8238aa82993258_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}}
+\index{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler(void)}{SIGSEGV_Handler(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a7c259af09b573fc4349c293d4af50e1f}{}\label{chkma_8c_a7c259af09b573fc4349c293d4af50e1f}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a7c259af09b573fc4349c293d4af50e1f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+double@{test\+\_\+arg\+\_\+double}}
+\index{test\+\_\+arg\+\_\+double@{test\+\_\+arg\+\_\+double}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+double(void)}{test_arg_double(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+arg\+\_\+double (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a1a4f378356fc0efd6ddc75ea80576804}{}\label{chkma_8c_a1a4f378356fc0efd6ddc75ea80576804}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a1a4f378356fc0efd6ddc75ea80576804_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+double1@{test\+\_\+arg\+\_\+double1}}
+\index{test\+\_\+arg\+\_\+double1@{test\+\_\+arg\+\_\+double1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+double1(double a, double b, double c, double d, double e, double f)}{test_arg_double1(double a, double b, double c, double d, double e, double f)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf FC} test\+\_\+arg\+\_\+double1 (
+\begin{DoxyParamCaption}
+\item[{double}]{a, }
+\item[{double}]{b, }
+\item[{double}]{c, }
+\item[{double}]{d, }
+\item[{double}]{e, }
+\item[{double}]{f}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_ae9ef97c28dd4e69f2589ac1236aa7e3b}{}\label{chkma_8c_ae9ef97c28dd4e69f2589ac1236aa7e3b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{chkma_8c_ae9ef97c28dd4e69f2589ac1236aa7e3b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+fd\+\_\+array@{test\+\_\+arg\+\_\+fd\+\_\+array}}
+\index{test\+\_\+arg\+\_\+fd\+\_\+array@{test\+\_\+arg\+\_\+fd\+\_\+array}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+fd\+\_\+array(void)}{test_arg_fd_array(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+arg\+\_\+fd\+\_\+array (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_ae4b313d2738c2d3c3694982515b86387}{}\label{chkma_8c_ae4b313d2738c2d3c3694982515b86387}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_ae4b313d2738c2d3c3694982515b86387_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+fd\+\_\+array1@{test\+\_\+arg\+\_\+fd\+\_\+array1}}
+\index{test\+\_\+arg\+\_\+fd\+\_\+array1@{test\+\_\+arg\+\_\+fd\+\_\+array1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+fd\+\_\+array1(double a, double b, double $\ast$c, double $\ast$d)}{test_arg_fd_array1(double a, double b, double *c, double *d)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf FC} test\+\_\+arg\+\_\+fd\+\_\+array1 (
+\begin{DoxyParamCaption}
+\item[{double}]{a, }
+\item[{double}]{b, }
+\item[{double $\ast$}]{c, }
+\item[{double $\ast$}]{d}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_aed6464aab7b035cbf7c958a83e44679c}{}\label{chkma_8c_aed6464aab7b035cbf7c958a83e44679c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{chkma_8c_aed6464aab7b035cbf7c958a83e44679c_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+fl\+\_\+array@{test\+\_\+arg\+\_\+fl\+\_\+array}}
+\index{test\+\_\+arg\+\_\+fl\+\_\+array@{test\+\_\+arg\+\_\+fl\+\_\+array}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+fl\+\_\+array(void)}{test_arg_fl_array(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+arg\+\_\+fl\+\_\+array (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a61e3fd8668cfd47802dc53a90d121430}{}\label{chkma_8c_a61e3fd8668cfd47802dc53a90d121430}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a61e3fd8668cfd47802dc53a90d121430_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+fl\+\_\+array1@{test\+\_\+arg\+\_\+fl\+\_\+array1}}
+\index{test\+\_\+arg\+\_\+fl\+\_\+array1@{test\+\_\+arg\+\_\+fl\+\_\+array1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+fl\+\_\+array1(\+Pl\+Long a, Pl\+Long b, Pl\+Long $\ast$c, Pl\+Long $\ast$d)}{test_arg_fl_array1(PlLong a, PlLong b, PlLong *c, PlLong *d)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf FC} test\+\_\+arg\+\_\+fl\+\_\+array1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Pl\+Long}}]{a, }
+\item[{{\bf Pl\+Long}}]{b, }
+\item[{{\bf Pl\+Long} $\ast$}]{c, }
+\item[{{\bf Pl\+Long} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a4b545b177d86fb478b074a8bde93ceab}{}\label{chkma_8c_a4b545b177d86fb478b074a8bde93ceab}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{chkma_8c_a4b545b177d86fb478b074a8bde93ceab_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+int@{test\+\_\+arg\+\_\+int}}
+\index{test\+\_\+arg\+\_\+int@{test\+\_\+arg\+\_\+int}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+int(void)}{test_arg_int(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+arg\+\_\+int (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a8b3174f03a9950bcc9b44aa4d7b61971}{}\label{chkma_8c_a8b3174f03a9950bcc9b44aa4d7b61971}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a8b3174f03a9950bcc9b44aa4d7b61971_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+int1@{test\+\_\+arg\+\_\+int1}}
+\index{test\+\_\+arg\+\_\+int1@{test\+\_\+arg\+\_\+int1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+int1(int a, int b, int c, int d)}{test_arg_int1(int a, int b, int c, int d)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf FC} test\+\_\+arg\+\_\+int1 (
+\begin{DoxyParamCaption}
+\item[{int}]{a, }
+\item[{int}]{b, }
+\item[{int}]{c, }
+\item[{int}]{d}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a2baf23d8877ebd75aed3f49dd20bc6b9}{}\label{chkma_8c_a2baf23d8877ebd75aed3f49dd20bc6b9}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{chkma_8c_a2baf23d8877ebd75aed3f49dd20bc6b9_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+mem\+\_\+l@{test\+\_\+arg\+\_\+mem\+\_\+l}}
+\index{test\+\_\+arg\+\_\+mem\+\_\+l@{test\+\_\+arg\+\_\+mem\+\_\+l}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+mem\+\_\+l(void)}{test_arg_mem_l(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+arg\+\_\+mem\+\_\+l (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_aa8aea4130a97898dbdb116e533875af2}{}\label{chkma_8c_aa8aea4130a97898dbdb116e533875af2}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_aa8aea4130a97898dbdb116e533875af2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{chkma_8c_aa8aea4130a97898dbdb116e533875af2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+mem\+\_\+l1@{test\+\_\+arg\+\_\+mem\+\_\+l1}}
+\index{test\+\_\+arg\+\_\+mem\+\_\+l1@{test\+\_\+arg\+\_\+mem\+\_\+l1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+mem\+\_\+l1(\+Pl\+Long a, Pl\+Long b, Pl\+Long $\ast$c, Pl\+Long d, Pl\+Long e, Pl\+Long $\ast$f)}{test_arg_mem_l1(PlLong a, PlLong b, PlLong *c, PlLong d, PlLong e, PlLong *f)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf FC} test\+\_\+arg\+\_\+mem\+\_\+l1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Pl\+Long}}]{a, }
+\item[{{\bf Pl\+Long}}]{b, }
+\item[{{\bf Pl\+Long} $\ast$}]{c, }
+\item[{{\bf Pl\+Long}}]{d, }
+\item[{{\bf Pl\+Long}}]{e, }
+\item[{{\bf Pl\+Long} $\ast$}]{f}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a6312cb984c61f2f1238044ba21aedc63}{}\label{chkma_8c_a6312cb984c61f2f1238044ba21aedc63}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a6312cb984c61f2f1238044ba21aedc63_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+mixed@{test\+\_\+arg\+\_\+mixed}}
+\index{test\+\_\+arg\+\_\+mixed@{test\+\_\+arg\+\_\+mixed}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+mixed(void)}{test_arg_mixed(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+arg\+\_\+mixed (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a2bb8f61e6ce11ab8768e80c296e47a94}{}\label{chkma_8c_a2bb8f61e6ce11ab8768e80c296e47a94}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a2bb8f61e6ce11ab8768e80c296e47a94_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+mixed1@{test\+\_\+arg\+\_\+mixed1}}
+\index{test\+\_\+arg\+\_\+mixed1@{test\+\_\+arg\+\_\+mixed1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+mixed1(int ai, double a, double b, int bi, int ci, double c, int di)}{test_arg_mixed1(int ai, double a, double b, int bi, int ci, double c, int di)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf FC} test\+\_\+arg\+\_\+mixed1 (
+\begin{DoxyParamCaption}
+\item[{int}]{ai, }
+\item[{double}]{a, }
+\item[{double}]{b, }
+\item[{int}]{bi, }
+\item[{int}]{ci, }
+\item[{double}]{c, }
+\item[{int}]{di}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a58159fd46a8a2e924aa7181a8d12bd56}{}\label{chkma_8c_a58159fd46a8a2e924aa7181a8d12bd56}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{chkma_8c_a58159fd46a8a2e924aa7181a8d12bd56_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+string@{test\+\_\+arg\+\_\+string}}
+\index{test\+\_\+arg\+\_\+string@{test\+\_\+arg\+\_\+string}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+string(void)}{test_arg_string(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+arg\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a1d1d2915d3118297322173e39c660a9b}{}\label{chkma_8c_a1d1d2915d3118297322173e39c660a9b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a1d1d2915d3118297322173e39c660a9b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+string1@{test\+\_\+arg\+\_\+string1}}
+\index{test\+\_\+arg\+\_\+string1@{test\+\_\+arg\+\_\+string1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+string1(char $\ast$a, char $\ast$b)}{test_arg_string1(char *a, char *b)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf FC} test\+\_\+arg\+\_\+string1 (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{a, }
+\item[{char $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a22f7f0a0440311771c4a234e3b2e6316}{}\label{chkma_8c_a22f7f0a0440311771c4a234e3b2e6316}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{chkma_8c_a22f7f0a0440311771c4a234e3b2e6316_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+x@{test\+\_\+arg\+\_\+x}}
+\index{test\+\_\+arg\+\_\+x@{test\+\_\+arg\+\_\+x}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+x(void)}{test_arg_x(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+arg\+\_\+x (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a5aae0127af15184938e37c2ba07b49df}{}\label{chkma_8c_a5aae0127af15184938e37c2ba07b49df}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a5aae0127af15184938e37c2ba07b49df_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+x1@{test\+\_\+arg\+\_\+x1}}
+\index{test\+\_\+arg\+\_\+x1@{test\+\_\+arg\+\_\+x1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+x1(\+Wam\+Word a, Wam\+Word $\ast$b, Wam\+Word c, Wam\+Word $\ast$d)}{test_arg_x1(WamWord a, WamWord *b, WamWord c, WamWord *d)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf FC} test\+\_\+arg\+\_\+x1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{a, }
+\item[{{\bf Wam\+Word} $\ast$}]{b, }
+\item[{{\bf Wam\+Word}}]{c, }
+\item[{{\bf Wam\+Word} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_ac4be535391923fcddd7444307c3d046c}{}\label{chkma_8c_ac4be535391923fcddd7444307c3d046c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{chkma_8c_ac4be535391923fcddd7444307c3d046c_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+y@{test\+\_\+arg\+\_\+y}}
+\index{test\+\_\+arg\+\_\+y@{test\+\_\+arg\+\_\+y}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+y(void)}{test_arg_y(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+arg\+\_\+y (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_ab3e49deca4451d48dd31a376cb2cb92f}{}\label{chkma_8c_ab3e49deca4451d48dd31a376cb2cb92f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_ab3e49deca4451d48dd31a376cb2cb92f_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+arg\+\_\+y1@{test\+\_\+arg\+\_\+y1}}
+\index{test\+\_\+arg\+\_\+y1@{test\+\_\+arg\+\_\+y1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+arg\+\_\+y1(\+Wam\+Word a, Wam\+Word $\ast$b, Wam\+Word c, Wam\+Word $\ast$d)}{test_arg_y1(WamWord a, WamWord *b, WamWord c, WamWord *d)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf FC} test\+\_\+arg\+\_\+y1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{a, }
+\item[{{\bf Wam\+Word} $\ast$}]{b, }
+\item[{{\bf Wam\+Word}}]{c, }
+\item[{{\bf Wam\+Word} $\ast$}]{d}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a1858eabb5a326f8e9c87b2b62a64f61e}{}\label{chkma_8c_a1858eabb5a326f8e9c87b2b62a64f61e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{chkma_8c_a1858eabb5a326f8e9c87b2b62a64f61e_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+call\+\_\+c@{test\+\_\+call\+\_\+c}}
+\index{test\+\_\+call\+\_\+c@{test\+\_\+call\+\_\+c}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+call\+\_\+c(void)}{test_call_c(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+call\+\_\+c (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a4c00f8935f46c3442227c222aa880df7}{}\label{chkma_8c_a4c00f8935f46c3442227c222aa880df7}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a4c00f8935f46c3442227c222aa880df7_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+call\+\_\+c1@{test\+\_\+call\+\_\+c1}}
+\index{test\+\_\+call\+\_\+c1@{test\+\_\+call\+\_\+c1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+call\+\_\+c1(void)}{test_call_c1(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf FC} test\+\_\+call\+\_\+c1 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_ad8ebbe8c970d2820bbc61c630c849ee6}{}\label{chkma_8c_ad8ebbe8c970d2820bbc61c630c849ee6}
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args@{test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args}}
+\index{test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args@{test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args(void)}{test_call_c_lot_args(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_ad2716c4958ccbcea53aed5adb333b3bd}{}\label{chkma_8c_ad2716c4958ccbcea53aed5adb333b3bd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_ad2716c4958ccbcea53aed5adb333b3bd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_ad2716c4958ccbcea53aed5adb333b3bd_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args1@{test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args1}}
+\index{test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args1@{test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args1(\+Wam\+Word n0, Wam\+Word n1, Wam\+Word n2, Wam\+Word n3, Wam\+Word n4, Wam\+Word n5, void($\ast$a)(), Pl\+Long b, int c, int d, double e, char $\ast$f, Wam\+Word g, Wam\+Word $\ast$h, Wam\+Word i, Wam\+Word $\ast$j, Wam\+Word k, Wam\+Word $\ast$l, Wam\+Word m, Wam\+Word $\ast$n, double o)}{test_call_c_lot_args1(WamWord n0, WamWord n1, WamWord n2, WamWord n3, WamWord n4, WamWord n5, void(*a)(), PlLong b, int c, int d, double e, char *f, WamWord g, WamWord *h, WamWord i, WamWord *j, WamWord k, WamWord *l, WamWord m, WamWord *n, double o)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf FC} test\+\_\+call\+\_\+c\+\_\+lot\+\_\+args1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{n0, }
+\item[{{\bf Wam\+Word}}]{n1, }
+\item[{{\bf Wam\+Word}}]{n2, }
+\item[{{\bf Wam\+Word}}]{n3, }
+\item[{{\bf Wam\+Word}}]{n4, }
+\item[{{\bf Wam\+Word}}]{n5, }
+\item[{void($\ast$)()}]{a, }
+\item[{{\bf Pl\+Long}}]{b, }
+\item[{int}]{c, }
+\item[{int}]{d, }
+\item[{double}]{e, }
+\item[{char $\ast$}]{f, }
+\item[{{\bf Wam\+Word}}]{g, }
+\item[{{\bf Wam\+Word} $\ast$}]{h, }
+\item[{{\bf Wam\+Word}}]{i, }
+\item[{{\bf Wam\+Word} $\ast$}]{j, }
+\item[{{\bf Wam\+Word}}]{k, }
+\item[{{\bf Wam\+Word} $\ast$}]{l, }
+\item[{{\bf Wam\+Word}}]{m, }
+\item[{{\bf Wam\+Word} $\ast$}]{n, }
+\item[{double}]{o}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a777ecd243e571163cbfbc95191d19cee}{}\label{chkma_8c_a777ecd243e571163cbfbc95191d19cee}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a777ecd243e571163cbfbc95191d19cee_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{chkma_8c_a777ecd243e571163cbfbc95191d19cee_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+declaration@{test\+\_\+declaration}}
+\index{test\+\_\+declaration@{test\+\_\+declaration}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+declaration(void)}{test_declaration(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+declaration (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a2cc5fafed315346492fef226d1a2e8c2}{}\label{chkma_8c_a2cc5fafed315346492fef226d1a2e8c2}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{chkma_8c_a2cc5fafed315346492fef226d1a2e8c2_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+fail\+\_\+ret@{test\+\_\+fail\+\_\+ret}}
+\index{test\+\_\+fail\+\_\+ret@{test\+\_\+fail\+\_\+ret}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+fail\+\_\+ret(void)}{test_fail_ret(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+fail\+\_\+ret (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_ae95800f327f1b609991b18ab76ed85a8}{}\label{chkma_8c_ae95800f327f1b609991b18ab76ed85a8}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_ae95800f327f1b609991b18ab76ed85a8_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+fail\+\_\+ret1@{test\+\_\+fail\+\_\+ret1}}
+\index{test\+\_\+fail\+\_\+ret1@{test\+\_\+fail\+\_\+ret1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+fail\+\_\+ret1(void)}{test_fail_ret1(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf FC} test\+\_\+fail\+\_\+ret1 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a5f5171dd0f6256053f95848e5fc0e91f}{}\label{chkma_8c_a5f5171dd0f6256053f95848e5fc0e91f}
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+initializer@{test\+\_\+initializer}}
+\index{test\+\_\+initializer@{test\+\_\+initializer}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+initializer(void)}{test_initializer(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+initializer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a80df6af1f5f785eba43a399bcb235ce4}{}\label{chkma_8c_a80df6af1f5f785eba43a399bcb235ce4}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{chkma_8c_a80df6af1f5f785eba43a399bcb235ce4_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+jump\+\_\+and\+\_\+c\+\_\+ret@{test\+\_\+jump\+\_\+and\+\_\+c\+\_\+ret}}
+\index{test\+\_\+jump\+\_\+and\+\_\+c\+\_\+ret@{test\+\_\+jump\+\_\+and\+\_\+c\+\_\+ret}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+jump\+\_\+and\+\_\+c\+\_\+ret(void)}{test_jump_and_c_ret(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+jump\+\_\+and\+\_\+c\+\_\+ret (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_afa550abc2913f0b7b2ad33d22f782ee3}{}\label{chkma_8c_afa550abc2913f0b7b2ad33d22f782ee3}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{chkma_8c_afa550abc2913f0b7b2ad33d22f782ee3_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+jump\+\_\+ret@{test\+\_\+jump\+\_\+ret}}
+\index{test\+\_\+jump\+\_\+ret@{test\+\_\+jump\+\_\+ret}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+jump\+\_\+ret(void)}{test_jump_ret(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+jump\+\_\+ret (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a502fe39ca1ad5994c9c50c157266e7fb}{}\label{chkma_8c_a502fe39ca1ad5994c9c50c157266e7fb}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a502fe39ca1ad5994c9c50c157266e7fb_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+jump\+\_\+ret1@{test\+\_\+jump\+\_\+ret1}}
+\index{test\+\_\+jump\+\_\+ret1@{test\+\_\+jump\+\_\+ret1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+jump\+\_\+ret1(\+Pl\+Long addr)}{test_jump_ret1(PlLong addr)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} {\bf FC} test\+\_\+jump\+\_\+ret1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Pl\+Long}}]{addr}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_aa71a992bd48cbb620133cf75ca486cda}{}\label{chkma_8c_aa71a992bd48cbb620133cf75ca486cda}
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+jump\+\_\+ret2@{test\+\_\+jump\+\_\+ret2}}
+\index{test\+\_\+jump\+\_\+ret2@{test\+\_\+jump\+\_\+ret2}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+jump\+\_\+ret2(void)}{test_jump_ret2(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf FC} test\+\_\+jump\+\_\+ret2 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a63b6c547f57b982a3f25f08bf7bca85d}{}\label{chkma_8c_a63b6c547f57b982a3f25f08bf7bca85d}
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+move\+\_\+ret\+\_\+fd@{test\+\_\+move\+\_\+ret\+\_\+fd}}
+\index{test\+\_\+move\+\_\+ret\+\_\+fd@{test\+\_\+move\+\_\+ret\+\_\+fd}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+move\+\_\+ret\+\_\+fd(void)}{test_move_ret_fd(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+move\+\_\+ret\+\_\+fd (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a53bdf687f1036373afc8292b8095839a}{}\label{chkma_8c_a53bdf687f1036373afc8292b8095839a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a53bdf687f1036373afc8292b8095839a_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+move\+\_\+ret\+\_\+fd1@{test\+\_\+move\+\_\+ret\+\_\+fd1}}
+\index{test\+\_\+move\+\_\+ret\+\_\+fd1@{test\+\_\+move\+\_\+ret\+\_\+fd1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+move\+\_\+ret\+\_\+fd1(void)}{test_move_ret_fd1(void)}}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf FC} test\+\_\+move\+\_\+ret\+\_\+fd1 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a006222cef8a1d20b4b6d729cbf72400c}{}\label{chkma_8c_a006222cef8a1d20b4b6d729cbf72400c}
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+move\+\_\+ret\+\_\+fl@{test\+\_\+move\+\_\+ret\+\_\+fl}}
+\index{test\+\_\+move\+\_\+ret\+\_\+fl@{test\+\_\+move\+\_\+ret\+\_\+fl}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+move\+\_\+ret\+\_\+fl(void)}{test_move_ret_fl(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+move\+\_\+ret\+\_\+fl (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a22a5aa029ae8d73cdfd80f7cd8686bc0}{}\label{chkma_8c_a22a5aa029ae8d73cdfd80f7cd8686bc0}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a22a5aa029ae8d73cdfd80f7cd8686bc0_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+move\+\_\+ret\+\_\+fl1@{test\+\_\+move\+\_\+ret\+\_\+fl1}}
+\index{test\+\_\+move\+\_\+ret\+\_\+fl1@{test\+\_\+move\+\_\+ret\+\_\+fl1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+move\+\_\+ret\+\_\+fl1(void)}{test_move_ret_fl1(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} {\bf FC} test\+\_\+move\+\_\+ret\+\_\+fl1 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a0e6d64f561a1abe49ed76b459855e71e}{}\label{chkma_8c_a0e6d64f561a1abe49ed76b459855e71e}
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+move\+\_\+ret\+\_\+mem@{test\+\_\+move\+\_\+ret\+\_\+mem}}
+\index{test\+\_\+move\+\_\+ret\+\_\+mem@{test\+\_\+move\+\_\+ret\+\_\+mem}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+move\+\_\+ret\+\_\+mem(void)}{test_move_ret_mem(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+move\+\_\+ret\+\_\+mem (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a6c759f036d3389b0ed1b52be674e6af6}{}\label{chkma_8c_a6c759f036d3389b0ed1b52be674e6af6}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a6c759f036d3389b0ed1b52be674e6af6_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+move\+\_\+ret\+\_\+mem1@{test\+\_\+move\+\_\+ret\+\_\+mem1}}
+\index{test\+\_\+move\+\_\+ret\+\_\+mem1@{test\+\_\+move\+\_\+ret\+\_\+mem1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+move\+\_\+ret\+\_\+mem1(void)}{test_move_ret_mem1(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} {\bf FC} test\+\_\+move\+\_\+ret\+\_\+mem1 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a4e6fe25d8020b3187b979426427f0785}{}\label{chkma_8c_a4e6fe25d8020b3187b979426427f0785}
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+move\+\_\+ret\+\_\+x@{test\+\_\+move\+\_\+ret\+\_\+x}}
+\index{test\+\_\+move\+\_\+ret\+\_\+x@{test\+\_\+move\+\_\+ret\+\_\+x}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+move\+\_\+ret\+\_\+x(void)}{test_move_ret_x(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+move\+\_\+ret\+\_\+x (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_aafc45423d0c5ab55ee3506251ad63195}{}\label{chkma_8c_aafc45423d0c5ab55ee3506251ad63195}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_aafc45423d0c5ab55ee3506251ad63195_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+move\+\_\+ret\+\_\+x1@{test\+\_\+move\+\_\+ret\+\_\+x1}}
+\index{test\+\_\+move\+\_\+ret\+\_\+x1@{test\+\_\+move\+\_\+ret\+\_\+x1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+move\+\_\+ret\+\_\+x1(void)}{test_move_ret_x1(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} {\bf FC} test\+\_\+move\+\_\+ret\+\_\+x1 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_ad11d147765389fff88b50e1512df58c4}{}\label{chkma_8c_ad11d147765389fff88b50e1512df58c4}
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+move\+\_\+ret\+\_\+y@{test\+\_\+move\+\_\+ret\+\_\+y}}
+\index{test\+\_\+move\+\_\+ret\+\_\+y@{test\+\_\+move\+\_\+ret\+\_\+y}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+move\+\_\+ret\+\_\+y(void)}{test_move_ret_y(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+move\+\_\+ret\+\_\+y (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a1fa90b0c7c85c20f6f9f89314fe196b2}{}\label{chkma_8c_a1fa90b0c7c85c20f6f9f89314fe196b2}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a1fa90b0c7c85c20f6f9f89314fe196b2_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+move\+\_\+ret\+\_\+y1@{test\+\_\+move\+\_\+ret\+\_\+y1}}
+\index{test\+\_\+move\+\_\+ret\+\_\+y1@{test\+\_\+move\+\_\+ret\+\_\+y1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+move\+\_\+ret\+\_\+y1(void)}{test_move_ret_y1(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} {\bf FC} test\+\_\+move\+\_\+ret\+\_\+y1 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a72e9700c352dc6071cdfb16880a6d491}{}\label{chkma_8c_a72e9700c352dc6071cdfb16880a6d491}
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+move\+\_\+x\+\_\+y@{test\+\_\+move\+\_\+x\+\_\+y}}
+\index{test\+\_\+move\+\_\+x\+\_\+y@{test\+\_\+move\+\_\+x\+\_\+y}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+move\+\_\+x\+\_\+y(void)}{test_move_x_y(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+move\+\_\+x\+\_\+y (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a9b96d56f6e08fc3b46e2ce5065603cbc}{}\label{chkma_8c_a9b96d56f6e08fc3b46e2ce5065603cbc}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a9b96d56f6e08fc3b46e2ce5065603cbc_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+move\+\_\+y\+\_\+x@{test\+\_\+move\+\_\+y\+\_\+x}}
+\index{test\+\_\+move\+\_\+y\+\_\+x@{test\+\_\+move\+\_\+y\+\_\+x}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+move\+\_\+y\+\_\+x(void)}{test_move_y_x(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+move\+\_\+y\+\_\+x (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a0ed90d6f9231b7ca83b76b79f7bd7c70}{}\label{chkma_8c_a0ed90d6f9231b7ca83b76b79f7bd7c70}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a0ed90d6f9231b7ca83b76b79f7bd7c70_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+pl\+\_\+call\+\_\+and\+\_\+pl\+\_\+ret\+\_\+and\+\_\+pl\+\_\+fail@{test\+\_\+pl\+\_\+call\+\_\+and\+\_\+pl\+\_\+ret\+\_\+and\+\_\+pl\+\_\+fail}}
+\index{test\+\_\+pl\+\_\+call\+\_\+and\+\_\+pl\+\_\+ret\+\_\+and\+\_\+pl\+\_\+fail@{test\+\_\+pl\+\_\+call\+\_\+and\+\_\+pl\+\_\+ret\+\_\+and\+\_\+pl\+\_\+fail}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+pl\+\_\+call\+\_\+and\+\_\+pl\+\_\+ret\+\_\+and\+\_\+pl\+\_\+fail(void)}{test_pl_call_and_pl_ret_and_pl_fail(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+pl\+\_\+call\+\_\+and\+\_\+pl\+\_\+ret\+\_\+and\+\_\+pl\+\_\+fail (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a429b39b345f6255f1e8f58ea76215758}{}\label{chkma_8c_a429b39b345f6255f1e8f58ea76215758}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a429b39b345f6255f1e8f58ea76215758_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+pl\+\_\+jump\+\_\+and\+\_\+pl\+\_\+ret@{test\+\_\+pl\+\_\+jump\+\_\+and\+\_\+pl\+\_\+ret}}
+\index{test\+\_\+pl\+\_\+jump\+\_\+and\+\_\+pl\+\_\+ret@{test\+\_\+pl\+\_\+jump\+\_\+and\+\_\+pl\+\_\+ret}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+pl\+\_\+jump\+\_\+and\+\_\+pl\+\_\+ret(void)}{test_pl_jump_and_pl_ret(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+pl\+\_\+jump\+\_\+and\+\_\+pl\+\_\+ret (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_afdc34f951eac2e28d54d54d0cac728fc}{}\label{chkma_8c_afdc34f951eac2e28d54d54d0cac728fc}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_afdc34f951eac2e28d54d54d0cac728fc_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+prep\+\_\+cp\+\_\+and\+\_\+here\+\_\+cp@{test\+\_\+prep\+\_\+cp\+\_\+and\+\_\+here\+\_\+cp}}
+\index{test\+\_\+prep\+\_\+cp\+\_\+and\+\_\+here\+\_\+cp@{test\+\_\+prep\+\_\+cp\+\_\+and\+\_\+here\+\_\+cp}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+prep\+\_\+cp\+\_\+and\+\_\+here\+\_\+cp(void)}{test_prep_cp_and_here_cp(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+prep\+\_\+cp\+\_\+and\+\_\+here\+\_\+cp (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a75a1ef7b86dfe5c8ec9b79b767cb809c}{}\label{chkma_8c_a75a1ef7b86dfe5c8ec9b79b767cb809c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a75a1ef7b86dfe5c8ec9b79b767cb809c_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+switch\+\_\+ret@{test\+\_\+switch\+\_\+ret}}
+\index{test\+\_\+switch\+\_\+ret@{test\+\_\+switch\+\_\+ret}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+switch\+\_\+ret(void)}{test_switch_ret(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void test\+\_\+switch\+\_\+ret (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a10685090078bd9a4d309a87995d2961a}{}\label{chkma_8c_a10685090078bd9a4d309a87995d2961a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{chkma_8c_a10685090078bd9a4d309a87995d2961a_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+switch\+\_\+ret1@{test\+\_\+switch\+\_\+ret1}}
+\index{test\+\_\+switch\+\_\+ret1@{test\+\_\+switch\+\_\+ret1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+switch\+\_\+ret1(void)}{test_switch_ret1(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} {\bf FC} test\+\_\+switch\+\_\+ret1 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_aa93abbc9b8f1d1726a1a0211892f5bd1}{}\label{chkma_8c_aa93abbc9b8f1d1726a1a0211892f5bd1}
+\index{chkma.\+c@{chkma.\+c}!test\+\_\+switch\+\_\+ret2@{test\+\_\+switch\+\_\+ret2}}
+\index{test\+\_\+switch\+\_\+ret2@{test\+\_\+switch\+\_\+ret2}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{test\+\_\+switch\+\_\+ret2(int k)}{test_switch_ret2(int k)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf FC} test\+\_\+switch\+\_\+ret2 (
+\begin{DoxyParamCaption}
+\item[{int}]{k}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a6b4f50d21ac24ebc317abf9d4b97cab5}{}\label{chkma_8c_a6b4f50d21ac24ebc317abf9d4b97cab5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{chkma_8c_a6b4f50d21ac24ebc317abf9d4b97cab5_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{chkma.\+c@{chkma.\+c}!Write\+\_\+\+Long@{Write\+\_\+\+Long}}
+\index{Write\+\_\+\+Long@{Write\+\_\+\+Long}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{Write\+\_\+\+Long(\+Pl\+Long x)}{Write_Long(PlLong x)}}]{\setlength{\rightskip}{0pt plus 5cm}void Write\+\_\+\+Long (
+\begin{DoxyParamCaption}
+\item[{{\bf Pl\+Long}}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{chkma_8c_a76395f6148da26c58ecf673b337a7cab}{}\label{chkma_8c_a76395f6148da26c58ecf673b337a7cab}
+
+
+\subsection{Variable Documentation}
+\index{chkma.\+c@{chkma.\+c}!i@{i}}
+\index{i@{i}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{i}{i}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} i}\hypertarget{chkma_8c_a6389b0bf0138857012de69e968d26c43}{}\label{chkma_8c_a6389b0bf0138857012de69e968d26c43}
+\index{chkma.\+c@{chkma.\+c}!initialised@{initialised}}
+\index{initialised@{initialised}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{initialised}{initialised}}]{\setlength{\rightskip}{0pt plus 5cm}int initialised = 0}\hypertarget{chkma_8c_a86b667e9fcefc20145a0052a662dd961}{}\label{chkma_8c_a86b667e9fcefc20145a0052a662dd961}
+\index{chkma.\+c@{chkma.\+c}!M\+A\+\_\+\+A\+R\+R\+AY@{M\+A\+\_\+\+A\+R\+R\+AY}}
+\index{M\+A\+\_\+\+A\+R\+R\+AY@{M\+A\+\_\+\+A\+R\+R\+AY}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+\_\+\+A\+R\+R\+AY}{MA_ARRAY}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} M\+A\+\_\+\+A\+R\+R\+AY\mbox{[}5000\mbox{]}}\hypertarget{chkma_8c_aa8e282dc32f8797cd77fae84019aaa0e}{}\label{chkma_8c_aa8e282dc32f8797cd77fae84019aaa0e}
+\index{chkma.\+c@{chkma.\+c}!M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R1@{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R1}}
+\index{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R1@{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R1}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R1}{MA_GLOBAL_VAR1}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R1}\hypertarget{chkma_8c_a0c0ab17dd1f15620c30a7b7fe2f6dd61}{}\label{chkma_8c_a0c0ab17dd1f15620c30a7b7fe2f6dd61}
+\index{chkma.\+c@{chkma.\+c}!M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R2@{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R2}}
+\index{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R2@{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R2}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R2}{MA_GLOBAL_VAR2}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} M\+A\+\_\+\+G\+L\+O\+B\+A\+L\+\_\+\+V\+A\+R2}\hypertarget{chkma_8c_a97ba36aee7874bddc25638d51030edc2}{}\label{chkma_8c_a97ba36aee7874bddc25638d51030edc2}
+\index{chkma.\+c@{chkma.\+c}!M\+A\+\_\+\+L\+O\+C\+A\+L\+\_\+\+V\+A\+R2@{M\+A\+\_\+\+L\+O\+C\+A\+L\+\_\+\+V\+A\+R2}}
+\index{M\+A\+\_\+\+L\+O\+C\+A\+L\+\_\+\+V\+A\+R2@{M\+A\+\_\+\+L\+O\+C\+A\+L\+\_\+\+V\+A\+R2}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+\_\+\+L\+O\+C\+A\+L\+\_\+\+V\+A\+R2}{MA_LOCAL_VAR2}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} M\+A\+\_\+\+L\+O\+C\+A\+L\+\_\+\+V\+A\+R2}\hypertarget{chkma_8c_a9a49eb8cc0fa07176e7bfa6b18911058}{}\label{chkma_8c_a9a49eb8cc0fa07176e7bfa6b18911058}
+\index{chkma.\+c@{chkma.\+c}!pl\+\_\+atom\+\_\+tbl@{pl\+\_\+atom\+\_\+tbl}}
+\index{pl\+\_\+atom\+\_\+tbl@{pl\+\_\+atom\+\_\+tbl}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{pl\+\_\+atom\+\_\+tbl}{pl_atom_tbl}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Atom\+Inf}$\ast$ pl\+\_\+atom\+\_\+tbl}\hypertarget{chkma_8c_ae19bc058a52e904b7be9a3b9f2fdd996}{}\label{chkma_8c_ae19bc058a52e904b7be9a3b9f2fdd996}
+\index{chkma.\+c@{chkma.\+c}!pl\+\_\+base\+\_\+fd@{pl\+\_\+base\+\_\+fd}}
+\index{pl\+\_\+base\+\_\+fd@{pl\+\_\+base\+\_\+fd}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{pl\+\_\+base\+\_\+fd}{pl_base_fd}}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ pl\+\_\+base\+\_\+fd = {\bf pl\+\_\+foreign\+\_\+double}}\hypertarget{chkma_8c_ad72cf4e5a6ffef14f3ee54de4f8553de}{}\label{chkma_8c_ad72cf4e5a6ffef14f3ee54de4f8553de}
+\index{chkma.\+c@{chkma.\+c}!pl\+\_\+base\+\_\+fl@{pl\+\_\+base\+\_\+fl}}
+\index{pl\+\_\+base\+\_\+fl@{pl\+\_\+base\+\_\+fl}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{pl\+\_\+base\+\_\+fl}{pl_base_fl}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long}$\ast$ pl\+\_\+base\+\_\+fl = {\bf pl\+\_\+foreign\+\_\+long}}\hypertarget{chkma_8c_a0149438fae9995190d7fef39bcc10c3f}{}\label{chkma_8c_a0149438fae9995190d7fef39bcc10c3f}
+\index{chkma.\+c@{chkma.\+c}!pl\+\_\+foreign\+\_\+double@{pl\+\_\+foreign\+\_\+double}}
+\index{pl\+\_\+foreign\+\_\+double@{pl\+\_\+foreign\+\_\+double}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{pl\+\_\+foreign\+\_\+double}{pl_foreign_double}}]{\setlength{\rightskip}{0pt plus 5cm}double pl\+\_\+foreign\+\_\+double\mbox{[}{\bf N\+B\+\_\+\+O\+F\+\_\+\+X\+\_\+\+R\+E\+GS}\mbox{]}}\hypertarget{chkma_8c_a160a0ecc4175c7e2772fcf0f922c1587}{}\label{chkma_8c_a160a0ecc4175c7e2772fcf0f922c1587}
+\index{chkma.\+c@{chkma.\+c}!pl\+\_\+foreign\+\_\+long@{pl\+\_\+foreign\+\_\+long}}
+\index{pl\+\_\+foreign\+\_\+long@{pl\+\_\+foreign\+\_\+long}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{pl\+\_\+foreign\+\_\+long}{pl_foreign_long}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} pl\+\_\+foreign\+\_\+long\mbox{[}{\bf N\+B\+\_\+\+O\+F\+\_\+\+X\+\_\+\+R\+E\+GS}\mbox{]}}\hypertarget{chkma_8c_a9933bd583c1707970de6ee3d5ab93741}{}\label{chkma_8c_a9933bd583c1707970de6ee3d5ab93741}
+\index{chkma.\+c@{chkma.\+c}!pl\+\_\+max\+\_\+atom@{pl\+\_\+max\+\_\+atom}}
+\index{pl\+\_\+max\+\_\+atom@{pl\+\_\+max\+\_\+atom}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{pl\+\_\+max\+\_\+atom}{pl_max_atom}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+U\+Long} pl\+\_\+max\+\_\+atom}\hypertarget{chkma_8c_a623b089b0facf4a785bad3017e240bcf}{}\label{chkma_8c_a623b089b0facf4a785bad3017e240bcf}
+\index{chkma.\+c@{chkma.\+c}!ret@{ret}}
+\index{ret@{ret}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{ret}{ret}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} ret}\hypertarget{chkma_8c_aa96d8953c54e24349f29acbf80a9edfc}{}\label{chkma_8c_aa96d8953c54e24349f29acbf80a9edfc}
+\index{chkma.\+c@{chkma.\+c}!save\+\_\+\+CP@{save\+\_\+\+CP}}
+\index{save\+\_\+\+CP@{save\+\_\+\+CP}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{save\+\_\+\+CP}{save_CP}}]{\setlength{\rightskip}{0pt plus 5cm}Wam\+Cont save\+\_\+\+CP}\hypertarget{chkma_8c_a4d1bb72de726596da68bd2532a807007}{}\label{chkma_8c_a4d1bb72de726596da68bd2532a807007}
+\index{chkma.\+c@{chkma.\+c}!stack@{stack}}
+\index{stack@{stack}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{stack}{stack}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Wam\+Word} stack\mbox{[}4096\mbox{]}}\hypertarget{chkma_8c_a44ace8f43d7bffc6f83773835fb3415f}{}\label{chkma_8c_a44ace8f43d7bffc6f83773835fb3415f}
+\index{chkma.\+c@{chkma.\+c}!swt@{swt}}
+\index{swt@{swt}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{swt}{swt}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} swt\mbox{[}$\,$\mbox{]} = \{ 0, 4, 15, 4095, 123456, 2456789, -\/1 \}}\hypertarget{chkma_8c_a7899c63ad5592627cb29aec57c84f63c}{}\label{chkma_8c_a7899c63ad5592627cb29aec57c84f63c}
+\index{chkma.\+c@{chkma.\+c}!tbl@{tbl}}
+\index{tbl@{tbl}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{tbl}{tbl}}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ tbl\mbox{[}$\,$\mbox{]})()}\hypertarget{chkma_8c_a9cbc66f6e914c92097ad77eead93e15e}{}\label{chkma_8c_a9cbc66f6e914c92097ad77eead93e15e}
+\index{chkma.\+c@{chkma.\+c}!x@{x}}
+\index{x@{x}!chkma.\+c@{chkma.\+c}}
+\subsubsection[{\texorpdfstring{x}{x}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} x}\hypertarget{chkma_8c_ad5c67729c64bef3313e8f565dc73e6dd}{}\label{chkma_8c_ad5c67729c64bef3313e8f565dc73e6dd}

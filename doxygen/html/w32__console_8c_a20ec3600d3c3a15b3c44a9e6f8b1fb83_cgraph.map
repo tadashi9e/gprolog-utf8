@@ -1,0 +1,7 @@
+<map id="W32GC_Flush" name="W32GC_Flush">
+<area shape="rect" id="node2" href="$w32__console_8c.html#a24b183b30fc00a737da1b325dfbfa594" title="Flush_Buffer" alt="" coords="469,31,565,57"/>
+<area shape="rect" id="node5" href="$w32__console_8c.html#a2764af0c7408a134e5da5fa101b6dabe" title="Display_Text" alt="" coords="161,31,260,57"/>
+<area shape="rect" id="node3" href="$w32__console_8c.html#a20fd5ae61889213d2ac79b90f0f942f8" title="Set_Caret_Position" alt="" coords="613,56,748,83"/>
+<area shape="rect" id="node4" href="$w32__console_8c.html#a4a4fa92ab96c87a9fedbe477e80d38a0" title="Set_Selection" alt="" coords="796,56,899,83"/>
+<area shape="rect" id="node6" href="$w32__console_8c.html#a40f2319783fd8cca8c94dbc1bfba2dae" title="W32GC_Backd" alt="" coords="308,81,421,108"/>
+</map>

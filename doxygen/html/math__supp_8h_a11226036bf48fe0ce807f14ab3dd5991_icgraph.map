@@ -1,0 +1,8 @@
+<map id="pl_x_eq_y" name="pl_x_eq_y">
+<area shape="rect" id="node2" href="$math__supp_8h.html#a79c518cff9b32a816269d4cefc6dea01" title="Pl_Fd_Math_Unify_X_Y" alt="" coords="135,56,297,83"/>
+<area shape="rect" id="node3" href="$fd__bool__c_8c.html#a5756324591779a6e812b6918a33f86d0" title="Set_Equiv" alt="" coords="345,31,428,57"/>
+<area shape="rect" id="node6" href="$math__supp_8c.html#a7e5491d75a806e702992e2371c8af159" title="Load_Poly" alt="" coords="345,81,428,108"/>
+<area shape="rect" id="node4" href="$fd__bool__c_8c.html#a1a75f6073da95705cad602b580443664" title="Fd_Bool_Initializer" alt="" coords="672,5,801,32"/>
+<area shape="rect" id="node5" href="$fd__bool__c_8c.html#af0210aef178792fadee8bf8a6fb31b2e" title="Set_Nequiv" alt="" coords="505,31,595,57"/>
+<area shape="rect" id="node7" href="$math__supp_8c.html#a170afe50ec622c8a0db941c1ce08f322" title="Load_Left_Right_Rec" alt="" coords="476,81,624,108"/>
+</map>

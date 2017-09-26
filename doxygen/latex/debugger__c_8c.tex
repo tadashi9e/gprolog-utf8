@@ -1,0 +1,875 @@
+\hypertarget{debugger__c_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/debugger\+\_\+c.c File Reference}
+\label{debugger__c_8c}\index{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/debugger\+\_\+c.\+c@{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/debugger\+\_\+c.\+c}}
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$setjmp.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}engine\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bips\+\_\+pl.\+h\char`\"{}}\\*
+Include dependency graph for debugger\+\_\+c.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structInfCmd}{Inf\+Cmd}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{debugger__c_8c_ac2238956c2b28a02adaeaf890fbc4bf5}{O\+B\+J\+\_\+\+I\+N\+IT}~\hyperlink{debugger__c_8c_a058705f5154585d48d14909ea4050827}{Debug\+\_\+\+Initializer}
+\item 
+\#define \hyperlink{debugger__c_8c_a6fa8ddf6cac5d80a595caec8b33e3a2b}{B\+A\+N\+K\+\_\+\+N\+A\+M\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+L\+E\+N\+G\+TH}~15
+\item 
+\#define \hyperlink{debugger__c_8c_a7c1d09ebc256250e9190b3dc5adcc6d0}{H\+E\+X\+A\+D\+E\+C\+I\+M\+A\+L\+\_\+\+L\+E\+N\+G\+TH}~20
+\item 
+\#define \hyperlink{debugger__c_8c_a7926f7592bbd63ebd69277aec61fa094}{D\+E\+C\+I\+M\+A\+L\+\_\+\+L\+E\+N\+G\+TH}~21
+\item 
+\#define \hyperlink{debugger__c_8c_a489e7bf3ed17b8f2584b4c2c1cc69f26}{V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+T\+\_\+\+L\+E\+N\+G\+TH}~\hyperlink{debugger__c_8c_a6fa8ddf6cac5d80a595caec8b33e3a2b}{B\+A\+N\+K\+\_\+\+N\+A\+M\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+L\+E\+N\+G\+TH}
+\item 
+\#define \hyperlink{debugger__c_8c_a28688852415be780172268da365a778b}{S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+L\+I\+ST}~\char`\"{} ,\mbox{[}$\,$\mbox{]}\textbackslash{}n\char`\"{}
+\item 
+\#define \hyperlink{debugger__c_8c_ac1a05fdcb5cdf31da1a2f369fa393fcf}{I\+N\+I\+T\+\_\+\+D\+E\+B\+U\+G\+G\+ER}~X1\+\_\+24696\+E69745\+F6465627567676572
+\item 
+\#define \hyperlink{debugger__c_8c_af2351523f11abcb93a6fa73592cd4804}{D\+E\+B\+U\+G\+\_\+\+C\+A\+LL}~X1\+\_\+2464656275675\+F63616\+C6C
+\item 
+\#define \hyperlink{debugger__c_8c_a16da33c4777d0dc8de955b3e28b483eb}{L}(str)~\hyperlink{stream__supp_8h_aa0a1fdfbaae9e476151527d87510c0eb}{Pl\+\_\+\+Stream\+\_\+\+Printf}(\hyperlink{write__supp_8c_aec0f3256fa6d4ebdf3b76b38d711e5a5}{pstm\+\_\+o}, \char`\"{}\%s\textbackslash{}n\char`\"{}, str)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool}($\ast$ \hyperlink{debugger__c_8c_a2bba3f250813e2d5aafc81daef57bb5f}{Fct\+Ptr}) ()
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{debugger__c_8c_aa11d0ba3f5a83f5931cab90db271e8d1}{My\+\_\+\+System\+\_\+\+Directives} (void)
+\item 
+static void \hyperlink{debugger__c_8c_ad08f2fe399f2723ab5bbb977e9397d8e}{Scan\+\_\+\+Command} (char $\ast$source\+\_\+str)
+\item 
+static \hyperlink{debugger__c_8c_a2bba3f250813e2d5aafc81daef57bb5f}{Fct\+Ptr} \hyperlink{debugger__c_8c_ae03520aa896def6dd036699b888bd0ef}{Find\+\_\+\+Function} (void)
+\item 
+static \hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{debugger__c_8c_acf94b4468a0d9f4b6e103f388bb3cb63}{Write\+\_\+\+Data\+\_\+\+Modify} (void)
+\item 
+static \hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{debugger__c_8c_ad5667d4182005ee143f6b45c617d722a}{Where} (void)
+\item 
+static \hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{debugger__c_8c_ae3548d2718c3c51e01cbf3aa9752ce17}{What} (void)
+\item 
+static \hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{debugger__c_8c_a0e3db3f801a6d2dc7012c12e660377d8}{Dereference} (void)
+\item 
+static \hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{debugger__c_8c_a38ce602bd1d5e416f1c2df80fa5de3c3}{Environment} (void)
+\item 
+static \hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{debugger__c_8c_af0c1c2a7e6feb8d41802e2e984dec8e3}{Backtrack} (void)
+\item 
+static \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$ \hyperlink{debugger__c_8c_a73b8aac43e8bebe6dfd7f483bf81e055}{Read\+\_\+\+Bank\+\_\+\+Adr} (\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} only\+\_\+stack, int arg\+\_\+nb, char $\ast$$\ast$bank\+\_\+name)
+\item 
+static \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{debugger__c_8c_af6a34b4f9c134fff2902d5ce2bf2e325}{Read\+\_\+\+An\+\_\+\+Integer} (int arg\+\_\+nb)
+\item 
+static void \hyperlink{debugger__c_8c_a33f88afc672c2184ae3c81f7eefd8687}{Print\+\_\+\+Bank\+\_\+\+Name\+\_\+\+Offset} (char $\ast$prefix, char $\ast$bank\+\_\+name, int offset)
+\item 
+static void \hyperlink{debugger__c_8c_ab01796d096d95adb12edbb39ed14b231}{Print\+\_\+\+Wam\+\_\+\+Word} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$word\+\_\+adr)
+\item 
+static void \hyperlink{debugger__c_8c_a038a5ba206b2861a848c62b9ec060b65}{Modify\+\_\+\+Wam\+\_\+\+Word} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$word\+\_\+adr)
+\item 
+static \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$ \hyperlink{debugger__c_8c_a0e115100109d8827bab44c5c844e35ca}{Detect\+\_\+\+Stack} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$adr, char $\ast$$\ast$stack\+\_\+name)
+\item 
+static \hyperlink{structPredInf}{Pred\+Inf} $\ast$ \hyperlink{debugger__c_8c_a18add4a6c08f3e15fb3de2afb0af65dc}{Detect\+\_\+\+Pred\+\_\+\+From\+\_\+\+Code} (\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} $\ast$codep)
+\item 
+static \hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{debugger__c_8c_acf3acb722d514173e8d911e0aaf91fab}{Help} (void)
+\item 
+\hyperlink{debugger__c_8c_a031c5abc338d30fedaa4ecd11d939d79}{Prolog\+\_\+\+Prototype} (\hyperlink{debugger__c_8c_ac1a05fdcb5cdf31da1a2f369fa393fcf}{I\+N\+I\+T\+\_\+\+D\+E\+B\+U\+G\+G\+ER}, 0)
+\item 
+\hyperlink{debugger__c_8c_a98549daaa7a4312bc5c40ec935329f09}{Prolog\+\_\+\+Prototype} (\hyperlink{debugger__c_8c_af2351523f11abcb93a6fa73592cd4804}{D\+E\+B\+U\+G\+\_\+\+C\+A\+LL}, 2)
+\item 
+static void \hyperlink{debugger__c_8c_a058705f5154585d48d14909ea4050827}{Debug\+\_\+\+Initializer} (void)
+\item 
+void \hyperlink{debugger__c_8c_af05f9d6ebad9a16251ecfac89676cc8e}{Pl\+\_\+\+Set\+\_\+\+Debug\+\_\+\+Call\+\_\+\+Code\+\_\+0} (void)
+\item 
+void \hyperlink{debugger__c_8c_a1f937f4d5079f210175df5243f24d2d3}{Pl\+\_\+\+Reset\+\_\+\+Debug\+\_\+\+Call\+\_\+\+Code\+\_\+0} (void)
+\item 
+void \hyperlink{debugger__c_8c_a0c510386cd679c974006de083ea00589}{Pl\+\_\+\+Remove\+\_\+\+One\+\_\+\+Choice\+\_\+\+Point\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} b\+\_\+word)
+\item 
+void \hyperlink{debugger__c_8c_a398c300e47cda82b625339d9e45532ae}{Pl\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Info\+\_\+4} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} b\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} name\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} arity\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} lastb\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{debugger__c_8c_a1becd40f2e20caf04d700c9c94c2247f}{Pl\+\_\+\+Scan\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Info\+\_\+3} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} b\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} name\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} arity\+\_\+word)
+\item 
+void \hyperlink{debugger__c_8c_ac44775ce6fcde215f0f4ab485081f13a}{Pl\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Arg\+\_\+3} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} b\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} i\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} arg\+\_\+word)
+\item 
+static int \hyperlink{debugger__c_8c_ac55de854c7176817bdf1d1edd991a3db}{Debugger\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler} (void $\ast$bad\+\_\+addr)
+\item 
+void \hyperlink{debugger__c_8c_a11e816a7993314a8e53789bac9a67f53}{Pl\+\_\+\+Debug\+\_\+\+Wam} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Wam\+Cont \hyperlink{debugger__c_8c_a377566753ac28c095be00c55f78de798}{pl\+\_\+debug\+\_\+call\+\_\+code}
+\item 
+static int \hyperlink{debugger__c_8c_a9a41aa97063684d7551d26c5862e549c}{nb\+\_\+read\+\_\+arg}
+\item 
+static char \hyperlink{debugger__c_8c_adebfcef7ed9399adbe94e106c4d68794}{read\+\_\+arg} \mbox{[}30\mbox{]}\mbox{[}80\mbox{]}
+\item 
+static char $\ast$ \hyperlink{debugger__c_8c_a119494a296a66f14f30b91832e303e58}{envir\+\_\+name} \mbox{[}$\,$\mbox{]} = \hyperlink{wam__inst_8h_ab9cf20ff6d643f6046316b79d9f40c8f}{E\+N\+V\+I\+R\+\_\+\+N\+A\+M\+ES}
+\item 
+static char $\ast$ \hyperlink{debugger__c_8c_a0235a5e1d316b0869cbc94d08fde0c8d}{choice\+\_\+name} \mbox{[}$\,$\mbox{]} = \hyperlink{wam__inst_8h_a80743df5223d72f1916c1fa6eda36141}{C\+H\+O\+I\+C\+E\+\_\+\+N\+A\+M\+ES}
+\item 
+static char $\ast$ \hyperlink{debugger__c_8c_a7eed68d0801856526757dc44789971b7}{trail\+\_\+tag\+\_\+name} \mbox{[}$\,$\mbox{]} = \hyperlink{wam__inst_8h_a12cc598f8822606abf5f708ab4e3e5db}{T\+R\+A\+I\+L\+\_\+\+T\+A\+G\+\_\+\+N\+A\+M\+ES}
+\item 
+static \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} \hyperlink{debugger__c_8c_aafa7cca875426c78632269474fefdeb4}{reg\+\_\+copy} \mbox{[}N\+B\+\_\+\+O\+F\+\_\+\+R\+E\+GS\mbox{]}
+\item 
+static \hyperlink{stream__supp_8h_aaf7f88cb596ec47c270f8b2f79035a96}{Stm\+Inf} $\ast$ \hyperlink{debugger__c_8c_a1a26455806776bf18af80ecdc45950da}{pstm\+\_\+i}
+\item 
+static \hyperlink{stream__supp_8h_aaf7f88cb596ec47c270f8b2f79035a96}{Stm\+Inf} $\ast$ \hyperlink{debugger__c_8c_aec0f3256fa6d4ebdf3b76b38d711e5a5}{pstm\+\_\+o}
+\item 
+static \hyperlink{arch__dep_8h_ac0f5acbf7a1263217fdbb506c173307e}{sigjmp\+\_\+buf} \hyperlink{debugger__c_8c_a2fd739d3073c75259584cedea3ea855d}{dbg\+\_\+jumper}
+\item 
+static void $\ast$ \hyperlink{debugger__c_8c_a5b5a0dbc4678dcfe0b8c96519083c4d6}{invalid\+\_\+addr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!B\+A\+N\+K\+\_\+\+N\+A\+M\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+L\+E\+N\+G\+TH@{B\+A\+N\+K\+\_\+\+N\+A\+M\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+L\+E\+N\+G\+TH}}
+\index{B\+A\+N\+K\+\_\+\+N\+A\+M\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+L\+E\+N\+G\+TH@{B\+A\+N\+K\+\_\+\+N\+A\+M\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+L\+E\+N\+G\+TH}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{B\+A\+N\+K\+\_\+\+N\+A\+M\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+L\+E\+N\+G\+TH}{BANK_NAME_OFFSET_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+A\+N\+K\+\_\+\+N\+A\+M\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+L\+E\+N\+G\+TH~15}\hypertarget{debugger__c_8c_a6fa8ddf6cac5d80a595caec8b33e3a2b}{}\label{debugger__c_8c_a6fa8ddf6cac5d80a595caec8b33e3a2b}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!D\+E\+B\+U\+G\+\_\+\+C\+A\+LL@{D\+E\+B\+U\+G\+\_\+\+C\+A\+LL}}
+\index{D\+E\+B\+U\+G\+\_\+\+C\+A\+LL@{D\+E\+B\+U\+G\+\_\+\+C\+A\+LL}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{D\+E\+B\+U\+G\+\_\+\+C\+A\+LL}{DEBUG_CALL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+B\+U\+G\+\_\+\+C\+A\+LL~X1\+\_\+2464656275675\+F63616\+C6C}\hypertarget{debugger__c_8c_af2351523f11abcb93a6fa73592cd4804}{}\label{debugger__c_8c_af2351523f11abcb93a6fa73592cd4804}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!D\+E\+C\+I\+M\+A\+L\+\_\+\+L\+E\+N\+G\+TH@{D\+E\+C\+I\+M\+A\+L\+\_\+\+L\+E\+N\+G\+TH}}
+\index{D\+E\+C\+I\+M\+A\+L\+\_\+\+L\+E\+N\+G\+TH@{D\+E\+C\+I\+M\+A\+L\+\_\+\+L\+E\+N\+G\+TH}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{D\+E\+C\+I\+M\+A\+L\+\_\+\+L\+E\+N\+G\+TH}{DECIMAL_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+C\+I\+M\+A\+L\+\_\+\+L\+E\+N\+G\+TH~21}\hypertarget{debugger__c_8c_a7926f7592bbd63ebd69277aec61fa094}{}\label{debugger__c_8c_a7926f7592bbd63ebd69277aec61fa094}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!H\+E\+X\+A\+D\+E\+C\+I\+M\+A\+L\+\_\+\+L\+E\+N\+G\+TH@{H\+E\+X\+A\+D\+E\+C\+I\+M\+A\+L\+\_\+\+L\+E\+N\+G\+TH}}
+\index{H\+E\+X\+A\+D\+E\+C\+I\+M\+A\+L\+\_\+\+L\+E\+N\+G\+TH@{H\+E\+X\+A\+D\+E\+C\+I\+M\+A\+L\+\_\+\+L\+E\+N\+G\+TH}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{H\+E\+X\+A\+D\+E\+C\+I\+M\+A\+L\+\_\+\+L\+E\+N\+G\+TH}{HEXADECIMAL_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+E\+X\+A\+D\+E\+C\+I\+M\+A\+L\+\_\+\+L\+E\+N\+G\+TH~20}\hypertarget{debugger__c_8c_a7c1d09ebc256250e9190b3dc5adcc6d0}{}\label{debugger__c_8c_a7c1d09ebc256250e9190b3dc5adcc6d0}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!I\+N\+I\+T\+\_\+\+D\+E\+B\+U\+G\+G\+ER@{I\+N\+I\+T\+\_\+\+D\+E\+B\+U\+G\+G\+ER}}
+\index{I\+N\+I\+T\+\_\+\+D\+E\+B\+U\+G\+G\+ER@{I\+N\+I\+T\+\_\+\+D\+E\+B\+U\+G\+G\+ER}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{I\+N\+I\+T\+\_\+\+D\+E\+B\+U\+G\+G\+ER}{INIT_DEBUGGER}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+I\+T\+\_\+\+D\+E\+B\+U\+G\+G\+ER~X1\+\_\+24696\+E69745\+F6465627567676572}\hypertarget{debugger__c_8c_ac1a05fdcb5cdf31da1a2f369fa393fcf}{}\label{debugger__c_8c_ac1a05fdcb5cdf31da1a2f369fa393fcf}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!L@{L}}
+\index{L@{L}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{L}{L}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L(
+\begin{DoxyParamCaption}
+\item[{}]{str}
+\end{DoxyParamCaption}
+)~{\bf Pl\+\_\+\+Stream\+\_\+\+Printf}({\bf pstm\+\_\+o}, \char`\"{}\%s\textbackslash{}n\char`\"{}, str)}\hypertarget{debugger__c_8c_a16da33c4777d0dc8de955b3e28b483eb}{}\label{debugger__c_8c_a16da33c4777d0dc8de955b3e28b483eb}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!O\+B\+J\+\_\+\+I\+N\+IT@{O\+B\+J\+\_\+\+I\+N\+IT}}
+\index{O\+B\+J\+\_\+\+I\+N\+IT@{O\+B\+J\+\_\+\+I\+N\+IT}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{O\+B\+J\+\_\+\+I\+N\+IT}{OBJ_INIT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+B\+J\+\_\+\+I\+N\+IT~{\bf Debug\+\_\+\+Initializer}}\hypertarget{debugger__c_8c_ac2238956c2b28a02adaeaf890fbc4bf5}{}\label{debugger__c_8c_ac2238956c2b28a02adaeaf890fbc4bf5}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+L\+I\+ST@{S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+L\+I\+ST}}
+\index{S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+L\+I\+ST@{S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+L\+I\+ST}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+L\+I\+ST}{SEPARATOR_LIST}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+L\+I\+ST~\char`\"{} ,\mbox{[}$\,$\mbox{]}\textbackslash{}n\char`\"{}}\hypertarget{debugger__c_8c_a28688852415be780172268da365a778b}{}\label{debugger__c_8c_a28688852415be780172268da365a778b}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+T\+\_\+\+L\+E\+N\+G\+TH@{V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+T\+\_\+\+L\+E\+N\+G\+TH}}
+\index{V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+T\+\_\+\+L\+E\+N\+G\+TH@{V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+T\+\_\+\+L\+E\+N\+G\+TH}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+T\+\_\+\+L\+E\+N\+G\+TH}{VALUE_PART_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\+A\+L\+U\+E\+\_\+\+P\+A\+R\+T\+\_\+\+L\+E\+N\+G\+TH~{\bf B\+A\+N\+K\+\_\+\+N\+A\+M\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+L\+E\+N\+G\+TH}}\hypertarget{debugger__c_8c_a489e7bf3ed17b8f2584b4c2c1cc69f26}{}\label{debugger__c_8c_a489e7bf3ed17b8f2584b4c2c1cc69f26}
+
+
+\subsection{Typedef Documentation}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Fct\+Ptr@{Fct\+Ptr}}
+\index{Fct\+Ptr@{Fct\+Ptr}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Fct\+Ptr}{FctPtr}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Bool}($\ast$ Fct\+Ptr) ()}\hypertarget{debugger__c_8c_a2bba3f250813e2d5aafc81daef57bb5f}{}\label{debugger__c_8c_a2bba3f250813e2d5aafc81daef57bb5f}
+
+
+\subsection{Function Documentation}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Backtrack@{Backtrack}}
+\index{Backtrack@{Backtrack}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Backtrack(void)}{Backtrack(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Bool} Backtrack (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_af0c1c2a7e6feb8d41802e2e984dec8e3}{}\label{debugger__c_8c_af0c1c2a7e6feb8d41802e2e984dec8e3}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_af0c1c2a7e6feb8d41802e2e984dec8e3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_af0c1c2a7e6feb8d41802e2e984dec8e3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Debug\+\_\+\+Initializer@{Debug\+\_\+\+Initializer}}
+\index{Debug\+\_\+\+Initializer@{Debug\+\_\+\+Initializer}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Debug\+\_\+\+Initializer(void)}{Debug_Initializer(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Debug\+\_\+\+Initializer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_a058705f5154585d48d14909ea4050827}{}\label{debugger__c_8c_a058705f5154585d48d14909ea4050827}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_a058705f5154585d48d14909ea4050827_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Debugger\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{Debugger\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}}
+\index{Debugger\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{Debugger\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Debugger\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler(void $\ast$bad\+\_\+addr)}{Debugger_SIGSEGV_Handler(void *bad_addr)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Debugger\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{bad\+\_\+addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_ac55de854c7176817bdf1d1edd991a3db}{}\label{debugger__c_8c_ac55de854c7176817bdf1d1edd991a3db}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_ac55de854c7176817bdf1d1edd991a3db_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Dereference@{Dereference}}
+\index{Dereference@{Dereference}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Dereference(void)}{Dereference(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Bool} Dereference (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_a0e3db3f801a6d2dc7012c12e660377d8}{}\label{debugger__c_8c_a0e3db3f801a6d2dc7012c12e660377d8}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_a0e3db3f801a6d2dc7012c12e660377d8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_a0e3db3f801a6d2dc7012c12e660377d8_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Detect\+\_\+\+Pred\+\_\+\+From\+\_\+\+Code@{Detect\+\_\+\+Pred\+\_\+\+From\+\_\+\+Code}}
+\index{Detect\+\_\+\+Pred\+\_\+\+From\+\_\+\+Code@{Detect\+\_\+\+Pred\+\_\+\+From\+\_\+\+Code}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Detect\+\_\+\+Pred\+\_\+\+From\+\_\+\+Code(\+Pl\+Long $\ast$codep)}{Detect_Pred_From_Code(PlLong *codep)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Pred\+Inf} $\ast$ Detect\+\_\+\+Pred\+\_\+\+From\+\_\+\+Code (
+\begin{DoxyParamCaption}
+\item[{{\bf Pl\+Long} $\ast$}]{codep}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_a18add4a6c08f3e15fb3de2afb0af65dc}{}\label{debugger__c_8c_a18add4a6c08f3e15fb3de2afb0af65dc}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_a18add4a6c08f3e15fb3de2afb0af65dc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_a18add4a6c08f3e15fb3de2afb0af65dc_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Detect\+\_\+\+Stack@{Detect\+\_\+\+Stack}}
+\index{Detect\+\_\+\+Stack@{Detect\+\_\+\+Stack}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Detect\+\_\+\+Stack(\+Wam\+Word $\ast$adr, char $\ast$$\ast$stack\+\_\+name)}{Detect_Stack(WamWord *adr, char **stack_name)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Wam\+Word} $\ast$ Detect\+\_\+\+Stack (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word} $\ast$}]{adr, }
+\item[{char $\ast$$\ast$}]{stack\+\_\+name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_a0e115100109d8827bab44c5c844e35ca}{}\label{debugger__c_8c_a0e115100109d8827bab44c5c844e35ca}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_a0e115100109d8827bab44c5c844e35ca_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Environment@{Environment}}
+\index{Environment@{Environment}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Environment(void)}{Environment(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Bool} Environment (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_a38ce602bd1d5e416f1c2df80fa5de3c3}{}\label{debugger__c_8c_a38ce602bd1d5e416f1c2df80fa5de3c3}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_a38ce602bd1d5e416f1c2df80fa5de3c3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_a38ce602bd1d5e416f1c2df80fa5de3c3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Find\+\_\+\+Function@{Find\+\_\+\+Function}}
+\index{Find\+\_\+\+Function@{Find\+\_\+\+Function}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Find\+\_\+\+Function(void)}{Find_Function(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Fct\+Ptr} Find\+\_\+\+Function (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_ae03520aa896def6dd036699b888bd0ef}{}\label{debugger__c_8c_ae03520aa896def6dd036699b888bd0ef}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_ae03520aa896def6dd036699b888bd0ef_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{debugger__c_8c_ae03520aa896def6dd036699b888bd0ef_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Help@{Help}}
+\index{Help@{Help}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Help(void)}{Help(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Bool} Help (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_acf3acb722d514173e8d911e0aaf91fab}{}\label{debugger__c_8c_acf3acb722d514173e8d911e0aaf91fab}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_acf3acb722d514173e8d911e0aaf91fab_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_acf3acb722d514173e8d911e0aaf91fab_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Modify\+\_\+\+Wam\+\_\+\+Word@{Modify\+\_\+\+Wam\+\_\+\+Word}}
+\index{Modify\+\_\+\+Wam\+\_\+\+Word@{Modify\+\_\+\+Wam\+\_\+\+Word}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Modify\+\_\+\+Wam\+\_\+\+Word(\+Wam\+Word $\ast$word\+\_\+adr)}{Modify_Wam_Word(WamWord *word_adr)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Modify\+\_\+\+Wam\+\_\+\+Word (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word} $\ast$}]{word\+\_\+adr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_a038a5ba206b2861a848c62b9ec060b65}{}\label{debugger__c_8c_a038a5ba206b2861a848c62b9ec060b65}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_a038a5ba206b2861a848c62b9ec060b65_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_a038a5ba206b2861a848c62b9ec060b65_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!My\+\_\+\+System\+\_\+\+Directives@{My\+\_\+\+System\+\_\+\+Directives}}
+\index{My\+\_\+\+System\+\_\+\+Directives@{My\+\_\+\+System\+\_\+\+Directives}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{My\+\_\+\+System\+\_\+\+Directives(void)}{My_System_Directives(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void My\+\_\+\+System\+\_\+\+Directives (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_aa11d0ba3f5a83f5931cab90db271e8d1}{}\label{debugger__c_8c_aa11d0ba3f5a83f5931cab90db271e8d1}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_aa11d0ba3f5a83f5931cab90db271e8d1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{debugger__c_8c_aa11d0ba3f5a83f5931cab90db271e8d1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Pl\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Arg\+\_\+3@{Pl\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Arg\+\_\+3}}
+\index{Pl\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Arg\+\_\+3@{Pl\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Arg\+\_\+3}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Arg\+\_\+3(\+Wam\+Word b\+\_\+word, Wam\+Word i\+\_\+word, Wam\+Word arg\+\_\+word)}{Pl_Choice_Point_Arg_3(WamWord b_word, WamWord i_word, WamWord arg_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Arg\+\_\+3 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{b\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{i\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{arg\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{debugger__c_8c_ac44775ce6fcde215f0f4ab485081f13a}{}\label{debugger__c_8c_ac44775ce6fcde215f0f4ab485081f13a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{debugger__c_8c_ac44775ce6fcde215f0f4ab485081f13a_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Pl\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Info\+\_\+4@{Pl\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Info\+\_\+4}}
+\index{Pl\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Info\+\_\+4@{Pl\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Info\+\_\+4}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Info\+\_\+4(\+Wam\+Word b\+\_\+word, Wam\+Word name\+\_\+word, Wam\+Word arity\+\_\+word, Wam\+Word lastb\+\_\+word)}{Pl_Choice_Point_Info_4(WamWord b_word, WamWord name_word, WamWord arity_word, WamWord lastb_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Info\+\_\+4 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{b\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{name\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{arity\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{lastb\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{debugger__c_8c_a398c300e47cda82b625339d9e45532ae}{}\label{debugger__c_8c_a398c300e47cda82b625339d9e45532ae}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_a398c300e47cda82b625339d9e45532ae_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Pl\+\_\+\+Debug\+\_\+\+Wam@{Pl\+\_\+\+Debug\+\_\+\+Wam}}
+\index{Pl\+\_\+\+Debug\+\_\+\+Wam@{Pl\+\_\+\+Debug\+\_\+\+Wam}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Debug\+\_\+\+Wam(void)}{Pl_Debug_Wam(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Debug\+\_\+\+Wam (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{debugger__c_8c_a11e816a7993314a8e53789bac9a67f53}{}\label{debugger__c_8c_a11e816a7993314a8e53789bac9a67f53}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_a11e816a7993314a8e53789bac9a67f53_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Pl\+\_\+\+Remove\+\_\+\+One\+\_\+\+Choice\+\_\+\+Point\+\_\+1@{Pl\+\_\+\+Remove\+\_\+\+One\+\_\+\+Choice\+\_\+\+Point\+\_\+1}}
+\index{Pl\+\_\+\+Remove\+\_\+\+One\+\_\+\+Choice\+\_\+\+Point\+\_\+1@{Pl\+\_\+\+Remove\+\_\+\+One\+\_\+\+Choice\+\_\+\+Point\+\_\+1}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Remove\+\_\+\+One\+\_\+\+Choice\+\_\+\+Point\+\_\+1(\+Wam\+Word b\+\_\+word)}{Pl_Remove_One_Choice_Point_1(WamWord b_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Remove\+\_\+\+One\+\_\+\+Choice\+\_\+\+Point\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{b\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{debugger__c_8c_a0c510386cd679c974006de083ea00589}{}\label{debugger__c_8c_a0c510386cd679c974006de083ea00589}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Pl\+\_\+\+Reset\+\_\+\+Debug\+\_\+\+Call\+\_\+\+Code\+\_\+0@{Pl\+\_\+\+Reset\+\_\+\+Debug\+\_\+\+Call\+\_\+\+Code\+\_\+0}}
+\index{Pl\+\_\+\+Reset\+\_\+\+Debug\+\_\+\+Call\+\_\+\+Code\+\_\+0@{Pl\+\_\+\+Reset\+\_\+\+Debug\+\_\+\+Call\+\_\+\+Code\+\_\+0}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Reset\+\_\+\+Debug\+\_\+\+Call\+\_\+\+Code\+\_\+0(void)}{Pl_Reset_Debug_Call_Code_0(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Reset\+\_\+\+Debug\+\_\+\+Call\+\_\+\+Code\+\_\+0 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{debugger__c_8c_a1f937f4d5079f210175df5243f24d2d3}{}\label{debugger__c_8c_a1f937f4d5079f210175df5243f24d2d3}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Pl\+\_\+\+Scan\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Info\+\_\+3@{Pl\+\_\+\+Scan\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Info\+\_\+3}}
+\index{Pl\+\_\+\+Scan\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Info\+\_\+3@{Pl\+\_\+\+Scan\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Info\+\_\+3}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Scan\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Info\+\_\+3(\+Wam\+Word b\+\_\+word, Wam\+Word name\+\_\+word, Wam\+Word arity\+\_\+word)}{Pl_Scan_Choice_Point_Info_3(WamWord b_word, WamWord name_word, WamWord arity_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Scan\+\_\+\+Choice\+\_\+\+Point\+\_\+\+Info\+\_\+3 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{b\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{name\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{arity\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{debugger__c_8c_a1becd40f2e20caf04d700c9c94c2247f}{}\label{debugger__c_8c_a1becd40f2e20caf04d700c9c94c2247f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_a1becd40f2e20caf04d700c9c94c2247f_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Pl\+\_\+\+Set\+\_\+\+Debug\+\_\+\+Call\+\_\+\+Code\+\_\+0@{Pl\+\_\+\+Set\+\_\+\+Debug\+\_\+\+Call\+\_\+\+Code\+\_\+0}}
+\index{Pl\+\_\+\+Set\+\_\+\+Debug\+\_\+\+Call\+\_\+\+Code\+\_\+0@{Pl\+\_\+\+Set\+\_\+\+Debug\+\_\+\+Call\+\_\+\+Code\+\_\+0}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Set\+\_\+\+Debug\+\_\+\+Call\+\_\+\+Code\+\_\+0(void)}{Pl_Set_Debug_Call_Code_0(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Set\+\_\+\+Debug\+\_\+\+Call\+\_\+\+Code\+\_\+0 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{debugger__c_8c_af05f9d6ebad9a16251ecfac89676cc8e}{}\label{debugger__c_8c_af05f9d6ebad9a16251ecfac89676cc8e}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Print\+\_\+\+Bank\+\_\+\+Name\+\_\+\+Offset@{Print\+\_\+\+Bank\+\_\+\+Name\+\_\+\+Offset}}
+\index{Print\+\_\+\+Bank\+\_\+\+Name\+\_\+\+Offset@{Print\+\_\+\+Bank\+\_\+\+Name\+\_\+\+Offset}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Print\+\_\+\+Bank\+\_\+\+Name\+\_\+\+Offset(char $\ast$prefix, char $\ast$bank\+\_\+name, int offset)}{Print_Bank_Name_Offset(char *prefix, char *bank_name, int offset)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Print\+\_\+\+Bank\+\_\+\+Name\+\_\+\+Offset (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{prefix, }
+\item[{char $\ast$}]{bank\+\_\+name, }
+\item[{int}]{offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_a33f88afc672c2184ae3c81f7eefd8687}{}\label{debugger__c_8c_a33f88afc672c2184ae3c81f7eefd8687}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_a33f88afc672c2184ae3c81f7eefd8687_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_a33f88afc672c2184ae3c81f7eefd8687_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Print\+\_\+\+Wam\+\_\+\+Word@{Print\+\_\+\+Wam\+\_\+\+Word}}
+\index{Print\+\_\+\+Wam\+\_\+\+Word@{Print\+\_\+\+Wam\+\_\+\+Word}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Print\+\_\+\+Wam\+\_\+\+Word(\+Wam\+Word $\ast$word\+\_\+adr)}{Print_Wam_Word(WamWord *word_adr)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Print\+\_\+\+Wam\+\_\+\+Word (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word} $\ast$}]{word\+\_\+adr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_ab01796d096d95adb12edbb39ed14b231}{}\label{debugger__c_8c_ab01796d096d95adb12edbb39ed14b231}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_ab01796d096d95adb12edbb39ed14b231_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_ab01796d096d95adb12edbb39ed14b231_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}}
+\index{Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Prolog\+\_\+\+Prototype(\+I\+N\+I\+T\+\_\+\+D\+E\+B\+U\+G\+G\+E\+R, 0)}{Prolog_Prototype(INIT_DEBUGGER, 0)}}]{\setlength{\rightskip}{0pt plus 5cm}Prolog\+\_\+\+Prototype (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+N\+I\+T\+\_\+\+D\+E\+B\+U\+G\+G\+ER}}]{, }
+\item[{0}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{debugger__c_8c_a031c5abc338d30fedaa4ecd11d939d79}{}\label{debugger__c_8c_a031c5abc338d30fedaa4ecd11d939d79}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}}
+\index{Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Prolog\+\_\+\+Prototype(\+D\+E\+B\+U\+G\+\_\+\+C\+A\+L\+L, 2)}{Prolog_Prototype(DEBUG_CALL, 2)}}]{\setlength{\rightskip}{0pt plus 5cm}Prolog\+\_\+\+Prototype (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+E\+B\+U\+G\+\_\+\+C\+A\+LL}}]{, }
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{debugger__c_8c_a98549daaa7a4312bc5c40ec935329f09}{}\label{debugger__c_8c_a98549daaa7a4312bc5c40ec935329f09}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Read\+\_\+\+An\+\_\+\+Integer@{Read\+\_\+\+An\+\_\+\+Integer}}
+\index{Read\+\_\+\+An\+\_\+\+Integer@{Read\+\_\+\+An\+\_\+\+Integer}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Read\+\_\+\+An\+\_\+\+Integer(int arg\+\_\+nb)}{Read_An_Integer(int arg_nb)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Pl\+Long} Read\+\_\+\+An\+\_\+\+Integer (
+\begin{DoxyParamCaption}
+\item[{int}]{arg\+\_\+nb}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_af6a34b4f9c134fff2902d5ce2bf2e325}{}\label{debugger__c_8c_af6a34b4f9c134fff2902d5ce2bf2e325}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_af6a34b4f9c134fff2902d5ce2bf2e325_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_af6a34b4f9c134fff2902d5ce2bf2e325_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Read\+\_\+\+Bank\+\_\+\+Adr@{Read\+\_\+\+Bank\+\_\+\+Adr}}
+\index{Read\+\_\+\+Bank\+\_\+\+Adr@{Read\+\_\+\+Bank\+\_\+\+Adr}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Read\+\_\+\+Bank\+\_\+\+Adr(\+Bool only\+\_\+stack, int arg\+\_\+nb, char $\ast$$\ast$bank\+\_\+name)}{Read_Bank_Adr(Bool only_stack, int arg_nb, char **bank_name)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Wam\+Word} $\ast$ Read\+\_\+\+Bank\+\_\+\+Adr (
+\begin{DoxyParamCaption}
+\item[{{\bf Bool}}]{only\+\_\+stack, }
+\item[{int}]{arg\+\_\+nb, }
+\item[{char $\ast$$\ast$}]{bank\+\_\+name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_a73b8aac43e8bebe6dfd7f483bf81e055}{}\label{debugger__c_8c_a73b8aac43e8bebe6dfd7f483bf81e055}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_a73b8aac43e8bebe6dfd7f483bf81e055_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_a73b8aac43e8bebe6dfd7f483bf81e055_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Scan\+\_\+\+Command@{Scan\+\_\+\+Command}}
+\index{Scan\+\_\+\+Command@{Scan\+\_\+\+Command}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Scan\+\_\+\+Command(char $\ast$source\+\_\+str)}{Scan_Command(char *source_str)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Scan\+\_\+\+Command (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{source\+\_\+str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_ad08f2fe399f2723ab5bbb977e9397d8e}{}\label{debugger__c_8c_ad08f2fe399f2723ab5bbb977e9397d8e}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_ad08f2fe399f2723ab5bbb977e9397d8e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!What@{What}}
+\index{What@{What}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{What(void)}{What(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Bool} What (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_ae3548d2718c3c51e01cbf3aa9752ce17}{}\label{debugger__c_8c_ae3548d2718c3c51e01cbf3aa9752ce17}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_ae3548d2718c3c51e01cbf3aa9752ce17_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_ae3548d2718c3c51e01cbf3aa9752ce17_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Where@{Where}}
+\index{Where@{Where}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Where(void)}{Where(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Bool} Where (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_ad5667d4182005ee143f6b45c617d722a}{}\label{debugger__c_8c_ad5667d4182005ee143f6b45c617d722a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_ad5667d4182005ee143f6b45c617d722a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_ad5667d4182005ee143f6b45c617d722a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!Write\+\_\+\+Data\+\_\+\+Modify@{Write\+\_\+\+Data\+\_\+\+Modify}}
+\index{Write\+\_\+\+Data\+\_\+\+Modify@{Write\+\_\+\+Data\+\_\+\+Modify}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Write\+\_\+\+Data\+\_\+\+Modify(void)}{Write_Data_Modify(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Bool} Write\+\_\+\+Data\+\_\+\+Modify (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_acf94b4468a0d9f4b6e103f388bb3cb63}{}\label{debugger__c_8c_acf94b4468a0d9f4b6e103f388bb3cb63}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_acf94b4468a0d9f4b6e103f388bb3cb63_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{debugger__c_8c_acf94b4468a0d9f4b6e103f388bb3cb63_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!choice\+\_\+name@{choice\+\_\+name}}
+\index{choice\+\_\+name@{choice\+\_\+name}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{choice\+\_\+name}{choice_name}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ choice\+\_\+name\mbox{[}$\,$\mbox{]} = {\bf C\+H\+O\+I\+C\+E\+\_\+\+N\+A\+M\+ES}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_a0235a5e1d316b0869cbc94d08fde0c8d}{}\label{debugger__c_8c_a0235a5e1d316b0869cbc94d08fde0c8d}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!dbg\+\_\+jumper@{dbg\+\_\+jumper}}
+\index{dbg\+\_\+jumper@{dbg\+\_\+jumper}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{dbg\+\_\+jumper}{dbg_jumper}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf sigjmp\+\_\+buf} dbg\+\_\+jumper\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_a2fd739d3073c75259584cedea3ea855d}{}\label{debugger__c_8c_a2fd739d3073c75259584cedea3ea855d}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!envir\+\_\+name@{envir\+\_\+name}}
+\index{envir\+\_\+name@{envir\+\_\+name}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{envir\+\_\+name}{envir_name}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ envir\+\_\+name\mbox{[}$\,$\mbox{]} = {\bf E\+N\+V\+I\+R\+\_\+\+N\+A\+M\+ES}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_a119494a296a66f14f30b91832e303e58}{}\label{debugger__c_8c_a119494a296a66f14f30b91832e303e58}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!invalid\+\_\+addr@{invalid\+\_\+addr}}
+\index{invalid\+\_\+addr@{invalid\+\_\+addr}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{invalid\+\_\+addr}{invalid_addr}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ invalid\+\_\+addr\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_a5b5a0dbc4678dcfe0b8c96519083c4d6}{}\label{debugger__c_8c_a5b5a0dbc4678dcfe0b8c96519083c4d6}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!nb\+\_\+read\+\_\+arg@{nb\+\_\+read\+\_\+arg}}
+\index{nb\+\_\+read\+\_\+arg@{nb\+\_\+read\+\_\+arg}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{nb\+\_\+read\+\_\+arg}{nb_read_arg}}]{\setlength{\rightskip}{0pt plus 5cm}int nb\+\_\+read\+\_\+arg\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_a9a41aa97063684d7551d26c5862e549c}{}\label{debugger__c_8c_a9a41aa97063684d7551d26c5862e549c}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!pl\+\_\+debug\+\_\+call\+\_\+code@{pl\+\_\+debug\+\_\+call\+\_\+code}}
+\index{pl\+\_\+debug\+\_\+call\+\_\+code@{pl\+\_\+debug\+\_\+call\+\_\+code}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{pl\+\_\+debug\+\_\+call\+\_\+code}{pl_debug_call_code}}]{\setlength{\rightskip}{0pt plus 5cm}Wam\+Cont pl\+\_\+debug\+\_\+call\+\_\+code}\hypertarget{debugger__c_8c_a377566753ac28c095be00c55f78de798}{}\label{debugger__c_8c_a377566753ac28c095be00c55f78de798}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!pstm\+\_\+i@{pstm\+\_\+i}}
+\index{pstm\+\_\+i@{pstm\+\_\+i}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{pstm\+\_\+i}{pstm_i}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Stm\+Inf}$\ast$ pstm\+\_\+i\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_a1a26455806776bf18af80ecdc45950da}{}\label{debugger__c_8c_a1a26455806776bf18af80ecdc45950da}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!pstm\+\_\+o@{pstm\+\_\+o}}
+\index{pstm\+\_\+o@{pstm\+\_\+o}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{pstm\+\_\+o}{pstm_o}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Stm\+Inf}$\ast$ pstm\+\_\+o\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_aec0f3256fa6d4ebdf3b76b38d711e5a5}{}\label{debugger__c_8c_aec0f3256fa6d4ebdf3b76b38d711e5a5}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!read\+\_\+arg@{read\+\_\+arg}}
+\index{read\+\_\+arg@{read\+\_\+arg}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{read\+\_\+arg}{read_arg}}]{\setlength{\rightskip}{0pt plus 5cm}char read\+\_\+arg\mbox{[}30\mbox{]}\mbox{[}80\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_adebfcef7ed9399adbe94e106c4d68794}{}\label{debugger__c_8c_adebfcef7ed9399adbe94e106c4d68794}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!reg\+\_\+copy@{reg\+\_\+copy}}
+\index{reg\+\_\+copy@{reg\+\_\+copy}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{reg\+\_\+copy}{reg_copy}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Wam\+Word} reg\+\_\+copy\mbox{[}N\+B\+\_\+\+O\+F\+\_\+\+R\+E\+GS\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_aafa7cca875426c78632269474fefdeb4}{}\label{debugger__c_8c_aafa7cca875426c78632269474fefdeb4}
+\index{debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}!trail\+\_\+tag\+\_\+name@{trail\+\_\+tag\+\_\+name}}
+\index{trail\+\_\+tag\+\_\+name@{trail\+\_\+tag\+\_\+name}!debugger\+\_\+c.\+c@{debugger\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{trail\+\_\+tag\+\_\+name}{trail_tag_name}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ trail\+\_\+tag\+\_\+name\mbox{[}$\,$\mbox{]} = {\bf T\+R\+A\+I\+L\+\_\+\+T\+A\+G\+\_\+\+N\+A\+M\+ES}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{debugger__c_8c_a7eed68d0801856526757dc44789971b7}{}\label{debugger__c_8c_a7eed68d0801856526757dc44789971b7}

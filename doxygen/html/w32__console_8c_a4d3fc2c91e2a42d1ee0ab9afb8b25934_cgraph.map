@@ -1,0 +1,24 @@
+<map id="Create_Edit_Control" name="Create_Edit_Control">
+<area shape="rect" id="node2" href="$w32__console_8c.html#ae21b20c73fc3d1b2301ac435d6ffefb8" title="SubClassEditField" alt="" coords="193,183,324,209"/>
+<area shape="rect" id="node23" href="$w32__console_8c.html#a0a91b0a1e1c66bf3281ebb8e4685481b" title="WordBreakProc" alt="" coords="201,233,316,260"/>
+<area shape="rect" id="node3" href="$w32__console_8c.html#a86a613d9f9c5724324a80eb7ad8fd162" title="SubClassEdit" alt="" coords="372,183,475,209"/>
+<area shape="rect" id="node4" href="$w32__console_8c.html#adaf1402815a745cc420a50b850400d4e" title="Delete_Selection" alt="" coords="550,56,671,83"/>
+<area shape="rect" id="node6" href="$w32__console_8c.html#aa1aefedc2452b3120b0d25c9a860fddc" title="Add_Char_To_Queue" alt="" coords="955,56,1102,83"/>
+<area shape="rect" id="node7" href="$w32__console_8c.html#a3480ea2b3116aeb824aac0df6d68da83" title="Move_Caret_From_Mouse" alt="" coords="523,5,699,32"/>
+<area shape="rect" id="node8" href="$w32__console_8c.html#a4429f5179fe290e7469506c6287a46a5" title="Show_Help" alt="" coords="566,157,655,184"/>
+<area shape="rect" id="node18" href="$w32__console_8c.html#add48de04cc579f7ed8c1e507afce16c6" title="Get_Current_Word" alt="" coords="545,208,676,235"/>
+<area shape="rect" id="node19" href="$w32__console_8c.html#a4a4fa92ab96c87a9fedbe477e80d38a0" title="Set_Selection" alt="" coords="559,259,662,285"/>
+<area shape="rect" id="node20" href="$w32__console_8c.html#ad53ee08377d881b92e3d61bb96d3b5f3" title="Save_Options" alt="" coords="559,309,663,336"/>
+<area shape="rect" id="node21" href="$w32__console_8c.html#af041f75cf92908627d2a76f3a70f0c4a" title="Add_Clipboard_To_Queue" alt="" coords="523,360,698,387"/>
+<area shape="rect" id="node5" href="$w32__console_8c.html#a8c4b08848ce838a6ff53832a1530670e" title="Move_Caret_To" alt="" coords="766,5,881,32"/>
+<area shape="rect" id="node9" href="$w32__console_8c.html#a7c82a573b5e01698b2f8e86d4cef3702" title="Get_CHM_Help_Path" alt="" coords="749,157,898,184"/>
+<area shape="rect" id="node10" href="$prolog__path_8c.html#ab1fba1889b5219b65cfaedf8df2d4217" title="Get_Prolog_Path" alt="" coords="968,132,1089,159"/>
+<area shape="rect" id="node16" href="$w32__console_8c.html#a637e0b7a2536a792abc63915a1bf671b" title="Get_Selected_Directory" alt="" coords="948,183,1109,209"/>
+<area shape="rect" id="node11" href="$prolog__path_8c.html#a86fe381e1f16682b85242a27356df7ca" title="Is_A_Valid_Root" alt="" coords="1400,56,1520,83"/>
+<area shape="rect" id="node12" href="$prolog__path_8c.html#ad32a239b1d7b356e49ac366fd1583116" title="Get_Prolog_Path_From_Exec" alt="" coords="1157,81,1352,108"/>
+<area shape="rect" id="node13" href="$prolog__path_8c.html#ab3203706c871e28d9b94c003406956a6" title="Search_Path" alt="" coords="1206,132,1303,159"/>
+<area shape="rect" id="node14" href="$cpp__headers_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1435,132,1485,159"/>
+<area shape="rect" id="node15" href="$cpp__headers_8c.html#af90754321baabe30d5f9a37c509ba2c7" title="Cpp_File" alt="" coords="1568,132,1643,159"/>
+<area shape="rect" id="node17" href="$w32__console_8c.html#a6b34de0106a84c3f3eacfdf7fe989a17" title="BrowseCallbackProc" alt="" coords="1183,183,1327,209"/>
+<area shape="rect" id="node22" href="$w32__console_8c.html#a7a3267ed0ece9abb97a70487dc99aa75" title="Add_String_To_Queue" alt="" coords="747,360,900,387"/>
+</map>

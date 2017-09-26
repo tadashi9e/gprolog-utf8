@@ -1,0 +1,11 @@
+<map id="dispose_chunk" name="dispose_chunk">
+<area shape="rect" id="node2" href="$dl__malloc_8c.html#af8adec320537d6e63bc68e76633a1f0e" title="try_realloc_chunk" alt="" coords="164,69,288,96"/>
+<area shape="rect" id="node6" href="$dl__malloc_8c.html#ad58d56198e0e2a3e26692bb2041017f9" title="internal_memalign" alt="" coords="163,145,289,172"/>
+<area shape="rect" id="node9" href="$dl__malloc_8c.html#aa2888b3de06df35c3b18b31b1e15fe8c" title="internal_bulk_free" alt="" coords="164,196,288,223"/>
+<area shape="rect" id="node3" href="$dl__malloc_8c.html#a79e7e77bbc6d5208678b007bf89aab61" title="dlrealloc" alt="" coords="375,5,446,32"/>
+<area shape="rect" id="node4" href="$dl__malloc_8c.html#afc9bc229eecc960b0c2bfd9033b6e2e0" title="dlrealloc_in_place" alt="" coords="348,56,473,83"/>
+<area shape="rect" id="node5" href="$dl__malloc_8c.html#a8923af8a1039983906f9617a57022e98" title="dlmalloc_usable_size" alt="" coords="337,107,484,133"/>
+<area shape="rect" id="node7" href="$dl__malloc_8c.html#a789f1726140c8d0ef5b54d893d806262" title="dlmemalign" alt="" coords="367,157,455,184"/>
+<area shape="rect" id="node8" href="$dl__malloc_8c.html#a61f04155b5dceea889ba3cef64968684" title="dlposix_memalign" alt="" coords="347,208,474,235"/>
+<area shape="rect" id="node10" href="$dl__malloc_8c.html#a8e02204694aaa24ccc23b1cd2c403b7e" title="dlbulk_free" alt="" coords="368,259,453,285"/>
+</map>

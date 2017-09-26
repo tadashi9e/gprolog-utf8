@@ -1,0 +1,212 @@
+\hypertarget{oper__c_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/oper\+\_\+c.c File Reference}
+\label{oper__c_8c}\index{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/oper\+\_\+c.\+c@{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/oper\+\_\+c.\+c}}
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}engine\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bips\+\_\+pl.\+h\char`\"{}}\\*
+Include dependency graph for oper\+\_\+c.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper__c_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{oper__c_8c_ac2238956c2b28a02adaeaf890fbc4bf5}{O\+B\+J\+\_\+\+I\+N\+IT}~\hyperlink{oper__c_8c_a03ad84751e481d511e36ff8b9231f1c7}{Oper\+\_\+\+Initializer}
+\item 
+\#define \hyperlink{oper__c_8c_a855e9738fe5c5e81f2ba6f5e1c89498b}{FX}~0
+\item 
+\#define \hyperlink{oper__c_8c_ad0a0eabbc733db222ee8d2d19644e7e8}{FY}~1
+\item 
+\#define \hyperlink{oper__c_8c_a0b960cf37344d73405810755a0ab23cf}{XF}~2
+\item 
+\#define \hyperlink{oper__c_8c_a74e1c32283ad51af7a0e774458723b22}{YF}~3
+\item 
+\#define \hyperlink{oper__c_8c_a6518018b1c20f8e5bff8856103e90104}{X\+FX}~4
+\item 
+\#define \hyperlink{oper__c_8c_abd541b42c917f75c25a3888526fe4669}{X\+FY}~5
+\item 
+\#define \hyperlink{oper__c_8c_a1af0e6bc120e363818117ea9f1043426}{Y\+FX}~6
+\item 
+\#define \hyperlink{oper__c_8c_a86cc655969200b2e2052288860da9af3}{C\+U\+R\+R\+E\+N\+T\+\_\+\+O\+P\+\_\+\+A\+LT}~X1\+\_\+2463757272656\+E745\+F6\+F705\+F616\+C74
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{oper__c_8c_a7888ff9a5e3faec930477c8faa10b55f}{Detect\+\_\+\+Oper\+\_\+\+Specif} (\hyperlink{structOperInf}{Oper\+Inf} $\ast$oper)
+\item 
+\hyperlink{oper__c_8c_a721a71db6c16085dbcffc013f0c2d13b}{Prolog\+\_\+\+Prototype} (\hyperlink{oper__c_8c_a86cc655969200b2e2052288860da9af3}{C\+U\+R\+R\+E\+N\+T\+\_\+\+O\+P\+\_\+\+A\+LT}, 0)
+\item 
+static void \hyperlink{oper__c_8c_a03ad84751e481d511e36ff8b9231f1c7}{Oper\+\_\+\+Initializer} (void)
+\item 
+void \hyperlink{oper__c_8c_ae6dc2db598921d7de3ef556682930cfd}{Pl\+\_\+\+Op\+\_\+3} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} prec\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} specif\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} oper\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{oper__c_8c_a099914cf4fc257810bb36b374d702e80}{Pl\+\_\+\+Current\+\_\+\+Op\+\_\+3} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} prec\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} specif\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} oper\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{oper__c_8c_afdfda6f5d74b65babe5aedbc19308e9f}{Pl\+\_\+\+Current\+\_\+\+Op\+\_\+\+Alt\+\_\+0} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{oper__c_8c_a704d0a76adcd6d02289b3b8f10733fd5}{atom\+\_\+specif\+\_\+tbl} \mbox{[}7\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{oper\+\_\+c.\+c@{oper\+\_\+c.\+c}!C\+U\+R\+R\+E\+N\+T\+\_\+\+O\+P\+\_\+\+A\+LT@{C\+U\+R\+R\+E\+N\+T\+\_\+\+O\+P\+\_\+\+A\+LT}}
+\index{C\+U\+R\+R\+E\+N\+T\+\_\+\+O\+P\+\_\+\+A\+LT@{C\+U\+R\+R\+E\+N\+T\+\_\+\+O\+P\+\_\+\+A\+LT}!oper\+\_\+c.\+c@{oper\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{C\+U\+R\+R\+E\+N\+T\+\_\+\+O\+P\+\_\+\+A\+LT}{CURRENT_OP_ALT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+U\+R\+R\+E\+N\+T\+\_\+\+O\+P\+\_\+\+A\+LT~X1\+\_\+2463757272656\+E745\+F6\+F705\+F616\+C74}\hypertarget{oper__c_8c_a86cc655969200b2e2052288860da9af3}{}\label{oper__c_8c_a86cc655969200b2e2052288860da9af3}
+\index{oper\+\_\+c.\+c@{oper\+\_\+c.\+c}!FX@{FX}}
+\index{FX@{FX}!oper\+\_\+c.\+c@{oper\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{FX}{FX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define FX~0}\hypertarget{oper__c_8c_a855e9738fe5c5e81f2ba6f5e1c89498b}{}\label{oper__c_8c_a855e9738fe5c5e81f2ba6f5e1c89498b}
+\index{oper\+\_\+c.\+c@{oper\+\_\+c.\+c}!FY@{FY}}
+\index{FY@{FY}!oper\+\_\+c.\+c@{oper\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{FY}{FY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define FY~1}\hypertarget{oper__c_8c_ad0a0eabbc733db222ee8d2d19644e7e8}{}\label{oper__c_8c_ad0a0eabbc733db222ee8d2d19644e7e8}
+\index{oper\+\_\+c.\+c@{oper\+\_\+c.\+c}!O\+B\+J\+\_\+\+I\+N\+IT@{O\+B\+J\+\_\+\+I\+N\+IT}}
+\index{O\+B\+J\+\_\+\+I\+N\+IT@{O\+B\+J\+\_\+\+I\+N\+IT}!oper\+\_\+c.\+c@{oper\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{O\+B\+J\+\_\+\+I\+N\+IT}{OBJ_INIT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+B\+J\+\_\+\+I\+N\+IT~{\bf Oper\+\_\+\+Initializer}}\hypertarget{oper__c_8c_ac2238956c2b28a02adaeaf890fbc4bf5}{}\label{oper__c_8c_ac2238956c2b28a02adaeaf890fbc4bf5}
+\index{oper\+\_\+c.\+c@{oper\+\_\+c.\+c}!XF@{XF}}
+\index{XF@{XF}!oper\+\_\+c.\+c@{oper\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{XF}{XF}}]{\setlength{\rightskip}{0pt plus 5cm}\#define XF~2}\hypertarget{oper__c_8c_a0b960cf37344d73405810755a0ab23cf}{}\label{oper__c_8c_a0b960cf37344d73405810755a0ab23cf}
+\index{oper\+\_\+c.\+c@{oper\+\_\+c.\+c}!X\+FX@{X\+FX}}
+\index{X\+FX@{X\+FX}!oper\+\_\+c.\+c@{oper\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{X\+FX}{XFX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\+FX~4}\hypertarget{oper__c_8c_a6518018b1c20f8e5bff8856103e90104}{}\label{oper__c_8c_a6518018b1c20f8e5bff8856103e90104}
+\index{oper\+\_\+c.\+c@{oper\+\_\+c.\+c}!X\+FY@{X\+FY}}
+\index{X\+FY@{X\+FY}!oper\+\_\+c.\+c@{oper\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{X\+FY}{XFY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define X\+FY~5}\hypertarget{oper__c_8c_abd541b42c917f75c25a3888526fe4669}{}\label{oper__c_8c_abd541b42c917f75c25a3888526fe4669}
+\index{oper\+\_\+c.\+c@{oper\+\_\+c.\+c}!YF@{YF}}
+\index{YF@{YF}!oper\+\_\+c.\+c@{oper\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{YF}{YF}}]{\setlength{\rightskip}{0pt plus 5cm}\#define YF~3}\hypertarget{oper__c_8c_a74e1c32283ad51af7a0e774458723b22}{}\label{oper__c_8c_a74e1c32283ad51af7a0e774458723b22}
+\index{oper\+\_\+c.\+c@{oper\+\_\+c.\+c}!Y\+FX@{Y\+FX}}
+\index{Y\+FX@{Y\+FX}!oper\+\_\+c.\+c@{oper\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Y\+FX}{YFX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\+FX~6}\hypertarget{oper__c_8c_a1af0e6bc120e363818117ea9f1043426}{}\label{oper__c_8c_a1af0e6bc120e363818117ea9f1043426}
+
+
+\subsection{Function Documentation}
+\index{oper\+\_\+c.\+c@{oper\+\_\+c.\+c}!Detect\+\_\+\+Oper\+\_\+\+Specif@{Detect\+\_\+\+Oper\+\_\+\+Specif}}
+\index{Detect\+\_\+\+Oper\+\_\+\+Specif@{Detect\+\_\+\+Oper\+\_\+\+Specif}!oper\+\_\+c.\+c@{oper\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Detect\+\_\+\+Oper\+\_\+\+Specif(\+Oper\+Inf $\ast$oper)}{Detect_Oper_Specif(OperInf *oper)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Detect\+\_\+\+Oper\+\_\+\+Specif (
+\begin{DoxyParamCaption}
+\item[{{\bf Oper\+Inf} $\ast$}]{oper}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{oper__c_8c_a7888ff9a5e3faec930477c8faa10b55f}{}\label{oper__c_8c_a7888ff9a5e3faec930477c8faa10b55f}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{oper__c_8c_a7888ff9a5e3faec930477c8faa10b55f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+c.\+c@{oper\+\_\+c.\+c}!Oper\+\_\+\+Initializer@{Oper\+\_\+\+Initializer}}
+\index{Oper\+\_\+\+Initializer@{Oper\+\_\+\+Initializer}!oper\+\_\+c.\+c@{oper\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Oper\+\_\+\+Initializer(void)}{Oper_Initializer(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Oper\+\_\+\+Initializer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{oper__c_8c_a03ad84751e481d511e36ff8b9231f1c7}{}\label{oper__c_8c_a03ad84751e481d511e36ff8b9231f1c7}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{oper__c_8c_a03ad84751e481d511e36ff8b9231f1c7_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+c.\+c@{oper\+\_\+c.\+c}!Pl\+\_\+\+Current\+\_\+\+Op\+\_\+3@{Pl\+\_\+\+Current\+\_\+\+Op\+\_\+3}}
+\index{Pl\+\_\+\+Current\+\_\+\+Op\+\_\+3@{Pl\+\_\+\+Current\+\_\+\+Op\+\_\+3}!oper\+\_\+c.\+c@{oper\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Current\+\_\+\+Op\+\_\+3(\+Wam\+Word prec\+\_\+word, Wam\+Word specif\+\_\+word, Wam\+Word oper\+\_\+word)}{Pl_Current_Op_3(WamWord prec_word, WamWord specif_word, WamWord oper_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Current\+\_\+\+Op\+\_\+3 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{prec\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{specif\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{oper\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__c_8c_a099914cf4fc257810bb36b374d702e80}{}\label{oper__c_8c_a099914cf4fc257810bb36b374d702e80}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper__c_8c_a099914cf4fc257810bb36b374d702e80_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+c.\+c@{oper\+\_\+c.\+c}!Pl\+\_\+\+Current\+\_\+\+Op\+\_\+\+Alt\+\_\+0@{Pl\+\_\+\+Current\+\_\+\+Op\+\_\+\+Alt\+\_\+0}}
+\index{Pl\+\_\+\+Current\+\_\+\+Op\+\_\+\+Alt\+\_\+0@{Pl\+\_\+\+Current\+\_\+\+Op\+\_\+\+Alt\+\_\+0}!oper\+\_\+c.\+c@{oper\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Current\+\_\+\+Op\+\_\+\+Alt\+\_\+0(void)}{Pl_Current_Op_Alt_0(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Current\+\_\+\+Op\+\_\+\+Alt\+\_\+0 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__c_8c_afdfda6f5d74b65babe5aedbc19308e9f}{}\label{oper__c_8c_afdfda6f5d74b65babe5aedbc19308e9f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper__c_8c_afdfda6f5d74b65babe5aedbc19308e9f_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+c.\+c@{oper\+\_\+c.\+c}!Pl\+\_\+\+Op\+\_\+3@{Pl\+\_\+\+Op\+\_\+3}}
+\index{Pl\+\_\+\+Op\+\_\+3@{Pl\+\_\+\+Op\+\_\+3}!oper\+\_\+c.\+c@{oper\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Op\+\_\+3(\+Wam\+Word prec\+\_\+word, Wam\+Word specif\+\_\+word, Wam\+Word oper\+\_\+word)}{Pl_Op_3(WamWord prec_word, WamWord specif_word, WamWord oper_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Op\+\_\+3 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{prec\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{specif\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{oper\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__c_8c_ae6dc2db598921d7de3ef556682930cfd}{}\label{oper__c_8c_ae6dc2db598921d7de3ef556682930cfd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper__c_8c_ae6dc2db598921d7de3ef556682930cfd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper__c_8c_ae6dc2db598921d7de3ef556682930cfd_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+c.\+c@{oper\+\_\+c.\+c}!Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}}
+\index{Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}!oper\+\_\+c.\+c@{oper\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Prolog\+\_\+\+Prototype(\+C\+U\+R\+R\+E\+N\+T\+\_\+\+O\+P\+\_\+\+A\+L\+T, 0)}{Prolog_Prototype(CURRENT_OP_ALT, 0)}}]{\setlength{\rightskip}{0pt plus 5cm}Prolog\+\_\+\+Prototype (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+U\+R\+R\+E\+N\+T\+\_\+\+O\+P\+\_\+\+A\+LT}}]{, }
+\item[{0}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__c_8c_a721a71db6c16085dbcffc013f0c2d13b}{}\label{oper__c_8c_a721a71db6c16085dbcffc013f0c2d13b}
+
+
+\subsection{Variable Documentation}
+\index{oper\+\_\+c.\+c@{oper\+\_\+c.\+c}!atom\+\_\+specif\+\_\+tbl@{atom\+\_\+specif\+\_\+tbl}}
+\index{atom\+\_\+specif\+\_\+tbl@{atom\+\_\+specif\+\_\+tbl}!oper\+\_\+c.\+c@{oper\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{atom\+\_\+specif\+\_\+tbl}{atom_specif_tbl}}]{\setlength{\rightskip}{0pt plus 5cm}int atom\+\_\+specif\+\_\+tbl\mbox{[}7\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{oper__c_8c_a704d0a76adcd6d02289b3b8f10733fd5}{}\label{oper__c_8c_a704d0a76adcd6d02289b3b8f10733fd5}

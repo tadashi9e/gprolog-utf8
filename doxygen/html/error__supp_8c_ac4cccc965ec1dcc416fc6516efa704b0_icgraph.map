@@ -1,0 +1,11 @@
+<map id="Pl_Err_System" name="Pl_Err_System">
+<area shape="rect" id="node2" href="$consult__c_8c.html#a1aeea9f76cdfe478ce18d2262b45f36a" title="Pl_Consult_2" alt="" coords="167,5,267,32"/>
+<area shape="rect" id="node3" href="$error__supp_8h.html#a76830f502895027f89f5430f7dcdd159" title="Pl_Os_Error" alt="" coords="171,56,264,83"/>
+<area shape="rect" id="node5" href="$os__interf__c_8c.html#aed2810d942c8bfb1e7912897451fb1e3" title="Pl_Spawn_3" alt="" coords="170,107,265,133"/>
+<area shape="rect" id="node6" href="$os__interf__c_8c.html#aded08a658582be142616062585180aaa" title="Pl_Exec_5" alt="" coords="175,157,260,184"/>
+<area shape="rect" id="node7" href="$stream__supp_8h.html#a01dbc066c1deba3a188650ba699b7f01" title="Pl_Close_Stm" alt="" coords="164,208,271,235"/>
+<area shape="rect" id="node4" href="$sockets__c_8c.html#abb60ff72f0ca874268bb3c7c51cc6e8b" title="Socket_Initializer" alt="" coords="330,56,453,83"/>
+<area shape="rect" id="node8" href="$src__rdr__c_8c.html#a9bd17edd807337f25b335d86f826e75d" title="Pl_SR_Close_1" alt="" coords="334,157,449,184"/>
+<area shape="rect" id="node9" href="$src__rdr__c_8c.html#a260024335c542b6e1dacb6252ab5e1cc" title="Pl_SR_New_Pass_1" alt="" coords="319,208,464,235"/>
+<area shape="rect" id="node10" href="$stream__c_8c.html#a4c24c2f444575a196cc4a5be2e687743" title="Pl_Close_1" alt="" coords="347,259,436,285"/>
+</map>

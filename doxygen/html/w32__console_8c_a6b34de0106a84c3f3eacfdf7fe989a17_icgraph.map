@@ -1,0 +1,17 @@
+<map id="BrowseCallbackProc" name="BrowseCallbackProc">
+<area shape="rect" id="node2" href="$w32__console_8c.html#a637e0b7a2536a792abc63915a1bf671b" title="Get_Selected_Directory" alt="" coords="197,31,359,57"/>
+<area shape="rect" id="node3" href="$w32__console_8c.html#a5d40c37d966c85af95f36eef239c98c8" title="Change_Directory" alt="" coords="604,5,731,32"/>
+<area shape="rect" id="node11" href="$w32__console_8c.html#a7c82a573b5e01698b2f8e86d4cef3702" title="Get_CHM_Help_Path" alt="" coords="407,56,556,83"/>
+<area shape="rect" id="node4" href="$w32__console_8c.html#aabb62b5ceb8b73f54c4478021cedf130" title="MainWndProc_OnCommand" alt="" coords="1483,81,1671,108"/>
+<area shape="rect" id="node5" href="$w32__console_8c.html#ab023aa0285ba796fb7809eed2e6cdbe1" title="MainWndProc" alt="" coords="1719,120,1823,147"/>
+<area shape="rect" id="node6" href="$w32__console_8c.html#aea7abcb71562352e8ff9c3efd95c505b" title="InitApplication" alt="" coords="1871,120,1975,147"/>
+<area shape="rect" id="node7" href="$w32__console_8c.html#a2363368e7d52d5df8c4f20cb13283faa" title="StartWinMain" alt="" coords="2023,120,2124,147"/>
+<area shape="rect" id="node8" href="$w32__console_8c.html#a3e359465ba75ec15014d5af9c09d3db9" title="CallMain" alt="" coords="2172,120,2245,147"/>
+<area shape="rect" id="node9" href="$w32__console_8c.html#a4df61e90931602252f4bd1addb17902f" title="W32GC_Start_Window" alt="" coords="2293,120,2452,147"/>
+<area shape="rect" id="node10" href="$w32gc__interf_8c.html#a9bbe083e9a45c3fda6abf2737bebc2ad" title="__declspec" alt="" coords="2500,120,2588,147"/>
+<area shape="rect" id="node12" href="$w32__console_8c.html#a4429f5179fe290e7469506c6287a46a5" title="Show_Help" alt="" coords="623,56,712,83"/>
+<area shape="rect" id="node13" href="$w32__console_8c.html#a86a613d9f9c5724324a80eb7ad8fd162" title="SubClassEdit" alt="" coords="779,107,881,133"/>
+<area shape="rect" id="node14" href="$w32__console_8c.html#ae21b20c73fc3d1b2301ac435d6ffefb8" title="SubClassEditField" alt="" coords="929,107,1060,133"/>
+<area shape="rect" id="node15" href="$w32__console_8c.html#a4d3fc2c91e2a42d1ee0ab9afb8b25934" title="Create_Edit_Control" alt="" coords="1108,107,1248,133"/>
+<area shape="rect" id="node16" href="$w32__console_8c.html#af8f874a72209a2c5b9ccc57df9c3684b" title="Toggle_Wrap_Mode" alt="" coords="1296,107,1435,133"/>
+</map>

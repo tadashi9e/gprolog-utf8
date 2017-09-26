@@ -1,0 +1,9 @@
+<map id="TTY_Get_Key" name="TTY_Get_Key">
+<area shape="rect" id="node2" href="$stream__supp_8h.html#a26cd9e00963fb491e6fa10c28d707bb0" title="Pl_Stream_Get_Key" alt="" coords="159,56,300,83"/>
+<area shape="rect" id="node3" href="$char__io__c_8c.html#a991e3204fa1034f2ac6a2e2673d84cdd" title="Pl_Get_Key_2" alt="" coords="378,5,485,32"/>
+<area shape="rect" id="node5" href="$char__io__c_8c.html#a41e9061d4dc3707ab8082e9faa4e3dc4" title="Pl_Get_Key_No_Echo_2" alt="" coords="348,56,515,83"/>
+<area shape="rect" id="node7" href="$top__level__c_8c.html#ac5412344b34dcaf81d8e802130005f66" title="Ctrl_C_Manager" alt="" coords="373,107,490,133"/>
+<area shape="rect" id="node4" href="$char__io__c_8c.html#a6a8b7ad4c74d227584c2275c4ba5d27e" title="Pl_Get_Key_1" alt="" coords="595,5,702,32"/>
+<area shape="rect" id="node6" href="$char__io__c_8c.html#a87ebd235975250a51e3ebfac93ab2572" title="Pl_Get_Key_No_Echo_1" alt="" coords="565,56,732,83"/>
+<area shape="rect" id="node8" href="$top__level__c_8c.html#a3483f2f20c8122c68fedd8249b0ad767" title="Pl_Set_Ctrl_C_Handler_0" alt="" coords="563,107,735,133"/>
+</map>

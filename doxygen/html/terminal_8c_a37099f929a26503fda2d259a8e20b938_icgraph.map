@@ -1,0 +1,29 @@
+<map id="Pl_LE_Is_Interrupt_Key" name="Pl_LE_Is_Interrupt_Key">
+<area shape="rect" id="node2" href="$linedit_8h.html#afc3f434a6c8f1502ac218732fbc625f5" title="Pl_LE_FGets" alt="" coords="221,208,321,235"/>
+<area shape="rect" id="node19" href="$linedit_8h.html#a4f1c0c59dd4227be9ac33ccc96c7d8d9" title="Pl_LE_Get_Key" alt="" coords="213,309,328,336"/>
+<area shape="rect" id="node3" href="$stream__supp_8c.html#af724b584a512fb1443bbf02c4ae0d153" title="TTY_Getc" alt="" coords="387,81,470,108"/>
+<area shape="rect" id="node10" href="$linedit_8h.html#aaa0d7627c7e48ff6b19dea876609eaf5" title="Pl_LE_Gets" alt="" coords="383,183,475,209"/>
+<area shape="rect" id="node18" href="$test__linedit_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="802,233,853,260"/>
+<area shape="rect" id="node4" href="$stream__supp_8c.html#a46a2de744d0ab922af4d2edc06e1ac48" title="Init_Stream_Supp" alt="" coords="549,81,676,108"/>
+<area shape="rect" id="node5" href="$stream__supp_8h.html#a2f93cffadbbe16ff8c57ac78497b9c14" title="Pl_Stream_Gets_Prompt" alt="" coords="529,31,696,57"/>
+<area shape="rect" id="node6" href="$debugger__c_8c.html#a11e816a7993314a8e53789bac9a67f53" title="Pl_Debug_Wam" alt="" coords="1331,5,1448,32"/>
+<area shape="rect" id="node7" href="$debugger__c_8c.html#a038a5ba206b2861a848c62b9ec060b65" title="Modify_Wam_Word" alt="" coords="759,31,896,57"/>
+<area shape="rect" id="node8" href="$debugger__c_8c.html#acf94b4468a0d9f4b6e103f388bb3cb63" title="Write_Data_Modify" alt="" coords="977,31,1112,57"/>
+<area shape="rect" id="node9" href="$debugger__c_8c.html#ae03520aa896def6dd036699b888bd0ef" title="Find_Function" alt="" coords="1179,31,1283,57"/>
+<area shape="rect" id="node11" href="$machine1_8h.html#a7aa127682707f8916310f0f957ce96e9" title="Pl_M_Tempnam" alt="" coords="554,132,671,159"/>
+<area shape="rect" id="node17" href="$test__linedit_8c.html#aff54f72a936c24930b5fee97f82033d5" title="Ctrl_C_Manager" alt="" coords="554,284,671,311"/>
+<area shape="rect" id="node12" href="$os__interf__c_8c.html#a6722c00cc235f3e4a851135bfa315052" title="Pl_Temporary_File_3" alt="" coords="755,81,900,108"/>
+<area shape="rect" id="node13" href="$src__rdr__c_8c.html#ae6f2889304119849adebc18b8d5a305e" title="Pl_SR_Open_File_2" alt="" coords="757,132,897,159"/>
+<area shape="rect" id="node14" href="$top__comp_8c.html#ad884a3c78eb6a18d668b910603246cae" title="New_Work_File" alt="" coords="770,183,885,209"/>
+<area shape="rect" id="node15" href="$top__comp_8c.html#aa6e7332fd3a101bded89f75e707d3333" title="Compile_Files" alt="" coords="992,183,1097,209"/>
+<area shape="rect" id="node16" href="$top__comp_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1205,183,1256,209"/>
+<area shape="rect" id="node20" href="$stream__supp_8c.html#a50c66fd397c6e90e83731c9773bea731" title="TTY_Get_Key" alt="" coords="376,335,481,361"/>
+<area shape="rect" id="node28" href="$test__noecho_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="403,385,454,412"/>
+<area shape="rect" id="node21" href="$stream__supp_8h.html#a26cd9e00963fb491e6fa10c28d707bb0" title="Pl_Stream_Get_Key" alt="" coords="542,335,683,361"/>
+<area shape="rect" id="node22" href="$char__io__c_8c.html#a991e3204fa1034f2ac6a2e2673d84cdd" title="Pl_Get_Key_2" alt="" coords="774,284,881,311"/>
+<area shape="rect" id="node24" href="$char__io__c_8c.html#a41e9061d4dc3707ab8082e9faa4e3dc4" title="Pl_Get_Key_No_Echo_2" alt="" coords="744,335,911,361"/>
+<area shape="rect" id="node26" href="$top__level__c_8c.html#ac5412344b34dcaf81d8e802130005f66" title="Ctrl_C_Manager" alt="" coords="769,385,886,412"/>
+<area shape="rect" id="node23" href="$char__io__c_8c.html#a6a8b7ad4c74d227584c2275c4ba5d27e" title="Pl_Get_Key_1" alt="" coords="991,284,1098,311"/>
+<area shape="rect" id="node25" href="$char__io__c_8c.html#a87ebd235975250a51e3ebfac93ab2572" title="Pl_Get_Key_No_Echo_1" alt="" coords="961,335,1128,361"/>
+<area shape="rect" id="node27" href="$top__level__c_8c.html#a3483f2f20c8122c68fedd8249b0ad767" title="Pl_Set_Ctrl_C_Handler_0" alt="" coords="959,385,1131,412"/>
+</map>

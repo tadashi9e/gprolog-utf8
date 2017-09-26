@@ -1,0 +1,10 @@
+<map id="Parser" name="Parser">
+<area shape="rect" id="node2" href="$wam__parser_8c.html#a14d29063ebbd86cdcfd037234d4e9bef" title="Parse_And_Treat_Decl\l_Or_Inst" alt="" coords="113,82,271,123"/>
+<area shape="rect" id="node7" href="$wam__parser_8c.html#a9f06f8fc45440614661af1d86d3d6f56" title="Read_Token" alt="" coords="483,31,579,57"/>
+<area shape="rect" id="node3" href="$wam__parser_8c.html#a64fdc935c8fc1d423009fe985ae51cc8" title="Scanner" alt="" coords="641,31,711,57"/>
+<area shape="rect" id="node6" href="$wam__parser_8c.html#a00f9ed3bd2f87261ec6e2f0fa667dfce" title="Syntax_Error" alt="" coords="627,183,725,209"/>
+<area shape="rect" id="node8" href="$wam__parser_8c.html#aa8a1c1096601e50a475d7f82b41562d9" title="Read_Argument" alt="" coords="319,132,435,159"/>
+<area shape="rect" id="node4" href="$sparc64__any_8c.html#a2bd658adcb7b278aebdd8e39dd352d0f" title="Source_Line" alt="" coords="833,5,928,32"/>
+<area shape="rect" id="node5" href="$pl__wchar_8c.html#a118e1ed8186e82a376d922702a7a8a82" title="count_wchar_bytes_without_slen" alt="" coords="773,56,988,83"/>
+<area shape="rect" id="node9" href="$wam__parser_8c.html#a22ad40923376159341c34e3b5e872d11" title="Peek_Char" alt="" coords="487,132,574,159"/>
+</map>

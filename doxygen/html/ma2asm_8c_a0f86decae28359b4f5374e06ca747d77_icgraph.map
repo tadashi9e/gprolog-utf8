@@ -1,0 +1,6 @@
+<map id="Switch_Rec" name="Switch_Rec">
+<area shape="rect" id="node2" href="$ma__protos_8h.html#ab348042c2e4626c2e75741315166aed5" title="Switch_Ret" alt="" coords="147,5,237,32"/>
+<area shape="rect" id="node3" href="$ma__parser_8c.html#a3dbe66c5fada4cfd6e6d6d8f775e0caf" title="Parser" alt="" coords="285,5,345,32"/>
+<area shape="rect" id="node4" href="$ma__parser_8h.html#a4f91bc7ddfc80bc559642b19019052a1" title="Parse_Ma_File" alt="" coords="393,5,503,32"/>
+<area shape="rect" id="node5" href="$ma2asm_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="551,5,601,32"/>
+</map>

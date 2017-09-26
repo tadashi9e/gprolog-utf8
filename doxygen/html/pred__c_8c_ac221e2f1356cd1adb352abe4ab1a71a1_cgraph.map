@@ -1,0 +1,8 @@
+<map id="Pl_Pred_Prop_Prolog_File_3" name="Pl_Pred_Prop_Prolog_File_3">
+<area shape="rect" id="node2" href="$c__supp_8c.html#ac23e92016d9ea9c59e54aec3dbb4ca10" title="Pl_Rd_Atom" alt="" coords="223,5,319,32"/>
+<area shape="rect" id="node3" href="$c__supp_8c.html#acd14b723a410bb965ba827e7b2e88786" title="Pl_Rd_Integer" alt="" coords="218,56,323,83"/>
+<area shape="rect" id="node4" href="$pred_8c.html#aa8ebf08b93ec7e4bde2c544c70ba4c39" title="Pl_Lookup_Pred" alt="" coords="212,107,329,133"/>
+<area shape="rect" id="node5" href="$c__supp_8c.html#a8ee616a4c412a9b96ff9379610e1f2b9" title="Pl_Un_Atom_Check" alt="" coords="200,157,341,184"/>
+<area shape="rect" id="node6" href="$wam__inst_8c.html#a78229c8d23053191e0fee7952757f9c7" title="Pl_Get_Atom" alt="" coords="389,157,489,184"/>
+<area shape="rect" id="node7" href="$wam__inst_8c.html#a89d8aba44029f2a5f548a2ae5f6eb574" title="Pl_Get_Atom_Tagged" alt="" coords="537,157,688,184"/>
+</map>

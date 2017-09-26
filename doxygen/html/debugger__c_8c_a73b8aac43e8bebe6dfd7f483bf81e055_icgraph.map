@@ -1,0 +1,10 @@
+<map id="Read_Bank_Adr" name="Read_Bank_Adr">
+<area shape="rect" id="node2" href="$debugger__c_8c.html#acf94b4468a0d9f4b6e103f388bb3cb63" title="Write_Data_Modify" alt="" coords="356,32,491,59"/>
+<area shape="rect" id="node5" href="$debugger__c_8c.html#ad5667d4182005ee143f6b45c617d722a" title="Where" alt="" coords="393,83,453,109"/>
+<area shape="rect" id="node6" href="$debugger__c_8c.html#a0e3db3f801a6d2dc7012c12e660377d8" title="Dereference" alt="" coords="377,133,470,160"/>
+<area shape="rect" id="node7" href="$debugger__c_8c.html#a38ce602bd1d5e416f1c2df80fa5de3c3" title="Environment" alt="" coords="192,184,287,211"/>
+<area shape="rect" id="node8" href="$debugger__c_8c.html#af0c1c2a7e6feb8d41802e2e984dec8e3" title="Backtrack" alt="" coords="199,235,280,261"/>
+<area shape="rect" id="node9" href="$debugger__c_8c.html#a038a5ba206b2861a848c62b9ec060b65" title="Modify_Wam_Word" alt="" coords="171,32,308,59"/>
+<area shape="rect" id="node3" href="$debugger__c_8c.html#ae03520aa896def6dd036699b888bd0ef" title="Find_Function" alt="" coords="539,133,643,160"/>
+<area shape="rect" id="node4" href="$debugger__c_8c.html#a11e816a7993314a8e53789bac9a67f53" title="Pl_Debug_Wam" alt="" coords="691,133,808,160"/>
+</map>

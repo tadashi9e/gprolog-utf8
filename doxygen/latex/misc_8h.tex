@@ -1,0 +1,335 @@
+\hypertarget{misc_8h}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/misc.h File Reference}
+\label{misc_8h}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/misc.\+h@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/misc.\+h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+Include dependency graph for misc.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{misc_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{misc_8h_ad37b52cd948f7aef2160b9151cddf10a}{Malloc}(size)~\hyperlink{misc_8h_acf0bfa3dd2808d6bb1a21be1e442db48}{Pl\+\_\+\+Malloc\+\_\+\+Check}(size, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{misc_8h_a678f7037af354c9ba9ca405aa633d149}{Calloc}(nb,  size)~\hyperlink{misc_8h_a4ef7048a1545d02110d113f511a6e62c}{Pl\+\_\+\+Calloc\+\_\+\+Check}(nb, size, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{misc_8h_a4214f70e3bc7e99bc7474e34a43c1294}{Realloc}(ptr,  size)~\hyperlink{misc_8h_a9f7e7bff74f9a70bfb360cf636389953}{Pl\+\_\+\+Realloc\+\_\+\+Check}(ptr, size, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{misc_8h_a0b8e3b7d52eecc10d64e8242fc30c816}{Free}(ptr)~free(ptr)
+\item 
+\#define \hyperlink{misc_8h_af9c772d16a3a04368f436a8918be9f33}{Strdup}(str)~\hyperlink{misc_8h_aa02ec18e539fc8351ab75a2285f8451b}{Pl\+\_\+\+Strdup\+\_\+\+Check}(str, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)
+\item 
+\#define \hyperlink{misc_8h_ae405e1ceabb0b338dcb38d1d905f8cde}{Pl\+\_\+\+Least\+\_\+\+Significant\+\_\+\+Bit}(\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})~\hyperlink{misc_8h_afb6466a24e29e10af1bc44d47dac542d}{Pl\+\_\+\+L\+SB}(\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+\#define \hyperlink{misc_8h_acb2c341821c783a99daf0897fad75ab3}{Pl\+\_\+\+Most\+\_\+\+Significant\+\_\+\+Bit}(\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})~\hyperlink{misc_8h_acad7fd9325e6b75d73602362db3e3247}{Pl\+\_\+\+M\+SB}(\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+\#define \hyperlink{misc_8h_a484bf0cfbb2929a7d8088edb8880217a}{Pl\+\_\+\+Count\+\_\+\+Set\+\_\+\+Bits}(\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})~\hyperlink{misc_8h_a3ee275fe1627270028c93d2082786284}{Pl\+\_\+\+Popcount}(\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{misc_8h_acf0bfa3dd2808d6bb1a21be1e442db48}{Pl\+\_\+\+Malloc\+\_\+\+Check} (unsigned size, char $\ast$src\+\_\+file, int src\+\_\+line)
+\item 
+char $\ast$ \hyperlink{misc_8h_a4ef7048a1545d02110d113f511a6e62c}{Pl\+\_\+\+Calloc\+\_\+\+Check} (unsigned nb, unsigned size, char $\ast$src\+\_\+file, int src\+\_\+line)
+\item 
+char $\ast$ \hyperlink{misc_8h_a9f7e7bff74f9a70bfb360cf636389953}{Pl\+\_\+\+Realloc\+\_\+\+Check} (char $\ast$ptr, unsigned size, char $\ast$src\+\_\+file, int src\+\_\+line)
+\item 
+char $\ast$ \hyperlink{misc_8h_aa02ec18e539fc8351ab75a2285f8451b}{Pl\+\_\+\+Strdup\+\_\+\+Check} (char $\ast$str, char $\ast$src\+\_\+file, int src\+\_\+line)
+\item 
+void \hyperlink{misc_8h_a623a56eb127eb18ff99bc4737ebc100b}{Pl\+\_\+\+Extend\+\_\+\+Table\+\_\+\+If\+\_\+\+Needed} (char $\ast$$\ast$hash\+\_\+tbl)
+\item 
+void \hyperlink{misc_8h_a2f56b2c86f0305e8b7e13e6150578d36}{Pl\+\_\+\+Extend\+\_\+\+Array} (char $\ast$$\ast$ptbl, int $\ast$nb\+\_\+elem, int elem\+\_\+size, \hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} bzero)
+\item 
+void \hyperlink{misc_8h_a8099040b9286fee033483072ff631476}{Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Value} (int \hyperlink{ctrl__c_8c_a9339caf9d89a9cb57727dfe245702ae3}{ret\+\_\+val})
+\item 
+void \hyperlink{misc_8h_a190fea7904d7245d4fdc5e9404a07907}{Pl\+\_\+\+Fatal\+\_\+\+Error} (char $\ast$\hyperlink{hexfilter_8c_a5407a229a5e1a319d75fb29542c83eae}{format},...)
+\item 
+int \hyperlink{misc_8h_afb6466a24e29e10af1bc44d47dac542d}{Pl\+\_\+\+L\+SB} (\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+int \hyperlink{misc_8h_acad7fd9325e6b75d73602362db3e3247}{Pl\+\_\+\+M\+SB} (\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+int \hyperlink{misc_8h_a3ee275fe1627270028c93d2082786284}{Pl\+\_\+\+Popcount} (\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+void $\ast$ \hyperlink{misc_8h_aae9007e689a787822f7c6e98322ed456}{Pl\+\_\+\+Dummy\+\_\+\+Ptr} (void $\ast$p)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{misc.\+h@{misc.\+h}!Calloc@{Calloc}}
+\index{Calloc@{Calloc}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Calloc}{Calloc}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Calloc(
+\begin{DoxyParamCaption}
+\item[{}]{nb, }
+\item[{}]{size}
+\end{DoxyParamCaption}
+)~{\bf Pl\+\_\+\+Calloc\+\_\+\+Check}(nb, size, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}\hypertarget{misc_8h_a678f7037af354c9ba9ca405aa633d149}{}\label{misc_8h_a678f7037af354c9ba9ca405aa633d149}
+\index{misc.\+h@{misc.\+h}!Free@{Free}}
+\index{Free@{Free}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Free}{Free}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Free(
+\begin{DoxyParamCaption}
+\item[{}]{ptr}
+\end{DoxyParamCaption}
+)~free(ptr)}\hypertarget{misc_8h_a0b8e3b7d52eecc10d64e8242fc30c816}{}\label{misc_8h_a0b8e3b7d52eecc10d64e8242fc30c816}
+\index{misc.\+h@{misc.\+h}!Malloc@{Malloc}}
+\index{Malloc@{Malloc}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Malloc}{Malloc}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Malloc(
+\begin{DoxyParamCaption}
+\item[{}]{size}
+\end{DoxyParamCaption}
+)~{\bf Pl\+\_\+\+Malloc\+\_\+\+Check}(size, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}\hypertarget{misc_8h_ad37b52cd948f7aef2160b9151cddf10a}{}\label{misc_8h_ad37b52cd948f7aef2160b9151cddf10a}
+\index{misc.\+h@{misc.\+h}!Pl\+\_\+\+Count\+\_\+\+Set\+\_\+\+Bits@{Pl\+\_\+\+Count\+\_\+\+Set\+\_\+\+Bits}}
+\index{Pl\+\_\+\+Count\+\_\+\+Set\+\_\+\+Bits@{Pl\+\_\+\+Count\+\_\+\+Set\+\_\+\+Bits}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Count\+\_\+\+Set\+\_\+\+Bits}{Pl_Count_Set_Bits}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Pl\+\_\+\+Count\+\_\+\+Set\+\_\+\+Bits(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf x}}
+\end{DoxyParamCaption}
+)~{\bf Pl\+\_\+\+Popcount}({\bf x})}\hypertarget{misc_8h_a484bf0cfbb2929a7d8088edb8880217a}{}\label{misc_8h_a484bf0cfbb2929a7d8088edb8880217a}
+\index{misc.\+h@{misc.\+h}!Pl\+\_\+\+Least\+\_\+\+Significant\+\_\+\+Bit@{Pl\+\_\+\+Least\+\_\+\+Significant\+\_\+\+Bit}}
+\index{Pl\+\_\+\+Least\+\_\+\+Significant\+\_\+\+Bit@{Pl\+\_\+\+Least\+\_\+\+Significant\+\_\+\+Bit}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Least\+\_\+\+Significant\+\_\+\+Bit}{Pl_Least_Significant_Bit}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Pl\+\_\+\+Least\+\_\+\+Significant\+\_\+\+Bit(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf x}}
+\end{DoxyParamCaption}
+)~{\bf Pl\+\_\+\+L\+SB}({\bf x})}\hypertarget{misc_8h_ae405e1ceabb0b338dcb38d1d905f8cde}{}\label{misc_8h_ae405e1ceabb0b338dcb38d1d905f8cde}
+\index{misc.\+h@{misc.\+h}!Pl\+\_\+\+Most\+\_\+\+Significant\+\_\+\+Bit@{Pl\+\_\+\+Most\+\_\+\+Significant\+\_\+\+Bit}}
+\index{Pl\+\_\+\+Most\+\_\+\+Significant\+\_\+\+Bit@{Pl\+\_\+\+Most\+\_\+\+Significant\+\_\+\+Bit}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Most\+\_\+\+Significant\+\_\+\+Bit}{Pl_Most_Significant_Bit}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Pl\+\_\+\+Most\+\_\+\+Significant\+\_\+\+Bit(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf x}}
+\end{DoxyParamCaption}
+)~{\bf Pl\+\_\+\+M\+SB}({\bf x})}\hypertarget{misc_8h_acb2c341821c783a99daf0897fad75ab3}{}\label{misc_8h_acb2c341821c783a99daf0897fad75ab3}
+\index{misc.\+h@{misc.\+h}!Realloc@{Realloc}}
+\index{Realloc@{Realloc}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Realloc}{Realloc}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Realloc(
+\begin{DoxyParamCaption}
+\item[{}]{ptr, }
+\item[{}]{size}
+\end{DoxyParamCaption}
+)~{\bf Pl\+\_\+\+Realloc\+\_\+\+Check}(ptr, size, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}\hypertarget{misc_8h_a4214f70e3bc7e99bc7474e34a43c1294}{}\label{misc_8h_a4214f70e3bc7e99bc7474e34a43c1294}
+\index{misc.\+h@{misc.\+h}!Strdup@{Strdup}}
+\index{Strdup@{Strdup}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Strdup}{Strdup}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Strdup(
+\begin{DoxyParamCaption}
+\item[{}]{str}
+\end{DoxyParamCaption}
+)~{\bf Pl\+\_\+\+Strdup\+\_\+\+Check}(str, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+)}\hypertarget{misc_8h_af9c772d16a3a04368f436a8918be9f33}{}\label{misc_8h_af9c772d16a3a04368f436a8918be9f33}
+
+
+\subsection{Function Documentation}
+\index{misc.\+h@{misc.\+h}!Pl\+\_\+\+Calloc\+\_\+\+Check@{Pl\+\_\+\+Calloc\+\_\+\+Check}}
+\index{Pl\+\_\+\+Calloc\+\_\+\+Check@{Pl\+\_\+\+Calloc\+\_\+\+Check}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Calloc\+\_\+\+Check(unsigned nb, unsigned size, char $\ast$src\+\_\+file, int src\+\_\+line)}{Pl_Calloc_Check(unsigned nb, unsigned size, char *src_file, int src_line)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+Calloc\+\_\+\+Check (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{nb, }
+\item[{unsigned}]{size, }
+\item[{char $\ast$}]{src\+\_\+file, }
+\item[{int}]{src\+\_\+line}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8h_a4ef7048a1545d02110d113f511a6e62c}{}\label{misc_8h_a4ef7048a1545d02110d113f511a6e62c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{misc_8h_a4ef7048a1545d02110d113f511a6e62c_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{misc.\+h@{misc.\+h}!Pl\+\_\+\+Dummy\+\_\+\+Ptr@{Pl\+\_\+\+Dummy\+\_\+\+Ptr}}
+\index{Pl\+\_\+\+Dummy\+\_\+\+Ptr@{Pl\+\_\+\+Dummy\+\_\+\+Ptr}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Dummy\+\_\+\+Ptr(void $\ast$p)}{Pl_Dummy_Ptr(void *p)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Pl\+\_\+\+Dummy\+\_\+\+Ptr (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8h_aae9007e689a787822f7c6e98322ed456}{}\label{misc_8h_aae9007e689a787822f7c6e98322ed456}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_aae9007e689a787822f7c6e98322ed456_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{misc.\+h@{misc.\+h}!Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Value@{Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Value}}
+\index{Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Value@{Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Value}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Value(int ret\+\_\+val)}{Pl_Exit_With_Value(int ret_val)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Value (
+\begin{DoxyParamCaption}
+\item[{int}]{ret\+\_\+val}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8h_a8099040b9286fee033483072ff631476}{}\label{misc_8h_a8099040b9286fee033483072ff631476}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{misc_8h_a8099040b9286fee033483072ff631476_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{misc.\+h@{misc.\+h}!Pl\+\_\+\+Extend\+\_\+\+Array@{Pl\+\_\+\+Extend\+\_\+\+Array}}
+\index{Pl\+\_\+\+Extend\+\_\+\+Array@{Pl\+\_\+\+Extend\+\_\+\+Array}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Extend\+\_\+\+Array(char $\ast$$\ast$ptbl, int $\ast$nb\+\_\+elem, int elem\+\_\+size, Bool bzero)}{Pl_Extend_Array(char **ptbl, int *nb_elem, int elem_size, Bool bzero)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Extend\+\_\+\+Array (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{ptbl, }
+\item[{int $\ast$}]{nb\+\_\+elem, }
+\item[{int}]{elem\+\_\+size, }
+\item[{{\bf Bool}}]{bzero}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8h_a2f56b2c86f0305e8b7e13e6150578d36}{}\label{misc_8h_a2f56b2c86f0305e8b7e13e6150578d36}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_a2f56b2c86f0305e8b7e13e6150578d36_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{misc.\+h@{misc.\+h}!Pl\+\_\+\+Extend\+\_\+\+Table\+\_\+\+If\+\_\+\+Needed@{Pl\+\_\+\+Extend\+\_\+\+Table\+\_\+\+If\+\_\+\+Needed}}
+\index{Pl\+\_\+\+Extend\+\_\+\+Table\+\_\+\+If\+\_\+\+Needed@{Pl\+\_\+\+Extend\+\_\+\+Table\+\_\+\+If\+\_\+\+Needed}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Extend\+\_\+\+Table\+\_\+\+If\+\_\+\+Needed(char $\ast$$\ast$hash\+\_\+tbl)}{Pl_Extend_Table_If_Needed(char **hash_tbl)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Extend\+\_\+\+Table\+\_\+\+If\+\_\+\+Needed (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{hash\+\_\+tbl}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8h_a623a56eb127eb18ff99bc4737ebc100b}{}\label{misc_8h_a623a56eb127eb18ff99bc4737ebc100b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_a623a56eb127eb18ff99bc4737ebc100b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8h_a623a56eb127eb18ff99bc4737ebc100b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{misc.\+h@{misc.\+h}!Pl\+\_\+\+Fatal\+\_\+\+Error@{Pl\+\_\+\+Fatal\+\_\+\+Error}}
+\index{Pl\+\_\+\+Fatal\+\_\+\+Error@{Pl\+\_\+\+Fatal\+\_\+\+Error}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Fatal\+\_\+\+Error(char $\ast$format,...)}{Pl_Fatal_Error(char *format,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Fatal\+\_\+\+Error (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8h_a190fea7904d7245d4fdc5e9404a07907}{}\label{misc_8h_a190fea7904d7245d4fdc5e9404a07907}
+\index{misc.\+h@{misc.\+h}!Pl\+\_\+\+L\+SB@{Pl\+\_\+\+L\+SB}}
+\index{Pl\+\_\+\+L\+SB@{Pl\+\_\+\+L\+SB}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+L\+S\+B(\+Pl\+Long x)}{Pl_LSB(PlLong x)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+L\+SB (
+\begin{DoxyParamCaption}
+\item[{{\bf Pl\+Long}}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8h_afb6466a24e29e10af1bc44d47dac542d}{}\label{misc_8h_afb6466a24e29e10af1bc44d47dac542d}
+\index{misc.\+h@{misc.\+h}!Pl\+\_\+\+Malloc\+\_\+\+Check@{Pl\+\_\+\+Malloc\+\_\+\+Check}}
+\index{Pl\+\_\+\+Malloc\+\_\+\+Check@{Pl\+\_\+\+Malloc\+\_\+\+Check}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Malloc\+\_\+\+Check(unsigned size, char $\ast$src\+\_\+file, int src\+\_\+line)}{Pl_Malloc_Check(unsigned size, char *src_file, int src_line)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+Malloc\+\_\+\+Check (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{size, }
+\item[{char $\ast$}]{src\+\_\+file, }
+\item[{int}]{src\+\_\+line}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8h_acf0bfa3dd2808d6bb1a21be1e442db48}{}\label{misc_8h_acf0bfa3dd2808d6bb1a21be1e442db48}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{misc_8h_acf0bfa3dd2808d6bb1a21be1e442db48_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{misc.\+h@{misc.\+h}!Pl\+\_\+\+M\+SB@{Pl\+\_\+\+M\+SB}}
+\index{Pl\+\_\+\+M\+SB@{Pl\+\_\+\+M\+SB}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+M\+S\+B(\+Pl\+Long x)}{Pl_MSB(PlLong x)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+M\+SB (
+\begin{DoxyParamCaption}
+\item[{{\bf Pl\+Long}}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8h_acad7fd9325e6b75d73602362db3e3247}{}\label{misc_8h_acad7fd9325e6b75d73602362db3e3247}
+\index{misc.\+h@{misc.\+h}!Pl\+\_\+\+Popcount@{Pl\+\_\+\+Popcount}}
+\index{Pl\+\_\+\+Popcount@{Pl\+\_\+\+Popcount}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Popcount(\+Pl\+Long x)}{Pl_Popcount(PlLong x)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Popcount (
+\begin{DoxyParamCaption}
+\item[{{\bf Pl\+Long}}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8h_a3ee275fe1627270028c93d2082786284}{}\label{misc_8h_a3ee275fe1627270028c93d2082786284}
+\index{misc.\+h@{misc.\+h}!Pl\+\_\+\+Realloc\+\_\+\+Check@{Pl\+\_\+\+Realloc\+\_\+\+Check}}
+\index{Pl\+\_\+\+Realloc\+\_\+\+Check@{Pl\+\_\+\+Realloc\+\_\+\+Check}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Realloc\+\_\+\+Check(char $\ast$ptr, unsigned size, char $\ast$src\+\_\+file, int src\+\_\+line)}{Pl_Realloc_Check(char *ptr, unsigned size, char *src_file, int src_line)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+Realloc\+\_\+\+Check (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ptr, }
+\item[{unsigned}]{size, }
+\item[{char $\ast$}]{src\+\_\+file, }
+\item[{int}]{src\+\_\+line}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8h_a9f7e7bff74f9a70bfb360cf636389953}{}\label{misc_8h_a9f7e7bff74f9a70bfb360cf636389953}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{misc_8h_a9f7e7bff74f9a70bfb360cf636389953_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{misc.\+h@{misc.\+h}!Pl\+\_\+\+Strdup\+\_\+\+Check@{Pl\+\_\+\+Strdup\+\_\+\+Check}}
+\index{Pl\+\_\+\+Strdup\+\_\+\+Check@{Pl\+\_\+\+Strdup\+\_\+\+Check}!misc.\+h@{misc.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Strdup\+\_\+\+Check(char $\ast$str, char $\ast$src\+\_\+file, int src\+\_\+line)}{Pl_Strdup_Check(char *str, char *src_file, int src_line)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+Strdup\+\_\+\+Check (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{char $\ast$}]{src\+\_\+file, }
+\item[{int}]{src\+\_\+line}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8h_aa02ec18e539fc8351ab75a2285f8451b}{}\label{misc_8h_aa02ec18e539fc8351ab75a2285f8451b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{misc_8h_aa02ec18e539fc8351ab75a2285f8451b_cgraph}
+\end{center}
+\end{figure}
+
+

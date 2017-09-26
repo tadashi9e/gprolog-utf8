@@ -1,0 +1,6 @@
+<map id="Pl_Statistics_Global_Stack_2" name="Pl_Statistics_Global_Stack_2">
+<area shape="rect" id="node2" href="$stat__c_8c.html#a5fee90cde99a3da0b758b37cd33f386f" title="Stack_Size" alt="" coords="224,5,313,32"/>
+<area shape="rect" id="node3" href="$c__supp_8c.html#a40ef471273ae7fee7aa952ae43112cd1" title="Pl_Un_Integer_Check" alt="" coords="193,56,344,83"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="392,56,501,83"/>
+<area shape="rect" id="node5" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="549,56,708,83"/>
+</map>

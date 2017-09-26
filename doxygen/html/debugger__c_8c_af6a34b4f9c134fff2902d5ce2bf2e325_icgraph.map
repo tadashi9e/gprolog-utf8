@@ -1,0 +1,11 @@
+<map id="Read_An_Integer" name="Read_An_Integer">
+<area shape="rect" id="node2" href="$debugger__c_8c.html#acf94b4468a0d9f4b6e103f388bb3cb63" title="Write_Data_Modify" alt="" coords="361,34,496,61"/>
+<area shape="rect" id="node5" href="$debugger__c_8c.html#ae3548d2718c3c51e01cbf3aa9752ce17" title="What" alt="" coords="402,85,455,111"/>
+<area shape="rect" id="node6" href="$debugger__c_8c.html#ad5667d4182005ee143f6b45c617d722a" title="Where" alt="" coords="399,135,459,162"/>
+<area shape="rect" id="node7" href="$debugger__c_8c.html#a0e3db3f801a6d2dc7012c12e660377d8" title="Dereference" alt="" coords="382,186,475,213"/>
+<area shape="rect" id="node8" href="$debugger__c_8c.html#a38ce602bd1d5e416f1c2df80fa5de3c3" title="Environment" alt="" coords="197,237,292,263"/>
+<area shape="rect" id="node9" href="$debugger__c_8c.html#af0c1c2a7e6feb8d41802e2e984dec8e3" title="Backtrack" alt="" coords="204,287,285,314"/>
+<area shape="rect" id="node10" href="$debugger__c_8c.html#a038a5ba206b2861a848c62b9ec060b65" title="Modify_Wam_Word" alt="" coords="176,34,313,61"/>
+<area shape="rect" id="node3" href="$debugger__c_8c.html#ae03520aa896def6dd036699b888bd0ef" title="Find_Function" alt="" coords="544,161,648,187"/>
+<area shape="rect" id="node4" href="$debugger__c_8c.html#a11e816a7993314a8e53789bac9a67f53" title="Pl_Debug_Wam" alt="" coords="696,161,813,187"/>
+</map>

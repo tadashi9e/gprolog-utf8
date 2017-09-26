@@ -1,0 +1,15 @@
+<map id="Pl_Check_For_Un_Char" name="Pl_Check_For_Un_Char">
+<area shape="rect" id="node2" href="$gprolog_8h.html#ac582ea21f3d2a94c7228084906197dab" title="Pl_Check_For_Un_Chars" alt="" coords="235,245,406,272"/>
+<area shape="rect" id="node14" href="$read__c_8c.html#a78e70803448b60652421796a87eb4988" title="Pl_Current_Char_Conversion_2" alt="" coords="217,296,424,323"/>
+<area shape="rect" id="node3" href="$c__supp_8h.html#a743ac6561ae07094a56f2516758e47ed" title="Pl_Un_Chars_Check" alt="" coords="472,245,617,272"/>
+<area shape="rect" id="node4" href="$atom__c_8c.html#a93b4aeb861db385dfbcc91e12c4133b6" title="Pl_Atom_Chars_2" alt="" coords="695,5,823,32"/>
+<area shape="rect" id="node5" href="$atom__c_8c.html#a227fc472d79309e81af1f91e7e236951" title="Pl_Number_Chars_2" alt="" coords="687,56,830,83"/>
+<area shape="rect" id="node6" href="$const__io__c_8c.html#a8ad689c5a7551974824dce5ffaa78a56" title="Pl_Write_To_Chars_2" alt="" coords="683,107,834,133"/>
+<area shape="rect" id="node7" href="$const__io__c_8c.html#ae4e20cedb0ced386876d83180d53e99d" title="Pl_Writeq_To_Chars_2" alt="" coords="680,157,837,184"/>
+<area shape="rect" id="node8" href="$const__io__c_8c.html#aeaf1efc8567fac2403d6366b18ea397e" title="Pl_Write_Canonical\l_To_Chars_2" alt="" coords="690,209,827,250"/>
+<area shape="rect" id="node9" href="$const__io__c_8c.html#acfba115609d9f07024572aa0d536afd6" title="Pl_Display_To_Chars_2" alt="" coords="677,275,840,301"/>
+<area shape="rect" id="node10" href="$const__io__c_8c.html#a178bdf26033fad4f1d3faa96636fe08c" title="Pl_Print_To_Chars_2" alt="" coords="685,325,832,352"/>
+<area shape="rect" id="node11" href="$const__io__c_8c.html#a7439807f26a655144e1aa2f41a410812" title="Pl_Write_Term_To_Chars_2" alt="" coords="665,376,852,403"/>
+<area shape="rect" id="node12" href="$const__io__c_8c.html#a6103ea807fd37656742cf77087df1f68" title="Pl_Format_To_Chars_3" alt="" coords="679,427,839,453"/>
+<area shape="rect" id="node13" href="$stream__c_8c.html#a1f13fab2c67dc519c098795427b0cc02" title="Pl_Close_Output_Term\l_Stream_2" alt="" coords="679,478,838,519"/>
+</map>

@@ -1,0 +1,155 @@
+\hypertarget{pred_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/pred.c File Reference}
+\label{pred_8c}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/pred.\+c@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/pred.\+c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}engine\+\_\+pl.\+h\char`\"{}}\\*
+Include dependency graph for pred.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pred_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pred_8c_abfaf4e095525ef76292f16260bf4f285}{P\+R\+E\+D\+\_\+\+F\+I\+LE}
+\item 
+\#define \hyperlink{pred_8c_aa4cc2f53cbf853adf27509ea3f8aa514}{A\+D\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+S\+\_\+\+I\+N\+\_\+\+P\+R\+E\+D\+\_\+\+T\+BL}
+\item 
+\#define \hyperlink{pred_8c_a1aa982ca7b2dc944778a032a4f56de67}{E\+R\+R\+\_\+\+M\+U\+L\+T\+I\+F\+I\+L\+E\+\_\+\+P\+R\+OP}~\char`\"{}multifile predicate \%s/\%\hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d} not declared consistently\textbackslash{}n    in  \%s\textbackslash{}n    and \%s\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{pred_8c_aa0fb875bb38ef710cad2276c7c843dc0}{Pl\+\_\+\+Init\+\_\+\+Pred} (void)
+\item 
+\hyperlink{structPredInf}{Pred\+Inf} $\ast$\hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{pred_8c_a43f9afc5dcfc6f9c1f8205024c2be46a}{Pl\+\_\+\+Create\+\_\+\+Pred} (int func, int arity, int pl\+\_\+file, int pl\+\_\+line, int prop, \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} $\ast$codep)
+\item 
+\hyperlink{structPredInf}{Pred\+Inf} $\ast$\hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{pred_8c_aa8ebf08b93ec7e4bde2c544c70ba4c39}{Pl\+\_\+\+Lookup\+\_\+\+Pred} (int func, int arity)
+\item 
+void \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{pred_8c_af871791264131d07932474af4ddbdbb3}{Pl\+\_\+\+Delete\+\_\+\+Pred} (int func, int arity)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{pred.\+c@{pred.\+c}!A\+D\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+S\+\_\+\+I\+N\+\_\+\+P\+R\+E\+D\+\_\+\+T\+BL@{A\+D\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+S\+\_\+\+I\+N\+\_\+\+P\+R\+E\+D\+\_\+\+T\+BL}}
+\index{A\+D\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+S\+\_\+\+I\+N\+\_\+\+P\+R\+E\+D\+\_\+\+T\+BL@{A\+D\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+S\+\_\+\+I\+N\+\_\+\+P\+R\+E\+D\+\_\+\+T\+BL}!pred.\+c@{pred.\+c}}
+\subsubsection[{\texorpdfstring{A\+D\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+S\+\_\+\+I\+N\+\_\+\+P\+R\+E\+D\+\_\+\+T\+BL}{ADD_CONTROL_CONSTRUCTS_IN_PRED_TBL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+D\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+C\+O\+N\+S\+T\+R\+U\+C\+T\+S\+\_\+\+I\+N\+\_\+\+P\+R\+E\+D\+\_\+\+T\+BL}\hypertarget{pred_8c_aa4cc2f53cbf853adf27509ea3f8aa514}{}\label{pred_8c_aa4cc2f53cbf853adf27509ea3f8aa514}
+\index{pred.\+c@{pred.\+c}!E\+R\+R\+\_\+\+M\+U\+L\+T\+I\+F\+I\+L\+E\+\_\+\+P\+R\+OP@{E\+R\+R\+\_\+\+M\+U\+L\+T\+I\+F\+I\+L\+E\+\_\+\+P\+R\+OP}}
+\index{E\+R\+R\+\_\+\+M\+U\+L\+T\+I\+F\+I\+L\+E\+\_\+\+P\+R\+OP@{E\+R\+R\+\_\+\+M\+U\+L\+T\+I\+F\+I\+L\+E\+\_\+\+P\+R\+OP}!pred.\+c@{pred.\+c}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+\+M\+U\+L\+T\+I\+F\+I\+L\+E\+\_\+\+P\+R\+OP}{ERR_MULTIFILE_PROP}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+\_\+\+M\+U\+L\+T\+I\+F\+I\+L\+E\+\_\+\+P\+R\+OP~\char`\"{}multifile predicate \%s/\%{\bf d} not declared consistently\textbackslash{}n    in  \%s\textbackslash{}n    and \%s\char`\"{}}\hypertarget{pred_8c_a1aa982ca7b2dc944778a032a4f56de67}{}\label{pred_8c_a1aa982ca7b2dc944778a032a4f56de67}
+\index{pred.\+c@{pred.\+c}!P\+R\+E\+D\+\_\+\+F\+I\+LE@{P\+R\+E\+D\+\_\+\+F\+I\+LE}}
+\index{P\+R\+E\+D\+\_\+\+F\+I\+LE@{P\+R\+E\+D\+\_\+\+F\+I\+LE}!pred.\+c@{pred.\+c}}
+\subsubsection[{\texorpdfstring{P\+R\+E\+D\+\_\+\+F\+I\+LE}{PRED_FILE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+E\+D\+\_\+\+F\+I\+LE}\hypertarget{pred_8c_abfaf4e095525ef76292f16260bf4f285}{}\label{pred_8c_abfaf4e095525ef76292f16260bf4f285}
+
+
+\subsection{Function Documentation}
+\index{pred.\+c@{pred.\+c}!Pl\+\_\+\+Create\+\_\+\+Pred@{Pl\+\_\+\+Create\+\_\+\+Pred}}
+\index{Pl\+\_\+\+Create\+\_\+\+Pred@{Pl\+\_\+\+Create\+\_\+\+Pred}!pred.\+c@{pred.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Create\+\_\+\+Pred(int func, int arity, int pl\+\_\+file, int pl\+\_\+line, int prop, Pl\+Long $\ast$codep)}{Pl_Create_Pred(int func, int arity, int pl_file, int pl_line, int prop, PlLong *codep)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pred\+Inf}$\ast$ {\bf FC} Pl\+\_\+\+Create\+\_\+\+Pred (
+\begin{DoxyParamCaption}
+\item[{int}]{func, }
+\item[{int}]{arity, }
+\item[{int}]{pl\+\_\+file, }
+\item[{int}]{pl\+\_\+line, }
+\item[{int}]{prop, }
+\item[{{\bf Pl\+Long} $\ast$}]{codep}
+\end{DoxyParamCaption}
+)}\hypertarget{pred_8c_a43f9afc5dcfc6f9c1f8205024c2be46a}{}\label{pred_8c_a43f9afc5dcfc6f9c1f8205024c2be46a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pred_8c_a43f9afc5dcfc6f9c1f8205024c2be46a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pred_8c_a43f9afc5dcfc6f9c1f8205024c2be46a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{pred.\+c@{pred.\+c}!Pl\+\_\+\+Delete\+\_\+\+Pred@{Pl\+\_\+\+Delete\+\_\+\+Pred}}
+\index{Pl\+\_\+\+Delete\+\_\+\+Pred@{Pl\+\_\+\+Delete\+\_\+\+Pred}!pred.\+c@{pred.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Delete\+\_\+\+Pred(int func, int arity)}{Pl_Delete_Pred(int func, int arity)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf FC} Pl\+\_\+\+Delete\+\_\+\+Pred (
+\begin{DoxyParamCaption}
+\item[{int}]{func, }
+\item[{int}]{arity}
+\end{DoxyParamCaption}
+)}\hypertarget{pred_8c_af871791264131d07932474af4ddbdbb3}{}\label{pred_8c_af871791264131d07932474af4ddbdbb3}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pred_8c_af871791264131d07932474af4ddbdbb3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pred_8c_af871791264131d07932474af4ddbdbb3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{pred.\+c@{pred.\+c}!Pl\+\_\+\+Init\+\_\+\+Pred@{Pl\+\_\+\+Init\+\_\+\+Pred}}
+\index{Pl\+\_\+\+Init\+\_\+\+Pred@{Pl\+\_\+\+Init\+\_\+\+Pred}!pred.\+c@{pred.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Init\+\_\+\+Pred(void)}{Pl_Init_Pred(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Init\+\_\+\+Pred (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{pred_8c_aa0fb875bb38ef710cad2276c7c843dc0}{}\label{pred_8c_aa0fb875bb38ef710cad2276c7c843dc0}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pred_8c_aa0fb875bb38ef710cad2276c7c843dc0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{pred.\+c@{pred.\+c}!Pl\+\_\+\+Lookup\+\_\+\+Pred@{Pl\+\_\+\+Lookup\+\_\+\+Pred}}
+\index{Pl\+\_\+\+Lookup\+\_\+\+Pred@{Pl\+\_\+\+Lookup\+\_\+\+Pred}!pred.\+c@{pred.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Lookup\+\_\+\+Pred(int func, int arity)}{Pl_Lookup_Pred(int func, int arity)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pred\+Inf}$\ast$ {\bf FC} Pl\+\_\+\+Lookup\+\_\+\+Pred (
+\begin{DoxyParamCaption}
+\item[{int}]{func, }
+\item[{int}]{arity}
+\end{DoxyParamCaption}
+)}\hypertarget{pred_8c_aa8ebf08b93ec7e4bde2c544c70ba4c39}{}\label{pred_8c_aa8ebf08b93ec7e4bde2c544c70ba4c39}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{pred_8c_aa8ebf08b93ec7e4bde2c544c70ba4c39_icgraph}
+\end{center}
+\end{figure}
+
+

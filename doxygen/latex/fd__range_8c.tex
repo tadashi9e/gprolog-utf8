@@ -1,0 +1,1289 @@
+\hypertarget{fd__range_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+F\+D/fd\+\_\+range.c File Reference}
+\label{fd__range_8c}\index{gprolog-\/utf8-\/tree/src/\+Engine\+F\+D/fd\+\_\+range.\+c@{gprolog-\/utf8-\/tree/src/\+Engine\+F\+D/fd\+\_\+range.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}bool.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}engine\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}engine\+\_\+fd.\+h\char`\"{}}\\*
+Include dependency graph for fd\+\_\+range.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{fd__range_8c_a4278c082a454b6b7240755f1e601249c}{F\+D\+\_\+\+R\+A\+N\+G\+E\+\_\+\+F\+I\+LE}
+\item 
+\#define \hyperlink{fd__range_8c_a7c433d56023db4d86404070831bdb31d}{A\+L\+L\+\_\+1}~((\hyperlink{fd__range_8h_aa61c38de510c839e66cc6f1ea7b6a0fd}{Vec\+Word}) -\/1)
+\item 
+\#define \hyperlink{fd__range_8c_a4239553f7270d9b6629706df0a5facba}{W\+R\+I\+T\+E\+\_\+\+B\+E\+G\+I\+N\+\_\+\+R\+A\+N\+GE}~\char`\"{}\char`\"{}
+\item 
+\#define \hyperlink{fd__range_8c_a9ae8f14a8bdd24d43c7e10b541f6cfa0}{W\+R\+I\+T\+E\+\_\+\+E\+N\+D\+\_\+\+R\+A\+N\+GE}~\char`\"{}\char`\"{}
+\item 
+\#define \hyperlink{fd__range_8c_a7daad4c9d56271a51189a98a6d559e45}{W\+R\+I\+T\+E\+\_\+\+L\+I\+M\+I\+T\+S\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}~\char`\"{}..\char`\"{}
+\item 
+\#define \hyperlink{fd__range_8c_a0f53eb5aed0b642c55bdca7c1de30b02}{W\+R\+I\+T\+E\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+S\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}~\char`\"{}\+:\char`\"{}
+\item 
+\#define \hyperlink{fd__range_8c_a8bf7dccfb2a382c039b8d963f95c5a54}{W\+R\+I\+T\+E\+\_\+\+E\+X\+T\+R\+A\+\_\+\+C\+S\+T\+R\+\_\+\+S\+Y\+M\+B\+OL}~\char`\"{}@\char`\"{}
+\item 
+\#define \hyperlink{fd__range_8c_a2c287c970a95ae29064515af91b494c4}{math\+\_\+min}(\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x},  \hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y})~((\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}) $<$= (\hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}) ? (\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}) \+: (\hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}))
+\item 
+\#define \hyperlink{fd__range_8c_afd1099463d249ba7ad3063aa37698d38}{math\+\_\+max}(\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x},  \hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y})~((\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}) $>$= (\hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}) ? (\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}) \+: (\hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{fd__range_8c_a1752e33dcca52201c0ee6808da2df52e}{Pl\+\_\+\+Define\+\_\+\+Vector\+\_\+\+Size} (int max\+\_\+val)
+\item 
+void \hyperlink{fd__range_8c_aeee4eb07705bc7c94b76b2dc23d30435}{Pl\+\_\+\+Vector\+\_\+\+From\+\_\+\+Interval} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec, int min, int max)
+\item 
+int \hyperlink{fd__range_8c_a7b33504ee6ac04aa85f7eed9732aa0b8}{Pl\+\_\+\+Vector\+\_\+\+Nb\+\_\+\+Elem} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec)
+\item 
+int \hyperlink{fd__range_8c_a32260577536fd7f8da5e88d793f86864}{Pl\+\_\+\+Vector\+\_\+\+Ith\+\_\+\+Elem} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec, int \hyperlink{chkma_8c_a6389b0bf0138857012de69e968d26c43}{i})
+\item 
+int \hyperlink{fd__range_8c_a005e506b40afe41ea807a6be7c7e6416}{Pl\+\_\+\+Vector\+\_\+\+Next\+\_\+\+After} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec, int n)
+\item 
+int \hyperlink{fd__range_8c_a93dad9c46f4b7ba842eb196b558cc4d6}{Pl\+\_\+\+Vector\+\_\+\+Next\+\_\+\+Before} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec, int n)
+\item 
+void \hyperlink{fd__range_8c_a18ac016798a2abe3fc01c07de87926c9}{Pl\+\_\+\+Vector\+\_\+\+Empty} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec)
+\item 
+void \hyperlink{fd__range_8c_a4eabe9d15c96288e7060d4122274f6f0}{Pl\+\_\+\+Vector\+\_\+\+Full} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{fd__range_8c_ae5e7a1a0fb96db458eaa2a057e0b9f12}{Pl\+\_\+\+Vector\+\_\+\+Test\+\_\+\+Null\+\_\+\+Inter} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec, \hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec1)
+\item 
+void \hyperlink{fd__range_8c_a87fdca8e2996885ee3c9946eacb221bc}{Pl\+\_\+\+Vector\+\_\+\+Copy} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec, \hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec1)
+\item 
+void \hyperlink{fd__range_8c_a5c5dffb5d4b566c539c95db3d81d8511}{Pl\+\_\+\+Vector\+\_\+\+Union} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec, \hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec1)
+\item 
+void \hyperlink{fd__range_8c_a43bebdba6e45bb0d02d72ccb527aa4ba}{Pl\+\_\+\+Vector\+\_\+\+Inter} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec, \hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec1)
+\item 
+void \hyperlink{fd__range_8c_a927684a9485facf4338f3b33867e7c3b}{Pl\+\_\+\+Vector\+\_\+\+Compl} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec)
+\item 
+void \hyperlink{fd__range_8c_a02a0b3473ca3d1461f15123e82883afd}{Pl\+\_\+\+Vector\+\_\+\+Add\+\_\+\+Vector} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec, \hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec1)
+\item 
+void \hyperlink{fd__range_8c_ae3c3b3fd3cbbb75ab86e15a41dd671a8}{Pl\+\_\+\+Vector\+\_\+\+Sub\+\_\+\+Vector} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec, \hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec1)
+\item 
+void \hyperlink{fd__range_8c_aeca59f9f20e4505f0c1e6ce4d642009b}{Pl\+\_\+\+Vector\+\_\+\+Mul\+\_\+\+Vector} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec, \hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec1)
+\item 
+void \hyperlink{fd__range_8c_aa49a174fff3343dff525a701bdc7fb5c}{Pl\+\_\+\+Vector\+\_\+\+Div\+\_\+\+Vector} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec, \hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec1)
+\item 
+void \hyperlink{fd__range_8c_ac4eb536544f1b224c73a348bf2ae8af1}{Pl\+\_\+\+Vector\+\_\+\+Mod\+\_\+\+Vector} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec, \hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec1)
+\item 
+void \hyperlink{fd__range_8c_a5eb00d871ef1ebc12f18220a7469beca}{Pl\+\_\+\+Vector\+\_\+\+Add\+\_\+\+Value} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec, int n)
+\item 
+void \hyperlink{fd__range_8c_a1f20a48ab91b33fb4a11586924d9d326}{Pl\+\_\+\+Vector\+\_\+\+Mul\+\_\+\+Value} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec, int n)
+\item 
+void \hyperlink{fd__range_8c_aa1effb7995ce909a175cce3e74ffdee9}{Pl\+\_\+\+Vector\+\_\+\+Div\+\_\+\+Value} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec, int n)
+\item 
+void \hyperlink{fd__range_8c_a36bfcd8fdac72d0f7564dc766915ee31}{Pl\+\_\+\+Vector\+\_\+\+Mod\+\_\+\+Value} (\hyperlink{fd__range_8h_a3cb8772380a4656f7d8c5d5c6346985e}{Vector} vec, int n)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{fd__range_8c_a7fc73a524441f6f5357f8a6a369ac92e}{Pl\+\_\+\+Range\+\_\+\+Test\+\_\+\+Value} (\hyperlink{structRange}{Range} $\ast$range, int n)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{fd__range_8c_aa51e629f9268f5949ff775188d57e55f}{Pl\+\_\+\+Range\+\_\+\+Test\+\_\+\+Null\+\_\+\+Inter} (\hyperlink{structRange}{Range} $\ast$range, \hyperlink{structRange}{Range} $\ast$range1)
+\item 
+void \hyperlink{fd__range_8c_a84a1b977811b34403aa33b60c2cab73c}{Pl\+\_\+\+Range\+\_\+\+Copy} (\hyperlink{structRange}{Range} $\ast$range, \hyperlink{structRange}{Range} $\ast$range1)
+\item 
+int \hyperlink{fd__range_8c_ac4ad9dade9c0c8b0c84749f812a6b467}{Pl\+\_\+\+Range\+\_\+\+Nb\+\_\+\+Elem} (\hyperlink{structRange}{Range} $\ast$range)
+\item 
+int \hyperlink{fd__range_8c_aefd40aaa6487307a0250529aa0178ead}{Pl\+\_\+\+Range\+\_\+\+Ith\+\_\+\+Elem} (\hyperlink{structRange}{Range} $\ast$range, int \hyperlink{chkma_8c_a6389b0bf0138857012de69e968d26c43}{i})
+\item 
+int \hyperlink{fd__range_8c_a061f237c2d6182ed2b271703bc94505a}{Pl\+\_\+\+Range\+\_\+\+Next\+\_\+\+After} (\hyperlink{structRange}{Range} $\ast$range, int n)
+\item 
+int \hyperlink{fd__range_8c_a194fadf2f6210f55ab3d8231f638571e}{Pl\+\_\+\+Range\+\_\+\+Next\+\_\+\+Before} (\hyperlink{structRange}{Range} $\ast$range, int n)
+\item 
+void \hyperlink{fd__range_8c_a6855a1701110345be87269bd4feef18f}{Pl\+\_\+\+Range\+\_\+\+Becomes\+\_\+\+Sparse} (\hyperlink{structRange}{Range} $\ast$range)
+\item 
+void \hyperlink{fd__range_8c_aebf7c1ea3a7d5efe231d521fff5a242a}{Pl\+\_\+\+Range\+\_\+\+From\+\_\+\+Vector} (\hyperlink{structRange}{Range} $\ast$range)
+\item 
+void \hyperlink{fd__range_8c_a826c7aaa4db20bc2ba5cc5794f189948}{Pl\+\_\+\+Range\+\_\+\+Set\+\_\+\+Value} (\hyperlink{structRange}{Range} $\ast$range, int n)
+\item 
+void \hyperlink{fd__range_8c_a68e31a309011488409ab070122c20471}{Pl\+\_\+\+Range\+\_\+\+Reset\+\_\+\+Value} (\hyperlink{structRange}{Range} $\ast$range, int n)
+\item 
+void \hyperlink{fd__range_8c_a44b85c2488064aae5e1fa330f6e4f73a}{Pl\+\_\+\+Range\+\_\+\+Union} (\hyperlink{structRange}{Range} $\ast$range, \hyperlink{structRange}{Range} $\ast$range1)
+\item 
+void \hyperlink{fd__range_8c_ad1d23e966e8b2dd3f4e33f727e73e543}{Pl\+\_\+\+Range\+\_\+\+Inter} (\hyperlink{structRange}{Range} $\ast$range, \hyperlink{structRange}{Range} $\ast$range1)
+\item 
+void \hyperlink{fd__range_8c_a087e9ffdf63c5a56e09a4c2ff4461bac}{Pl\+\_\+\+Range\+\_\+\+Compl} (\hyperlink{structRange}{Range} $\ast$range)
+\item 
+void \hyperlink{fd__range_8c_adedadc6d0997b6f5c8946850e9a45843}{Pl\+\_\+\+Range\+\_\+\+Add\+\_\+\+Range} (\hyperlink{structRange}{Range} $\ast$range, \hyperlink{structRange}{Range} $\ast$range1)
+\item 
+void \hyperlink{fd__range_8c_a07ed7ae0602b9aea27536b69c0e7d286}{Pl\+\_\+\+Range\+\_\+\+Sub\+\_\+\+Range} (\hyperlink{structRange}{Range} $\ast$range, \hyperlink{structRange}{Range} $\ast$range1)
+\item 
+void \hyperlink{fd__range_8c_aba43fee6e534e6cdc31783c24d92d039}{Pl\+\_\+\+Range\+\_\+\+Mul\+\_\+\+Range} (\hyperlink{structRange}{Range} $\ast$range, \hyperlink{structRange}{Range} $\ast$range1)
+\item 
+void \hyperlink{fd__range_8c_a693c0bbe3eae104e0dd1aa29ab1b34e4}{Pl\+\_\+\+Range\+\_\+\+Div\+\_\+\+Range} (\hyperlink{structRange}{Range} $\ast$range, \hyperlink{structRange}{Range} $\ast$range1)
+\item 
+void \hyperlink{fd__range_8c_a5045e3605f1d90fb4fe910cb79b96e40}{Pl\+\_\+\+Range\+\_\+\+Mod\+\_\+\+Range} (\hyperlink{structRange}{Range} $\ast$range, \hyperlink{structRange}{Range} $\ast$range1)
+\item 
+void \hyperlink{fd__range_8c_a06ec6dcfb1c9b36c75f43113d39d9c93}{Pl\+\_\+\+Range\+\_\+\+Add\+\_\+\+Value} (\hyperlink{structRange}{Range} $\ast$range, int n)
+\item 
+void \hyperlink{fd__range_8c_a84a0b17829c14bd0b85521cab6b6c774}{Pl\+\_\+\+Range\+\_\+\+Mul\+\_\+\+Value} (\hyperlink{structRange}{Range} $\ast$range, int n)
+\item 
+void \hyperlink{fd__range_8c_ae6948005a13729e71edd90910ec9d7fc}{Pl\+\_\+\+Range\+\_\+\+Div\+\_\+\+Value} (\hyperlink{structRange}{Range} $\ast$range, int n)
+\item 
+void \hyperlink{fd__range_8c_abb12acff202d285e3c73960b8d7a01db}{Pl\+\_\+\+Range\+\_\+\+Mod\+\_\+\+Value} (\hyperlink{structRange}{Range} $\ast$range, int n)
+\item 
+char $\ast$ \hyperlink{fd__range_8c_af70598809f715d5934bc8e59334ca0a0}{Pl\+\_\+\+Range\+\_\+\+To\+\_\+\+String} (\hyperlink{structRange}{Range} $\ast$range)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!A\+L\+L\+\_\+1@{A\+L\+L\+\_\+1}}
+\index{A\+L\+L\+\_\+1@{A\+L\+L\+\_\+1}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{A\+L\+L\+\_\+1}{ALL_1}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+L\+L\+\_\+1~(({\bf Vec\+Word}) -\/1)}\hypertarget{fd__range_8c_a7c433d56023db4d86404070831bdb31d}{}\label{fd__range_8c_a7c433d56023db4d86404070831bdb31d}
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!F\+D\+\_\+\+R\+A\+N\+G\+E\+\_\+\+F\+I\+LE@{F\+D\+\_\+\+R\+A\+N\+G\+E\+\_\+\+F\+I\+LE}}
+\index{F\+D\+\_\+\+R\+A\+N\+G\+E\+\_\+\+F\+I\+LE@{F\+D\+\_\+\+R\+A\+N\+G\+E\+\_\+\+F\+I\+LE}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{F\+D\+\_\+\+R\+A\+N\+G\+E\+\_\+\+F\+I\+LE}{FD_RANGE_FILE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+D\+\_\+\+R\+A\+N\+G\+E\+\_\+\+F\+I\+LE}\hypertarget{fd__range_8c_a4278c082a454b6b7240755f1e601249c}{}\label{fd__range_8c_a4278c082a454b6b7240755f1e601249c}
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!math\+\_\+max@{math\+\_\+max}}
+\index{math\+\_\+max@{math\+\_\+max}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{math\+\_\+max}{math_max}}]{\setlength{\rightskip}{0pt plus 5cm}\#define math\+\_\+max(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf x}, }
+\item[{}]{{\bf y}}
+\end{DoxyParamCaption}
+)~(({\bf x}) $>$= ({\bf y}) ? ({\bf x}) \+: ({\bf y}))}\hypertarget{fd__range_8c_afd1099463d249ba7ad3063aa37698d38}{}\label{fd__range_8c_afd1099463d249ba7ad3063aa37698d38}
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!math\+\_\+min@{math\+\_\+min}}
+\index{math\+\_\+min@{math\+\_\+min}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{math\+\_\+min}{math_min}}]{\setlength{\rightskip}{0pt plus 5cm}\#define math\+\_\+min(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf x}, }
+\item[{}]{{\bf y}}
+\end{DoxyParamCaption}
+)~(({\bf x}) $<$= ({\bf y}) ? ({\bf x}) \+: ({\bf y}))}\hypertarget{fd__range_8c_a2c287c970a95ae29064515af91b494c4}{}\label{fd__range_8c_a2c287c970a95ae29064515af91b494c4}
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!W\+R\+I\+T\+E\+\_\+\+B\+E\+G\+I\+N\+\_\+\+R\+A\+N\+GE@{W\+R\+I\+T\+E\+\_\+\+B\+E\+G\+I\+N\+\_\+\+R\+A\+N\+GE}}
+\index{W\+R\+I\+T\+E\+\_\+\+B\+E\+G\+I\+N\+\_\+\+R\+A\+N\+GE@{W\+R\+I\+T\+E\+\_\+\+B\+E\+G\+I\+N\+\_\+\+R\+A\+N\+GE}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+B\+E\+G\+I\+N\+\_\+\+R\+A\+N\+GE}{WRITE_BEGIN_RANGE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+R\+I\+T\+E\+\_\+\+B\+E\+G\+I\+N\+\_\+\+R\+A\+N\+GE~\char`\"{}\char`\"{}}\hypertarget{fd__range_8c_a4239553f7270d9b6629706df0a5facba}{}\label{fd__range_8c_a4239553f7270d9b6629706df0a5facba}
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!W\+R\+I\+T\+E\+\_\+\+E\+N\+D\+\_\+\+R\+A\+N\+GE@{W\+R\+I\+T\+E\+\_\+\+E\+N\+D\+\_\+\+R\+A\+N\+GE}}
+\index{W\+R\+I\+T\+E\+\_\+\+E\+N\+D\+\_\+\+R\+A\+N\+GE@{W\+R\+I\+T\+E\+\_\+\+E\+N\+D\+\_\+\+R\+A\+N\+GE}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+E\+N\+D\+\_\+\+R\+A\+N\+GE}{WRITE_END_RANGE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+R\+I\+T\+E\+\_\+\+E\+N\+D\+\_\+\+R\+A\+N\+GE~\char`\"{}\char`\"{}}\hypertarget{fd__range_8c_a9ae8f14a8bdd24d43c7e10b541f6cfa0}{}\label{fd__range_8c_a9ae8f14a8bdd24d43c7e10b541f6cfa0}
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!W\+R\+I\+T\+E\+\_\+\+E\+X\+T\+R\+A\+\_\+\+C\+S\+T\+R\+\_\+\+S\+Y\+M\+B\+OL@{W\+R\+I\+T\+E\+\_\+\+E\+X\+T\+R\+A\+\_\+\+C\+S\+T\+R\+\_\+\+S\+Y\+M\+B\+OL}}
+\index{W\+R\+I\+T\+E\+\_\+\+E\+X\+T\+R\+A\+\_\+\+C\+S\+T\+R\+\_\+\+S\+Y\+M\+B\+OL@{W\+R\+I\+T\+E\+\_\+\+E\+X\+T\+R\+A\+\_\+\+C\+S\+T\+R\+\_\+\+S\+Y\+M\+B\+OL}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+E\+X\+T\+R\+A\+\_\+\+C\+S\+T\+R\+\_\+\+S\+Y\+M\+B\+OL}{WRITE_EXTRA_CSTR_SYMBOL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+R\+I\+T\+E\+\_\+\+E\+X\+T\+R\+A\+\_\+\+C\+S\+T\+R\+\_\+\+S\+Y\+M\+B\+OL~\char`\"{}@\char`\"{}}\hypertarget{fd__range_8c_a8bf7dccfb2a382c039b8d963f95c5a54}{}\label{fd__range_8c_a8bf7dccfb2a382c039b8d963f95c5a54}
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!W\+R\+I\+T\+E\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+S\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR@{W\+R\+I\+T\+E\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+S\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}}
+\index{W\+R\+I\+T\+E\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+S\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR@{W\+R\+I\+T\+E\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+S\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+S\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}{WRITE_INTERVALS_SEPARATOR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+R\+I\+T\+E\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+S\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR~\char`\"{}\+:\char`\"{}}\hypertarget{fd__range_8c_a0f53eb5aed0b642c55bdca7c1de30b02}{}\label{fd__range_8c_a0f53eb5aed0b642c55bdca7c1de30b02}
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!W\+R\+I\+T\+E\+\_\+\+L\+I\+M\+I\+T\+S\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR@{W\+R\+I\+T\+E\+\_\+\+L\+I\+M\+I\+T\+S\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}}
+\index{W\+R\+I\+T\+E\+\_\+\+L\+I\+M\+I\+T\+S\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR@{W\+R\+I\+T\+E\+\_\+\+L\+I\+M\+I\+T\+S\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{W\+R\+I\+T\+E\+\_\+\+L\+I\+M\+I\+T\+S\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR}{WRITE_LIMITS_SEPARATOR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\+R\+I\+T\+E\+\_\+\+L\+I\+M\+I\+T\+S\+\_\+\+S\+E\+P\+A\+R\+A\+T\+OR~\char`\"{}..\char`\"{}}\hypertarget{fd__range_8c_a7daad4c9d56271a51189a98a6d559e45}{}\label{fd__range_8c_a7daad4c9d56271a51189a98a6d559e45}
+
+
+\subsection{Function Documentation}
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Define\+\_\+\+Vector\+\_\+\+Size@{Pl\+\_\+\+Define\+\_\+\+Vector\+\_\+\+Size}}
+\index{Pl\+\_\+\+Define\+\_\+\+Vector\+\_\+\+Size@{Pl\+\_\+\+Define\+\_\+\+Vector\+\_\+\+Size}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Define\+\_\+\+Vector\+\_\+\+Size(int max\+\_\+val)}{Pl_Define_Vector_Size(int max_val)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Define\+\_\+\+Vector\+\_\+\+Size (
+\begin{DoxyParamCaption}
+\item[{int}]{max\+\_\+val}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a1752e33dcca52201c0ee6808da2df52e}{}\label{fd__range_8c_a1752e33dcca52201c0ee6808da2df52e}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a1752e33dcca52201c0ee6808da2df52e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Add\+\_\+\+Range@{Pl\+\_\+\+Range\+\_\+\+Add\+\_\+\+Range}}
+\index{Pl\+\_\+\+Range\+\_\+\+Add\+\_\+\+Range@{Pl\+\_\+\+Range\+\_\+\+Add\+\_\+\+Range}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Add\+\_\+\+Range(\+Range $\ast$range, Range $\ast$range1)}{Pl_Range_Add_Range(Range *range, Range *range1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Range\+\_\+\+Add\+\_\+\+Range (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{{\bf Range} $\ast$}]{range1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_adedadc6d0997b6f5c8946850e9a45843}{}\label{fd__range_8c_adedadc6d0997b6f5c8946850e9a45843}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_adedadc6d0997b6f5c8946850e9a45843_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Add\+\_\+\+Value@{Pl\+\_\+\+Range\+\_\+\+Add\+\_\+\+Value}}
+\index{Pl\+\_\+\+Range\+\_\+\+Add\+\_\+\+Value@{Pl\+\_\+\+Range\+\_\+\+Add\+\_\+\+Value}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Add\+\_\+\+Value(\+Range $\ast$range, int n)}{Pl_Range_Add_Value(Range *range, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Range\+\_\+\+Add\+\_\+\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a06ec6dcfb1c9b36c75f43113d39d9c93}{}\label{fd__range_8c_a06ec6dcfb1c9b36c75f43113d39d9c93}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{fd__range_8c_a06ec6dcfb1c9b36c75f43113d39d9c93_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Becomes\+\_\+\+Sparse@{Pl\+\_\+\+Range\+\_\+\+Becomes\+\_\+\+Sparse}}
+\index{Pl\+\_\+\+Range\+\_\+\+Becomes\+\_\+\+Sparse@{Pl\+\_\+\+Range\+\_\+\+Becomes\+\_\+\+Sparse}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Becomes\+\_\+\+Sparse(\+Range $\ast$range)}{Pl_Range_Becomes_Sparse(Range *range)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Range\+\_\+\+Becomes\+\_\+\+Sparse (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a6855a1701110345be87269bd4feef18f}{}\label{fd__range_8c_a6855a1701110345be87269bd4feef18f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a6855a1701110345be87269bd4feef18f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a6855a1701110345be87269bd4feef18f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Compl@{Pl\+\_\+\+Range\+\_\+\+Compl}}
+\index{Pl\+\_\+\+Range\+\_\+\+Compl@{Pl\+\_\+\+Range\+\_\+\+Compl}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Compl(\+Range $\ast$range)}{Pl_Range_Compl(Range *range)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Range\+\_\+\+Compl (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a087e9ffdf63c5a56e09a4c2ff4461bac}{}\label{fd__range_8c_a087e9ffdf63c5a56e09a4c2ff4461bac}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a087e9ffdf63c5a56e09a4c2ff4461bac_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Copy@{Pl\+\_\+\+Range\+\_\+\+Copy}}
+\index{Pl\+\_\+\+Range\+\_\+\+Copy@{Pl\+\_\+\+Range\+\_\+\+Copy}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Copy(\+Range $\ast$range, Range $\ast$range1)}{Pl_Range_Copy(Range *range, Range *range1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Range\+\_\+\+Copy (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{{\bf Range} $\ast$}]{range1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a84a1b977811b34403aa33b60c2cab73c}{}\label{fd__range_8c_a84a1b977811b34403aa33b60c2cab73c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{fd__range_8c_a84a1b977811b34403aa33b60c2cab73c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a84a1b977811b34403aa33b60c2cab73c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Div\+\_\+\+Range@{Pl\+\_\+\+Range\+\_\+\+Div\+\_\+\+Range}}
+\index{Pl\+\_\+\+Range\+\_\+\+Div\+\_\+\+Range@{Pl\+\_\+\+Range\+\_\+\+Div\+\_\+\+Range}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Div\+\_\+\+Range(\+Range $\ast$range, Range $\ast$range1)}{Pl_Range_Div_Range(Range *range, Range *range1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Range\+\_\+\+Div\+\_\+\+Range (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{{\bf Range} $\ast$}]{range1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a693c0bbe3eae104e0dd1aa29ab1b34e4}{}\label{fd__range_8c_a693c0bbe3eae104e0dd1aa29ab1b34e4}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a693c0bbe3eae104e0dd1aa29ab1b34e4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{fd__range_8c_a693c0bbe3eae104e0dd1aa29ab1b34e4_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Div\+\_\+\+Value@{Pl\+\_\+\+Range\+\_\+\+Div\+\_\+\+Value}}
+\index{Pl\+\_\+\+Range\+\_\+\+Div\+\_\+\+Value@{Pl\+\_\+\+Range\+\_\+\+Div\+\_\+\+Value}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Div\+\_\+\+Value(\+Range $\ast$range, int n)}{Pl_Range_Div_Value(Range *range, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Range\+\_\+\+Div\+\_\+\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_ae6948005a13729e71edd90910ec9d7fc}{}\label{fd__range_8c_ae6948005a13729e71edd90910ec9d7fc}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_ae6948005a13729e71edd90910ec9d7fc_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+From\+\_\+\+Vector@{Pl\+\_\+\+Range\+\_\+\+From\+\_\+\+Vector}}
+\index{Pl\+\_\+\+Range\+\_\+\+From\+\_\+\+Vector@{Pl\+\_\+\+Range\+\_\+\+From\+\_\+\+Vector}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+From\+\_\+\+Vector(\+Range $\ast$range)}{Pl_Range_From_Vector(Range *range)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Range\+\_\+\+From\+\_\+\+Vector (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_aebf7c1ea3a7d5efe231d521fff5a242a}{}\label{fd__range_8c_aebf7c1ea3a7d5efe231d521fff5a242a}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_aebf7c1ea3a7d5efe231d521fff5a242a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Inter@{Pl\+\_\+\+Range\+\_\+\+Inter}}
+\index{Pl\+\_\+\+Range\+\_\+\+Inter@{Pl\+\_\+\+Range\+\_\+\+Inter}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Inter(\+Range $\ast$range, Range $\ast$range1)}{Pl_Range_Inter(Range *range, Range *range1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Range\+\_\+\+Inter (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{{\bf Range} $\ast$}]{range1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_ad1d23e966e8b2dd3f4e33f727e73e543}{}\label{fd__range_8c_ad1d23e966e8b2dd3f4e33f727e73e543}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_ad1d23e966e8b2dd3f4e33f727e73e543_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_ad1d23e966e8b2dd3f4e33f727e73e543_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Ith\+\_\+\+Elem@{Pl\+\_\+\+Range\+\_\+\+Ith\+\_\+\+Elem}}
+\index{Pl\+\_\+\+Range\+\_\+\+Ith\+\_\+\+Elem@{Pl\+\_\+\+Range\+\_\+\+Ith\+\_\+\+Elem}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Ith\+\_\+\+Elem(\+Range $\ast$range, int i)}{Pl_Range_Ith_Elem(Range *range, int i)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Range\+\_\+\+Ith\+\_\+\+Elem (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_aefd40aaa6487307a0250529aa0178ead}{}\label{fd__range_8c_aefd40aaa6487307a0250529aa0178ead}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{fd__range_8c_aefd40aaa6487307a0250529aa0178ead_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_aefd40aaa6487307a0250529aa0178ead_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Mod\+\_\+\+Range@{Pl\+\_\+\+Range\+\_\+\+Mod\+\_\+\+Range}}
+\index{Pl\+\_\+\+Range\+\_\+\+Mod\+\_\+\+Range@{Pl\+\_\+\+Range\+\_\+\+Mod\+\_\+\+Range}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Mod\+\_\+\+Range(\+Range $\ast$range, Range $\ast$range1)}{Pl_Range_Mod_Range(Range *range, Range *range1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Range\+\_\+\+Mod\+\_\+\+Range (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{{\bf Range} $\ast$}]{range1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a5045e3605f1d90fb4fe910cb79b96e40}{}\label{fd__range_8c_a5045e3605f1d90fb4fe910cb79b96e40}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a5045e3605f1d90fb4fe910cb79b96e40_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Mod\+\_\+\+Value@{Pl\+\_\+\+Range\+\_\+\+Mod\+\_\+\+Value}}
+\index{Pl\+\_\+\+Range\+\_\+\+Mod\+\_\+\+Value@{Pl\+\_\+\+Range\+\_\+\+Mod\+\_\+\+Value}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Mod\+\_\+\+Value(\+Range $\ast$range, int n)}{Pl_Range_Mod_Value(Range *range, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Range\+\_\+\+Mod\+\_\+\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_abb12acff202d285e3c73960b8d7a01db}{}\label{fd__range_8c_abb12acff202d285e3c73960b8d7a01db}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_abb12acff202d285e3c73960b8d7a01db_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Mul\+\_\+\+Range@{Pl\+\_\+\+Range\+\_\+\+Mul\+\_\+\+Range}}
+\index{Pl\+\_\+\+Range\+\_\+\+Mul\+\_\+\+Range@{Pl\+\_\+\+Range\+\_\+\+Mul\+\_\+\+Range}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Mul\+\_\+\+Range(\+Range $\ast$range, Range $\ast$range1)}{Pl_Range_Mul_Range(Range *range, Range *range1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Range\+\_\+\+Mul\+\_\+\+Range (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{{\bf Range} $\ast$}]{range1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_aba43fee6e534e6cdc31783c24d92d039}{}\label{fd__range_8c_aba43fee6e534e6cdc31783c24d92d039}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_aba43fee6e534e6cdc31783c24d92d039_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Mul\+\_\+\+Value@{Pl\+\_\+\+Range\+\_\+\+Mul\+\_\+\+Value}}
+\index{Pl\+\_\+\+Range\+\_\+\+Mul\+\_\+\+Value@{Pl\+\_\+\+Range\+\_\+\+Mul\+\_\+\+Value}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Mul\+\_\+\+Value(\+Range $\ast$range, int n)}{Pl_Range_Mul_Value(Range *range, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Range\+\_\+\+Mul\+\_\+\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a84a0b17829c14bd0b85521cab6b6c774}{}\label{fd__range_8c_a84a0b17829c14bd0b85521cab6b6c774}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a84a0b17829c14bd0b85521cab6b6c774_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Nb\+\_\+\+Elem@{Pl\+\_\+\+Range\+\_\+\+Nb\+\_\+\+Elem}}
+\index{Pl\+\_\+\+Range\+\_\+\+Nb\+\_\+\+Elem@{Pl\+\_\+\+Range\+\_\+\+Nb\+\_\+\+Elem}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Nb\+\_\+\+Elem(\+Range $\ast$range)}{Pl_Range_Nb_Elem(Range *range)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Range\+\_\+\+Nb\+\_\+\+Elem (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_ac4ad9dade9c0c8b0c84749f812a6b467}{}\label{fd__range_8c_ac4ad9dade9c0c8b0c84749f812a6b467}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{fd__range_8c_ac4ad9dade9c0c8b0c84749f812a6b467_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_ac4ad9dade9c0c8b0c84749f812a6b467_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Next\+\_\+\+After@{Pl\+\_\+\+Range\+\_\+\+Next\+\_\+\+After}}
+\index{Pl\+\_\+\+Range\+\_\+\+Next\+\_\+\+After@{Pl\+\_\+\+Range\+\_\+\+Next\+\_\+\+After}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Next\+\_\+\+After(\+Range $\ast$range, int n)}{Pl_Range_Next_After(Range *range, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Range\+\_\+\+Next\+\_\+\+After (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a061f237c2d6182ed2b271703bc94505a}{}\label{fd__range_8c_a061f237c2d6182ed2b271703bc94505a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{fd__range_8c_a061f237c2d6182ed2b271703bc94505a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a061f237c2d6182ed2b271703bc94505a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Next\+\_\+\+Before@{Pl\+\_\+\+Range\+\_\+\+Next\+\_\+\+Before}}
+\index{Pl\+\_\+\+Range\+\_\+\+Next\+\_\+\+Before@{Pl\+\_\+\+Range\+\_\+\+Next\+\_\+\+Before}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Next\+\_\+\+Before(\+Range $\ast$range, int n)}{Pl_Range_Next_Before(Range *range, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Range\+\_\+\+Next\+\_\+\+Before (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a194fadf2f6210f55ab3d8231f638571e}{}\label{fd__range_8c_a194fadf2f6210f55ab3d8231f638571e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a194fadf2f6210f55ab3d8231f638571e_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Reset\+\_\+\+Value@{Pl\+\_\+\+Range\+\_\+\+Reset\+\_\+\+Value}}
+\index{Pl\+\_\+\+Range\+\_\+\+Reset\+\_\+\+Value@{Pl\+\_\+\+Range\+\_\+\+Reset\+\_\+\+Value}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Reset\+\_\+\+Value(\+Range $\ast$range, int n)}{Pl_Range_Reset_Value(Range *range, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Range\+\_\+\+Reset\+\_\+\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a68e31a309011488409ab070122c20471}{}\label{fd__range_8c_a68e31a309011488409ab070122c20471}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a68e31a309011488409ab070122c20471_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Set\+\_\+\+Value@{Pl\+\_\+\+Range\+\_\+\+Set\+\_\+\+Value}}
+\index{Pl\+\_\+\+Range\+\_\+\+Set\+\_\+\+Value@{Pl\+\_\+\+Range\+\_\+\+Set\+\_\+\+Value}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Set\+\_\+\+Value(\+Range $\ast$range, int n)}{Pl_Range_Set_Value(Range *range, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Range\+\_\+\+Set\+\_\+\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a826c7aaa4db20bc2ba5cc5794f189948}{}\label{fd__range_8c_a826c7aaa4db20bc2ba5cc5794f189948}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a826c7aaa4db20bc2ba5cc5794f189948_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Sub\+\_\+\+Range@{Pl\+\_\+\+Range\+\_\+\+Sub\+\_\+\+Range}}
+\index{Pl\+\_\+\+Range\+\_\+\+Sub\+\_\+\+Range@{Pl\+\_\+\+Range\+\_\+\+Sub\+\_\+\+Range}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Sub\+\_\+\+Range(\+Range $\ast$range, Range $\ast$range1)}{Pl_Range_Sub_Range(Range *range, Range *range1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Range\+\_\+\+Sub\+\_\+\+Range (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{{\bf Range} $\ast$}]{range1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a07ed7ae0602b9aea27536b69c0e7d286}{}\label{fd__range_8c_a07ed7ae0602b9aea27536b69c0e7d286}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a07ed7ae0602b9aea27536b69c0e7d286_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Test\+\_\+\+Null\+\_\+\+Inter@{Pl\+\_\+\+Range\+\_\+\+Test\+\_\+\+Null\+\_\+\+Inter}}
+\index{Pl\+\_\+\+Range\+\_\+\+Test\+\_\+\+Null\+\_\+\+Inter@{Pl\+\_\+\+Range\+\_\+\+Test\+\_\+\+Null\+\_\+\+Inter}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Test\+\_\+\+Null\+\_\+\+Inter(\+Range $\ast$range, Range $\ast$range1)}{Pl_Range_Test_Null_Inter(Range *range, Range *range1)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Range\+\_\+\+Test\+\_\+\+Null\+\_\+\+Inter (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{{\bf Range} $\ast$}]{range1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_aa51e629f9268f5949ff775188d57e55f}{}\label{fd__range_8c_aa51e629f9268f5949ff775188d57e55f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{fd__range_8c_aa51e629f9268f5949ff775188d57e55f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_aa51e629f9268f5949ff775188d57e55f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Test\+\_\+\+Value@{Pl\+\_\+\+Range\+\_\+\+Test\+\_\+\+Value}}
+\index{Pl\+\_\+\+Range\+\_\+\+Test\+\_\+\+Value@{Pl\+\_\+\+Range\+\_\+\+Test\+\_\+\+Value}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Test\+\_\+\+Value(\+Range $\ast$range, int n)}{Pl_Range_Test_Value(Range *range, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Range\+\_\+\+Test\+\_\+\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a7fc73a524441f6f5357f8a6a369ac92e}{}\label{fd__range_8c_a7fc73a524441f6f5357f8a6a369ac92e}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a7fc73a524441f6f5357f8a6a369ac92e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+To\+\_\+\+String@{Pl\+\_\+\+Range\+\_\+\+To\+\_\+\+String}}
+\index{Pl\+\_\+\+Range\+\_\+\+To\+\_\+\+String@{Pl\+\_\+\+Range\+\_\+\+To\+\_\+\+String}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+To\+\_\+\+String(\+Range $\ast$range)}{Pl_Range_To_String(Range *range)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+Range\+\_\+\+To\+\_\+\+String (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_af70598809f715d5934bc8e59334ca0a0}{}\label{fd__range_8c_af70598809f715d5934bc8e59334ca0a0}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_af70598809f715d5934bc8e59334ca0a0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Range\+\_\+\+Union@{Pl\+\_\+\+Range\+\_\+\+Union}}
+\index{Pl\+\_\+\+Range\+\_\+\+Union@{Pl\+\_\+\+Range\+\_\+\+Union}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Range\+\_\+\+Union(\+Range $\ast$range, Range $\ast$range1)}{Pl_Range_Union(Range *range, Range *range1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Range\+\_\+\+Union (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{range, }
+\item[{{\bf Range} $\ast$}]{range1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a44b85c2488064aae5e1fa330f6e4f73a}{}\label{fd__range_8c_a44b85c2488064aae5e1fa330f6e4f73a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a44b85c2488064aae5e1fa330f6e4f73a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{fd__range_8c_a44b85c2488064aae5e1fa330f6e4f73a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Add\+\_\+\+Value@{Pl\+\_\+\+Vector\+\_\+\+Add\+\_\+\+Value}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Add\+\_\+\+Value@{Pl\+\_\+\+Vector\+\_\+\+Add\+\_\+\+Value}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Add\+\_\+\+Value(\+Vector vec, int n)}{Pl_Vector_Add_Value(Vector vec, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Vector\+\_\+\+Add\+\_\+\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a5eb00d871ef1ebc12f18220a7469beca}{}\label{fd__range_8c_a5eb00d871ef1ebc12f18220a7469beca}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{fd__range_8c_a5eb00d871ef1ebc12f18220a7469beca_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Add\+\_\+\+Vector@{Pl\+\_\+\+Vector\+\_\+\+Add\+\_\+\+Vector}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Add\+\_\+\+Vector@{Pl\+\_\+\+Vector\+\_\+\+Add\+\_\+\+Vector}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Add\+\_\+\+Vector(\+Vector vec, Vector vec1)}{Pl_Vector_Add_Vector(Vector vec, Vector vec1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Vector\+\_\+\+Add\+\_\+\+Vector (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec, }
+\item[{{\bf Vector}}]{vec1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a02a0b3473ca3d1461f15123e82883afd}{}\label{fd__range_8c_a02a0b3473ca3d1461f15123e82883afd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{fd__range_8c_a02a0b3473ca3d1461f15123e82883afd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{fd__range_8c_a02a0b3473ca3d1461f15123e82883afd_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Compl@{Pl\+\_\+\+Vector\+\_\+\+Compl}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Compl@{Pl\+\_\+\+Vector\+\_\+\+Compl}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Compl(\+Vector vec)}{Pl_Vector_Compl(Vector vec)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Vector\+\_\+\+Compl (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a927684a9485facf4338f3b33867e7c3b}{}\label{fd__range_8c_a927684a9485facf4338f3b33867e7c3b}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{fd__range_8c_a927684a9485facf4338f3b33867e7c3b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Copy@{Pl\+\_\+\+Vector\+\_\+\+Copy}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Copy@{Pl\+\_\+\+Vector\+\_\+\+Copy}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Copy(\+Vector vec, Vector vec1)}{Pl_Vector_Copy(Vector vec, Vector vec1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Vector\+\_\+\+Copy (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec, }
+\item[{{\bf Vector}}]{vec1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a87fdca8e2996885ee3c9946eacb221bc}{}\label{fd__range_8c_a87fdca8e2996885ee3c9946eacb221bc}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a87fdca8e2996885ee3c9946eacb221bc_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Div\+\_\+\+Value@{Pl\+\_\+\+Vector\+\_\+\+Div\+\_\+\+Value}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Div\+\_\+\+Value@{Pl\+\_\+\+Vector\+\_\+\+Div\+\_\+\+Value}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Div\+\_\+\+Value(\+Vector vec, int n)}{Pl_Vector_Div_Value(Vector vec, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Vector\+\_\+\+Div\+\_\+\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_aa1effb7995ce909a175cce3e74ffdee9}{}\label{fd__range_8c_aa1effb7995ce909a175cce3e74ffdee9}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{fd__range_8c_aa1effb7995ce909a175cce3e74ffdee9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{fd__range_8c_aa1effb7995ce909a175cce3e74ffdee9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Div\+\_\+\+Vector@{Pl\+\_\+\+Vector\+\_\+\+Div\+\_\+\+Vector}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Div\+\_\+\+Vector@{Pl\+\_\+\+Vector\+\_\+\+Div\+\_\+\+Vector}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Div\+\_\+\+Vector(\+Vector vec, Vector vec1)}{Pl_Vector_Div_Vector(Vector vec, Vector vec1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Vector\+\_\+\+Div\+\_\+\+Vector (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec, }
+\item[{{\bf Vector}}]{vec1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_aa49a174fff3343dff525a701bdc7fb5c}{}\label{fd__range_8c_aa49a174fff3343dff525a701bdc7fb5c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{fd__range_8c_aa49a174fff3343dff525a701bdc7fb5c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_aa49a174fff3343dff525a701bdc7fb5c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Empty@{Pl\+\_\+\+Vector\+\_\+\+Empty}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Empty@{Pl\+\_\+\+Vector\+\_\+\+Empty}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Empty(\+Vector vec)}{Pl_Vector_Empty(Vector vec)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Vector\+\_\+\+Empty (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a18ac016798a2abe3fc01c07de87926c9}{}\label{fd__range_8c_a18ac016798a2abe3fc01c07de87926c9}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a18ac016798a2abe3fc01c07de87926c9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+From\+\_\+\+Interval@{Pl\+\_\+\+Vector\+\_\+\+From\+\_\+\+Interval}}
+\index{Pl\+\_\+\+Vector\+\_\+\+From\+\_\+\+Interval@{Pl\+\_\+\+Vector\+\_\+\+From\+\_\+\+Interval}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+From\+\_\+\+Interval(\+Vector vec, int min, int max)}{Pl_Vector_From_Interval(Vector vec, int min, int max)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Vector\+\_\+\+From\+\_\+\+Interval (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec, }
+\item[{int}]{min, }
+\item[{int}]{max}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_aeee4eb07705bc7c94b76b2dc23d30435}{}\label{fd__range_8c_aeee4eb07705bc7c94b76b2dc23d30435}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_aeee4eb07705bc7c94b76b2dc23d30435_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Full@{Pl\+\_\+\+Vector\+\_\+\+Full}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Full@{Pl\+\_\+\+Vector\+\_\+\+Full}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Full(\+Vector vec)}{Pl_Vector_Full(Vector vec)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Vector\+\_\+\+Full (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a4eabe9d15c96288e7060d4122274f6f0}{}\label{fd__range_8c_a4eabe9d15c96288e7060d4122274f6f0}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a4eabe9d15c96288e7060d4122274f6f0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Inter@{Pl\+\_\+\+Vector\+\_\+\+Inter}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Inter@{Pl\+\_\+\+Vector\+\_\+\+Inter}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Inter(\+Vector vec, Vector vec1)}{Pl_Vector_Inter(Vector vec, Vector vec1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Vector\+\_\+\+Inter (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec, }
+\item[{{\bf Vector}}]{vec1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a43bebdba6e45bb0d02d72ccb527aa4ba}{}\label{fd__range_8c_a43bebdba6e45bb0d02d72ccb527aa4ba}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a43bebdba6e45bb0d02d72ccb527aa4ba_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Ith\+\_\+\+Elem@{Pl\+\_\+\+Vector\+\_\+\+Ith\+\_\+\+Elem}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Ith\+\_\+\+Elem@{Pl\+\_\+\+Vector\+\_\+\+Ith\+\_\+\+Elem}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Ith\+\_\+\+Elem(\+Vector vec, int i)}{Pl_Vector_Ith_Elem(Vector vec, int i)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Vector\+\_\+\+Ith\+\_\+\+Elem (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a32260577536fd7f8da5e88d793f86864}{}\label{fd__range_8c_a32260577536fd7f8da5e88d793f86864}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a32260577536fd7f8da5e88d793f86864_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Mod\+\_\+\+Value@{Pl\+\_\+\+Vector\+\_\+\+Mod\+\_\+\+Value}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Mod\+\_\+\+Value@{Pl\+\_\+\+Vector\+\_\+\+Mod\+\_\+\+Value}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Mod\+\_\+\+Value(\+Vector vec, int n)}{Pl_Vector_Mod_Value(Vector vec, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Vector\+\_\+\+Mod\+\_\+\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a36bfcd8fdac72d0f7564dc766915ee31}{}\label{fd__range_8c_a36bfcd8fdac72d0f7564dc766915ee31}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{fd__range_8c_a36bfcd8fdac72d0f7564dc766915ee31_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{fd__range_8c_a36bfcd8fdac72d0f7564dc766915ee31_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Mod\+\_\+\+Vector@{Pl\+\_\+\+Vector\+\_\+\+Mod\+\_\+\+Vector}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Mod\+\_\+\+Vector@{Pl\+\_\+\+Vector\+\_\+\+Mod\+\_\+\+Vector}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Mod\+\_\+\+Vector(\+Vector vec, Vector vec1)}{Pl_Vector_Mod_Vector(Vector vec, Vector vec1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Vector\+\_\+\+Mod\+\_\+\+Vector (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec, }
+\item[{{\bf Vector}}]{vec1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_ac4eb536544f1b224c73a348bf2ae8af1}{}\label{fd__range_8c_ac4eb536544f1b224c73a348bf2ae8af1}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{fd__range_8c_ac4eb536544f1b224c73a348bf2ae8af1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_ac4eb536544f1b224c73a348bf2ae8af1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Mul\+\_\+\+Value@{Pl\+\_\+\+Vector\+\_\+\+Mul\+\_\+\+Value}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Mul\+\_\+\+Value@{Pl\+\_\+\+Vector\+\_\+\+Mul\+\_\+\+Value}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Mul\+\_\+\+Value(\+Vector vec, int n)}{Pl_Vector_Mul_Value(Vector vec, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Vector\+\_\+\+Mul\+\_\+\+Value (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a1f20a48ab91b33fb4a11586924d9d326}{}\label{fd__range_8c_a1f20a48ab91b33fb4a11586924d9d326}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{fd__range_8c_a1f20a48ab91b33fb4a11586924d9d326_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{fd__range_8c_a1f20a48ab91b33fb4a11586924d9d326_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Mul\+\_\+\+Vector@{Pl\+\_\+\+Vector\+\_\+\+Mul\+\_\+\+Vector}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Mul\+\_\+\+Vector@{Pl\+\_\+\+Vector\+\_\+\+Mul\+\_\+\+Vector}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Mul\+\_\+\+Vector(\+Vector vec, Vector vec1)}{Pl_Vector_Mul_Vector(Vector vec, Vector vec1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Vector\+\_\+\+Mul\+\_\+\+Vector (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec, }
+\item[{{\bf Vector}}]{vec1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_aeca59f9f20e4505f0c1e6ce4d642009b}{}\label{fd__range_8c_aeca59f9f20e4505f0c1e6ce4d642009b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{fd__range_8c_aeca59f9f20e4505f0c1e6ce4d642009b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{fd__range_8c_aeca59f9f20e4505f0c1e6ce4d642009b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Nb\+\_\+\+Elem@{Pl\+\_\+\+Vector\+\_\+\+Nb\+\_\+\+Elem}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Nb\+\_\+\+Elem@{Pl\+\_\+\+Vector\+\_\+\+Nb\+\_\+\+Elem}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Nb\+\_\+\+Elem(\+Vector vec)}{Pl_Vector_Nb_Elem(Vector vec)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Vector\+\_\+\+Nb\+\_\+\+Elem (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a7b33504ee6ac04aa85f7eed9732aa0b8}{}\label{fd__range_8c_a7b33504ee6ac04aa85f7eed9732aa0b8}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a7b33504ee6ac04aa85f7eed9732aa0b8_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Next\+\_\+\+After@{Pl\+\_\+\+Vector\+\_\+\+Next\+\_\+\+After}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Next\+\_\+\+After@{Pl\+\_\+\+Vector\+\_\+\+Next\+\_\+\+After}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Next\+\_\+\+After(\+Vector vec, int n)}{Pl_Vector_Next_After(Vector vec, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Vector\+\_\+\+Next\+\_\+\+After (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a005e506b40afe41ea807a6be7c7e6416}{}\label{fd__range_8c_a005e506b40afe41ea807a6be7c7e6416}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a005e506b40afe41ea807a6be7c7e6416_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Next\+\_\+\+Before@{Pl\+\_\+\+Vector\+\_\+\+Next\+\_\+\+Before}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Next\+\_\+\+Before@{Pl\+\_\+\+Vector\+\_\+\+Next\+\_\+\+Before}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Next\+\_\+\+Before(\+Vector vec, int n)}{Pl_Vector_Next_Before(Vector vec, int n)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Vector\+\_\+\+Next\+\_\+\+Before (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a93dad9c46f4b7ba842eb196b558cc4d6}{}\label{fd__range_8c_a93dad9c46f4b7ba842eb196b558cc4d6}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a93dad9c46f4b7ba842eb196b558cc4d6_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Sub\+\_\+\+Vector@{Pl\+\_\+\+Vector\+\_\+\+Sub\+\_\+\+Vector}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Sub\+\_\+\+Vector@{Pl\+\_\+\+Vector\+\_\+\+Sub\+\_\+\+Vector}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Sub\+\_\+\+Vector(\+Vector vec, Vector vec1)}{Pl_Vector_Sub_Vector(Vector vec, Vector vec1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Vector\+\_\+\+Sub\+\_\+\+Vector (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec, }
+\item[{{\bf Vector}}]{vec1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_ae3c3b3fd3cbbb75ab86e15a41dd671a8}{}\label{fd__range_8c_ae3c3b3fd3cbbb75ab86e15a41dd671a8}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{fd__range_8c_ae3c3b3fd3cbbb75ab86e15a41dd671a8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{fd__range_8c_ae3c3b3fd3cbbb75ab86e15a41dd671a8_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Test\+\_\+\+Null\+\_\+\+Inter@{Pl\+\_\+\+Vector\+\_\+\+Test\+\_\+\+Null\+\_\+\+Inter}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Test\+\_\+\+Null\+\_\+\+Inter@{Pl\+\_\+\+Vector\+\_\+\+Test\+\_\+\+Null\+\_\+\+Inter}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Test\+\_\+\+Null\+\_\+\+Inter(\+Vector vec, Vector vec1)}{Pl_Vector_Test_Null_Inter(Vector vec, Vector vec1)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Vector\+\_\+\+Test\+\_\+\+Null\+\_\+\+Inter (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec, }
+\item[{{\bf Vector}}]{vec1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_ae5e7a1a0fb96db458eaa2a057e0b9f12}{}\label{fd__range_8c_ae5e7a1a0fb96db458eaa2a057e0b9f12}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_ae5e7a1a0fb96db458eaa2a057e0b9f12_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{fd\+\_\+range.\+c@{fd\+\_\+range.\+c}!Pl\+\_\+\+Vector\+\_\+\+Union@{Pl\+\_\+\+Vector\+\_\+\+Union}}
+\index{Pl\+\_\+\+Vector\+\_\+\+Union@{Pl\+\_\+\+Vector\+\_\+\+Union}!fd\+\_\+range.\+c@{fd\+\_\+range.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Vector\+\_\+\+Union(\+Vector vec, Vector vec1)}{Pl_Vector_Union(Vector vec, Vector vec1)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Vector\+\_\+\+Union (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector}}]{vec, }
+\item[{{\bf Vector}}]{vec1}
+\end{DoxyParamCaption}
+)}\hypertarget{fd__range_8c_a5c5dffb5d4b566c539c95db3d81d8511}{}\label{fd__range_8c_a5c5dffb5d4b566c539c95db3d81d8511}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fd__range_8c_a5c5dffb5d4b566c539c95db3d81d8511_icgraph}
+\end{center}
+\end{figure}
+
+

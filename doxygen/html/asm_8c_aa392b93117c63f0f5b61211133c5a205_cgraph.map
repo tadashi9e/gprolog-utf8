@@ -1,0 +1,11 @@
+<map id="ffd_adr" name="ffd_adr">
+<area shape="rect" id="node2" href="$asm_8c.html#a36e3386058b632fd03d022a4a8a7229a" title="test_call_c_lot_args" alt="" coords="116,107,255,133"/>
+<area shape="rect" id="node3" href="$chkma_8c.html#a76794c8328cf0a40fb30d8e2167b03ba" title="Call_Pl" alt="" coords="352,56,416,83"/>
+<area shape="rect" id="node9" href="$chkma_8c.html#a518288848eb2471573b6581060452931" title="error" alt="" coords="543,107,591,133"/>
+<area shape="rect" id="node10" href="$chkma_8c.html#af1f2709e7389a522e96e4e9f8c00c1d8" title="ma_test_call_c_lot_args" alt="" coords="303,157,465,184"/>
+<area shape="rect" id="node4" href="$engine_8c.html#a837196745e0fb6af03ee5e5d062e1087" title="Pl_Call_Prolog" alt="" coords="513,56,621,83"/>
+<area shape="rect" id="node5" href="$engine_8c.html#accfe7947a971f240bf7b8b2bedc59e29" title="Call_Prolog_Fail" alt="" coords="684,5,801,32"/>
+<area shape="rect" id="node6" href="$engine_8c.html#ae7d5f8d0ac490ede3fcb48af7cceec55" title="Call_Prolog_Success" alt="" coords="669,56,816,83"/>
+<area shape="rect" id="node7" href="$engine_8c.html#a5f34f0c2b928a4bfe7057ced6cd446c8" title="Call_Next" alt="" coords="703,107,783,133"/>
+<area shape="rect" id="node8" href="$engine_8c.html#a598600283dd767c2b3d11e798384023c" title="Pl_Call_Compiled" alt="" coords="864,107,991,133"/>
+</map>

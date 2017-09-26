@@ -1,0 +1,7 @@
+<map id="Fct_Get_Version_Data" name="Fct_Get_Version_Data">
+<area shape="rect" id="node2" href="$wam__inst_8c.html#aa32a139dbb5d14b79b3655b5ad06502e" title="Pl_Put_Structure" alt="" coords="208,5,329,32"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#a6ec65d8b59b5c6b865ad0e4f1b23b73e" title="Pl_Unify_Integer" alt="" coords="209,56,328,83"/>
+<area shape="rect" id="node6" href="$wam__inst_8c.html#afac3b90ddb0eefab7ad55c9913a86a5b" title="Pl_Unify_Nil" alt="" coords="221,107,316,133"/>
+<area shape="rect" id="node3" href="$wam__inst_8c.html#a0979a8e2cad3f397d84bfea3ee5dfb0c" title="Pl_Put_Structure_Tagged" alt="" coords="377,5,548,32"/>
+<area shape="rect" id="node5" href="$wam__inst_8c.html#a3be80b778e2bf523f0d512323c9f3125" title="Pl_Unify_Integer_Tagged" alt="" coords="378,56,547,83"/>
+</map>

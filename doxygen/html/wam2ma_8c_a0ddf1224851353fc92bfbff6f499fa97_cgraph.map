@@ -1,0 +1,28 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$wam2ma_8c.html#a7e8dc5deafda75c2015d11b38142d950" title="Parse_Arguments" alt="" coords="117,31,243,57"/>
+<area shape="rect" id="node6" href="$bt__string_8c.html#a550b5276036f43f02c277d27800be6e0" title="BT_String_Init" alt="" coords="127,81,233,108"/>
+<area shape="rect" id="node7" href="$wam2ma_8c.html#a83fed437bda4a9e06f33806029a86022" title="Init_Foreign_Table" alt="" coords="115,132,245,159"/>
+<area shape="rect" id="node8" href="$wam__parser_8c.html#a9ac908258500841c7dcfc6adb3ee1f8d" title="Parse_Wam_File" alt="" coords="119,183,241,209"/>
+<area shape="rect" id="node18" href="$wam2ma_8c.html#a9e02421db9cf0670b6f28e7d0882b7d6" title="Emit_Obj_Initializer" alt="" coords="113,360,247,387"/>
+<area shape="rect" id="node27" href="$wam2ma_8c.html#acded9e3923d310a3f85312c19cf08561" title="Emit_Exec_Directives" alt="" coords="104,233,256,260"/>
+<area shape="rect" id="node3" href="$copying_8c.html#a242440384848832d8b02d243cb189791" title="Display_Copying" alt="" coords="327,5,449,32"/>
+<area shape="rect" id="node5" href="$wam2ma_8c.html#a9a3f2cfe44184eb0ad845d8d72dc3b41" title="Display_Help" alt="" coords="338,56,438,83"/>
+<area shape="rect" id="node4" href="$copying_8c.html#ad22fce4a9a93024806f83a48f86bea7e" title="Mk_Copying_Message" alt="" coords="521,5,676,32"/>
+<area shape="rect" id="node9" href="$wam__parser_8c.html#ae69e607bd93d255aa8b600bac488c6e9" title="Parser" alt="" coords="358,157,418,184"/>
+<area shape="rect" id="node10" href="$wam__parser_8c.html#a14d29063ebbd86cdcfd037234d4e9bef" title="Parse_And_Treat_Decl\l_Or_Inst" alt="" coords="520,183,677,225"/>
+<area shape="rect" id="node15" href="$wam__parser_8c.html#a9f06f8fc45440614661af1d86d3d6f56" title="Read_Token" alt="" coords="889,132,985,159"/>
+<area shape="rect" id="node11" href="$wam__parser_8c.html#a64fdc935c8fc1d423009fe985ae51cc8" title="Scanner" alt="" coords="1047,132,1118,159"/>
+<area shape="rect" id="node14" href="$wam__parser_8c.html#a00f9ed3bd2f87261ec6e2f0fa667dfce" title="Syntax_Error" alt="" coords="1033,284,1132,311"/>
+<area shape="rect" id="node16" href="$wam__parser_8c.html#aa8a1c1096601e50a475d7f82b41562d9" title="Read_Argument" alt="" coords="725,233,841,260"/>
+<area shape="rect" id="node12" href="$sparc64__any_8c.html#a2bd658adcb7b278aebdd8e39dd352d0f" title="Source_Line" alt="" coords="1240,107,1335,133"/>
+<area shape="rect" id="node13" href="$pl__wchar_8c.html#a118e1ed8186e82a376d922702a7a8a82" title="count_wchar_bytes_without_slen" alt="" coords="1180,157,1395,184"/>
+<area shape="rect" id="node17" href="$wam__parser_8c.html#a22ad40923376159341c34e3b5e872d11" title="Peek_Char" alt="" coords="894,233,981,260"/>
+<area shape="rect" id="node19" href="$wam2ma_8c.html#a372e9ab684b569db6f4fe9d63342d3df" title="Label_Printf" alt="" coords="343,259,433,285"/>
+<area shape="rect" id="node20" href="$wam2ma_8c.html#a3cd8f58f2bf669fecf3c585a066f9d8b" title="Inst_Printf" alt="" coords="557,360,640,387"/>
+<area shape="rect" id="node21" href="$bt__string_8c.html#a32730363f7e247e6938b78cdb73fa6a5" title="BT_String_List" alt="" coords="334,512,442,539"/>
+<area shape="rect" id="node23" href="$wam2ma_8c.html#ad20a34130d14dbc900550ea80ffa05ac" title="Emit_One_Atom" alt="" coords="329,360,447,387"/>
+<area shape="rect" id="node24" href="$wam2ma_8c.html#a34738711c6e9bc0b977f963f55119add" title="Emit_One_Atom_Tagged" alt="" coords="304,461,472,488"/>
+<area shape="rect" id="node26" href="$wam2ma_8c.html#a5a3454243493573a03a1a5d2c67d5bdc" title="Emit_One_F_N_Tagged" alt="" coords="307,411,469,437"/>
+<area shape="rect" id="node22" href="$bt__string_8c.html#ac069f943d565dd3ae285acd23f2fa322" title="BT_String_List_Rec" alt="" coords="529,512,668,539"/>
+<area shape="rect" id="node25" href="$bt__string_8c.html#a47df4899cd0db82d0843dbf52aa5e103" title="BT_String_Lookup" alt="" coords="534,461,663,488"/>
+</map>

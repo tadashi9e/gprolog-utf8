@@ -1,0 +1,5 @@
+<map id="ialloc" name="ialloc">
+<area shape="rect" id="node2" href="$dl__malloc_8c.html#a435fb5832028815c1fa843e938590269" title="dlindependent_calloc" alt="" coords="115,5,257,32"/>
+<area shape="rect" id="node3" href="$dl__malloc_8c.html#acd1aa5efe158a3884ea0c8de51efaa6f" title="dlindependent_comalloc" alt="" coords="105,56,267,83"/>
+<area shape="rect" id="node4" href="$dl__malloc_8c.html#a8923af8a1039983906f9617a57022e98" title="dlmalloc_usable_size" alt="" coords="113,107,259,133"/>
+</map>

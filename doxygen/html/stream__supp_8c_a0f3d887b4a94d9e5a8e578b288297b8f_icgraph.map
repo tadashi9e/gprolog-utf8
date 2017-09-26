@@ -1,0 +1,8 @@
+<map id="Pl_Stream_Get_Position" name="Pl_Stream_Get_Position">
+<area shape="rect" id="node2" href="$stream__c_8c.html#af6cb5700cffd1306c174e146faa0dda3" title="Pl_Stream_Position_2" alt="" coords="233,5,384,32"/>
+<area shape="rect" id="node3" href="$stream__c_8c.html#a2f37a839880302862efe1de5aa672ace" title="Pl_Seek_4" alt="" coords="266,56,351,83"/>
+<area shape="rect" id="node4" href="$stream__c_8c.html#a3e5ab2e50e18c0af5476e713b6122a9f" title="Pl_Character_Count_2" alt="" coords="231,107,386,133"/>
+<area shape="rect" id="node5" href="$stream__c_8c.html#a4ded2fa252b6333eb74ff3970de3c65a" title="Pl_Line_Count_2" alt="" coords="248,157,369,184"/>
+<area shape="rect" id="node6" href="$stream__c_8c.html#afc30783319e1cf6d6b5ab6762169ea66" title="Pl_Line_Position_2" alt="" coords="242,208,375,235"/>
+<area shape="rect" id="node7" href="$stream__c_8c.html#a03420885bcd36700b66847b0ad3d81b1" title="Pl_Stream_Line_Column_3" alt="" coords="219,259,399,285"/>
+</map>

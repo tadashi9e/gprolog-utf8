@@ -1,0 +1,20 @@
+<map id="Pl_Rd_Atom" name="Pl_Rd_Atom">
+<area shape="rect" id="node2" href="$assert__c_8c.html#a797deea264dcd97e69d345f7f1e189aa" title="Pl_Assert_5" alt="" coords="190,5,283,32"/>
+<area shape="rect" id="node3" href="$bc__supp_8h.html#adb2ac836e3f608a711c54c2d353c6b04" title="Pl_BC_Emit_Inst_1" alt="" coords="168,56,305,83"/>
+<area shape="rect" id="node4" href="$gprolog_8h.html#a84cdf6b1e21184cc72ced6e75a33a642" title="Pl_Rd_String" alt="" coords="187,107,286,133"/>
+<area shape="rect" id="node5" href="$callinf__supp_8c.html#af87dd369efca7598e6e7d368c12b1b15" title="Pl_Save_Call_Info_3" alt="" coords="372,132,516,159"/>
+<area shape="rect" id="node6" href="$pred__c_8c.html#abb48d09d84a8f93c2c84481b1c6c0429" title="Pl_Pred_Prop_Static_2" alt="" coords="158,208,315,235"/>
+<area shape="rect" id="node7" href="$pred__c_8c.html#aff67ffd8ea55b3e6b74c6378fabd737f" title="Pl_Pred_Prop_Dynamic_2" alt="" coords="149,259,324,285"/>
+<area shape="rect" id="node8" href="$pred__c_8c.html#ae8487c28e199f4cb7c5dc155023699d8" title="Pl_Pred_Prop_Private_2" alt="" coords="155,309,319,336"/>
+<area shape="rect" id="node9" href="$pred__c_8c.html#ae0b7e0c790029f3e93a1cc99666fea98" title="Pl_Pred_Prop_Public_2" alt="" coords="157,360,316,387"/>
+<area shape="rect" id="node10" href="$pred__c_8c.html#a36466aa45d8ee0cd613ba0f17b6a9a44" title="Pl_Pred_Prop_Monofile_2" alt="" coords="151,411,323,437"/>
+<area shape="rect" id="node11" href="$pred__c_8c.html#a3139ab760a0d40746df13b5c5efc04cf" title="Pl_Pred_Prop_Multifile_2" alt="" coords="153,461,321,488"/>
+<area shape="rect" id="node12" href="$pred__c_8c.html#ab36a41f7f4e7b7f554ba61c8cb432703" title="Pl_Pred_Prop_User_2" alt="" coords="161,512,312,539"/>
+<area shape="rect" id="node13" href="$pred__c_8c.html#aff4caf231718bf46fdfd89af2cc885a7" title="Pl_Pred_Prop_Built_In_2" alt="" coords="153,563,320,589"/>
+<area shape="rect" id="node14" href="$pred__c_8c.html#ae078c896d64f0e154d994d7c58a85075" title="Pl_Pred_Prop_Built\l_In_Fd_2" alt="" coords="169,614,304,655"/>
+<area shape="rect" id="node15" href="$pred__c_8c.html#aaf3a4567a0e6d6650b2a3ec6dc0ca78b" title="Pl_Pred_Prop_Control\l_Construct_2" alt="" coords="161,679,312,721"/>
+<area shape="rect" id="node16" href="$pred__c_8c.html#ac1e73d3cbc479c39a7692a2638fcf5cc" title="Pl_Pred_Prop_Native\l_Code_2" alt="" coords="163,745,310,786"/>
+<area shape="rect" id="node17" href="$pred__c_8c.html#ac221e2f1356cd1adb352abe4ab1a71a1" title="Pl_Pred_Prop_Prolog\l_File_3" alt="" coords="163,810,310,851"/>
+<area shape="rect" id="node18" href="$pred__c_8c.html#a3ef58576cb838c67c3a49506fb64503b" title="Pl_Pred_Prop_Prolog\l_Line_3" alt="" coords="163,875,310,917"/>
+<area shape="rect" id="node19" href="$src__rdr__c_8c.html#ae6f2889304119849adebc18b8d5a305e" title="Pl_SR_Open_File_2" alt="" coords="167,941,307,968"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="BT_String_Lookup" name="BT_String_Lookup">
+<area shape="rect" id="node2" href="$ma__protos_8h.html#ae154ce5f2c10c79b40fe86078dd2a5ca" title="Is_Code_Defined" alt="" coords="205,31,328,57"/>
+<area shape="rect" id="node8" href="$ma__protos_8h.html#a51aa477632c8da9ce4fe91d0023f2819" title="Get_Long_Infos" alt="" coords="209,81,324,108"/>
+<area shape="rect" id="node9" href="$wam2ma_8c.html#a34738711c6e9bc0b977f963f55119add" title="Emit_One_Atom_Tagged" alt="" coords="183,132,351,159"/>
+<area shape="rect" id="node3" href="$ix86__any_8c.html#a5e5e17240bceefba89b5231952d11dcc" title="Pl_Jump" alt="" coords="431,19,505,45"/>
+<area shape="rect" id="node5" href="$ix86__any_8c.html#a964a096b28818e43f7e51dd5dd6f76f0" title="Call_C_Arg_Mem_L" alt="" coords="399,81,537,108"/>
+<area shape="rect" id="node4" href="$ix86__any_8c.html#ac518d1a29c3015b3aec79cfa4300c362" title="Pl_Call" alt="" coords="631,5,695,32"/>
+<area shape="rect" id="node6" href="$ix86__any_8c.html#a44157a3aa7743bec9bd4c63203183253" title="Call_C_Arg_Foreign_L" alt="" coords="587,56,740,83"/>
+<area shape="rect" id="node7" href="$ix86__any_8c.html#a74eac647b8a008ece21cc0eeffe98ef5" title="Call_C_Arg_Foreign_D" alt="" coords="585,107,741,133"/>
+<area shape="rect" id="node10" href="$wam2ma_8c.html#a9e02421db9cf0670b6f28e7d0882b7d6" title="Emit_Obj_Initializer" alt="" coords="401,132,535,159"/>
+<area shape="rect" id="node11" href="$wam2ma_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="638,157,689,184"/>
+</map>

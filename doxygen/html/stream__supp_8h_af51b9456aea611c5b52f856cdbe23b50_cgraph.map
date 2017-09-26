@@ -1,0 +1,10 @@
+<map id="Pl_Add_Stream_For_Stdio_Desc" name="Pl_Add_Stream_For_Stdio_Desc">
+<area shape="rect" id="node2" href="$stream__supp_8c.html#aa8b039e9577cbc75ad5da2750b95f83f" title="Pl_Prop_And_Stdio_Mode" alt="" coords="272,5,447,32"/>
+<area shape="rect" id="node3" href="$stream__supp_8c.html#a4962ed1c05d9ad9af56ca46638fd7307" title="Pl_Stdio_Is_Repositionable" alt="" coords="268,56,451,83"/>
+<area shape="rect" id="node4" href="$stream__supp_8c.html#a42b044986be84773da026ac61b47e903" title="Pl_Stdio_Set_Buffering" alt="" coords="281,107,438,133"/>
+<area shape="rect" id="node5" href="$stream__supp_8c.html#a4d7fa50881abdd578ce6b4da9611415c" title="Pl_Add_Stream" alt="" coords="303,157,416,184"/>
+<area shape="rect" id="node6" href="$stream__supp_8c.html#a5322f52abc95d28d23976f5213577b2c" title="Find_Free_Stream" alt="" coords="499,107,629,133"/>
+<area shape="rect" id="node8" href="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907" title="Pl_Fatal_Error" alt="" coords="511,157,617,184"/>
+<area shape="rect" id="node9" href="$stream__supp_8c.html#a7acc02d98466c96414fab011fd79c27c" title="Init_Stream_Struct" alt="" coords="499,208,629,235"/>
+<area shape="rect" id="node7" href="$misc_8c.html#a2f56b2c86f0305e8b7e13e6150578d36" title="Pl_Extend_Array" alt="" coords="677,107,797,133"/>
+</map>

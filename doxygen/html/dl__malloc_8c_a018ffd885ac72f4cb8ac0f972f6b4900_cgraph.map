@@ -1,0 +1,11 @@
+<map id="dlmalloc" name="dlmalloc">
+<area shape="rect" id="node2" href="$dl__malloc_8c.html#a776acc0ff029b46fedaa4945188ffe25" title="tmalloc_small" alt="" coords="124,31,227,57"/>
+<area shape="rect" id="node3" href="$dl__malloc_8c.html#abf258db4e259e134cd82ea7f2b0fcdab" title="tmalloc_large" alt="" coords="126,81,225,108"/>
+<area shape="rect" id="node4" href="$dl__malloc_8c.html#a8bb55b23b1f7e313756913fedf9d3a98" title="sys_alloc" alt="" coords="137,132,214,159"/>
+<area shape="rect" id="node5" href="$dl__malloc_8c.html#a7fd01599d9d4726f71caf55b03e959ce" title="mmap_alloc" alt="" coords="280,5,372,32"/>
+<area shape="rect" id="node6" href="$dl__malloc_8c.html#adc1656892fa59cbd2e3b60a2608dfefc" title="segment_holding" alt="" coords="425,120,545,147"/>
+<area shape="rect" id="node7" href="$dl__malloc_8c.html#a5609388ac4c1fc24595689b52c6698b9" title="init_bins" alt="" coords="291,107,361,133"/>
+<area shape="rect" id="node8" href="$dl__malloc_8c.html#a09ce4644252dfd54eb489e77d0adfd20" title="init_top" alt="" coords="453,196,517,223"/>
+<area shape="rect" id="node9" href="$dl__malloc_8c.html#a79639440a484b16134373be86179551e" title="prepend_alloc" alt="" coords="275,208,377,235"/>
+<area shape="rect" id="node10" href="$dl__malloc_8c.html#aecee517bb2a61c5b79a745f3e0b4aa86" title="add_segment" alt="" coords="276,157,376,184"/>
+</map>

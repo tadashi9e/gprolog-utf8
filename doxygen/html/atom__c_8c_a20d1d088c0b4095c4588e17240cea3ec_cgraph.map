@@ -1,0 +1,8 @@
+<map id="Pl_Atom_Concat_Alt_0" name="Pl_Atom_Concat_Alt_0">
+<area shape="rect" id="node2" href="$wam__inst_8c.html#ac713c15b8ed89be9dc3274b0b754abb2" title="Pl_Update_Choice_Point" alt="" coords="235,5,403,32"/>
+<area shape="rect" id="node3" href="$pl__wchar_8c.html#a118e1ed8186e82a376d922702a7a8a82" title="count_wchar_bytes_without_slen" alt="" coords="212,56,427,83"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#a78229c8d23053191e0fee7952757f9c7" title="Pl_Get_Atom" alt="" coords="269,107,369,133"/>
+<area shape="rect" id="node6" href="$atom__c_8c.html#a0955d501b8eac7be38108d9ab5ff7dd9" title="Create_Malloc_Atom" alt="" coords="247,157,391,184"/>
+<area shape="rect" id="node5" href="$wam__inst_8c.html#a89d8aba44029f2a5f548a2ae5f6eb574" title="Pl_Get_Atom_Tagged" alt="" coords="475,107,625,133"/>
+<area shape="rect" id="node7" href="$atom_8c.html#a068c993d95113a2ba7643918e68eedb3" title="Pl_Create_Atom" alt="" coords="491,157,609,184"/>
+</map>

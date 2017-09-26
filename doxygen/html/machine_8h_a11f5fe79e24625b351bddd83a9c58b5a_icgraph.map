@@ -1,0 +1,11 @@
+<map id="Pl_M_System_Time" name="Pl_M_System_Time">
+<area shape="rect" id="node2" href="$stat__c_8c.html#ac3ca75b60c32cebe268f09f6019cebf5" title="Pl_Statistics_0" alt="" coords="227,5,337,32"/>
+<area shape="rect" id="node3" href="$stat__c_8c.html#a4f891eabace53eb4e94ea9169876ad53" title="Pl_Statistics_System\l_Time_2" alt="" coords="208,57,356,98"/>
+<area shape="rect" id="node4" href="$stat__c_8c.html#a3eeb78e65b2f48b2b312dc3a4fef60c4" title="Pl_Statistics_Cpu_Time_2" alt="" coords="193,123,371,149"/>
+<area shape="rect" id="node5" href="$stat__c_8c.html#ad09f286fa8336a8ac65ffab3298e801c" title="Pl_System_Time_1" alt="" coords="214,173,350,200"/>
+<area shape="rect" id="node6" href="$stat__c_8c.html#ae151a14569d7fb2105a557689b0188d1" title="Pl_Cpu_Time_1" alt="" coords="225,224,339,251"/>
+<area shape="rect" id="node7" href="$machine_8h.html#a7ade20c3e93babe3edde8f66a51e3127" title="Pl_Init_Machine" alt="" coords="225,275,339,301"/>
+<area shape="rect" id="node8" href="$gprolog_8h.html#a79163a775d949cf493a9f7b28bf4fc09" title="Pl_Start_Prolog" alt="" coords="419,275,532,301"/>
+<area shape="rect" id="node9" href="$main_8c.html#a335bb6fe70cf4c383aec5baef5f39e47" title="Main_Wrapper" alt="" coords="580,275,687,301"/>
+<area shape="rect" id="node10" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="735,275,785,301"/>
+</map>

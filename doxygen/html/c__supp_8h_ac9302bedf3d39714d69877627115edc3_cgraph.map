@@ -1,0 +1,8 @@
+<map id="Pl_Mk_Chars" name="Pl_Mk_Chars">
+<area shape="rect" id="node2" href="$wam__inst_8c.html#a3693088ecc87044949d8635527a4e3fd" title="Pl_Put_List" alt="" coords="165,5,255,32"/>
+<area shape="rect" id="node3" href="$wam__inst_8c.html#a9d87a5b4acfffab877517842b1fa4055" title="Pl_Unify_Atom" alt="" coords="155,56,265,83"/>
+<area shape="rect" id="node5" href="$wam__inst_8c.html#a2397c06b686e499f93889fb1747c384c" title="Pl_Unify_List" alt="" coords="160,107,260,133"/>
+<area shape="rect" id="node7" href="$wam__inst_8c.html#afac3b90ddb0eefab7ad55c9913a86a5b" title="Pl_Unify_Nil" alt="" coords="163,157,257,184"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#a656e0931247533aa8d30c3e0398513fe" title="Pl_Unify_Atom_Tagged" alt="" coords="313,56,473,83"/>
+<area shape="rect" id="node6" href="$wam__inst_8c.html#ac053eb26fdee8a8e71ea9a5ac4079ab0" title="Pl_Get_List" alt="" coords="348,107,439,133"/>
+</map>

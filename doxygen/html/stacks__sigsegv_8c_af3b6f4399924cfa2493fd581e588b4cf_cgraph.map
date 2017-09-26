@@ -1,0 +1,4 @@
+<map id="Win32_Exception_Handler" name="Win32_Exception_Handler">
+<area shape="rect" id="node2" href="$stacks__sigsegv_8c.html#a025866a50618e66535d50d040a135332" title="Handle_Bad_Address" alt="" coords="229,5,377,32"/>
+<area shape="rect" id="node3" href="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907" title="Pl_Fatal_Error" alt="" coords="425,5,531,32"/>
+</map>

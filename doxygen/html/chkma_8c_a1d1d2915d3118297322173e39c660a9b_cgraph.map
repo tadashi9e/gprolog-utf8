@@ -1,0 +1,10 @@
+<map id="test_arg_string" name="test_arg_string">
+<area shape="rect" id="node2" href="$chkma_8c.html#a76794c8328cf0a40fb30d8e2167b03ba" title="Call_Pl" alt="" coords="196,56,260,83"/>
+<area shape="rect" id="node8" href="$chkma_8c.html#a518288848eb2471573b6581060452931" title="error" alt="" coords="373,107,421,133"/>
+<area shape="rect" id="node9" href="$chkma_8c.html#a51c3765aaeb51ac839376852e788ecb0" title="ma_test_arg_string" alt="" coords="161,157,295,184"/>
+<area shape="rect" id="node3" href="$engine_8c.html#a837196745e0fb6af03ee5e5d062e1087" title="Pl_Call_Prolog" alt="" coords="343,56,451,83"/>
+<area shape="rect" id="node4" href="$engine_8c.html#accfe7947a971f240bf7b8b2bedc59e29" title="Call_Prolog_Fail" alt="" coords="513,5,631,32"/>
+<area shape="rect" id="node5" href="$engine_8c.html#ae7d5f8d0ac490ede3fcb48af7cceec55" title="Call_Prolog_Success" alt="" coords="499,56,645,83"/>
+<area shape="rect" id="node6" href="$engine_8c.html#a5f34f0c2b928a4bfe7057ced6cd446c8" title="Call_Next" alt="" coords="532,107,612,133"/>
+<area shape="rect" id="node7" href="$engine_8c.html#a598600283dd767c2b3d11e798384023c" title="Pl_Call_Compiled" alt="" coords="693,107,820,133"/>
+</map>

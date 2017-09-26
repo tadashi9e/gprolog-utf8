@@ -1,0 +1,8 @@
+<map id="Off_Reg_Bank" name="Off_Reg_Bank">
+<area shape="rect" id="node2" href="$x86__64__any_8c.html#ac7bdb0538e4f03ec069405cf88f1de4f" title="Asm_Start" alt="" coords="196,5,280,32"/>
+<area shape="rect" id="node3" href="$x86__64__any_8c.html#a53bd6fca87a2fd6ae394bd63c5689edf" title="Reload_E_In_Register" alt="" coords="161,56,315,83"/>
+<area shape="rect" id="node4" href="$x86__64__any_8c.html#a26b1354d98d85d34703d36af84a2fa7f" title="Move_From_Reg_X" alt="" coords="169,107,307,133"/>
+<area shape="rect" id="node5" href="$x86__64__any_8c.html#af7adcc007169701f8e570e632559068f" title="Move_To_Reg_X" alt="" coords="177,157,299,184"/>
+<area shape="rect" id="node6" href="$x86__64__any_8c.html#a2f2f15033fa151bd5b50ea330c95606f" title="Call_C_Arg_Reg_X" alt="" coords="170,208,306,235"/>
+<area shape="rect" id="node7" href="$x86__64__any_8c.html#a4fd1cd87c4569f850eb69124553ad1c9" title="Move_Ret_To_Reg_X" alt="" coords="163,259,313,285"/>
+</map>

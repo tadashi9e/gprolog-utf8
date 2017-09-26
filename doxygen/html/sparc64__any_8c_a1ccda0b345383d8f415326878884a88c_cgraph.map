@@ -1,0 +1,6 @@
+<map id="Asm_Stop" name="Asm_Stop">
+<area shape="rect" id="node2" href="$sparc64__any_8c.html#a7884ec03fffa38e282f499d97aac3ee2" title="Delay_Printf" alt="" coords="136,5,231,32"/>
+<area shape="rect" id="node4" href="$sparc64__any_8c.html#a403d2e1c401f1ee3f0e08eea47524291" title="Label" alt="" coords="157,56,210,83"/>
+<area shape="rect" id="node3" href="$ma2asm_8c.html#a9608e324baa0506520d6ae9b95ae89ab" title="Inst_Out" alt="" coords="288,5,360,32"/>
+<area shape="rect" id="node5" href="$ma2asm_8c.html#a55647b9192e0e0e7eb3e53f712402558" title="Label_Printf" alt="" coords="279,56,369,83"/>
+</map>

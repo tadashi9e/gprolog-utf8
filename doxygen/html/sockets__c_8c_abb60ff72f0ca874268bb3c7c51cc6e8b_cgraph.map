@@ -1,0 +1,25 @@
+<map id="Socket_Initializer" name="Socket_Initializer">
+<area shape="rect" id="node2" href="$atom_8c.html#a068c993d95113a2ba7643918e68eedb3" title="Pl_Create_Atom" alt="" coords="176,5,295,32"/>
+<area shape="rect" id="node3" href="$stream__supp_8c.html#aa0a1fdfbaae9e476151527d87510c0eb" title="Pl_Stream_Printf" alt="" coords="355,31,477,57"/>
+<area shape="rect" id="node6" href="$error__supp_8c.html#a76830f502895027f89f5430f7dcdd159" title="Pl_Os_Error" alt="" coords="189,132,282,159"/>
+<area shape="rect" id="node4" href="$stream__supp_8c.html#a06ceb4f7e59898ddb42f1fa50d29d140" title="Basic_Call_Fct_Putc" alt="" coords="557,31,703,57"/>
+<area shape="rect" id="node5" href="$stream__supp_8c.html#a84ba976a14dadde6efb09d408c88873a" title="Pl_Stream_Putc" alt="" coords="798,31,915,57"/>
+<area shape="rect" id="node7" href="$machine_8c.html#a9774325ac269ffeece1e5f266a410f2b" title="Pl_M_Sys_Err_String" alt="" coords="343,81,489,108"/>
+<area shape="rect" id="node8" href="$error__supp_8c.html#ac4cccc965ec1dcc416fc6516efa704b0" title="Pl_Err_System" alt="" coords="361,183,471,209"/>
+<area shape="rect" id="node9" href="$error__supp_8c.html#aef1341aeb3ceb943d8e9d7d6f77b0582" title="Update_Cur_From_C_Bip" alt="" coords="544,132,716,159"/>
+<area shape="rect" id="node10" href="$atom_8c.html#a76a3983dda97458000ed903b9bc94f6c" title="Pl_Create_Allocate_Atom" alt="" coords="771,183,943,209"/>
+<area shape="rect" id="node24" href="$error__supp_8c.html#a0190093a8a05169f87d93257e72c9851" title="Context_Error_String" alt="" coords="344,284,488,311"/>
+<area shape="rect" id="node23" href="$engine_8c.html#ae0fcb6df66410fd57c52a0ba16527642" title="Pl_Execute_A_Continuation" alt="" coords="537,183,723,209"/>
+<area shape="rect" id="node11" href="$atom_8c.html#a9ed09c0173fe0a0e6d0f90ec363687fe" title="Hash_String" alt="" coords="993,120,1087,147"/>
+<area shape="rect" id="node16" href="$atom_8c.html#ad4222685eae3cdb0315df48a8a7e89fc" title="Locate_Atom" alt="" coords="991,183,1089,209"/>
+<area shape="rect" id="node17" href="$atom_8c.html#abe628ad301508c0ed926cfb4bc791818" title="Add_Atom" alt="" coords="999,259,1081,285"/>
+<area shape="rect" id="node12" href="$hash__fct_8c.html#a59393adcfbeeda198a890af25f29cf7c" title="Pl_Hash_Buffer" alt="" coords="1165,116,1280,143"/>
+<area shape="rect" id="node13" href="$hash__fct_8c.html#abe414d7525a1bb4fcb8e4fd757498cb9" title="Hash_Initialize" alt="" coords="1369,63,1477,89"/>
+<area shape="rect" id="node14" href="$hash__fct_8c.html#a8b1af6cc6089ce3e2e3dc0a8a0d55e90" title="Hash_Buffer" alt="" coords="1376,113,1471,140"/>
+<area shape="rect" id="node15" href="$hash__fct_8c.html#aa33bb265b03bb03aa455241e374409f7" title="Hash_Finalize" alt="" coords="1371,164,1476,191"/>
+<area shape="rect" id="node18" href="$atom_8c.html#a37c733b7022eab8b9b95f0182591ee15" title="Error_Table_Full" alt="" coords="1164,215,1281,241"/>
+<area shape="rect" id="node20" href="$pl__wchar_8c.html#a55a0d7269a65645bbd4c978385b0c7a3" title="count_wchars" alt="" coords="1171,265,1274,292"/>
+<area shape="rect" id="node22" href="$linedit_8c.html#ab2a8db946ffd8187b5216ff4ac8cbe7c" title="Pl_LE_Compl_Add_Word" alt="" coords="1137,316,1308,343"/>
+<area shape="rect" id="node19" href="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907" title="Pl_Fatal_Error" alt="" coords="1371,215,1476,241"/>
+<area shape="rect" id="node21" href="$pl__wchar_8c.html#afa9feb443cef2f8da40dd45a8c0e273d" title="count_wchar_bytes" alt="" coords="1356,265,1491,292"/>
+</map>

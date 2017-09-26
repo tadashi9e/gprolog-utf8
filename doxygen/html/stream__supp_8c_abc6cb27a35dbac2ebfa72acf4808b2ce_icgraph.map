@@ -1,0 +1,9 @@
+<map id="Pl_Add_Str_Stream" name="Pl_Add_Str_Stream">
+<area shape="rect" id="node2" href="$atom__c_8c.html#a45d43288afc4447eb5e8a1bced9fd5a3" title="String_To_Number" alt="" coords="203,81,333,108"/>
+<area shape="rect" id="node7" href="$stream__c_8c.html#a5509c863559e52e3f79d862fdb121edb" title="Pl_Open_Input_Term\l_Stream_2" alt="" coords="195,133,341,174"/>
+<area shape="rect" id="node8" href="$stream__c_8c.html#a70d91f642e6a102021db762b75f5c635" title="Pl_Open_Output_Term\l_Stream_1" alt="" coords="191,198,345,239"/>
+<area shape="rect" id="node3" href="$atom__c_8c.html#adc47dd028d6500b7136923c50fb7f0ab" title="Pl_Number_Atom_2" alt="" coords="397,5,536,32"/>
+<area shape="rect" id="node4" href="$atom__c_8c.html#a227fc472d79309e81af1f91e7e236951" title="Pl_Number_Chars_2" alt="" coords="395,56,538,83"/>
+<area shape="rect" id="node5" href="$atom__c_8c.html#ae89fe3df220d385008f49c583dc41d32" title="Pl_Number_Codes_2" alt="" coords="393,107,540,133"/>
+<area shape="rect" id="node6" href="$atom__c_8c.html#af3d13cb1d0fbb3208789ea87cf806fdb" title="Pl_Name_2" alt="" coords="588,132,679,159"/>
+</map>

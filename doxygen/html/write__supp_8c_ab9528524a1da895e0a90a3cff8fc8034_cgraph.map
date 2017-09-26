@@ -1,0 +1,10 @@
+<map id="Show_Atom" name="Show_Atom">
+<area shape="rect" id="node2" href="$write__supp_8c.html#a0716e3969018be737068cbe8bb31c568" title="Out_Char" alt="" coords="175,27,253,54"/>
+<area shape="rect" id="node7" href="$write__supp_8c.html#acc0f38c1b4b543509fa3dc2161a754d5" title="Out_String" alt="" coords="172,78,256,105"/>
+<area shape="rect" id="node9" href="$pl__wchar_8c.html#afa9feb443cef2f8da40dd45a8c0e273d" title="count_wchar_bytes" alt="" coords="147,129,281,155"/>
+<area shape="rect" id="node3" href="$write__supp_8c.html#a1accd85dd273c868523287f70409e55a" title="Need_Space" alt="" coords="329,27,427,54"/>
+<area shape="rect" id="node5" href="$stream__supp_8c.html#a84ba976a14dadde6efb09d408c88873a" title="Pl_Stream_Putc" alt="" coords="640,27,757,54"/>
+<area shape="rect" id="node4" href="$write__supp_8c.html#a1b8fd4efcb94323a3da3336c022a49d3" title="Out_Space" alt="" coords="490,27,577,54"/>
+<area shape="rect" id="node6" href="$stream__supp_8c.html#a06ceb4f7e59898ddb42f1fa50d29d140" title="Basic_Call_Fct_Putc" alt="" coords="805,27,951,54"/>
+<area shape="rect" id="node8" href="$stream__supp_8c.html#a31eee9920a69a51c28e0eac5eb3adedb" title="Pl_Stream_Puts" alt="" coords="475,78,592,105"/>
+</map>

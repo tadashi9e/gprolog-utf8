@@ -1,0 +1,278 @@
+\hypertarget{oper_8h}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/oper.h File Reference}
+\label{oper_8h}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/oper.\+h@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/oper.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structOperInf}{Oper\+Inf}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{oper_8h_a2e001ed6db20de679cf392a3e9f6388f}{M\+A\+X\+\_\+\+P\+R\+EC}~1200
+\item 
+\#define \hyperlink{oper_8h_ae291cfdcfe2a52ffd185d3185b0fc459}{M\+A\+X\+\_\+\+A\+R\+G\+\_\+\+O\+F\+\_\+\+F\+U\+N\+C\+T\+O\+R\+\_\+\+P\+R\+EC}~999
+\item 
+\#define \hyperlink{oper_8h_a5ff7a4cf3afbf226440155f4062e4c8d}{Make\+\_\+\+Oper\+\_\+\+Key}(a,  \hyperlink{asm_8c_ae4f77bc8ab535e4d42a0ebc8d1f8f9a3}{t})~(((\hyperlink{gprolog_8h_acb2c90983d7f8b591a1c86ba37348702}{Pl\+U\+Long}) (a) $<$$<$ 2) $\vert$ (\hyperlink{asm_8c_ae4f77bc8ab535e4d42a0ebc8d1f8f9a3}{t}))
+\item 
+\#define \hyperlink{oper_8h_a83f24615d9a885f9f695e64dad7d61ed}{Atom\+\_\+\+Of\+\_\+\+Oper}(k)~((\hyperlink{gprolog_8h_acb2c90983d7f8b591a1c86ba37348702}{Pl\+U\+Long}) (k) $>$$>$ 2)
+\item 
+\#define \hyperlink{oper_8h_a796123b0ab26558e65f16491d8eeab36}{Type\+\_\+\+Of\+\_\+\+Oper}(k)~((\hyperlink{gprolog_8h_acb2c90983d7f8b591a1c86ba37348702}{Pl\+U\+Long}) (k) \& 3)
+\item 
+\#define \hyperlink{oper_8h_add51b53e8b628f95078327028dccb20c}{P\+R\+E\+F\+IX}~0
+\item 
+\#define \hyperlink{oper_8h_a1b279b53657237a32fa0d9f3b8e775b0}{P\+O\+S\+T\+F\+IX}~1
+\item 
+\#define \hyperlink{oper_8h_a1684abe1796728577210a53737675866}{I\+N\+F\+IX}~2
+\item 
+\#define \hyperlink{oper_8h_acc7e733ce77ee138466396792c65d0dd}{Make\+\_\+\+Op\+\_\+\+Mask}(type)~(1$<$$<$(type))
+\item 
+\#define \hyperlink{oper_8h_a74a907c5a54bb31fa82eb0b3acfe46d6}{Check\+\_\+\+Oper}(atom\+\_\+op,  type)~(\hyperlink{chkma_8c_ae19bc058a52e904b7be9a3b9f2fdd996}{pl\+\_\+atom\+\_\+tbl}\mbox{[}(atom\+\_\+op)\mbox{]}.prop.\+op\+\_\+mask \& \hyperlink{oper_8h_acc7e733ce77ee138466396792c65d0dd}{Make\+\_\+\+Op\+\_\+\+Mask}(type))
+\item 
+\#define \hyperlink{oper_8h_a1672c121c94648139879896cc530bcdc}{Check\+\_\+\+Oper\+\_\+\+Any\+\_\+\+Type}(atom\+\_\+op)~(\hyperlink{chkma_8c_ae19bc058a52e904b7be9a3b9f2fdd996}{pl\+\_\+atom\+\_\+tbl}\mbox{[}(atom\+\_\+op)\mbox{]}.prop.\+op\+\_\+mask)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{oper_8h_a3a22badced4bdb778f20f64863192492}{Pl\+\_\+\+Init\+\_\+\+Oper} (void)
+\item 
+\hyperlink{structOperInf}{Oper\+Inf} $\ast$ \hyperlink{oper_8h_aaea6f69a5ed64f5abc47f0abdfe0ee10}{Pl\+\_\+\+Create\+\_\+\+Oper} (int atom\+\_\+op, int type, int prec, int left, int right)
+\item 
+\hyperlink{structOperInf}{Oper\+Inf} $\ast$ \hyperlink{oper_8h_ad19a4b74ee5976a08c08ca792bef46b5}{Pl\+\_\+\+Lookup\+\_\+\+Oper} (int atom\+\_\+op, int type)
+\item 
+\hyperlink{structOperInf}{Oper\+Inf} $\ast$ \hyperlink{oper_8h_ad503060caf014cbe9c09fbc5a704f22f}{Pl\+\_\+\+Lookup\+\_\+\+Oper\+\_\+\+Any\+\_\+\+Type} (int atom\+\_\+op)
+\item 
+\hyperlink{structOperInf}{Oper\+Inf} $\ast$ \hyperlink{oper_8h_a37a1b0e4c33bb8b42f00ba0cf4f89b14}{Pl\+\_\+\+Delete\+\_\+\+Oper} (int atom\+\_\+op, int type)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{oper_8h_a19e3255aba359b3917b73bbe02565b52}{pl\+\_\+oper\+\_\+tbl}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{oper.\+h@{oper.\+h}!Atom\+\_\+\+Of\+\_\+\+Oper@{Atom\+\_\+\+Of\+\_\+\+Oper}}
+\index{Atom\+\_\+\+Of\+\_\+\+Oper@{Atom\+\_\+\+Of\+\_\+\+Oper}!oper.\+h@{oper.\+h}}
+\subsubsection[{\texorpdfstring{Atom\+\_\+\+Of\+\_\+\+Oper}{Atom_Of_Oper}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Atom\+\_\+\+Of\+\_\+\+Oper(
+\begin{DoxyParamCaption}
+\item[{}]{k}
+\end{DoxyParamCaption}
+)~(({\bf Pl\+U\+Long}) (k) $>$$>$ 2)}\hypertarget{oper_8h_a83f24615d9a885f9f695e64dad7d61ed}{}\label{oper_8h_a83f24615d9a885f9f695e64dad7d61ed}
+\index{oper.\+h@{oper.\+h}!Check\+\_\+\+Oper@{Check\+\_\+\+Oper}}
+\index{Check\+\_\+\+Oper@{Check\+\_\+\+Oper}!oper.\+h@{oper.\+h}}
+\subsubsection[{\texorpdfstring{Check\+\_\+\+Oper}{Check_Oper}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Check\+\_\+\+Oper(
+\begin{DoxyParamCaption}
+\item[{}]{atom\+\_\+op, }
+\item[{}]{type}
+\end{DoxyParamCaption}
+)~({\bf pl\+\_\+atom\+\_\+tbl}\mbox{[}(atom\+\_\+op)\mbox{]}.prop.\+op\+\_\+mask \& {\bf Make\+\_\+\+Op\+\_\+\+Mask}(type))}\hypertarget{oper_8h_a74a907c5a54bb31fa82eb0b3acfe46d6}{}\label{oper_8h_a74a907c5a54bb31fa82eb0b3acfe46d6}
+\index{oper.\+h@{oper.\+h}!Check\+\_\+\+Oper\+\_\+\+Any\+\_\+\+Type@{Check\+\_\+\+Oper\+\_\+\+Any\+\_\+\+Type}}
+\index{Check\+\_\+\+Oper\+\_\+\+Any\+\_\+\+Type@{Check\+\_\+\+Oper\+\_\+\+Any\+\_\+\+Type}!oper.\+h@{oper.\+h}}
+\subsubsection[{\texorpdfstring{Check\+\_\+\+Oper\+\_\+\+Any\+\_\+\+Type}{Check_Oper_Any_Type}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Check\+\_\+\+Oper\+\_\+\+Any\+\_\+\+Type(
+\begin{DoxyParamCaption}
+\item[{}]{atom\+\_\+op}
+\end{DoxyParamCaption}
+)~({\bf pl\+\_\+atom\+\_\+tbl}\mbox{[}(atom\+\_\+op)\mbox{]}.prop.\+op\+\_\+mask)}\hypertarget{oper_8h_a1672c121c94648139879896cc530bcdc}{}\label{oper_8h_a1672c121c94648139879896cc530bcdc}
+\index{oper.\+h@{oper.\+h}!I\+N\+F\+IX@{I\+N\+F\+IX}}
+\index{I\+N\+F\+IX@{I\+N\+F\+IX}!oper.\+h@{oper.\+h}}
+\subsubsection[{\texorpdfstring{I\+N\+F\+IX}{INFIX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+N\+F\+IX~2}\hypertarget{oper_8h_a1684abe1796728577210a53737675866}{}\label{oper_8h_a1684abe1796728577210a53737675866}
+\index{oper.\+h@{oper.\+h}!Make\+\_\+\+Op\+\_\+\+Mask@{Make\+\_\+\+Op\+\_\+\+Mask}}
+\index{Make\+\_\+\+Op\+\_\+\+Mask@{Make\+\_\+\+Op\+\_\+\+Mask}!oper.\+h@{oper.\+h}}
+\subsubsection[{\texorpdfstring{Make\+\_\+\+Op\+\_\+\+Mask}{Make_Op_Mask}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Make\+\_\+\+Op\+\_\+\+Mask(
+\begin{DoxyParamCaption}
+\item[{}]{type}
+\end{DoxyParamCaption}
+)~(1$<$$<$(type))}\hypertarget{oper_8h_acc7e733ce77ee138466396792c65d0dd}{}\label{oper_8h_acc7e733ce77ee138466396792c65d0dd}
+\index{oper.\+h@{oper.\+h}!Make\+\_\+\+Oper\+\_\+\+Key@{Make\+\_\+\+Oper\+\_\+\+Key}}
+\index{Make\+\_\+\+Oper\+\_\+\+Key@{Make\+\_\+\+Oper\+\_\+\+Key}!oper.\+h@{oper.\+h}}
+\subsubsection[{\texorpdfstring{Make\+\_\+\+Oper\+\_\+\+Key}{Make_Oper_Key}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Make\+\_\+\+Oper\+\_\+\+Key(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{{\bf t}}
+\end{DoxyParamCaption}
+)~((({\bf Pl\+U\+Long}) (a) $<$$<$ 2) $\vert$ ({\bf t}))}\hypertarget{oper_8h_a5ff7a4cf3afbf226440155f4062e4c8d}{}\label{oper_8h_a5ff7a4cf3afbf226440155f4062e4c8d}
+\index{oper.\+h@{oper.\+h}!M\+A\+X\+\_\+\+A\+R\+G\+\_\+\+O\+F\+\_\+\+F\+U\+N\+C\+T\+O\+R\+\_\+\+P\+R\+EC@{M\+A\+X\+\_\+\+A\+R\+G\+\_\+\+O\+F\+\_\+\+F\+U\+N\+C\+T\+O\+R\+\_\+\+P\+R\+EC}}
+\index{M\+A\+X\+\_\+\+A\+R\+G\+\_\+\+O\+F\+\_\+\+F\+U\+N\+C\+T\+O\+R\+\_\+\+P\+R\+EC@{M\+A\+X\+\_\+\+A\+R\+G\+\_\+\+O\+F\+\_\+\+F\+U\+N\+C\+T\+O\+R\+\_\+\+P\+R\+EC}!oper.\+h@{oper.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+X\+\_\+\+A\+R\+G\+\_\+\+O\+F\+\_\+\+F\+U\+N\+C\+T\+O\+R\+\_\+\+P\+R\+EC}{MAX_ARG_OF_FUNCTOR_PREC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+A\+R\+G\+\_\+\+O\+F\+\_\+\+F\+U\+N\+C\+T\+O\+R\+\_\+\+P\+R\+EC~999}\hypertarget{oper_8h_ae291cfdcfe2a52ffd185d3185b0fc459}{}\label{oper_8h_ae291cfdcfe2a52ffd185d3185b0fc459}
+\index{oper.\+h@{oper.\+h}!M\+A\+X\+\_\+\+P\+R\+EC@{M\+A\+X\+\_\+\+P\+R\+EC}}
+\index{M\+A\+X\+\_\+\+P\+R\+EC@{M\+A\+X\+\_\+\+P\+R\+EC}!oper.\+h@{oper.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+X\+\_\+\+P\+R\+EC}{MAX_PREC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+P\+R\+EC~1200}\hypertarget{oper_8h_a2e001ed6db20de679cf392a3e9f6388f}{}\label{oper_8h_a2e001ed6db20de679cf392a3e9f6388f}
+\index{oper.\+h@{oper.\+h}!P\+O\+S\+T\+F\+IX@{P\+O\+S\+T\+F\+IX}}
+\index{P\+O\+S\+T\+F\+IX@{P\+O\+S\+T\+F\+IX}!oper.\+h@{oper.\+h}}
+\subsubsection[{\texorpdfstring{P\+O\+S\+T\+F\+IX}{POSTFIX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+O\+S\+T\+F\+IX~1}\hypertarget{oper_8h_a1b279b53657237a32fa0d9f3b8e775b0}{}\label{oper_8h_a1b279b53657237a32fa0d9f3b8e775b0}
+\index{oper.\+h@{oper.\+h}!P\+R\+E\+F\+IX@{P\+R\+E\+F\+IX}}
+\index{P\+R\+E\+F\+IX@{P\+R\+E\+F\+IX}!oper.\+h@{oper.\+h}}
+\subsubsection[{\texorpdfstring{P\+R\+E\+F\+IX}{PREFIX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+E\+F\+IX~0}\hypertarget{oper_8h_add51b53e8b628f95078327028dccb20c}{}\label{oper_8h_add51b53e8b628f95078327028dccb20c}
+\index{oper.\+h@{oper.\+h}!Type\+\_\+\+Of\+\_\+\+Oper@{Type\+\_\+\+Of\+\_\+\+Oper}}
+\index{Type\+\_\+\+Of\+\_\+\+Oper@{Type\+\_\+\+Of\+\_\+\+Oper}!oper.\+h@{oper.\+h}}
+\subsubsection[{\texorpdfstring{Type\+\_\+\+Of\+\_\+\+Oper}{Type_Of_Oper}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Type\+\_\+\+Of\+\_\+\+Oper(
+\begin{DoxyParamCaption}
+\item[{}]{k}
+\end{DoxyParamCaption}
+)~(({\bf Pl\+U\+Long}) (k) \& 3)}\hypertarget{oper_8h_a796123b0ab26558e65f16491d8eeab36}{}\label{oper_8h_a796123b0ab26558e65f16491d8eeab36}
+
+
+\subsection{Function Documentation}
+\index{oper.\+h@{oper.\+h}!Pl\+\_\+\+Create\+\_\+\+Oper@{Pl\+\_\+\+Create\+\_\+\+Oper}}
+\index{Pl\+\_\+\+Create\+\_\+\+Oper@{Pl\+\_\+\+Create\+\_\+\+Oper}!oper.\+h@{oper.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Create\+\_\+\+Oper(int atom\+\_\+op, int type, int prec, int left, int right)}{Pl_Create_Oper(int atom_op, int type, int prec, int left, int right)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Oper\+Inf}$\ast$ Pl\+\_\+\+Create\+\_\+\+Oper (
+\begin{DoxyParamCaption}
+\item[{int}]{atom\+\_\+op, }
+\item[{int}]{type, }
+\item[{int}]{prec, }
+\item[{int}]{left, }
+\item[{int}]{right}
+\end{DoxyParamCaption}
+)}\hypertarget{oper_8h_aaea6f69a5ed64f5abc47f0abdfe0ee10}{}\label{oper_8h_aaea6f69a5ed64f5abc47f0abdfe0ee10}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper_8h_aaea6f69a5ed64f5abc47f0abdfe0ee10_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper_8h_aaea6f69a5ed64f5abc47f0abdfe0ee10_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper.\+h@{oper.\+h}!Pl\+\_\+\+Delete\+\_\+\+Oper@{Pl\+\_\+\+Delete\+\_\+\+Oper}}
+\index{Pl\+\_\+\+Delete\+\_\+\+Oper@{Pl\+\_\+\+Delete\+\_\+\+Oper}!oper.\+h@{oper.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Delete\+\_\+\+Oper(int atom\+\_\+op, int type)}{Pl_Delete_Oper(int atom_op, int type)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Oper\+Inf}$\ast$ Pl\+\_\+\+Delete\+\_\+\+Oper (
+\begin{DoxyParamCaption}
+\item[{int}]{atom\+\_\+op, }
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{oper_8h_a37a1b0e4c33bb8b42f00ba0cf4f89b14}{}\label{oper_8h_a37a1b0e4c33bb8b42f00ba0cf4f89b14}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper_8h_a37a1b0e4c33bb8b42f00ba0cf4f89b14_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper_8h_a37a1b0e4c33bb8b42f00ba0cf4f89b14_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper.\+h@{oper.\+h}!Pl\+\_\+\+Init\+\_\+\+Oper@{Pl\+\_\+\+Init\+\_\+\+Oper}}
+\index{Pl\+\_\+\+Init\+\_\+\+Oper@{Pl\+\_\+\+Init\+\_\+\+Oper}!oper.\+h@{oper.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Init\+\_\+\+Oper(void)}{Pl_Init_Oper(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Init\+\_\+\+Oper (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{oper_8h_a3a22badced4bdb778f20f64863192492}{}\label{oper_8h_a3a22badced4bdb778f20f64863192492}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{oper_8h_a3a22badced4bdb778f20f64863192492_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper_8h_a3a22badced4bdb778f20f64863192492_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper.\+h@{oper.\+h}!Pl\+\_\+\+Lookup\+\_\+\+Oper@{Pl\+\_\+\+Lookup\+\_\+\+Oper}}
+\index{Pl\+\_\+\+Lookup\+\_\+\+Oper@{Pl\+\_\+\+Lookup\+\_\+\+Oper}!oper.\+h@{oper.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Lookup\+\_\+\+Oper(int atom\+\_\+op, int type)}{Pl_Lookup_Oper(int atom_op, int type)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Oper\+Inf}$\ast$ Pl\+\_\+\+Lookup\+\_\+\+Oper (
+\begin{DoxyParamCaption}
+\item[{int}]{atom\+\_\+op, }
+\item[{int}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{oper_8h_ad19a4b74ee5976a08c08ca792bef46b5}{}\label{oper_8h_ad19a4b74ee5976a08c08ca792bef46b5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper_8h_ad19a4b74ee5976a08c08ca792bef46b5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper_8h_ad19a4b74ee5976a08c08ca792bef46b5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper.\+h@{oper.\+h}!Pl\+\_\+\+Lookup\+\_\+\+Oper\+\_\+\+Any\+\_\+\+Type@{Pl\+\_\+\+Lookup\+\_\+\+Oper\+\_\+\+Any\+\_\+\+Type}}
+\index{Pl\+\_\+\+Lookup\+\_\+\+Oper\+\_\+\+Any\+\_\+\+Type@{Pl\+\_\+\+Lookup\+\_\+\+Oper\+\_\+\+Any\+\_\+\+Type}!oper.\+h@{oper.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Lookup\+\_\+\+Oper\+\_\+\+Any\+\_\+\+Type(int atom\+\_\+op)}{Pl_Lookup_Oper_Any_Type(int atom_op)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Oper\+Inf}$\ast$ Pl\+\_\+\+Lookup\+\_\+\+Oper\+\_\+\+Any\+\_\+\+Type (
+\begin{DoxyParamCaption}
+\item[{int}]{atom\+\_\+op}
+\end{DoxyParamCaption}
+)}\hypertarget{oper_8h_ad503060caf014cbe9c09fbc5a704f22f}{}\label{oper_8h_ad503060caf014cbe9c09fbc5a704f22f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper_8h_ad503060caf014cbe9c09fbc5a704f22f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{oper.\+h@{oper.\+h}!pl\+\_\+oper\+\_\+tbl@{pl\+\_\+oper\+\_\+tbl}}
+\index{pl\+\_\+oper\+\_\+tbl@{pl\+\_\+oper\+\_\+tbl}!oper.\+h@{oper.\+h}}
+\subsubsection[{\texorpdfstring{pl\+\_\+oper\+\_\+tbl}{pl_oper_tbl}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ pl\+\_\+oper\+\_\+tbl}\hypertarget{oper_8h_a19e3255aba359b3917b73bbe02565b52}{}\label{oper_8h_a19e3255aba359b3917b73bbe02565b52}

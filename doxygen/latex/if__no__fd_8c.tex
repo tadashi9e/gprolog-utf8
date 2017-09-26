@@ -1,0 +1,109 @@
+\hypertarget{if__no__fd_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/if\+\_\+no\+\_\+fd.c File Reference}
+\label{if__no__fd_8c}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/if\+\_\+no\+\_\+fd.\+c@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/if\+\_\+no\+\_\+fd.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}engine\+\_\+pl.\+h\char`\"{}}\\*
+Include dependency graph for if\+\_\+no\+\_\+fd.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{if__no__fd_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{if__no__fd_8c_a400fb68510bb049da097c0fbe34641ac}{I\+F\+\_\+\+N\+O\+\_\+\+F\+D\+\_\+\+F\+I\+LE}
+\item 
+\#define \hyperlink{if__no__fd_8c_a41ab6570c92e4b732064d185e9a5339c}{E\+R\+R\+\_\+\+F\+D\+\_\+\+S\+O\+L\+V\+E\+R\+\_\+\+M\+I\+S\+S\+I\+NG}~\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+ \char`\"{}\+: FD Solver not linked\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{if__no__fd_8c_ab862c1c7059fd4122fe2063b372bf1e2}{Fd\+\_\+\+Solver\+\_\+\+Missing} (void)
+\item 
+void \hyperlink{if__no__fd_8c_a1f64da6d81a7799fe8411fffab098569}{Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Solver} (void)
+\item 
+void \hyperlink{if__no__fd_8c_af9ad0d76d0a941dd34530d628ec61eb0}{Pl\+\_\+\+Fd\+\_\+\+Reset\+\_\+\+Solver} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{if\+\_\+no\+\_\+fd.\+c@{if\+\_\+no\+\_\+fd.\+c}!E\+R\+R\+\_\+\+F\+D\+\_\+\+S\+O\+L\+V\+E\+R\+\_\+\+M\+I\+S\+S\+I\+NG@{E\+R\+R\+\_\+\+F\+D\+\_\+\+S\+O\+L\+V\+E\+R\+\_\+\+M\+I\+S\+S\+I\+NG}}
+\index{E\+R\+R\+\_\+\+F\+D\+\_\+\+S\+O\+L\+V\+E\+R\+\_\+\+M\+I\+S\+S\+I\+NG@{E\+R\+R\+\_\+\+F\+D\+\_\+\+S\+O\+L\+V\+E\+R\+\_\+\+M\+I\+S\+S\+I\+NG}!if\+\_\+no\+\_\+fd.\+c@{if\+\_\+no\+\_\+fd.\+c}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+\+F\+D\+\_\+\+S\+O\+L\+V\+E\+R\+\_\+\+M\+I\+S\+S\+I\+NG}{ERR_FD_SOLVER_MISSING}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+\_\+\+F\+D\+\_\+\+S\+O\+L\+V\+E\+R\+\_\+\+M\+I\+S\+S\+I\+NG~\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+ \char`\"{}\+: FD Solver not linked\char`\"{}}\hypertarget{if__no__fd_8c_a41ab6570c92e4b732064d185e9a5339c}{}\label{if__no__fd_8c_a41ab6570c92e4b732064d185e9a5339c}
+\index{if\+\_\+no\+\_\+fd.\+c@{if\+\_\+no\+\_\+fd.\+c}!I\+F\+\_\+\+N\+O\+\_\+\+F\+D\+\_\+\+F\+I\+LE@{I\+F\+\_\+\+N\+O\+\_\+\+F\+D\+\_\+\+F\+I\+LE}}
+\index{I\+F\+\_\+\+N\+O\+\_\+\+F\+D\+\_\+\+F\+I\+LE@{I\+F\+\_\+\+N\+O\+\_\+\+F\+D\+\_\+\+F\+I\+LE}!if\+\_\+no\+\_\+fd.\+c@{if\+\_\+no\+\_\+fd.\+c}}
+\subsubsection[{\texorpdfstring{I\+F\+\_\+\+N\+O\+\_\+\+F\+D\+\_\+\+F\+I\+LE}{IF_NO_FD_FILE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+F\+\_\+\+N\+O\+\_\+\+F\+D\+\_\+\+F\+I\+LE}\hypertarget{if__no__fd_8c_a400fb68510bb049da097c0fbe34641ac}{}\label{if__no__fd_8c_a400fb68510bb049da097c0fbe34641ac}
+
+
+\subsection{Function Documentation}
+\index{if\+\_\+no\+\_\+fd.\+c@{if\+\_\+no\+\_\+fd.\+c}!Fd\+\_\+\+Solver\+\_\+\+Missing@{Fd\+\_\+\+Solver\+\_\+\+Missing}}
+\index{Fd\+\_\+\+Solver\+\_\+\+Missing@{Fd\+\_\+\+Solver\+\_\+\+Missing}!if\+\_\+no\+\_\+fd.\+c@{if\+\_\+no\+\_\+fd.\+c}}
+\subsubsection[{\texorpdfstring{Fd\+\_\+\+Solver\+\_\+\+Missing(void)}{Fd_Solver_Missing(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Fd\+\_\+\+Solver\+\_\+\+Missing (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{if__no__fd_8c_ab862c1c7059fd4122fe2063b372bf1e2}{}\label{if__no__fd_8c_ab862c1c7059fd4122fe2063b372bf1e2}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{if__no__fd_8c_ab862c1c7059fd4122fe2063b372bf1e2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{if__no__fd_8c_ab862c1c7059fd4122fe2063b372bf1e2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{if\+\_\+no\+\_\+fd.\+c@{if\+\_\+no\+\_\+fd.\+c}!Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Solver@{Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Solver}}
+\index{Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Solver@{Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Solver}!if\+\_\+no\+\_\+fd.\+c@{if\+\_\+no\+\_\+fd.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Solver(void)}{Pl_Fd_Init_Solver(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Fd\+\_\+\+Init\+\_\+\+Solver (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{if__no__fd_8c_a1f64da6d81a7799fe8411fffab098569}{}\label{if__no__fd_8c_a1f64da6d81a7799fe8411fffab098569}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{if__no__fd_8c_a1f64da6d81a7799fe8411fffab098569_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{if\+\_\+no\+\_\+fd.\+c@{if\+\_\+no\+\_\+fd.\+c}!Pl\+\_\+\+Fd\+\_\+\+Reset\+\_\+\+Solver@{Pl\+\_\+\+Fd\+\_\+\+Reset\+\_\+\+Solver}}
+\index{Pl\+\_\+\+Fd\+\_\+\+Reset\+\_\+\+Solver@{Pl\+\_\+\+Fd\+\_\+\+Reset\+\_\+\+Solver}!if\+\_\+no\+\_\+fd.\+c@{if\+\_\+no\+\_\+fd.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Fd\+\_\+\+Reset\+\_\+\+Solver(void)}{Pl_Fd_Reset_Solver(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Fd\+\_\+\+Reset\+\_\+\+Solver (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{if__no__fd_8c_af9ad0d76d0a941dd34530d628ec61eb0}{}\label{if__no__fd_8c_af9ad0d76d0a941dd34530d628ec61eb0}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{if__no__fd_8c_af9ad0d76d0a941dd34530d628ec61eb0_icgraph}
+\end{center}
+\end{figure}
+
+

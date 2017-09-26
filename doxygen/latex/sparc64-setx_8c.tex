@@ -1,0 +1,156 @@
+\hypertarget{sparc64-setx_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Ma2\+Asm/\+From\+C/sparc64-\/setx.c File Reference}
+\label{sparc64-setx_8c}\index{gprolog-\/utf8-\/tree/src/\+Ma2\+Asm/\+From\+C/sparc64-\/setx.\+c@{gprolog-\/utf8-\/tree/src/\+Ma2\+Asm/\+From\+C/sparc64-\/setx.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdarg.\+h$>$}\\*
+Include dependency graph for sparc64-\/setx.c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{sparc64-setx_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sparc64-setx_8c_a81a9e6ad68024dc29dcea31c3497dbca}{M\+K\+\_\+\+I\+M\+M22}(\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})~(((\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}) $>$$>$ 10) \& 0x3fffff)
+\item 
+\#define \hyperlink{sparc64-setx_8c_a59b653166cf9be443d113abcfa3fc195}{M\+K\+\_\+\+S\+I\+M\+M10\+\_\+13}(\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x},  want10)~((\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}) \& ((want10) ?  0x3ff \+: 0x1fff))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{sparc64-setx_8c_a7884ec03fffa38e282f499d97aac3ee2}{Delay\+\_\+\+Printf} (char $\ast$op, char $\ast$operands,...)
+\item 
+void \hyperlink{sparc64-setx_8c_a3398214a4ab7a354bb57e5e715c4ba12}{synthetize\+\_\+setx} (long value, char $\ast$dstreg)
+\item 
+void \hyperlink{sparc64-setx_8c_a3bb8037d8545b0cca559b32a6a2b4e50}{as\+\_\+disass} (char $\ast$pref)
+\item 
+int \hyperlink{sparc64-setx_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+F\+I\+LE $\ast$ \hyperlink{sparc64-setx_8c_a3efb0e1a16208deecbd84c15401f7cf8}{f}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{sparc64-\/setx.\+c@{sparc64-\/setx.\+c}!M\+K\+\_\+\+I\+M\+M22@{M\+K\+\_\+\+I\+M\+M22}}
+\index{M\+K\+\_\+\+I\+M\+M22@{M\+K\+\_\+\+I\+M\+M22}!sparc64-\/setx.\+c@{sparc64-\/setx.\+c}}
+\subsubsection[{\texorpdfstring{M\+K\+\_\+\+I\+M\+M22}{MK_IMM22}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+K\+\_\+\+I\+M\+M22(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf x}}
+\end{DoxyParamCaption}
+)~((({\bf x}) $>$$>$ 10) \& 0x3fffff)}\hypertarget{sparc64-setx_8c_a81a9e6ad68024dc29dcea31c3497dbca}{}\label{sparc64-setx_8c_a81a9e6ad68024dc29dcea31c3497dbca}
+\index{sparc64-\/setx.\+c@{sparc64-\/setx.\+c}!M\+K\+\_\+\+S\+I\+M\+M10\+\_\+13@{M\+K\+\_\+\+S\+I\+M\+M10\+\_\+13}}
+\index{M\+K\+\_\+\+S\+I\+M\+M10\+\_\+13@{M\+K\+\_\+\+S\+I\+M\+M10\+\_\+13}!sparc64-\/setx.\+c@{sparc64-\/setx.\+c}}
+\subsubsection[{\texorpdfstring{M\+K\+\_\+\+S\+I\+M\+M10\+\_\+13}{MK_SIMM10_13}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+K\+\_\+\+S\+I\+M\+M10\+\_\+13(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf x}, }
+\item[{}]{want10}
+\end{DoxyParamCaption}
+)~(({\bf x}) \& ((want10) ?  0x3ff \+: 0x1fff))}\hypertarget{sparc64-setx_8c_a59b653166cf9be443d113abcfa3fc195}{}\label{sparc64-setx_8c_a59b653166cf9be443d113abcfa3fc195}
+
+
+\subsection{Function Documentation}
+\index{sparc64-\/setx.\+c@{sparc64-\/setx.\+c}!as\+\_\+disass@{as\+\_\+disass}}
+\index{as\+\_\+disass@{as\+\_\+disass}!sparc64-\/setx.\+c@{sparc64-\/setx.\+c}}
+\subsubsection[{\texorpdfstring{as\+\_\+disass(char $\ast$pref)}{as_disass(char *pref)}}]{\setlength{\rightskip}{0pt plus 5cm}void as\+\_\+disass (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{pref}
+\end{DoxyParamCaption}
+)}\hypertarget{sparc64-setx_8c_a3bb8037d8545b0cca559b32a6a2b4e50}{}\label{sparc64-setx_8c_a3bb8037d8545b0cca559b32a6a2b4e50}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{sparc64-setx_8c_a3bb8037d8545b0cca559b32a6a2b4e50_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{sparc64-\/setx.\+c@{sparc64-\/setx.\+c}!Delay\+\_\+\+Printf@{Delay\+\_\+\+Printf}}
+\index{Delay\+\_\+\+Printf@{Delay\+\_\+\+Printf}!sparc64-\/setx.\+c@{sparc64-\/setx.\+c}}
+\subsubsection[{\texorpdfstring{Delay\+\_\+\+Printf(char $\ast$op, char $\ast$operands,...)}{Delay_Printf(char *op, char *operands,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void Delay\+\_\+\+Printf (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{op, }
+\item[{char $\ast$}]{operands, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{sparc64-setx_8c_a7884ec03fffa38e282f499d97aac3ee2}{}\label{sparc64-setx_8c_a7884ec03fffa38e282f499d97aac3ee2}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{sparc64-setx_8c_a7884ec03fffa38e282f499d97aac3ee2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{sparc64-\/setx.\+c@{sparc64-\/setx.\+c}!main@{main}}
+\index{main@{main}!sparc64-\/setx.\+c@{sparc64-\/setx.\+c}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{sparc64-setx_8c_a0ddf1224851353fc92bfbff6f499fa97}{}\label{sparc64-setx_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{sparc64-setx_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{sparc64-\/setx.\+c@{sparc64-\/setx.\+c}!synthetize\+\_\+setx@{synthetize\+\_\+setx}}
+\index{synthetize\+\_\+setx@{synthetize\+\_\+setx}!sparc64-\/setx.\+c@{sparc64-\/setx.\+c}}
+\subsubsection[{\texorpdfstring{synthetize\+\_\+setx(long value, char $\ast$dstreg)}{synthetize_setx(long value, char *dstreg)}}]{\setlength{\rightskip}{0pt plus 5cm}void synthetize\+\_\+setx (
+\begin{DoxyParamCaption}
+\item[{long}]{value, }
+\item[{char $\ast$}]{dstreg}
+\end{DoxyParamCaption}
+)}\hypertarget{sparc64-setx_8c_a3398214a4ab7a354bb57e5e715c4ba12}{}\label{sparc64-setx_8c_a3398214a4ab7a354bb57e5e715c4ba12}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{sparc64-setx_8c_a3398214a4ab7a354bb57e5e715c4ba12_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{sparc64-setx_8c_a3398214a4ab7a354bb57e5e715c4ba12_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{sparc64-\/setx.\+c@{sparc64-\/setx.\+c}!f@{f}}
+\index{f@{f}!sparc64-\/setx.\+c@{sparc64-\/setx.\+c}}
+\subsubsection[{\texorpdfstring{f}{f}}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+LE$\ast$ f}\hypertarget{sparc64-setx_8c_a3efb0e1a16208deecbd84c15401f7cf8}{}\label{sparc64-setx_8c_a3efb0e1a16208deecbd84c15401f7cf8}

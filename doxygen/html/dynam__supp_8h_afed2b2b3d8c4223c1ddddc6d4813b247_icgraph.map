@@ -1,0 +1,12 @@
+<map id="Pl_Copy_Clause_To_Heap" name="Pl_Copy_Clause_To_Heap">
+<area shape="rect" id="node2" href="$assert__c_8c.html#a8515a7d3fed2843f6596cff3dcf0b19a" title="Pl_Clause_3" alt="" coords="452,5,548,32"/>
+<area shape="rect" id="node3" href="$assert__c_8c.html#af37b99f42612cf9fd1ad31623af56671" title="Clause_Alt" alt="" coords="262,31,349,57"/>
+<area shape="rect" id="node4" href="$assert__c_8c.html#a3bb1c6a0ff26397bf50be7d9c49d64a6" title="Pl_Retract_2" alt="" coords="451,93,549,120"/>
+<area shape="rect" id="node5" href="$assert__c_8c.html#a0cac80d0ad5b9e80b1cc0b5014541ed2" title="Retract_Alt" alt="" coords="261,132,349,159"/>
+<area shape="rect" id="node6" href="$bc__supp_8c.html#a77ff26a73bb5736aff1d2c5d97400be5" title="BC_Emulate_Clause" alt="" coords="233,183,377,209"/>
+<area shape="rect" id="node7" href="$bc__supp_8h.html#a8a045e53639fe083b9e018f119e754e4" title="Pl_BC_Emulate_Pred" alt="" coords="425,224,575,251"/>
+<area shape="rect" id="node9" href="$bc__supp_8c.html#af5eb08f345855ac14975d4366243dbc5" title="BC_Emulate_Pred_Alt" alt="" coords="628,167,781,193"/>
+<area shape="rect" id="node8" href="$bc__supp_8c.html#a972dcf547f043fb0988173c77a2f521f" title="Pl_BC_Call_Terminal\l_Pred_3" alt="" coords="631,218,778,259"/>
+<area shape="rect" id="node10" href="$bc__supp_8c.html#a3eaaadb92bd63dd9a3f63436a81a3dcc" title="Pl_BC_Emulate_Cont_0" alt="" coords="623,284,787,311"/>
+<area shape="rect" id="node11" href="$call__args__c_8c.html#af6fb473d73263063c7c2361e4c6a8981" title="Pl_Call_Closure" alt="" coords="647,335,763,361"/>
+</map>

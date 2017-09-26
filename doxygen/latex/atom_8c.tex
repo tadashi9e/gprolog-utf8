@@ -1,0 +1,430 @@
+\hypertarget{atom_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/atom.c File Reference}
+\label{atom_8c}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/atom.\+c@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/atom.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$locale.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}engine\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pl\+\_\+wchar.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}linedit.\+h\char`\"{}}\\*
+Include dependency graph for atom.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{atom_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{atom_8c_afe6db17cdcea39a6307a11e27a88910f}{A\+T\+O\+M\+\_\+\+F\+I\+LE}
+\item 
+\#define \hyperlink{atom_8c_af38ac217eccbe82610f9c7228f4a7bbf}{E\+R\+R\+\_\+\+A\+T\+O\+M\+\_\+\+N\+I\+L\+\_\+\+I\+N\+V\+A\+L\+ID}~\char`\"{}atom\+: invalid \hyperlink{atom_8h_a99bd6bddb65fc588b48e7f14486ff481}{A\+T\+O\+M\+\_\+\+N\+IL} (should be \%\hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d})\char`\"{}
+\item 
+\#define \hyperlink{atom_8c_ac7662e5ecd2be06adc5c98544088ade1}{E\+R\+R\+\_\+\+T\+A\+B\+L\+E\+\_\+\+F\+U\+L\+L\+\_\+\+E\+NV}~\char`\"{}Atom table full (max atom\+: \%\hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d}, environment variable used\+: \%s)\char`\"{}
+\item 
+\#define \hyperlink{atom_8c_a7e15abf143eb671b9843655882a672ce}{E\+R\+R\+\_\+\+T\+A\+B\+L\+E\+\_\+\+F\+U\+L\+L\+\_\+\+N\+O\+\_\+\+E\+NV}~\char`\"{}Atom table full (max atom\+: \%\hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d} -\/ fixed size)\char`\"{}
+\item 
+\#define \hyperlink{atom_8c_a2dcd2c5f2a275c7d4801731adc1664f5}{G\+E\+N\+\_\+\+S\+Y\+M\+\_\+\+C\+H\+A\+RS}~\char`\"{}0123456789\+A\+B\+C\+D\+E\+F\+G\+H\+I\+J\+K\+L\+M\+N\+O\+P\+Q\+R\+S\+T\+U\+V\+W\+X\+Y\+Zabcdefghijklmnopqrstuvwxyz\char`\"{}
+\item 
+\#define \hyperlink{atom_8c_a9f6d72b2791ebfe08b49d32b5033661d}{Gen\+\_\+\+Sym\+\_\+\+Rand}()~(gen\+\_\+sym\+\_\+rand\+\_\+next = gen\+\_\+sym\+\_\+rand\+\_\+next $\ast$ 1103515245 + 12345, (gen\+\_\+sym\+\_\+rand\+\_\+next / 65536 \% 32768))
+\item 
+\#define \hyperlink{atom_8c_ae39cbd43f3010716f3451c081fbd2e64}{T\+R\+Y\+\_\+\+M\+AX}~1		/$\ast$ 1 seems better than anything else on average ! $\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{atom_8c_abe628ad301508c0ed926cfb4bc791818}{Add\+\_\+\+Atom} (char $\ast$\hyperlink{test__oc__defs_8h_abc1e86d7c344fe34ff09e72d4595ab7e}{name}, int len, unsigned hash, \hyperlink{structAtomInf}{Atom\+Inf} $\ast$patom, \hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} allocate)
+\item 
+static \hyperlink{structAtomInf}{Atom\+Inf} $\ast$ \hyperlink{atom_8c_ad4222685eae3cdb0315df48a8a7e89fc}{Locate\+\_\+\+Atom} (char $\ast$\hyperlink{test__oc__defs_8h_abc1e86d7c344fe34ff09e72d4595ab7e}{name}, unsigned hash)
+\item 
+static unsigned \hyperlink{atom_8c_a9ed09c0173fe0a0e6d0f90ec363687fe}{Hash\+\_\+\+String} (char $\ast$str, int len)
+\item 
+static void \hyperlink{atom_8c_a37c733b7022eab8b9b95f0182591ee15}{Error\+\_\+\+Table\+\_\+\+Full} (void)
+\item 
+void \hyperlink{atom_8c_a8ed160600ffd92b54cd6e0f16201c04e}{Pl\+\_\+\+Init\+\_\+\+Atom} (void)
+\item 
+int \hyperlink{atom_8c_a76a3983dda97458000ed903b9bc94f6c}{Pl\+\_\+\+Create\+\_\+\+Allocate\+\_\+\+Atom} (char $\ast$\hyperlink{test__oc__defs_8h_abc1e86d7c344fe34ff09e72d4595ab7e}{name})
+\item 
+int \hyperlink{atom_8c_a068c993d95113a2ba7643918e68eedb3}{Pl\+\_\+\+Create\+\_\+\+Atom} (char $\ast$\hyperlink{test__oc__defs_8h_abc1e86d7c344fe34ff09e72d4595ab7e}{name})
+\item 
+\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{atom_8c_acea9a14d322bb13d34b728a804263b9d}{Pl\+\_\+\+Create\+\_\+\+Atom\+\_\+\+Tagged} (char $\ast$\hyperlink{test__oc__defs_8h_abc1e86d7c344fe34ff09e72d4595ab7e}{name})
+\item 
+int \hyperlink{atom_8c_a219d2c8a895fdc3aceee9cd609eb4ae3}{Pl\+\_\+\+Find\+\_\+\+Atom} (char $\ast$\hyperlink{test__oc__defs_8h_abc1e86d7c344fe34ff09e72d4595ab7e}{name})
+\item 
+int \hyperlink{atom_8c_aa3ca6203017a3debae6d043cc6cc888f}{Pl\+\_\+\+Gen\+\_\+\+New\+\_\+\+Atom} (char $\ast$prefix)
+\item 
+int \hyperlink{atom_8c_ab96ce4ee871c8158bfab7a7335e1f6d2}{Pl\+\_\+\+Find\+\_\+\+Next\+\_\+\+Atom} (int last\+\_\+atom)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{atom_8c_a4802afb16e942e1f29def852456f2a40}{pl\+\_\+char\+\_\+type} \mbox{[}256\mbox{]}
+\item 
+char \hyperlink{atom_8c_a42654449bae2c0e29ffb0c8b723aa4b1}{pl\+\_\+escape\+\_\+symbol} \mbox{[}$\,$\mbox{]} = \char`\"{}abfnrtv\char`\"{}
+\item 
+char \hyperlink{atom_8c_a074d3a080ca74d8670f0f808738e6e60}{pl\+\_\+escape\+\_\+char} \mbox{[}$\,$\mbox{]} = \char`\"{}\textbackslash{}a\textbackslash{}b\textbackslash{}f\textbackslash{}n\textbackslash{}r\textbackslash{}t\textbackslash{}v\char`\"{}
+\item 
+static char \hyperlink{atom_8c_aa35bc0ad5bf385668fefed2c8a8cd4f9}{str\+\_\+char} \mbox{[}256\mbox{]}\mbox{[}2\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{atom.\+c@{atom.\+c}!A\+T\+O\+M\+\_\+\+F\+I\+LE@{A\+T\+O\+M\+\_\+\+F\+I\+LE}}
+\index{A\+T\+O\+M\+\_\+\+F\+I\+LE@{A\+T\+O\+M\+\_\+\+F\+I\+LE}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{A\+T\+O\+M\+\_\+\+F\+I\+LE}{ATOM_FILE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+T\+O\+M\+\_\+\+F\+I\+LE}\hypertarget{atom_8c_afe6db17cdcea39a6307a11e27a88910f}{}\label{atom_8c_afe6db17cdcea39a6307a11e27a88910f}
+\index{atom.\+c@{atom.\+c}!E\+R\+R\+\_\+\+A\+T\+O\+M\+\_\+\+N\+I\+L\+\_\+\+I\+N\+V\+A\+L\+ID@{E\+R\+R\+\_\+\+A\+T\+O\+M\+\_\+\+N\+I\+L\+\_\+\+I\+N\+V\+A\+L\+ID}}
+\index{E\+R\+R\+\_\+\+A\+T\+O\+M\+\_\+\+N\+I\+L\+\_\+\+I\+N\+V\+A\+L\+ID@{E\+R\+R\+\_\+\+A\+T\+O\+M\+\_\+\+N\+I\+L\+\_\+\+I\+N\+V\+A\+L\+ID}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+\+A\+T\+O\+M\+\_\+\+N\+I\+L\+\_\+\+I\+N\+V\+A\+L\+ID}{ERR_ATOM_NIL_INVALID}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+\_\+\+A\+T\+O\+M\+\_\+\+N\+I\+L\+\_\+\+I\+N\+V\+A\+L\+ID~\char`\"{}atom\+: invalid {\bf A\+T\+O\+M\+\_\+\+N\+IL} (should be \%{\bf d})\char`\"{}}\hypertarget{atom_8c_af38ac217eccbe82610f9c7228f4a7bbf}{}\label{atom_8c_af38ac217eccbe82610f9c7228f4a7bbf}
+\index{atom.\+c@{atom.\+c}!E\+R\+R\+\_\+\+T\+A\+B\+L\+E\+\_\+\+F\+U\+L\+L\+\_\+\+E\+NV@{E\+R\+R\+\_\+\+T\+A\+B\+L\+E\+\_\+\+F\+U\+L\+L\+\_\+\+E\+NV}}
+\index{E\+R\+R\+\_\+\+T\+A\+B\+L\+E\+\_\+\+F\+U\+L\+L\+\_\+\+E\+NV@{E\+R\+R\+\_\+\+T\+A\+B\+L\+E\+\_\+\+F\+U\+L\+L\+\_\+\+E\+NV}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+\+T\+A\+B\+L\+E\+\_\+\+F\+U\+L\+L\+\_\+\+E\+NV}{ERR_TABLE_FULL_ENV}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+\_\+\+T\+A\+B\+L\+E\+\_\+\+F\+U\+L\+L\+\_\+\+E\+NV~\char`\"{}Atom table full (max atom\+: \%{\bf d}, environment variable used\+: \%s)\char`\"{}}\hypertarget{atom_8c_ac7662e5ecd2be06adc5c98544088ade1}{}\label{atom_8c_ac7662e5ecd2be06adc5c98544088ade1}
+\index{atom.\+c@{atom.\+c}!E\+R\+R\+\_\+\+T\+A\+B\+L\+E\+\_\+\+F\+U\+L\+L\+\_\+\+N\+O\+\_\+\+E\+NV@{E\+R\+R\+\_\+\+T\+A\+B\+L\+E\+\_\+\+F\+U\+L\+L\+\_\+\+N\+O\+\_\+\+E\+NV}}
+\index{E\+R\+R\+\_\+\+T\+A\+B\+L\+E\+\_\+\+F\+U\+L\+L\+\_\+\+N\+O\+\_\+\+E\+NV@{E\+R\+R\+\_\+\+T\+A\+B\+L\+E\+\_\+\+F\+U\+L\+L\+\_\+\+N\+O\+\_\+\+E\+NV}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+\+T\+A\+B\+L\+E\+\_\+\+F\+U\+L\+L\+\_\+\+N\+O\+\_\+\+E\+NV}{ERR_TABLE_FULL_NO_ENV}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+\_\+\+T\+A\+B\+L\+E\+\_\+\+F\+U\+L\+L\+\_\+\+N\+O\+\_\+\+E\+NV~\char`\"{}Atom table full (max atom\+: \%{\bf d} -\/ fixed size)\char`\"{}}\hypertarget{atom_8c_a7e15abf143eb671b9843655882a672ce}{}\label{atom_8c_a7e15abf143eb671b9843655882a672ce}
+\index{atom.\+c@{atom.\+c}!G\+E\+N\+\_\+\+S\+Y\+M\+\_\+\+C\+H\+A\+RS@{G\+E\+N\+\_\+\+S\+Y\+M\+\_\+\+C\+H\+A\+RS}}
+\index{G\+E\+N\+\_\+\+S\+Y\+M\+\_\+\+C\+H\+A\+RS@{G\+E\+N\+\_\+\+S\+Y\+M\+\_\+\+C\+H\+A\+RS}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{G\+E\+N\+\_\+\+S\+Y\+M\+\_\+\+C\+H\+A\+RS}{GEN_SYM_CHARS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+N\+\_\+\+S\+Y\+M\+\_\+\+C\+H\+A\+RS~\char`\"{}0123456789\+A\+B\+C\+D\+E\+F\+G\+H\+I\+J\+K\+L\+M\+N\+O\+P\+Q\+R\+S\+T\+U\+V\+W\+X\+Y\+Zabcdefghijklmnopqrstuvwxyz\char`\"{}}\hypertarget{atom_8c_a2dcd2c5f2a275c7d4801731adc1664f5}{}\label{atom_8c_a2dcd2c5f2a275c7d4801731adc1664f5}
+\index{atom.\+c@{atom.\+c}!Gen\+\_\+\+Sym\+\_\+\+Rand@{Gen\+\_\+\+Sym\+\_\+\+Rand}}
+\index{Gen\+\_\+\+Sym\+\_\+\+Rand@{Gen\+\_\+\+Sym\+\_\+\+Rand}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{Gen\+\_\+\+Sym\+\_\+\+Rand}{Gen_Sym_Rand}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Gen\+\_\+\+Sym\+\_\+\+Rand(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(gen\+\_\+sym\+\_\+rand\+\_\+next = gen\+\_\+sym\+\_\+rand\+\_\+next $\ast$ 1103515245 + 12345, (gen\+\_\+sym\+\_\+rand\+\_\+next / 65536 \% 32768))}\hypertarget{atom_8c_a9f6d72b2791ebfe08b49d32b5033661d}{}\label{atom_8c_a9f6d72b2791ebfe08b49d32b5033661d}
+\index{atom.\+c@{atom.\+c}!T\+R\+Y\+\_\+\+M\+AX@{T\+R\+Y\+\_\+\+M\+AX}}
+\index{T\+R\+Y\+\_\+\+M\+AX@{T\+R\+Y\+\_\+\+M\+AX}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{T\+R\+Y\+\_\+\+M\+AX}{TRY_MAX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+R\+Y\+\_\+\+M\+AX~1		/$\ast$ 1 seems better than anything else on average ! $\ast$/}\hypertarget{atom_8c_ae39cbd43f3010716f3451c081fbd2e64}{}\label{atom_8c_ae39cbd43f3010716f3451c081fbd2e64}
+
+
+\subsection{Function Documentation}
+\index{atom.\+c@{atom.\+c}!Add\+\_\+\+Atom@{Add\+\_\+\+Atom}}
+\index{Add\+\_\+\+Atom@{Add\+\_\+\+Atom}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{Add\+\_\+\+Atom(char $\ast$name, int len, unsigned hash, Atom\+Inf $\ast$patom, Bool allocate)}{Add_Atom(char *name, int len, unsigned hash, AtomInf *patom, Bool allocate)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Add\+\_\+\+Atom (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{int}]{len, }
+\item[{unsigned}]{hash, }
+\item[{{\bf Atom\+Inf} $\ast$}]{patom, }
+\item[{{\bf Bool}}]{allocate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{atom_8c_abe628ad301508c0ed926cfb4bc791818}{}\label{atom_8c_abe628ad301508c0ed926cfb4bc791818}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{atom_8c_abe628ad301508c0ed926cfb4bc791818_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{atom_8c_abe628ad301508c0ed926cfb4bc791818_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{atom.\+c@{atom.\+c}!Error\+\_\+\+Table\+\_\+\+Full@{Error\+\_\+\+Table\+\_\+\+Full}}
+\index{Error\+\_\+\+Table\+\_\+\+Full@{Error\+\_\+\+Table\+\_\+\+Full}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{Error\+\_\+\+Table\+\_\+\+Full(void)}{Error_Table_Full(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Error\+\_\+\+Table\+\_\+\+Full (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{atom_8c_a37c733b7022eab8b9b95f0182591ee15}{}\label{atom_8c_a37c733b7022eab8b9b95f0182591ee15}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{atom_8c_a37c733b7022eab8b9b95f0182591ee15_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{atom_8c_a37c733b7022eab8b9b95f0182591ee15_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{atom.\+c@{atom.\+c}!Hash\+\_\+\+String@{Hash\+\_\+\+String}}
+\index{Hash\+\_\+\+String@{Hash\+\_\+\+String}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{Hash\+\_\+\+String(char $\ast$str, int len)}{Hash_String(char *str, int len)}}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned Hash\+\_\+\+String (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{atom_8c_a9ed09c0173fe0a0e6d0f90ec363687fe}{}\label{atom_8c_a9ed09c0173fe0a0e6d0f90ec363687fe}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{atom_8c_a9ed09c0173fe0a0e6d0f90ec363687fe_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{atom_8c_a9ed09c0173fe0a0e6d0f90ec363687fe_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{atom.\+c@{atom.\+c}!Locate\+\_\+\+Atom@{Locate\+\_\+\+Atom}}
+\index{Locate\+\_\+\+Atom@{Locate\+\_\+\+Atom}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{Locate\+\_\+\+Atom(char $\ast$name, unsigned hash)}{Locate_Atom(char *name, unsigned hash)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Atom\+Inf} $\ast$ Locate\+\_\+\+Atom (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{unsigned}]{hash}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{atom_8c_ad4222685eae3cdb0315df48a8a7e89fc}{}\label{atom_8c_ad4222685eae3cdb0315df48a8a7e89fc}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{atom_8c_ad4222685eae3cdb0315df48a8a7e89fc_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{atom.\+c@{atom.\+c}!Pl\+\_\+\+Create\+\_\+\+Allocate\+\_\+\+Atom@{Pl\+\_\+\+Create\+\_\+\+Allocate\+\_\+\+Atom}}
+\index{Pl\+\_\+\+Create\+\_\+\+Allocate\+\_\+\+Atom@{Pl\+\_\+\+Create\+\_\+\+Allocate\+\_\+\+Atom}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Create\+\_\+\+Allocate\+\_\+\+Atom(char $\ast$name)}{Pl_Create_Allocate_Atom(char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Create\+\_\+\+Allocate\+\_\+\+Atom (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{atom_8c_a76a3983dda97458000ed903b9bc94f6c}{}\label{atom_8c_a76a3983dda97458000ed903b9bc94f6c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{atom_8c_a76a3983dda97458000ed903b9bc94f6c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{atom_8c_a76a3983dda97458000ed903b9bc94f6c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{atom.\+c@{atom.\+c}!Pl\+\_\+\+Create\+\_\+\+Atom@{Pl\+\_\+\+Create\+\_\+\+Atom}}
+\index{Pl\+\_\+\+Create\+\_\+\+Atom@{Pl\+\_\+\+Create\+\_\+\+Atom}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Create\+\_\+\+Atom(char $\ast$name)}{Pl_Create_Atom(char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Create\+\_\+\+Atom (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{atom_8c_a068c993d95113a2ba7643918e68eedb3}{}\label{atom_8c_a068c993d95113a2ba7643918e68eedb3}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{atom_8c_a068c993d95113a2ba7643918e68eedb3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{atom.\+c@{atom.\+c}!Pl\+\_\+\+Create\+\_\+\+Atom\+\_\+\+Tagged@{Pl\+\_\+\+Create\+\_\+\+Atom\+\_\+\+Tagged}}
+\index{Pl\+\_\+\+Create\+\_\+\+Atom\+\_\+\+Tagged@{Pl\+\_\+\+Create\+\_\+\+Atom\+\_\+\+Tagged}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Create\+\_\+\+Atom\+\_\+\+Tagged(char $\ast$name)}{Pl_Create_Atom_Tagged(char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Wam\+Word} {\bf FC} Pl\+\_\+\+Create\+\_\+\+Atom\+\_\+\+Tagged (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{atom_8c_acea9a14d322bb13d34b728a804263b9d}{}\label{atom_8c_acea9a14d322bb13d34b728a804263b9d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{atom_8c_acea9a14d322bb13d34b728a804263b9d_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{atom.\+c@{atom.\+c}!Pl\+\_\+\+Find\+\_\+\+Atom@{Pl\+\_\+\+Find\+\_\+\+Atom}}
+\index{Pl\+\_\+\+Find\+\_\+\+Atom@{Pl\+\_\+\+Find\+\_\+\+Atom}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Find\+\_\+\+Atom(char $\ast$name)}{Pl_Find_Atom(char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Find\+\_\+\+Atom (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{atom_8c_a219d2c8a895fdc3aceee9cd609eb4ae3}{}\label{atom_8c_a219d2c8a895fdc3aceee9cd609eb4ae3}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{atom_8c_a219d2c8a895fdc3aceee9cd609eb4ae3_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{atom.\+c@{atom.\+c}!Pl\+\_\+\+Find\+\_\+\+Next\+\_\+\+Atom@{Pl\+\_\+\+Find\+\_\+\+Next\+\_\+\+Atom}}
+\index{Pl\+\_\+\+Find\+\_\+\+Next\+\_\+\+Atom@{Pl\+\_\+\+Find\+\_\+\+Next\+\_\+\+Atom}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Find\+\_\+\+Next\+\_\+\+Atom(int last\+\_\+atom)}{Pl_Find_Next_Atom(int last_atom)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Find\+\_\+\+Next\+\_\+\+Atom (
+\begin{DoxyParamCaption}
+\item[{int}]{last\+\_\+atom}
+\end{DoxyParamCaption}
+)}\hypertarget{atom_8c_ab96ce4ee871c8158bfab7a7335e1f6d2}{}\label{atom_8c_ab96ce4ee871c8158bfab7a7335e1f6d2}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{atom_8c_ab96ce4ee871c8158bfab7a7335e1f6d2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{atom.\+c@{atom.\+c}!Pl\+\_\+\+Gen\+\_\+\+New\+\_\+\+Atom@{Pl\+\_\+\+Gen\+\_\+\+New\+\_\+\+Atom}}
+\index{Pl\+\_\+\+Gen\+\_\+\+New\+\_\+\+Atom@{Pl\+\_\+\+Gen\+\_\+\+New\+\_\+\+Atom}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Gen\+\_\+\+New\+\_\+\+Atom(char $\ast$prefix)}{Pl_Gen_New_Atom(char *prefix)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Gen\+\_\+\+New\+\_\+\+Atom (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{prefix}
+\end{DoxyParamCaption}
+)}\hypertarget{atom_8c_aa3ca6203017a3debae6d043cc6cc888f}{}\label{atom_8c_aa3ca6203017a3debae6d043cc6cc888f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{atom_8c_aa3ca6203017a3debae6d043cc6cc888f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{atom_8c_aa3ca6203017a3debae6d043cc6cc888f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{atom.\+c@{atom.\+c}!Pl\+\_\+\+Init\+\_\+\+Atom@{Pl\+\_\+\+Init\+\_\+\+Atom}}
+\index{Pl\+\_\+\+Init\+\_\+\+Atom@{Pl\+\_\+\+Init\+\_\+\+Atom}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Init\+\_\+\+Atom(void)}{Pl_Init_Atom(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Init\+\_\+\+Atom (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{atom_8c_a8ed160600ffd92b54cd6e0f16201c04e}{}\label{atom_8c_a8ed160600ffd92b54cd6e0f16201c04e}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{atom_8c_a8ed160600ffd92b54cd6e0f16201c04e_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{atom.\+c@{atom.\+c}!pl\+\_\+char\+\_\+type@{pl\+\_\+char\+\_\+type}}
+\index{pl\+\_\+char\+\_\+type@{pl\+\_\+char\+\_\+type}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{pl\+\_\+char\+\_\+type}{pl_char_type}}]{\setlength{\rightskip}{0pt plus 5cm}int pl\+\_\+char\+\_\+type\mbox{[}256\mbox{]}}\hypertarget{atom_8c_a4802afb16e942e1f29def852456f2a40}{}\label{atom_8c_a4802afb16e942e1f29def852456f2a40}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+
+
+   \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, 
+      \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA},
+
+
+   \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, 
+      \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA},
+
+
+   \hyperlink{atom_8h_a06795d9b5958e6b92340ad82ee5e3f2f}{LA}, \hyperlink{atom_8h_a6bb7a09d1931dfbdd6d373cfe6e23357}{SC}, \hyperlink{atom_8h_a8c6d20fa75890dde1095dee1df08dc18}{DQ}, \hyperlink{atom_8h_a656da95f9680f14093be09a52ab6752f}{GR}, \hyperlink{atom_8h_a656da95f9680f14093be09a52ab6752f}{GR}, \hyperlink{atom_8h_a86496c19c29b6c83337b300bfeef9c95}{CM}, \hyperlink{atom_8h_a656da95f9680f14093be09a52ab6752f}{GR}, \hyperlink{atom_8h_a0f2ced1a0e36c519b2cb734e4fe49dd2}{QT}, \hyperlink{atom_8h_a600721f0222b857dc8a3ae59e5077347}{PC}, \hyperlink{atom_8h_a600721f0222b857dc8a3ae59e5077347}{PC}, \hyperlink{atom_8h_a656da95f9680f14093be09a52ab6752f}{GR}, \hyperlink{atom_8h_a656da95f9680f14093be09a52ab6752f}{GR}, \hyperlink{atom_8h_a6bb7a09d1931dfbdd6d373cfe6e23357}{SC}, 
+      \hyperlink{atom_8h_a656da95f9680f14093be09a52ab6752f}{GR}, \hyperlink{atom_8h_a656da95f9680f14093be09a52ab6752f}{GR}, \hyperlink{atom_8h_a656da95f9680f14093be09a52ab6752f}{GR},
+
+
+   \hyperlink{atom_8h_acabe1ee3d11be6214c678bf4dabda3c9}{DI}, \hyperlink{atom_8h_acabe1ee3d11be6214c678bf4dabda3c9}{DI}, \hyperlink{atom_8h_acabe1ee3d11be6214c678bf4dabda3c9}{DI}, \hyperlink{atom_8h_acabe1ee3d11be6214c678bf4dabda3c9}{DI}, \hyperlink{atom_8h_acabe1ee3d11be6214c678bf4dabda3c9}{DI}, \hyperlink{atom_8h_acabe1ee3d11be6214c678bf4dabda3c9}{DI}, \hyperlink{atom_8h_acabe1ee3d11be6214c678bf4dabda3c9}{DI}, \hyperlink{atom_8h_acabe1ee3d11be6214c678bf4dabda3c9}{DI}, \hyperlink{atom_8h_acabe1ee3d11be6214c678bf4dabda3c9}{DI}, \hyperlink{atom_8h_acabe1ee3d11be6214c678bf4dabda3c9}{DI}, \hyperlink{atom_8h_a656da95f9680f14093be09a52ab6752f}{GR}, \hyperlink{atom_8h_a6bb7a09d1931dfbdd6d373cfe6e23357}{SC}, \hyperlink{atom_8h_a656da95f9680f14093be09a52ab6752f}{GR}, 
+      \hyperlink{atom_8h_a656da95f9680f14093be09a52ab6752f}{GR}, \hyperlink{atom_8h_a656da95f9680f14093be09a52ab6752f}{GR}, \hyperlink{atom_8h_a656da95f9680f14093be09a52ab6752f}{GR},
+
+
+   \hyperlink{atom_8h_a656da95f9680f14093be09a52ab6752f}{GR}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, 
+      \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL},
+
+
+   \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a8f4ea5fa21d42f950b5f95a91e9ff227}{CL}, \hyperlink{atom_8h_a600721f0222b857dc8a3ae59e5077347}{PC}, \hyperlink{atom_8h_a656da95f9680f14093be09a52ab6752f}{GR}, 
+      \hyperlink{atom_8h_a600721f0222b857dc8a3ae59e5077347}{PC}, \hyperlink{atom_8h_a656da95f9680f14093be09a52ab6752f}{GR}, \hyperlink{atom_8h_a77401f6b813b95031813338afa9221e3}{UL},
+
+
+   \hyperlink{atom_8h_ac2f9ea66d2896b47c4621d8d7f6a04d2}{BQ}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, 
+      \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL},
+
+
+   \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_ad71aeb03d03709c5072b99cb68c21992}{SL}, \hyperlink{atom_8h_a600721f0222b857dc8a3ae59e5077347}{PC}, \hyperlink{atom_8h_a600721f0222b857dc8a3ae59e5077347}{PC}, 
+      \hyperlink{atom_8h_a600721f0222b857dc8a3ae59e5077347}{PC}, \hyperlink{atom_8h_a656da95f9680f14093be09a52ab6752f}{GR}, LA
+
+\}
+\end{DoxyCode}
+\index{atom.\+c@{atom.\+c}!pl\+\_\+escape\+\_\+char@{pl\+\_\+escape\+\_\+char}}
+\index{pl\+\_\+escape\+\_\+char@{pl\+\_\+escape\+\_\+char}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{pl\+\_\+escape\+\_\+char}{pl_escape_char}}]{\setlength{\rightskip}{0pt plus 5cm}char pl\+\_\+escape\+\_\+char\mbox{[}$\,$\mbox{]} = \char`\"{}\textbackslash{}a\textbackslash{}b\textbackslash{}f\textbackslash{}n\textbackslash{}r\textbackslash{}t\textbackslash{}v\char`\"{}}\hypertarget{atom_8c_a074d3a080ca74d8670f0f808738e6e60}{}\label{atom_8c_a074d3a080ca74d8670f0f808738e6e60}
+\index{atom.\+c@{atom.\+c}!pl\+\_\+escape\+\_\+symbol@{pl\+\_\+escape\+\_\+symbol}}
+\index{pl\+\_\+escape\+\_\+symbol@{pl\+\_\+escape\+\_\+symbol}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{pl\+\_\+escape\+\_\+symbol}{pl_escape_symbol}}]{\setlength{\rightskip}{0pt plus 5cm}char pl\+\_\+escape\+\_\+symbol\mbox{[}$\,$\mbox{]} = \char`\"{}abfnrtv\char`\"{}}\hypertarget{atom_8c_a42654449bae2c0e29ffb0c8b723aa4b1}{}\label{atom_8c_a42654449bae2c0e29ffb0c8b723aa4b1}
+\index{atom.\+c@{atom.\+c}!str\+\_\+char@{str\+\_\+char}}
+\index{str\+\_\+char@{str\+\_\+char}!atom.\+c@{atom.\+c}}
+\subsubsection[{\texorpdfstring{str\+\_\+char}{str_char}}]{\setlength{\rightskip}{0pt plus 5cm}char str\+\_\+char\mbox{[}256\mbox{]}\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{atom_8c_aa35bc0ad5bf385668fefed2c8a8cd4f9}{}\label{atom_8c_aa35bc0ad5bf385668fefed2c8a8cd4f9}

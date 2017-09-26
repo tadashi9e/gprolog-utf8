@@ -1,0 +1,10 @@
+<map id="Debug_Initializer" name="Debug_Initializer">
+<area shape="rect" id="node2" href="$obj__chain_8c.html#a3b1f427fcf16e89ad83deb20cce086ec" title="Pl_New_Object" alt="" coords="195,35,308,61"/>
+<area shape="rect" id="node3" href="$debugger__c_8c.html#aa11d0ba3f5a83f5931cab90db271e8d1" title="My_System_Directives" alt="" coords="172,85,331,112"/>
+<area shape="rect" id="node4" href="$engine_8c.html#a837196745e0fb6af03ee5e5d062e1087" title="Pl_Call_Prolog" alt="" coords="396,56,504,83"/>
+<area shape="rect" id="node9" href="$engine_8c.html#afa48ed8c70e0b16a66b4f2d318de8cc0" title="Pl_Set_Heap_Actual\l_Start" alt="" coords="379,107,521,149"/>
+<area shape="rect" id="node5" href="$engine_8c.html#accfe7947a971f240bf7b8b2bedc59e29" title="Call_Prolog_Fail" alt="" coords="584,5,701,32"/>
+<area shape="rect" id="node6" href="$engine_8c.html#ae7d5f8d0ac490ede3fcb48af7cceec55" title="Call_Prolog_Success" alt="" coords="569,56,716,83"/>
+<area shape="rect" id="node7" href="$engine_8c.html#a5f34f0c2b928a4bfe7057ced6cd446c8" title="Call_Next" alt="" coords="603,107,683,133"/>
+<area shape="rect" id="node8" href="$engine_8c.html#a598600283dd767c2b3d11e798384023c" title="Pl_Call_Compiled" alt="" coords="764,107,891,133"/>
+</map>

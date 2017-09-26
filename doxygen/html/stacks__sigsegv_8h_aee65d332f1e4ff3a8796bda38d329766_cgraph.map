@@ -1,0 +1,16 @@
+<map id="Pl_Allocate_Stacks" name="Pl_Allocate_Stacks">
+<area shape="rect" id="node2" href="$WIN32__SIGSEGV_8c.html#a638757347bd9bf886b3d442b98033cf1" title="getpagesize" alt="" coords="235,5,327,32"/>
+<area shape="rect" id="node3" href="$stacks__sigsegv_8c.html#a122e90b05aa0d3b58bf7bd7b0d147be1" title="Virtual_Mem_Alloc" alt="" coords="215,56,346,83"/>
+<area shape="rect" id="node4" href="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907" title="Pl_Fatal_Error" alt="" coords="883,208,988,235"/>
+<area shape="rect" id="node6" href="$stacks__sigsegv_8c.html#ae160b208bf67b869ccfcbbd2a154ef98" title="Virtual_Mem_Protect" alt="" coords="209,107,353,133"/>
+<area shape="rect" id="node7" href="$stacks__sigsegv_8c.html#a80590c360772a0ae63e625478e2bffcf" title="Install_SIGSEGV_Handler" alt="" coords="193,259,369,285"/>
+<area shape="rect" id="node8" href="$stacks__sigsegv_8c.html#a1bb0e5039c09c36774850e4cbdab8c8b" title="SIGSEGV_Handler" alt="" coords="441,208,575,235"/>
+<area shape="rect" id="node10" href="$stacks__sigsegv_8c.html#a025866a50618e66535d50d040a135332" title="Handle_Bad_Address" alt="" coords="665,259,813,285"/>
+<area shape="rect" id="node11" href="$stacks__sigsegv_8c.html#ab5ca8f915e148142d8a80723e05fad13" title="Pl_Push_SIGSEGV_Handler" alt="" coords="644,335,835,361"/>
+<area shape="rect" id="node12" href="$stacks__sigsegv_8c.html#ae439f72edeb7fedd270526dd2519a49f" title="Default_SIGSEGV_Handler" alt="" coords="189,461,372,488"/>
+<area shape="rect" id="node5" href="$machine_8c.html#a9774325ac269ffeece1e5f266a410f2b" title="Pl_M_Sys_Err_String" alt="" coords="435,56,581,83"/>
+<area shape="rect" id="node9" href="$stacks__sigsegv_8c.html#af3b6f4399924cfa2493fd581e588b4cf" title="Win32_Exception_Handler" alt="" coords="420,259,596,285"/>
+<area shape="rect" id="node13" href="$machine_8h.html#ae46b772453ee2fb2129534e131ab4e52" title="M_Check_Magic_Words" alt="" coords="425,461,591,488"/>
+<area shape="rect" id="node14" href="$stacks__sigsegv_8c.html#ad36ecfecd8b3a57e1a2629b3f8281342" title="Stack_Overflow_Err_Msg" alt="" coords="423,512,593,539"/>
+<area shape="rect" id="node15" href="$misc_8c.html#a8099040b9286fee033483072ff631476" title="Pl_Exit_With_Value" alt="" coords="439,563,577,589"/>
+</map>

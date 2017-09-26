@@ -1,0 +1,5 @@
+<map id="Call_C_Invoke" name="Call_C_Invoke">
+<area shape="rect" id="node2" href="$sparc64__any_8c.html#a7884ec03fffa38e282f499d97aac3ee2" title="Delay_Printf" alt="" coords="161,5,256,32"/>
+<area shape="rect" id="node4" href="$sparc64__any_8c.html#af1a4fc459f26b9d58dafcea4773ef9b1" title="Delay_Flush" alt="" coords="161,56,256,83"/>
+<area shape="rect" id="node3" href="$ma2asm_8c.html#a9608e324baa0506520d6ae9b95ae89ab" title="Inst_Out" alt="" coords="304,31,376,57"/>
+</map>

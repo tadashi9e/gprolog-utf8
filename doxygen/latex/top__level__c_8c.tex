@@ -1,0 +1,127 @@
+\hypertarget{top__level__c_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/top\+\_\+level\+\_\+c.c File Reference}
+\label{top__level__c_8c}\index{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/top\+\_\+level\+\_\+c.\+c@{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/top\+\_\+level\+\_\+c.\+c}}
+{\ttfamily \#include \char`\"{}gp\+\_\+config.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ctrl\+\_\+c.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}engine\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bips\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+Include dependency graph for top\+\_\+level\+\_\+c.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{top__level__c_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{top__level__c_8c_a8a3cd9d418046e7e3083281750721237}{E\+R\+R\+\_\+\+D\+E\+B\+U\+G\+G\+E\+R\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND}~\char`\"{}top\+\_\+level\+\_\+c\+: debug/trace not \hyperlink{extract__asm_8c_a328b3610b457f28d7ecdd5e836183b71}{found}\char`\"{}
+\item 
+\#define \hyperlink{top__level__c_8c_a5376571bbf4cdc9782683635f366f89a}{A\+B\+O\+RT}~X0\+\_\+abort
+\item 
+\#define \hyperlink{top__level__c_8c_abe022c8f09db1f0680a92293523f25dd}{B\+R\+E\+AK}~X0\+\_\+break
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{top__level__c_8c_aad82a5e50963963239f470ec8bf01215}{Prolog\+\_\+\+Prototype} (\hyperlink{dl__malloc_8c_a5376571bbf4cdc9782683635f366f89a}{A\+B\+O\+RT}, 0)
+\item 
+\hyperlink{top__level__c_8c_aa29fdc15d2b0596d088c8bc67292b00d}{Prolog\+\_\+\+Prototype} (\hyperlink{top__level__c_8c_abe022c8f09db1f0680a92293523f25dd}{B\+R\+E\+AK}, 0)
+\item 
+static \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{top__level__c_8c_ac5412344b34dcaf81d8e802130005f66}{Ctrl\+\_\+\+C\+\_\+\+Manager} (int \hyperlink{ctrl__c_8c_a88814075287adeb95d9533103e79bd8e}{from\+\_\+callback})
+\item 
+void \hyperlink{top__level__c_8c_a3483f2f20c8122c68fedd8249b0ad767}{Pl\+\_\+\+Set\+\_\+\+Ctrl\+\_\+\+C\+\_\+\+Handler\+\_\+0} (void)
+\item 
+void \hyperlink{top__level__c_8c_a486487278c09388cc4d036a677204c75}{Pl\+\_\+\+Save\+\_\+\+Regs\+\_\+\+For\+\_\+\+Signal} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{top\+\_\+level\+\_\+c.\+c@{top\+\_\+level\+\_\+c.\+c}!A\+B\+O\+RT@{A\+B\+O\+RT}}
+\index{A\+B\+O\+RT@{A\+B\+O\+RT}!top\+\_\+level\+\_\+c.\+c@{top\+\_\+level\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{A\+B\+O\+RT}{ABORT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+B\+O\+RT~X0\+\_\+abort}\hypertarget{top__level__c_8c_a5376571bbf4cdc9782683635f366f89a}{}\label{top__level__c_8c_a5376571bbf4cdc9782683635f366f89a}
+\index{top\+\_\+level\+\_\+c.\+c@{top\+\_\+level\+\_\+c.\+c}!B\+R\+E\+AK@{B\+R\+E\+AK}}
+\index{B\+R\+E\+AK@{B\+R\+E\+AK}!top\+\_\+level\+\_\+c.\+c@{top\+\_\+level\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{B\+R\+E\+AK}{BREAK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+R\+E\+AK~X0\+\_\+break}\hypertarget{top__level__c_8c_abe022c8f09db1f0680a92293523f25dd}{}\label{top__level__c_8c_abe022c8f09db1f0680a92293523f25dd}
+\index{top\+\_\+level\+\_\+c.\+c@{top\+\_\+level\+\_\+c.\+c}!E\+R\+R\+\_\+\+D\+E\+B\+U\+G\+G\+E\+R\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND@{E\+R\+R\+\_\+\+D\+E\+B\+U\+G\+G\+E\+R\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND}}
+\index{E\+R\+R\+\_\+\+D\+E\+B\+U\+G\+G\+E\+R\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND@{E\+R\+R\+\_\+\+D\+E\+B\+U\+G\+G\+E\+R\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND}!top\+\_\+level\+\_\+c.\+c@{top\+\_\+level\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+\+D\+E\+B\+U\+G\+G\+E\+R\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND}{ERR_DEBUGGER_NOT_FOUND}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+\_\+\+D\+E\+B\+U\+G\+G\+E\+R\+\_\+\+N\+O\+T\+\_\+\+F\+O\+U\+ND~\char`\"{}top\+\_\+level\+\_\+c\+: debug/trace not {\bf found}\char`\"{}}\hypertarget{top__level__c_8c_a8a3cd9d418046e7e3083281750721237}{}\label{top__level__c_8c_a8a3cd9d418046e7e3083281750721237}
+
+
+\subsection{Function Documentation}
+\index{top\+\_\+level\+\_\+c.\+c@{top\+\_\+level\+\_\+c.\+c}!Ctrl\+\_\+\+C\+\_\+\+Manager@{Ctrl\+\_\+\+C\+\_\+\+Manager}}
+\index{Ctrl\+\_\+\+C\+\_\+\+Manager@{Ctrl\+\_\+\+C\+\_\+\+Manager}!top\+\_\+level\+\_\+c.\+c@{top\+\_\+level\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Ctrl\+\_\+\+C\+\_\+\+Manager(int from\+\_\+callback)}{Ctrl_C_Manager(int from_callback)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Pl\+Long} Ctrl\+\_\+\+C\+\_\+\+Manager (
+\begin{DoxyParamCaption}
+\item[{int}]{from\+\_\+callback}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{top__level__c_8c_ac5412344b34dcaf81d8e802130005f66}{}\label{top__level__c_8c_ac5412344b34dcaf81d8e802130005f66}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{top__level__c_8c_ac5412344b34dcaf81d8e802130005f66_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{top__level__c_8c_ac5412344b34dcaf81d8e802130005f66_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{top\+\_\+level\+\_\+c.\+c@{top\+\_\+level\+\_\+c.\+c}!Pl\+\_\+\+Save\+\_\+\+Regs\+\_\+\+For\+\_\+\+Signal@{Pl\+\_\+\+Save\+\_\+\+Regs\+\_\+\+For\+\_\+\+Signal}}
+\index{Pl\+\_\+\+Save\+\_\+\+Regs\+\_\+\+For\+\_\+\+Signal@{Pl\+\_\+\+Save\+\_\+\+Regs\+\_\+\+For\+\_\+\+Signal}!top\+\_\+level\+\_\+c.\+c@{top\+\_\+level\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Save\+\_\+\+Regs\+\_\+\+For\+\_\+\+Signal(void)}{Pl_Save_Regs_For_Signal(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Save\+\_\+\+Regs\+\_\+\+For\+\_\+\+Signal (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{top__level__c_8c_a486487278c09388cc4d036a677204c75}{}\label{top__level__c_8c_a486487278c09388cc4d036a677204c75}
+\index{top\+\_\+level\+\_\+c.\+c@{top\+\_\+level\+\_\+c.\+c}!Pl\+\_\+\+Set\+\_\+\+Ctrl\+\_\+\+C\+\_\+\+Handler\+\_\+0@{Pl\+\_\+\+Set\+\_\+\+Ctrl\+\_\+\+C\+\_\+\+Handler\+\_\+0}}
+\index{Pl\+\_\+\+Set\+\_\+\+Ctrl\+\_\+\+C\+\_\+\+Handler\+\_\+0@{Pl\+\_\+\+Set\+\_\+\+Ctrl\+\_\+\+C\+\_\+\+Handler\+\_\+0}!top\+\_\+level\+\_\+c.\+c@{top\+\_\+level\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Set\+\_\+\+Ctrl\+\_\+\+C\+\_\+\+Handler\+\_\+0(void)}{Pl_Set_Ctrl_C_Handler_0(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Set\+\_\+\+Ctrl\+\_\+\+C\+\_\+\+Handler\+\_\+0 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{top__level__c_8c_a3483f2f20c8122c68fedd8249b0ad767}{}\label{top__level__c_8c_a3483f2f20c8122c68fedd8249b0ad767}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{top__level__c_8c_a3483f2f20c8122c68fedd8249b0ad767_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{top\+\_\+level\+\_\+c.\+c@{top\+\_\+level\+\_\+c.\+c}!Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}}
+\index{Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}!top\+\_\+level\+\_\+c.\+c@{top\+\_\+level\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Prolog\+\_\+\+Prototype(\+A\+B\+O\+R\+T, 0)}{Prolog_Prototype(ABORT, 0)}}]{\setlength{\rightskip}{0pt plus 5cm}Prolog\+\_\+\+Prototype (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+B\+O\+RT}}]{, }
+\item[{0}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{top__level__c_8c_aad82a5e50963963239f470ec8bf01215}{}\label{top__level__c_8c_aad82a5e50963963239f470ec8bf01215}
+\index{top\+\_\+level\+\_\+c.\+c@{top\+\_\+level\+\_\+c.\+c}!Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}}
+\index{Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}!top\+\_\+level\+\_\+c.\+c@{top\+\_\+level\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Prolog\+\_\+\+Prototype(\+B\+R\+E\+A\+K, 0)}{Prolog_Prototype(BREAK, 0)}}]{\setlength{\rightskip}{0pt plus 5cm}Prolog\+\_\+\+Prototype (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+R\+E\+AK}}]{, }
+\item[{0}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{top__level__c_8c_aa29fdc15d2b0596d088c8bc67292b00d}{}\label{top__level__c_8c_aa29fdc15d2b0596d088c8bc67292b00d}

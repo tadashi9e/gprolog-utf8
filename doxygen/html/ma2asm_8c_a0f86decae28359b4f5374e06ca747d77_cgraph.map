@@ -1,0 +1,8 @@
+<map id="Switch_Rec" name="Switch_Rec">
+<area shape="rect" id="node2" href="$ma2asm_8c.html#a7791dcc03f2955522896de584658d93f" title="Switch_Equal" alt="" coords="155,31,257,57"/>
+<area shape="rect" id="node5" href="$alpha__any_8c.html#aa0fe7f41cd1793244610e87d597040f6" title="Pl_Fail" alt="" coords="175,81,237,108"/>
+<area shape="rect" id="node6" href="$alpha__any_8c.html#ad36811c58a29aee0cc50ac87a3d9898c" title="Jump_If_Greater" alt="" coords="147,132,265,159"/>
+<area shape="rect" id="node7" href="$alpha__any_8c.html#a403d2e1c401f1ee3f0e08eea47524291" title="Label" alt="" coords="179,183,233,209"/>
+<area shape="rect" id="node3" href="$alpha__any_8c.html#a1ffc91a7b44d25369f51bbaa3dc38f50" title="Cmp_Ret_And_Int" alt="" coords="313,5,444,32"/>
+<area shape="rect" id="node4" href="$alpha__any_8c.html#a03b5c60f9fcfa76f9de0046b8d568393" title="Jump_If_Equal" alt="" coords="324,56,433,83"/>
+</map>

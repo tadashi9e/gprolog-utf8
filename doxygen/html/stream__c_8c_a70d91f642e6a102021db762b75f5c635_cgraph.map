@@ -1,0 +1,11 @@
+<map id="Pl_Open_Output_Term_Stream_1" name="Pl_Open_Output_Term_Stream_1">
+<area shape="rect" id="node2" href="$stream__supp_8c.html#abc6cb27a35dbac2ebfa72acf4808b2ce" title="Pl_Add_Str_Stream" alt="" coords="208,107,345,133"/>
+<area shape="rect" id="node9" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="222,183,331,209"/>
+<area shape="rect" id="node3" href="$stream__supp_8c.html#a5322f52abc95d28d23976f5213577b2c" title="Find_Free_Stream" alt="" coords="408,5,537,32"/>
+<area shape="rect" id="node5" href="$stream__supp_8c.html#a7acc02d98466c96414fab011fd79c27c" title="Init_Stream_Struct" alt="" coords="407,56,538,83"/>
+<area shape="rect" id="node6" href="$stream__supp_8c.html#a2d7d220ae1d3deae83c3764c7d06389c" title="Str_Stream_Getc" alt="" coords="411,107,534,133"/>
+<area shape="rect" id="node7" href="$stream__supp_8c.html#aa573baf1086a8ffbc5f241442c2d55ad" title="Str_Stream_Putc" alt="" coords="411,157,534,184"/>
+<area shape="rect" id="node4" href="$misc_8c.html#a2f56b2c86f0305e8b7e13e6150578d36" title="Pl_Extend_Array" alt="" coords="600,5,720,32"/>
+<area shape="rect" id="node8" href="$pl__wchar_8c.html#a31bcb7c7ad4174170702cb4399feb8e3" title="put_wchar" alt="" coords="619,157,701,184"/>
+<area shape="rect" id="node10" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="393,208,552,235"/>
+</map>

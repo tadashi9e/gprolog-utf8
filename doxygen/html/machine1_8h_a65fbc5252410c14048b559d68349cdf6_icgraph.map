@@ -1,0 +1,12 @@
+<map id="Pl_Init_Machine1" name="Pl_Init_Machine1">
+<area shape="rect" id="node2" href="$machine_8h.html#a7ade20c3e93babe3edde8f66a51e3127" title="Pl_Init_Machine" alt="" coords="177,19,292,45"/>
+<area shape="rect" id="node6" href="$machine1_8h.html#a7aa127682707f8916310f0f957ce96e9" title="Pl_M_Tempnam" alt="" coords="176,95,293,121"/>
+<area shape="rect" id="node3" href="$gprolog_8h.html#a79163a775d949cf493a9f7b28bf4fc09" title="Pl_Start_Prolog" alt="" coords="357,5,471,32"/>
+<area shape="rect" id="node4" href="$main_8c.html#a335bb6fe70cf4c383aec5baef5f39e47" title="Main_Wrapper" alt="" coords="535,5,641,32"/>
+<area shape="rect" id="node5" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="689,5,740,32"/>
+<area shape="rect" id="node7" href="$os__interf__c_8c.html#a6722c00cc235f3e4a851135bfa315052" title="Pl_Temporary_File_3" alt="" coords="341,56,487,83"/>
+<area shape="rect" id="node8" href="$src__rdr__c_8c.html#ae6f2889304119849adebc18b8d5a305e" title="Pl_SR_Open_File_2" alt="" coords="344,107,484,133"/>
+<area shape="rect" id="node9" href="$top__comp_8c.html#ad884a3c78eb6a18d668b910603246cae" title="New_Work_File" alt="" coords="357,157,471,184"/>
+<area shape="rect" id="node10" href="$top__comp_8c.html#aa6e7332fd3a101bded89f75e707d3333" title="Compile_Files" alt="" coords="535,157,641,184"/>
+<area shape="rect" id="node11" href="$top__comp_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="689,157,740,184"/>
+</map>

@@ -1,0 +1,36 @@
+<map id="Pl_Get_Structure_Tagged" name="Pl_Get_Structure_Tagged">
+<area shape="rect" id="node2" href="$wam__inst_8h.html#a3142e85c3603983f78392e0a0498106b" title="Pl_Get_Structure" alt="" coords="230,393,353,420"/>
+<area shape="rect" id="node34" href="$wam__inst_8h.html#afd9bed80c2a87ed236072fb92e454065" title="Pl_Unify_Structure\l_Tagged" alt="" coords="225,179,357,221"/>
+<area shape="rect" id="node3" href="$bc__supp_8c.html#a76dfe05d2b8c2759f785c9a9a003b782" title="BC_Emulate_Byte_Code" alt="" coords="632,89,800,116"/>
+<area shape="rect" id="node10" href="$gprolog_8h.html#ae4e7f7b10f8b7d2bccb1b6b99c334bf6" title="Pl_Un_Compound_Check" alt="" coords="408,165,581,192"/>
+<area shape="rect" id="node11" href="$gprolog_8h.html#a824776c341aae8359784b62ded2c8349" title="Pl_Un_Compound" alt="" coords="431,216,559,243"/>
+<area shape="rect" id="node13" href="$gprolog_8h.html#ae965665a65d25dee396b7500d15c4ec9" title="Pl_Un_Callable_Check" alt="" coords="416,267,573,293"/>
+<area shape="rect" id="node14" href="$error__supp_8c.html#adcda833311a90487bf84a7c8ef505f20" title="Pl_Context_Error_1" alt="" coords="427,317,563,344"/>
+<area shape="rect" id="node15" href="$expand__c_8c.html#aefca070056ab2a59b8fb4135bd0b509c" title="Pl_Dcg_Trans_Rule_2" alt="" coords="418,368,571,395"/>
+<area shape="rect" id="node16" href="$g__var__inl__c_8c.html#a8ca960bbb02ad1e1c1e7060fe2ba2689" title="G_Read_Element" alt="" coords="432,419,557,445"/>
+<area shape="rect" id="node19" href="$os__interf__c_8c.html#a38ad6e72bb27e8663c3427785317e96a" title="Date_Time_To_Prolog" alt="" coords="419,469,571,496"/>
+<area shape="rect" id="node22" href="$pretty__c_8c.html#a4f8f7409d1ada47baaf9e42209897b50" title="Pl_Name_Query_Vars_2" alt="" coords="411,520,578,547"/>
+<area shape="rect" id="node23" href="$pretty__c_8c.html#a11fcf7012551c17045e0edd714f0c163" title="Bind_Variable" alt="" coords="443,571,546,597"/>
+<area shape="rect" id="node25" href="$stream__c_8c.html#af6cb5700cffd1306c174e146faa0dda3" title="Pl_Stream_Position_2" alt="" coords="419,621,570,648"/>
+<area shape="rect" id="node26" href="$stream__c_8c.html#af9827ad8d4f8405c1cb8318b622862a5" title="Pl_Set_Stream_Position_2" alt="" coords="405,672,584,699"/>
+<area shape="rect" id="node27" href="$term__supp_8h.html#a1a7cb51e4b7f2bcef5e50086b6636647" title="Pl_Get_Pred_Indicator" alt="" coords="418,723,571,749"/>
+<area shape="rect" id="node4" href="$bc__supp_8c.html#a77ff26a73bb5736aff1d2c5d97400be5" title="BC_Emulate_Clause" alt="" coords="848,64,992,91"/>
+<area shape="rect" id="node8" href="$bc__supp_8c.html#a3eaaadb92bd63dd9a3f63436a81a3dcc" title="Pl_BC_Emulate_Cont_0" alt="" coords="1237,173,1401,200"/>
+<area shape="rect" id="node5" href="$bc__supp_8h.html#a8a045e53639fe083b9e018f119e754e4" title="Pl_BC_Emulate_Pred" alt="" coords="1040,64,1189,91"/>
+<area shape="rect" id="node7" href="$bc__supp_8c.html#af5eb08f345855ac14975d4366243dbc5" title="BC_Emulate_Pred_Alt" alt="" coords="1243,5,1396,32"/>
+<area shape="rect" id="node6" href="$bc__supp_8c.html#a972dcf547f043fb0988173c77a2f521f" title="Pl_BC_Call_Terminal\l_Pred_3" alt="" coords="1246,57,1393,98"/>
+<area shape="rect" id="node9" href="$call__args__c_8c.html#af6fb473d73263063c7c2361e4c6a8981" title="Pl_Call_Closure" alt="" coords="1261,123,1377,149"/>
+<area shape="rect" id="node12" href="$gprolog_8h.html#a22e0854aaa6a0238383dfd5d6f84a556" title="Pl_Un_Callable" alt="" coords="660,216,772,243"/>
+<area shape="rect" id="node17" href="$g__var__inl__c_8c.html#a7d48e4b46458fd87c193ba1c95fb5fb6" title="G_Read" alt="" coords="681,419,751,445"/>
+<area shape="rect" id="node18" href="$inl__protos_8h.html#abd9481a55b320ff69984a61afc79d120" title="Pl_Blt_G_Read" alt="" coords="864,419,976,445"/>
+<area shape="rect" id="node20" href="$os__interf__c_8c.html#ab64fb182b04e85fee2277a3c9185bafd" title="Pl_File_Prop_Date_2" alt="" coords="643,469,789,496"/>
+<area shape="rect" id="node21" href="$os__interf__c_8c.html#af56a4ebf01e5fd429dffae060b119fff" title="Pl_Date_Time_1" alt="" coords="657,520,775,547"/>
+<area shape="rect" id="node24" href="$pretty__c_8c.html#a4be5ad090edc9bd9c38cff837b2165dc" title="Pl_Bind_Variables_4" alt="" coords="645,571,787,597"/>
+<area shape="rect" id="node28" href="$assert__c_8c.html#aadba7ac944c2f646d3a334f2599c59fe" title="Pl_Abolish_1" alt="" coords="667,621,765,648"/>
+<area shape="rect" id="node29" href="$pred__c_8c.html#ab08452f7e5490d7047b2f4a842ecd943" title="Pl_Current_Predicate_2" alt="" coords="636,672,796,699"/>
+<area shape="rect" id="node30" href="$pred__c_8c.html#a93a72a985a67a54eabb232cf0d6677a3" title="Pl_Get_Pred_Indicator_3" alt="" coords="633,723,799,749"/>
+<area shape="rect" id="node31" href="$pred__c_8c.html#aedc71c481f3027bc3c62538eba50c034" title="Pl_Get_Predicate_File\l_Info_3" alt="" coords="640,774,792,815"/>
+<area shape="rect" id="node32" href="$pred__c_8c.html#a3e54b07f57f7c87742ff04b991669994" title="Pl_Set_Predicate_File\l_Info_3" alt="" coords="641,839,791,881"/>
+<area shape="rect" id="node33" href="$term__supp_8c.html#a14e1200958b1d7d30344b8438d23c910" title="Pl_Get_Pred_Indic_3" alt="" coords="643,905,789,932"/>
+<area shape="rect" id="node35" href="$wam__inst_8h.html#a3a8bbe99d9d59c4a6eb725e65339c3d7" title="Pl_Unify_Structure" alt="" coords="429,64,561,91"/>
+</map>

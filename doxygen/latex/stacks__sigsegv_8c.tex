@@ -1,0 +1,442 @@
+\hypertarget{stacks__sigsegv_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/stacks\+\_\+sigsegv.c File Reference}
+\label{stacks__sigsegv_8c}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/stacks\+\_\+sigsegv.\+c@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/stacks\+\_\+sigsegv.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$fcntl.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}gp\+\_\+config.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}engine\+\_\+pl.\+h\char`\"{}}\\*
+Include dependency graph for stacks\+\_\+sigsegv.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{stacks__sigsegv_8c_a2f5e2f8eb515742eb483300fa6d209c4}{M\+\_\+\+M\+A\+G\+I\+C1}~0x12345678
+\item 
+\#define \hyperlink{stacks__sigsegv_8c_a71b39a80815ea82f3b3d4b73b40ad798}{M\+\_\+\+M\+A\+G\+I\+C2}~0xdeadbeef
+\item 
+\#define \hyperlink{stacks__sigsegv_8c_a8509aa1212890ddf8b18c20083f3b485}{M\+A\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+H\+A\+N\+D\+L\+ER}~10
+\item 
+\#define \hyperlink{stacks__sigsegv_8c_a876619fee20cf66c1763f8335a0a0488}{E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+S\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+ON}~\char`\"{}Memory allocation fault\char`\"{}
+\item 
+\#define \hyperlink{stacks__sigsegv_8c_a60f11a2c5be0457e5dc37b64866c21c0}{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+D\+E\+V0}~\char`\"{}Cannot open /dev/zero \+: \%s\char`\"{}
+\item 
+\#define \hyperlink{stacks__sigsegv_8c_a2aeec5090177cd0026481ddaaa8d834e}{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+U\+N\+M\+AP}~\char`\"{}unmap failed \+: \%s\char`\"{}
+\item 
+\#define \hyperlink{stacks__sigsegv_8c_abafa8c630878e73db865ff89329ff4c0}{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+F\+R\+EE}~\char`\"{}Virtual\+Free failed \+: \%\char`\"{} P\+L\+\_\+\+F\+M\+T\+\_\+u
+\item 
+\#define \hyperlink{stacks__sigsegv_8c_a07a29583123dddada8ae13c7f8082576}{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+P\+R\+O\+T\+E\+CT}~\char`\"{}Virtual\+Protect failed \+: \%\char`\"{} P\+L\+\_\+\+F\+M\+T\+\_\+u
+\item 
+\#define \hyperlink{stacks__sigsegv_8c_ac052dfd4cd3e5081fb6e2cf9cb6540dc}{E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+NV}~\char`\"{}\%s \hyperlink{chkma_8c_a44ace8f43d7bffc6f83773835fb3415f}{stack} overflow (size\+: \%\hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d} Kb, reached\+: \%\hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d} Kb, environment variable used\+: \%s)\char`\"{}
+\item 
+\#define \hyperlink{stacks__sigsegv_8c_a58b15d7582cf62ff62cb5ec88bbd6ac8}{E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+N\+O\+\_\+\+E\+NV}~\char`\"{}\%s \hyperlink{chkma_8c_a44ace8f43d7bffc6f83773835fb3415f}{stack} overflow (size\+: \%\hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d} Kb, reached\+: \%\hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d} Kb -\/ fixed size)\char`\"{}
+\item 
+\#define \hyperlink{stacks__sigsegv_8c_acc1ef7657a4479884d16f14feadf15f7}{Round\+\_\+\+Up}(\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x},  \hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y})~(((\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}) + (\hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}) -\/ 1) / (\hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}) $\ast$ (\hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}))
+\item 
+\#define \hyperlink{stacks__sigsegv_8c_ae6efc9a470b97994db168be426058dac}{Round\+\_\+\+Down}(\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x},  \hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y})~((\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}) / (\hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}) $\ast$ (\hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{stacks__sigsegv_8c_a80590c360772a0ae63e625478e2bffcf}{Install\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler} (void)
+\item 
+static void \hyperlink{stacks__sigsegv_8c_a1bb0e5039c09c36774850e4cbdab8c8b}{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler} ()
+\item 
+static void \hyperlink{stacks__sigsegv_8c_a025866a50618e66535d50d040a135332}{Handle\+\_\+\+Bad\+\_\+\+Address} (void $\ast$bad\+\_\+addr)
+\item 
+static int \hyperlink{stacks__sigsegv_8c_ae439f72edeb7fedd270526dd2519a49f}{Default\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler} (void $\ast$bad\+\_\+addr)
+\item 
+static char $\ast$ \hyperlink{stacks__sigsegv_8c_ad36ecfecd8b3a57e1a2629b3f8281342}{Stack\+\_\+\+Overflow\+\_\+\+Err\+\_\+\+Msg} (int stk\+\_\+nb)
+\item 
+static void $\ast$ \hyperlink{stacks__sigsegv_8c_a122e90b05aa0d3b58bf7bd7b0d147be1}{Virtual\+\_\+\+Mem\+\_\+\+Alloc} (void $\ast$addr, int length)
+\item 
+static void \hyperlink{stacks__sigsegv_8c_ae160b208bf67b869ccfcbbd2a154ef98}{Virtual\+\_\+\+Mem\+\_\+\+Protect} (void $\ast$addr, int length)
+\item 
+void \hyperlink{stacks__sigsegv_8c_aee65d332f1e4ff3a8796bda38d329766}{Pl\+\_\+\+Allocate\+\_\+\+Stacks} (void)
+\item 
+static \hyperlink{ma__parser_8c_a61dadd085c1777f559549e05962b2c9eaaee055c4a5aba7d55774e4f1c01dacea}{L\+O\+NG} W\+I\+N\+A\+PI \hyperlink{stacks__sigsegv_8c_af3b6f4399924cfa2493fd581e588b4cf}{Win32\+\_\+\+Exception\+\_\+\+Handler} (L\+P\+E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+P\+O\+I\+N\+T\+E\+RS ei)
+\item 
+void \hyperlink{stacks__sigsegv_8c_ab5ca8f915e148142d8a80723e05fad13}{Pl\+\_\+\+Push\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler} (\hyperlink{stacks__sigsegv_8h_ad377ab7a13d4474ba7d50f8c81d733e2}{Segv\+Hdlr} handler)
+\item 
+void \hyperlink{stacks__sigsegv_8c_a25eb5bda540ece4a8cee10c4f61324a6}{Pl\+\_\+\+Pop\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{stacks__sigsegv_8c_ab2ea42fc3a00c62f8867ae431508cc99}{page\+\_\+size}
+\item 
+static \hyperlink{stacks__sigsegv_8h_ad377ab7a13d4474ba7d50f8c81d733e2}{Segv\+Hdlr} \hyperlink{stacks__sigsegv_8c_a496d7a2e18d77c8fe0f7ca4a8c1b6a02}{tbl\+\_\+handler} \mbox{[}\hyperlink{stacks__sigsegv_8c_a8509aa1212890ddf8b18c20083f3b485}{M\+A\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+H\+A\+N\+D\+L\+ER}\mbox{]}
+\item 
+static int \hyperlink{stacks__sigsegv_8c_a1854f5f22d6e40969aae1aa228e7ac18}{nb\+\_\+handler} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+F\+R\+EE@{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+F\+R\+EE}}
+\index{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+F\+R\+EE@{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+F\+R\+EE}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+F\+R\+EE}{ERR_CANNOT_FREE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+F\+R\+EE~\char`\"{}Virtual\+Free failed \+: \%\char`\"{} P\+L\+\_\+\+F\+M\+T\+\_\+u}\hypertarget{stacks__sigsegv_8c_abafa8c630878e73db865ff89329ff4c0}{}\label{stacks__sigsegv_8c_abafa8c630878e73db865ff89329ff4c0}
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+D\+E\+V0@{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+D\+E\+V0}}
+\index{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+D\+E\+V0@{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+D\+E\+V0}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+D\+E\+V0}{ERR_CANNOT_OPEN_DEV0}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+D\+E\+V0~\char`\"{}Cannot open /dev/zero \+: \%s\char`\"{}}\hypertarget{stacks__sigsegv_8c_a60f11a2c5be0457e5dc37b64866c21c0}{}\label{stacks__sigsegv_8c_a60f11a2c5be0457e5dc37b64866c21c0}
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+P\+R\+O\+T\+E\+CT@{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+P\+R\+O\+T\+E\+CT}}
+\index{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+P\+R\+O\+T\+E\+CT@{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+P\+R\+O\+T\+E\+CT}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+P\+R\+O\+T\+E\+CT}{ERR_CANNOT_PROTECT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+P\+R\+O\+T\+E\+CT~\char`\"{}Virtual\+Protect failed \+: \%\char`\"{} P\+L\+\_\+\+F\+M\+T\+\_\+u}\hypertarget{stacks__sigsegv_8c_a07a29583123dddada8ae13c7f8082576}{}\label{stacks__sigsegv_8c_a07a29583123dddada8ae13c7f8082576}
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+U\+N\+M\+AP@{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+U\+N\+M\+AP}}
+\index{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+U\+N\+M\+AP@{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+U\+N\+M\+AP}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+U\+N\+M\+AP}{ERR_CANNOT_UNMAP}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+U\+N\+M\+AP~\char`\"{}unmap failed \+: \%s\char`\"{}}\hypertarget{stacks__sigsegv_8c_a2aeec5090177cd0026481ddaaa8d834e}{}\label{stacks__sigsegv_8c_a2aeec5090177cd0026481ddaaa8d834e}
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+NV@{E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+NV}}
+\index{E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+NV@{E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+NV}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+NV}{ERR_STACK_OVERFLOW_ENV}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+E\+NV~\char`\"{}\%s {\bf stack} overflow (size\+: \%{\bf d} Kb, reached\+: \%{\bf d} Kb, environment variable used\+: \%s)\char`\"{}}\hypertarget{stacks__sigsegv_8c_ac052dfd4cd3e5081fb6e2cf9cb6540dc}{}\label{stacks__sigsegv_8c_ac052dfd4cd3e5081fb6e2cf9cb6540dc}
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+N\+O\+\_\+\+E\+NV@{E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+N\+O\+\_\+\+E\+NV}}
+\index{E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+N\+O\+\_\+\+E\+NV@{E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+N\+O\+\_\+\+E\+NV}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+N\+O\+\_\+\+E\+NV}{ERR_STACK_OVERFLOW_NO_ENV}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+\_\+\+O\+V\+E\+R\+F\+L\+O\+W\+\_\+\+N\+O\+\_\+\+E\+NV~\char`\"{}\%s {\bf stack} overflow (size\+: \%{\bf d} Kb, reached\+: \%{\bf d} Kb -\/ fixed size)\char`\"{}}\hypertarget{stacks__sigsegv_8c_a58b15d7582cf62ff62cb5ec88bbd6ac8}{}\label{stacks__sigsegv_8c_a58b15d7582cf62ff62cb5ec88bbd6ac8}
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+S\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+ON@{E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+S\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+ON}}
+\index{E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+S\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+ON@{E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+S\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+ON}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+S\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+ON}{ERR_STACKS_ALLOCATION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+\_\+\+S\+T\+A\+C\+K\+S\+\_\+\+A\+L\+L\+O\+C\+A\+T\+I\+ON~\char`\"{}Memory allocation fault\char`\"{}}\hypertarget{stacks__sigsegv_8c_a876619fee20cf66c1763f8335a0a0488}{}\label{stacks__sigsegv_8c_a876619fee20cf66c1763f8335a0a0488}
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!M\+\_\+\+M\+A\+G\+I\+C1@{M\+\_\+\+M\+A\+G\+I\+C1}}
+\index{M\+\_\+\+M\+A\+G\+I\+C1@{M\+\_\+\+M\+A\+G\+I\+C1}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{M\+\_\+\+M\+A\+G\+I\+C1}{M_MAGIC1}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+M\+A\+G\+I\+C1~0x12345678}\hypertarget{stacks__sigsegv_8c_a2f5e2f8eb515742eb483300fa6d209c4}{}\label{stacks__sigsegv_8c_a2f5e2f8eb515742eb483300fa6d209c4}
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!M\+\_\+\+M\+A\+G\+I\+C2@{M\+\_\+\+M\+A\+G\+I\+C2}}
+\index{M\+\_\+\+M\+A\+G\+I\+C2@{M\+\_\+\+M\+A\+G\+I\+C2}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{M\+\_\+\+M\+A\+G\+I\+C2}{M_MAGIC2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+M\+A\+G\+I\+C2~0xdeadbeef}\hypertarget{stacks__sigsegv_8c_a71b39a80815ea82f3b3d4b73b40ad798}{}\label{stacks__sigsegv_8c_a71b39a80815ea82f3b3d4b73b40ad798}
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!M\+A\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+H\+A\+N\+D\+L\+ER@{M\+A\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+H\+A\+N\+D\+L\+ER}}
+\index{M\+A\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+H\+A\+N\+D\+L\+ER@{M\+A\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+H\+A\+N\+D\+L\+ER}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+H\+A\+N\+D\+L\+ER}{MAX_SIGSEGV_HANDLER}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+H\+A\+N\+D\+L\+ER~10}\hypertarget{stacks__sigsegv_8c_a8509aa1212890ddf8b18c20083f3b485}{}\label{stacks__sigsegv_8c_a8509aa1212890ddf8b18c20083f3b485}
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!Round\+\_\+\+Down@{Round\+\_\+\+Down}}
+\index{Round\+\_\+\+Down@{Round\+\_\+\+Down}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{Round\+\_\+\+Down}{Round_Down}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Round\+\_\+\+Down(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf x}, }
+\item[{}]{{\bf y}}
+\end{DoxyParamCaption}
+)~(({\bf x}) / ({\bf y}) $\ast$ ({\bf y}))}\hypertarget{stacks__sigsegv_8c_ae6efc9a470b97994db168be426058dac}{}\label{stacks__sigsegv_8c_ae6efc9a470b97994db168be426058dac}
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!Round\+\_\+\+Up@{Round\+\_\+\+Up}}
+\index{Round\+\_\+\+Up@{Round\+\_\+\+Up}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{Round\+\_\+\+Up}{Round_Up}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Round\+\_\+\+Up(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf x}, }
+\item[{}]{{\bf y}}
+\end{DoxyParamCaption}
+)~((({\bf x}) + ({\bf y}) -\/ 1) / ({\bf y}) $\ast$ ({\bf y}))}\hypertarget{stacks__sigsegv_8c_acc1ef7657a4479884d16f14feadf15f7}{}\label{stacks__sigsegv_8c_acc1ef7657a4479884d16f14feadf15f7}
+
+
+\subsection{Function Documentation}
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!Default\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{Default\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}}
+\index{Default\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{Default\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{Default\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler(void $\ast$bad\+\_\+addr)}{Default_SIGSEGV_Handler(void *bad_addr)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Default\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{bad\+\_\+addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{stacks__sigsegv_8c_ae439f72edeb7fedd270526dd2519a49f}{}\label{stacks__sigsegv_8c_ae439f72edeb7fedd270526dd2519a49f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8c_ae439f72edeb7fedd270526dd2519a49f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8c_ae439f72edeb7fedd270526dd2519a49f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!Handle\+\_\+\+Bad\+\_\+\+Address@{Handle\+\_\+\+Bad\+\_\+\+Address}}
+\index{Handle\+\_\+\+Bad\+\_\+\+Address@{Handle\+\_\+\+Bad\+\_\+\+Address}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{Handle\+\_\+\+Bad\+\_\+\+Address(void $\ast$bad\+\_\+addr)}{Handle_Bad_Address(void *bad_addr)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Handle\+\_\+\+Bad\+\_\+\+Address (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{bad\+\_\+addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{stacks__sigsegv_8c_a025866a50618e66535d50d040a135332}{}\label{stacks__sigsegv_8c_a025866a50618e66535d50d040a135332}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{stacks__sigsegv_8c_a025866a50618e66535d50d040a135332_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8c_a025866a50618e66535d50d040a135332_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!Install\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{Install\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}}
+\index{Install\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{Install\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{Install\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler(void)}{Install_SIGSEGV_Handler(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Install\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{stacks__sigsegv_8c_a80590c360772a0ae63e625478e2bffcf}{}\label{stacks__sigsegv_8c_a80590c360772a0ae63e625478e2bffcf}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8c_a80590c360772a0ae63e625478e2bffcf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8c_a80590c360772a0ae63e625478e2bffcf_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!Pl\+\_\+\+Allocate\+\_\+\+Stacks@{Pl\+\_\+\+Allocate\+\_\+\+Stacks}}
+\index{Pl\+\_\+\+Allocate\+\_\+\+Stacks@{Pl\+\_\+\+Allocate\+\_\+\+Stacks}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Allocate\+\_\+\+Stacks(void)}{Pl_Allocate_Stacks(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Allocate\+\_\+\+Stacks (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{stacks__sigsegv_8c_aee65d332f1e4ff3a8796bda38d329766}{}\label{stacks__sigsegv_8c_aee65d332f1e4ff3a8796bda38d329766}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8c_aee65d332f1e4ff3a8796bda38d329766_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!Pl\+\_\+\+Pop\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{Pl\+\_\+\+Pop\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}}
+\index{Pl\+\_\+\+Pop\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{Pl\+\_\+\+Pop\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Pop\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler(void)}{Pl_Pop_SIGSEGV_Handler(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Pop\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{stacks__sigsegv_8c_a25eb5bda540ece4a8cee10c4f61324a6}{}\label{stacks__sigsegv_8c_a25eb5bda540ece4a8cee10c4f61324a6}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{stacks__sigsegv_8c_a25eb5bda540ece4a8cee10c4f61324a6_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!Pl\+\_\+\+Push\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{Pl\+\_\+\+Push\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}}
+\index{Pl\+\_\+\+Push\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{Pl\+\_\+\+Push\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Push\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler(\+Segv\+Hdlr handler)}{Pl_Push_SIGSEGV_Handler(SegvHdlr handler)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Push\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf Segv\+Hdlr}}]{handler}
+\end{DoxyParamCaption}
+)}\hypertarget{stacks__sigsegv_8c_ab5ca8f915e148142d8a80723e05fad13}{}\label{stacks__sigsegv_8c_ab5ca8f915e148142d8a80723e05fad13}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{stacks__sigsegv_8c_ab5ca8f915e148142d8a80723e05fad13_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8c_ab5ca8f915e148142d8a80723e05fad13_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}}
+\index{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler()}{SIGSEGV_Handler()}}]{\setlength{\rightskip}{0pt plus 5cm}static void S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{stacks__sigsegv_8c_a1bb0e5039c09c36774850e4cbdab8c8b}{}\label{stacks__sigsegv_8c_a1bb0e5039c09c36774850e4cbdab8c8b}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8c_a1bb0e5039c09c36774850e4cbdab8c8b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!Stack\+\_\+\+Overflow\+\_\+\+Err\+\_\+\+Msg@{Stack\+\_\+\+Overflow\+\_\+\+Err\+\_\+\+Msg}}
+\index{Stack\+\_\+\+Overflow\+\_\+\+Err\+\_\+\+Msg@{Stack\+\_\+\+Overflow\+\_\+\+Err\+\_\+\+Msg}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{Stack\+\_\+\+Overflow\+\_\+\+Err\+\_\+\+Msg(int stk\+\_\+nb)}{Stack_Overflow_Err_Msg(int stk_nb)}}]{\setlength{\rightskip}{0pt plus 5cm}static char $\ast$ Stack\+\_\+\+Overflow\+\_\+\+Err\+\_\+\+Msg (
+\begin{DoxyParamCaption}
+\item[{int}]{stk\+\_\+nb}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{stacks__sigsegv_8c_ad36ecfecd8b3a57e1a2629b3f8281342}{}\label{stacks__sigsegv_8c_ad36ecfecd8b3a57e1a2629b3f8281342}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8c_ad36ecfecd8b3a57e1a2629b3f8281342_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!Virtual\+\_\+\+Mem\+\_\+\+Alloc@{Virtual\+\_\+\+Mem\+\_\+\+Alloc}}
+\index{Virtual\+\_\+\+Mem\+\_\+\+Alloc@{Virtual\+\_\+\+Mem\+\_\+\+Alloc}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{Virtual\+\_\+\+Mem\+\_\+\+Alloc(void $\ast$addr, int length)}{Virtual_Mem_Alloc(void *addr, int length)}}]{\setlength{\rightskip}{0pt plus 5cm}static void$\ast$ Virtual\+\_\+\+Mem\+\_\+\+Alloc (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{addr, }
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{stacks__sigsegv_8c_a122e90b05aa0d3b58bf7bd7b0d147be1}{}\label{stacks__sigsegv_8c_a122e90b05aa0d3b58bf7bd7b0d147be1}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{stacks__sigsegv_8c_a122e90b05aa0d3b58bf7bd7b0d147be1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8c_a122e90b05aa0d3b58bf7bd7b0d147be1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!Virtual\+\_\+\+Mem\+\_\+\+Protect@{Virtual\+\_\+\+Mem\+\_\+\+Protect}}
+\index{Virtual\+\_\+\+Mem\+\_\+\+Protect@{Virtual\+\_\+\+Mem\+\_\+\+Protect}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{Virtual\+\_\+\+Mem\+\_\+\+Protect(void $\ast$addr, int length)}{Virtual_Mem_Protect(void *addr, int length)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Virtual\+\_\+\+Mem\+\_\+\+Protect (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{addr, }
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{stacks__sigsegv_8c_ae160b208bf67b869ccfcbbd2a154ef98}{}\label{stacks__sigsegv_8c_ae160b208bf67b869ccfcbbd2a154ef98}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{stacks__sigsegv_8c_ae160b208bf67b869ccfcbbd2a154ef98_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8c_ae160b208bf67b869ccfcbbd2a154ef98_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!Win32\+\_\+\+Exception\+\_\+\+Handler@{Win32\+\_\+\+Exception\+\_\+\+Handler}}
+\index{Win32\+\_\+\+Exception\+\_\+\+Handler@{Win32\+\_\+\+Exception\+\_\+\+Handler}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{Win32\+\_\+\+Exception\+\_\+\+Handler(\+L\+P\+E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+P\+O\+I\+N\+T\+E\+R\+S ei)}{Win32_Exception_Handler(LPEXCEPTION_POINTERS ei)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf L\+O\+NG} W\+I\+N\+A\+PI Win32\+\_\+\+Exception\+\_\+\+Handler (
+\begin{DoxyParamCaption}
+\item[{L\+P\+E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+P\+O\+I\+N\+T\+E\+RS}]{ei}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{stacks__sigsegv_8c_af3b6f4399924cfa2493fd581e588b4cf}{}\label{stacks__sigsegv_8c_af3b6f4399924cfa2493fd581e588b4cf}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8c_af3b6f4399924cfa2493fd581e588b4cf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stacks__sigsegv_8c_af3b6f4399924cfa2493fd581e588b4cf_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!nb\+\_\+handler@{nb\+\_\+handler}}
+\index{nb\+\_\+handler@{nb\+\_\+handler}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{nb\+\_\+handler}{nb_handler}}]{\setlength{\rightskip}{0pt plus 5cm}int nb\+\_\+handler = 0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{stacks__sigsegv_8c_a1854f5f22d6e40969aae1aa228e7ac18}{}\label{stacks__sigsegv_8c_a1854f5f22d6e40969aae1aa228e7ac18}
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!page\+\_\+size@{page\+\_\+size}}
+\index{page\+\_\+size@{page\+\_\+size}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{page\+\_\+size}{page_size}}]{\setlength{\rightskip}{0pt plus 5cm}int page\+\_\+size\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{stacks__sigsegv_8c_ab2ea42fc3a00c62f8867ae431508cc99}{}\label{stacks__sigsegv_8c_ab2ea42fc3a00c62f8867ae431508cc99}
+\index{stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}!tbl\+\_\+handler@{tbl\+\_\+handler}}
+\index{tbl\+\_\+handler@{tbl\+\_\+handler}!stacks\+\_\+sigsegv.\+c@{stacks\+\_\+sigsegv.\+c}}
+\subsubsection[{\texorpdfstring{tbl\+\_\+handler}{tbl_handler}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Segv\+Hdlr} tbl\+\_\+handler\mbox{[}{\bf M\+A\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V\+\_\+\+H\+A\+N\+D\+L\+ER}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{stacks__sigsegv_8c_a496d7a2e18d77c8fe0f7ca4a8c1b6a02}{}\label{stacks__sigsegv_8c_a496d7a2e18d77c8fe0f7ca4a8c1b6a02}

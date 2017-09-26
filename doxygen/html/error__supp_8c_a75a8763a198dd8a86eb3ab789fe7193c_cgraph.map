@@ -1,0 +1,10 @@
+<map id="Pl_Current_Bip_Name_2" name="Pl_Current_Bip_Name_2">
+<area shape="rect" id="node2" href="$error__supp_8c.html#ab8256cda3ff04e0c94916c88bf464e79" title="Pl_Set_C_Bip_Name" alt="" coords="227,5,374,32"/>
+<area shape="rect" id="node3" href="$c__supp_8c.html#a8ee616a4c412a9b96ff9379610e1f2b9" title="Pl_Un_Atom_Check" alt="" coords="230,56,371,83"/>
+<area shape="rect" id="node6" href="$c__supp_8c.html#a40ef471273ae7fee7aa952ae43112cd1" title="Pl_Un_Integer_Check" alt="" coords="225,107,376,133"/>
+<area shape="rect" id="node9" href="$error__supp_8c.html#a984f5827dd2759c4b1dab06e8c4acaf5" title="Pl_Unset_C_Bip_Name" alt="" coords="220,157,381,184"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#a78229c8d23053191e0fee7952757f9c7" title="Pl_Get_Atom" alt="" coords="434,56,534,83"/>
+<area shape="rect" id="node5" href="$wam__inst_8c.html#a89d8aba44029f2a5f548a2ae5f6eb574" title="Pl_Get_Atom_Tagged" alt="" coords="591,56,741,83"/>
+<area shape="rect" id="node7" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="429,107,539,133"/>
+<area shape="rect" id="node8" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="587,107,745,133"/>
+</map>

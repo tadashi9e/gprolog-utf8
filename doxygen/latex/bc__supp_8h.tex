@@ -1,0 +1,152 @@
+\hypertarget{bc__supp_8h}{}\section{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/bc\+\_\+supp.h File Reference}
+\label{bc__supp_8h}\index{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/bc\+\_\+supp.\+h@{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/bc\+\_\+supp.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bc__supp_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Wam\+Cont \hyperlink{bc__supp_8h_a8a045e53639fe083b9e018f119e754e4}{Pl\+\_\+\+B\+C\+\_\+\+Emulate\+\_\+\+Pred} (int func, \hyperlink{dynam__supp_8h_abf8c639d74e3a538cb5256ede033af03}{Dyn\+P\+Inf} $\ast$dyn)
+\item 
+void \hyperlink{bc__supp_8h_a4e9c9f6d5d48cc5bd8d40c6e2507c855}{Pl\+\_\+\+B\+C\+\_\+\+Start\+\_\+\+Emit\+\_\+0} (void)
+\item 
+void \hyperlink{bc__supp_8h_a57fe068b952d98d64a89dddd23a31c5b}{Pl\+\_\+\+B\+C\+\_\+\+Stop\+\_\+\+Emit\+\_\+0} (void)
+\item 
+void \hyperlink{bc__supp_8h_adb2ac836e3f608a711c54c2d353c6b04}{Pl\+\_\+\+B\+C\+\_\+\+Emit\+\_\+\+Inst\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} inst\+\_\+word)
+\item 
+void \hyperlink{bc__supp_8h_acbc4f81776761453be259a864f48e724}{Pl\+\_\+\+B\+C\+\_\+\+Emit\+\_\+\+Inst\+\_\+\+Execute\+\_\+\+Native} (int func, int arity, \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} $\ast$codep)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{bc__supp_8h_a25411c5e21e1cb3c18b34dc3a8c43205}{pl\+\_\+byte\+\_\+len}
+\item 
+unsigned $\ast$ \hyperlink{bc__supp_8h_a68b8a33b77384a97197c2f68bc86308f}{pl\+\_\+byte\+\_\+code}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{bc\+\_\+supp.\+h@{bc\+\_\+supp.\+h}!Pl\+\_\+\+B\+C\+\_\+\+Emit\+\_\+\+Inst\+\_\+1@{Pl\+\_\+\+B\+C\+\_\+\+Emit\+\_\+\+Inst\+\_\+1}}
+\index{Pl\+\_\+\+B\+C\+\_\+\+Emit\+\_\+\+Inst\+\_\+1@{Pl\+\_\+\+B\+C\+\_\+\+Emit\+\_\+\+Inst\+\_\+1}!bc\+\_\+supp.\+h@{bc\+\_\+supp.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+B\+C\+\_\+\+Emit\+\_\+\+Inst\+\_\+1(\+Wam\+Word inst\+\_\+word)}{Pl_BC_Emit_Inst_1(WamWord inst_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+B\+C\+\_\+\+Emit\+\_\+\+Inst\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{inst\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{bc__supp_8h_adb2ac836e3f608a711c54c2d353c6b04}{}\label{bc__supp_8h_adb2ac836e3f608a711c54c2d353c6b04}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bc__supp_8h_adb2ac836e3f608a711c54c2d353c6b04_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{bc\+\_\+supp.\+h@{bc\+\_\+supp.\+h}!Pl\+\_\+\+B\+C\+\_\+\+Emit\+\_\+\+Inst\+\_\+\+Execute\+\_\+\+Native@{Pl\+\_\+\+B\+C\+\_\+\+Emit\+\_\+\+Inst\+\_\+\+Execute\+\_\+\+Native}}
+\index{Pl\+\_\+\+B\+C\+\_\+\+Emit\+\_\+\+Inst\+\_\+\+Execute\+\_\+\+Native@{Pl\+\_\+\+B\+C\+\_\+\+Emit\+\_\+\+Inst\+\_\+\+Execute\+\_\+\+Native}!bc\+\_\+supp.\+h@{bc\+\_\+supp.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+B\+C\+\_\+\+Emit\+\_\+\+Inst\+\_\+\+Execute\+\_\+\+Native(int func, int arity, Pl\+Long $\ast$codep)}{Pl_BC_Emit_Inst_Execute_Native(int func, int arity, PlLong *codep)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+B\+C\+\_\+\+Emit\+\_\+\+Inst\+\_\+\+Execute\+\_\+\+Native (
+\begin{DoxyParamCaption}
+\item[{int}]{func, }
+\item[{int}]{arity, }
+\item[{{\bf Pl\+Long} $\ast$}]{codep}
+\end{DoxyParamCaption}
+)}\hypertarget{bc__supp_8h_acbc4f81776761453be259a864f48e724}{}\label{bc__supp_8h_acbc4f81776761453be259a864f48e724}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bc__supp_8h_acbc4f81776761453be259a864f48e724_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{bc\+\_\+supp.\+h@{bc\+\_\+supp.\+h}!Pl\+\_\+\+B\+C\+\_\+\+Emulate\+\_\+\+Pred@{Pl\+\_\+\+B\+C\+\_\+\+Emulate\+\_\+\+Pred}}
+\index{Pl\+\_\+\+B\+C\+\_\+\+Emulate\+\_\+\+Pred@{Pl\+\_\+\+B\+C\+\_\+\+Emulate\+\_\+\+Pred}!bc\+\_\+supp.\+h@{bc\+\_\+supp.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+B\+C\+\_\+\+Emulate\+\_\+\+Pred(int func, Dyn\+P\+Inf $\ast$dyn)}{Pl_BC_Emulate_Pred(int func, DynPInf *dyn)}}]{\setlength{\rightskip}{0pt plus 5cm}Wam\+Cont Pl\+\_\+\+B\+C\+\_\+\+Emulate\+\_\+\+Pred (
+\begin{DoxyParamCaption}
+\item[{int}]{func, }
+\item[{{\bf Dyn\+P\+Inf} $\ast$}]{dyn}
+\end{DoxyParamCaption}
+)}\hypertarget{bc__supp_8h_a8a045e53639fe083b9e018f119e754e4}{}\label{bc__supp_8h_a8a045e53639fe083b9e018f119e754e4}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bc__supp_8h_a8a045e53639fe083b9e018f119e754e4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bc__supp_8h_a8a045e53639fe083b9e018f119e754e4_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{bc\+\_\+supp.\+h@{bc\+\_\+supp.\+h}!Pl\+\_\+\+B\+C\+\_\+\+Start\+\_\+\+Emit\+\_\+0@{Pl\+\_\+\+B\+C\+\_\+\+Start\+\_\+\+Emit\+\_\+0}}
+\index{Pl\+\_\+\+B\+C\+\_\+\+Start\+\_\+\+Emit\+\_\+0@{Pl\+\_\+\+B\+C\+\_\+\+Start\+\_\+\+Emit\+\_\+0}!bc\+\_\+supp.\+h@{bc\+\_\+supp.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+B\+C\+\_\+\+Start\+\_\+\+Emit\+\_\+0(void)}{Pl_BC_Start_Emit_0(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+B\+C\+\_\+\+Start\+\_\+\+Emit\+\_\+0 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{bc__supp_8h_a4e9c9f6d5d48cc5bd8d40c6e2507c855}{}\label{bc__supp_8h_a4e9c9f6d5d48cc5bd8d40c6e2507c855}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{bc__supp_8h_a4e9c9f6d5d48cc5bd8d40c6e2507c855_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{bc\+\_\+supp.\+h@{bc\+\_\+supp.\+h}!Pl\+\_\+\+B\+C\+\_\+\+Stop\+\_\+\+Emit\+\_\+0@{Pl\+\_\+\+B\+C\+\_\+\+Stop\+\_\+\+Emit\+\_\+0}}
+\index{Pl\+\_\+\+B\+C\+\_\+\+Stop\+\_\+\+Emit\+\_\+0@{Pl\+\_\+\+B\+C\+\_\+\+Stop\+\_\+\+Emit\+\_\+0}!bc\+\_\+supp.\+h@{bc\+\_\+supp.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+B\+C\+\_\+\+Stop\+\_\+\+Emit\+\_\+0(void)}{Pl_BC_Stop_Emit_0(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+B\+C\+\_\+\+Stop\+\_\+\+Emit\+\_\+0 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{bc__supp_8h_a57fe068b952d98d64a89dddd23a31c5b}{}\label{bc__supp_8h_a57fe068b952d98d64a89dddd23a31c5b}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{bc__supp_8h_a57fe068b952d98d64a89dddd23a31c5b_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{bc\+\_\+supp.\+h@{bc\+\_\+supp.\+h}!pl\+\_\+byte\+\_\+code@{pl\+\_\+byte\+\_\+code}}
+\index{pl\+\_\+byte\+\_\+code@{pl\+\_\+byte\+\_\+code}!bc\+\_\+supp.\+h@{bc\+\_\+supp.\+h}}
+\subsubsection[{\texorpdfstring{pl\+\_\+byte\+\_\+code}{pl_byte_code}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned$\ast$ pl\+\_\+byte\+\_\+code}\hypertarget{bc__supp_8h_a68b8a33b77384a97197c2f68bc86308f}{}\label{bc__supp_8h_a68b8a33b77384a97197c2f68bc86308f}
+\index{bc\+\_\+supp.\+h@{bc\+\_\+supp.\+h}!pl\+\_\+byte\+\_\+len@{pl\+\_\+byte\+\_\+len}}
+\index{pl\+\_\+byte\+\_\+len@{pl\+\_\+byte\+\_\+len}!bc\+\_\+supp.\+h@{bc\+\_\+supp.\+h}}
+\subsubsection[{\texorpdfstring{pl\+\_\+byte\+\_\+len}{pl_byte_len}}]{\setlength{\rightskip}{0pt plus 5cm}int pl\+\_\+byte\+\_\+len}\hypertarget{bc__supp_8h_a25411c5e21e1cb3c18b34dc3a8c43205}{}\label{bc__supp_8h_a25411c5e21e1cb3c18b34dc3a8c43205}

@@ -1,0 +1,120 @@
+\hypertarget{ctrl__c_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Linedit/ctrl\+\_\+c.c File Reference}
+\label{ctrl__c_8c}\index{gprolog-\/utf8-\/tree/src/\+Linedit/ctrl\+\_\+c.\+c@{gprolog-\/utf8-\/tree/src/\+Linedit/ctrl\+\_\+c.\+c}}
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/gp\+\_\+config.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+Include dependency graph for ctrl\+\_\+c.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{ctrl__c_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{ctrl__c_8c_afeff8d0620d3060480e4be769c813cf9}{Wrapper\+\_\+\+Handler} (int sig)
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{ctrl__c_8c_a54ec36423ca739ef1e56e092deb57ad1}{Pl\+\_\+\+Emit\+\_\+\+Ctrl\+\_\+C} (void)
+\item 
+void \hyperlink{ctrl__c_8c_ab4dd3c85e28eeb4d4a5bc082dc65d470}{Pl\+\_\+\+Install\+\_\+\+Ctrl\+\_\+\+C\+\_\+\+Handler} (\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long}($\ast$handler)(int))
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long}($\ast$ \hyperlink{ctrl__c_8c_a512490e221a47676979209bec4a7085a}{ctrl\+\_\+c\+\_\+handler} )()
+\item 
+static int \hyperlink{ctrl__c_8c_a88814075287adeb95d9533103e79bd8e}{from\+\_\+callback}
+\item 
+static \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{ctrl__c_8c_a9339caf9d89a9cb57727dfe245702ae3}{ret\+\_\+val}
+\item 
+static int \hyperlink{ctrl__c_8c_aa4da1b17b154339436570d6b11f5c8b3}{inside\+\_\+ctrl\+\_\+c}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{ctrl\+\_\+c.\+c@{ctrl\+\_\+c.\+c}!Pl\+\_\+\+Emit\+\_\+\+Ctrl\+\_\+C@{Pl\+\_\+\+Emit\+\_\+\+Ctrl\+\_\+C}}
+\index{Pl\+\_\+\+Emit\+\_\+\+Ctrl\+\_\+C@{Pl\+\_\+\+Emit\+\_\+\+Ctrl\+\_\+C}!ctrl\+\_\+c.\+c@{ctrl\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Emit\+\_\+\+Ctrl\+\_\+\+C(void)}{Pl_Emit_Ctrl_C(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} Pl\+\_\+\+Emit\+\_\+\+Ctrl\+\_\+C (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{ctrl__c_8c_a54ec36423ca739ef1e56e092deb57ad1}{}\label{ctrl__c_8c_a54ec36423ca739ef1e56e092deb57ad1}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ctrl__c_8c_a54ec36423ca739ef1e56e092deb57ad1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ctrl\+\_\+c.\+c@{ctrl\+\_\+c.\+c}!Pl\+\_\+\+Install\+\_\+\+Ctrl\+\_\+\+C\+\_\+\+Handler@{Pl\+\_\+\+Install\+\_\+\+Ctrl\+\_\+\+C\+\_\+\+Handler}}
+\index{Pl\+\_\+\+Install\+\_\+\+Ctrl\+\_\+\+C\+\_\+\+Handler@{Pl\+\_\+\+Install\+\_\+\+Ctrl\+\_\+\+C\+\_\+\+Handler}!ctrl\+\_\+c.\+c@{ctrl\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Install\+\_\+\+Ctrl\+\_\+\+C\+\_\+\+Handler(\+Pl\+Long($\ast$handler)(int))}{Pl_Install_Ctrl_C_Handler(PlLong(*handler)(int))}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Install\+\_\+\+Ctrl\+\_\+\+C\+\_\+\+Handler (
+\begin{DoxyParamCaption}
+\item[{{\bf Pl\+Long}($\ast$)(int)}]{handler}
+\end{DoxyParamCaption}
+)}\hypertarget{ctrl__c_8c_ab4dd3c85e28eeb4d4a5bc082dc65d470}{}\label{ctrl__c_8c_ab4dd3c85e28eeb4d4a5bc082dc65d470}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{ctrl__c_8c_ab4dd3c85e28eeb4d4a5bc082dc65d470_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ctrl__c_8c_ab4dd3c85e28eeb4d4a5bc082dc65d470_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ctrl\+\_\+c.\+c@{ctrl\+\_\+c.\+c}!Wrapper\+\_\+\+Handler@{Wrapper\+\_\+\+Handler}}
+\index{Wrapper\+\_\+\+Handler@{Wrapper\+\_\+\+Handler}!ctrl\+\_\+c.\+c@{ctrl\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Wrapper\+\_\+\+Handler(int sig)}{Wrapper_Handler(int sig)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Wrapper\+\_\+\+Handler (
+\begin{DoxyParamCaption}
+\item[{int}]{sig}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{ctrl__c_8c_afeff8d0620d3060480e4be769c813cf9}{}\label{ctrl__c_8c_afeff8d0620d3060480e4be769c813cf9}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ctrl__c_8c_afeff8d0620d3060480e4be769c813cf9_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{ctrl\+\_\+c.\+c@{ctrl\+\_\+c.\+c}!ctrl\+\_\+c\+\_\+handler@{ctrl\+\_\+c\+\_\+handler}}
+\index{ctrl\+\_\+c\+\_\+handler@{ctrl\+\_\+c\+\_\+handler}!ctrl\+\_\+c.\+c@{ctrl\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{ctrl\+\_\+c\+\_\+handler}{ctrl_c_handler}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long}($\ast$ ctrl\+\_\+c\+\_\+handler) ()\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{ctrl__c_8c_a512490e221a47676979209bec4a7085a}{}\label{ctrl__c_8c_a512490e221a47676979209bec4a7085a}
+\index{ctrl\+\_\+c.\+c@{ctrl\+\_\+c.\+c}!from\+\_\+callback@{from\+\_\+callback}}
+\index{from\+\_\+callback@{from\+\_\+callback}!ctrl\+\_\+c.\+c@{ctrl\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{from\+\_\+callback}{from_callback}}]{\setlength{\rightskip}{0pt plus 5cm}int from\+\_\+callback\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{ctrl__c_8c_a88814075287adeb95d9533103e79bd8e}{}\label{ctrl__c_8c_a88814075287adeb95d9533103e79bd8e}
+\index{ctrl\+\_\+c.\+c@{ctrl\+\_\+c.\+c}!inside\+\_\+ctrl\+\_\+c@{inside\+\_\+ctrl\+\_\+c}}
+\index{inside\+\_\+ctrl\+\_\+c@{inside\+\_\+ctrl\+\_\+c}!ctrl\+\_\+c.\+c@{ctrl\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{inside\+\_\+ctrl\+\_\+c}{inside_ctrl_c}}]{\setlength{\rightskip}{0pt plus 5cm}int inside\+\_\+ctrl\+\_\+c\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{ctrl__c_8c_aa4da1b17b154339436570d6b11f5c8b3}{}\label{ctrl__c_8c_aa4da1b17b154339436570d6b11f5c8b3}
+\index{ctrl\+\_\+c.\+c@{ctrl\+\_\+c.\+c}!ret\+\_\+val@{ret\+\_\+val}}
+\index{ret\+\_\+val@{ret\+\_\+val}!ctrl\+\_\+c.\+c@{ctrl\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{ret\+\_\+val}{ret_val}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} ret\+\_\+val\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{ctrl__c_8c_a9339caf9d89a9cb57727dfe245702ae3}{}\label{ctrl__c_8c_a9339caf9d89a9cb57727dfe245702ae3}

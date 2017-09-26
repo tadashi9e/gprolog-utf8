@@ -1,0 +1,7 @@
+<map id="MainWndProc" name="MainWndProc">
+<area shape="rect" id="node2" href="$w32__console_8c.html#aea7abcb71562352e8ff9c3efd95c505b" title="InitApplication" alt="" coords="157,5,261,32"/>
+<area shape="rect" id="node3" href="$w32__console_8c.html#a2363368e7d52d5df8c4f20cb13283faa" title="StartWinMain" alt="" coords="309,5,411,32"/>
+<area shape="rect" id="node4" href="$w32__console_8c.html#a3e359465ba75ec15014d5af9c09d3db9" title="CallMain" alt="" coords="459,5,532,32"/>
+<area shape="rect" id="node5" href="$w32__console_8c.html#a4df61e90931602252f4bd1addb17902f" title="W32GC_Start_Window" alt="" coords="580,5,739,32"/>
+<area shape="rect" id="node6" href="$w32gc__interf_8c.html#a9bbe083e9a45c3fda6abf2737bebc2ad" title="__declspec" alt="" coords="787,5,875,32"/>
+</map>

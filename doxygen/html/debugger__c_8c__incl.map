@@ -1,0 +1,36 @@
+<map id="gprolog&#45;utf8&#45;tree/src/BipsPl/debugger_c.c" name="gprolog&#45;utf8&#45;tree/src/BipsPl/debugger_c.c">
+<area shape="rect" id="node5" href="$engine__pl_8h.html" title="engine_pl.h" alt="" coords="926,95,1014,121"/>
+<area shape="rect" id="node27" href="$bips__pl_8h.html" title="bips_pl.h" alt="" coords="2666,95,2741,121"/>
+<area shape="rect" id="node7" href="$pl__params_8h.html" title="pl_params.h" alt="" coords="811,169,905,196"/>
+<area shape="rect" id="node8" href="$hash__fct_8h.html" title="hash_fct.h" alt="" coords="515,244,598,271"/>
+<area shape="rect" id="node10" href="$hash_8h.html" title="hash.h" alt="" coords="1035,169,1097,196"/>
+<area shape="rect" id="node11" href="$bool_8h.html" title="bool.h" alt="" coords="1024,244,1081,271"/>
+<area shape="rect" id="node14" href="$engine_8h.html" title="engine.h" alt="" coords="1409,169,1480,196"/>
+<area shape="rect" id="node15" href="$atom_8h.html" title="atom.h" alt="" coords="1504,169,1567,196"/>
+<area shape="rect" id="node16" href="$pred_8h.html" title="pred.h" alt="" coords="1591,169,1650,196"/>
+<area shape="rect" id="node17" href="$misc_8h.html" title="misc.h" alt="" coords="146,169,207,196"/>
+<area shape="rect" id="node18" href="$oper_8h.html" title="oper.h" alt="" coords="1674,169,1733,196"/>
+<area shape="rect" id="node19" href="$machine1_8h.html" title="machine1.h" alt="" coords="1757,169,1847,196"/>
+<area shape="rect" id="node21" href="$machine_8h.html" title="machine.h" alt="" coords="929,169,1011,196"/>
+<area shape="rect" id="node22" href="$stacks__sigsegv_8h.html" title="stacks_sigsegv.h" alt="" coords="395,169,519,196"/>
+<area shape="rect" id="node23" href="$obj__chain_8h.html" title="obj_chain.h" alt="" coords="282,169,370,196"/>
+<area shape="rect" id="node25" href="$wam__inst_8h.html" title="wam_inst.h" alt="" coords="595,169,684,196"/>
+<area shape="rect" id="node26" href="$if__no__fd_8h.html" title="if_no_fd.h" alt="" coords="708,169,787,196"/>
+<area shape="rect" id="node24" href="$pl__long_8h.html" title="pl_long.h" alt="" coords="349,244,423,271"/>
+<area shape="rect" id="node28" href="$b__params_8h.html" title="b_params.h" alt="" coords="2482,169,2573,196"/>
+<area shape="rect" id="node29" href="$inl__protos_8h.html" title="inl_protos.h" alt="" coords="2597,169,2687,196"/>
+<area shape="rect" id="node30" href="$c__supp_8h.html" title="c_supp.h" alt="" coords="3198,169,3273,196"/>
+<area shape="rect" id="node32" href="$foreign__supp_8h.html" title="foreign_supp.h" alt="" coords="2711,169,2818,196"/>
+<area shape="rect" id="node33" href="$pred__supp_8h.html" title="pred_supp.h" alt="" coords="2842,169,2935,196"/>
+<area shape="rect" id="node34" href="$term__supp_8h.html" title="term_supp.h" alt="" coords="2960,169,3055,196"/>
+<area shape="rect" id="node35" href="$stream__supp_8h.html" title="stream_supp.h" alt="" coords="1871,169,1979,196"/>
+<area shape="rect" id="node36" href="$error__supp_8h.html" title="error_supp.h" alt="" coords="3079,169,3173,196"/>
+<area shape="rect" id="node37" href="$scan__supp_8h.html" title="scan_supp.h" alt="" coords="3297,169,3393,196"/>
+<area shape="rect" id="node38" href="$parse__supp_8h.html" title="parse_supp.h" alt="" coords="3417,169,3517,196"/>
+<area shape="rect" id="node39" href="$write__supp_8h.html" title="write_supp.h" alt="" coords="3542,169,3638,196"/>
+<area shape="rect" id="node40" href="$flag__supp_8h.html" title="flag_supp.h" alt="" coords="2003,169,2092,196"/>
+<area shape="rect" id="node41" href="$dynam__supp_8h.html" title="dynam_supp.h" alt="" coords="2117,169,2223,196"/>
+<area shape="rect" id="node42" href="$callinf__supp_8h.html" title="callinf_supp.h" alt="" coords="2248,169,2351,196"/>
+<area shape="rect" id="node43" href="$bc__supp_8h.html" title="bc_supp.h" alt="" coords="2375,169,2458,196"/>
+<area shape="rect" id="node31" href="$pl__wchar_8h.html" title="../EnginePl/pl_wchar.h" alt="" coords="2569,244,2723,271"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="Prolog_Flag_Lookup" name="Prolog_Flag_Lookup">
+<area shape="rect" id="node2" href="$src__rdr__c_8c.html#a9ab9bfa4cfffc3352e99b72fba4955b6" title="Pl_Set_Prolog_Flag_2" alt="" coords="205,56,356,83"/>
+<area shape="rect" id="node14" href="$flag__supp_8c.html#abc3b22003ca67aa0a76dee3b00c962d3" title="Pl_Current_Prolog_Flag_2" alt="" coords="193,107,368,133"/>
+<area shape="rect" id="node3" href="$src__rdr__c_8c.html#a7ef84e25cd84c5961d096b2ddda6df98" title="Exec_One_Directive" alt="" coords="416,56,559,83"/>
+<area shape="rect" id="node4" href="$src__rdr__c_8c.html#a421cb25150c80da420451dc77a0103f1" title="Pl_SR_Add_Directive_7" alt="" coords="607,5,769,32"/>
+<area shape="rect" id="node5" href="$src__rdr__c_8c.html#abf7ac3719de56b13db4c6b8863b9196b" title="Do_Directives" alt="" coords="842,56,947,83"/>
+<area shape="rect" id="node7" href="$src__rdr__c_8c.html#aabba005f79d5cdf767564c28d583cabb" title="Undo_Directives" alt="" coords="629,107,747,133"/>
+<area shape="rect" id="node6" href="$src__rdr__c_8c.html#a6bda16bcd2ea878e58cd1054b0355a2b" title="Pl_SR_Start_Module_3" alt="" coords="1024,56,1183,83"/>
+<area shape="rect" id="node8" href="$src__rdr__c_8c.html#aa2b766aaaa6b911f531a08bdbee67b52" title="Common_Clean" alt="" coords="837,208,953,235"/>
+<area shape="rect" id="node11" href="$src__rdr__c_8c.html#ac535da1516f79bfe5f35e2650fda79c0" title="Close_Current_Module" alt="" coords="817,107,972,133"/>
+<area shape="rect" id="node9" href="$src__rdr__c_8c.html#a9bd17edd807337f25b335d86f826e75d" title="Pl_SR_Close_1" alt="" coords="1046,259,1161,285"/>
+<area shape="rect" id="node10" href="$src__rdr__c_8c.html#a260024335c542b6e1dacb6252ab5e1cc" title="Pl_SR_New_Pass_1" alt="" coords="1031,208,1176,235"/>
+<area shape="rect" id="node12" href="$src__rdr__c_8c.html#a502c8bb8af0be04ef1c0edd4c1cec842" title="Pl_SR_EOF_Reached_1" alt="" coords="1020,157,1187,184"/>
+<area shape="rect" id="node13" href="$src__rdr__c_8c.html#aa9bd5e0d9fa50c972b6c7933bbfdb299" title="Pl_SR_Stop_Module_3" alt="" coords="1025,107,1182,133"/>
+</map>

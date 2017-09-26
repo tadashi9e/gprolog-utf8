@@ -1,0 +1,14 @@
+<map id="Pl_Rd_Chars_Check" name="Pl_Rd_Chars_Check">
+<area shape="rect" id="node2" href="$atom__c_8c.html#a93b4aeb861db385dfbcc91e12c4133b6" title="Pl_Atom_Chars_2" alt="" coords="236,5,364,32"/>
+<area shape="rect" id="node3" href="$atom__c_8c.html#a227fc472d79309e81af1f91e7e236951" title="Pl_Number_Chars_2" alt="" coords="229,56,371,83"/>
+<area shape="rect" id="node4" href="$const__io__c_8c.html#a4c0c2e76d2a48de5b1be98292298c3b1" title="Pl_Read_From_Chars_2" alt="" coords="217,107,383,133"/>
+<area shape="rect" id="node5" href="$const__io__c_8c.html#ad74775c98c90c1dd5b50e079d7e44a4d" title="Pl_Read_Term_From_Chars_5" alt="" coords="199,157,401,184"/>
+<area shape="rect" id="node6" href="$const__io__c_8c.html#a69e4a9f23af4409adb6741f13b0982eb" title="Pl_Read_Token_From\l_Chars_2" alt="" coords="224,209,376,250"/>
+<area shape="rect" id="node7" href="$format__c_8c.html#aa12dcc50db0f65e767ec82fac2354c1f" title="Format" alt="" coords="269,275,331,301"/>
+<area shape="rect" id="node8" href="$src__rdr__c_8c.html#a20338d45bcffed5bd8c0b0e854e2df77" title="Pl_Format_3" alt="" coords="449,275,545,301"/>
+<area shape="rect" id="node9" href="$format__c_8c.html#abff47fc1afcb4e841ee56816e84d37c5" title="Pl_Format_2" alt="" coords="619,249,715,276"/>
+<area shape="rect" id="node10" href="$src__rdr__c_8c.html#a03baa9e62627717422b92fc0bbdd0d60" title="Write_Message_Text" alt="" coords="593,300,740,327"/>
+<area shape="rect" id="node11" href="$src__rdr__c_8c.html#ac19d7c92d943e88aa23241f71b098719" title="Pl_SR_Write_Message_4" alt="" coords="788,249,960,276"/>
+<area shape="rect" id="node12" href="$src__rdr__c_8c.html#af2a12d4b1ba2b0c5a576426cfe64cd18" title="Pl_SR_Write_Message_6" alt="" coords="788,300,960,327"/>
+<area shape="rect" id="node13" href="$src__rdr__c_8c.html#a031ea66c3dc7f9b2784bc9efa2887430" title="Pl_SR_Write_Message_8" alt="" coords="788,351,960,377"/>
+</map>

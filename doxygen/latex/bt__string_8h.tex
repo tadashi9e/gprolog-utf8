@@ -1,0 +1,144 @@
+\hypertarget{bt__string_8h}{}\section{gprolog-\/utf8-\/tree/src/\+Wam2\+Ma/bt\+\_\+string.h File Reference}
+\label{bt__string_8h}\index{gprolog-\/utf8-\/tree/src/\+Wam2\+Ma/bt\+\_\+string.\+h@{gprolog-\/utf8-\/tree/src/\+Wam2\+Ma/bt\+\_\+string.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{bt__string_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structbtnode}{btnode}
+\item 
+struct \hyperlink{structBTString}{B\+T\+String}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structbtnode}{btnode} $\ast$ \hyperlink{bt__string_8h_af6fcd462cd0ec5c31aed2b5c7d6c763c}{P\+B\+T\+Node}
+\item 
+typedef struct \hyperlink{structbtnode}{btnode} \hyperlink{bt__string_8h_a94e2311ccccb66fae2c4ce55649526fc}{B\+T\+Node}
+\item 
+typedef void($\ast$ \hyperlink{bt__string_8h_ad99cc9f5fdbfca0f47ea8138b3afa38d}{B\+T\+Str\+Lst\+Fct}) (int \hyperlink{test__oc__defs_8h_a196206e0ab201e18d79c3878336d7d20}{no}, char $\ast$str, void $\ast$info)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{bt__string_8h_a550b5276036f43f02c277d27800be6e0}{B\+T\+\_\+\+String\+\_\+\+Init} (\hyperlink{structBTString}{B\+T\+String} $\ast$bt\+\_\+str)
+\item 
+\hyperlink{bt__string_8h_a94e2311ccccb66fae2c4ce55649526fc}{B\+T\+Node} $\ast$ \hyperlink{bt__string_8h_a4d385a49b03f7aeac7c168ef48d492d0}{B\+T\+\_\+\+String\+\_\+\+Add} (\hyperlink{structBTString}{B\+T\+String} $\ast$bt\+\_\+str, char $\ast$str)
+\item 
+\hyperlink{bt__string_8h_a94e2311ccccb66fae2c4ce55649526fc}{B\+T\+Node} $\ast$ \hyperlink{bt__string_8h_a47df4899cd0db82d0843dbf52aa5e103}{B\+T\+\_\+\+String\+\_\+\+Lookup} (\hyperlink{structBTString}{B\+T\+String} $\ast$bt\+\_\+str, char $\ast$str)
+\item 
+void \hyperlink{bt__string_8h_a32730363f7e247e6938b78cdb73fa6a5}{B\+T\+\_\+\+String\+\_\+\+List} (\hyperlink{structBTString}{B\+T\+String} $\ast$bt\+\_\+str, \hyperlink{bt__string_8h_ad99cc9f5fdbfca0f47ea8138b3afa38d}{B\+T\+Str\+Lst\+Fct} \hyperlink{extract__asm_8c_a849db728d9239b130558864aae79168f}{fct})
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{bt\+\_\+string.\+h@{bt\+\_\+string.\+h}!B\+T\+Node@{B\+T\+Node}}
+\index{B\+T\+Node@{B\+T\+Node}!bt\+\_\+string.\+h@{bt\+\_\+string.\+h}}
+\subsubsection[{\texorpdfstring{B\+T\+Node}{BTNode}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf btnode}
+ {\bf B\+T\+Node}}\hypertarget{bt__string_8h_a94e2311ccccb66fae2c4ce55649526fc}{}\label{bt__string_8h_a94e2311ccccb66fae2c4ce55649526fc}
+\index{bt\+\_\+string.\+h@{bt\+\_\+string.\+h}!B\+T\+Str\+Lst\+Fct@{B\+T\+Str\+Lst\+Fct}}
+\index{B\+T\+Str\+Lst\+Fct@{B\+T\+Str\+Lst\+Fct}!bt\+\_\+string.\+h@{bt\+\_\+string.\+h}}
+\subsubsection[{\texorpdfstring{B\+T\+Str\+Lst\+Fct}{BTStrLstFct}}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ B\+T\+Str\+Lst\+Fct) (int {\bf no}, char $\ast$str, void $\ast$info)}\hypertarget{bt__string_8h_ad99cc9f5fdbfca0f47ea8138b3afa38d}{}\label{bt__string_8h_ad99cc9f5fdbfca0f47ea8138b3afa38d}
+\index{bt\+\_\+string.\+h@{bt\+\_\+string.\+h}!P\+B\+T\+Node@{P\+B\+T\+Node}}
+\index{P\+B\+T\+Node@{P\+B\+T\+Node}!bt\+\_\+string.\+h@{bt\+\_\+string.\+h}}
+\subsubsection[{\texorpdfstring{P\+B\+T\+Node}{PBTNode}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf btnode}$\ast$ {\bf P\+B\+T\+Node}}\hypertarget{bt__string_8h_af6fcd462cd0ec5c31aed2b5c7d6c763c}{}\label{bt__string_8h_af6fcd462cd0ec5c31aed2b5c7d6c763c}
+
+
+\subsection{Function Documentation}
+\index{bt\+\_\+string.\+h@{bt\+\_\+string.\+h}!B\+T\+\_\+\+String\+\_\+\+Add@{B\+T\+\_\+\+String\+\_\+\+Add}}
+\index{B\+T\+\_\+\+String\+\_\+\+Add@{B\+T\+\_\+\+String\+\_\+\+Add}!bt\+\_\+string.\+h@{bt\+\_\+string.\+h}}
+\subsubsection[{\texorpdfstring{B\+T\+\_\+\+String\+\_\+\+Add(\+B\+T\+String $\ast$bt\+\_\+str, char $\ast$str)}{BT_String_Add(BTString *bt_str, char *str)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\+T\+Node}$\ast$ B\+T\+\_\+\+String\+\_\+\+Add (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+T\+String} $\ast$}]{bt\+\_\+str, }
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\hypertarget{bt__string_8h_a4d385a49b03f7aeac7c168ef48d492d0}{}\label{bt__string_8h_a4d385a49b03f7aeac7c168ef48d492d0}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bt__string_8h_a4d385a49b03f7aeac7c168ef48d492d0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{bt\+\_\+string.\+h@{bt\+\_\+string.\+h}!B\+T\+\_\+\+String\+\_\+\+Init@{B\+T\+\_\+\+String\+\_\+\+Init}}
+\index{B\+T\+\_\+\+String\+\_\+\+Init@{B\+T\+\_\+\+String\+\_\+\+Init}!bt\+\_\+string.\+h@{bt\+\_\+string.\+h}}
+\subsubsection[{\texorpdfstring{B\+T\+\_\+\+String\+\_\+\+Init(\+B\+T\+String $\ast$bt\+\_\+str)}{BT_String_Init(BTString *bt_str)}}]{\setlength{\rightskip}{0pt plus 5cm}void B\+T\+\_\+\+String\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+T\+String} $\ast$}]{bt\+\_\+str}
+\end{DoxyParamCaption}
+)}\hypertarget{bt__string_8h_a550b5276036f43f02c277d27800be6e0}{}\label{bt__string_8h_a550b5276036f43f02c277d27800be6e0}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{bt__string_8h_a550b5276036f43f02c277d27800be6e0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{bt\+\_\+string.\+h@{bt\+\_\+string.\+h}!B\+T\+\_\+\+String\+\_\+\+List@{B\+T\+\_\+\+String\+\_\+\+List}}
+\index{B\+T\+\_\+\+String\+\_\+\+List@{B\+T\+\_\+\+String\+\_\+\+List}!bt\+\_\+string.\+h@{bt\+\_\+string.\+h}}
+\subsubsection[{\texorpdfstring{B\+T\+\_\+\+String\+\_\+\+List(\+B\+T\+String $\ast$bt\+\_\+str, B\+T\+Str\+Lst\+Fct fct)}{BT_String_List(BTString *bt_str, BTStrLstFct fct)}}]{\setlength{\rightskip}{0pt plus 5cm}void B\+T\+\_\+\+String\+\_\+\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+T\+String} $\ast$}]{bt\+\_\+str, }
+\item[{{\bf B\+T\+Str\+Lst\+Fct}}]{fct}
+\end{DoxyParamCaption}
+)}\hypertarget{bt__string_8h_a32730363f7e247e6938b78cdb73fa6a5}{}\label{bt__string_8h_a32730363f7e247e6938b78cdb73fa6a5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{bt__string_8h_a32730363f7e247e6938b78cdb73fa6a5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bt__string_8h_a32730363f7e247e6938b78cdb73fa6a5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{bt\+\_\+string.\+h@{bt\+\_\+string.\+h}!B\+T\+\_\+\+String\+\_\+\+Lookup@{B\+T\+\_\+\+String\+\_\+\+Lookup}}
+\index{B\+T\+\_\+\+String\+\_\+\+Lookup@{B\+T\+\_\+\+String\+\_\+\+Lookup}!bt\+\_\+string.\+h@{bt\+\_\+string.\+h}}
+\subsubsection[{\texorpdfstring{B\+T\+\_\+\+String\+\_\+\+Lookup(\+B\+T\+String $\ast$bt\+\_\+str, char $\ast$str)}{BT_String_Lookup(BTString *bt_str, char *str)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\+T\+Node}$\ast$ B\+T\+\_\+\+String\+\_\+\+Lookup (
+\begin{DoxyParamCaption}
+\item[{{\bf B\+T\+String} $\ast$}]{bt\+\_\+str, }
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\hypertarget{bt__string_8h_a47df4899cd0db82d0843dbf52aa5e103}{}\label{bt__string_8h_a47df4899cd0db82d0843dbf52aa5e103}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bt__string_8h_a47df4899cd0db82d0843dbf52aa5e103_icgraph}
+\end{center}
+\end{figure}
+
+

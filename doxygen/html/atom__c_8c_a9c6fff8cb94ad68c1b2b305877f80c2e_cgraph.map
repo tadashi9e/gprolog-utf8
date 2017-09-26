@@ -1,0 +1,12 @@
+<map id="Pl_Sub_Atom_Alt_0" name="Pl_Sub_Atom_Alt_0">
+<area shape="rect" id="node2" href="$wam__inst_8c.html#ac713c15b8ed89be9dc3274b0b754abb2" title="Pl_Update_Choice_Point" alt="" coords="192,5,360,32"/>
+<area shape="rect" id="node3" href="$atom__c_8c.html#a8577f3f699252703bf709870cbba1e05" title="Compute_Next_BLA" alt="" coords="205,56,347,83"/>
+<area shape="rect" id="node4" href="$pl__wchar_8c.html#a961a9ac7d7be7b35fd1632111c552b91" title="wchar_bytes_of_chars" alt="" coords="411,81,564,108"/>
+<area shape="rect" id="node6" href="$wam__inst_8c.html#a78229c8d23053191e0fee7952757f9c7" title="Pl_Get_Atom" alt="" coords="226,157,326,184"/>
+<area shape="rect" id="node8" href="$atom__c_8c.html#a0955d501b8eac7be38108d9ab5ff7dd9" title="Create_Malloc_Atom" alt="" coords="204,208,348,235"/>
+<area shape="rect" id="node10" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="221,259,331,285"/>
+<area shape="rect" id="node5" href="$pl__wchar_8c.html#afa9feb443cef2f8da40dd45a8c0e273d" title="count_wchar_bytes" alt="" coords="615,81,749,108"/>
+<area shape="rect" id="node7" href="$wam__inst_8c.html#a89d8aba44029f2a5f548a2ae5f6eb574" title="Pl_Get_Atom_Tagged" alt="" coords="412,157,563,184"/>
+<area shape="rect" id="node9" href="$atom_8c.html#a068c993d95113a2ba7643918e68eedb3" title="Pl_Create_Atom" alt="" coords="428,208,547,235"/>
+<area shape="rect" id="node11" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="408,259,567,285"/>
+</map>

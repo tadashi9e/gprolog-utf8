@@ -1,0 +1,17 @@
+<map id="Parse_Term" name="Parse_Term">
+<area shape="rect" id="node2" href="$parse__supp_8h.html#a64d906da2798112a3c398b00f9741139" title="Pl_Read_Term" alt="" coords="173,233,283,260"/>
+<area shape="rect" id="node14" href="$parse__supp_8c.html#a91129321b0656be20577914e71efd7fb" title="Parse_Args_Of_Functor" alt="" coords="147,284,309,311"/>
+<area shape="rect" id="node15" href="$parse__supp_8c.html#a5279315d52439bb2d9142ce22451dd0f" title="Parse_Bracketed_Term" alt="" coords="357,347,516,373"/>
+<area shape="rect" id="node16" href="$parse__supp_8c.html#ab52e6752bd14d107f8e3c6e9308c077b" title="Parse_List" alt="" coords="186,409,270,436"/>
+<area shape="rect" id="node3" href="$read__c_8c.html#ad383d406378b7b22f08a8382d1a80fb0" title="Pl_Read_Term_5" alt="" coords="375,233,498,260"/>
+<area shape="rect" id="node4" href="$const__io__c_8c.html#ab1870dca5b94f316ea69c739eb50a434" title="Pl_Read_From_String" alt="" coords="591,5,742,32"/>
+<area shape="rect" id="node5" href="$const__io__c_8c.html#a75deece217063fb44a56e2e1e2111896" title="Pl_Read_From_Atom_2" alt="" coords="586,56,747,83"/>
+<area shape="rect" id="node6" href="$const__io__c_8c.html#a4c0c2e76d2a48de5b1be98292298c3b1" title="Pl_Read_From_Chars_2" alt="" coords="584,107,749,133"/>
+<area shape="rect" id="node7" href="$const__io__c_8c.html#a66a57821f6bc65641c878166b5c80c52" title="Pl_Read_From_Codes_2" alt="" coords="583,157,751,184"/>
+<area shape="rect" id="node8" href="$const__io__c_8c.html#aae76aaaee5268d487027179f43e796aa" title="Pl_Read_Term_From_Atom_5" alt="" coords="567,208,766,235"/>
+<area shape="rect" id="node9" href="$const__io__c_8c.html#ad74775c98c90c1dd5b50e079d7e44a4d" title="Pl_Read_Term_From_Chars_5" alt="" coords="565,259,768,285"/>
+<area shape="rect" id="node10" href="$const__io__c_8c.html#ae8b13c6f888f8c79bffa8e65a2c5b600" title="Pl_Read_Term_From_Codes_5" alt="" coords="564,309,769,336"/>
+<area shape="rect" id="node11" href="$read__c_8c.html#ac5d31efcd05110182afee4d3d3a3c1da" title="Pl_Read_Term_4" alt="" coords="605,360,728,387"/>
+<area shape="rect" id="node12" href="$read__c_8c.html#a096f5ea03ecdb63b680501b55246e86d" title="Pl_Read_1" alt="" coords="623,411,710,437"/>
+<area shape="rect" id="node13" href="$read__c_8c.html#a5875a10dde57265c7d0bbfe398c547a2" title="Pl_Read_2" alt="" coords="623,461,710,488"/>
+</map>

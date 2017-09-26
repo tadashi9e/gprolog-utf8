@@ -1,0 +1,287 @@
+\hypertarget{sockets__c_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/sockets\+\_\+c.c File Reference}
+\label{sockets__c_8c}\index{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/sockets\+\_\+c.\+c@{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/sockets\+\_\+c.\+c}}
+{\ttfamily \#include \char`\"{}gp\+\_\+config.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$errno.\+h$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/in.\+h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\\*
+{\ttfamily \#include $<$netdb.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}engine\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bips\+\_\+pl.\+h\char`\"{}}\\*
+Include dependency graph for sockets\+\_\+c.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sockets__c_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sockets__c_8c_ac2238956c2b28a02adaeaf890fbc4bf5}{O\+B\+J\+\_\+\+I\+N\+IT}~\hyperlink{sockets__c_8c_abb60ff72f0ca874268bb3c7c51cc6e8b}{Socket\+\_\+\+Initializer}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{sockets__c_8c_a0d079005d2c64521c4431e8652047ec1}{Create\+\_\+\+Socket\+\_\+\+Streams} (int sock, char $\ast$stream\+\_\+name, int $\ast$stm\+\_\+in, int $\ast$stm\+\_\+out)
+\item 
+static void \hyperlink{sockets__c_8c_abb60ff72f0ca874268bb3c7c51cc6e8b}{Socket\+\_\+\+Initializer} (void)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{sockets__c_8c_a1679f922440301f52b3466bf726715d3}{Pl\+\_\+\+Socket\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} domain\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} socket\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{sockets__c_8c_add259d672bf89e96a64d7b91b08a9991}{Pl\+\_\+\+Socket\+\_\+\+Close\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} socket\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{sockets__c_8c_aa1e6e178356d10d68da051d34dff64f1}{Pl\+\_\+\+Socket\+\_\+\+Bind\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} socket\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} address\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{sockets__c_8c_abbe3fb80935b07d8fb995acffb3c9c94}{Pl\+\_\+\+Socket\+\_\+\+Connect\+\_\+4} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} socket\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} address\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+in\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+out\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{sockets__c_8c_af33129f29fafcfbbe191b77a4df12d7c}{Pl\+\_\+\+Socket\+\_\+\+Listen\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} socket\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} length\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{sockets__c_8c_ae82e005638fc6d4c1cc9bb0fe3b3c6e3}{Pl\+\_\+\+Socket\+\_\+\+Accept\+\_\+4} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} socket\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} client\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+in\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+out\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{sockets__c_8c_a6f439469b5fd39d24f5bca6ee6e0ba33}{Pl\+\_\+\+Assoc\+\_\+\+Socket\+\_\+\+Streams\+\_\+3} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} socket\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+in\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} stm\+\_\+out\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{sockets__c_8c_a02b387d3828d48e5aa3a61314d715eb6}{Pl\+\_\+\+Hostname\+\_\+\+Address\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} host\+\_\+name\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} host\+\_\+address\+\_\+word)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{sockets__c_8c_a6e4a3bcb40cd0a599f1f1de353e1409d}{atom\+\_\+\+A\+F\+\_\+\+I\+N\+ET}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}!O\+B\+J\+\_\+\+I\+N\+IT@{O\+B\+J\+\_\+\+I\+N\+IT}}
+\index{O\+B\+J\+\_\+\+I\+N\+IT@{O\+B\+J\+\_\+\+I\+N\+IT}!sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{O\+B\+J\+\_\+\+I\+N\+IT}{OBJ_INIT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+B\+J\+\_\+\+I\+N\+IT~{\bf Socket\+\_\+\+Initializer}}\hypertarget{sockets__c_8c_ac2238956c2b28a02adaeaf890fbc4bf5}{}\label{sockets__c_8c_ac2238956c2b28a02adaeaf890fbc4bf5}
+
+
+\subsection{Function Documentation}
+\index{sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}!Create\+\_\+\+Socket\+\_\+\+Streams@{Create\+\_\+\+Socket\+\_\+\+Streams}}
+\index{Create\+\_\+\+Socket\+\_\+\+Streams@{Create\+\_\+\+Socket\+\_\+\+Streams}!sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Create\+\_\+\+Socket\+\_\+\+Streams(int sock, char $\ast$stream\+\_\+name, int $\ast$stm\+\_\+in, int $\ast$stm\+\_\+out)}{Create_Socket_Streams(int sock, char *stream_name, int *stm_in, int *stm_out)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Bool} Create\+\_\+\+Socket\+\_\+\+Streams (
+\begin{DoxyParamCaption}
+\item[{int}]{sock, }
+\item[{char $\ast$}]{stream\+\_\+name, }
+\item[{int $\ast$}]{stm\+\_\+in, }
+\item[{int $\ast$}]{stm\+\_\+out}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{sockets__c_8c_a0d079005d2c64521c4431e8652047ec1}{}\label{sockets__c_8c_a0d079005d2c64521c4431e8652047ec1}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sockets__c_8c_a0d079005d2c64521c4431e8652047ec1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sockets__c_8c_a0d079005d2c64521c4431e8652047ec1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}!Pl\+\_\+\+Assoc\+\_\+\+Socket\+\_\+\+Streams\+\_\+3@{Pl\+\_\+\+Assoc\+\_\+\+Socket\+\_\+\+Streams\+\_\+3}}
+\index{Pl\+\_\+\+Assoc\+\_\+\+Socket\+\_\+\+Streams\+\_\+3@{Pl\+\_\+\+Assoc\+\_\+\+Socket\+\_\+\+Streams\+\_\+3}!sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Assoc\+\_\+\+Socket\+\_\+\+Streams\+\_\+3(\+Wam\+Word socket\+\_\+word, Wam\+Word stm\+\_\+in\+\_\+word, Wam\+Word stm\+\_\+out\+\_\+word)}{Pl_Assoc_Socket_Streams_3(WamWord socket_word, WamWord stm_in_word, WamWord stm_out_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Assoc\+\_\+\+Socket\+\_\+\+Streams\+\_\+3 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{socket\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{stm\+\_\+in\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{stm\+\_\+out\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{sockets__c_8c_a6f439469b5fd39d24f5bca6ee6e0ba33}{}\label{sockets__c_8c_a6f439469b5fd39d24f5bca6ee6e0ba33}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sockets__c_8c_a6f439469b5fd39d24f5bca6ee6e0ba33_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}!Pl\+\_\+\+Hostname\+\_\+\+Address\+\_\+2@{Pl\+\_\+\+Hostname\+\_\+\+Address\+\_\+2}}
+\index{Pl\+\_\+\+Hostname\+\_\+\+Address\+\_\+2@{Pl\+\_\+\+Hostname\+\_\+\+Address\+\_\+2}!sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hostname\+\_\+\+Address\+\_\+2(\+Wam\+Word host\+\_\+name\+\_\+word, Wam\+Word host\+\_\+address\+\_\+word)}{Pl_Hostname_Address_2(WamWord host_name_word, WamWord host_address_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Hostname\+\_\+\+Address\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{host\+\_\+name\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{host\+\_\+address\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{sockets__c_8c_a02b387d3828d48e5aa3a61314d715eb6}{}\label{sockets__c_8c_a02b387d3828d48e5aa3a61314d715eb6}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sockets__c_8c_a02b387d3828d48e5aa3a61314d715eb6_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}!Pl\+\_\+\+Socket\+\_\+2@{Pl\+\_\+\+Socket\+\_\+2}}
+\index{Pl\+\_\+\+Socket\+\_\+2@{Pl\+\_\+\+Socket\+\_\+2}!sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Socket\+\_\+2(\+Wam\+Word domain\+\_\+word, Wam\+Word socket\+\_\+word)}{Pl_Socket_2(WamWord domain_word, WamWord socket_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Socket\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{domain\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{socket\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{sockets__c_8c_a1679f922440301f52b3466bf726715d3}{}\label{sockets__c_8c_a1679f922440301f52b3466bf726715d3}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sockets__c_8c_a1679f922440301f52b3466bf726715d3_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}!Pl\+\_\+\+Socket\+\_\+\+Accept\+\_\+4@{Pl\+\_\+\+Socket\+\_\+\+Accept\+\_\+4}}
+\index{Pl\+\_\+\+Socket\+\_\+\+Accept\+\_\+4@{Pl\+\_\+\+Socket\+\_\+\+Accept\+\_\+4}!sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Socket\+\_\+\+Accept\+\_\+4(\+Wam\+Word socket\+\_\+word, Wam\+Word client\+\_\+word, Wam\+Word stm\+\_\+in\+\_\+word, Wam\+Word stm\+\_\+out\+\_\+word)}{Pl_Socket_Accept_4(WamWord socket_word, WamWord client_word, WamWord stm_in_word, WamWord stm_out_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Socket\+\_\+\+Accept\+\_\+4 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{socket\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{client\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{stm\+\_\+in\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{stm\+\_\+out\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{sockets__c_8c_ae82e005638fc6d4c1cc9bb0fe3b3c6e3}{}\label{sockets__c_8c_ae82e005638fc6d4c1cc9bb0fe3b3c6e3}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sockets__c_8c_ae82e005638fc6d4c1cc9bb0fe3b3c6e3_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}!Pl\+\_\+\+Socket\+\_\+\+Bind\+\_\+2@{Pl\+\_\+\+Socket\+\_\+\+Bind\+\_\+2}}
+\index{Pl\+\_\+\+Socket\+\_\+\+Bind\+\_\+2@{Pl\+\_\+\+Socket\+\_\+\+Bind\+\_\+2}!sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Socket\+\_\+\+Bind\+\_\+2(\+Wam\+Word socket\+\_\+word, Wam\+Word address\+\_\+word)}{Pl_Socket_Bind_2(WamWord socket_word, WamWord address_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Socket\+\_\+\+Bind\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{socket\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{address\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{sockets__c_8c_aa1e6e178356d10d68da051d34dff64f1}{}\label{sockets__c_8c_aa1e6e178356d10d68da051d34dff64f1}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sockets__c_8c_aa1e6e178356d10d68da051d34dff64f1_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}!Pl\+\_\+\+Socket\+\_\+\+Close\+\_\+1@{Pl\+\_\+\+Socket\+\_\+\+Close\+\_\+1}}
+\index{Pl\+\_\+\+Socket\+\_\+\+Close\+\_\+1@{Pl\+\_\+\+Socket\+\_\+\+Close\+\_\+1}!sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Socket\+\_\+\+Close\+\_\+1(\+Wam\+Word socket\+\_\+word)}{Pl_Socket_Close_1(WamWord socket_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Socket\+\_\+\+Close\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{socket\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{sockets__c_8c_add259d672bf89e96a64d7b91b08a9991}{}\label{sockets__c_8c_add259d672bf89e96a64d7b91b08a9991}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sockets__c_8c_add259d672bf89e96a64d7b91b08a9991_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}!Pl\+\_\+\+Socket\+\_\+\+Connect\+\_\+4@{Pl\+\_\+\+Socket\+\_\+\+Connect\+\_\+4}}
+\index{Pl\+\_\+\+Socket\+\_\+\+Connect\+\_\+4@{Pl\+\_\+\+Socket\+\_\+\+Connect\+\_\+4}!sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Socket\+\_\+\+Connect\+\_\+4(\+Wam\+Word socket\+\_\+word, Wam\+Word address\+\_\+word, Wam\+Word stm\+\_\+in\+\_\+word, Wam\+Word stm\+\_\+out\+\_\+word)}{Pl_Socket_Connect_4(WamWord socket_word, WamWord address_word, WamWord stm_in_word, WamWord stm_out_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Socket\+\_\+\+Connect\+\_\+4 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{socket\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{address\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{stm\+\_\+in\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{stm\+\_\+out\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{sockets__c_8c_abbe3fb80935b07d8fb995acffb3c9c94}{}\label{sockets__c_8c_abbe3fb80935b07d8fb995acffb3c9c94}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sockets__c_8c_abbe3fb80935b07d8fb995acffb3c9c94_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}!Pl\+\_\+\+Socket\+\_\+\+Listen\+\_\+2@{Pl\+\_\+\+Socket\+\_\+\+Listen\+\_\+2}}
+\index{Pl\+\_\+\+Socket\+\_\+\+Listen\+\_\+2@{Pl\+\_\+\+Socket\+\_\+\+Listen\+\_\+2}!sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Socket\+\_\+\+Listen\+\_\+2(\+Wam\+Word socket\+\_\+word, Wam\+Word length\+\_\+word)}{Pl_Socket_Listen_2(WamWord socket_word, WamWord length_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Socket\+\_\+\+Listen\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{socket\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{length\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{sockets__c_8c_af33129f29fafcfbbe191b77a4df12d7c}{}\label{sockets__c_8c_af33129f29fafcfbbe191b77a4df12d7c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sockets__c_8c_af33129f29fafcfbbe191b77a4df12d7c_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}!Socket\+\_\+\+Initializer@{Socket\+\_\+\+Initializer}}
+\index{Socket\+\_\+\+Initializer@{Socket\+\_\+\+Initializer}!sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Socket\+\_\+\+Initializer(void)}{Socket_Initializer(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Socket\+\_\+\+Initializer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{sockets__c_8c_abb60ff72f0ca874268bb3c7c51cc6e8b}{}\label{sockets__c_8c_abb60ff72f0ca874268bb3c7c51cc6e8b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sockets__c_8c_abb60ff72f0ca874268bb3c7c51cc6e8b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}!atom\+\_\+\+A\+F\+\_\+\+I\+N\+ET@{atom\+\_\+\+A\+F\+\_\+\+I\+N\+ET}}
+\index{atom\+\_\+\+A\+F\+\_\+\+I\+N\+ET@{atom\+\_\+\+A\+F\+\_\+\+I\+N\+ET}!sockets\+\_\+c.\+c@{sockets\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{atom\+\_\+\+A\+F\+\_\+\+I\+N\+ET}{atom_AF_INET}}]{\setlength{\rightskip}{0pt plus 5cm}int atom\+\_\+\+A\+F\+\_\+\+I\+N\+ET\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{sockets__c_8c_a6e4a3bcb40cd0a599f1f1de353e1409d}{}\label{sockets__c_8c_a6e4a3bcb40cd0a599f1f1de353e1409d}

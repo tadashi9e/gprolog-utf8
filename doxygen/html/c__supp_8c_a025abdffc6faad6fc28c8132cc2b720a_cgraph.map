@@ -1,0 +1,12 @@
+<map id="Pl_Un_Compound" name="Pl_Un_Compound">
+<area shape="rect" id="node2" href="$c__supp_8c.html#a8ee616a4c412a9b96ff9379610e1f2b9" title="Pl_Un_Atom_Check" alt="" coords="181,31,323,57"/>
+<area shape="rect" id="node5" href="$c__supp_8c.html#a94a7398a43aec5f2a4a9f363c209374e" title="Pl_Un_List" alt="" coords="209,107,295,133"/>
+<area shape="rect" id="node8" href="$wam__inst_8c.html#acd2fdce00a3e2d6fa978b8a195c95746" title="Pl_Unify_Value" alt="" coords="401,157,513,184"/>
+<area shape="rect" id="node10" href="$wam__inst_8c.html#a3142e85c3603983f78392e0a0498106b" title="Pl_Get_Structure" alt="" coords="191,208,313,235"/>
+<area shape="rect" id="node3" href="$wam__inst_8c.html#a78229c8d23053191e0fee7952757f9c7" title="Pl_Get_Atom" alt="" coords="407,5,507,32"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#a89d8aba44029f2a5f548a2ae5f6eb574" title="Pl_Get_Atom_Tagged" alt="" coords="591,5,741,32"/>
+<area shape="rect" id="node6" href="$wam__inst_8c.html#a4ab2a67fe680997c88472c007bafbcbd" title="Pl_Get_Nil" alt="" coords="414,56,499,83"/>
+<area shape="rect" id="node7" href="$wam__inst_8c.html#ac053eb26fdee8a8e71ea9a5ac4079ab0" title="Pl_Get_List" alt="" coords="411,107,502,133"/>
+<area shape="rect" id="node9" href="$wam__inst_8h.html#a098bda85a540e8ca5969063ccfd4ea20" title="Pl_Unify" alt="" coords="630,157,702,184"/>
+<area shape="rect" id="node11" href="$wam__inst_8c.html#a2c65ef3714c1e3ff114311255eb080ff" title="Pl_Get_Structure_Tagged" alt="" coords="371,208,543,235"/>
+</map>

@@ -1,0 +1,25 @@
+<map id="Pl_Rd_Code_Check" name="Pl_Rd_Code_Check">
+<area shape="rect" id="node2" href="$atom__c_8c.html#ae783305c9dbde7908ba5c8e77e635cea" title="Pl_Char_Code_2" alt="" coords="220,195,341,221"/>
+<area shape="rect" id="node3" href="$gprolog_8h.html#a2a6ef49644049265527620b258bd518d" title="Pl_Rd_Codes_Str_Check" alt="" coords="195,245,367,272"/>
+<area shape="rect" id="node19" href="$gprolog_8h.html#a328c1b9b7ebdd30122e4b32a91beb67d" title="Pl_Rd_Codes_Str" alt="" coords="217,300,344,327"/>
+<area shape="rect" id="node21" href="$char__io__c_8c.html#a1b3c0a85ec097c7b3fe49f989e82939c" title="Pl_Unget_Code_2" alt="" coords="217,351,345,377"/>
+<area shape="rect" id="node23" href="$char__io__c_8c.html#a5b261a1b3c26174644f24a3a2d3eb0d3" title="Pl_Put_Code_2" alt="" coords="224,401,337,428"/>
+<area shape="rect" id="node4" href="$gprolog_8h.html#aaf9d3d88be7d9651ce5927344a47f3b7" title="Pl_Rd_Codes_Check" alt="" coords="415,183,563,209"/>
+<area shape="rect" id="node18" href="$stream__c_8c.html#a5509c863559e52e3f79d862fdb121edb" title="Pl_Open_Input_Term\l_Stream_2" alt="" coords="416,234,561,275"/>
+<area shape="rect" id="node5" href="$atom__c_8c.html#ae7e76a394b080595b47f57c8134b5775" title="Pl_Atom_Codes_2" alt="" coords="648,5,779,32"/>
+<area shape="rect" id="node6" href="$atom__c_8c.html#af3d13cb1d0fbb3208789ea87cf806fdb" title="Pl_Name_2" alt="" coords="867,56,957,83"/>
+<area shape="rect" id="node7" href="$atom__c_8c.html#ae89fe3df220d385008f49c583dc41d32" title="Pl_Number_Codes_2" alt="" coords="640,107,787,133"/>
+<area shape="rect" id="node8" href="$const__io__c_8c.html#a66a57821f6bc65641c878166b5c80c52" title="Pl_Read_From_Codes_2" alt="" coords="629,157,797,184"/>
+<area shape="rect" id="node9" href="$const__io__c_8c.html#ae8b13c6f888f8c79bffa8e65a2c5b600" title="Pl_Read_Term_From_Codes_5" alt="" coords="611,208,816,235"/>
+<area shape="rect" id="node10" href="$const__io__c_8c.html#a2c53bfa221ba5ddcbd784ae050e27c9e" title="Pl_Read_Token_From\l_Codes_2" alt="" coords="637,259,789,301"/>
+<area shape="rect" id="node11" href="$src__rdr__c_8c.html#a20338d45bcffed5bd8c0b0e854e2df77" title="Pl_Format_3" alt="" coords="864,351,960,377"/>
+<area shape="rect" id="node17" href="$format__c_8c.html#aa12dcc50db0f65e767ec82fac2354c1f" title="Format" alt="" coords="682,376,745,403"/>
+<area shape="rect" id="node12" href="$format__c_8c.html#abff47fc1afcb4e841ee56816e84d37c5" title="Pl_Format_2" alt="" coords="1033,325,1129,352"/>
+<area shape="rect" id="node13" href="$src__rdr__c_8c.html#a03baa9e62627717422b92fc0bbdd0d60" title="Write_Message_Text" alt="" coords="1008,376,1155,403"/>
+<area shape="rect" id="node14" href="$src__rdr__c_8c.html#ac19d7c92d943e88aa23241f71b098719" title="Pl_SR_Write_Message_4" alt="" coords="1203,325,1375,352"/>
+<area shape="rect" id="node15" href="$src__rdr__c_8c.html#af2a12d4b1ba2b0c5a576426cfe64cd18" title="Pl_SR_Write_Message_6" alt="" coords="1203,376,1375,403"/>
+<area shape="rect" id="node16" href="$src__rdr__c_8c.html#a031ea66c3dc7f9b2784bc9efa2887430" title="Pl_SR_Write_Message_8" alt="" coords="1203,427,1375,453"/>
+<area shape="rect" id="node20" href="$gprolog_8h.html#a17b87b5f5c134e268bdb769c9826eed9" title="Pl_Rd_Codes" alt="" coords="437,300,540,327"/>
+<area shape="rect" id="node22" href="$char__io__c_8c.html#afcac3e81d32d6cb39e262edb2c98d268" title="Pl_Unget_Code_1" alt="" coords="425,351,553,377"/>
+<area shape="rect" id="node24" href="$char__io__c_8c.html#a350d0f03ab1557facda2cf67721ebd5f" title="Pl_Put_Code_1" alt="" coords="432,401,545,428"/>
+</map>

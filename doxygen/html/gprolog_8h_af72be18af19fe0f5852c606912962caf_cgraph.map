@@ -1,0 +1,7 @@
+<map id="Pl_Un_Number_Check" name="Pl_Un_Number_Check">
+<area shape="rect" id="node2" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="209,5,319,32"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#a8899ae2504ab650fe32b26ef80281dc1" title="Pl_Get_Float" alt="" coords="215,56,313,83"/>
+<area shape="rect" id="node3" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="367,5,525,32"/>
+<area shape="rect" id="node5" href="$wam__inst_8c.html#aa37d4eb89d0851601d2397788e5dcf4a" title="Pl_Global_Push_Float" alt="" coords="371,56,521,83"/>
+<area shape="rect" id="node6" href="$wam__inst_8c.html#abe61f0e18fbf38ab873ac2754c9498ce" title="Pl_Obtain_Float" alt="" coords="389,107,503,133"/>
+</map>

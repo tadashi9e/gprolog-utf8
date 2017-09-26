@@ -1,0 +1,340 @@
+\hypertarget{engine_8h}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/engine.h File Reference}
+\label{engine_8h}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/engine.\+h@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/engine.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{engine_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{engine_8h_a754257ab38a8e42a526c899d3504cc83}{cpp\+\_\+recurs}(p,  n)~p\#\#\+\_\+\+\_\+a\#\#n
+\item 
+\#define \hyperlink{engine_8h_a3311d69e5a291ef3b61a7a96572e7158}{Prolog\+\_\+\+Predicate}(p,  n)~\hyperlink{engine_8h_a754257ab38a8e42a526c899d3504cc83}{cpp\+\_\+recurs}(p, n)
+\item 
+\#define \hyperlink{engine_8h_a9506510be0d37f4d15743b976b65f65a}{Prolog\+\_\+\+Prototype}(p,  n)~void \hyperlink{engine_8h_a3311d69e5a291ef3b61a7a96572e7158}{Prolog\+\_\+\+Predicate}(p, n)()
+\item 
+\#define \hyperlink{engine_8h_a6db2b0a8721810b5abe76d75f0ffa0af}{Goto\+\_\+\+Predicate}(p,  n)~(($\ast$\hyperlink{engine_8h_a3311d69e5a291ef3b61a7a96572e7158}{Prolog\+\_\+\+Predicate}(p, n))())
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{engine_8h_a79163a775d949cf493a9f7b28bf4fc09}{Pl\+\_\+\+Start\+\_\+\+Prolog} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{engine_8h_a2bdd3c70343087dfea269493a50fdc5c}{Pl\+\_\+\+Stop\+\_\+\+Prolog} (void)
+\item 
+void \hyperlink{engine_8h_a3cc65f95d082c9905c9eaf0821ace5a6}{Pl\+\_\+\+Reset\+\_\+\+Prolog} (void)
+\item 
+void \hyperlink{engine_8h_a725e2098c2ffc82994b4feb085068854}{Pl\+\_\+\+Reset\+\_\+\+Prolog\+\_\+\+In\+\_\+\+Signal} (void)
+\item 
+void \hyperlink{engine_8h_af6b560a40e43eea1d0be1dd2495d872e}{Pl\+\_\+\+Set\+\_\+\+Heap\+\_\+\+Actual\+\_\+\+Start} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$\hyperlink{engine_8c_a3a5fc4237a15c3319841dd2002ce3bbb}{heap\+\_\+actual\+\_\+start})
+\item 
+void \hyperlink{engine_8h_a3b4f13384481b3c59c21e3530aa83301}{Pl\+\_\+\+Execute\+\_\+\+Directive} (int pl\+\_\+file, int pl\+\_\+line, \hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} is\+\_\+system, Code\+Ptr proc)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{engine_8h_a46a033060542d7e473d5a749ab1a812f}{Pl\+\_\+\+Try\+\_\+\+Execute\+\_\+\+Top\+\_\+\+Level} (void)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{engine_8h_a837196745e0fb6af03ee5e5d062e1087}{Pl\+\_\+\+Call\+\_\+\+Prolog} (Code\+Ptr codep)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{engine_8h_a0de468a80fd359dfd002a82936418292}{Pl\+\_\+\+Call\+\_\+\+Prolog\+\_\+\+Next\+\_\+\+Sol} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$query\+\_\+b)
+\item 
+void \hyperlink{engine_8h_ad168aa88e74dd55cbce32c9c64683588}{Pl\+\_\+\+Keep\+\_\+\+Rest\+\_\+\+For\+\_\+\+Prolog} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$query\+\_\+b)
+\item 
+void \hyperlink{engine_8h_add09f3e13fb6bda5c7d2d3d0f3502d6e}{Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Exception} (void)
+\item 
+void \hyperlink{engine_8h_ae0fcb6df66410fd57c52a0ba16527642}{Pl\+\_\+\+Execute\+\_\+\+A\+\_\+\+Continuation} (Code\+Ptr codep)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{engine_8h_a9d305118e77f4df17bff3d2ccbd03e42}{pl\+\_\+os\+\_\+argc}
+\item 
+char $\ast$$\ast$ \hyperlink{engine_8h_a5e062b018044c6b8b32c0b7a5fab0237}{pl\+\_\+os\+\_\+argv}
+\item 
+char $\ast$ \hyperlink{engine_8h_ad26cd5575608f1a18e1189438aac9419}{pl\+\_\+home}
+\item 
+int \hyperlink{engine_8h_a42e7bc093e9f214b17e54e0e543d077b}{pl\+\_\+devel\+\_\+mode}
+\item 
+char \hyperlink{engine_8h_a1389633f26a44cc660ecfaaa6f9110c4}{pl\+\_\+glob\+\_\+buff} \mbox{[}$\,$\mbox{]}
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} $\ast$ \hyperlink{engine_8h_a0149438fae9995190d7fef39bcc10c3f}{pl\+\_\+base\+\_\+fl}
+\item 
+double $\ast$ \hyperlink{engine_8h_ad72cf4e5a6ffef14f3ee54de4f8553de}{pl\+\_\+base\+\_\+fd}
+\item 
+int \hyperlink{engine_8h_a8d91cd119466f38a3c000f4c672435db}{pl\+\_\+le\+\_\+mode}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{engine.\+h@{engine.\+h}!cpp\+\_\+recurs@{cpp\+\_\+recurs}}
+\index{cpp\+\_\+recurs@{cpp\+\_\+recurs}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{cpp\+\_\+recurs}{cpp_recurs}}]{\setlength{\rightskip}{0pt plus 5cm}\#define cpp\+\_\+recurs(
+\begin{DoxyParamCaption}
+\item[{}]{p, }
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~p\#\#\+\_\+\+\_\+a\#\#n}\hypertarget{engine_8h_a754257ab38a8e42a526c899d3504cc83}{}\label{engine_8h_a754257ab38a8e42a526c899d3504cc83}
+\index{engine.\+h@{engine.\+h}!Goto\+\_\+\+Predicate@{Goto\+\_\+\+Predicate}}
+\index{Goto\+\_\+\+Predicate@{Goto\+\_\+\+Predicate}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{Goto\+\_\+\+Predicate}{Goto_Predicate}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Goto\+\_\+\+Predicate(
+\begin{DoxyParamCaption}
+\item[{}]{p, }
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~(($\ast${\bf Prolog\+\_\+\+Predicate}(p, n))())}\hypertarget{engine_8h_a6db2b0a8721810b5abe76d75f0ffa0af}{}\label{engine_8h_a6db2b0a8721810b5abe76d75f0ffa0af}
+\index{engine.\+h@{engine.\+h}!Prolog\+\_\+\+Predicate@{Prolog\+\_\+\+Predicate}}
+\index{Prolog\+\_\+\+Predicate@{Prolog\+\_\+\+Predicate}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{Prolog\+\_\+\+Predicate}{Prolog_Predicate}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Prolog\+\_\+\+Predicate(
+\begin{DoxyParamCaption}
+\item[{}]{p, }
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~{\bf cpp\+\_\+recurs}(p, n)}\hypertarget{engine_8h_a3311d69e5a291ef3b61a7a96572e7158}{}\label{engine_8h_a3311d69e5a291ef3b61a7a96572e7158}
+\index{engine.\+h@{engine.\+h}!Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}}
+\index{Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{Prolog\+\_\+\+Prototype}{Prolog_Prototype}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Prolog\+\_\+\+Prototype(
+\begin{DoxyParamCaption}
+\item[{}]{p, }
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~void {\bf Prolog\+\_\+\+Predicate}(p, n)()}\hypertarget{engine_8h_a9506510be0d37f4d15743b976b65f65a}{}\label{engine_8h_a9506510be0d37f4d15743b976b65f65a}
+
+
+\subsection{Function Documentation}
+\index{engine.\+h@{engine.\+h}!Pl\+\_\+\+Call\+\_\+\+Prolog@{Pl\+\_\+\+Call\+\_\+\+Prolog}}
+\index{Pl\+\_\+\+Call\+\_\+\+Prolog@{Pl\+\_\+\+Call\+\_\+\+Prolog}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Call\+\_\+\+Prolog(\+Code\+Ptr codep)}{Pl_Call_Prolog(CodePtr codep)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Call\+\_\+\+Prolog (
+\begin{DoxyParamCaption}
+\item[{Code\+Ptr}]{codep}
+\end{DoxyParamCaption}
+)}\hypertarget{engine_8h_a837196745e0fb6af03ee5e5d062e1087}{}\label{engine_8h_a837196745e0fb6af03ee5e5d062e1087}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{engine_8h_a837196745e0fb6af03ee5e5d062e1087_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{engine_8h_a837196745e0fb6af03ee5e5d062e1087_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{engine.\+h@{engine.\+h}!Pl\+\_\+\+Call\+\_\+\+Prolog\+\_\+\+Next\+\_\+\+Sol@{Pl\+\_\+\+Call\+\_\+\+Prolog\+\_\+\+Next\+\_\+\+Sol}}
+\index{Pl\+\_\+\+Call\+\_\+\+Prolog\+\_\+\+Next\+\_\+\+Sol@{Pl\+\_\+\+Call\+\_\+\+Prolog\+\_\+\+Next\+\_\+\+Sol}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Call\+\_\+\+Prolog\+\_\+\+Next\+\_\+\+Sol(\+Wam\+Word $\ast$query\+\_\+b)}{Pl_Call_Prolog_Next_Sol(WamWord *query_b)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Call\+\_\+\+Prolog\+\_\+\+Next\+\_\+\+Sol (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word} $\ast$}]{query\+\_\+b}
+\end{DoxyParamCaption}
+)}\hypertarget{engine_8h_a0de468a80fd359dfd002a82936418292}{}\label{engine_8h_a0de468a80fd359dfd002a82936418292}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{engine_8h_a0de468a80fd359dfd002a82936418292_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{engine_8h_a0de468a80fd359dfd002a82936418292_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{engine.\+h@{engine.\+h}!Pl\+\_\+\+Execute\+\_\+\+A\+\_\+\+Continuation@{Pl\+\_\+\+Execute\+\_\+\+A\+\_\+\+Continuation}}
+\index{Pl\+\_\+\+Execute\+\_\+\+A\+\_\+\+Continuation@{Pl\+\_\+\+Execute\+\_\+\+A\+\_\+\+Continuation}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Execute\+\_\+\+A\+\_\+\+Continuation(\+Code\+Ptr codep)}{Pl_Execute_A_Continuation(CodePtr codep)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Execute\+\_\+\+A\+\_\+\+Continuation (
+\begin{DoxyParamCaption}
+\item[{Code\+Ptr}]{codep}
+\end{DoxyParamCaption}
+)}\hypertarget{engine_8h_ae0fcb6df66410fd57c52a0ba16527642}{}\label{engine_8h_ae0fcb6df66410fd57c52a0ba16527642}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{engine_8h_ae0fcb6df66410fd57c52a0ba16527642_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{engine.\+h@{engine.\+h}!Pl\+\_\+\+Execute\+\_\+\+Directive@{Pl\+\_\+\+Execute\+\_\+\+Directive}}
+\index{Pl\+\_\+\+Execute\+\_\+\+Directive@{Pl\+\_\+\+Execute\+\_\+\+Directive}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Execute\+\_\+\+Directive(int pl\+\_\+file, int pl\+\_\+line, Bool is\+\_\+system, Code\+Ptr proc)}{Pl_Execute_Directive(int pl_file, int pl_line, Bool is_system, CodePtr proc)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Execute\+\_\+\+Directive (
+\begin{DoxyParamCaption}
+\item[{int}]{pl\+\_\+file, }
+\item[{int}]{pl\+\_\+line, }
+\item[{{\bf Bool}}]{is\+\_\+system, }
+\item[{Code\+Ptr}]{proc}
+\end{DoxyParamCaption}
+)}\hypertarget{engine_8h_a3b4f13384481b3c59c21e3530aa83301}{}\label{engine_8h_a3b4f13384481b3c59c21e3530aa83301}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{engine_8h_a3b4f13384481b3c59c21e3530aa83301_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{engine.\+h@{engine.\+h}!Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Exception@{Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Exception}}
+\index{Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Exception@{Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Exception}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Exception(void)}{Pl_Exit_With_Exception(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Exception (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{engine_8h_add09f3e13fb6bda5c7d2d3d0f3502d6e}{}\label{engine_8h_add09f3e13fb6bda5c7d2d3d0f3502d6e}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{engine_8h_add09f3e13fb6bda5c7d2d3d0f3502d6e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{engine.\+h@{engine.\+h}!Pl\+\_\+\+Keep\+\_\+\+Rest\+\_\+\+For\+\_\+\+Prolog@{Pl\+\_\+\+Keep\+\_\+\+Rest\+\_\+\+For\+\_\+\+Prolog}}
+\index{Pl\+\_\+\+Keep\+\_\+\+Rest\+\_\+\+For\+\_\+\+Prolog@{Pl\+\_\+\+Keep\+\_\+\+Rest\+\_\+\+For\+\_\+\+Prolog}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Keep\+\_\+\+Rest\+\_\+\+For\+\_\+\+Prolog(\+Wam\+Word $\ast$query\+\_\+b)}{Pl_Keep_Rest_For_Prolog(WamWord *query_b)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Keep\+\_\+\+Rest\+\_\+\+For\+\_\+\+Prolog (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word} $\ast$}]{query\+\_\+b}
+\end{DoxyParamCaption}
+)}\hypertarget{engine_8h_ad168aa88e74dd55cbce32c9c64683588}{}\label{engine_8h_ad168aa88e74dd55cbce32c9c64683588}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{engine_8h_ad168aa88e74dd55cbce32c9c64683588_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{engine_8h_ad168aa88e74dd55cbce32c9c64683588_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{engine.\+h@{engine.\+h}!Pl\+\_\+\+Reset\+\_\+\+Prolog@{Pl\+\_\+\+Reset\+\_\+\+Prolog}}
+\index{Pl\+\_\+\+Reset\+\_\+\+Prolog@{Pl\+\_\+\+Reset\+\_\+\+Prolog}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Reset\+\_\+\+Prolog(void)}{Pl_Reset_Prolog(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Reset\+\_\+\+Prolog (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{engine_8h_a3cc65f95d082c9905c9eaf0821ace5a6}{}\label{engine_8h_a3cc65f95d082c9905c9eaf0821ace5a6}
+\index{engine.\+h@{engine.\+h}!Pl\+\_\+\+Reset\+\_\+\+Prolog\+\_\+\+In\+\_\+\+Signal@{Pl\+\_\+\+Reset\+\_\+\+Prolog\+\_\+\+In\+\_\+\+Signal}}
+\index{Pl\+\_\+\+Reset\+\_\+\+Prolog\+\_\+\+In\+\_\+\+Signal@{Pl\+\_\+\+Reset\+\_\+\+Prolog\+\_\+\+In\+\_\+\+Signal}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Reset\+\_\+\+Prolog\+\_\+\+In\+\_\+\+Signal(void)}{Pl_Reset_Prolog_In_Signal(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Reset\+\_\+\+Prolog\+\_\+\+In\+\_\+\+Signal (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{engine_8h_a725e2098c2ffc82994b4feb085068854}{}\label{engine_8h_a725e2098c2ffc82994b4feb085068854}
+\index{engine.\+h@{engine.\+h}!Pl\+\_\+\+Set\+\_\+\+Heap\+\_\+\+Actual\+\_\+\+Start@{Pl\+\_\+\+Set\+\_\+\+Heap\+\_\+\+Actual\+\_\+\+Start}}
+\index{Pl\+\_\+\+Set\+\_\+\+Heap\+\_\+\+Actual\+\_\+\+Start@{Pl\+\_\+\+Set\+\_\+\+Heap\+\_\+\+Actual\+\_\+\+Start}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Set\+\_\+\+Heap\+\_\+\+Actual\+\_\+\+Start(\+Wam\+Word $\ast$heap\+\_\+actual\+\_\+start)}{Pl_Set_Heap_Actual_Start(WamWord *heap_actual_start)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Set\+\_\+\+Heap\+\_\+\+Actual\+\_\+\+Start (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word} $\ast$}]{heap\+\_\+actual\+\_\+start}
+\end{DoxyParamCaption}
+)}\hypertarget{engine_8h_af6b560a40e43eea1d0be1dd2495d872e}{}\label{engine_8h_af6b560a40e43eea1d0be1dd2495d872e}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{engine_8h_af6b560a40e43eea1d0be1dd2495d872e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{engine.\+h@{engine.\+h}!Pl\+\_\+\+Start\+\_\+\+Prolog@{Pl\+\_\+\+Start\+\_\+\+Prolog}}
+\index{Pl\+\_\+\+Start\+\_\+\+Prolog@{Pl\+\_\+\+Start\+\_\+\+Prolog}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Start\+\_\+\+Prolog(int argc, char $\ast$argv[])}{Pl_Start_Prolog(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Start\+\_\+\+Prolog (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{engine_8h_a79163a775d949cf493a9f7b28bf4fc09}{}\label{engine_8h_a79163a775d949cf493a9f7b28bf4fc09}
+\index{engine.\+h@{engine.\+h}!Pl\+\_\+\+Stop\+\_\+\+Prolog@{Pl\+\_\+\+Stop\+\_\+\+Prolog}}
+\index{Pl\+\_\+\+Stop\+\_\+\+Prolog@{Pl\+\_\+\+Stop\+\_\+\+Prolog}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Stop\+\_\+\+Prolog(void)}{Pl_Stop_Prolog(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Stop\+\_\+\+Prolog (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{engine_8h_a2bdd3c70343087dfea269493a50fdc5c}{}\label{engine_8h_a2bdd3c70343087dfea269493a50fdc5c}
+\index{engine.\+h@{engine.\+h}!Pl\+\_\+\+Try\+\_\+\+Execute\+\_\+\+Top\+\_\+\+Level@{Pl\+\_\+\+Try\+\_\+\+Execute\+\_\+\+Top\+\_\+\+Level}}
+\index{Pl\+\_\+\+Try\+\_\+\+Execute\+\_\+\+Top\+\_\+\+Level@{Pl\+\_\+\+Try\+\_\+\+Execute\+\_\+\+Top\+\_\+\+Level}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Try\+\_\+\+Execute\+\_\+\+Top\+\_\+\+Level(void)}{Pl_Try_Execute_Top_Level(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Try\+\_\+\+Execute\+\_\+\+Top\+\_\+\+Level (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{engine_8h_a46a033060542d7e473d5a749ab1a812f}{}\label{engine_8h_a46a033060542d7e473d5a749ab1a812f}
+
+
+\subsection{Variable Documentation}
+\index{engine.\+h@{engine.\+h}!pl\+\_\+base\+\_\+fd@{pl\+\_\+base\+\_\+fd}}
+\index{pl\+\_\+base\+\_\+fd@{pl\+\_\+base\+\_\+fd}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{pl\+\_\+base\+\_\+fd}{pl_base_fd}}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ pl\+\_\+base\+\_\+fd}\hypertarget{engine_8h_ad72cf4e5a6ffef14f3ee54de4f8553de}{}\label{engine_8h_ad72cf4e5a6ffef14f3ee54de4f8553de}
+\index{engine.\+h@{engine.\+h}!pl\+\_\+base\+\_\+fl@{pl\+\_\+base\+\_\+fl}}
+\index{pl\+\_\+base\+\_\+fl@{pl\+\_\+base\+\_\+fl}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{pl\+\_\+base\+\_\+fl}{pl_base_fl}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long}$\ast$ pl\+\_\+base\+\_\+fl}\hypertarget{engine_8h_a0149438fae9995190d7fef39bcc10c3f}{}\label{engine_8h_a0149438fae9995190d7fef39bcc10c3f}
+\index{engine.\+h@{engine.\+h}!pl\+\_\+devel\+\_\+mode@{pl\+\_\+devel\+\_\+mode}}
+\index{pl\+\_\+devel\+\_\+mode@{pl\+\_\+devel\+\_\+mode}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{pl\+\_\+devel\+\_\+mode}{pl_devel_mode}}]{\setlength{\rightskip}{0pt plus 5cm}int pl\+\_\+devel\+\_\+mode}\hypertarget{engine_8h_a42e7bc093e9f214b17e54e0e543d077b}{}\label{engine_8h_a42e7bc093e9f214b17e54e0e543d077b}
+\index{engine.\+h@{engine.\+h}!pl\+\_\+glob\+\_\+buff@{pl\+\_\+glob\+\_\+buff}}
+\index{pl\+\_\+glob\+\_\+buff@{pl\+\_\+glob\+\_\+buff}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{pl\+\_\+glob\+\_\+buff}{pl_glob_buff}}]{\setlength{\rightskip}{0pt plus 5cm}char pl\+\_\+glob\+\_\+buff\mbox{[}$\,$\mbox{]}}\hypertarget{engine_8h_a1389633f26a44cc660ecfaaa6f9110c4}{}\label{engine_8h_a1389633f26a44cc660ecfaaa6f9110c4}
+\index{engine.\+h@{engine.\+h}!pl\+\_\+home@{pl\+\_\+home}}
+\index{pl\+\_\+home@{pl\+\_\+home}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{pl\+\_\+home}{pl_home}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ pl\+\_\+home}\hypertarget{engine_8h_ad26cd5575608f1a18e1189438aac9419}{}\label{engine_8h_ad26cd5575608f1a18e1189438aac9419}
+\index{engine.\+h@{engine.\+h}!pl\+\_\+le\+\_\+mode@{pl\+\_\+le\+\_\+mode}}
+\index{pl\+\_\+le\+\_\+mode@{pl\+\_\+le\+\_\+mode}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{pl\+\_\+le\+\_\+mode}{pl_le_mode}}]{\setlength{\rightskip}{0pt plus 5cm}int pl\+\_\+le\+\_\+mode}\hypertarget{engine_8h_a8d91cd119466f38a3c000f4c672435db}{}\label{engine_8h_a8d91cd119466f38a3c000f4c672435db}
+\index{engine.\+h@{engine.\+h}!pl\+\_\+os\+\_\+argc@{pl\+\_\+os\+\_\+argc}}
+\index{pl\+\_\+os\+\_\+argc@{pl\+\_\+os\+\_\+argc}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{pl\+\_\+os\+\_\+argc}{pl_os_argc}}]{\setlength{\rightskip}{0pt plus 5cm}int pl\+\_\+os\+\_\+argc}\hypertarget{engine_8h_a9d305118e77f4df17bff3d2ccbd03e42}{}\label{engine_8h_a9d305118e77f4df17bff3d2ccbd03e42}
+\index{engine.\+h@{engine.\+h}!pl\+\_\+os\+\_\+argv@{pl\+\_\+os\+\_\+argv}}
+\index{pl\+\_\+os\+\_\+argv@{pl\+\_\+os\+\_\+argv}!engine.\+h@{engine.\+h}}
+\subsubsection[{\texorpdfstring{pl\+\_\+os\+\_\+argv}{pl_os_argv}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ pl\+\_\+os\+\_\+argv}\hypertarget{engine_8h_a5e062b018044c6b8b32c0b7a5fab0237}{}\label{engine_8h_a5e062b018044c6b8b32c0b7a5fab0237}

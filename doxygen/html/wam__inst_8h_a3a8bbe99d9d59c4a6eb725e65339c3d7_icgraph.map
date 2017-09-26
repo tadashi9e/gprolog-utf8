@@ -1,0 +1,9 @@
+<map id="Pl_Unify_Structure" name="Pl_Unify_Structure">
+<area shape="rect" id="node2" href="$bc__supp_8c.html#a76dfe05d2b8c2759f785c9a9a003b782" title="BC_Emulate_Byte_Code" alt="" coords="185,104,353,131"/>
+<area shape="rect" id="node3" href="$bc__supp_8c.html#a77ff26a73bb5736aff1d2c5d97400be5" title="BC_Emulate_Clause" alt="" coords="401,64,545,91"/>
+<area shape="rect" id="node7" href="$bc__supp_8c.html#a3eaaadb92bd63dd9a3f63436a81a3dcc" title="Pl_BC_Emulate_Cont_0" alt="" coords="791,173,955,200"/>
+<area shape="rect" id="node4" href="$bc__supp_8h.html#a8a045e53639fe083b9e018f119e754e4" title="Pl_BC_Emulate_Pred" alt="" coords="593,64,743,91"/>
+<area shape="rect" id="node6" href="$bc__supp_8c.html#af5eb08f345855ac14975d4366243dbc5" title="BC_Emulate_Pred_Alt" alt="" coords="796,5,949,32"/>
+<area shape="rect" id="node5" href="$bc__supp_8c.html#a972dcf547f043fb0988173c77a2f521f" title="Pl_BC_Call_Terminal\l_Pred_3" alt="" coords="799,57,946,98"/>
+<area shape="rect" id="node8" href="$call__args__c_8c.html#af6fb473d73263063c7c2361e4c6a8981" title="Pl_Call_Closure" alt="" coords="815,123,931,149"/>
+</map>

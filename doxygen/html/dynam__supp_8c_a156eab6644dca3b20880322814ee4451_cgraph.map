@@ -1,0 +1,10 @@
+<map id="Pl_Delete_Dynamic_Clause" name="Pl_Delete_Dynamic_Clause">
+<area shape="rect" id="node2" href="$dynam__supp_8c.html#afedf03617ad179356659ba12b748e57d" title="Clean_Erased_Clauses" alt="" coords="240,81,399,108"/>
+<area shape="rect" id="node3" href="$dynam__supp_8c.html#ada397d60e8eb1e3a362345953eae0efd" title="Get_Scan_Choice_Point" alt="" coords="447,5,612,32"/>
+<area shape="rect" id="node4" href="$dynam__supp_8c.html#aec7c1bbdc8a3ef2ddd99413f8d6dc1f6" title="Free_Clause" alt="" coords="481,56,577,83"/>
+<area shape="rect" id="node5" href="$hash_8c.html#a295f55c97219e9399aa83175af69c891" title="Pl_Hash_Free_Table" alt="" coords="457,107,601,133"/>
+<area shape="rect" id="node6" href="$dynam__supp_8c.html#ad7f5f2af85fc33d7a9f23cdb1f47c936" title="Unlink_Clause" alt="" coords="476,157,583,184"/>
+<area shape="rect" id="node7" href="$dynam__supp_8c.html#aeff4296cc3b2c77514795fbbd1cf0f14" title="Remove_From_2Chain" alt="" coords="660,132,816,159"/>
+<area shape="rect" id="node8" href="$hash_8c.html#aba073a491f0937450a3681a01f6d07a7" title="Pl_Hash_Delete" alt="" coords="679,183,797,209"/>
+<area shape="rect" id="node9" href="$hash_8c.html#a12948099c13cb849ed3575849492ac33" title="Hash_Locate" alt="" coords="864,183,963,209"/>
+</map>

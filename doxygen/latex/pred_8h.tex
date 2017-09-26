@@ -1,0 +1,217 @@
+\hypertarget{pred_8h}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/pred.h File Reference}
+\label{pred_8h}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/pred.\+h@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/pred.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pred_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structPredInf}{Pred\+Inf}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pred_8h_a2fc7ae453c316dd25effaa74b92f8abd}{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+N\+A\+T\+I\+V\+E\+\_\+\+C\+O\+DE}~1	  /$\ast$ codep is set, except for control constructs $\ast$/
+\item 
+\#define \hyperlink{pred_8h_af2d0a4d9f697824186ba7e9735ca609b}{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+D\+Y\+N\+A\+M\+IC}~2	  /$\ast$ dynamic or static $\ast$/
+\item 
+\#define \hyperlink{pred_8h_a12611e4417742a522fcc319e4d27fe2c}{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+P\+U\+B\+L\+IC}~4	  /$\ast$ public or private $\ast$/
+\item 
+\#define \hyperlink{pred_8h_aaacd42ae38583c1865e34aa10cfa2909}{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+IN}~8	  /$\ast$ built-\/in (procedure provided by the system) $\ast$/
+\item 
+\#define \hyperlink{pred_8h_a15b3766f31227c7336693f0707717451}{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+I\+N\+\_\+\+FD}~16	  /$\ast$ FD built-\/in pred  (==$>$ \hyperlink{pred_8h_aaacd42ae38583c1865e34aa10cfa2909}{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+IN}) $\ast$/
+\item 
+\#define \hyperlink{pred_8h_ae0f12706fd91e018daa8b732ce570832}{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+C\+O\+N\+S\+T\+R\+U\+CT}~32	  /$\ast$ control\+\_\+construct (==$>$ \hyperlink{pred_8h_aaacd42ae38583c1865e34aa10cfa2909}{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+IN}) $\ast$/
+\item 
+\#define \hyperlink{pred_8h_af19e869f0867951bb37e3b0ff8de5bdb}{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+M\+U\+L\+T\+I\+F\+I\+LE}~64	  /$\ast$ multifile or monofile $\ast$/
+\item 
+\#define \hyperlink{pred_8h_ad4a067c5880e6e1b890e17c4da1e0f24}{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+E\+X\+P\+O\+R\+T\+ED}~128	  /$\ast$ exported by module not yet \hyperlink{cpp__headers_8c_ac8cdf8d37f66cb2da5e14d8a73091eaf}{used} -\/ for future $\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{pred_8h_aa0fb875bb38ef710cad2276c7c843dc0}{Pl\+\_\+\+Init\+\_\+\+Pred} (void)
+\item 
+\hyperlink{structPredInf}{Pred\+Inf} $\ast$\hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{pred_8h_a43f9afc5dcfc6f9c1f8205024c2be46a}{Pl\+\_\+\+Create\+\_\+\+Pred} (int func, int arity, int pl\+\_\+file, int pl\+\_\+line, int prop, \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} $\ast$codep)
+\item 
+\hyperlink{structPredInf}{Pred\+Inf} $\ast$\hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{pred_8h_aa8ebf08b93ec7e4bde2c544c70ba4c39}{Pl\+\_\+\+Lookup\+\_\+\+Pred} (int func, int arity)
+\item 
+void \hyperlink{chkma_8c_a46116ed56661a1c5bffe91c80ceae694}{FC} \hyperlink{pred_8h_af871791264131d07932474af4ddbdbb3}{Pl\+\_\+\+Delete\+\_\+\+Pred} (int func, int arity)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{pred_8h_a9783833b3635912a826fad9786b4d688}{pl\+\_\+pred\+\_\+tbl}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{pred.\+h@{pred.\+h}!M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+IN@{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+IN}}
+\index{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+IN@{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+IN}!pred.\+h@{pred.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+IN}{MASK_PRED_BUILTIN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+IN~8	  /$\ast$ built-\/in (procedure provided by the system) $\ast$/}\hypertarget{pred_8h_aaacd42ae38583c1865e34aa10cfa2909}{}\label{pred_8h_aaacd42ae38583c1865e34aa10cfa2909}
+\index{pred.\+h@{pred.\+h}!M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+I\+N\+\_\+\+FD@{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+I\+N\+\_\+\+FD}}
+\index{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+I\+N\+\_\+\+FD@{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+I\+N\+\_\+\+FD}!pred.\+h@{pred.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+I\+N\+\_\+\+FD}{MASK_PRED_BUILTIN_FD}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+I\+N\+\_\+\+FD~16	  /$\ast$ FD built-\/in pred  (==$>$ {\bf M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+IN}) $\ast$/}\hypertarget{pred_8h_a15b3766f31227c7336693f0707717451}{}\label{pred_8h_a15b3766f31227c7336693f0707717451}
+\index{pred.\+h@{pred.\+h}!M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+C\+O\+N\+S\+T\+R\+U\+CT@{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+C\+O\+N\+S\+T\+R\+U\+CT}}
+\index{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+C\+O\+N\+S\+T\+R\+U\+CT@{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+C\+O\+N\+S\+T\+R\+U\+CT}!pred.\+h@{pred.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+C\+O\+N\+S\+T\+R\+U\+CT}{MASK_PRED_CONTROL_CONSTRUCT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+C\+O\+N\+S\+T\+R\+U\+CT~32	  /$\ast$ control\+\_\+construct (==$>$ {\bf M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+B\+U\+I\+L\+T\+IN}) $\ast$/}\hypertarget{pred_8h_ae0f12706fd91e018daa8b732ce570832}{}\label{pred_8h_ae0f12706fd91e018daa8b732ce570832}
+\index{pred.\+h@{pred.\+h}!M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+D\+Y\+N\+A\+M\+IC@{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+D\+Y\+N\+A\+M\+IC}}
+\index{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+D\+Y\+N\+A\+M\+IC@{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+D\+Y\+N\+A\+M\+IC}!pred.\+h@{pred.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+D\+Y\+N\+A\+M\+IC}{MASK_PRED_DYNAMIC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+D\+Y\+N\+A\+M\+IC~2	  /$\ast$ dynamic or static $\ast$/}\hypertarget{pred_8h_af2d0a4d9f697824186ba7e9735ca609b}{}\label{pred_8h_af2d0a4d9f697824186ba7e9735ca609b}
+\index{pred.\+h@{pred.\+h}!M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+E\+X\+P\+O\+R\+T\+ED@{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+E\+X\+P\+O\+R\+T\+ED}}
+\index{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+E\+X\+P\+O\+R\+T\+ED@{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+E\+X\+P\+O\+R\+T\+ED}!pred.\+h@{pred.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+E\+X\+P\+O\+R\+T\+ED}{MASK_PRED_EXPORTED}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+E\+X\+P\+O\+R\+T\+ED~128	  /$\ast$ exported by module not yet {\bf used} -\/ for future $\ast$/}\hypertarget{pred_8h_ad4a067c5880e6e1b890e17c4da1e0f24}{}\label{pred_8h_ad4a067c5880e6e1b890e17c4da1e0f24}
+\index{pred.\+h@{pred.\+h}!M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+M\+U\+L\+T\+I\+F\+I\+LE@{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+M\+U\+L\+T\+I\+F\+I\+LE}}
+\index{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+M\+U\+L\+T\+I\+F\+I\+LE@{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+M\+U\+L\+T\+I\+F\+I\+LE}!pred.\+h@{pred.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+M\+U\+L\+T\+I\+F\+I\+LE}{MASK_PRED_MULTIFILE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+M\+U\+L\+T\+I\+F\+I\+LE~64	  /$\ast$ multifile or monofile $\ast$/}\hypertarget{pred_8h_af19e869f0867951bb37e3b0ff8de5bdb}{}\label{pred_8h_af19e869f0867951bb37e3b0ff8de5bdb}
+\index{pred.\+h@{pred.\+h}!M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+N\+A\+T\+I\+V\+E\+\_\+\+C\+O\+DE@{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+N\+A\+T\+I\+V\+E\+\_\+\+C\+O\+DE}}
+\index{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+N\+A\+T\+I\+V\+E\+\_\+\+C\+O\+DE@{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+N\+A\+T\+I\+V\+E\+\_\+\+C\+O\+DE}!pred.\+h@{pred.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+N\+A\+T\+I\+V\+E\+\_\+\+C\+O\+DE}{MASK_PRED_NATIVE_CODE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+N\+A\+T\+I\+V\+E\+\_\+\+C\+O\+DE~1	  /$\ast$ codep is set, except for control constructs $\ast$/}\hypertarget{pred_8h_a2fc7ae453c316dd25effaa74b92f8abd}{}\label{pred_8h_a2fc7ae453c316dd25effaa74b92f8abd}
+\index{pred.\+h@{pred.\+h}!M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+P\+U\+B\+L\+IC@{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+P\+U\+B\+L\+IC}}
+\index{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+P\+U\+B\+L\+IC@{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+P\+U\+B\+L\+IC}!pred.\+h@{pred.\+h}}
+\subsubsection[{\texorpdfstring{M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+P\+U\+B\+L\+IC}{MASK_PRED_PUBLIC}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+S\+K\+\_\+\+P\+R\+E\+D\+\_\+\+P\+U\+B\+L\+IC~4	  /$\ast$ public or private $\ast$/}\hypertarget{pred_8h_a12611e4417742a522fcc319e4d27fe2c}{}\label{pred_8h_a12611e4417742a522fcc319e4d27fe2c}
+
+
+\subsection{Function Documentation}
+\index{pred.\+h@{pred.\+h}!Pl\+\_\+\+Create\+\_\+\+Pred@{Pl\+\_\+\+Create\+\_\+\+Pred}}
+\index{Pl\+\_\+\+Create\+\_\+\+Pred@{Pl\+\_\+\+Create\+\_\+\+Pred}!pred.\+h@{pred.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Create\+\_\+\+Pred(int func, int arity, int pl\+\_\+file, int pl\+\_\+line, int prop, Pl\+Long $\ast$codep)}{Pl_Create_Pred(int func, int arity, int pl_file, int pl_line, int prop, PlLong *codep)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pred\+Inf}$\ast$ {\bf FC} Pl\+\_\+\+Create\+\_\+\+Pred (
+\begin{DoxyParamCaption}
+\item[{int}]{func, }
+\item[{int}]{arity, }
+\item[{int}]{pl\+\_\+file, }
+\item[{int}]{pl\+\_\+line, }
+\item[{int}]{prop, }
+\item[{{\bf Pl\+Long} $\ast$}]{codep}
+\end{DoxyParamCaption}
+)}\hypertarget{pred_8h_a43f9afc5dcfc6f9c1f8205024c2be46a}{}\label{pred_8h_a43f9afc5dcfc6f9c1f8205024c2be46a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pred_8h_a43f9afc5dcfc6f9c1f8205024c2be46a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pred_8h_a43f9afc5dcfc6f9c1f8205024c2be46a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{pred.\+h@{pred.\+h}!Pl\+\_\+\+Delete\+\_\+\+Pred@{Pl\+\_\+\+Delete\+\_\+\+Pred}}
+\index{Pl\+\_\+\+Delete\+\_\+\+Pred@{Pl\+\_\+\+Delete\+\_\+\+Pred}!pred.\+h@{pred.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Delete\+\_\+\+Pred(int func, int arity)}{Pl_Delete_Pred(int func, int arity)}}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf FC} Pl\+\_\+\+Delete\+\_\+\+Pred (
+\begin{DoxyParamCaption}
+\item[{int}]{func, }
+\item[{int}]{arity}
+\end{DoxyParamCaption}
+)}\hypertarget{pred_8h_af871791264131d07932474af4ddbdbb3}{}\label{pred_8h_af871791264131d07932474af4ddbdbb3}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pred_8h_af871791264131d07932474af4ddbdbb3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pred_8h_af871791264131d07932474af4ddbdbb3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{pred.\+h@{pred.\+h}!Pl\+\_\+\+Init\+\_\+\+Pred@{Pl\+\_\+\+Init\+\_\+\+Pred}}
+\index{Pl\+\_\+\+Init\+\_\+\+Pred@{Pl\+\_\+\+Init\+\_\+\+Pred}!pred.\+h@{pred.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Init\+\_\+\+Pred(void)}{Pl_Init_Pred(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Init\+\_\+\+Pred (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{pred_8h_aa0fb875bb38ef710cad2276c7c843dc0}{}\label{pred_8h_aa0fb875bb38ef710cad2276c7c843dc0}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pred_8h_aa0fb875bb38ef710cad2276c7c843dc0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pred_8h_aa0fb875bb38ef710cad2276c7c843dc0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{pred.\+h@{pred.\+h}!Pl\+\_\+\+Lookup\+\_\+\+Pred@{Pl\+\_\+\+Lookup\+\_\+\+Pred}}
+\index{Pl\+\_\+\+Lookup\+\_\+\+Pred@{Pl\+\_\+\+Lookup\+\_\+\+Pred}!pred.\+h@{pred.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Lookup\+\_\+\+Pred(int func, int arity)}{Pl_Lookup_Pred(int func, int arity)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pred\+Inf}$\ast$ {\bf FC} Pl\+\_\+\+Lookup\+\_\+\+Pred (
+\begin{DoxyParamCaption}
+\item[{int}]{func, }
+\item[{int}]{arity}
+\end{DoxyParamCaption}
+)}\hypertarget{pred_8h_aa8ebf08b93ec7e4bde2c544c70ba4c39}{}\label{pred_8h_aa8ebf08b93ec7e4bde2c544c70ba4c39}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pred_8h_aa8ebf08b93ec7e4bde2c544c70ba4c39_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{pred_8h_aa8ebf08b93ec7e4bde2c544c70ba4c39_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{pred.\+h@{pred.\+h}!pl\+\_\+pred\+\_\+tbl@{pl\+\_\+pred\+\_\+tbl}}
+\index{pl\+\_\+pred\+\_\+tbl@{pl\+\_\+pred\+\_\+tbl}!pred.\+h@{pred.\+h}}
+\subsubsection[{\texorpdfstring{pl\+\_\+pred\+\_\+tbl}{pl_pred_tbl}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ pl\+\_\+pred\+\_\+tbl}\hypertarget{pred_8h_a9783833b3635912a826fad9786b4d688}{}\label{pred_8h_a9783833b3635912a826fad9786b4d688}

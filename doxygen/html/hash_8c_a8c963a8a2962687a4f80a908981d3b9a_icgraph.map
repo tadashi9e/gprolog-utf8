@@ -1,0 +1,31 @@
+<map id="Pl_Hash_Nb_Elements" name="Pl_Hash_Nb_Elements">
+<area shape="rect" id="node2" href="$flag__supp_8h.html#aae6ead01f35ccaa6a4c453aeadc1f5ef" title="Pl_Write_Pl_State_File" alt="" coords="419,5,576,32"/>
+<area shape="rect" id="node4" href="$hash_8h.html#a8c963a8a2962687a4f80a908981d3b9a" title="Pl_Hash_Nb_Elements" alt="" coords="212,75,371,101"/>
+<area shape="rect" id="node5" href="$misc_8h.html#a623a56eb127eb18ff99bc4737ebc100b" title="Pl_Extend_Table_If\l_Needed" alt="" coords="429,106,565,147"/>
+<area shape="rect" id="node3" href="$consult__c_8c.html#a1aeea9f76cdfe478ce18d2262b45f36a" title="Pl_Consult_2" alt="" coords="659,5,759,32"/>
+<area shape="rect" id="node6" href="$dynam__supp_8h.html#ac515f897a0c90f972786f9d16a14ddd5" title="Pl_Add_Dynamic_Clause" alt="" coords="843,109,1013,136"/>
+<area shape="rect" id="node8" href="$stream__supp_8h.html#a68baecf1476b95a7cb8890662eb22567" title="Pl_Add_Alias_To_Stream" alt="" coords="624,160,795,187"/>
+<area shape="rect" id="node11" href="$oper_8h.html#aaea6f69a5ed64f5abc47f0abdfe0ee10" title="Pl_Create_Oper" alt="" coords="652,261,767,288"/>
+<area shape="rect" id="node25" href="$pred_8h.html#a43f9afc5dcfc6f9c1f8205024c2be46a" title="Pl_Create_Pred" alt="" coords="652,59,767,85"/>
+<area shape="rect" id="node7" href="$assert__c_8c.html#a797deea264dcd97e69d345f7f1e189aa" title="Pl_Assert_5" alt="" coords="1086,109,1179,136"/>
+<area shape="rect" id="node9" href="$stream__c_8c.html#ace3c9e531ef6f560a00d1a4bdcb21eb9" title="Pl_Add_Stream_Alias_2" alt="" coords="847,211,1009,237"/>
+<area shape="rect" id="node10" href="$stream__supp_8c.html#a46a2de744d0ab922af4d2edc06e1ac48" title="Init_Stream_Supp" alt="" coords="865,160,991,187"/>
+<area shape="rect" id="node12" href="$flag__supp_8h.html#a6fb80438bca5ea3a8626da474b5111bc" title="Pl_Read_Pl_State_File" alt="" coords="849,312,1007,339"/>
+<area shape="rect" id="node13" href="$src__rdr__c_8c.html#ae6dc2db598921d7de3ef556682930cfd" title="Pl_Op_3" alt="" coords="892,261,964,288"/>
+<area shape="rect" id="node14" href="$src__rdr__c_8c.html#a7ef84e25cd84c5961d096b2ddda6df98" title="Exec_One_Directive" alt="" coords="1061,261,1204,288"/>
+<area shape="rect" id="node15" href="$src__rdr__c_8c.html#a421cb25150c80da420451dc77a0103f1" title="Pl_SR_Add_Directive_7" alt="" coords="1252,211,1415,237"/>
+<area shape="rect" id="node16" href="$src__rdr__c_8c.html#abf7ac3719de56b13db4c6b8863b9196b" title="Do_Directives" alt="" coords="1487,261,1593,288"/>
+<area shape="rect" id="node18" href="$src__rdr__c_8c.html#aabba005f79d5cdf767564c28d583cabb" title="Undo_Directives" alt="" coords="1274,312,1393,339"/>
+<area shape="rect" id="node17" href="$src__rdr__c_8c.html#a6bda16bcd2ea878e58cd1054b0355a2b" title="Pl_SR_Start_Module_3" alt="" coords="1669,261,1828,288"/>
+<area shape="rect" id="node19" href="$src__rdr__c_8c.html#aa2b766aaaa6b911f531a08bdbee67b52" title="Common_Clean" alt="" coords="1482,413,1598,440"/>
+<area shape="rect" id="node22" href="$src__rdr__c_8c.html#ac535da1516f79bfe5f35e2650fda79c0" title="Close_Current_Module" alt="" coords="1463,312,1617,339"/>
+<area shape="rect" id="node20" href="$src__rdr__c_8c.html#a9bd17edd807337f25b335d86f826e75d" title="Pl_SR_Close_1" alt="" coords="1691,464,1806,491"/>
+<area shape="rect" id="node21" href="$src__rdr__c_8c.html#a260024335c542b6e1dacb6252ab5e1cc" title="Pl_SR_New_Pass_1" alt="" coords="1676,413,1821,440"/>
+<area shape="rect" id="node23" href="$src__rdr__c_8c.html#a502c8bb8af0be04ef1c0edd4c1cec842" title="Pl_SR_EOF_Reached_1" alt="" coords="1665,363,1832,389"/>
+<area shape="rect" id="node24" href="$src__rdr__c_8c.html#aa9bd5e0d9fa50c972b6c7933bbfdb299" title="Pl_SR_Stop_Module_3" alt="" coords="1670,312,1827,339"/>
+<area shape="rect" id="node26" href="$bc__supp_8c.html#a78d4c74e8773ebb5cf2245f265114542" title="Pl_BC_Start_Pred_8" alt="" coords="857,59,999,85"/>
+<area shape="rect" id="node27" href="$pred_8h.html#aa0fb875bb38ef710cad2276c7c843dc0" title="Pl_Init_Pred" alt="" coords="881,8,975,35"/>
+<area shape="rect" id="node28" href="$gprolog_8h.html#a79163a775d949cf493a9f7b28bf4fc09" title="Pl_Start_Prolog" alt="" coords="1076,8,1189,35"/>
+<area shape="rect" id="node29" href="$main_8c.html#a335bb6fe70cf4c383aec5baef5f39e47" title="Main_Wrapper" alt="" coords="1280,8,1387,35"/>
+<area shape="rect" id="node30" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1515,8,1565,35"/>
+</map>

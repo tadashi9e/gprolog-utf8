@@ -1,0 +1,7 @@
+<map id="Pl_Stream_Set_Position_LC" name="Pl_Stream_Set_Position_LC">
+<area shape="rect" id="node2" href="$stream__supp_8c.html#a8889ae46064e72cc556ee7ba019f482f" title="Pl_Stream_Getc" alt="" coords="241,31,360,57"/>
+<area shape="rect" id="node3" href="$stream__supp_8c.html#a60433157a606a8a781ead4648af6cc87" title="Basic_Call_Fct_Getc" alt="" coords="408,5,555,32"/>
+<area shape="rect" id="node6" href="$pl__wchar_8c.html#a5df5e221fa5cbadce849a7e73c5dc4ad" title="fill_wchar" alt="" coords="443,56,520,83"/>
+<area shape="rect" id="node4" href="$stream__supp_8c.html#a84ba976a14dadde6efb09d408c88873a" title="Pl_Stream_Putc" alt="" coords="603,5,720,32"/>
+<area shape="rect" id="node5" href="$stream__supp_8c.html#a06ceb4f7e59898ddb42f1fa50d29d140" title="Basic_Call_Fct_Putc" alt="" coords="768,5,913,32"/>
+</map>

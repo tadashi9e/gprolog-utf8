@@ -1,0 +1,9 @@
+<map id="Pl_Reset_Prolog" name="Pl_Reset_Prolog">
+<area shape="rect" id="node2" href="$gprolog_8h.html#a79163a775d949cf493a9f7b28bf4fc09" title="Pl_Start_Prolog" alt="" coords="191,5,304,32"/>
+<area shape="rect" id="node5" href="$engine_8h.html#a3b4f13384481b3c59c21e3530aa83301" title="Pl_Execute_Directive" alt="" coords="173,56,321,83"/>
+<area shape="rect" id="node6" href="$gprolog_8h.html#a9f88d7e503fba7f7dbf5d4897ef69f8a" title="Pl_Try_Execute_Top\l_Level" alt="" coords="175,107,319,149"/>
+<area shape="rect" id="node7" href="$top__level_8c.html#a335bb6fe70cf4c383aec5baef5f39e47" title="Main_Wrapper" alt="" coords="194,173,301,200"/>
+<area shape="rect" id="node3" href="$main_8c.html#a335bb6fe70cf4c383aec5baef5f39e47" title="Main_Wrapper" alt="" coords="369,60,476,87"/>
+<area shape="rect" id="node4" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="524,60,575,87"/>
+<area shape="rect" id="node8" href="$top__level_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="397,173,448,200"/>
+</map>

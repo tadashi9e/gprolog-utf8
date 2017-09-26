@@ -1,0 +1,13 @@
+<map id="Get_Current_Word" name="Get_Current_Word">
+<area shape="rect" id="node2" href="$w32__console_8c.html#aabb62b5ceb8b73f54c4478021cedf130" title="MainWndProc_OnCommand" alt="" coords="888,43,1076,69"/>
+<area shape="rect" id="node9" href="$w32__console_8c.html#a86a613d9f9c5724324a80eb7ad8fd162" title="SubClassEdit" alt="" coords="184,43,287,69"/>
+<area shape="rect" id="node3" href="$w32__console_8c.html#ab023aa0285ba796fb7809eed2e6cdbe1" title="MainWndProc" alt="" coords="1124,68,1228,95"/>
+<area shape="rect" id="node4" href="$w32__console_8c.html#aea7abcb71562352e8ff9c3efd95c505b" title="InitApplication" alt="" coords="1276,68,1380,95"/>
+<area shape="rect" id="node5" href="$w32__console_8c.html#a2363368e7d52d5df8c4f20cb13283faa" title="StartWinMain" alt="" coords="1428,68,1529,95"/>
+<area shape="rect" id="node6" href="$w32__console_8c.html#a3e359465ba75ec15014d5af9c09d3db9" title="CallMain" alt="" coords="1577,68,1651,95"/>
+<area shape="rect" id="node7" href="$w32__console_8c.html#a4df61e90931602252f4bd1addb17902f" title="W32GC_Start_Window" alt="" coords="1699,68,1857,95"/>
+<area shape="rect" id="node8" href="$w32gc__interf_8c.html#a9bbe083e9a45c3fda6abf2737bebc2ad" title="__declspec" alt="" coords="1905,68,1993,95"/>
+<area shape="rect" id="node10" href="$w32__console_8c.html#ae21b20c73fc3d1b2301ac435d6ffefb8" title="SubClassEditField" alt="" coords="335,43,465,69"/>
+<area shape="rect" id="node11" href="$w32__console_8c.html#a4d3fc2c91e2a42d1ee0ab9afb8b25934" title="Create_Edit_Control" alt="" coords="513,43,653,69"/>
+<area shape="rect" id="node12" href="$w32__console_8c.html#af8f874a72209a2c5b9ccc57df9c3684b" title="Toggle_Wrap_Mode" alt="" coords="701,43,840,69"/>
+</map>

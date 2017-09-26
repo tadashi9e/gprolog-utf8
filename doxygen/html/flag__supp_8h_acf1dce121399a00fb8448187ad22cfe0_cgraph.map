@@ -1,0 +1,26 @@
+<map id="Pl_New_Prolog_Flag" name="Pl_New_Prolog_Flag">
+<area shape="rect" id="node2" href="$flag__supp_8c.html#a900e729c33a9bae09f0923e339d755f6" title="Init_Flag_Supp" alt="" coords="203,5,313,32"/>
+<area shape="rect" id="node3" href="$atom_8c.html#a068c993d95113a2ba7643918e68eedb3" title="Pl_Create_Atom" alt="" coords="367,31,485,57"/>
+<area shape="rect" id="node4" href="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907" title="Pl_Fatal_Error" alt="" coords="205,107,311,133"/>
+<area shape="rect" id="node5" href="$flag__supp_8c.html#a19df1e4ebc0229830be1d17b6aaf87fe" title="Fct_Get_Integer" alt="" coords="200,157,316,184"/>
+<area shape="rect" id="node6" href="$flag__supp_8c.html#a7f4354c0bf8d0b08af1549e815762b97" title="Fct_Get_Atom" alt="" coords="205,208,311,235"/>
+<area shape="rect" id="node7" href="$flag__supp_8c.html#a2c7e147b73da8185e83fe68446c89ef1" title="Fct_Get_Bool" alt="" coords="207,259,309,285"/>
+<area shape="rect" id="node8" href="$flag__supp_8c.html#a2baa70fa329f7bf70dcb59b6fc2bcd6a" title="Fct_Get_On_Off" alt="" coords="199,309,317,336"/>
+<area shape="rect" id="node9" href="$flag__supp_8c.html#a0db2ce18656c4c39e8c8c0a298e48aa4" title="Fct_Get_Err" alt="" coords="211,360,305,387"/>
+<area shape="rect" id="node10" href="$flag__supp_8c.html#aae958ed14c385e127731c80ff4fe815b" title="Fct_Get_Quotes" alt="" coords="199,411,317,437"/>
+<area shape="rect" id="node11" href="$flag__supp_8c.html#abc3d80de2b60dcedcda815275027c789" title="Fct_Get_Round" alt="" coords="201,461,315,488"/>
+<area shape="rect" id="node12" href="$flag__supp_8c.html#a45feb050e7b7d0a2a5753feed555f2fe" title="Fct_Chk_Integer" alt="" coords="199,512,317,539"/>
+<area shape="rect" id="node13" href="$flag__supp_8c.html#ac9f47d08ecd3961683ab40bcadf3bb61" title="Fct_Chk_Atom" alt="" coords="203,563,313,589"/>
+<area shape="rect" id="node14" href="$flag__supp_8c.html#a4dd3c09617ff3ce8b5891c5afd0f2874" title="Fct_Chk_Bool" alt="" coords="205,613,311,640"/>
+<area shape="rect" id="node15" href="$flag__supp_8c.html#a20268c6171925572997e8410a2d63582" title="Fct_Chk_On_Off" alt="" coords="197,664,319,691"/>
+<area shape="rect" id="node16" href="$flag__supp_8c.html#adbdf1755bca12a8c4509c73b6b59d9a4" title="Fct_Chk_Err" alt="" coords="210,715,306,741"/>
+<area shape="rect" id="node17" href="$flag__supp_8c.html#a3d449714a3c640b304c4c559a424308d" title="Fct_Chk_Quotes" alt="" coords="197,765,319,792"/>
+<area shape="rect" id="node18" href="$flag__supp_8c.html#a0206993d694b74c1f24dcb743be317b4" title="Fct_Chk_Round" alt="" coords="199,816,317,843"/>
+<area shape="rect" id="node19" href="$flag__supp_8c.html#a7199e09b135deacaf28f8cc297371c05" title="Fct_Set_Integer" alt="" coords="201,867,315,893"/>
+<area shape="rect" id="node20" href="$flag__supp_8c.html#a3882b621351175a04f7b4ddd1425cf6a" title="Fct_Set_Atom" alt="" coords="205,917,311,944"/>
+<area shape="rect" id="node21" href="$flag__supp_8c.html#aae715fecc479b6a9e8993fb201542d10" title="Fct_Set_Bool" alt="" coords="207,968,309,995"/>
+<area shape="rect" id="node22" href="$flag__supp_8c.html#a35bb9ba004b840eafbe1504b123781f3" title="Fct_Set_On_Off" alt="" coords="199,1019,317,1045"/>
+<area shape="rect" id="node23" href="$flag__supp_8c.html#ab44f1673af24894499f80c1d774d651c" title="Fct_Set_Err" alt="" coords="212,1069,304,1096"/>
+<area shape="rect" id="node24" href="$flag__supp_8c.html#adc708f6866200df7f217056b5c4e82c4" title="Fct_Set_Quotes" alt="" coords="199,1120,317,1147"/>
+<area shape="rect" id="node25" href="$flag__supp_8c.html#a32ec6be888c33c897e2ebc2ee029f271" title="Fct_Set_Round" alt="" coords="201,1171,315,1197"/>
+</map>

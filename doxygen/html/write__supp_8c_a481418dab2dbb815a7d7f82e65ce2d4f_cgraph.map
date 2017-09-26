@@ -1,0 +1,11 @@
+<map id="Show_Float" name="Show_Float">
+<area shape="rect" id="node2" href="$write__supp_8c.html#ae39a5aa1e23a384b3fa418527b797a17" title="Show_Number_Str" alt="" coords="145,81,277,108"/>
+<area shape="rect" id="node10" href="$write__supp_8c.html#a1673be4f0aa877750064b9fd414f8931" title="Pl_Float_To_String" alt="" coords="144,132,277,159"/>
+<area shape="rect" id="node3" href="$write__supp_8c.html#acc0f38c1b4b543509fa3dc2161a754d5" title="Out_String" alt="" coords="325,56,409,83"/>
+<area shape="rect" id="node8" href="$write__supp_8c.html#a0716e3969018be737068cbe8bb31c568" title="Out_Char" alt="" coords="607,107,685,133"/>
+<area shape="rect" id="node4" href="$write__supp_8c.html#a1accd85dd273c868523287f70409e55a" title="Need_Space" alt="" coords="457,56,555,83"/>
+<area shape="rect" id="node9" href="$stream__supp_8c.html#a31eee9920a69a51c28e0eac5eb3adedb" title="Pl_Stream_Puts" alt="" coords="737,5,855,32"/>
+<area shape="rect" id="node5" href="$write__supp_8c.html#a1b8fd4efcb94323a3da3336c022a49d3" title="Out_Space" alt="" coords="603,56,689,83"/>
+<area shape="rect" id="node6" href="$stream__supp_8c.html#a84ba976a14dadde6efb09d408c88873a" title="Pl_Stream_Putc" alt="" coords="737,56,855,83"/>
+<area shape="rect" id="node7" href="$stream__supp_8c.html#a06ceb4f7e59898ddb42f1fa50d29d140" title="Basic_Call_Fct_Putc" alt="" coords="903,56,1048,83"/>
+</map>

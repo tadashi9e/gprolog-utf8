@@ -1,0 +1,7 @@
+<map id="Peek_Char" name="Peek_Char">
+<area shape="rect" id="node2" href="$wam__parser_8c.html#aa8a1c1096601e50a475d7f82b41562d9" title="Read_Argument" alt="" coords="140,13,256,39"/>
+<area shape="rect" id="node3" href="$wam__parser_8c.html#a14d29063ebbd86cdcfd037234d4e9bef" title="Parse_And_Treat_Decl\l_Or_Inst" alt="" coords="304,5,461,47"/>
+<area shape="rect" id="node4" href="$wam__parser_8c.html#ae69e607bd93d255aa8b600bac488c6e9" title="Parser" alt="" coords="509,13,569,39"/>
+<area shape="rect" id="node5" href="$wam__parser_8h.html#a9ac908258500841c7dcfc6adb3ee1f8d" title="Parse_Wam_File" alt="" coords="617,13,740,39"/>
+<area shape="rect" id="node6" href="$wam2ma_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="788,13,839,39"/>
+</map>

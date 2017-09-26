@@ -1,0 +1,320 @@
+\hypertarget{machine1_8h}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/machine1.h File Reference}
+\label{machine1_8h}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/machine1.\+h@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/machine1.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+Include dependency graph for machine1.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{machine1_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{machine1_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{machine1_8h_a4a12237bc0be5efa9b81d7c68362a2ad}{M\+\_\+\+O\+S\+\_\+\+U\+N\+IX}~0
+\item 
+\#define \hyperlink{machine1_8h_acb954902e4c2ae974098ae7d9c5bef3e}{M\+\_\+\+O\+S\+\_\+\+W\+I\+N\+D\+O\+WS}~1
+\item 
+\#define \hyperlink{machine1_8h_a9364c6103259a8b76bded8631e46427e}{M\+\_\+\+O\+S\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+NT}~2
+\item 
+\#define \hyperlink{machine1_8h_ab839d9b2f65ceb1ce4499189764dc097}{M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+W\+I\+N32}~-\/2 /$\ast$ read Get\+Last\+Error instead of errno $\ast$/
+\item 
+\#define \hyperlink{machine1_8h_a8808898405593e2f5ee851f28ddb4243}{D\+B\+G\+P\+R\+I\+N\+TF}~\hyperlink{test__noecho_8c_a3cb9f0894fab1c8fbb0753c9c7c2a8d9}{printf}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{machine1_8h_a65fbc5252410c14048b559d68349cdf6}{Pl\+\_\+\+Init\+\_\+\+Machine1} (void)
+\item 
+char $\ast$$\ast$ \hyperlink{machine1_8h_acc9a6fb1169dc84b30f7bd7a6655e766}{Pl\+\_\+\+M\+\_\+\+Create\+\_\+\+Shell\+\_\+\+Command} (char $\ast$cmd)
+\item 
+char $\ast$$\ast$ \hyperlink{machine1_8h_a37c7ecbf2021d6a3c96a8e26a73ea517}{Pl\+\_\+\+M\+\_\+\+Cmd\+\_\+\+Line\+\_\+\+To\+\_\+\+Argv} (char $\ast$cmd, int $\ast$argc)
+\item 
+int \hyperlink{machine1_8h_a88311f1c1b505a1056b43a92d9b634fd}{Pl\+\_\+\+M\+\_\+\+Shell} (char $\ast$cmd)
+\item 
+int \hyperlink{machine1_8h_afaa73f45692180d33d0c4ba2864c5191}{Pl\+\_\+\+M\+\_\+\+Spawn} (char $\ast$\hyperlink{wam__parser_8c_ac9526aab8f333086d61f1df2379a20c6}{arg}\mbox{[}$\,$\mbox{]})
+\item 
+int \hyperlink{machine1_8h_a17ce0df391f0160574aec0d5fb760fac}{Pl\+\_\+\+M\+\_\+\+Spawn\+\_\+\+Redirect} (char $\ast$\hyperlink{wam__parser_8c_ac9526aab8f333086d61f1df2379a20c6}{arg}\mbox{[}$\,$\mbox{]}, int detach, F\+I\+LE $\ast$$\ast$f\+\_\+in, F\+I\+LE $\ast$$\ast$f\+\_\+out, F\+I\+LE $\ast$$\ast$f\+\_\+err)
+\item 
+int \hyperlink{machine1_8h_ab6fe9a2e36cbda4d3333bbb065314d25}{Pl\+\_\+\+M\+\_\+\+Get\+\_\+\+Status} (int pid)
+\item 
+char $\ast$ \hyperlink{machine1_8h_a507b4eaad72cffacc25f299a0f65aad6}{Pl\+\_\+\+M\+\_\+\+Mktemp} (char $\ast$tmp\+\_\+template)
+\item 
+char $\ast$ \hyperlink{machine1_8h_a7aa127682707f8916310f0f957ce96e9}{Pl\+\_\+\+M\+\_\+\+Tempnam} (char $\ast$\hyperlink{cpp__headers_8c_a10ddc4551bbc3f8d20ac7bdb2da11896}{dir}, char $\ast$pfx)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{machine1_8h_a9de5a692fc959528543c7691c21ac3ce}{pl\+\_\+m\+\_\+os\+\_\+type}
+\item 
+char \hyperlink{machine1_8h_abd7387ce48f075ff857e2fc1d85622b0}{pl\+\_\+m\+\_\+architecture} \mbox{[}$\,$\mbox{]}
+\item 
+char \hyperlink{machine1_8h_ac784be12bb54c21f1b3eeba9ae39dcd7}{pl\+\_\+m\+\_\+os\+\_\+version} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{machine1.\+h@{machine1.\+h}!D\+B\+G\+P\+R\+I\+N\+TF@{D\+B\+G\+P\+R\+I\+N\+TF}}
+\index{D\+B\+G\+P\+R\+I\+N\+TF@{D\+B\+G\+P\+R\+I\+N\+TF}!machine1.\+h@{machine1.\+h}}
+\subsubsection[{\texorpdfstring{D\+B\+G\+P\+R\+I\+N\+TF}{DBGPRINTF}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+B\+G\+P\+R\+I\+N\+TF~{\bf printf}}\hypertarget{machine1_8h_a8808898405593e2f5ee851f28ddb4243}{}\label{machine1_8h_a8808898405593e2f5ee851f28ddb4243}
+\index{machine1.\+h@{machine1.\+h}!M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+W\+I\+N32@{M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+W\+I\+N32}}
+\index{M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+W\+I\+N32@{M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+W\+I\+N32}!machine1.\+h@{machine1.\+h}}
+\subsubsection[{\texorpdfstring{M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+W\+I\+N32}{M_ERROR_WIN32}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+E\+R\+R\+O\+R\+\_\+\+W\+I\+N32~-\/2 /$\ast$ read Get\+Last\+Error instead of errno $\ast$/}\hypertarget{machine1_8h_ab839d9b2f65ceb1ce4499189764dc097}{}\label{machine1_8h_ab839d9b2f65ceb1ce4499189764dc097}
+\index{machine1.\+h@{machine1.\+h}!M\+\_\+\+O\+S\+\_\+\+U\+N\+IX@{M\+\_\+\+O\+S\+\_\+\+U\+N\+IX}}
+\index{M\+\_\+\+O\+S\+\_\+\+U\+N\+IX@{M\+\_\+\+O\+S\+\_\+\+U\+N\+IX}!machine1.\+h@{machine1.\+h}}
+\subsubsection[{\texorpdfstring{M\+\_\+\+O\+S\+\_\+\+U\+N\+IX}{M_OS_UNIX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+O\+S\+\_\+\+U\+N\+IX~0}\hypertarget{machine1_8h_a4a12237bc0be5efa9b81d7c68362a2ad}{}\label{machine1_8h_a4a12237bc0be5efa9b81d7c68362a2ad}
+\index{machine1.\+h@{machine1.\+h}!M\+\_\+\+O\+S\+\_\+\+W\+I\+N\+D\+O\+WS@{M\+\_\+\+O\+S\+\_\+\+W\+I\+N\+D\+O\+WS}}
+\index{M\+\_\+\+O\+S\+\_\+\+W\+I\+N\+D\+O\+WS@{M\+\_\+\+O\+S\+\_\+\+W\+I\+N\+D\+O\+WS}!machine1.\+h@{machine1.\+h}}
+\subsubsection[{\texorpdfstring{M\+\_\+\+O\+S\+\_\+\+W\+I\+N\+D\+O\+WS}{M_OS_WINDOWS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+O\+S\+\_\+\+W\+I\+N\+D\+O\+WS~1}\hypertarget{machine1_8h_acb954902e4c2ae974098ae7d9c5bef3e}{}\label{machine1_8h_acb954902e4c2ae974098ae7d9c5bef3e}
+\index{machine1.\+h@{machine1.\+h}!M\+\_\+\+O\+S\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+NT@{M\+\_\+\+O\+S\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+NT}}
+\index{M\+\_\+\+O\+S\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+NT@{M\+\_\+\+O\+S\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+NT}!machine1.\+h@{machine1.\+h}}
+\subsubsection[{\texorpdfstring{M\+\_\+\+O\+S\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+NT}{M_OS_WINDOWS_NT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+\_\+\+O\+S\+\_\+\+W\+I\+N\+D\+O\+W\+S\+\_\+\+NT~2}\hypertarget{machine1_8h_a9364c6103259a8b76bded8631e46427e}{}\label{machine1_8h_a9364c6103259a8b76bded8631e46427e}
+
+
+\subsection{Function Documentation}
+\index{machine1.\+h@{machine1.\+h}!Pl\+\_\+\+Init\+\_\+\+Machine1@{Pl\+\_\+\+Init\+\_\+\+Machine1}}
+\index{Pl\+\_\+\+Init\+\_\+\+Machine1@{Pl\+\_\+\+Init\+\_\+\+Machine1}!machine1.\+h@{machine1.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Init\+\_\+\+Machine1(void)}{Pl_Init_Machine1(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Init\+\_\+\+Machine1 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{machine1_8h_a65fbc5252410c14048b559d68349cdf6}{}\label{machine1_8h_a65fbc5252410c14048b559d68349cdf6}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{machine1_8h_a65fbc5252410c14048b559d68349cdf6_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{machine1.\+h@{machine1.\+h}!Pl\+\_\+\+M\+\_\+\+Cmd\+\_\+\+Line\+\_\+\+To\+\_\+\+Argv@{Pl\+\_\+\+M\+\_\+\+Cmd\+\_\+\+Line\+\_\+\+To\+\_\+\+Argv}}
+\index{Pl\+\_\+\+M\+\_\+\+Cmd\+\_\+\+Line\+\_\+\+To\+\_\+\+Argv@{Pl\+\_\+\+M\+\_\+\+Cmd\+\_\+\+Line\+\_\+\+To\+\_\+\+Argv}!machine1.\+h@{machine1.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+M\+\_\+\+Cmd\+\_\+\+Line\+\_\+\+To\+\_\+\+Argv(char $\ast$cmd, int $\ast$argc)}{Pl_M_Cmd_Line_To_Argv(char *cmd, int *argc)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ Pl\+\_\+\+M\+\_\+\+Cmd\+\_\+\+Line\+\_\+\+To\+\_\+\+Argv (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{cmd, }
+\item[{int $\ast$}]{argc}
+\end{DoxyParamCaption}
+)}\hypertarget{machine1_8h_a37c7ecbf2021d6a3c96a8e26a73ea517}{}\label{machine1_8h_a37c7ecbf2021d6a3c96a8e26a73ea517}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{machine1_8h_a37c7ecbf2021d6a3c96a8e26a73ea517_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{machine1.\+h@{machine1.\+h}!Pl\+\_\+\+M\+\_\+\+Create\+\_\+\+Shell\+\_\+\+Command@{Pl\+\_\+\+M\+\_\+\+Create\+\_\+\+Shell\+\_\+\+Command}}
+\index{Pl\+\_\+\+M\+\_\+\+Create\+\_\+\+Shell\+\_\+\+Command@{Pl\+\_\+\+M\+\_\+\+Create\+\_\+\+Shell\+\_\+\+Command}!machine1.\+h@{machine1.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+M\+\_\+\+Create\+\_\+\+Shell\+\_\+\+Command(char $\ast$cmd)}{Pl_M_Create_Shell_Command(char *cmd)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ Pl\+\_\+\+M\+\_\+\+Create\+\_\+\+Shell\+\_\+\+Command (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{cmd}
+\end{DoxyParamCaption}
+)}\hypertarget{machine1_8h_acc9a6fb1169dc84b30f7bd7a6655e766}{}\label{machine1_8h_acc9a6fb1169dc84b30f7bd7a6655e766}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{machine1_8h_acc9a6fb1169dc84b30f7bd7a6655e766_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{machine1.\+h@{machine1.\+h}!Pl\+\_\+\+M\+\_\+\+Get\+\_\+\+Status@{Pl\+\_\+\+M\+\_\+\+Get\+\_\+\+Status}}
+\index{Pl\+\_\+\+M\+\_\+\+Get\+\_\+\+Status@{Pl\+\_\+\+M\+\_\+\+Get\+\_\+\+Status}!machine1.\+h@{machine1.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+M\+\_\+\+Get\+\_\+\+Status(int pid)}{Pl_M_Get_Status(int pid)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+M\+\_\+\+Get\+\_\+\+Status (
+\begin{DoxyParamCaption}
+\item[{int}]{pid}
+\end{DoxyParamCaption}
+)}\hypertarget{machine1_8h_ab6fe9a2e36cbda4d3333bbb065314d25}{}\label{machine1_8h_ab6fe9a2e36cbda4d3333bbb065314d25}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{machine1_8h_ab6fe9a2e36cbda4d3333bbb065314d25_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{machine1.\+h@{machine1.\+h}!Pl\+\_\+\+M\+\_\+\+Mktemp@{Pl\+\_\+\+M\+\_\+\+Mktemp}}
+\index{Pl\+\_\+\+M\+\_\+\+Mktemp@{Pl\+\_\+\+M\+\_\+\+Mktemp}!machine1.\+h@{machine1.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+M\+\_\+\+Mktemp(char $\ast$tmp\+\_\+template)}{Pl_M_Mktemp(char *tmp_template)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+M\+\_\+\+Mktemp (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{tmp\+\_\+template}
+\end{DoxyParamCaption}
+)}\hypertarget{machine1_8h_a507b4eaad72cffacc25f299a0f65aad6}{}\label{machine1_8h_a507b4eaad72cffacc25f299a0f65aad6}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{machine1_8h_a507b4eaad72cffacc25f299a0f65aad6_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{machine1.\+h@{machine1.\+h}!Pl\+\_\+\+M\+\_\+\+Shell@{Pl\+\_\+\+M\+\_\+\+Shell}}
+\index{Pl\+\_\+\+M\+\_\+\+Shell@{Pl\+\_\+\+M\+\_\+\+Shell}!machine1.\+h@{machine1.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+M\+\_\+\+Shell(char $\ast$cmd)}{Pl_M_Shell(char *cmd)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+M\+\_\+\+Shell (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{cmd}
+\end{DoxyParamCaption}
+)}\hypertarget{machine1_8h_a88311f1c1b505a1056b43a92d9b634fd}{}\label{machine1_8h_a88311f1c1b505a1056b43a92d9b634fd}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{machine1_8h_a88311f1c1b505a1056b43a92d9b634fd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{machine1_8h_a88311f1c1b505a1056b43a92d9b634fd_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{machine1.\+h@{machine1.\+h}!Pl\+\_\+\+M\+\_\+\+Spawn@{Pl\+\_\+\+M\+\_\+\+Spawn}}
+\index{Pl\+\_\+\+M\+\_\+\+Spawn@{Pl\+\_\+\+M\+\_\+\+Spawn}!machine1.\+h@{machine1.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+M\+\_\+\+Spawn(char $\ast$arg[])}{Pl_M_Spawn(char *arg[])}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+M\+\_\+\+Spawn (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{arg\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{machine1_8h_afaa73f45692180d33d0c4ba2864c5191}{}\label{machine1_8h_afaa73f45692180d33d0c4ba2864c5191}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{machine1_8h_afaa73f45692180d33d0c4ba2864c5191_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{machine1_8h_afaa73f45692180d33d0c4ba2864c5191_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{machine1.\+h@{machine1.\+h}!Pl\+\_\+\+M\+\_\+\+Spawn\+\_\+\+Redirect@{Pl\+\_\+\+M\+\_\+\+Spawn\+\_\+\+Redirect}}
+\index{Pl\+\_\+\+M\+\_\+\+Spawn\+\_\+\+Redirect@{Pl\+\_\+\+M\+\_\+\+Spawn\+\_\+\+Redirect}!machine1.\+h@{machine1.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+M\+\_\+\+Spawn\+\_\+\+Redirect(char $\ast$arg[], int detach, F\+I\+L\+E $\ast$$\ast$f\+\_\+in, F\+I\+L\+E $\ast$$\ast$f\+\_\+out, F\+I\+L\+E $\ast$$\ast$f\+\_\+err)}{Pl_M_Spawn_Redirect(char *arg[], int detach, FILE **f_in, FILE **f_out, FILE **f_err)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+M\+\_\+\+Spawn\+\_\+\+Redirect (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{arg\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{detach, }
+\item[{F\+I\+LE $\ast$$\ast$}]{f\+\_\+in, }
+\item[{F\+I\+LE $\ast$$\ast$}]{f\+\_\+out, }
+\item[{F\+I\+LE $\ast$$\ast$}]{f\+\_\+err}
+\end{DoxyParamCaption}
+)}\hypertarget{machine1_8h_a17ce0df391f0160574aec0d5fb760fac}{}\label{machine1_8h_a17ce0df391f0160574aec0d5fb760fac}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{machine1_8h_a17ce0df391f0160574aec0d5fb760fac_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{machine1_8h_a17ce0df391f0160574aec0d5fb760fac_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{machine1.\+h@{machine1.\+h}!Pl\+\_\+\+M\+\_\+\+Tempnam@{Pl\+\_\+\+M\+\_\+\+Tempnam}}
+\index{Pl\+\_\+\+M\+\_\+\+Tempnam@{Pl\+\_\+\+M\+\_\+\+Tempnam}!machine1.\+h@{machine1.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+M\+\_\+\+Tempnam(char $\ast$dir, char $\ast$pfx)}{Pl_M_Tempnam(char *dir, char *pfx)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+M\+\_\+\+Tempnam (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{dir, }
+\item[{char $\ast$}]{pfx}
+\end{DoxyParamCaption}
+)}\hypertarget{machine1_8h_a7aa127682707f8916310f0f957ce96e9}{}\label{machine1_8h_a7aa127682707f8916310f0f957ce96e9}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{machine1_8h_a7aa127682707f8916310f0f957ce96e9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{machine1_8h_a7aa127682707f8916310f0f957ce96e9_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{machine1.\+h@{machine1.\+h}!pl\+\_\+m\+\_\+architecture@{pl\+\_\+m\+\_\+architecture}}
+\index{pl\+\_\+m\+\_\+architecture@{pl\+\_\+m\+\_\+architecture}!machine1.\+h@{machine1.\+h}}
+\subsubsection[{\texorpdfstring{pl\+\_\+m\+\_\+architecture}{pl_m_architecture}}]{\setlength{\rightskip}{0pt plus 5cm}char pl\+\_\+m\+\_\+architecture\mbox{[}$\,$\mbox{]}}\hypertarget{machine1_8h_abd7387ce48f075ff857e2fc1d85622b0}{}\label{machine1_8h_abd7387ce48f075ff857e2fc1d85622b0}
+\index{machine1.\+h@{machine1.\+h}!pl\+\_\+m\+\_\+os\+\_\+type@{pl\+\_\+m\+\_\+os\+\_\+type}}
+\index{pl\+\_\+m\+\_\+os\+\_\+type@{pl\+\_\+m\+\_\+os\+\_\+type}!machine1.\+h@{machine1.\+h}}
+\subsubsection[{\texorpdfstring{pl\+\_\+m\+\_\+os\+\_\+type}{pl_m_os_type}}]{\setlength{\rightskip}{0pt plus 5cm}int pl\+\_\+m\+\_\+os\+\_\+type}\hypertarget{machine1_8h_a9de5a692fc959528543c7691c21ac3ce}{}\label{machine1_8h_a9de5a692fc959528543c7691c21ac3ce}
+\index{machine1.\+h@{machine1.\+h}!pl\+\_\+m\+\_\+os\+\_\+version@{pl\+\_\+m\+\_\+os\+\_\+version}}
+\index{pl\+\_\+m\+\_\+os\+\_\+version@{pl\+\_\+m\+\_\+os\+\_\+version}!machine1.\+h@{machine1.\+h}}
+\subsubsection[{\texorpdfstring{pl\+\_\+m\+\_\+os\+\_\+version}{pl_m_os_version}}]{\setlength{\rightskip}{0pt plus 5cm}char pl\+\_\+m\+\_\+os\+\_\+version\mbox{[}$\,$\mbox{]}}\hypertarget{machine1_8h_ac784be12bb54c21f1b3eeba9ae39dcd7}{}\label{machine1_8h_ac784be12bb54c21f1b3eeba9ae39dcd7}

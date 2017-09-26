@@ -1,0 +1,9 @@
+<map id="dlbulk_free" name="dlbulk_free">
+<area shape="rect" id="node2" href="$dl__malloc_8c.html#aa2888b3de06df35c3b18b31b1e15fe8c" title="internal_bulk_free" alt="" coords="139,56,263,83"/>
+<area shape="rect" id="node3" href="$dl__malloc_8c.html#a2d20e33b2d417733503759c0594f882d" title="dispose_chunk" alt="" coords="311,31,420,57"/>
+<area shape="rect" id="node4" href="$dl__malloc_8c.html#a3de256edbbbbd4018cd3563f55ee50ab" title="sys_trim" alt="" coords="329,81,401,108"/>
+<area shape="rect" id="node5" href="$dl__malloc_8c.html#adc1656892fa59cbd2e3b60a2608dfefc" title="segment_holding" alt="" coords="497,5,617,32"/>
+<area shape="rect" id="node6" href="$dl__malloc_8c.html#ab22b9d57eca306724cb8c4f928d0e824" title="has_segment_link" alt="" coords="493,56,620,83"/>
+<area shape="rect" id="node7" href="$dl__malloc_8c.html#a09ce4644252dfd54eb489e77d0adfd20" title="init_top" alt="" coords="525,107,589,133"/>
+<area shape="rect" id="node8" href="$dl__malloc_8c.html#a949111e5f127c26e3b9f11bf26c8038a" title="release_unused_segments" alt="" coords="468,157,645,184"/>
+</map>

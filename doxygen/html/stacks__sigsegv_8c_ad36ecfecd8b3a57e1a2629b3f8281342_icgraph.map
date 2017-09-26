@@ -1,0 +1,7 @@
+<map id="Stack_Overflow_Err_Msg" name="Stack_Overflow_Err_Msg">
+<area shape="rect" id="node2" href="$stacks__sigsegv_8c.html#ae439f72edeb7fedd270526dd2519a49f" title="Default_SIGSEGV_Handler" alt="" coords="224,5,407,32"/>
+<area shape="rect" id="node3" href="$stacks__sigsegv_8h.html#aee65d332f1e4ff3a8796bda38d329766" title="Pl_Allocate_Stacks" alt="" coords="455,5,591,32"/>
+<area shape="rect" id="node4" href="$gprolog_8h.html#a79163a775d949cf493a9f7b28bf4fc09" title="Pl_Start_Prolog" alt="" coords="639,5,752,32"/>
+<area shape="rect" id="node5" href="$main_8c.html#a335bb6fe70cf4c383aec5baef5f39e47" title="Main_Wrapper" alt="" coords="800,5,907,32"/>
+<area shape="rect" id="node6" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="955,5,1005,32"/>
+</map>

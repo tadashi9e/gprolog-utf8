@@ -1,0 +1,7 @@
+<map id="Erase_All" name="Erase_All">
+<area shape="rect" id="node2" href="$dynam__supp_8h.html#af2cac5b4516a9be41cee52450df43a55" title="Pl_Update_Dynamic_Pred" alt="" coords="132,97,308,123"/>
+<area shape="rect" id="node3" href="$assert__c_8c.html#a48b4c6ae87da818c4dee0d898d19dc84" title="Pl_Retractall_If_Empty\l_Head_1" alt="" coords="361,5,518,47"/>
+<area shape="rect" id="node4" href="$assert__c_8c.html#aadba7ac944c2f646d3a334f2599c59fe" title="Pl_Abolish_1" alt="" coords="390,71,489,98"/>
+<area shape="rect" id="node5" href="$assert__c_8c.html#a9ab5ca765157760e5cd4e5d54e3d7b0f" title="Pl_Remove_Predicate_2" alt="" coords="356,122,523,149"/>
+<area shape="rect" id="node6" href="$bc__supp_8c.html#a78d4c74e8773ebb5cf2245f265114542" title="Pl_BC_Start_Pred_8" alt="" coords="368,173,511,199"/>
+</map>

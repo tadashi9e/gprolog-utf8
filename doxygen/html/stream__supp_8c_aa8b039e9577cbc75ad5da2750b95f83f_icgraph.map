@@ -1,0 +1,15 @@
+<map id="Pl_Prop_And_Stdio_Mode" name="Pl_Prop_And_Stdio_Mode">
+<area shape="rect" id="node2" href="$stream__supp_8h.html#af51b9456aea611c5b52f856cdbe23b50" title="Pl_Add_Stream_For_Stdio_Desc" alt="" coords="228,157,443,184"/>
+<area shape="rect" id="node11" href="$stream__supp_8h.html#a4b575b16d8ce4212e975f935d57851f2" title="Pl_Add_Stream_For_Stdio_File" alt="" coords="491,259,695,285"/>
+<area shape="rect" id="node3" href="$os__interf__c_8c.html#a9d0485252a3b1c89182aa8c836af7343" title="Pl_Popen_3" alt="" coords="547,5,639,32"/>
+<area shape="rect" id="node4" href="$os__interf__c_8c.html#aded08a658582be142616062585180aaa" title="Pl_Exec_5" alt="" coords="550,56,635,83"/>
+<area shape="rect" id="node5" href="$os__interf__c_8c.html#ab3f1eca6ee6babddf88815166e3c08ee" title="Pl_Create_Pipe_2" alt="" coords="529,107,656,133"/>
+<area shape="rect" id="node6" href="$sockets__c_8c.html#a0d079005d2c64521c4431e8652047ec1" title="Create_Socket_Streams" alt="" coords="510,157,675,184"/>
+<area shape="rect" id="node10" href="$stream__supp_8c.html#a46a2de744d0ab922af4d2edc06e1ac48" title="Init_Stream_Supp" alt="" coords="529,208,656,235"/>
+<area shape="rect" id="node7" href="$sockets__c_8c.html#abbe3fb80935b07d8fb995acffb3c9c94" title="Pl_Socket_Connect_4" alt="" coords="765,81,917,108"/>
+<area shape="rect" id="node8" href="$sockets__c_8c.html#ae82e005638fc6d4c1cc9bb0fe3b3c6e3" title="Pl_Socket_Accept_4" alt="" coords="769,132,913,159"/>
+<area shape="rect" id="node9" href="$sockets__c_8c.html#a6f439469b5fd39d24f5bca6ee6e0ba33" title="Pl_Assoc_Socket_Streams_3" alt="" coords="743,183,939,209"/>
+<area shape="rect" id="node12" href="$src__rdr__c_8c.html#ae6f2889304119849adebc18b8d5a305e" title="Pl_SR_Open_File_2" alt="" coords="771,233,911,260"/>
+<area shape="rect" id="node13" href="$src__rdr__c_8c.html#a260024335c542b6e1dacb6252ab5e1cc" title="Pl_SR_New_Pass_1" alt="" coords="768,284,913,311"/>
+<area shape="rect" id="node14" href="$stream__c_8c.html#a2c2540e03dfb396a35d223d58ea53a29" title="Pl_Open_3" alt="" coords="797,335,884,361"/>
+</map>

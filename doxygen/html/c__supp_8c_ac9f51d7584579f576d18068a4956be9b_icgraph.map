@@ -1,0 +1,14 @@
+<map id="Pl_Un_Codes" name="Pl_Un_Codes">
+<area shape="rect" id="node2" href="$c__supp_8h.html#a31d18c21b39d0112d039dfc1c76fd64e" title="Pl_Un_Codes_Check" alt="" coords="156,245,304,272"/>
+<area shape="rect" id="node3" href="$atom__c_8c.html#ae7e76a394b080595b47f57c8134b5775" title="Pl_Atom_Codes_2" alt="" coords="382,5,513,32"/>
+<area shape="rect" id="node5" href="$atom__c_8c.html#ae89fe3df220d385008f49c583dc41d32" title="Pl_Number_Codes_2" alt="" coords="374,56,521,83"/>
+<area shape="rect" id="node6" href="$const__io__c_8c.html#a25d608ecb5b337246a18790f56533fc9" title="Pl_Write_To_Codes_2" alt="" coords="371,107,524,133"/>
+<area shape="rect" id="node7" href="$const__io__c_8c.html#a185e60a4924ec43acef85eddcf71d103" title="Pl_Writeq_To_Codes_2" alt="" coords="367,157,527,184"/>
+<area shape="rect" id="node8" href="$const__io__c_8c.html#ad7eb59913bef396f8b0c435b739e72bb" title="Pl_Write_Canonical\l_To_Codes_2" alt="" coords="379,209,516,250"/>
+<area shape="rect" id="node9" href="$const__io__c_8c.html#a3cde09982726aebf40d86a2e131d31a9" title="Pl_Display_To_Codes_2" alt="" coords="364,275,531,301"/>
+<area shape="rect" id="node10" href="$const__io__c_8c.html#a96bb7a2cf5d9de1f05e37947c9d82f5f" title="Pl_Print_To_Codes_2" alt="" coords="373,325,522,352"/>
+<area shape="rect" id="node11" href="$const__io__c_8c.html#a3e7f4bad7079e6a6447ab8b4d79c0cf4" title="Pl_Write_Term_To_Codes_2" alt="" coords="352,376,543,403"/>
+<area shape="rect" id="node12" href="$const__io__c_8c.html#a1df246c066893abb1d39131228693e0e" title="Pl_Format_To_Codes_3" alt="" coords="366,427,529,453"/>
+<area shape="rect" id="node13" href="$stream__c_8c.html#a1f13fab2c67dc519c098795427b0cc02" title="Pl_Close_Output_Term\l_Stream_2" alt="" coords="368,478,527,519"/>
+<area shape="rect" id="node4" href="$atom__c_8c.html#af3d13cb1d0fbb3208789ea87cf806fdb" title="Pl_Name_2" alt="" coords="591,31,681,57"/>
+</map>

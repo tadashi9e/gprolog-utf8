@@ -1,0 +1,133 @@
+\hypertarget{cpp__headers_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/cpp\+\_\+headers.c File Reference}
+\label{cpp__headers_8c}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/cpp\+\_\+headers.\+c@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/cpp\+\_\+headers.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}gp\+\_\+config.\+h\char`\"{}}\\*
+Include dependency graph for cpp\+\_\+headers.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cpp__headers_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structUsedFile}{Used\+File}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cpp__headers_8c_a696789e46fa1a4b0c9e68baba243916a}{D\+O\+\_\+\+N\+O\+T\+\_\+\+A\+D\+D\+\_\+\+C\+O\+M\+M\+E\+N\+TS}
+\item 
+\#define \hyperlink{cpp__headers_8c_ad3a95385653fc9d6bab70643b7cb7b0b}{S\+K\+I\+P\+\_\+\+S\+P\+A\+CE}(p)~while(isspace($\ast$p)) p++;
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{cpp__headers_8c_af90754321baabe30d5f9a37c509ba2c7}{Cpp\+\_\+\+File} (char $\ast$\hyperlink{test__oc__defs_8h_abc1e86d7c344fe34ff09e72d4595ab7e}{name}, int skip\+\_\+comment)
+\item 
+int \hyperlink{cpp__headers_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$$\ast$ \hyperlink{cpp__headers_8c_a10ddc4551bbc3f8d20ac7bdb2da11896}{dir}
+\item 
+F\+I\+LE $\ast$ \hyperlink{cpp__headers_8c_acec19516a59050bb447192fe318e6a9c}{fout}
+\item 
+char \hyperlink{cpp__headers_8c_abc0936d32a6f63e369c385a4f01a2168}{buff} \mbox{[}4096\mbox{]}
+\item 
+\hyperlink{structUsedFile}{Used\+File} \hyperlink{cpp__headers_8c_ac8cdf8d37f66cb2da5e14d8a73091eaf}{used} \mbox{[}1024\mbox{]}
+\item 
+int \hyperlink{cpp__headers_8c_a1a1fd0ac380caa8fc01f1fe0cf0b53c4}{nb\+\_\+used} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}!D\+O\+\_\+\+N\+O\+T\+\_\+\+A\+D\+D\+\_\+\+C\+O\+M\+M\+E\+N\+TS@{D\+O\+\_\+\+N\+O\+T\+\_\+\+A\+D\+D\+\_\+\+C\+O\+M\+M\+E\+N\+TS}}
+\index{D\+O\+\_\+\+N\+O\+T\+\_\+\+A\+D\+D\+\_\+\+C\+O\+M\+M\+E\+N\+TS@{D\+O\+\_\+\+N\+O\+T\+\_\+\+A\+D\+D\+\_\+\+C\+O\+M\+M\+E\+N\+TS}!cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}}
+\subsubsection[{\texorpdfstring{D\+O\+\_\+\+N\+O\+T\+\_\+\+A\+D\+D\+\_\+\+C\+O\+M\+M\+E\+N\+TS}{DO_NOT_ADD_COMMENTS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+O\+\_\+\+N\+O\+T\+\_\+\+A\+D\+D\+\_\+\+C\+O\+M\+M\+E\+N\+TS}\hypertarget{cpp__headers_8c_a696789e46fa1a4b0c9e68baba243916a}{}\label{cpp__headers_8c_a696789e46fa1a4b0c9e68baba243916a}
+\index{cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}!S\+K\+I\+P\+\_\+\+S\+P\+A\+CE@{S\+K\+I\+P\+\_\+\+S\+P\+A\+CE}}
+\index{S\+K\+I\+P\+\_\+\+S\+P\+A\+CE@{S\+K\+I\+P\+\_\+\+S\+P\+A\+CE}!cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}}
+\subsubsection[{\texorpdfstring{S\+K\+I\+P\+\_\+\+S\+P\+A\+CE}{SKIP_SPACE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+K\+I\+P\+\_\+\+S\+P\+A\+CE(
+\begin{DoxyParamCaption}
+\item[{}]{p}
+\end{DoxyParamCaption}
+)~while(isspace($\ast$p)) p++;}\hypertarget{cpp__headers_8c_ad3a95385653fc9d6bab70643b7cb7b0b}{}\label{cpp__headers_8c_ad3a95385653fc9d6bab70643b7cb7b0b}
+
+
+\subsection{Function Documentation}
+\index{cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}!Cpp\+\_\+\+File@{Cpp\+\_\+\+File}}
+\index{Cpp\+\_\+\+File@{Cpp\+\_\+\+File}!cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}}
+\subsubsection[{\texorpdfstring{Cpp\+\_\+\+File(char $\ast$name, int skip\+\_\+comment)}{Cpp_File(char *name, int skip_comment)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cpp\+\_\+\+File (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{int}]{skip\+\_\+comment}
+\end{DoxyParamCaption}
+)}\hypertarget{cpp__headers_8c_af90754321baabe30d5f9a37c509ba2c7}{}\label{cpp__headers_8c_af90754321baabe30d5f9a37c509ba2c7}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cpp__headers_8c_af90754321baabe30d5f9a37c509ba2c7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}!main@{main}}
+\index{main@{main}!cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{cpp__headers_8c_a0ddf1224851353fc92bfbff6f499fa97}{}\label{cpp__headers_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{cpp__headers_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cpp__headers_8c_a0ddf1224851353fc92bfbff6f499fa97_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}!buff@{buff}}
+\index{buff@{buff}!cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}}
+\subsubsection[{\texorpdfstring{buff}{buff}}]{\setlength{\rightskip}{0pt plus 5cm}char buff\mbox{[}4096\mbox{]}}\hypertarget{cpp__headers_8c_abc0936d32a6f63e369c385a4f01a2168}{}\label{cpp__headers_8c_abc0936d32a6f63e369c385a4f01a2168}
+\index{cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}!dir@{dir}}
+\index{dir@{dir}!cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}}
+\subsubsection[{\texorpdfstring{dir}{dir}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ dir}\hypertarget{cpp__headers_8c_a10ddc4551bbc3f8d20ac7bdb2da11896}{}\label{cpp__headers_8c_a10ddc4551bbc3f8d20ac7bdb2da11896}
+\index{cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}!fout@{fout}}
+\index{fout@{fout}!cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}}
+\subsubsection[{\texorpdfstring{fout}{fout}}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+LE$\ast$ fout}\hypertarget{cpp__headers_8c_acec19516a59050bb447192fe318e6a9c}{}\label{cpp__headers_8c_acec19516a59050bb447192fe318e6a9c}
+\index{cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}!nb\+\_\+used@{nb\+\_\+used}}
+\index{nb\+\_\+used@{nb\+\_\+used}!cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}}
+\subsubsection[{\texorpdfstring{nb\+\_\+used}{nb_used}}]{\setlength{\rightskip}{0pt plus 5cm}int nb\+\_\+used = 0}\hypertarget{cpp__headers_8c_a1a1fd0ac380caa8fc01f1fe0cf0b53c4}{}\label{cpp__headers_8c_a1a1fd0ac380caa8fc01f1fe0cf0b53c4}
+\index{cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}!used@{used}}
+\index{used@{used}!cpp\+\_\+headers.\+c@{cpp\+\_\+headers.\+c}}
+\subsubsection[{\texorpdfstring{used}{used}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Used\+File} used\mbox{[}1024\mbox{]}}\hypertarget{cpp__headers_8c_ac8cdf8d37f66cb2da5e14d8a73091eaf}{}\label{cpp__headers_8c_ac8cdf8d37f66cb2da5e14d8a73091eaf}

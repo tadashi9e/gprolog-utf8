@@ -1,0 +1,18 @@
+<map id="Call_C" name="Call_C">
+<area shape="rect" id="node2" href="$ma2asm_8c.html#af58a5b3057b4025c06a20497353ad99a" title="Find_Inline_Data" alt="" coords="134,5,254,32"/>
+<area shape="rect" id="node3" href="$alpha__any_8c.html#abed8844e5eb90398ed7d4e5ac92c96b4" title="Call_C_Start" alt="" coords="145,56,243,83"/>
+<area shape="rect" id="node4" href="$alpha__any_8c.html#a46b3150c744d1824cd10a2c6192d79cf" title="Call_C_Arg_Int" alt="" coords="139,107,249,133"/>
+<area shape="rect" id="node5" href="$alpha__any_8c.html#a11185a9323ed03538b4967da01b3c5fd" title="Call_C_Arg_Double" alt="" coords="125,157,263,184"/>
+<area shape="rect" id="node6" href="$bt__string_8c.html#a4d385a49b03f7aeac7c168ef48d492d0" title="BT_String_Add" alt="" coords="139,208,249,235"/>
+<area shape="rect" id="node7" href="$alpha__any_8c.html#a48c333fd83686535d30e1577e7368134" title="Call_C_Arg_String" alt="" coords="129,259,259,285"/>
+<area shape="rect" id="node8" href="$alpha__any_8c.html#a964a096b28818e43f7e51dd5dd6f76f0" title="Call_C_Arg_Mem_L" alt="" coords="125,309,263,336"/>
+<area shape="rect" id="node9" href="$alpha__any_8c.html#a2f2f15033fa151bd5b50ea330c95606f" title="Call_C_Arg_Reg_X" alt="" coords="126,360,262,387"/>
+<area shape="rect" id="node10" href="$alpha__any_8c.html#a9336ef2973a657cc4140763f6bca9b55" title="Call_C_Arg_Reg_Y" alt="" coords="126,411,262,437"/>
+<area shape="rect" id="node11" href="$alpha__any_8c.html#a44157a3aa7743bec9bd4c63203183253" title="Call_C_Arg_Foreign_L" alt="" coords="117,461,271,488"/>
+<area shape="rect" id="node12" href="$alpha__any_8c.html#a74eac647b8a008ece21cc0eeffe98ef5" title="Call_C_Arg_Foreign_D" alt="" coords="116,512,272,539"/>
+<area shape="rect" id="node13" href="$ma2asm_8c.html#a55647b9192e0e0e7eb3e53f712402558" title="Label_Printf" alt="" coords="320,563,411,589"/>
+<area shape="rect" id="node14" href="$ma2asm_8c.html#a2f875c28b62ed1290b6f8453fb540f48" title="Emit_Inline_Data" alt="" coords="133,613,255,640"/>
+<area shape="rect" id="node16" href="$alpha__any_8c.html#a2a51a2665032be2de205e9bd9616f5bc" title="Call_C_Invoke" alt="" coords="140,664,248,691"/>
+<area shape="rect" id="node17" href="$alpha__any_8c.html#a27c073c1d4bfbaaec2dd6e47933bfea0" title="Call_C_Stop" alt="" coords="146,715,242,741"/>
+<area shape="rect" id="node15" href="$ma2asm_8c.html#afeaa1e73d1371e09e196c12b114b9845" title="Inst_Printf" alt="" coords="324,613,407,640"/>
+</map>

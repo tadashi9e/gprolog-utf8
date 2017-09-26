@@ -1,0 +1,6 @@
+<map id="Pl_Write_2" name="Pl_Write_2">
+<area shape="rect" id="node2" href="$gprolog_8h.html#a793aa59160a6c72d8459fd9d5955e105" title="Pl_Write_To_String" alt="" coords="149,5,284,32"/>
+<area shape="rect" id="node3" href="$const__io__c_8c.html#aa315338610c0d1a7016afa8e1e47ebe0" title="Pl_Write_To_Atom_2" alt="" coords="143,56,290,83"/>
+<area shape="rect" id="node4" href="$const__io__c_8c.html#a8ad689c5a7551974824dce5ffaa78a56" title="Pl_Write_To_Chars_2" alt="" coords="141,107,292,133"/>
+<area shape="rect" id="node5" href="$const__io__c_8c.html#a25d608ecb5b337246a18790f56533fc9" title="Pl_Write_To_Codes_2" alt="" coords="140,157,293,184"/>
+</map>

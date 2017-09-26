@@ -1,0 +1,782 @@
+\hypertarget{ma2asm_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Ma2\+Asm/ma2asm.c File Reference}
+\label{ma2asm_8c}\index{gprolog-\/utf8-\/tree/src/\+Ma2\+Asm/ma2asm.\+c@{gprolog-\/utf8-\/tree/src/\+Ma2\+Asm/ma2asm.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdarg.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/gp\+\_\+config.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+Wam2\+Ma/bt\+\_\+string.\+c\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+Top\+Comp/copying.\+c\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ma\+\_\+parser.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ma\+\_\+protos.\+h\char`\"{}}\\*
+Include dependency graph for ma2asm.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structLongInf}{Long\+Inf}
+\item 
+struct \hyperlink{structCodeInf}{Code\+Inf}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ma2asm_8c_a98260a49c10ff0c7c26bebf2c4c1dfa8}{M\+A2\+A\+S\+M\+\_\+\+F\+I\+LE}
+\item 
+\#define \hyperlink{ma2asm_8c_adcef1a6c8b2d2a6bced5c7a2875b1ee7}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+S\+U\+F\+F\+IX}~A\+S\+M\+\_\+\+S\+U\+F\+F\+IX
+\item 
+\#define \hyperlink{ma2asm_8c_a20d8b53c695b5899828d5c198a03b203}{M\+A\+S\+K\+\_\+\+L\+O\+N\+G\+\_\+\+G\+L\+O\+B\+AL}~1
+\item 
+\#define \hyperlink{ma2asm_8c_ae1325107f98020478b2ce4654bc577c3}{M\+A\+S\+K\+\_\+\+L\+O\+N\+G\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}~2
+\item 
+\#define \hyperlink{ma2asm_8c_a29da23f6fbca757d20c934997dc4bd5f}{Check\+\_\+\+Arg}(\hyperlink{chkma_8c_a6389b0bf0138857012de69e968d26c43}{i},  str)~(strncmp(argv\mbox{[}\hyperlink{chkma_8c_a6389b0bf0138857012de69e968d26c43}{i}\mbox{]}, str, strlen(argv\mbox{[}\hyperlink{chkma_8c_a6389b0bf0138857012de69e968d26c43}{i}\mbox{]})) == 0)
+\item 
+\#define \hyperlink{ma2asm_8c_a6a3b7ff0133132a30efceb60960808c7}{L}(msg)~fprintf(stderr, \char`\"{}\%s\textbackslash{}n\char`\"{}, msg)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ma2asm_8c_a3b36d941f8ba446b2b1740b3bdb68e5a}{Invoke\+\_\+\+Dico\+\_\+\+Long} (int unused\+\_\+no, char $\ast$\hyperlink{test__oc__defs_8h_abc1e86d7c344fe34ff09e72d4595ab7e}{name}, void $\ast$info)
+\item 
+void \hyperlink{ma2asm_8c_a604b6d3112e7ad35cb98693e322ffd80}{Init\+\_\+\+Inline\+\_\+\+Data} (void)
+\item 
+char $\ast$$\ast$ \hyperlink{ma2asm_8c_af58a5b3057b4025c06a20497353ad99a}{Find\+\_\+\+Inline\+\_\+\+Data} (char $\ast$\hyperlink{ma__parser_8c_ab87417d41e32059160c929d9fcf35365}{fct\+\_\+name})
+\item 
+void \hyperlink{ma2asm_8c_a2f875c28b62ed1290b6f8453fb540f48}{Emit\+\_\+\+Inline\+\_\+\+Data} (char $\ast$$\ast$p\+\_\+inline)
+\item 
+void \hyperlink{ma2asm_8c_a0f86decae28359b4f5374e06ca747d77}{Switch\+\_\+\+Rec} (int start, int stop, \hyperlink{structSwtInf}{Swt\+Inf} \hyperlink{ma__parser_8c_a1eda248bed0176748d586ebbdf6369da}{swt}\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{ma2asm_8c_a7791dcc03f2955522896de584658d93f}{Switch\+\_\+\+Equal} (\hyperlink{structSwtInf}{Swt\+Inf} $\ast$\hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c})
+\item 
+int \hyperlink{ma2asm_8c_aaeb4aa55dcb92f57b7d957ef783a3d6d}{Switch\+\_\+\+Cmp\+\_\+\+Int} (\hyperlink{structSwtInf}{Swt\+Inf} $\ast$c1, \hyperlink{structSwtInf}{Swt\+Inf} $\ast$c2)
+\item 
+void \hyperlink{ma2asm_8c_a55647b9192e0e0e7eb3e53f712402558}{Label\+\_\+\+Printf} (char $\ast$\hyperlink{asm__inst_8c_a2578bd67218e5f687fa6fce922a3e94a}{label},...)
+\item 
+void \hyperlink{ma2asm_8c_afeaa1e73d1371e09e196c12b114b9845}{Inst\+\_\+\+Printf} (char $\ast$op, char $\ast$operands,...)
+\item 
+void \hyperlink{ma2asm_8c_a9608e324baa0506520d6ae9b95ae89ab}{Inst\+\_\+\+Out} (char $\ast$op, char $\ast$operands)
+\item 
+void \hyperlink{ma2asm_8c_af174ca051a6c219ac02476adf7c11b61}{Char\+\_\+\+Out} (char \hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c})
+\item 
+void \hyperlink{ma2asm_8c_a0851dc0f6e6cf307d543061b3c1ae48d}{String\+\_\+\+Out} (char $\ast$s)
+\item 
+void \hyperlink{ma2asm_8c_a5aaee1ed1c841a25da8a192705cc7352}{Int\+\_\+\+Out} (int \hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d})
+\item 
+void \hyperlink{ma2asm_8c_a7e8dc5deafda75c2015d11b38142d950}{Parse\+\_\+\+Arguments} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{ma2asm_8c_a9a3f2cfe44184eb0ad845d8d72dc3b41}{Display\+\_\+\+Help} (void)
+\item 
+int \hyperlink{ma2asm_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{ma2asm_8c_adb8321cae53340dd612df2611478ecac}{Declare\+\_\+\+Initializer} (char $\ast$init\+\_\+fct)
+\item 
+void \hyperlink{ma2asm_8c_a4e9a1630ccc62db3caa97ab5abc0a1ca}{Call\+\_\+C} (char $\ast$\hyperlink{ma__parser_8c_ab87417d41e32059160c929d9fcf35365}{fct\+\_\+name}, int \hyperlink{ma__parser_8c_a78ccac598d091a161e6c2cb79411d8a2}{fc}, int \hyperlink{ma__parser_8c_abd4fd2dc8f31e9ec3b584efb645a456c}{nb\+\_\+args}, int \hyperlink{ma__parser_8c_a0a03c53bf7936e1f9417529c3493f6e9}{nb\+\_\+args\+\_\+in\+\_\+words}, \hyperlink{structArgInf}{Arg\+Inf} \hyperlink{wam__parser_8c_ac9526aab8f333086d61f1df2379a20c6}{arg}\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{ma2asm_8c_ab348042c2e4626c2e75741315166aed5}{Switch\+\_\+\+Ret} (int \hyperlink{ma__parser_8c_a62f0182d4db65c613e5bdd4c590b442e}{nb\+\_\+swt}, \hyperlink{structSwtInf}{Swt\+Inf} \hyperlink{ma__parser_8c_a1eda248bed0176748d586ebbdf6369da}{swt}\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{ma2asm_8c_a6d90f89ab9a16345660966a5d6221214}{Decl\+\_\+\+Long} (char $\ast$\hyperlink{test__oc__defs_8h_abc1e86d7c344fe34ff09e72d4595ab7e}{name}, int global, \hyperlink{ma__parser_8h_a28a778aedb7441c6b9755e1882b58dc9}{V\+Type} vtype, \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} value)
+\item 
+void \hyperlink{ma2asm_8c_aa8b6ff2e08644fa073ab516643de4827}{Decl\+\_\+\+Code} (char $\ast$\hyperlink{test__oc__defs_8h_abc1e86d7c344fe34ff09e72d4595ab7e}{name}, int prolog, int global)
+\item 
+int \hyperlink{ma2asm_8c_ae154ce5f2c10c79b40fe86078dd2a5ca}{Is\+\_\+\+Code\+\_\+\+Defined} (char $\ast$\hyperlink{test__oc__defs_8h_abc1e86d7c344fe34ff09e72d4595ab7e}{name})
+\item 
+int \hyperlink{ma2asm_8c_a51aa477632c8da9ce4fe91d0023f2819}{Get\+\_\+\+Long\+\_\+\+Infos} (char $\ast$\hyperlink{test__oc__defs_8h_abc1e86d7c344fe34ff09e72d4595ab7e}{name}, int $\ast$global, \hyperlink{ma__parser_8h_a28a778aedb7441c6b9755e1882b58dc9}{V\+Type} $\ast$vtype, int $\ast$value)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{ma2asm_8c_a7ecac12d82418e24dc141867ba7a549e}{file\+\_\+name\+\_\+in}
+\item 
+char $\ast$ \hyperlink{ma2asm_8c_acf90fc7ae8c762e5f076ff9039ea36a6}{file\+\_\+name\+\_\+out}
+\item 
+int \hyperlink{ma2asm_8c_a6d113a482f36850c7845a2e614f89985}{pic\+\_\+code}
+\item 
+int \hyperlink{ma2asm_8c_a2ca4276f80a2f6f5adc6ad2bccbbadc1}{inline\+\_\+asm}
+\item 
+int \hyperlink{ma2asm_8c_a8afbd6b92ca476c831ac56b902a0e62e}{ignore\+\_\+fc}
+\item 
+int \hyperlink{ma2asm_8c_a69c8ab64f865fdeb404489409885e732}{comment}
+\item 
+F\+I\+LE $\ast$ \hyperlink{ma2asm_8c_ad6c10011958844f0803c040a760d2fb9}{file\+\_\+out}
+\item 
+int \hyperlink{ma2asm_8c_a8dcfd226588e17ec798bfa979cdf2500}{work\+\_\+label} = 0
+\item 
+\hyperlink{structBTString}{B\+T\+String} \hyperlink{ma2asm_8c_ad65940d79f57b555205775c2bf79d56e}{bt\+\_\+string}
+\item 
+\hyperlink{structBTString}{B\+T\+String} \hyperlink{ma2asm_8c_a056a43709f67ad897cf6015b9ea7238f}{bt\+\_\+code}
+\item 
+\hyperlink{structBTString}{B\+T\+String} \hyperlink{ma2asm_8c_a8c7bbe1183c94f19891b3134343cbf82}{bt\+\_\+long}
+\item 
+char $\ast$ \hyperlink{ma2asm_8c_a13b583d4baa4e185178ce84810f4ae55}{initializer\+\_\+fct} = N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{ma2asm.\+c@{ma2asm.\+c}!Check\+\_\+\+Arg@{Check\+\_\+\+Arg}}
+\index{Check\+\_\+\+Arg@{Check\+\_\+\+Arg}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Check\+\_\+\+Arg}{Check_Arg}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Check\+\_\+\+Arg(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf i}, }
+\item[{}]{str}
+\end{DoxyParamCaption}
+)~(strncmp(argv\mbox{[}{\bf i}\mbox{]}, str, strlen(argv\mbox{[}{\bf i}\mbox{]})) == 0)}\hypertarget{ma2asm_8c_a29da23f6fbca757d20c934997dc4bd5f}{}\label{ma2asm_8c_a29da23f6fbca757d20c934997dc4bd5f}
+\index{ma2asm.\+c@{ma2asm.\+c}!D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+S\+U\+F\+F\+IX@{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+S\+U\+F\+F\+IX}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+S\+U\+F\+F\+IX@{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+S\+U\+F\+F\+IX}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+S\+U\+F\+F\+IX}{DEFAULT_OUTPUT_SUFFIX}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+S\+U\+F\+F\+IX~A\+S\+M\+\_\+\+S\+U\+F\+F\+IX}\hypertarget{ma2asm_8c_adcef1a6c8b2d2a6bced5c7a2875b1ee7}{}\label{ma2asm_8c_adcef1a6c8b2d2a6bced5c7a2875b1ee7}
+\index{ma2asm.\+c@{ma2asm.\+c}!L@{L}}
+\index{L@{L}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{L}{L}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L(
+\begin{DoxyParamCaption}
+\item[{}]{msg}
+\end{DoxyParamCaption}
+)~fprintf(stderr, \char`\"{}\%s\textbackslash{}n\char`\"{}, msg)}\hypertarget{ma2asm_8c_a6a3b7ff0133132a30efceb60960808c7}{}\label{ma2asm_8c_a6a3b7ff0133132a30efceb60960808c7}
+\index{ma2asm.\+c@{ma2asm.\+c}!M\+A2\+A\+S\+M\+\_\+\+F\+I\+LE@{M\+A2\+A\+S\+M\+\_\+\+F\+I\+LE}}
+\index{M\+A2\+A\+S\+M\+\_\+\+F\+I\+LE@{M\+A2\+A\+S\+M\+\_\+\+F\+I\+LE}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{M\+A2\+A\+S\+M\+\_\+\+F\+I\+LE}{MA2ASM_FILE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A2\+A\+S\+M\+\_\+\+F\+I\+LE}\hypertarget{ma2asm_8c_a98260a49c10ff0c7c26bebf2c4c1dfa8}{}\label{ma2asm_8c_a98260a49c10ff0c7c26bebf2c4c1dfa8}
+\index{ma2asm.\+c@{ma2asm.\+c}!M\+A\+S\+K\+\_\+\+L\+O\+N\+G\+\_\+\+G\+L\+O\+B\+AL@{M\+A\+S\+K\+\_\+\+L\+O\+N\+G\+\_\+\+G\+L\+O\+B\+AL}}
+\index{M\+A\+S\+K\+\_\+\+L\+O\+N\+G\+\_\+\+G\+L\+O\+B\+AL@{M\+A\+S\+K\+\_\+\+L\+O\+N\+G\+\_\+\+G\+L\+O\+B\+AL}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+S\+K\+\_\+\+L\+O\+N\+G\+\_\+\+G\+L\+O\+B\+AL}{MASK_LONG_GLOBAL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+S\+K\+\_\+\+L\+O\+N\+G\+\_\+\+G\+L\+O\+B\+AL~1}\hypertarget{ma2asm_8c_a20d8b53c695b5899828d5c198a03b203}{}\label{ma2asm_8c_a20d8b53c695b5899828d5c198a03b203}
+\index{ma2asm.\+c@{ma2asm.\+c}!M\+A\+S\+K\+\_\+\+L\+O\+N\+G\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED@{M\+A\+S\+K\+\_\+\+L\+O\+N\+G\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}}
+\index{M\+A\+S\+K\+\_\+\+L\+O\+N\+G\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED@{M\+A\+S\+K\+\_\+\+L\+O\+N\+G\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+S\+K\+\_\+\+L\+O\+N\+G\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}{MASK_LONG_INITIALIZED}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+S\+K\+\_\+\+L\+O\+N\+G\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED~2}\hypertarget{ma2asm_8c_ae1325107f98020478b2ce4654bc577c3}{}\label{ma2asm_8c_ae1325107f98020478b2ce4654bc577c3}
+
+
+\subsection{Function Documentation}
+\index{ma2asm.\+c@{ma2asm.\+c}!Call\+\_\+C@{Call\+\_\+C}}
+\index{Call\+\_\+C@{Call\+\_\+C}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Call\+\_\+\+C(char $\ast$fct\+\_\+name, int fc, int nb\+\_\+args, int nb\+\_\+args\+\_\+in\+\_\+words, Arg\+Inf arg[])}{Call_C(char *fct_name, int fc, int nb_args, int nb_args_in_words, ArgInf arg[])}}]{\setlength{\rightskip}{0pt plus 5cm}void Call\+\_\+C (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{fct\+\_\+name, }
+\item[{int}]{fc, }
+\item[{int}]{nb\+\_\+args, }
+\item[{int}]{nb\+\_\+args\+\_\+in\+\_\+words, }
+\item[{{\bf Arg\+Inf}}]{arg\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_a4e9a1630ccc62db3caa97ab5abc0a1ca}{}\label{ma2asm_8c_a4e9a1630ccc62db3caa97ab5abc0a1ca}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{ma2asm_8c_a4e9a1630ccc62db3caa97ab5abc0a1ca_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_a4e9a1630ccc62db3caa97ab5abc0a1ca_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Char\+\_\+\+Out@{Char\+\_\+\+Out}}
+\index{Char\+\_\+\+Out@{Char\+\_\+\+Out}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Char\+\_\+\+Out(char c)}{Char_Out(char c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Char\+\_\+\+Out (
+\begin{DoxyParamCaption}
+\item[{char}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_af174ca051a6c219ac02476adf7c11b61}{}\label{ma2asm_8c_af174ca051a6c219ac02476adf7c11b61}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_af174ca051a6c219ac02476adf7c11b61_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Decl\+\_\+\+Code@{Decl\+\_\+\+Code}}
+\index{Decl\+\_\+\+Code@{Decl\+\_\+\+Code}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Decl\+\_\+\+Code(char $\ast$name, int prolog, int global)}{Decl_Code(char *name, int prolog, int global)}}]{\setlength{\rightskip}{0pt plus 5cm}void Decl\+\_\+\+Code (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{int}]{prolog, }
+\item[{int}]{global}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_aa8b6ff2e08644fa073ab516643de4827}{}\label{ma2asm_8c_aa8b6ff2e08644fa073ab516643de4827}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{ma2asm_8c_aa8b6ff2e08644fa073ab516643de4827_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_aa8b6ff2e08644fa073ab516643de4827_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Decl\+\_\+\+Long@{Decl\+\_\+\+Long}}
+\index{Decl\+\_\+\+Long@{Decl\+\_\+\+Long}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Decl\+\_\+\+Long(char $\ast$name, int global, V\+Type vtype, Pl\+Long value)}{Decl_Long(char *name, int global, VType vtype, PlLong value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Decl\+\_\+\+Long (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{int}]{global, }
+\item[{{\bf V\+Type}}]{vtype, }
+\item[{{\bf Pl\+Long}}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_a6d90f89ab9a16345660966a5d6221214}{}\label{ma2asm_8c_a6d90f89ab9a16345660966a5d6221214}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{ma2asm_8c_a6d90f89ab9a16345660966a5d6221214_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_a6d90f89ab9a16345660966a5d6221214_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Declare\+\_\+\+Initializer@{Declare\+\_\+\+Initializer}}
+\index{Declare\+\_\+\+Initializer@{Declare\+\_\+\+Initializer}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Declare\+\_\+\+Initializer(char $\ast$init\+\_\+fct)}{Declare_Initializer(char *init_fct)}}]{\setlength{\rightskip}{0pt plus 5cm}void Declare\+\_\+\+Initializer (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{init\+\_\+fct}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_adb8321cae53340dd612df2611478ecac}{}\label{ma2asm_8c_adb8321cae53340dd612df2611478ecac}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_adb8321cae53340dd612df2611478ecac_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Display\+\_\+\+Help@{Display\+\_\+\+Help}}
+\index{Display\+\_\+\+Help@{Display\+\_\+\+Help}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Display\+\_\+\+Help(void)}{Display_Help(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Display\+\_\+\+Help (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_a9a3f2cfe44184eb0ad845d8d72dc3b41}{}\label{ma2asm_8c_a9a3f2cfe44184eb0ad845d8d72dc3b41}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_a9a3f2cfe44184eb0ad845d8d72dc3b41_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Emit\+\_\+\+Inline\+\_\+\+Data@{Emit\+\_\+\+Inline\+\_\+\+Data}}
+\index{Emit\+\_\+\+Inline\+\_\+\+Data@{Emit\+\_\+\+Inline\+\_\+\+Data}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Emit\+\_\+\+Inline\+\_\+\+Data(char $\ast$$\ast$p\+\_\+inline)}{Emit_Inline_Data(char **p_inline)}}]{\setlength{\rightskip}{0pt plus 5cm}void Emit\+\_\+\+Inline\+\_\+\+Data (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{p\+\_\+inline}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_a2f875c28b62ed1290b6f8453fb540f48}{}\label{ma2asm_8c_a2f875c28b62ed1290b6f8453fb540f48}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{ma2asm_8c_a2f875c28b62ed1290b6f8453fb540f48_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_a2f875c28b62ed1290b6f8453fb540f48_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Find\+\_\+\+Inline\+\_\+\+Data@{Find\+\_\+\+Inline\+\_\+\+Data}}
+\index{Find\+\_\+\+Inline\+\_\+\+Data@{Find\+\_\+\+Inline\+\_\+\+Data}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Find\+\_\+\+Inline\+\_\+\+Data(char $\ast$fct\+\_\+name)}{Find_Inline_Data(char *fct_name)}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$$\ast$ Find\+\_\+\+Inline\+\_\+\+Data (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{fct\+\_\+name}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_af58a5b3057b4025c06a20497353ad99a}{}\label{ma2asm_8c_af58a5b3057b4025c06a20497353ad99a}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_af58a5b3057b4025c06a20497353ad99a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Get\+\_\+\+Long\+\_\+\+Infos@{Get\+\_\+\+Long\+\_\+\+Infos}}
+\index{Get\+\_\+\+Long\+\_\+\+Infos@{Get\+\_\+\+Long\+\_\+\+Infos}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Get\+\_\+\+Long\+\_\+\+Infos(char $\ast$name, int $\ast$global, V\+Type $\ast$vtype, int $\ast$value)}{Get_Long_Infos(char *name, int *global, VType *vtype, int *value)}}]{\setlength{\rightskip}{0pt plus 5cm}int Get\+\_\+\+Long\+\_\+\+Infos (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name, }
+\item[{int $\ast$}]{global, }
+\item[{{\bf V\+Type} $\ast$}]{vtype, }
+\item[{int $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_a51aa477632c8da9ce4fe91d0023f2819}{}\label{ma2asm_8c_a51aa477632c8da9ce4fe91d0023f2819}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{ma2asm_8c_a51aa477632c8da9ce4fe91d0023f2819_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_a51aa477632c8da9ce4fe91d0023f2819_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Init\+\_\+\+Inline\+\_\+\+Data@{Init\+\_\+\+Inline\+\_\+\+Data}}
+\index{Init\+\_\+\+Inline\+\_\+\+Data@{Init\+\_\+\+Inline\+\_\+\+Data}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Init\+\_\+\+Inline\+\_\+\+Data(void)}{Init_Inline_Data(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Init\+\_\+\+Inline\+\_\+\+Data (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_a604b6d3112e7ad35cb98693e322ffd80}{}\label{ma2asm_8c_a604b6d3112e7ad35cb98693e322ffd80}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{ma2asm_8c_a604b6d3112e7ad35cb98693e322ffd80_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Inst\+\_\+\+Out@{Inst\+\_\+\+Out}}
+\index{Inst\+\_\+\+Out@{Inst\+\_\+\+Out}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Inst\+\_\+\+Out(char $\ast$op, char $\ast$operands)}{Inst_Out(char *op, char *operands)}}]{\setlength{\rightskip}{0pt plus 5cm}void Inst\+\_\+\+Out (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{op, }
+\item[{char $\ast$}]{operands}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_a9608e324baa0506520d6ae9b95ae89ab}{}\label{ma2asm_8c_a9608e324baa0506520d6ae9b95ae89ab}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_a9608e324baa0506520d6ae9b95ae89ab_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Inst\+\_\+\+Printf@{Inst\+\_\+\+Printf}}
+\index{Inst\+\_\+\+Printf@{Inst\+\_\+\+Printf}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Inst\+\_\+\+Printf(char $\ast$op, char $\ast$operands,...)}{Inst_Printf(char *op, char *operands,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void Inst\+\_\+\+Printf (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{op, }
+\item[{char $\ast$}]{operands, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_afeaa1e73d1371e09e196c12b114b9845}{}\label{ma2asm_8c_afeaa1e73d1371e09e196c12b114b9845}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{ma2asm_8c_afeaa1e73d1371e09e196c12b114b9845_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Int\+\_\+\+Out@{Int\+\_\+\+Out}}
+\index{Int\+\_\+\+Out@{Int\+\_\+\+Out}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Int\+\_\+\+Out(int d)}{Int_Out(int d)}}]{\setlength{\rightskip}{0pt plus 5cm}void Int\+\_\+\+Out (
+\begin{DoxyParamCaption}
+\item[{int}]{d}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_a5aaee1ed1c841a25da8a192705cc7352}{}\label{ma2asm_8c_a5aaee1ed1c841a25da8a192705cc7352}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_a5aaee1ed1c841a25da8a192705cc7352_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Invoke\+\_\+\+Dico\+\_\+\+Long@{Invoke\+\_\+\+Dico\+\_\+\+Long}}
+\index{Invoke\+\_\+\+Dico\+\_\+\+Long@{Invoke\+\_\+\+Dico\+\_\+\+Long}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Invoke\+\_\+\+Dico\+\_\+\+Long(int unused\+\_\+no, char $\ast$name, void $\ast$info)}{Invoke_Dico_Long(int unused_no, char *name, void *info)}}]{\setlength{\rightskip}{0pt plus 5cm}void Invoke\+\_\+\+Dico\+\_\+\+Long (
+\begin{DoxyParamCaption}
+\item[{int}]{unused\+\_\+no, }
+\item[{char $\ast$}]{name, }
+\item[{void $\ast$}]{info}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_a3b36d941f8ba446b2b1740b3bdb68e5a}{}\label{ma2asm_8c_a3b36d941f8ba446b2b1740b3bdb68e5a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{ma2asm_8c_a3b36d941f8ba446b2b1740b3bdb68e5a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{ma2asm_8c_a3b36d941f8ba446b2b1740b3bdb68e5a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Is\+\_\+\+Code\+\_\+\+Defined@{Is\+\_\+\+Code\+\_\+\+Defined}}
+\index{Is\+\_\+\+Code\+\_\+\+Defined@{Is\+\_\+\+Code\+\_\+\+Defined}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Is\+\_\+\+Code\+\_\+\+Defined(char $\ast$name)}{Is_Code_Defined(char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}int Is\+\_\+\+Code\+\_\+\+Defined (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_ae154ce5f2c10c79b40fe86078dd2a5ca}{}\label{ma2asm_8c_ae154ce5f2c10c79b40fe86078dd2a5ca}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{ma2asm_8c_ae154ce5f2c10c79b40fe86078dd2a5ca_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_ae154ce5f2c10c79b40fe86078dd2a5ca_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Label\+\_\+\+Printf@{Label\+\_\+\+Printf}}
+\index{Label\+\_\+\+Printf@{Label\+\_\+\+Printf}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Label\+\_\+\+Printf(char $\ast$label,...)}{Label_Printf(char *label,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void Label\+\_\+\+Printf (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{label, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_a55647b9192e0e0e7eb3e53f712402558}{}\label{ma2asm_8c_a55647b9192e0e0e7eb3e53f712402558}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_a55647b9192e0e0e7eb3e53f712402558_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!main@{main}}
+\index{main@{main}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_a0ddf1224851353fc92bfbff6f499fa97}{}\label{ma2asm_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Parse\+\_\+\+Arguments@{Parse\+\_\+\+Arguments}}
+\index{Parse\+\_\+\+Arguments@{Parse\+\_\+\+Arguments}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Parse\+\_\+\+Arguments(int argc, char $\ast$argv[])}{Parse_Arguments(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}void Parse\+\_\+\+Arguments (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_a7e8dc5deafda75c2015d11b38142d950}{}\label{ma2asm_8c_a7e8dc5deafda75c2015d11b38142d950}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_a7e8dc5deafda75c2015d11b38142d950_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{ma2asm_8c_a7e8dc5deafda75c2015d11b38142d950_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!String\+\_\+\+Out@{String\+\_\+\+Out}}
+\index{String\+\_\+\+Out@{String\+\_\+\+Out}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{String\+\_\+\+Out(char $\ast$s)}{String_Out(char *s)}}]{\setlength{\rightskip}{0pt plus 5cm}void String\+\_\+\+Out (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_a0851dc0f6e6cf307d543061b3c1ae48d}{}\label{ma2asm_8c_a0851dc0f6e6cf307d543061b3c1ae48d}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_a0851dc0f6e6cf307d543061b3c1ae48d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Switch\+\_\+\+Cmp\+\_\+\+Int@{Switch\+\_\+\+Cmp\+\_\+\+Int}}
+\index{Switch\+\_\+\+Cmp\+\_\+\+Int@{Switch\+\_\+\+Cmp\+\_\+\+Int}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Switch\+\_\+\+Cmp\+\_\+\+Int(\+Swt\+Inf $\ast$c1, Swt\+Inf $\ast$c2)}{Switch_Cmp_Int(SwtInf *c1, SwtInf *c2)}}]{\setlength{\rightskip}{0pt plus 5cm}int Switch\+\_\+\+Cmp\+\_\+\+Int (
+\begin{DoxyParamCaption}
+\item[{{\bf Swt\+Inf} $\ast$}]{c1, }
+\item[{{\bf Swt\+Inf} $\ast$}]{c2}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_aaeb4aa55dcb92f57b7d957ef783a3d6d}{}\label{ma2asm_8c_aaeb4aa55dcb92f57b7d957ef783a3d6d}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_aaeb4aa55dcb92f57b7d957ef783a3d6d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Switch\+\_\+\+Equal@{Switch\+\_\+\+Equal}}
+\index{Switch\+\_\+\+Equal@{Switch\+\_\+\+Equal}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Switch\+\_\+\+Equal(\+Swt\+Inf $\ast$c)}{Switch_Equal(SwtInf *c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Switch\+\_\+\+Equal (
+\begin{DoxyParamCaption}
+\item[{{\bf Swt\+Inf} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_a7791dcc03f2955522896de584658d93f}{}\label{ma2asm_8c_a7791dcc03f2955522896de584658d93f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{ma2asm_8c_a7791dcc03f2955522896de584658d93f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_a7791dcc03f2955522896de584658d93f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Switch\+\_\+\+Rec@{Switch\+\_\+\+Rec}}
+\index{Switch\+\_\+\+Rec@{Switch\+\_\+\+Rec}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Switch\+\_\+\+Rec(int start, int stop, Swt\+Inf swt[])}{Switch_Rec(int start, int stop, SwtInf swt[])}}]{\setlength{\rightskip}{0pt plus 5cm}void Switch\+\_\+\+Rec (
+\begin{DoxyParamCaption}
+\item[{int}]{start, }
+\item[{int}]{stop, }
+\item[{{\bf Swt\+Inf}}]{swt\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_a0f86decae28359b4f5374e06ca747d77}{}\label{ma2asm_8c_a0f86decae28359b4f5374e06ca747d77}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_a0f86decae28359b4f5374e06ca747d77_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_a0f86decae28359b4f5374e06ca747d77_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{ma2asm.\+c@{ma2asm.\+c}!Switch\+\_\+\+Ret@{Switch\+\_\+\+Ret}}
+\index{Switch\+\_\+\+Ret@{Switch\+\_\+\+Ret}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{Switch\+\_\+\+Ret(int nb\+\_\+swt, Swt\+Inf swt[])}{Switch_Ret(int nb_swt, SwtInf swt[])}}]{\setlength{\rightskip}{0pt plus 5cm}void Switch\+\_\+\+Ret (
+\begin{DoxyParamCaption}
+\item[{int}]{nb\+\_\+swt, }
+\item[{{\bf Swt\+Inf}}]{swt\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{ma2asm_8c_ab348042c2e4626c2e75741315166aed5}{}\label{ma2asm_8c_ab348042c2e4626c2e75741315166aed5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_ab348042c2e4626c2e75741315166aed5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm_8c_ab348042c2e4626c2e75741315166aed5_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{ma2asm.\+c@{ma2asm.\+c}!bt\+\_\+code@{bt\+\_\+code}}
+\index{bt\+\_\+code@{bt\+\_\+code}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{bt\+\_\+code}{bt_code}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\+T\+String} bt\+\_\+code}\hypertarget{ma2asm_8c_a056a43709f67ad897cf6015b9ea7238f}{}\label{ma2asm_8c_a056a43709f67ad897cf6015b9ea7238f}
+\index{ma2asm.\+c@{ma2asm.\+c}!bt\+\_\+long@{bt\+\_\+long}}
+\index{bt\+\_\+long@{bt\+\_\+long}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{bt\+\_\+long}{bt_long}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\+T\+String} bt\+\_\+long}\hypertarget{ma2asm_8c_a8c7bbe1183c94f19891b3134343cbf82}{}\label{ma2asm_8c_a8c7bbe1183c94f19891b3134343cbf82}
+\index{ma2asm.\+c@{ma2asm.\+c}!bt\+\_\+string@{bt\+\_\+string}}
+\index{bt\+\_\+string@{bt\+\_\+string}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{bt\+\_\+string}{bt_string}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf B\+T\+String} bt\+\_\+string}\hypertarget{ma2asm_8c_ad65940d79f57b555205775c2bf79d56e}{}\label{ma2asm_8c_ad65940d79f57b555205775c2bf79d56e}
+\index{ma2asm.\+c@{ma2asm.\+c}!comment@{comment}}
+\index{comment@{comment}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{comment}{comment}}]{\setlength{\rightskip}{0pt plus 5cm}int comment}\hypertarget{ma2asm_8c_a69c8ab64f865fdeb404489409885e732}{}\label{ma2asm_8c_a69c8ab64f865fdeb404489409885e732}
+\index{ma2asm.\+c@{ma2asm.\+c}!file\+\_\+name\+\_\+in@{file\+\_\+name\+\_\+in}}
+\index{file\+\_\+name\+\_\+in@{file\+\_\+name\+\_\+in}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{file\+\_\+name\+\_\+in}{file_name_in}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ file\+\_\+name\+\_\+in}\hypertarget{ma2asm_8c_a7ecac12d82418e24dc141867ba7a549e}{}\label{ma2asm_8c_a7ecac12d82418e24dc141867ba7a549e}
+\index{ma2asm.\+c@{ma2asm.\+c}!file\+\_\+name\+\_\+out@{file\+\_\+name\+\_\+out}}
+\index{file\+\_\+name\+\_\+out@{file\+\_\+name\+\_\+out}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{file\+\_\+name\+\_\+out}{file_name_out}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ file\+\_\+name\+\_\+out}\hypertarget{ma2asm_8c_acf90fc7ae8c762e5f076ff9039ea36a6}{}\label{ma2asm_8c_acf90fc7ae8c762e5f076ff9039ea36a6}
+\index{ma2asm.\+c@{ma2asm.\+c}!file\+\_\+out@{file\+\_\+out}}
+\index{file\+\_\+out@{file\+\_\+out}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{file\+\_\+out}{file_out}}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+LE$\ast$ file\+\_\+out}\hypertarget{ma2asm_8c_ad6c10011958844f0803c040a760d2fb9}{}\label{ma2asm_8c_ad6c10011958844f0803c040a760d2fb9}
+\index{ma2asm.\+c@{ma2asm.\+c}!ignore\+\_\+fc@{ignore\+\_\+fc}}
+\index{ignore\+\_\+fc@{ignore\+\_\+fc}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{ignore\+\_\+fc}{ignore_fc}}]{\setlength{\rightskip}{0pt plus 5cm}int ignore\+\_\+fc}\hypertarget{ma2asm_8c_a8afbd6b92ca476c831ac56b902a0e62e}{}\label{ma2asm_8c_a8afbd6b92ca476c831ac56b902a0e62e}
+\index{ma2asm.\+c@{ma2asm.\+c}!initializer\+\_\+fct@{initializer\+\_\+fct}}
+\index{initializer\+\_\+fct@{initializer\+\_\+fct}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{initializer\+\_\+fct}{initializer_fct}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ initializer\+\_\+fct = N\+U\+LL}\hypertarget{ma2asm_8c_a13b583d4baa4e185178ce84810f4ae55}{}\label{ma2asm_8c_a13b583d4baa4e185178ce84810f4ae55}
+\index{ma2asm.\+c@{ma2asm.\+c}!inline\+\_\+asm@{inline\+\_\+asm}}
+\index{inline\+\_\+asm@{inline\+\_\+asm}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{inline\+\_\+asm}{inline_asm}}]{\setlength{\rightskip}{0pt plus 5cm}int inline\+\_\+asm}\hypertarget{ma2asm_8c_a2ca4276f80a2f6f5adc6ad2bccbbadc1}{}\label{ma2asm_8c_a2ca4276f80a2f6f5adc6ad2bccbbadc1}
+\index{ma2asm.\+c@{ma2asm.\+c}!pic\+\_\+code@{pic\+\_\+code}}
+\index{pic\+\_\+code@{pic\+\_\+code}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{pic\+\_\+code}{pic_code}}]{\setlength{\rightskip}{0pt plus 5cm}int pic\+\_\+code}\hypertarget{ma2asm_8c_a6d113a482f36850c7845a2e614f89985}{}\label{ma2asm_8c_a6d113a482f36850c7845a2e614f89985}
+\index{ma2asm.\+c@{ma2asm.\+c}!work\+\_\+label@{work\+\_\+label}}
+\index{work\+\_\+label@{work\+\_\+label}!ma2asm.\+c@{ma2asm.\+c}}
+\subsubsection[{\texorpdfstring{work\+\_\+label}{work_label}}]{\setlength{\rightskip}{0pt plus 5cm}int work\+\_\+label = 0}\hypertarget{ma2asm_8c_a8dcfd226588e17ec798bfa979cdf2500}{}\label{ma2asm_8c_a8dcfd226588e17ec798bfa979cdf2500}

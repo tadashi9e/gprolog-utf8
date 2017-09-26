@@ -1,0 +1,279 @@
+\hypertarget{hexfilter_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Top\+Comp/hexfilter.c File Reference}
+\label{hexfilter_8c}\index{gprolog-\/utf8-\/tree/src/\+Top\+Comp/hexfilter.\+c@{gprolog-\/utf8-\/tree/src/\+Top\+Comp/hexfilter.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include $<$stdarg.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/gp\+\_\+config.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decode\+\_\+hexa.\+c\char`\"{}}\\*
+Include dependency graph for hexfilter.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hexfilter_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{hexfilter_8c_a29b7451465deac204c5f7cb1f9c6e1fc}{M\+A\+X\+\_\+\+A\+R\+GS}~1024
+\item 
+\#define \hyperlink{hexfilter_8c_ae4591457dbe7a929438f11effb82d1c4}{H\+E\+X\+G\+P\+L\+C\+\_\+\+V\+E\+R\+S\+I\+ON}~\char`\"{}1.\+1\char`\"{}
+\item 
+\#define \hyperlink{hexfilter_8c_a29da23f6fbca757d20c934997dc4bd5f}{Check\+\_\+\+Arg}(\hyperlink{chkma_8c_a6389b0bf0138857012de69e968d26c43}{i},  str)~(strncmp(argv\mbox{[}\hyperlink{chkma_8c_a6389b0bf0138857012de69e968d26c43}{i}\mbox{]}, str, strlen(argv\mbox{[}\hyperlink{chkma_8c_a6389b0bf0138857012de69e968d26c43}{i}\mbox{]})) == 0)
+\item 
+\#define \hyperlink{hexfilter_8c_a6a3b7ff0133132a30efceb60960808c7}{L}(msg)~fprintf(stderr, \char`\"{}\%s\textbackslash{}n\char`\"{}, msg)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{hexfilter_8c_af207728e4d897fe33b560f1eca9cd98a}{One\+\_\+\+File} (F\+I\+LE $\ast$\hyperlink{asm_8c_ad1351d85ffec3c1176dc31d8e8f8e28a}{f})
+\item 
+void \hyperlink{hexfilter_8c_a5b4118c0a610b05ac048f499ba62f1fc}{One\+\_\+\+Line} (char $\ast$str)
+\item 
+void \hyperlink{hexfilter_8c_a190fea7904d7245d4fdc5e9404a07907}{Pl\+\_\+\+Fatal\+\_\+\+Error} (char $\ast$\hyperlink{hexfilter_8c_a5407a229a5e1a319d75fb29542c83eae}{format},...)
+\item 
+void \hyperlink{hexfilter_8c_a7e8dc5deafda75c2015d11b38142d950}{Parse\+\_\+\+Arguments} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{hexfilter_8c_a9a3f2cfe44184eb0ad845d8d72dc3b41}{Display\+\_\+\+Help} (void)
+\item 
+int \hyperlink{hexfilter_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{hexfilter_8c_a29558c1e60f974924d00ebfe5daa02d2}{encode} = 0
+\item 
+int \hyperlink{hexfilter_8c_a665742fa37af08ce14b0971ef7d82c4b}{strict} = 1
+\item 
+int \hyperlink{hexfilter_8c_a87d4891edf5ac7e11483646d83ba4e78}{quote} = 1
+\item 
+int \hyperlink{hexfilter_8c_abcc204ee870a1c658af15c727acc3b9e}{enclose} = 1
+\item 
+int \hyperlink{hexfilter_8c_a26b0b14d5681b6ab0fc22e80019e20ab}{decode\+\_\+aux} = 0
+\item 
+int \hyperlink{hexfilter_8c_aed5cb1a21f1162d4b240e052d60507dd}{cmd\+\_\+line} = 0
+\item 
+char $\ast$ \hyperlink{hexfilter_8c_a5407a229a5e1a319d75fb29542c83eae}{format} = N\+U\+LL
+\item 
+F\+I\+LE $\ast$ \hyperlink{hexfilter_8c_ab3a82f55e648b0b12d1415a5a6c37c6a}{fin} = N\+U\+LL
+\item 
+char $\ast$ \hyperlink{hexfilter_8c_a16f94fb5bbdc4486daa56509d9ee8b7c}{arg} \mbox{[}\hyperlink{wam__parser_8c_a29b7451465deac204c5f7cb1f9c6e1fc}{M\+A\+X\+\_\+\+A\+R\+GS}\mbox{]}
+\item 
+int \hyperlink{hexfilter_8c_acc34ab9cbe399c2719868de3cf6559f4}{nb\+\_\+arg} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{hexfilter.\+c@{hexfilter.\+c}!Check\+\_\+\+Arg@{Check\+\_\+\+Arg}}
+\index{Check\+\_\+\+Arg@{Check\+\_\+\+Arg}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{Check\+\_\+\+Arg}{Check_Arg}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Check\+\_\+\+Arg(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf i}, }
+\item[{}]{str}
+\end{DoxyParamCaption}
+)~(strncmp(argv\mbox{[}{\bf i}\mbox{]}, str, strlen(argv\mbox{[}{\bf i}\mbox{]})) == 0)}\hypertarget{hexfilter_8c_a29da23f6fbca757d20c934997dc4bd5f}{}\label{hexfilter_8c_a29da23f6fbca757d20c934997dc4bd5f}
+\index{hexfilter.\+c@{hexfilter.\+c}!H\+E\+X\+G\+P\+L\+C\+\_\+\+V\+E\+R\+S\+I\+ON@{H\+E\+X\+G\+P\+L\+C\+\_\+\+V\+E\+R\+S\+I\+ON}}
+\index{H\+E\+X\+G\+P\+L\+C\+\_\+\+V\+E\+R\+S\+I\+ON@{H\+E\+X\+G\+P\+L\+C\+\_\+\+V\+E\+R\+S\+I\+ON}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{H\+E\+X\+G\+P\+L\+C\+\_\+\+V\+E\+R\+S\+I\+ON}{HEXGPLC_VERSION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define H\+E\+X\+G\+P\+L\+C\+\_\+\+V\+E\+R\+S\+I\+ON~\char`\"{}1.\+1\char`\"{}}\hypertarget{hexfilter_8c_ae4591457dbe7a929438f11effb82d1c4}{}\label{hexfilter_8c_ae4591457dbe7a929438f11effb82d1c4}
+\index{hexfilter.\+c@{hexfilter.\+c}!L@{L}}
+\index{L@{L}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{L}{L}}]{\setlength{\rightskip}{0pt plus 5cm}\#define L(
+\begin{DoxyParamCaption}
+\item[{}]{msg}
+\end{DoxyParamCaption}
+)~fprintf(stderr, \char`\"{}\%s\textbackslash{}n\char`\"{}, msg)}\hypertarget{hexfilter_8c_a6a3b7ff0133132a30efceb60960808c7}{}\label{hexfilter_8c_a6a3b7ff0133132a30efceb60960808c7}
+\index{hexfilter.\+c@{hexfilter.\+c}!M\+A\+X\+\_\+\+A\+R\+GS@{M\+A\+X\+\_\+\+A\+R\+GS}}
+\index{M\+A\+X\+\_\+\+A\+R\+GS@{M\+A\+X\+\_\+\+A\+R\+GS}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+X\+\_\+\+A\+R\+GS}{MAX_ARGS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+A\+R\+GS~1024}\hypertarget{hexfilter_8c_a29b7451465deac204c5f7cb1f9c6e1fc}{}\label{hexfilter_8c_a29b7451465deac204c5f7cb1f9c6e1fc}
+
+
+\subsection{Function Documentation}
+\index{hexfilter.\+c@{hexfilter.\+c}!Display\+\_\+\+Help@{Display\+\_\+\+Help}}
+\index{Display\+\_\+\+Help@{Display\+\_\+\+Help}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{Display\+\_\+\+Help(void)}{Display_Help(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Display\+\_\+\+Help (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{hexfilter_8c_a9a3f2cfe44184eb0ad845d8d72dc3b41}{}\label{hexfilter_8c_a9a3f2cfe44184eb0ad845d8d72dc3b41}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hexfilter_8c_a9a3f2cfe44184eb0ad845d8d72dc3b41_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hexfilter.\+c@{hexfilter.\+c}!main@{main}}
+\index{main@{main}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{hexfilter_8c_a0ddf1224851353fc92bfbff6f499fa97}{}\label{hexfilter_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hexfilter_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{hexfilter.\+c@{hexfilter.\+c}!One\+\_\+\+File@{One\+\_\+\+File}}
+\index{One\+\_\+\+File@{One\+\_\+\+File}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{One\+\_\+\+File(\+F\+I\+L\+E $\ast$f)}{One_File(FILE *f)}}]{\setlength{\rightskip}{0pt plus 5cm}void One\+\_\+\+File (
+\begin{DoxyParamCaption}
+\item[{F\+I\+LE $\ast$}]{f}
+\end{DoxyParamCaption}
+)}\hypertarget{hexfilter_8c_af207728e4d897fe33b560f1eca9cd98a}{}\label{hexfilter_8c_af207728e4d897fe33b560f1eca9cd98a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hexfilter_8c_af207728e4d897fe33b560f1eca9cd98a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{hexfilter_8c_af207728e4d897fe33b560f1eca9cd98a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hexfilter.\+c@{hexfilter.\+c}!One\+\_\+\+Line@{One\+\_\+\+Line}}
+\index{One\+\_\+\+Line@{One\+\_\+\+Line}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{One\+\_\+\+Line(char $\ast$str)}{One_Line(char *str)}}]{\setlength{\rightskip}{0pt plus 5cm}void One\+\_\+\+Line (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\hypertarget{hexfilter_8c_a5b4118c0a610b05ac048f499ba62f1fc}{}\label{hexfilter_8c_a5b4118c0a610b05ac048f499ba62f1fc}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hexfilter_8c_a5b4118c0a610b05ac048f499ba62f1fc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{hexfilter_8c_a5b4118c0a610b05ac048f499ba62f1fc_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hexfilter.\+c@{hexfilter.\+c}!Parse\+\_\+\+Arguments@{Parse\+\_\+\+Arguments}}
+\index{Parse\+\_\+\+Arguments@{Parse\+\_\+\+Arguments}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{Parse\+\_\+\+Arguments(int argc, char $\ast$argv[])}{Parse_Arguments(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}void Parse\+\_\+\+Arguments (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{hexfilter_8c_a7e8dc5deafda75c2015d11b38142d950}{}\label{hexfilter_8c_a7e8dc5deafda75c2015d11b38142d950}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{hexfilter_8c_a7e8dc5deafda75c2015d11b38142d950_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{hexfilter_8c_a7e8dc5deafda75c2015d11b38142d950_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hexfilter.\+c@{hexfilter.\+c}!Pl\+\_\+\+Fatal\+\_\+\+Error@{Pl\+\_\+\+Fatal\+\_\+\+Error}}
+\index{Pl\+\_\+\+Fatal\+\_\+\+Error@{Pl\+\_\+\+Fatal\+\_\+\+Error}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Fatal\+\_\+\+Error(char $\ast$format,...)}{Pl_Fatal_Error(char *format,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Fatal\+\_\+\+Error (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{hexfilter_8c_a190fea7904d7245d4fdc5e9404a07907}{}\label{hexfilter_8c_a190fea7904d7245d4fdc5e9404a07907}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hexfilter_8c_a190fea7904d7245d4fdc5e9404a07907_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{hexfilter.\+c@{hexfilter.\+c}!arg@{arg}}
+\index{arg@{arg}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{arg}{arg}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ arg\mbox{[}{\bf M\+A\+X\+\_\+\+A\+R\+GS}\mbox{]}}\hypertarget{hexfilter_8c_a16f94fb5bbdc4486daa56509d9ee8b7c}{}\label{hexfilter_8c_a16f94fb5bbdc4486daa56509d9ee8b7c}
+\index{hexfilter.\+c@{hexfilter.\+c}!cmd\+\_\+line@{cmd\+\_\+line}}
+\index{cmd\+\_\+line@{cmd\+\_\+line}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{cmd\+\_\+line}{cmd_line}}]{\setlength{\rightskip}{0pt plus 5cm}int cmd\+\_\+line = 0}\hypertarget{hexfilter_8c_aed5cb1a21f1162d4b240e052d60507dd}{}\label{hexfilter_8c_aed5cb1a21f1162d4b240e052d60507dd}
+\index{hexfilter.\+c@{hexfilter.\+c}!decode\+\_\+aux@{decode\+\_\+aux}}
+\index{decode\+\_\+aux@{decode\+\_\+aux}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{decode\+\_\+aux}{decode_aux}}]{\setlength{\rightskip}{0pt plus 5cm}int decode\+\_\+aux = 0}\hypertarget{hexfilter_8c_a26b0b14d5681b6ab0fc22e80019e20ab}{}\label{hexfilter_8c_a26b0b14d5681b6ab0fc22e80019e20ab}
+\index{hexfilter.\+c@{hexfilter.\+c}!enclose@{enclose}}
+\index{enclose@{enclose}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{enclose}{enclose}}]{\setlength{\rightskip}{0pt plus 5cm}int enclose = 1}\hypertarget{hexfilter_8c_abcc204ee870a1c658af15c727acc3b9e}{}\label{hexfilter_8c_abcc204ee870a1c658af15c727acc3b9e}
+\index{hexfilter.\+c@{hexfilter.\+c}!encode@{encode}}
+\index{encode@{encode}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{encode}{encode}}]{\setlength{\rightskip}{0pt plus 5cm}int encode = 0}\hypertarget{hexfilter_8c_a29558c1e60f974924d00ebfe5daa02d2}{}\label{hexfilter_8c_a29558c1e60f974924d00ebfe5daa02d2}
+\index{hexfilter.\+c@{hexfilter.\+c}!fin@{fin}}
+\index{fin@{fin}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{fin}{fin}}]{\setlength{\rightskip}{0pt plus 5cm}F\+I\+LE$\ast$ fin = N\+U\+LL}\hypertarget{hexfilter_8c_ab3a82f55e648b0b12d1415a5a6c37c6a}{}\label{hexfilter_8c_ab3a82f55e648b0b12d1415a5a6c37c6a}
+\index{hexfilter.\+c@{hexfilter.\+c}!format@{format}}
+\index{format@{format}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{format}{format}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ format = N\+U\+LL}\hypertarget{hexfilter_8c_a5407a229a5e1a319d75fb29542c83eae}{}\label{hexfilter_8c_a5407a229a5e1a319d75fb29542c83eae}
+\index{hexfilter.\+c@{hexfilter.\+c}!nb\+\_\+arg@{nb\+\_\+arg}}
+\index{nb\+\_\+arg@{nb\+\_\+arg}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{nb\+\_\+arg}{nb_arg}}]{\setlength{\rightskip}{0pt plus 5cm}int nb\+\_\+arg = 0}\hypertarget{hexfilter_8c_acc34ab9cbe399c2719868de3cf6559f4}{}\label{hexfilter_8c_acc34ab9cbe399c2719868de3cf6559f4}
+\index{hexfilter.\+c@{hexfilter.\+c}!quote@{quote}}
+\index{quote@{quote}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{quote}{quote}}]{\setlength{\rightskip}{0pt plus 5cm}int quote = 1}\hypertarget{hexfilter_8c_a87d4891edf5ac7e11483646d83ba4e78}{}\label{hexfilter_8c_a87d4891edf5ac7e11483646d83ba4e78}
+\index{hexfilter.\+c@{hexfilter.\+c}!strict@{strict}}
+\index{strict@{strict}!hexfilter.\+c@{hexfilter.\+c}}
+\subsubsection[{\texorpdfstring{strict}{strict}}]{\setlength{\rightskip}{0pt plus 5cm}int strict = 1}\hypertarget{hexfilter_8c_a665742fa37af08ce14b0971ef7d82c4b}{}\label{hexfilter_8c_a665742fa37af08ce14b0971ef7d82c4b}

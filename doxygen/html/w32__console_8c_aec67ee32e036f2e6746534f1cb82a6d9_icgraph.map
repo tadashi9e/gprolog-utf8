@@ -1,0 +1,10 @@
+<map id="W32GC_Set_Line_Buffering" name="W32GC_Set_Line_Buffering">
+<area shape="rect" id="node2" href="$w32__console_8c.html#aabb62b5ceb8b73f54c4478021cedf130" title="MainWndProc_OnCommand" alt="" coords="240,5,428,32"/>
+<area shape="rect" id="node9" href="$w32__console_8c.html#a5bbc75ac922723070433ae4d2efe0b59" title="Activate_Options" alt="" coords="476,56,599,83"/>
+<area shape="rect" id="node3" href="$w32__console_8c.html#ab023aa0285ba796fb7809eed2e6cdbe1" title="MainWndProc" alt="" coords="485,5,589,32"/>
+<area shape="rect" id="node4" href="$w32__console_8c.html#aea7abcb71562352e8ff9c3efd95c505b" title="InitApplication" alt="" coords="647,5,751,32"/>
+<area shape="rect" id="node5" href="$w32__console_8c.html#a2363368e7d52d5df8c4f20cb13283faa" title="StartWinMain" alt="" coords="799,31,900,57"/>
+<area shape="rect" id="node6" href="$w32__console_8c.html#a3e359465ba75ec15014d5af9c09d3db9" title="CallMain" alt="" coords="948,31,1021,57"/>
+<area shape="rect" id="node7" href="$w32__console_8c.html#a4df61e90931602252f4bd1addb17902f" title="W32GC_Start_Window" alt="" coords="1069,31,1228,57"/>
+<area shape="rect" id="node8" href="$w32gc__interf_8c.html#a9bbe083e9a45c3fda6abf2737bebc2ad" title="__declspec" alt="" coords="1276,31,1364,57"/>
+</map>

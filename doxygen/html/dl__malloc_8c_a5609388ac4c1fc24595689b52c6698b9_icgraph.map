@@ -1,0 +1,5 @@
+<map id="init_bins" name="init_bins">
+<area shape="rect" id="node2" href="$dl__malloc_8c.html#a8bb55b23b1f7e313756913fedf9d3a98" title="sys_alloc" alt="" coords="124,5,201,32"/>
+<area shape="rect" id="node4" href="$dl__malloc_8c.html#a8923af8a1039983906f9617a57022e98" title="dlmalloc_usable_size" alt="" coords="249,56,396,83"/>
+<area shape="rect" id="node3" href="$dl__malloc_8c.html#a018ffd885ac72f4cb8ac0f972f6b4900" title="dlmalloc" alt="" coords="287,5,358,32"/>
+</map>

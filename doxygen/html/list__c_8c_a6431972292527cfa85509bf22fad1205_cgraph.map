@@ -1,0 +1,9 @@
+<map id="Pl_Append_3" name="Pl_Append_3">
+<area shape="rect" id="node2" href="$wam__inst_8h.html#a098bda85a540e8ca5969063ccfd4ea20" title="Pl_Unify" alt="" coords="365,35,437,61"/>
+<area shape="rect" id="node3" href="$wam__inst_8c.html#ac053eb26fdee8a8e71ea9a5ac4079ab0" title="Pl_Get_List" alt="" coords="189,35,280,61"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#acd2fdce00a3e2d6fa978b8a195c95746" title="Pl_Unify_Value" alt="" coords="179,85,291,112"/>
+<area shape="rect" id="node5" href="$wam__inst_8c.html#ab11181944ecf328d3ade45d83f7744d8" title="Pl_Unify_Variable" alt="" coords="171,136,298,163"/>
+<area shape="rect" id="node6" href="$term__supp_8c.html#a4541a48da8818caf07a075539a59eaf5" title="Pl_List_Length" alt="" coords="181,187,289,213"/>
+<area shape="rect" id="node7" href="$wam__inst_8c.html#a4ab2a67fe680997c88472c007bafbcbd" title="Pl_Get_Nil" alt="" coords="192,237,277,264"/>
+<area shape="rect" id="node8" href="$wam__inst_8c.html#a482d0f0a0b2ac53fc463aaa753ce071e" title="Pl_Create_Choice_Point" alt="" coords="152,288,317,315"/>
+</map>

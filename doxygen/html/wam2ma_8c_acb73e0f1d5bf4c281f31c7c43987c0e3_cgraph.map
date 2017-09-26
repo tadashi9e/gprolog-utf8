@@ -1,0 +1,5 @@
+<map id="F_switch_on_atom" name="F_switch_on_atom">
+<area shape="rect" id="node2" href="$wam2ma_8c.html#acef1e9fb9563bc4785159360aa64e422" title="Create_Switch_Table" alt="" coords="185,5,332,32"/>
+<area shape="rect" id="node3" href="$bt__string_8c.html#a4d385a49b03f7aeac7c168ef48d492d0" title="BT_String_Add" alt="" coords="203,56,314,83"/>
+<area shape="rect" id="node4" href="$wam2ma_8c.html#a3cd8f58f2bf669fecf3c585a066f9d8b" title="Inst_Printf" alt="" coords="217,107,300,133"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Install_SIGSEGV_Handler" name="Install_SIGSEGV_Handler">
+<area shape="rect" id="node2" href="$stacks__sigsegv_8c.html#a1bb0e5039c09c36774850e4cbdab8c8b" title="SIGSEGV_Handler" alt="" coords="250,5,385,32"/>
+<area shape="rect" id="node3" href="$stacks__sigsegv_8c.html#af3b6f4399924cfa2493fd581e588b4cf" title="Win32_Exception_Handler" alt="" coords="229,56,405,83"/>
+<area shape="rect" id="node4" href="$stacks__sigsegv_8c.html#a025866a50618e66535d50d040a135332" title="Handle_Bad_Address" alt="" coords="453,56,601,83"/>
+<area shape="rect" id="node5" href="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907" title="Pl_Fatal_Error" alt="" coords="649,56,755,83"/>
+</map>

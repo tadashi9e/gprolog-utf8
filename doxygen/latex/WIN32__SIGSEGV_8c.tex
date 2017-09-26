@@ -1,0 +1,96 @@
+\hypertarget{WIN32__SIGSEGV_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/\+W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+GV.c File Reference}
+\label{WIN32__SIGSEGV_8c}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/\+W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/\+W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$windows.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include $<$inttypes.\+h$>$}\\*
+Include dependency graph for W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{WIN32__SIGSEGV_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{WIN32__SIGSEGV_8c_a638757347bd9bf886b3d442b98033cf1}{getpagesize} (void)
+\item 
+int \hyperlink{WIN32__SIGSEGV_8c_ad02e53c07c05866d5748ef250d31d0d0}{Is\+\_\+\+Win32\+\_\+\+S\+E\+GV} (L\+P\+E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+P\+O\+I\+N\+T\+E\+RS err)
+\item 
+\hyperlink{WIN32__SIGSEGV_8c_ae0665038b72011f5c680c660fcb59459}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} $\ast$ \hyperlink{WIN32__SIGSEGV_8c_a6544295392cd9948a0e24e7072012319}{fault\+\_\+addr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}!getpagesize@{getpagesize}}
+\index{getpagesize@{getpagesize}!W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}}
+\subsubsection[{\texorpdfstring{getpagesize(void)}{getpagesize(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int getpagesize (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{WIN32__SIGSEGV_8c_a638757347bd9bf886b3d442b98033cf1}{}\label{WIN32__SIGSEGV_8c_a638757347bd9bf886b3d442b98033cf1}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{WIN32__SIGSEGV_8c_a638757347bd9bf886b3d442b98033cf1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}!Is\+\_\+\+Win32\+\_\+\+S\+E\+GV@{Is\+\_\+\+Win32\+\_\+\+S\+E\+GV}}
+\index{Is\+\_\+\+Win32\+\_\+\+S\+E\+GV@{Is\+\_\+\+Win32\+\_\+\+S\+E\+GV}!W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}}
+\subsubsection[{\texorpdfstring{Is\+\_\+\+Win32\+\_\+\+S\+E\+G\+V(\+L\+P\+E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+P\+O\+I\+N\+T\+E\+R\+S err)}{Is_Win32_SEGV(LPEXCEPTION_POINTERS err)}}]{\setlength{\rightskip}{0pt plus 5cm}int Is\+\_\+\+Win32\+\_\+\+S\+E\+GV (
+\begin{DoxyParamCaption}
+\item[{L\+P\+E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+P\+O\+I\+N\+T\+E\+RS}]{err}
+\end{DoxyParamCaption}
+)}\hypertarget{WIN32__SIGSEGV_8c_ad02e53c07c05866d5748ef250d31d0d0}{}\label{WIN32__SIGSEGV_8c_ad02e53c07c05866d5748ef250d31d0d0}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{WIN32__SIGSEGV_8c_ad02e53c07c05866d5748ef250d31d0d0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}!main@{main}}
+\index{main@{main}!W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{WIN32__SIGSEGV_8c_ae0665038b72011f5c680c660fcb59459}{}\label{WIN32__SIGSEGV_8c_ae0665038b72011f5c680c660fcb59459}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{WIN32__SIGSEGV_8c_ae0665038b72011f5c680c660fcb59459_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}!fault\+\_\+addr@{fault\+\_\+addr}}
+\index{fault\+\_\+addr@{fault\+\_\+addr}!W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{W\+I\+N32\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}}
+\subsubsection[{\texorpdfstring{fault\+\_\+addr}{fault_addr}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long}$\ast$ fault\+\_\+addr}\hypertarget{WIN32__SIGSEGV_8c_a6544295392cd9948a0e24e7072012319}{}\label{WIN32__SIGSEGV_8c_a6544295392cd9948a0e24e7072012319}

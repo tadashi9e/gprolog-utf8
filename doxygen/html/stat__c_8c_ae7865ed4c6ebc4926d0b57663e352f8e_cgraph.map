@@ -1,0 +1,7 @@
+<map id="Pl_Real_Time_1" name="Pl_Real_Time_1">
+<area shape="rect" id="node2" href="$c__supp_8c.html#a40ef471273ae7fee7aa952ae43112cd1" title="Pl_Un_Integer_Check" alt="" coords="172,5,323,32"/>
+<area shape="rect" id="node5" href="$machine_8c.html#ae18414c738bea5a3710adc972fa478ef" title="Pl_M_Real_Time" alt="" coords="186,56,309,83"/>
+<area shape="rect" id="node3" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="371,5,480,32"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="528,5,687,32"/>
+<area shape="rect" id="node6" href="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907" title="Pl_Fatal_Error" alt="" coords="373,56,478,83"/>
+</map>

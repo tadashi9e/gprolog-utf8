@@ -1,0 +1,43 @@
+\hypertarget{ma2asm__inst_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Ma2\+Asm/ma2asm\+\_\+inst.c File Reference}
+\label{ma2asm__inst_8c}\index{gprolog-\/utf8-\/tree/src/\+Ma2\+Asm/ma2asm\+\_\+inst.\+c@{gprolog-\/utf8-\/tree/src/\+Ma2\+Asm/ma2asm\+\_\+inst.\+c}}
+{\ttfamily \#include \char`\"{}ma\+\_\+parser.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}ma\+\_\+protos.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/gp\+\_\+config.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/wam\+\_\+regs.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/wam\+\_\+inst.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/machine.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/pl\+\_\+params.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/obj\+\_\+chain.\+h\char`\"{}}\\*
+Include dependency graph for ma2asm\+\_\+inst.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ma2asm__inst_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ma2asm__inst_8c_aa6b06cff102aeaaf84b6b08e6e805a27}{M\+A\+P\+P\+E\+R\+\_\+\+F\+I\+LE}
+\item 
+\#define \hyperlink{ma2asm__inst_8c_a0fcd2b26a36d3eed5af114613a07b14f}{F\+R\+A\+M\+E\+S\+\_\+\+O\+N\+LY}
+\item 
+\#define \hyperlink{ma2asm__inst_8c_a402e455d2697e519f9526a7c9f961002}{Y\+\_\+\+O\+F\+F\+S\+ET}(index)~((-\/ \hyperlink{wam__inst_8h_af7ff86598e385f19f60ef70dc106ae7f}{E\+N\+V\+I\+R\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+S\+I\+ZE} -\/ 1 -\/ index) $\ast$ sizeof(\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long}))
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{ma2asm\+\_\+inst.\+c@{ma2asm\+\_\+inst.\+c}!F\+R\+A\+M\+E\+S\+\_\+\+O\+N\+LY@{F\+R\+A\+M\+E\+S\+\_\+\+O\+N\+LY}}
+\index{F\+R\+A\+M\+E\+S\+\_\+\+O\+N\+LY@{F\+R\+A\+M\+E\+S\+\_\+\+O\+N\+LY}!ma2asm\+\_\+inst.\+c@{ma2asm\+\_\+inst.\+c}}
+\subsubsection[{\texorpdfstring{F\+R\+A\+M\+E\+S\+\_\+\+O\+N\+LY}{FRAMES_ONLY}}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+R\+A\+M\+E\+S\+\_\+\+O\+N\+LY}\hypertarget{ma2asm__inst_8c_a0fcd2b26a36d3eed5af114613a07b14f}{}\label{ma2asm__inst_8c_a0fcd2b26a36d3eed5af114613a07b14f}
+\index{ma2asm\+\_\+inst.\+c@{ma2asm\+\_\+inst.\+c}!M\+A\+P\+P\+E\+R\+\_\+\+F\+I\+LE@{M\+A\+P\+P\+E\+R\+\_\+\+F\+I\+LE}}
+\index{M\+A\+P\+P\+E\+R\+\_\+\+F\+I\+LE@{M\+A\+P\+P\+E\+R\+\_\+\+F\+I\+LE}!ma2asm\+\_\+inst.\+c@{ma2asm\+\_\+inst.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+P\+P\+E\+R\+\_\+\+F\+I\+LE}{MAPPER_FILE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+P\+P\+E\+R\+\_\+\+F\+I\+LE}\hypertarget{ma2asm__inst_8c_aa6b06cff102aeaaf84b6b08e6e805a27}{}\label{ma2asm__inst_8c_aa6b06cff102aeaaf84b6b08e6e805a27}
+\index{ma2asm\+\_\+inst.\+c@{ma2asm\+\_\+inst.\+c}!Y\+\_\+\+O\+F\+F\+S\+ET@{Y\+\_\+\+O\+F\+F\+S\+ET}}
+\index{Y\+\_\+\+O\+F\+F\+S\+ET@{Y\+\_\+\+O\+F\+F\+S\+ET}!ma2asm\+\_\+inst.\+c@{ma2asm\+\_\+inst.\+c}}
+\subsubsection[{\texorpdfstring{Y\+\_\+\+O\+F\+F\+S\+ET}{Y_OFFSET}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Y\+\_\+\+O\+F\+F\+S\+ET(
+\begin{DoxyParamCaption}
+\item[{}]{index}
+\end{DoxyParamCaption}
+)~((-\/ {\bf E\+N\+V\+I\+R\+\_\+\+S\+T\+A\+T\+I\+C\+\_\+\+S\+I\+ZE} -\/ 1 -\/ index) $\ast$ sizeof({\bf Pl\+Long}))}\hypertarget{ma2asm__inst_8c_a402e455d2697e519f9526a7c9f961002}{}\label{ma2asm__inst_8c_a402e455d2697e519f9526a7c9f961002}

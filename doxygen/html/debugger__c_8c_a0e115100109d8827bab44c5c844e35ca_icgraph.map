@@ -1,0 +1,10 @@
+<map id="Detect_Stack" name="Detect_Stack">
+<area shape="rect" id="node2" href="$debugger__c_8c.html#ae3548d2718c3c51e01cbf3aa9752ce17" title="What" alt="" coords="192,5,245,32"/>
+<area shape="rect" id="node5" href="$debugger__c_8c.html#a0e3db3f801a6d2dc7012c12e660377d8" title="Dereference" alt="" coords="350,56,443,83"/>
+<area shape="rect" id="node6" href="$debugger__c_8c.html#a38ce602bd1d5e416f1c2df80fa5de3c3" title="Environment" alt="" coords="349,107,444,133"/>
+<area shape="rect" id="node7" href="$debugger__c_8c.html#af0c1c2a7e6feb8d41802e2e984dec8e3" title="Backtrack" alt="" coords="356,208,437,235"/>
+<area shape="rect" id="node8" href="$debugger__c_8c.html#ab01796d096d95adb12edbb39ed14b231" title="Print_Wam_Word" alt="" coords="156,157,281,184"/>
+<area shape="rect" id="node3" href="$debugger__c_8c.html#ae03520aa896def6dd036699b888bd0ef" title="Find_Function" alt="" coords="512,107,616,133"/>
+<area shape="rect" id="node4" href="$debugger__c_8c.html#a11e816a7993314a8e53789bac9a67f53" title="Pl_Debug_Wam" alt="" coords="664,107,781,133"/>
+<area shape="rect" id="node9" href="$debugger__c_8c.html#acf94b4468a0d9f4b6e103f388bb3cb63" title="Write_Data_Modify" alt="" coords="329,157,464,184"/>
+</map>

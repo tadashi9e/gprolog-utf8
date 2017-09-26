@@ -1,0 +1,10 @@
+<map id="Pl_Fatal_Error" name="Pl_Fatal_Error">
+<area shape="rect" id="node2" href="$pl__config_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="656,31,707,58"/>
+<area shape="rect" id="node3" href="$pl__config_8c.html#ad935c7760c0ffc9b5de734eb0c3df13b" title="Generate_Archi" alt="" coords="496,132,608,159"/>
+<area shape="rect" id="node4" href="$pl__config_8c.html#a751412acdfa946c17f72a519b4280e46" title="Read_Identifier" alt="" coords="163,259,273,286"/>
+<area shape="rect" id="node5" href="$pl__config_8c.html#aeff7ee96f0ca587183e1dc768d7ba42a" title="Generate_Regs" alt="" coords="330,259,443,286"/>
+<area shape="rect" id="node6" href="$pl__config_8c.html#a5c1df4a2765b1a002dbed3820eacaf49" title="Generate_Tags" alt="" coords="331,158,442,184"/>
+<area shape="rect" id="node7" href="$pl__config_8c.html#a0914aaa089130b53ca2c74e79b040d82" title="Generate_Stacks" alt="" coords="325,107,448,134"/>
+<area shape="rect" id="node8" href="$pl__config_8c.html#a4fe7df4918219a37a933c3a3050e2239" title="Read_String" alt="" coords="171,107,265,134"/>
+<area shape="rect" id="node9" href="$pl__config_8c.html#a7dcf339bd262324d753ebb92fa233066" title="Pl_Read_Integer" alt="" coords="159,208,277,235"/>
+</map>

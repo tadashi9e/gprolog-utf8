@@ -1,0 +1,10 @@
+<map id="Set_Nor" name="Set_Nor">
+<area shape="rect" id="node2" href="$fd__bool__c_8c.html#a70ad8d129964ae9ae6ebcebe3e8f8734" title="Set_Or" alt="" coords="153,56,215,83"/>
+<area shape="rect" id="node3" href="$fd__bool__c_8c.html#a777cdb1b2fda63d69b759553fd15ea75" title="Load_Bool_Into_Word" alt="" coords="292,5,443,32"/>
+<area shape="rect" id="node9" href="$math__supp_8h.html#af99d74fdd7ce0bcd803e3ca0010237bc" title="pl_x_nor_y_eq_b" alt="" coords="124,107,244,133"/>
+<area shape="rect" id="node7" href="$math__supp_8h.html#ab42e08592217f8525074e3833bbb6d61" title="pl_x_or_y_eq_1" alt="" coords="311,56,424,83"/>
+<area shape="rect" id="node8" href="$math__supp_8h.html#abd7442befa28d0b8e1b76a804e73941d" title="pl_x_or_y_eq_b" alt="" coords="311,107,424,133"/>
+<area shape="rect" id="node4" href="$fd__bool__c_8c.html#a2da4a05b71952a4d0899d530d62fcc05" title="Set_Var" alt="" coords="491,5,560,32"/>
+<area shape="rect" id="node5" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="608,5,717,32"/>
+<area shape="rect" id="node6" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="765,5,924,32"/>
+</map>

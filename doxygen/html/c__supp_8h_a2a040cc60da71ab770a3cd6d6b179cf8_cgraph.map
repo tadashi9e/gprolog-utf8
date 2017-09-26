@@ -1,0 +1,9 @@
+<map id="Pl_Un_Codes" name="Pl_Un_Codes">
+<area shape="rect" id="node2" href="$pl__wchar_8c.html#a118e1ed8186e82a376d922702a7a8a82" title="count_wchar_bytes_without_slen" alt="" coords="156,5,371,32"/>
+<area shape="rect" id="node3" href="$pl__wchar_8c.html#aae8b097c7c2a9e49a67ea8a905051904" title="get_wchar" alt="" coords="222,56,305,83"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#ac053eb26fdee8a8e71ea9a5ac4079ab0" title="Pl_Get_List" alt="" coords="218,107,309,133"/>
+<area shape="rect" id="node5" href="$wam__inst_8c.html#a6ec65d8b59b5c6b865ad0e4f1b23b73e" title="Pl_Unify_Integer" alt="" coords="204,157,323,184"/>
+<area shape="rect" id="node7" href="$wam__inst_8c.html#ab11181944ecf328d3ade45d83f7744d8" title="Pl_Unify_Variable" alt="" coords="200,208,327,235"/>
+<area shape="rect" id="node8" href="$wam__inst_8c.html#a4ab2a67fe680997c88472c007bafbcbd" title="Pl_Get_Nil" alt="" coords="221,259,306,285"/>
+<area shape="rect" id="node6" href="$wam__inst_8c.html#a3be80b778e2bf523f0d512323c9f3125" title="Pl_Unify_Integer_Tagged" alt="" coords="419,157,588,184"/>
+</map>

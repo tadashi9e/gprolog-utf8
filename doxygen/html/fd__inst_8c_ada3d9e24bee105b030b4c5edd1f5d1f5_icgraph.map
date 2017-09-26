@@ -1,0 +1,12 @@
+<map id="Pl_Fd_New_Int_Variable" name="Pl_Fd_New_Int_Variable">
+<area shape="rect" id="node2" href="$fd__inst_8h.html#aa0fe15bb4f7957767ced24c50e4b1ca8" title="Pl_Fd_Prolog_To_Fd_Var" alt="" coords="220,132,391,159"/>
+<area shape="rect" id="node3" href="$fd__math__c_8c.html#ae96f8c98794a44b1577707920fda688d" title="Pl_Fd_Neq_2" alt="" coords="483,56,584,83"/>
+<area shape="rect" id="node7" href="$fd__math__c_8c.html#ae004cace9b53b08de59be0a195274e23" title="Pl_Fd_Lt_2" alt="" coords="489,107,577,133"/>
+<area shape="rect" id="node10" href="$fd__math__c_8c.html#a4533c1990d3146b76bed10bbaa4d67d7" title="Pl_Fd_Lte_2" alt="" coords="486,157,581,184"/>
+<area shape="rect" id="node11" href="$fd__inst_8h.html#aeb475ff4f20f1c4d4277a09026227efe" title="Pl_Fd_Prolog_To_Array_Fdv" alt="" coords="439,208,628,235"/>
+<area shape="rect" id="node4" href="$fd__bool__c_8c.html#a3bcf220164d47e110f64a089daebf2a7" title="Set_Eq" alt="" coords="680,5,745,32"/>
+<area shape="rect" id="node6" href="$fd__bool__c_8c.html#ad9a88621a0a7d01eb8db4da34faf894f" title="Set_Neq" alt="" coords="676,56,749,83"/>
+<area shape="rect" id="node5" href="$fd__bool__c_8c.html#a1a75f6073da95705cad602b580443664" title="Fd_Bool_Initializer" alt="" coords="797,81,927,108"/>
+<area shape="rect" id="node8" href="$fd__bool__c_8c.html#ac5b16f713138c6b09fd4b3857d52a881" title="Set_Lt" alt="" coords="683,107,743,133"/>
+<area shape="rect" id="node9" href="$fd__bool__c_8c.html#a22127daaa654486d40b5c097e040ab87" title="Set_Lte" alt="" coords="679,157,746,184"/>
+</map>

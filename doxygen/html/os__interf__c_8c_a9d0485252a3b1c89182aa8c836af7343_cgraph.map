@@ -1,0 +1,34 @@
+<map id="Pl_Popen_3" name="Pl_Popen_3">
+<area shape="rect" id="node2" href="$c__supp_8c.html#a1a5c18894034c384ca35559ea96a7e47" title="Pl_Rd_String_Check" alt="" coords="181,195,325,221"/>
+<area shape="rect" id="node5" href="$atom_8c.html#a76a3983dda97458000ed903b9bc94f6c" title="Pl_Create_Allocate_Atom" alt="" coords="872,95,1044,121"/>
+<area shape="rect" id="node20" href="$c__supp_8c.html#a7659195fe3d298fb9e8b8cedf62e3ba8" title="Pl_Rd_Atom_Check" alt="" coords="182,144,323,171"/>
+<area shape="rect" id="node21" href="$error__supp_8c.html#a3e55bc25f2716a2492cdd6c8baddec88" title="Pl_Err_Domain" alt="" coords="444,93,555,120"/>
+<area shape="rect" id="node22" href="$stream__supp_8c.html#aa51c5baef5dc24ec52efb782941a8d1f" title="Pl_Flush_All_Streams" alt="" coords="177,372,328,399"/>
+<area shape="rect" id="node24" href="$stream__supp_8c.html#af51b9456aea611c5b52f856cdbe23b50" title="Pl_Add_Stream_For_Stdio_Desc" alt="" coords="145,296,360,323"/>
+<area shape="rect" id="node32" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="198,473,307,500"/>
+<area shape="rect" id="node3" href="$error__supp_8c.html#a17057fc5577da70316e8f62fca4743f7" title="Pl_Err_Instantiation" alt="" coords="431,195,567,221"/>
+<area shape="rect" id="node19" href="$error__supp_8c.html#a88375a38b23326055e59e455c25f982e" title="Pl_Err_Type" alt="" coords="452,144,547,171"/>
+<area shape="rect" id="node4" href="$error__supp_8c.html#aef1341aeb3ceb943d8e9d7d6f77b0582" title="Update_Cur_From_C_Bip" alt="" coords="645,95,817,121"/>
+<area shape="rect" id="node18" href="$engine_8c.html#ae0fcb6df66410fd57c52a0ba16527642" title="Pl_Execute_A_Continuation" alt="" coords="639,145,824,172"/>
+<area shape="rect" id="node6" href="$atom_8c.html#a9ed09c0173fe0a0e6d0f90ec363687fe" title="Hash_String" alt="" coords="1094,56,1189,83"/>
+<area shape="rect" id="node11" href="$atom_8c.html#ad4222685eae3cdb0315df48a8a7e89fc" title="Locate_Atom" alt="" coords="1092,107,1191,133"/>
+<area shape="rect" id="node12" href="$atom_8c.html#abe628ad301508c0ed926cfb4bc791818" title="Add_Atom" alt="" coords="1100,159,1183,185"/>
+<area shape="rect" id="node7" href="$hash__fct_8c.html#a59393adcfbeeda198a890af25f29cf7c" title="Pl_Hash_Buffer" alt="" coords="1267,56,1381,83"/>
+<area shape="rect" id="node8" href="$hash__fct_8c.html#abe414d7525a1bb4fcb8e4fd757498cb9" title="Hash_Initialize" alt="" coords="1471,5,1579,32"/>
+<area shape="rect" id="node9" href="$hash__fct_8c.html#a8b1af6cc6089ce3e2e3dc0a8a0d55e90" title="Hash_Buffer" alt="" coords="1477,56,1572,83"/>
+<area shape="rect" id="node10" href="$hash__fct_8c.html#aa33bb265b03bb03aa455241e374409f7" title="Hash_Finalize" alt="" coords="1472,107,1577,133"/>
+<area shape="rect" id="node13" href="$atom_8c.html#a37c733b7022eab8b9b95f0182591ee15" title="Error_Table_Full" alt="" coords="1265,211,1383,237"/>
+<area shape="rect" id="node15" href="$pl__wchar_8c.html#a55a0d7269a65645bbd4c978385b0c7a3" title="count_wchars" alt="" coords="1273,159,1375,185"/>
+<area shape="rect" id="node17" href="$linedit_8c.html#ab2a8db946ffd8187b5216ff4ac8cbe7c" title="Pl_LE_Compl_Add_Word" alt="" coords="1239,108,1409,135"/>
+<area shape="rect" id="node14" href="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907" title="Pl_Fatal_Error" alt="" coords="1472,237,1577,264"/>
+<area shape="rect" id="node16" href="$pl__wchar_8c.html#afa9feb443cef2f8da40dd45a8c0e273d" title="count_wchar_bytes" alt="" coords="1457,159,1592,185"/>
+<area shape="rect" id="node23" href="$stream__supp_8c.html#a0dfb0fea5ef9205b98eb7cb39093fa82" title="Pl_Stream_Flush" alt="" coords="438,448,561,475"/>
+<area shape="rect" id="node25" href="$stream__supp_8c.html#aa8b039e9577cbc75ad5da2750b95f83f" title="Pl_Prop_And_Stdio_Mode" alt="" coords="412,397,587,424"/>
+<area shape="rect" id="node26" href="$stream__supp_8c.html#a4962ed1c05d9ad9af56ca46638fd7307" title="Pl_Stdio_Is_Repositionable" alt="" coords="408,245,591,272"/>
+<area shape="rect" id="node27" href="$stream__supp_8c.html#a42b044986be84773da026ac61b47e903" title="Pl_Stdio_Set_Buffering" alt="" coords="421,296,578,323"/>
+<area shape="rect" id="node28" href="$stream__supp_8c.html#a4d7fa50881abdd578ce6b4da9611415c" title="Pl_Add_Stream" alt="" coords="443,347,556,373"/>
+<area shape="rect" id="node29" href="$stream__supp_8c.html#a5322f52abc95d28d23976f5213577b2c" title="Find_Free_Stream" alt="" coords="667,340,796,367"/>
+<area shape="rect" id="node31" href="$stream__supp_8c.html#a7acc02d98466c96414fab011fd79c27c" title="Init_Stream_Struct" alt="" coords="666,391,797,417"/>
+<area shape="rect" id="node30" href="$misc_8c.html#a2f56b2c86f0305e8b7e13e6150578d36" title="Pl_Extend_Array" alt="" coords="898,340,1018,367"/>
+<area shape="rect" id="node33" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="420,499,579,525"/>
+</map>

@@ -1,0 +1,29 @@
+<map id="Set_Selection" name="Set_Selection">
+<area shape="rect" id="node2" href="$w32__console_8c.html#a86a613d9f9c5724324a80eb7ad8fd162" title="SubClassEdit" alt="" coords="156,563,259,589"/>
+<area shape="rect" id="node13" href="$w32__console_8c.html#a20fd5ae61889213d2ac79b90f0f942f8" title="Set_Caret_Position" alt="" coords="307,385,441,412"/>
+<area shape="rect" id="node25" href="$w32__console_8c.html#a53ddd44d5c72b248fb0ecc605c361119" title="W32GC_Erase" alt="" coords="715,512,826,539"/>
+<area shape="rect" id="node3" href="$w32__console_8c.html#ae21b20c73fc3d1b2301ac435d6ffefb8" title="SubClassEditField" alt="" coords="309,563,439,589"/>
+<area shape="rect" id="node4" href="$w32__console_8c.html#a4d3fc2c91e2a42d1ee0ab9afb8b25934" title="Create_Edit_Control" alt="" coords="489,563,629,589"/>
+<area shape="rect" id="node5" href="$w32__console_8c.html#ab023aa0285ba796fb7809eed2e6cdbe1" title="MainWndProc" alt="" coords="1161,404,1265,431"/>
+<area shape="rect" id="node11" href="$w32__console_8c.html#af8f874a72209a2c5b9ccc57df9c3684b" title="Toggle_Wrap_Mode" alt="" coords="701,563,840,589"/>
+<area shape="rect" id="node6" href="$w32__console_8c.html#aea7abcb71562352e8ff9c3efd95c505b" title="InitApplication" alt="" coords="1336,392,1440,419"/>
+<area shape="rect" id="node7" href="$w32__console_8c.html#a2363368e7d52d5df8c4f20cb13283faa" title="StartWinMain" alt="" coords="1497,355,1599,381"/>
+<area shape="rect" id="node8" href="$w32__console_8c.html#a3e359465ba75ec15014d5af9c09d3db9" title="CallMain" alt="" coords="1647,355,1720,381"/>
+<area shape="rect" id="node9" href="$w32__console_8c.html#a4df61e90931602252f4bd1addb17902f" title="W32GC_Start_Window" alt="" coords="1768,355,1927,381"/>
+<area shape="rect" id="node10" href="$w32gc__interf_8c.html#a9bbe083e9a45c3fda6abf2737bebc2ad" title="__declspec" alt="" coords="1975,355,2063,381"/>
+<area shape="rect" id="node12" href="$w32__console_8c.html#aabb62b5ceb8b73f54c4478021cedf130" title="MainWndProc_OnCommand" alt="" coords="912,360,1100,387"/>
+<area shape="rect" id="node14" href="$w32__console_8c.html#a24b183b30fc00a737da1b325dfbfa594" title="Flush_Buffer" alt="" coords="511,284,607,311"/>
+<area shape="rect" id="node23" href="$w32__console_8c.html#a40f2319783fd8cca8c94dbc1bfba2dae" title="W32GC_Backd" alt="" coords="714,5,827,32"/>
+<area shape="rect" id="node24" href="$w32__console_8c.html#a132f06d797d267f7df0c665c859d46d5" title="W32GC_Forwd" alt="" coords="715,461,827,488"/>
+<area shape="rect" id="node15" href="$w32__console_8c.html#a1d8d56ad4f4ce8b339273e699c3811ac" title="W32GC_Get_Char0" alt="" coords="701,56,840,83"/>
+<area shape="rect" id="node16" href="$w32__console_8c.html#a2764af0c7408a134e5da5fa101b6dabe" title="Display_Text" alt="" coords="957,107,1055,133"/>
+<area shape="rect" id="node17" href="$w32__console_8c.html#a20ec3600d3c3a15b3c44a9e6f8b1fb83" title="W32GC_Flush" alt="" coords="1159,233,1267,260"/>
+<area shape="rect" id="node21" href="$w32__console_8c.html#aec67ee32e036f2e6746534f1cb82a6d9" title="W32GC_Set_Line_Buffering" alt="" coords="677,309,864,336"/>
+<area shape="rect" id="node26" href="$w32__console_8c.html#ade7027a929279e5d7ca19fa957fed785" title="W32GC_Confirm_Box" alt="" coords="930,411,1082,437"/>
+<area shape="rect" id="node27" href="$w32__console_8c.html#a9e93dd695aaf00e23322cda24b7e07a1" title="W32GC_Message_Box" alt="" coords="691,157,850,184"/>
+<area shape="rect" id="node28" href="$w32__console_8c.html#afc50d91c42cd0286326088650538cc45" title="W32GC_Exit_Process" alt="" coords="929,183,1083,209"/>
+<area shape="rect" id="node18" href="$w32__console_8c.html#ab7e93fe5f4ce7f900e82d8329b82a57c" title="W32GC_Put_Char" alt="" coords="1148,56,1279,83"/>
+<area shape="rect" id="node19" href="$w32__console_8c.html#a3e0fd465d2d216a3886763f28a47c4de" title="W32GC_Displ" alt="" coords="1160,107,1267,133"/>
+<area shape="rect" id="node20" href="$w32__console_8c.html#a44456e0e0343737fa2419814cf095fa4" title="W32GC_Displ_Str" alt="" coords="1148,157,1279,184"/>
+<area shape="rect" id="node22" href="$w32__console_8c.html#a5bbc75ac922723070433ae4d2efe0b59" title="Activate_Options" alt="" coords="1327,316,1449,343"/>
+</map>

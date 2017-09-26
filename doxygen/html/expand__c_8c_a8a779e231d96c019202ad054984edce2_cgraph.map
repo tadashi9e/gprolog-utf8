@@ -1,0 +1,33 @@
+<map id="Pl_Dcg_Trans_Body_4" name="Pl_Dcg_Trans_Body_4">
+<area shape="rect" id="node2" href="$wam__inst_8c.html#a2917cb59fa27a90b330d6f03937ab678" title="Pl_Globalize_If_In\l_Local" alt="" coords="209,15,337,57"/>
+<area shape="rect" id="node3" href="$wam__inst_8h.html#a098bda85a540e8ca5969063ccfd4ea20" title="Pl_Unify" alt="" coords="837,208,909,235"/>
+<area shape="rect" id="node4" href="$expand__c_8c.html#af084492be314929addf18ebcc67be49c" title="Dcg_Body" alt="" coords="232,220,315,247"/>
+<area shape="rect" id="node5" href="$c__supp_8c.html#a5a2406506f79b06520bd25bcbf0f0f52" title="Pl_Mk_Variable" alt="" coords="613,132,726,159"/>
+<area shape="rect" id="node7" href="$expand__c_8c.html#a577f182aace32318466bf8ad517913e6" title="Dcg_Body_On_Stack" alt="" coords="385,259,533,285"/>
+<area shape="rect" id="node8" href="$expand__c_8c.html#a4b0b72089de4af1554c8c6247a017a1e" title="Dcg_Compound2" alt="" coords="812,436,935,463"/>
+<area shape="rect" id="node9" href="$expand__c_8c.html#a188e487a34d56347358b92fd06f190d1" title="Dcg_Term_List_On_Stack" alt="" coords="581,385,757,412"/>
+<area shape="rect" id="node29" href="$inl__protos_8h.html#aa295f561168dc984341c206c4ab94922" title="Pl_Blt_Term_Eq" alt="" coords="401,31,518,57"/>
+<area shape="rect" id="node6" href="$wam__inst_8c.html#ac3ef9bcbd100b6820236c04a0b7996d1" title="Pl_Put_X_Variable" alt="" coords="808,132,939,159"/>
+<area shape="rect" id="node27" href="$c__supp_8c.html#a3c498e5d4df7e7f9c014131a40f63d22" title="Pl_Rd_Callable_Check" alt="" coords="591,284,748,311"/>
+<area shape="rect" id="node28" href="$expand__c_8c.html#a2e202fc7f4fe1b634a473dd5f01d72df" title="Dcg_Compound1" alt="" coords="608,335,731,361"/>
+<area shape="rect" id="node10" href="$error__supp_8c.html#a17057fc5577da70316e8f62fca4743f7" title="Pl_Err_Instantiation" alt="" coords="805,360,941,387"/>
+<area shape="rect" id="node26" href="$error__supp_8c.html#a88375a38b23326055e59e455c25f982e" title="Pl_Err_Type" alt="" coords="826,309,921,336"/>
+<area shape="rect" id="node11" href="$error__supp_8c.html#aef1341aeb3ceb943d8e9d7d6f77b0582" title="Update_Cur_From_C_Bip" alt="" coords="996,309,1168,336"/>
+<area shape="rect" id="node25" href="$engine_8c.html#ae0fcb6df66410fd57c52a0ba16527642" title="Pl_Execute_A_Continuation" alt="" coords="989,360,1175,387"/>
+<area shape="rect" id="node12" href="$atom_8c.html#a76a3983dda97458000ed903b9bc94f6c" title="Pl_Create_Allocate_Atom" alt="" coords="1223,309,1395,336"/>
+<area shape="rect" id="node13" href="$atom_8c.html#a9ed09c0173fe0a0e6d0f90ec363687fe" title="Hash_String" alt="" coords="1445,259,1539,285"/>
+<area shape="rect" id="node18" href="$atom_8c.html#ad4222685eae3cdb0315df48a8a7e89fc" title="Locate_Atom" alt="" coords="1443,309,1541,336"/>
+<area shape="rect" id="node19" href="$atom_8c.html#abe628ad301508c0ed926cfb4bc791818" title="Add_Atom" alt="" coords="1451,360,1533,387"/>
+<area shape="rect" id="node14" href="$hash__fct_8c.html#a59393adcfbeeda198a890af25f29cf7c" title="Pl_Hash_Buffer" alt="" coords="1617,233,1732,260"/>
+<area shape="rect" id="node15" href="$hash__fct_8c.html#abe414d7525a1bb4fcb8e4fd757498cb9" title="Hash_Initialize" alt="" coords="1821,157,1929,184"/>
+<area shape="rect" id="node16" href="$hash__fct_8c.html#a8b1af6cc6089ce3e2e3dc0a8a0d55e90" title="Hash_Buffer" alt="" coords="1828,208,1923,235"/>
+<area shape="rect" id="node17" href="$hash__fct_8c.html#aa33bb265b03bb03aa455241e374409f7" title="Hash_Finalize" alt="" coords="1823,259,1928,285"/>
+<area shape="rect" id="node20" href="$atom_8c.html#a37c733b7022eab8b9b95f0182591ee15" title="Error_Table_Full" alt="" coords="1616,309,1733,336"/>
+<area shape="rect" id="node22" href="$pl__wchar_8c.html#a55a0d7269a65645bbd4c978385b0c7a3" title="count_wchars" alt="" coords="1623,360,1726,387"/>
+<area shape="rect" id="node24" href="$linedit_8c.html#ab2a8db946ffd8187b5216ff4ac8cbe7c" title="Pl_LE_Compl_Add_Word" alt="" coords="1589,411,1760,437"/>
+<area shape="rect" id="node21" href="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907" title="Pl_Fatal_Error" alt="" coords="1823,309,1928,336"/>
+<area shape="rect" id="node23" href="$pl__wchar_8c.html#afa9feb443cef2f8da40dd45a8c0e273d" title="count_wchar_bytes" alt="" coords="1808,360,1943,387"/>
+<area shape="rect" id="node30" href="$term__supp_8c.html#a8979d901374519096f0afc360dac8330" title="Pl_Term_Compare" alt="" coords="604,31,735,57"/>
+<area shape="rect" id="node31" href="$wam__inst_8c.html#abe61f0e18fbf38ab873ac2754c9498ce" title="Pl_Obtain_Float" alt="" coords="816,56,931,83"/>
+<area shape="rect" id="node32" href="$c__supp_8c.html#afae12d161ada094a60b2a0ad808c08c7" title="Pl_Rd_Compound" alt="" coords="809,5,937,32"/>
+</map>

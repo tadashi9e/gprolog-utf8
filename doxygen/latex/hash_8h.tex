@@ -1,0 +1,331 @@
+\hypertarget{hash_8h}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/hash.h File Reference}
+\label{hash_8h}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/hash.\+h@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/hash.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structHashScan}{Hash\+Scan}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{hash_8h_aa2aa8948c25312cf1e00f3481ee782ee}{Pl\+\_\+\+Hash\+\_\+\+Alloc\+\_\+\+Table} (int tbl\+\_\+size, int elem\+\_\+size)
+\item 
+void \hyperlink{hash_8h_a295f55c97219e9399aa83175af69c891}{Pl\+\_\+\+Hash\+\_\+\+Free\+\_\+\+Table} (char $\ast$\hyperlink{chkma_8c_a9cbc66f6e914c92097ad77eead93e15e}{tbl})
+\item 
+char $\ast$ \hyperlink{hash_8h_a086befd3e5d6b35e1b44bfec753f78c9}{Pl\+\_\+\+Hash\+\_\+\+Realloc\+\_\+\+Table} (char $\ast$\hyperlink{chkma_8c_a9cbc66f6e914c92097ad77eead93e15e}{tbl}, int new\+\_\+tbl\+\_\+size)
+\item 
+void \hyperlink{hash_8h_adfc76689371b526e677e1209382df2c9}{Pl\+\_\+\+Hash\+\_\+\+Delete\+\_\+\+All} (char $\ast$\hyperlink{chkma_8c_a9cbc66f6e914c92097ad77eead93e15e}{tbl})
+\item 
+char $\ast$ \hyperlink{hash_8h_a4bd4cb026be9bb68e99fb14a6af20962}{Pl\+\_\+\+Hash\+\_\+\+Insert} (char $\ast$\hyperlink{chkma_8c_a9cbc66f6e914c92097ad77eead93e15e}{tbl}, char $\ast$elem, int replace)
+\item 
+char $\ast$ \hyperlink{hash_8h_aec674b585bde3301a8a850dd742cc243}{Pl\+\_\+\+Hash\+\_\+\+Find} (char $\ast$\hyperlink{chkma_8c_a9cbc66f6e914c92097ad77eead93e15e}{tbl}, \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} key)
+\item 
+char $\ast$ \hyperlink{hash_8h_aba073a491f0937450a3681a01f6d07a7}{Pl\+\_\+\+Hash\+\_\+\+Delete} (char $\ast$\hyperlink{chkma_8c_a9cbc66f6e914c92097ad77eead93e15e}{tbl}, \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} key)
+\item 
+char $\ast$ \hyperlink{hash_8h_a46cf8c018eb50003019707368304f1af}{Pl\+\_\+\+Hash\+\_\+\+First} (char $\ast$\hyperlink{chkma_8c_a9cbc66f6e914c92097ad77eead93e15e}{tbl}, \hyperlink{structHashScan}{Hash\+Scan} $\ast$scan)
+\item 
+char $\ast$ \hyperlink{hash_8h_adeeceb6b4217091511912cadfb332a06}{Pl\+\_\+\+Hash\+\_\+\+Next} (\hyperlink{structHashScan}{Hash\+Scan} $\ast$scan)
+\item 
+int \hyperlink{hash_8h_a45b42ea1dd409db6c47fcffdfd91f7dd}{Pl\+\_\+\+Hash\+\_\+\+Table\+\_\+\+Size} (char $\ast$\hyperlink{chkma_8c_a9cbc66f6e914c92097ad77eead93e15e}{tbl})
+\item 
+int \hyperlink{hash_8h_a8c963a8a2962687a4f80a908981d3b9a}{Pl\+\_\+\+Hash\+\_\+\+Nb\+\_\+\+Elements} (char $\ast$\hyperlink{chkma_8c_a9cbc66f6e914c92097ad77eead93e15e}{tbl})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{hash.\+h@{hash.\+h}!Pl\+\_\+\+Hash\+\_\+\+Alloc\+\_\+\+Table@{Pl\+\_\+\+Hash\+\_\+\+Alloc\+\_\+\+Table}}
+\index{Pl\+\_\+\+Hash\+\_\+\+Alloc\+\_\+\+Table@{Pl\+\_\+\+Hash\+\_\+\+Alloc\+\_\+\+Table}!hash.\+h@{hash.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+Alloc\+\_\+\+Table(int tbl\+\_\+size, int elem\+\_\+size)}{Pl_Hash_Alloc_Table(int tbl_size, int elem_size)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+Hash\+\_\+\+Alloc\+\_\+\+Table (
+\begin{DoxyParamCaption}
+\item[{int}]{tbl\+\_\+size, }
+\item[{int}]{elem\+\_\+size}
+\end{DoxyParamCaption}
+)}\hypertarget{hash_8h_aa2aa8948c25312cf1e00f3481ee782ee}{}\label{hash_8h_aa2aa8948c25312cf1e00f3481ee782ee}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash_8h_aa2aa8948c25312cf1e00f3481ee782ee_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash.\+h@{hash.\+h}!Pl\+\_\+\+Hash\+\_\+\+Delete@{Pl\+\_\+\+Hash\+\_\+\+Delete}}
+\index{Pl\+\_\+\+Hash\+\_\+\+Delete@{Pl\+\_\+\+Hash\+\_\+\+Delete}!hash.\+h@{hash.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+Delete(char $\ast$tbl, Pl\+Long key)}{Pl_Hash_Delete(char *tbl, PlLong key)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+Hash\+\_\+\+Delete (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{tbl, }
+\item[{{\bf Pl\+Long}}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{hash_8h_aba073a491f0937450a3681a01f6d07a7}{}\label{hash_8h_aba073a491f0937450a3681a01f6d07a7}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{hash_8h_aba073a491f0937450a3681a01f6d07a7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash_8h_aba073a491f0937450a3681a01f6d07a7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash.\+h@{hash.\+h}!Pl\+\_\+\+Hash\+\_\+\+Delete\+\_\+\+All@{Pl\+\_\+\+Hash\+\_\+\+Delete\+\_\+\+All}}
+\index{Pl\+\_\+\+Hash\+\_\+\+Delete\+\_\+\+All@{Pl\+\_\+\+Hash\+\_\+\+Delete\+\_\+\+All}!hash.\+h@{hash.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+Delete\+\_\+\+All(char $\ast$tbl)}{Pl_Hash_Delete_All(char *tbl)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Hash\+\_\+\+Delete\+\_\+\+All (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{tbl}
+\end{DoxyParamCaption}
+)}\hypertarget{hash_8h_adfc76689371b526e677e1209382df2c9}{}\label{hash_8h_adfc76689371b526e677e1209382df2c9}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash_8h_adfc76689371b526e677e1209382df2c9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash.\+h@{hash.\+h}!Pl\+\_\+\+Hash\+\_\+\+Find@{Pl\+\_\+\+Hash\+\_\+\+Find}}
+\index{Pl\+\_\+\+Hash\+\_\+\+Find@{Pl\+\_\+\+Hash\+\_\+\+Find}!hash.\+h@{hash.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+Find(char $\ast$tbl, Pl\+Long key)}{Pl_Hash_Find(char *tbl, PlLong key)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+Hash\+\_\+\+Find (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{tbl, }
+\item[{{\bf Pl\+Long}}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{hash_8h_aec674b585bde3301a8a850dd742cc243}{}\label{hash_8h_aec674b585bde3301a8a850dd742cc243}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{hash_8h_aec674b585bde3301a8a850dd742cc243_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash_8h_aec674b585bde3301a8a850dd742cc243_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash.\+h@{hash.\+h}!Pl\+\_\+\+Hash\+\_\+\+First@{Pl\+\_\+\+Hash\+\_\+\+First}}
+\index{Pl\+\_\+\+Hash\+\_\+\+First@{Pl\+\_\+\+Hash\+\_\+\+First}!hash.\+h@{hash.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+First(char $\ast$tbl, Hash\+Scan $\ast$scan)}{Pl_Hash_First(char *tbl, HashScan *scan)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+Hash\+\_\+\+First (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{tbl, }
+\item[{{\bf Hash\+Scan} $\ast$}]{scan}
+\end{DoxyParamCaption}
+)}\hypertarget{hash_8h_a46cf8c018eb50003019707368304f1af}{}\label{hash_8h_a46cf8c018eb50003019707368304f1af}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{hash_8h_a46cf8c018eb50003019707368304f1af_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash_8h_a46cf8c018eb50003019707368304f1af_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash.\+h@{hash.\+h}!Pl\+\_\+\+Hash\+\_\+\+Free\+\_\+\+Table@{Pl\+\_\+\+Hash\+\_\+\+Free\+\_\+\+Table}}
+\index{Pl\+\_\+\+Hash\+\_\+\+Free\+\_\+\+Table@{Pl\+\_\+\+Hash\+\_\+\+Free\+\_\+\+Table}!hash.\+h@{hash.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+Free\+\_\+\+Table(char $\ast$tbl)}{Pl_Hash_Free_Table(char *tbl)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Hash\+\_\+\+Free\+\_\+\+Table (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{tbl}
+\end{DoxyParamCaption}
+)}\hypertarget{hash_8h_a295f55c97219e9399aa83175af69c891}{}\label{hash_8h_a295f55c97219e9399aa83175af69c891}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash_8h_a295f55c97219e9399aa83175af69c891_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash.\+h@{hash.\+h}!Pl\+\_\+\+Hash\+\_\+\+Insert@{Pl\+\_\+\+Hash\+\_\+\+Insert}}
+\index{Pl\+\_\+\+Hash\+\_\+\+Insert@{Pl\+\_\+\+Hash\+\_\+\+Insert}!hash.\+h@{hash.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+Insert(char $\ast$tbl, char $\ast$elem, int replace)}{Pl_Hash_Insert(char *tbl, char *elem, int replace)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+Hash\+\_\+\+Insert (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{tbl, }
+\item[{char $\ast$}]{elem, }
+\item[{int}]{replace}
+\end{DoxyParamCaption}
+)}\hypertarget{hash_8h_a4bd4cb026be9bb68e99fb14a6af20962}{}\label{hash_8h_a4bd4cb026be9bb68e99fb14a6af20962}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{hash_8h_a4bd4cb026be9bb68e99fb14a6af20962_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash_8h_a4bd4cb026be9bb68e99fb14a6af20962_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash.\+h@{hash.\+h}!Pl\+\_\+\+Hash\+\_\+\+Nb\+\_\+\+Elements@{Pl\+\_\+\+Hash\+\_\+\+Nb\+\_\+\+Elements}}
+\index{Pl\+\_\+\+Hash\+\_\+\+Nb\+\_\+\+Elements@{Pl\+\_\+\+Hash\+\_\+\+Nb\+\_\+\+Elements}!hash.\+h@{hash.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+Nb\+\_\+\+Elements(char $\ast$tbl)}{Pl_Hash_Nb_Elements(char *tbl)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Hash\+\_\+\+Nb\+\_\+\+Elements (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{tbl}
+\end{DoxyParamCaption}
+)}\hypertarget{hash_8h_a8c963a8a2962687a4f80a908981d3b9a}{}\label{hash_8h_a8c963a8a2962687a4f80a908981d3b9a}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash_8h_a8c963a8a2962687a4f80a908981d3b9a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash_8h_a8c963a8a2962687a4f80a908981d3b9a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash.\+h@{hash.\+h}!Pl\+\_\+\+Hash\+\_\+\+Next@{Pl\+\_\+\+Hash\+\_\+\+Next}}
+\index{Pl\+\_\+\+Hash\+\_\+\+Next@{Pl\+\_\+\+Hash\+\_\+\+Next}!hash.\+h@{hash.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+Next(\+Hash\+Scan $\ast$scan)}{Pl_Hash_Next(HashScan *scan)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+Hash\+\_\+\+Next (
+\begin{DoxyParamCaption}
+\item[{{\bf Hash\+Scan} $\ast$}]{scan}
+\end{DoxyParamCaption}
+)}\hypertarget{hash_8h_adeeceb6b4217091511912cadfb332a06}{}\label{hash_8h_adeeceb6b4217091511912cadfb332a06}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash_8h_adeeceb6b4217091511912cadfb332a06_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash.\+h@{hash.\+h}!Pl\+\_\+\+Hash\+\_\+\+Realloc\+\_\+\+Table@{Pl\+\_\+\+Hash\+\_\+\+Realloc\+\_\+\+Table}}
+\index{Pl\+\_\+\+Hash\+\_\+\+Realloc\+\_\+\+Table@{Pl\+\_\+\+Hash\+\_\+\+Realloc\+\_\+\+Table}!hash.\+h@{hash.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+Realloc\+\_\+\+Table(char $\ast$tbl, int new\+\_\+tbl\+\_\+size)}{Pl_Hash_Realloc_Table(char *tbl, int new_tbl_size)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+Hash\+\_\+\+Realloc\+\_\+\+Table (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{tbl, }
+\item[{int}]{new\+\_\+tbl\+\_\+size}
+\end{DoxyParamCaption}
+)}\hypertarget{hash_8h_a086befd3e5d6b35e1b44bfec753f78c9}{}\label{hash_8h_a086befd3e5d6b35e1b44bfec753f78c9}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{hash_8h_a086befd3e5d6b35e1b44bfec753f78c9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash_8h_a086befd3e5d6b35e1b44bfec753f78c9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{hash.\+h@{hash.\+h}!Pl\+\_\+\+Hash\+\_\+\+Table\+\_\+\+Size@{Pl\+\_\+\+Hash\+\_\+\+Table\+\_\+\+Size}}
+\index{Pl\+\_\+\+Hash\+\_\+\+Table\+\_\+\+Size@{Pl\+\_\+\+Hash\+\_\+\+Table\+\_\+\+Size}!hash.\+h@{hash.\+h}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Hash\+\_\+\+Table\+\_\+\+Size(char $\ast$tbl)}{Pl_Hash_Table_Size(char *tbl)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Hash\+\_\+\+Table\+\_\+\+Size (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{tbl}
+\end{DoxyParamCaption}
+)}\hypertarget{hash_8h_a45b42ea1dd409db6c47fcffdfd91f7dd}{}\label{hash_8h_a45b42ea1dd409db6c47fcffdfd91f7dd}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hash_8h_a45b42ea1dd409db6c47fcffdfd91f7dd_icgraph}
+\end{center}
+\end{figure}
+
+

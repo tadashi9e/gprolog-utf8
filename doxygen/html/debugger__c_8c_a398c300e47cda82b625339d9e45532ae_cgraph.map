@@ -1,0 +1,9 @@
+<map id="Pl_Choice_Point_Info_4" name="Pl_Choice_Point_Info_4">
+<area shape="rect" id="node2" href="$hash_8c.html#a46cf8c018eb50003019707368304f1af" title="Pl_Hash_First" alt="" coords="218,5,323,32"/>
+<area shape="rect" id="node3" href="$hash_8c.html#adeeceb6b4217091511912cadfb332a06" title="Pl_Hash_Next" alt="" coords="399,31,506,57"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#a78229c8d23053191e0fee7952757f9c7" title="Pl_Get_Atom" alt="" coords="221,107,321,133"/>
+<area shape="rect" id="node6" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="216,157,325,184"/>
+<area shape="rect" id="node8" href="$wam__inst_8h.html#a098bda85a540e8ca5969063ccfd4ea20" title="Pl_Unify" alt="" coords="235,208,307,235"/>
+<area shape="rect" id="node5" href="$wam__inst_8c.html#a89d8aba44029f2a5f548a2ae5f6eb574" title="Pl_Get_Atom_Tagged" alt="" coords="377,107,528,133"/>
+<area shape="rect" id="node7" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="373,157,532,184"/>
+</map>

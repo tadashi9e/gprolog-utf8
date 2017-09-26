@@ -1,0 +1,9 @@
+<map id="Pl_Err_Syntax" name="Pl_Err_Syntax">
+<area shape="rect" id="node2" href="$error__supp_8h.html#a8bf7bb96d18b2385eb5e549a7fc25ccb" title="Pl_Syntax_Error" alt="" coords="160,107,277,133"/>
+<area shape="rect" id="node3" href="$atom__c_8c.html#a45d43288afc4447eb5e8a1bced9fd5a3" title="String_To_Number" alt="" coords="335,81,466,108"/>
+<area shape="rect" id="node8" href="$gprolog_8h.html#a3edc88ccd75b60f148953314c514efef" title="Pl_Emit_Syntax_Error" alt="" coords="325,132,476,159"/>
+<area shape="rect" id="node4" href="$atom__c_8c.html#adc47dd028d6500b7136923c50fb7f0ab" title="Pl_Number_Atom_2" alt="" coords="528,5,667,32"/>
+<area shape="rect" id="node5" href="$atom__c_8c.html#a227fc472d79309e81af1f91e7e236951" title="Pl_Number_Chars_2" alt="" coords="526,56,669,83"/>
+<area shape="rect" id="node6" href="$atom__c_8c.html#ae89fe3df220d385008f49c583dc41d32" title="Pl_Number_Codes_2" alt="" coords="524,107,671,133"/>
+<area shape="rect" id="node7" href="$atom__c_8c.html#af3d13cb1d0fbb3208789ea87cf806fdb" title="Pl_Name_2" alt="" coords="719,132,809,159"/>
+</map>

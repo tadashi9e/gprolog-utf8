@@ -1,0 +1,17 @@
+<map id="Get_Descriptor" name="Get_Descriptor">
+<area shape="rect" id="node2" href="$src__rdr__c_8c.html#a9bd17edd807337f25b335d86f826e75d" title="Pl_SR_Close_1" alt="" coords="205,5,320,32"/>
+<area shape="rect" id="node3" href="$src__rdr__c_8c.html#a260024335c542b6e1dacb6252ab5e1cc" title="Pl_SR_New_Pass_1" alt="" coords="190,56,335,83"/>
+<area shape="rect" id="node4" href="$src__rdr__c_8c.html#ab3d071ad3a0b1fb7194180d957d2dba4" title="Pl_SR_Get_Stm_2" alt="" coords="196,107,329,133"/>
+<area shape="rect" id="node5" href="$src__rdr__c_8c.html#a921b94af409822c06dba345bd0d51c1d" title="Pl_SR_Get_Module_3" alt="" coords="187,157,338,184"/>
+<area shape="rect" id="node6" href="$src__rdr__c_8c.html#adb4107b9df4d84a2e61a823923c76212" title="Pl_SR_Get_File_Name_2" alt="" coords="177,208,349,235"/>
+<area shape="rect" id="node7" href="$src__rdr__c_8c.html#ac96432d06597452496db4e53b38838b7" title="Pl_SR_Get_Position_3" alt="" coords="185,259,341,285"/>
+<area shape="rect" id="node8" href="$src__rdr__c_8c.html#a81c455b5ceb778196d69715f69ae8359" title="Pl_SR_Get_Include_List_2" alt="" coords="173,309,352,336"/>
+<area shape="rect" id="node9" href="$src__rdr__c_8c.html#a8e4d64c3178885deee009d2d1b3a919b" title="Pl_SR_Get_Include_Stream\l_List_2" alt="" coords="169,361,356,402"/>
+<area shape="rect" id="node10" href="$src__rdr__c_8c.html#a026f9d7710d10218e3dbc6098ce25fa8" title="Pl_SR_Get_Size_Counters_3" alt="" coords="165,427,360,453"/>
+<area shape="rect" id="node11" href="$src__rdr__c_8c.html#a95335e6c19a5504c1f8113af99243135" title="Pl_SR_Get_Error_Counters_3" alt="" coords="164,477,361,504"/>
+<area shape="rect" id="node12" href="$src__rdr__c_8c.html#a3d79951e57779d9cdc23ce6f68034383" title="Pl_SR_Set_Error_Counters_3" alt="" coords="165,528,361,555"/>
+<area shape="rect" id="node13" href="$src__rdr__c_8c.html#aedd95480c03114e9f97ea9d7b1a5ad62" title="Pl_SR_Check_Descriptor_1" alt="" coords="169,579,356,605"/>
+<area shape="rect" id="node14" href="$src__rdr__c_8c.html#ac19d7c92d943e88aa23241f71b098719" title="Pl_SR_Write_Message_4" alt="" coords="177,629,349,656"/>
+<area shape="rect" id="node15" href="$src__rdr__c_8c.html#af2a12d4b1ba2b0c5a576426cfe64cd18" title="Pl_SR_Write_Message_6" alt="" coords="177,680,349,707"/>
+<area shape="rect" id="node16" href="$src__rdr__c_8c.html#a031ea66c3dc7f9b2784bc9efa2887430" title="Pl_SR_Write_Message_8" alt="" coords="177,731,349,757"/>
+</map>

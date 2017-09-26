@@ -1,0 +1,12 @@
+<map id="Pl_Current_Op_Alt_0" name="Pl_Current_Op_Alt_0">
+<area shape="rect" id="node2" href="$wam__inst_8c.html#ac713c15b8ed89be9dc3274b0b754abb2" title="Pl_Update_Choice_Point" alt="" coords="199,5,367,32"/>
+<area shape="rect" id="node3" href="$oper_8c.html#ad19a4b74ee5976a08c08ca792bef46b5" title="Pl_Lookup_Oper" alt="" coords="223,56,342,83"/>
+<area shape="rect" id="node6" href="$hash_8c.html#adeeceb6b4217091511912cadfb332a06" title="Pl_Hash_Next" alt="" coords="229,107,336,133"/>
+<area shape="rect" id="node7" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="228,157,337,184"/>
+<area shape="rect" id="node9" href="$wam__inst_8c.html#a78229c8d23053191e0fee7952757f9c7" title="Pl_Get_Atom" alt="" coords="233,208,333,235"/>
+<area shape="rect" id="node11" href="$oper__c_8c.html#a7888ff9a5e3faec930477c8faa10b55f" title="Detect_Oper_Specif" alt="" coords="213,259,353,285"/>
+<area shape="rect" id="node4" href="$hash_8c.html#aec674b585bde3301a8a850dd742cc243" title="Pl_Hash_Find" alt="" coords="442,56,546,83"/>
+<area shape="rect" id="node5" href="$hash_8c.html#a12948099c13cb849ed3575849492ac33" title="Hash_Locate" alt="" coords="621,56,720,83"/>
+<area shape="rect" id="node8" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="415,157,573,184"/>
+<area shape="rect" id="node10" href="$wam__inst_8c.html#a89d8aba44029f2a5f548a2ae5f6eb574" title="Pl_Get_Atom_Tagged" alt="" coords="419,208,569,235"/>
+</map>

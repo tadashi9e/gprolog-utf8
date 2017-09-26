@@ -1,0 +1,9 @@
+<map id="Fct_Get_Argv" name="Fct_Get_Argv">
+<area shape="rect" id="node2" href="$wam__inst_8c.html#ac3ef9bcbd100b6820236c04a0b7996d1" title="Pl_Put_X_Variable" alt="" coords="156,5,287,32"/>
+<area shape="rect" id="node3" href="$wam__inst_8c.html#ac053eb26fdee8a8e71ea9a5ac4079ab0" title="Pl_Get_List" alt="" coords="176,56,267,83"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#a9d87a5b4acfffab877517842b1fa4055" title="Pl_Unify_Atom" alt="" coords="166,107,277,133"/>
+<area shape="rect" id="node6" href="$atom_8c.html#a068c993d95113a2ba7643918e68eedb3" title="Pl_Create_Atom" alt="" coords="162,157,281,184"/>
+<area shape="rect" id="node7" href="$wam__inst_8c.html#ab11181944ecf328d3ade45d83f7744d8" title="Pl_Unify_Variable" alt="" coords="158,208,285,235"/>
+<area shape="rect" id="node8" href="$wam__inst_8c.html#a4ab2a67fe680997c88472c007bafbcbd" title="Pl_Get_Nil" alt="" coords="179,259,264,285"/>
+<area shape="rect" id="node5" href="$wam__inst_8c.html#a656e0931247533aa8d30c3e0398513fe" title="Pl_Unify_Atom_Tagged" alt="" coords="335,107,495,133"/>
+</map>

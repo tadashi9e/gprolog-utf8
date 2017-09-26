@@ -1,0 +1,85 @@
+\hypertarget{try__sigaction_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/try\+\_\+sigaction.c File Reference}
+\label{try__sigaction_8c}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/try\+\_\+sigaction.\+c@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/try\+\_\+sigaction.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+Include dependency graph for try\+\_\+sigaction.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{try__sigaction_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{try__sigaction_8c_a78c99ffd76a7bb3c8c74db76207e9ab4}{\+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+CE}~700
+\item 
+\#define \hyperlink{try__sigaction_8c_ac7b30cf7f83588cb6bc1c716be66f5a2}{\+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+E\+X\+T\+E\+N\+D\+ED}
+\item 
+\#define \hyperlink{try__sigaction_8c_adf4cd9d0d25a1707288bd952792627fe}{B\+A\+D\+\_\+\+A\+D\+DR}~((int $\ast$) 0x2\+E\+A4\+F0)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{try__sigaction_8c_a347f2c25f2bf8286c366d64c462eb930}{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler} (int sig, siginfo\+\_\+t $\ast$sip)
+\item 
+int \hyperlink{try__sigaction_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{try\+\_\+sigaction.\+c@{try\+\_\+sigaction.\+c}!\+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+CE@{\+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+CE}}
+\index{\+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+CE@{\+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+CE}!try\+\_\+sigaction.\+c@{try\+\_\+sigaction.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+CE}{_XOPEN_SOURCE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+CE~700}\hypertarget{try__sigaction_8c_a78c99ffd76a7bb3c8c74db76207e9ab4}{}\label{try__sigaction_8c_a78c99ffd76a7bb3c8c74db76207e9ab4}
+\index{try\+\_\+sigaction.\+c@{try\+\_\+sigaction.\+c}!\+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+E\+X\+T\+E\+N\+D\+ED@{\+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+E\+X\+T\+E\+N\+D\+ED}}
+\index{\+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+E\+X\+T\+E\+N\+D\+ED@{\+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+E\+X\+T\+E\+N\+D\+ED}!try\+\_\+sigaction.\+c@{try\+\_\+sigaction.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+E\+X\+T\+E\+N\+D\+ED}{_XOPEN_SOURCE_EXTENDED}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+E\+X\+T\+E\+N\+D\+ED}\hypertarget{try__sigaction_8c_ac7b30cf7f83588cb6bc1c716be66f5a2}{}\label{try__sigaction_8c_ac7b30cf7f83588cb6bc1c716be66f5a2}
+\index{try\+\_\+sigaction.\+c@{try\+\_\+sigaction.\+c}!B\+A\+D\+\_\+\+A\+D\+DR@{B\+A\+D\+\_\+\+A\+D\+DR}}
+\index{B\+A\+D\+\_\+\+A\+D\+DR@{B\+A\+D\+\_\+\+A\+D\+DR}!try\+\_\+sigaction.\+c@{try\+\_\+sigaction.\+c}}
+\subsubsection[{\texorpdfstring{B\+A\+D\+\_\+\+A\+D\+DR}{BAD_ADDR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+A\+D\+\_\+\+A\+D\+DR~((int $\ast$) 0x2\+E\+A4\+F0)}\hypertarget{try__sigaction_8c_adf4cd9d0d25a1707288bd952792627fe}{}\label{try__sigaction_8c_adf4cd9d0d25a1707288bd952792627fe}
+
+
+\subsection{Function Documentation}
+\index{try\+\_\+sigaction.\+c@{try\+\_\+sigaction.\+c}!main@{main}}
+\index{main@{main}!try\+\_\+sigaction.\+c@{try\+\_\+sigaction.\+c}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{try__sigaction_8c_a0ddf1224851353fc92bfbff6f499fa97}{}\label{try__sigaction_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{try__sigaction_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{try\+\_\+sigaction.\+c@{try\+\_\+sigaction.\+c}!S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}}
+\index{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}!try\+\_\+sigaction.\+c@{try\+\_\+sigaction.\+c}}
+\subsubsection[{\texorpdfstring{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler(int sig, siginfo\+\_\+t $\ast$sip)}{SIGSEGV_Handler(int sig, siginfo_t *sip)}}]{\setlength{\rightskip}{0pt plus 5cm}void S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler (
+\begin{DoxyParamCaption}
+\item[{int}]{sig, }
+\item[{siginfo\+\_\+t $\ast$}]{sip}
+\end{DoxyParamCaption}
+)}\hypertarget{try__sigaction_8c_a347f2c25f2bf8286c366d64c462eb930}{}\label{try__sigaction_8c_a347f2c25f2bf8286c366d64c462eb930}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{try__sigaction_8c_a347f2c25f2bf8286c366d64c462eb930_icgraph}
+\end{center}
+\end{figure}
+
+

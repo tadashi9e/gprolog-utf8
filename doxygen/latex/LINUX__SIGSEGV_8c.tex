@@ -1,0 +1,73 @@
+\hypertarget{LINUX__SIGSEGV_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/\+L\+I\+N\+U\+X\+\_\+\+S\+I\+G\+S\+E\+GV.c File Reference}
+\label{LINUX__SIGSEGV_8c}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/\+L\+I\+N\+U\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/\+L\+I\+N\+U\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}}
+{\ttfamily \#include $<$signal.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$asm/sigcontext.\+h$>$}\\*
+Include dependency graph for L\+I\+N\+U\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{LINUX__SIGSEGV_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef long \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{LINUX__SIGSEGV_8c_a76ef8252b2278bb854bf7d44874e0f2d}{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler} (int sig, struct sigcontext scp)
+\item 
+\hyperlink{LINUX__SIGSEGV_8c_a51af30a60f9f02777c6396b8247e356f}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{L\+I\+N\+U\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{L\+I\+N\+U\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}!Wam\+Word@{Wam\+Word}}
+\index{Wam\+Word@{Wam\+Word}!L\+I\+N\+U\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{L\+I\+N\+U\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}}
+\subsubsection[{\texorpdfstring{Wam\+Word}{WamWord}}]{\setlength{\rightskip}{0pt plus 5cm}typedef long {\bf Wam\+Word}}\hypertarget{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{}\label{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}
+
+
+\subsection{Function Documentation}
+\index{L\+I\+N\+U\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{L\+I\+N\+U\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}!main@{main}}
+\index{main@{main}!L\+I\+N\+U\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{L\+I\+N\+U\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}}
+\subsubsection[{\texorpdfstring{main()}{main()}}]{\setlength{\rightskip}{0pt plus 5cm}main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{LINUX__SIGSEGV_8c_a51af30a60f9f02777c6396b8247e356f}{}\label{LINUX__SIGSEGV_8c_a51af30a60f9f02777c6396b8247e356f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{LINUX__SIGSEGV_8c_a51af30a60f9f02777c6396b8247e356f_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{L\+I\+N\+U\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{L\+I\+N\+U\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}!S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}}
+\index{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler@{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler}!L\+I\+N\+U\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c@{L\+I\+N\+U\+X\+\_\+\+S\+I\+G\+S\+E\+G\+V.\+c}}
+\subsubsection[{\texorpdfstring{S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler(int sig, struct sigcontext scp)}{SIGSEGV_Handler(int sig, struct sigcontext scp)}}]{\setlength{\rightskip}{0pt plus 5cm}void S\+I\+G\+S\+E\+G\+V\+\_\+\+Handler (
+\begin{DoxyParamCaption}
+\item[{int}]{sig, }
+\item[{struct sigcontext}]{scp}
+\end{DoxyParamCaption}
+)}\hypertarget{LINUX__SIGSEGV_8c_a76ef8252b2278bb854bf7d44874e0f2d}{}\label{LINUX__SIGSEGV_8c_a76ef8252b2278bb854bf7d44874e0f2d}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{LINUX__SIGSEGV_8c_a76ef8252b2278bb854bf7d44874e0f2d_icgraph}
+\end{center}
+\end{figure}
+
+

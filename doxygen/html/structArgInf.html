@@ -22,6 +22,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">GNU PROLOG with UTF8 support
    </div>
@@ -62,6 +63,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -86,6 +88,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ArgInf Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="ma__parser_8h_source.html">ma_parser.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for ArgInf:</div>
 <div class="dyncontent">
@@ -97,32 +101,122 @@ Collaboration diagram for ArgInf:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:ad416abaf87d2e52a23c4d2eb517919e4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad416abaf87d2e52a23c4d2eb517919e4"></a>
-ArgTyp&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+<tr class="memitem:ad416abaf87d2e52a23c4d2eb517919e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="ma__parser_8h.html#a55e83ab108ec469cbb59876c09f146b0">ArgTyp</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structArgInf.html#ad416abaf87d2e52a23c4d2eb517919e4">type</a></td></tr>
 <tr class="separator:ad416abaf87d2e52a23c4d2eb517919e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a45faac36b5ff6b969faa85446f40e1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9a45faac36b5ff6b969faa85446f40e1"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>adr_of</b></td></tr>
+<tr class="memitem:a9a45faac36b5ff6b969faa85446f40e1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structArgInf.html#a9a45faac36b5ff6b969faa85446f40e1">adr_of</a></td></tr>
 <tr class="separator:a9a45faac36b5ff6b969faa85446f40e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7f40cf76bee98b10f0eb3d865b2b912"><td class="memItemLeft" ><a class="anchor" id="ae7f40cf76bee98b10f0eb3d865b2b912"></a>
-union {</td></tr>
-<tr class="memitem:a8631c2d726b09248e5315cfdaa9d708b"><td class="memItemLeft" >
-&#160;&#160;&#160;char *&#160;&#160;&#160;<b>str_val</b></td></tr>
+<tr class="memitem:ae7f40cf76bee98b10f0eb3d865b2b912"><td class="memItemLeft" >union {</td></tr>
+<tr class="memitem:a8631c2d726b09248e5315cfdaa9d708b"><td class="memItemLeft" >&#160;&#160;&#160;char *&#160;&#160;&#160;<a class="el" href="structArgInf.html#aae189057e919a389c59d0ee897884c5f">str_val</a></td></tr>
 <tr class="separator:a8631c2d726b09248e5315cfdaa9d708b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51506fcf47485b869f4ae625a00cf8c1"><td class="memItemLeft" >
-&#160;&#160;&#160;PlLong&#160;&#160;&#160;<b>int_val</b></td></tr>
+<tr class="memitem:a51506fcf47485b869f4ae625a00cf8c1"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="gprolog_8h.html#a4d005b136d7fb28537eb1815f7868b63">PlLong</a>&#160;&#160;&#160;<a class="el" href="structArgInf.html#a9b94d186b491b4009a1905f86e41ad9c">int_val</a></td></tr>
 <tr class="separator:a51506fcf47485b869f4ae625a00cf8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae97730959b89147bd3320e7969b7151b"><td class="memItemLeft" >
-&#160;&#160;&#160;double&#160;&#160;&#160;<b>dbl_val</b></td></tr>
+<tr class="memitem:ae97730959b89147bd3320e7969b7151b"><td class="memItemLeft" >&#160;&#160;&#160;double&#160;&#160;&#160;<a class="el" href="structArgInf.html#a5ce0eda4a228042bd33b247f80e61144">dbl_val</a></td></tr>
 <tr class="separator:ae97730959b89147bd3320e7969b7151b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af85a1c464a9c40bf613e75d5d6667a49"><td class="memItemLeft" >
-&#160;&#160;&#160;<a class="el" href="structMem.html">Mem</a>&#160;&#160;&#160;<b>mem</b></td></tr>
+<tr class="memitem:af85a1c464a9c40bf613e75d5d6667a49"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="structMem.html">Mem</a>&#160;&#160;&#160;<a class="el" href="structArgInf.html#aa4a2dcaf59861c10d3622f1bdcc5ac3d">mem</a></td></tr>
 <tr class="separator:af85a1c464a9c40bf613e75d5d6667a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e6a7c7e09c751f2bedc7fc502a52536"><td class="memItemLeft" >
-&#160;&#160;&#160;int&#160;&#160;&#160;<b>index</b></td></tr>
+<tr class="memitem:a5e6a7c7e09c751f2bedc7fc502a52536"><td class="memItemLeft" >&#160;&#160;&#160;int&#160;&#160;&#160;<a class="el" href="structArgInf.html#a053ccdce92762ff8fecd64a3ce561aea">index</a></td></tr>
 <tr class="separator:a5e6a7c7e09c751f2bedc7fc502a52536"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7f40cf76bee98b10f0eb3d865b2b912"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><b>t</b></td></tr>
+<tr class="memitem:ae7f40cf76bee98b10f0eb3d865b2b912"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structArgInf.html#ae7f40cf76bee98b10f0eb3d865b2b912">t</a></td></tr>
 <tr class="separator:ae7f40cf76bee98b10f0eb3d865b2b912"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Field Documentation</h2>
+<a class="anchor" id="a9a45faac36b5ff6b969faa85446f40e1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ArgInf::adr_of</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5ce0eda4a228042bd33b247f80e61144"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ArgInf::dbl_val</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a053ccdce92762ff8fecd64a3ce561aea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ArgInf::index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9b94d186b491b4009a1905f86e41ad9c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="gprolog_8h.html#a4d005b136d7fb28537eb1815f7868b63">PlLong</a> ArgInf::int_val</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa4a2dcaf59861c10d3622f1bdcc5ac3d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMem.html">Mem</a> ArgInf::mem</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aae189057e919a389c59d0ee897884c5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* ArgInf::str_val</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae7f40cf76bee98b10f0eb3d865b2b912"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">union { ... } 
+   ArgInf::t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad416abaf87d2e52a23c4d2eb517919e4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="ma__parser_8h.html#a55e83ab108ec469cbb59876c09f146b0">ArgTyp</a> ArgInf::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>gprolog-utf8-tree/src/Ma2Asm/<a class="el" href="ma__parser_8h_source.html">ma_parser.h</a></li>
 </ul>

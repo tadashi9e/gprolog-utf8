@@ -1,0 +1,13 @@
+<map id="Pl_Memberchk_2" name="Pl_Memberchk_2">
+<area shape="rect" id="node2" href="$wam__inst_8c.html#a4dd3742a9df7e98aa1647ef58cf7ff94" title="Pl_Defeasible_Open" alt="" coords="177,5,319,32"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#ac053eb26fdee8a8e71ea9a5ac4079ab0" title="Pl_Get_List" alt="" coords="203,56,293,83"/>
+<area shape="rect" id="node5" href="$wam__inst_8c.html#acd2fdce00a3e2d6fa978b8a195c95746" title="Pl_Unify_Value" alt="" coords="192,107,304,133"/>
+<area shape="rect" id="node7" href="$wam__inst_8c.html#a10bbafcdb34c6e41f239954f493e7cf0" title="Pl_Unify_Void" alt="" coords="195,157,301,184"/>
+<area shape="rect" id="node8" href="$wam__inst_8c.html#a7f4e53f43f9bb41fcd70a02668fcc6cb" title="Pl_Defeasible_Undo" alt="" coords="177,208,319,235"/>
+<area shape="rect" id="node10" href="$wam__inst_8c.html#ab11181944ecf328d3ade45d83f7744d8" title="Pl_Unify_Variable" alt="" coords="185,259,311,285"/>
+<area shape="rect" id="node11" href="$wam__inst_8c.html#a3cac425c36009428de07a2110775a206" title="Pl_Defeasible_Close" alt="" coords="176,309,320,336"/>
+<area shape="rect" id="node3" href="$wam__inst_8c.html#a791f7b0dc613619899bafd954471245b" title="Pl_Create_Choice_Point0" alt="" coords="369,5,541,32"/>
+<area shape="rect" id="node6" href="$wam__inst_8h.html#a098bda85a540e8ca5969063ccfd4ea20" title="Pl_Unify" alt="" coords="419,107,491,133"/>
+<area shape="rect" id="node9" href="$wam__inst_8c.html#af2fd4d15984ba8373ae8bb730e53c853" title="Pl_Update_Choice_Point0" alt="" coords="368,208,543,235"/>
+<area shape="rect" id="node12" href="$wam__inst_8c.html#a32e314a043b471003d40847581a419f7" title="Pl_Delete_Choice_Point0" alt="" coords="370,309,541,336"/>
+</map>

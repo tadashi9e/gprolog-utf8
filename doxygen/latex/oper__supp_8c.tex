@@ -1,0 +1,467 @@
+\hypertarget{oper__supp_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Bips\+F\+D/oper\+\_\+supp.c File Reference}
+\label{oper__supp_8c}\index{gprolog-\/utf8-\/tree/src/\+Bips\+F\+D/oper\+\_\+supp.\+c@{gprolog-\/utf8-\/tree/src/\+Bips\+F\+D/oper\+\_\+supp.\+c}}
+{\ttfamily \#include \char`\"{}engine\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bips\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}engine\+\_\+fd.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bips\+\_\+fd.\+h\char`\"{}}\\*
+Include dependency graph for oper\+\_\+supp.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper__supp_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned \hyperlink{oper__supp_8c_a07241ea92b3ee5481ff09b976e87af9f}{Find\+\_\+\+Expon\+\_\+\+General} (unsigned \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, unsigned \hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}, unsigned $\ast$pxn)
+\item 
+unsigned \hyperlink{oper__supp_8c_a36797700f10616522dee69d4ab91400e}{Pl\+\_\+\+Power} (unsigned \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, unsigned n)
+\item 
+unsigned \hyperlink{oper__supp_8c_ae5bd331b0c79e3c9cc5842dabbb22d1f}{Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Dn} (unsigned \hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}, unsigned n)
+\item 
+unsigned \hyperlink{oper__supp_8c_a39e2cad4623000df07919778b0e469ea}{Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Up} (unsigned \hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}, unsigned n)
+\item 
+unsigned \hyperlink{oper__supp_8c_af7f6282deb2250da4d7e67cf73104df9}{Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Exact} (unsigned \hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}, unsigned n)
+\item 
+unsigned \hyperlink{oper__supp_8c_a50b38e43505c2029f51bfbe690df9e00}{Pl\+\_\+\+Sqrt\+\_\+\+Dn} (unsigned \hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y})
+\item 
+unsigned \hyperlink{oper__supp_8c_a38010dd63776d2e04704ac99f06d857e}{Pl\+\_\+\+Sqrt\+\_\+\+Up} (unsigned \hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y})
+\item 
+unsigned \hyperlink{oper__supp_8c_a460ec1b2b96913fdc94961aeaeae1f55}{Pl\+\_\+\+Sqrt\+\_\+\+Exact} (unsigned \hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y})
+\item 
+unsigned \hyperlink{oper__supp_8c_a082fb014027b6b328deea165155d788d}{Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Dn} (unsigned \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, unsigned \hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y})
+\item 
+unsigned \hyperlink{oper__supp_8c_a306541e44eff41be9a68969e917994f7}{Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Up} (unsigned \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, unsigned \hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y})
+\item 
+unsigned \hyperlink{oper__supp_8c_a10a96fb010779dc6382abef6b061c2ff}{Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Exact} (unsigned \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, unsigned \hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y})
+\item 
+void \hyperlink{oper__supp_8c_ac9a0cd94d5df4a7aeb37c4b2d61a07e7}{Pl\+\_\+\+Full\+\_\+\+Coeff\+\_\+\+Power\+\_\+\+Var} (\hyperlink{structRange}{Range} $\ast$\hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}, int a, \hyperlink{structRange}{Range} $\ast$n)
+\item 
+void \hyperlink{oper__supp_8c_ab80d6689c7be85e77bd12f6f1045d70c}{Pl\+\_\+\+Full\+\_\+\+Find\+\_\+\+Expon} (\hyperlink{structRange}{Range} $\ast$n, int a, \hyperlink{structRange}{Range} $\ast$\hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y})
+\item 
+void \hyperlink{oper__supp_8c_ae26c4a572baccb2d4c4b437e1deb0e21}{Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Power\+\_\+\+Coeff} (\hyperlink{structRange}{Range} $\ast$\hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}, \hyperlink{structRange}{Range} $\ast$\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, int a)
+\item 
+void \hyperlink{oper__supp_8c_af9c9a27aecbd33f44b5d422c36a2288c}{Pl\+\_\+\+Full\+\_\+\+Nth\+\_\+\+Root} (\hyperlink{structRange}{Range} $\ast$\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, \hyperlink{structRange}{Range} $\ast$\hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}, int a)
+\item 
+void \hyperlink{oper__supp_8c_aa140c855c7521c4abd0225ee8b3f8c7b}{Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Power\+\_\+2} (\hyperlink{structRange}{Range} $\ast$\hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y}, \hyperlink{structRange}{Range} $\ast$\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+void \hyperlink{oper__supp_8c_a4d72c8fcbe6507f9a074894e51a852e5}{Pl\+\_\+\+Full\+\_\+\+Sqrt\+\_\+\+Var} (\hyperlink{structRange}{Range} $\ast$\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, \hyperlink{structRange}{Range} $\ast$\hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y})
+\item 
+void \hyperlink{oper__supp_8c_a30be23f966fef653dc03092613673b53}{Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Div\+\_\+\+Var} (\hyperlink{structRange}{Range} $\ast$\hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x}, \hyperlink{structRange}{Range} $\ast$z, \hyperlink{structRange}{Range} $\ast$\hyperlink{asm__inst_8c_a0a2f84ed7838f07779ae24c5a9086d33}{y})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Find\+\_\+\+Expon\+\_\+\+General@{Find\+\_\+\+Expon\+\_\+\+General}}
+\index{Find\+\_\+\+Expon\+\_\+\+General@{Find\+\_\+\+Expon\+\_\+\+General}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Find\+\_\+\+Expon\+\_\+\+General(unsigned x, unsigned y, unsigned $\ast$pxn)}{Find_Expon_General(unsigned x, unsigned y, unsigned *pxn)}}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned Find\+\_\+\+Expon\+\_\+\+General (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{x, }
+\item[{unsigned}]{y, }
+\item[{unsigned $\ast$}]{pxn}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{oper__supp_8c_a07241ea92b3ee5481ff09b976e87af9f}{}\label{oper__supp_8c_a07241ea92b3ee5481ff09b976e87af9f}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper__supp_8c_a07241ea92b3ee5481ff09b976e87af9f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Dn@{Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Dn}}
+\index{Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Dn@{Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Dn}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Dn(unsigned x, unsigned y)}{Pl_Find_Expon_Dn(unsigned x, unsigned y)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Dn (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{x, }
+\item[{unsigned}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__supp_8c_a082fb014027b6b328deea165155d788d}{}\label{oper__supp_8c_a082fb014027b6b328deea165155d788d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{oper__supp_8c_a082fb014027b6b328deea165155d788d_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Exact@{Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Exact}}
+\index{Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Exact@{Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Exact}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Exact(unsigned x, unsigned y)}{Pl_Find_Expon_Exact(unsigned x, unsigned y)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Exact (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{x, }
+\item[{unsigned}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__supp_8c_a10a96fb010779dc6382abef6b061c2ff}{}\label{oper__supp_8c_a10a96fb010779dc6382abef6b061c2ff}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{oper__supp_8c_a10a96fb010779dc6382abef6b061c2ff_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{oper__supp_8c_a10a96fb010779dc6382abef6b061c2ff_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Up@{Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Up}}
+\index{Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Up@{Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Up}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Up(unsigned x, unsigned y)}{Pl_Find_Expon_Up(unsigned x, unsigned y)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Pl\+\_\+\+Find\+\_\+\+Expon\+\_\+\+Up (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{x, }
+\item[{unsigned}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__supp_8c_a306541e44eff41be9a68969e917994f7}{}\label{oper__supp_8c_a306541e44eff41be9a68969e917994f7}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{oper__supp_8c_a306541e44eff41be9a68969e917994f7_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Pl\+\_\+\+Full\+\_\+\+Coeff\+\_\+\+Power\+\_\+\+Var@{Pl\+\_\+\+Full\+\_\+\+Coeff\+\_\+\+Power\+\_\+\+Var}}
+\index{Pl\+\_\+\+Full\+\_\+\+Coeff\+\_\+\+Power\+\_\+\+Var@{Pl\+\_\+\+Full\+\_\+\+Coeff\+\_\+\+Power\+\_\+\+Var}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Full\+\_\+\+Coeff\+\_\+\+Power\+\_\+\+Var(\+Range $\ast$y, int a, Range $\ast$n)}{Pl_Full_Coeff_Power_Var(Range *y, int a, Range *n)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Full\+\_\+\+Coeff\+\_\+\+Power\+\_\+\+Var (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{y, }
+\item[{int}]{a, }
+\item[{{\bf Range} $\ast$}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__supp_8c_ac9a0cd94d5df4a7aeb37c4b2d61a07e7}{}\label{oper__supp_8c_ac9a0cd94d5df4a7aeb37c4b2d61a07e7}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{oper__supp_8c_ac9a0cd94d5df4a7aeb37c4b2d61a07e7_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Pl\+\_\+\+Full\+\_\+\+Find\+\_\+\+Expon@{Pl\+\_\+\+Full\+\_\+\+Find\+\_\+\+Expon}}
+\index{Pl\+\_\+\+Full\+\_\+\+Find\+\_\+\+Expon@{Pl\+\_\+\+Full\+\_\+\+Find\+\_\+\+Expon}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Full\+\_\+\+Find\+\_\+\+Expon(\+Range $\ast$n, int a, Range $\ast$y)}{Pl_Full_Find_Expon(Range *n, int a, Range *y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Full\+\_\+\+Find\+\_\+\+Expon (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{n, }
+\item[{int}]{a, }
+\item[{{\bf Range} $\ast$}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__supp_8c_ab80d6689c7be85e77bd12f6f1045d70c}{}\label{oper__supp_8c_ab80d6689c7be85e77bd12f6f1045d70c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper__supp_8c_ab80d6689c7be85e77bd12f6f1045d70c_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Pl\+\_\+\+Full\+\_\+\+Nth\+\_\+\+Root@{Pl\+\_\+\+Full\+\_\+\+Nth\+\_\+\+Root}}
+\index{Pl\+\_\+\+Full\+\_\+\+Nth\+\_\+\+Root@{Pl\+\_\+\+Full\+\_\+\+Nth\+\_\+\+Root}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Full\+\_\+\+Nth\+\_\+\+Root(\+Range $\ast$x, Range $\ast$y, int a)}{Pl_Full_Nth_Root(Range *x, Range *y, int a)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Full\+\_\+\+Nth\+\_\+\+Root (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{x, }
+\item[{{\bf Range} $\ast$}]{y, }
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__supp_8c_af9c9a27aecbd33f44b5d422c36a2288c}{}\label{oper__supp_8c_af9c9a27aecbd33f44b5d422c36a2288c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper__supp_8c_af9c9a27aecbd33f44b5d422c36a2288c_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Pl\+\_\+\+Full\+\_\+\+Sqrt\+\_\+\+Var@{Pl\+\_\+\+Full\+\_\+\+Sqrt\+\_\+\+Var}}
+\index{Pl\+\_\+\+Full\+\_\+\+Sqrt\+\_\+\+Var@{Pl\+\_\+\+Full\+\_\+\+Sqrt\+\_\+\+Var}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Full\+\_\+\+Sqrt\+\_\+\+Var(\+Range $\ast$x, Range $\ast$y)}{Pl_Full_Sqrt_Var(Range *x, Range *y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Full\+\_\+\+Sqrt\+\_\+\+Var (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{x, }
+\item[{{\bf Range} $\ast$}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__supp_8c_a4d72c8fcbe6507f9a074894e51a852e5}{}\label{oper__supp_8c_a4d72c8fcbe6507f9a074894e51a852e5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper__supp_8c_a4d72c8fcbe6507f9a074894e51a852e5_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Div\+\_\+\+Var@{Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Div\+\_\+\+Var}}
+\index{Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Div\+\_\+\+Var@{Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Div\+\_\+\+Var}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Div\+\_\+\+Var(\+Range $\ast$x, Range $\ast$z, Range $\ast$y)}{Pl_Full_Var_Div_Var(Range *x, Range *z, Range *y)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Div\+\_\+\+Var (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{x, }
+\item[{{\bf Range} $\ast$}]{z, }
+\item[{{\bf Range} $\ast$}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__supp_8c_a30be23f966fef653dc03092613673b53}{}\label{oper__supp_8c_a30be23f966fef653dc03092613673b53}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper__supp_8c_a30be23f966fef653dc03092613673b53_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Power\+\_\+2@{Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Power\+\_\+2}}
+\index{Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Power\+\_\+2@{Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Power\+\_\+2}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Power\+\_\+2(\+Range $\ast$y, Range $\ast$x)}{Pl_Full_Var_Power_2(Range *y, Range *x)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Power\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{y, }
+\item[{{\bf Range} $\ast$}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__supp_8c_aa140c855c7521c4abd0225ee8b3f8c7b}{}\label{oper__supp_8c_aa140c855c7521c4abd0225ee8b3f8c7b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{oper__supp_8c_aa140c855c7521c4abd0225ee8b3f8c7b_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Power\+\_\+\+Coeff@{Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Power\+\_\+\+Coeff}}
+\index{Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Power\+\_\+\+Coeff@{Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Power\+\_\+\+Coeff}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Power\+\_\+\+Coeff(\+Range $\ast$y, Range $\ast$x, int a)}{Pl_Full_Var_Power_Coeff(Range *y, Range *x, int a)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Full\+\_\+\+Var\+\_\+\+Power\+\_\+\+Coeff (
+\begin{DoxyParamCaption}
+\item[{{\bf Range} $\ast$}]{y, }
+\item[{{\bf Range} $\ast$}]{x, }
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__supp_8c_ae26c4a572baccb2d4c4b437e1deb0e21}{}\label{oper__supp_8c_ae26c4a572baccb2d4c4b437e1deb0e21}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{oper__supp_8c_ae26c4a572baccb2d4c4b437e1deb0e21_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Dn@{Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Dn}}
+\index{Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Dn@{Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Dn}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Dn(unsigned y, unsigned n)}{Pl_Nth_Root_Dn(unsigned y, unsigned n)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Dn (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{y, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__supp_8c_ae5bd331b0c79e3c9cc5842dabbb22d1f}{}\label{oper__supp_8c_ae5bd331b0c79e3c9cc5842dabbb22d1f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{oper__supp_8c_ae5bd331b0c79e3c9cc5842dabbb22d1f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper__supp_8c_ae5bd331b0c79e3c9cc5842dabbb22d1f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Exact@{Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Exact}}
+\index{Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Exact@{Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Exact}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Exact(unsigned y, unsigned n)}{Pl_Nth_Root_Exact(unsigned y, unsigned n)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Exact (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{y, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__supp_8c_af7f6282deb2250da4d7e67cf73104df9}{}\label{oper__supp_8c_af7f6282deb2250da4d7e67cf73104df9}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper__supp_8c_af7f6282deb2250da4d7e67cf73104df9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{oper__supp_8c_af7f6282deb2250da4d7e67cf73104df9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Up@{Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Up}}
+\index{Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Up@{Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Up}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Up(unsigned y, unsigned n)}{Pl_Nth_Root_Up(unsigned y, unsigned n)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Pl\+\_\+\+Nth\+\_\+\+Root\+\_\+\+Up (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{y, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__supp_8c_a39e2cad4623000df07919778b0e469ea}{}\label{oper__supp_8c_a39e2cad4623000df07919778b0e469ea}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper__supp_8c_a39e2cad4623000df07919778b0e469ea_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Pl\+\_\+\+Power@{Pl\+\_\+\+Power}}
+\index{Pl\+\_\+\+Power@{Pl\+\_\+\+Power}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Power(unsigned x, unsigned n)}{Pl_Power(unsigned x, unsigned n)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Pl\+\_\+\+Power (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{x, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__supp_8c_a36797700f10616522dee69d4ab91400e}{}\label{oper__supp_8c_a36797700f10616522dee69d4ab91400e}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper__supp_8c_a36797700f10616522dee69d4ab91400e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Pl\+\_\+\+Sqrt\+\_\+\+Dn@{Pl\+\_\+\+Sqrt\+\_\+\+Dn}}
+\index{Pl\+\_\+\+Sqrt\+\_\+\+Dn@{Pl\+\_\+\+Sqrt\+\_\+\+Dn}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Sqrt\+\_\+\+Dn(unsigned y)}{Pl_Sqrt_Dn(unsigned y)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Pl\+\_\+\+Sqrt\+\_\+\+Dn (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__supp_8c_a50b38e43505c2029f51bfbe690df9e00}{}\label{oper__supp_8c_a50b38e43505c2029f51bfbe690df9e00}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{oper__supp_8c_a50b38e43505c2029f51bfbe690df9e00_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Pl\+\_\+\+Sqrt\+\_\+\+Exact@{Pl\+\_\+\+Sqrt\+\_\+\+Exact}}
+\index{Pl\+\_\+\+Sqrt\+\_\+\+Exact@{Pl\+\_\+\+Sqrt\+\_\+\+Exact}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Sqrt\+\_\+\+Exact(unsigned y)}{Pl_Sqrt_Exact(unsigned y)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Pl\+\_\+\+Sqrt\+\_\+\+Exact (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__supp_8c_a460ec1b2b96913fdc94961aeaeae1f55}{}\label{oper__supp_8c_a460ec1b2b96913fdc94961aeaeae1f55}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{oper__supp_8c_a460ec1b2b96913fdc94961aeaeae1f55_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{oper__supp_8c_a460ec1b2b96913fdc94961aeaeae1f55_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}!Pl\+\_\+\+Sqrt\+\_\+\+Up@{Pl\+\_\+\+Sqrt\+\_\+\+Up}}
+\index{Pl\+\_\+\+Sqrt\+\_\+\+Up@{Pl\+\_\+\+Sqrt\+\_\+\+Up}!oper\+\_\+supp.\+c@{oper\+\_\+supp.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Sqrt\+\_\+\+Up(unsigned y)}{Pl_Sqrt_Up(unsigned y)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Pl\+\_\+\+Sqrt\+\_\+\+Up (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{oper__supp_8c_a38010dd63776d2e04704ac99f06d857e}{}\label{oper__supp_8c_a38010dd63776d2e04704ac99f06d857e}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{oper__supp_8c_a38010dd63776d2e04704ac99f06d857e_cgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,6 @@
+<map id="mmap_resize" name="mmap_resize">
+<area shape="rect" id="node2" href="$dl__malloc_8c.html#af8adec320537d6e63bc68e76633a1f0e" title="try_realloc_chunk" alt="" coords="153,56,277,83"/>
+<area shape="rect" id="node3" href="$dl__malloc_8c.html#a79e7e77bbc6d5208678b007bf89aab61" title="dlrealloc" alt="" coords="363,5,434,32"/>
+<area shape="rect" id="node4" href="$dl__malloc_8c.html#afc9bc229eecc960b0c2bfd9033b6e2e0" title="dlrealloc_in_place" alt="" coords="336,56,461,83"/>
+<area shape="rect" id="node5" href="$dl__malloc_8c.html#a8923af8a1039983906f9617a57022e98" title="dlmalloc_usable_size" alt="" coords="325,107,472,133"/>
+</map>

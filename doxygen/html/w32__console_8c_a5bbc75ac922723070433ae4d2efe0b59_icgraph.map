@@ -1,0 +1,6 @@
+<map id="Activate_Options" name="Activate_Options">
+<area shape="rect" id="node2" href="$w32__console_8c.html#a2363368e7d52d5df8c4f20cb13283faa" title="StartWinMain" alt="" coords="176,5,277,32"/>
+<area shape="rect" id="node3" href="$w32__console_8c.html#a3e359465ba75ec15014d5af9c09d3db9" title="CallMain" alt="" coords="325,5,399,32"/>
+<area shape="rect" id="node4" href="$w32__console_8c.html#a4df61e90931602252f4bd1addb17902f" title="W32GC_Start_Window" alt="" coords="447,5,605,32"/>
+<area shape="rect" id="node5" href="$w32gc__interf_8c.html#a9bbe083e9a45c3fda6abf2737bebc2ad" title="__declspec" alt="" coords="653,5,741,32"/>
+</map>

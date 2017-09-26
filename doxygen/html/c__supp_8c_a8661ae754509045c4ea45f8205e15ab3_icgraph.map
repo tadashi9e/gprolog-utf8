@@ -1,0 +1,33 @@
+<map id="Pl_Check_For_Un_Integer" name="Pl_Check_For_Un_Integer">
+<area shape="rect" id="node2" href="$char__io__c_8c.html#a991e3204fa1034f2ac6a2e2673d84cdd" title="Pl_Get_Key_2" alt="" coords="275,5,381,32"/>
+<area shape="rect" id="node4" href="$char__io__c_8c.html#a41e9061d4dc3707ab8082e9faa4e3dc4" title="Pl_Get_Key_No_Echo_2" alt="" coords="245,107,411,133"/>
+<area shape="rect" id="node6" href="$error__supp_8c.html#af44308c7cc26377afc130abf496a5761" title="Pl_Syntax_Error_Info_4" alt="" coords="248,208,408,235"/>
+<area shape="rect" id="node7" href="$g__var__inl__c_8c.html#a228c3d665d02b6e9b4ce641fd02c3759" title="G_Array_Size" alt="" coords="277,259,379,285"/>
+<area shape="rect" id="node9" href="$g__var__inl__c_8c.html#a811e682586bdbb15f9356d20ece87995" title="G_Inc_Dec" alt="" coords="284,309,372,336"/>
+<area shape="rect" id="node18" href="$os__interf__c_8c.html#a5bf4c430ebf5e85c84429e8dc8d65f88" title="Pl_Shell_2" alt="" coords="286,360,370,387"/>
+<area shape="rect" id="node19" href="$os__interf__c_8c.html#ae8dae3ded7d45738da1113897dc153fd" title="Pl_System_2" alt="" coords="278,411,378,437"/>
+<area shape="rect" id="node20" href="$os__interf__c_8c.html#aed2810d942c8bfb1e7912897451fb1e3" title="Pl_Spawn_3" alt="" coords="281,461,375,488"/>
+<area shape="rect" id="node21" href="$os__interf__c_8c.html#acb3f801a7f7a3896fd434b6103b1803e" title="Pl_Wait_2" alt="" coords="287,512,369,539"/>
+<area shape="rect" id="node22" href="$os__interf__c_8c.html#a38ad6e72bb27e8663c3427785317e96a" title="Date_Time_To_Prolog" alt="" coords="252,563,404,589"/>
+<area shape="rect" id="node25" href="$read__c_8c.html#a14bbc5a3af49c6886c57ee78621ff1e3" title="Pl_Read_Integer_2" alt="" coords="261,613,395,640"/>
+<area shape="rect" id="node27" href="$src__rdr__c_8c.html#ac96432d06597452496db4e53b38838b7" title="Pl_SR_Get_Position_3" alt="" coords="250,664,406,691"/>
+<area shape="rect" id="node28" href="$src__rdr__c_8c.html#a026f9d7710d10218e3dbc6098ce25fa8" title="Pl_SR_Get_Size_Counters_3" alt="" coords="231,715,425,741"/>
+<area shape="rect" id="node29" href="$src__rdr__c_8c.html#a95335e6c19a5504c1f8113af99243135" title="Pl_SR_Get_Error_Counters_3" alt="" coords="229,765,427,792"/>
+<area shape="rect" id="node30" href="$stream__c_8c.html#a2f37a839880302862efe1de5aa672ace" title="Pl_Seek_4" alt="" coords="285,816,371,843"/>
+<area shape="rect" id="node31" href="$term__supp_8c.html#ab6030f1e3ba17884549245a2180d345f" title="Pl_Term_Hash_4" alt="" coords="267,867,389,893"/>
+<area shape="rect" id="node3" href="$char__io__c_8c.html#a6a8b7ad4c74d227584c2275c4ba5d27e" title="Pl_Get_Key_1" alt="" coords="505,5,611,32"/>
+<area shape="rect" id="node5" href="$char__io__c_8c.html#a87ebd235975250a51e3ebfac93ab2572" title="Pl_Get_Key_No_Echo_1" alt="" coords="475,56,641,83"/>
+<area shape="rect" id="node8" href="$inl__protos_8h.html#a58c58d879d76472408135b5080548ab1" title="Pl_Blt_G_Array_Size" alt="" coords="485,107,631,133"/>
+<area shape="rect" id="node10" href="$inl__protos_8h.html#a9a50ded60e35a6ad37dde736c2ffeec9" title="Pl_Blt_G_Inc" alt="" coords="509,157,607,184"/>
+<area shape="rect" id="node11" href="$inl__protos_8h.html#a1f17054db1d10358bdee3e57d46733a7" title="Pl_Blt_G_Inco" alt="" coords="505,208,611,235"/>
+<area shape="rect" id="node12" href="$inl__protos_8h.html#a6dd6be1cf4dd20ca5a77882c0dddcc88" title="Pl_Blt_G_Inc_2" alt="" coords="501,259,615,285"/>
+<area shape="rect" id="node13" href="$inl__protos_8h.html#a508ceccac9aa7107b876633eeb9a9507" title="Pl_Blt_G_Inc_3" alt="" coords="501,309,615,336"/>
+<area shape="rect" id="node14" href="$inl__protos_8h.html#a93ba4fbc798c83fa78d6a556cef4fe76" title="Pl_Blt_G_Dec" alt="" coords="505,360,611,387"/>
+<area shape="rect" id="node15" href="$inl__protos_8h.html#a74481ae671c1a48e4bcabc7b1adf37db" title="Pl_Blt_G_Deco" alt="" coords="502,411,614,437"/>
+<area shape="rect" id="node16" href="$inl__protos_8h.html#a1a0c31459fa1c6ff083aad0d7742021a" title="Pl_Blt_G_Dec_2" alt="" coords="499,461,617,488"/>
+<area shape="rect" id="node17" href="$inl__protos_8h.html#a493712ccc5503fcdcb50e5f1ee3d1fad" title="Pl_Blt_G_Dec_3" alt="" coords="499,512,617,539"/>
+<area shape="rect" id="node23" href="$os__interf__c_8c.html#ab64fb182b04e85fee2277a3c9185bafd" title="Pl_File_Prop_Date_2" alt="" coords="485,563,631,589"/>
+<area shape="rect" id="node24" href="$os__interf__c_8c.html#af56a4ebf01e5fd429dffae060b119fff" title="Pl_Date_Time_1" alt="" coords="499,613,617,640"/>
+<area shape="rect" id="node26" href="$read__c_8c.html#ae19bb85f1617f7425c24f5cacddbd7bd" title="Pl_Read_Integer_1" alt="" coords="491,664,625,691"/>
+<area shape="rect" id="node32" href="$term__supp_8c.html#a6edcb23009a9a5206b978db2ffffb745" title="Pl_Term_Hash_2" alt="" coords="497,867,619,893"/>
+</map>

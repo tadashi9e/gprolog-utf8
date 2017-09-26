@@ -1,0 +1,9 @@
+<map id="Load_Mem_Into_Reg" name="Load_Mem_Into_Reg">
+<area shape="rect" id="node2" href="$sparc64__any_8c.html#a26b1354d98d85d34703d36af84a2fa7f" title="Move_From_Reg_X" alt="" coords="209,5,347,32"/>
+<area shape="rect" id="node3" href="$sparc64__any_8c.html#af58d895acfbf04e780eee5aa19d0ebd1" title="Move_From_Reg_Y" alt="" coords="209,56,347,83"/>
+<area shape="rect" id="node4" href="$sparc64__any_8c.html#a964a096b28818e43f7e51dd5dd6f76f0" title="Call_C_Arg_Mem_L" alt="" coords="209,107,347,133"/>
+<area shape="rect" id="node5" href="$sparc64__any_8c.html#a2f2f15033fa151bd5b50ea330c95606f" title="Call_C_Arg_Reg_X" alt="" coords="210,157,346,184"/>
+<area shape="rect" id="node6" href="$sparc64__any_8c.html#a9336ef2973a657cc4140763f6bca9b55" title="Call_C_Arg_Reg_Y" alt="" coords="210,208,346,235"/>
+<area shape="rect" id="node7" href="$sparc64__any_8c.html#a44157a3aa7743bec9bd4c63203183253" title="Call_C_Arg_Foreign_L" alt="" coords="201,259,355,285"/>
+<area shape="rect" id="node8" href="$sparc64__any_8c.html#a74eac647b8a008ece21cc0eeffe98ef5" title="Call_C_Arg_Foreign_D" alt="" coords="200,309,356,336"/>
+</map>

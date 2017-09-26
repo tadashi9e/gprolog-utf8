@@ -1,0 +1,7 @@
+<map id="Pl_Init_Machine" name="Pl_Init_Machine">
+<area shape="rect" id="node2" href="$machine_8c.html#a49c3210d01108defd9d8a0b6ea624f95" title="Pl_M_User_Time" alt="" coords="177,5,299,32"/>
+<area shape="rect" id="node4" href="$machine_8c.html#a11f5fe79e24625b351bddd83a9c58b5a" title="Pl_M_System_Time" alt="" coords="168,56,308,83"/>
+<area shape="rect" id="node5" href="$machine_8c.html#ae18414c738bea5a3710adc972fa478ef" title="Pl_M_Real_Time" alt="" coords="177,107,299,133"/>
+<area shape="rect" id="node6" href="$machine1_8c.html#a65fbc5252410c14048b559d68349cdf6" title="Pl_Init_Machine1" alt="" coords="177,157,299,184"/>
+<area shape="rect" id="node3" href="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907" title="Pl_Fatal_Error" alt="" coords="356,56,461,83"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Pl_Stdio_Desc_Of_Stream" name="Pl_Stdio_Desc_Of_Stream">
+<area shape="rect" id="node2" href="$stream__c_8c.html#a289f603e7feaeef905b26e6229358bd5" title="Pl_Set_Stream_Type_2" alt="" coords="237,5,397,32"/>
+<area shape="rect" id="node3" href="$stream__supp_8h.html#ae7dee9b513a7f8d5dcefeba95634308f" title="Pl_Set_Stream_Buffering" alt="" coords="232,56,401,83"/>
+<area shape="rect" id="node5" href="$stream__supp_8h.html#afd3fd273e19e3453baf0ae1298e1c5fe" title="Pl_Io_Fileno_Of_Stream" alt="" coords="235,107,399,133"/>
+<area shape="rect" id="node4" href="$stream__c_8c.html#a3904fe10fcd57975321f61a8011252eb" title="Pl_Set_Stream_Buffering_2" alt="" coords="449,56,632,83"/>
+<area shape="rect" id="node6" href="$os__interf__c_8c.html#a9ff1c076f540ee27495d07370d819eb4" title="Select_Init_Set" alt="" coords="485,107,596,133"/>
+<area shape="rect" id="node8" href="$os__interf__c_8c.html#abefebc3f65987b4c69c9a813e76edb88" title="Select_Init_Ready_List" alt="" coords="462,157,619,184"/>
+<area shape="rect" id="node7" href="$os__interf__c_8c.html#acd08b49038658fea04f609ec78997019" title="Pl_Select_5" alt="" coords="680,132,772,159"/>
+</map>

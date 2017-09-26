@@ -1,0 +1,8 @@
+<map id="TTY_Getc" name="TTY_Getc">
+<area shape="rect" id="node2" href="$stream__supp_8c.html#a46a2de744d0ab922af4d2edc06e1ac48" title="Init_Stream_Supp" alt="" coords="156,5,283,32"/>
+<area shape="rect" id="node3" href="$stream__supp_8h.html#a2f93cffadbbe16ff8c57ac78497b9c14" title="Pl_Stream_Gets_Prompt" alt="" coords="136,56,303,83"/>
+<area shape="rect" id="node4" href="$debugger__c_8c.html#a11e816a7993314a8e53789bac9a67f53" title="Pl_Debug_Wam" alt="" coords="871,56,988,83"/>
+<area shape="rect" id="node5" href="$debugger__c_8c.html#a038a5ba206b2861a848c62b9ec060b65" title="Modify_Wam_Word" alt="" coords="351,81,488,108"/>
+<area shape="rect" id="node6" href="$debugger__c_8c.html#acf94b4468a0d9f4b6e103f388bb3cb63" title="Write_Data_Modify" alt="" coords="536,81,671,108"/>
+<area shape="rect" id="node7" href="$debugger__c_8c.html#ae03520aa896def6dd036699b888bd0ef" title="Find_Function" alt="" coords="719,81,823,108"/>
+</map>

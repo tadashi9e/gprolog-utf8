@@ -1,0 +1,167 @@
+\hypertarget{prolog__path_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Top\+Comp/prolog\+\_\+path.c File Reference}
+\label{prolog__path_8c}\index{gprolog-\/utf8-\/tree/src/\+Top\+Comp/prolog\+\_\+path.\+c@{gprolog-\/utf8-\/tree/src/\+Top\+Comp/prolog\+\_\+path.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/gp\+\_\+config.\+h\char`\"{}}\\*
+Include dependency graph for prolog\+\_\+path.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prolog__path_8c__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prolog__path_8c__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{prolog__path_8c_a8bb6610ed907d8b8ef07f583c4a6bbc5}{\+\_\+\+P\+R\+O\+L\+O\+G\+\_\+\+P\+A\+T\+H\+\_\+C}
+\item 
+\#define \hyperlink{prolog__path_8c_aace2175c229395af9e5064c331390718}{C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+E\+XE}~G\+P\+LC E\+X\+E\+\_\+\+S\+U\+F\+F\+IX
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static char $\ast$ \hyperlink{prolog__path_8c_ad32a239b1d7b356e49ac366fd1583116}{Get\+\_\+\+Prolog\+\_\+\+Path\+\_\+\+From\+\_\+\+Exec} (char $\ast$str, int $\ast$\hyperlink{top__comp_8c_a7fc20cb486da8b79abf3a3c0154f44a6}{devel\+\_\+mode})
+\item 
+static char $\ast$ \hyperlink{prolog__path_8c_a86fe381e1f16682b85242a27356df7ca}{Is\+\_\+\+A\+\_\+\+Valid\+\_\+\+Root} (char $\ast$str, int $\ast$\hyperlink{top__comp_8c_a7fc20cb486da8b79abf3a3c0154f44a6}{devel\+\_\+mode})
+\item 
+static char $\ast$ \hyperlink{prolog__path_8c_ab3203706c871e28d9b94c003406956a6}{Search\+\_\+\+Path} (char $\ast$file)
+\item 
+static char $\ast$ \hyperlink{prolog__path_8c_ab1fba1889b5219b65cfaedf8df2d4217}{Get\+\_\+\+Prolog\+\_\+\+Path} (char $\ast$argv0, int $\ast$\hyperlink{top__comp_8c_a7fc20cb486da8b79abf3a3c0154f44a6}{devel\+\_\+mode})
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{prolog\+\_\+path.\+c@{prolog\+\_\+path.\+c}!\+\_\+\+P\+R\+O\+L\+O\+G\+\_\+\+P\+A\+T\+H\+\_\+C@{\+\_\+\+P\+R\+O\+L\+O\+G\+\_\+\+P\+A\+T\+H\+\_\+C}}
+\index{\+\_\+\+P\+R\+O\+L\+O\+G\+\_\+\+P\+A\+T\+H\+\_\+C@{\+\_\+\+P\+R\+O\+L\+O\+G\+\_\+\+P\+A\+T\+H\+\_\+C}!prolog\+\_\+path.\+c@{prolog\+\_\+path.\+c}}
+\subsubsection[{\texorpdfstring{\+\_\+\+P\+R\+O\+L\+O\+G\+\_\+\+P\+A\+T\+H\+\_\+C}{_PROLOG_PATH_C}}]{\setlength{\rightskip}{0pt plus 5cm}\#define \+\_\+\+P\+R\+O\+L\+O\+G\+\_\+\+P\+A\+T\+H\+\_\+C}\hypertarget{prolog__path_8c_a8bb6610ed907d8b8ef07f583c4a6bbc5}{}\label{prolog__path_8c_a8bb6610ed907d8b8ef07f583c4a6bbc5}
+\index{prolog\+\_\+path.\+c@{prolog\+\_\+path.\+c}!C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+E\+XE@{C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+E\+XE}}
+\index{C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+E\+XE@{C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+E\+XE}!prolog\+\_\+path.\+c@{prolog\+\_\+path.\+c}}
+\subsubsection[{\texorpdfstring{C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+E\+XE}{COMPILER_EXE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+E\+XE~G\+P\+LC E\+X\+E\+\_\+\+S\+U\+F\+F\+IX}\hypertarget{prolog__path_8c_aace2175c229395af9e5064c331390718}{}\label{prolog__path_8c_aace2175c229395af9e5064c331390718}
+
+
+\subsection{Function Documentation}
+\index{prolog\+\_\+path.\+c@{prolog\+\_\+path.\+c}!Get\+\_\+\+Prolog\+\_\+\+Path@{Get\+\_\+\+Prolog\+\_\+\+Path}}
+\index{Get\+\_\+\+Prolog\+\_\+\+Path@{Get\+\_\+\+Prolog\+\_\+\+Path}!prolog\+\_\+path.\+c@{prolog\+\_\+path.\+c}}
+\subsubsection[{\texorpdfstring{Get\+\_\+\+Prolog\+\_\+\+Path(char $\ast$argv0, int $\ast$devel\+\_\+mode)}{Get_Prolog_Path(char *argv0, int *devel_mode)}}]{\setlength{\rightskip}{0pt plus 5cm}static char$\ast$ Get\+\_\+\+Prolog\+\_\+\+Path (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{argv0, }
+\item[{int $\ast$}]{devel\+\_\+mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{prolog__path_8c_ab1fba1889b5219b65cfaedf8df2d4217}{}\label{prolog__path_8c_ab1fba1889b5219b65cfaedf8df2d4217}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prolog__path_8c_ab1fba1889b5219b65cfaedf8df2d4217_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prolog__path_8c_ab1fba1889b5219b65cfaedf8df2d4217_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{prolog\+\_\+path.\+c@{prolog\+\_\+path.\+c}!Get\+\_\+\+Prolog\+\_\+\+Path\+\_\+\+From\+\_\+\+Exec@{Get\+\_\+\+Prolog\+\_\+\+Path\+\_\+\+From\+\_\+\+Exec}}
+\index{Get\+\_\+\+Prolog\+\_\+\+Path\+\_\+\+From\+\_\+\+Exec@{Get\+\_\+\+Prolog\+\_\+\+Path\+\_\+\+From\+\_\+\+Exec}!prolog\+\_\+path.\+c@{prolog\+\_\+path.\+c}}
+\subsubsection[{\texorpdfstring{Get\+\_\+\+Prolog\+\_\+\+Path\+\_\+\+From\+\_\+\+Exec(char $\ast$str, int $\ast$devel\+\_\+mode)}{Get_Prolog_Path_From_Exec(char *str, int *devel_mode)}}]{\setlength{\rightskip}{0pt plus 5cm}static char $\ast$ Get\+\_\+\+Prolog\+\_\+\+Path\+\_\+\+From\+\_\+\+Exec (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{int $\ast$}]{devel\+\_\+mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{prolog__path_8c_ad32a239b1d7b356e49ac366fd1583116}{}\label{prolog__path_8c_ad32a239b1d7b356e49ac366fd1583116}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prolog__path_8c_ad32a239b1d7b356e49ac366fd1583116_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prolog__path_8c_ad32a239b1d7b356e49ac366fd1583116_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{prolog\+\_\+path.\+c@{prolog\+\_\+path.\+c}!Is\+\_\+\+A\+\_\+\+Valid\+\_\+\+Root@{Is\+\_\+\+A\+\_\+\+Valid\+\_\+\+Root}}
+\index{Is\+\_\+\+A\+\_\+\+Valid\+\_\+\+Root@{Is\+\_\+\+A\+\_\+\+Valid\+\_\+\+Root}!prolog\+\_\+path.\+c@{prolog\+\_\+path.\+c}}
+\subsubsection[{\texorpdfstring{Is\+\_\+\+A\+\_\+\+Valid\+\_\+\+Root(char $\ast$str, int $\ast$devel\+\_\+mode)}{Is_A_Valid_Root(char *str, int *devel_mode)}}]{\setlength{\rightskip}{0pt plus 5cm}static char $\ast$ Is\+\_\+\+A\+\_\+\+Valid\+\_\+\+Root (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{int $\ast$}]{devel\+\_\+mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{prolog__path_8c_a86fe381e1f16682b85242a27356df7ca}{}\label{prolog__path_8c_a86fe381e1f16682b85242a27356df7ca}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prolog__path_8c_a86fe381e1f16682b85242a27356df7ca_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{prolog\+\_\+path.\+c@{prolog\+\_\+path.\+c}!Search\+\_\+\+Path@{Search\+\_\+\+Path}}
+\index{Search\+\_\+\+Path@{Search\+\_\+\+Path}!prolog\+\_\+path.\+c@{prolog\+\_\+path.\+c}}
+\subsubsection[{\texorpdfstring{Search\+\_\+\+Path(char $\ast$file)}{Search_Path(char *file)}}]{\setlength{\rightskip}{0pt plus 5cm}static char $\ast$ Search\+\_\+\+Path (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{prolog__path_8c_ab3203706c871e28d9b94c003406956a6}{}\label{prolog__path_8c_ab3203706c871e28d9b94c003406956a6}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prolog__path_8c_ab3203706c871e28d9b94c003406956a6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{prolog__path_8c_ab3203706c871e28d9b94c003406956a6_icgraph}
+\end{center}
+\end{figure}
+
+

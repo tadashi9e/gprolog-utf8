@@ -1,0 +1,6 @@
+<map id="Pl_Display_2" name="Pl_Display_2">
+<area shape="rect" id="node2" href="$gprolog_8h.html#a58495a55b4c5bf12dddd0a772495866f" title="Pl_Display_To_String" alt="" coords="161,5,309,32"/>
+<area shape="rect" id="node3" href="$const__io__c_8c.html#a1b8763761393922540d1870844acd9a3" title="Pl_Display_To_Atom_2" alt="" coords="156,56,315,83"/>
+<area shape="rect" id="node4" href="$const__io__c_8c.html#acfba115609d9f07024572aa0d536afd6" title="Pl_Display_To_Chars_2" alt="" coords="154,107,317,133"/>
+<area shape="rect" id="node5" href="$const__io__c_8c.html#a3cde09982726aebf40d86a2e131d31a9" title="Pl_Display_To_Codes_2" alt="" coords="152,157,319,184"/>
+</map>

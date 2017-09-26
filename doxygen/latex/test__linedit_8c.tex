@@ -1,0 +1,160 @@
+\hypertarget{test__linedit_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Linedit/test\+\_\+linedit.c File Reference}
+\label{test__linedit_8c}\index{gprolog-\/utf8-\/tree/src/\+Linedit/test\+\_\+linedit.\+c@{gprolog-\/utf8-\/tree/src/\+Linedit/test\+\_\+linedit.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/gp\+\_\+config.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/set\+\_\+locale.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+W32\+G\+U\+I\+Cons/w32gc\+\_\+interf.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+Engine\+Pl/wam\+\_\+stacks.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$io.\+h$>$}\\*
+{\ttfamily \#include $<$process.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}ctrl\+\_\+c.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}linedit.\+h\char`\"{}}\\*
+Include dependency graph for test\+\_\+linedit.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__linedit_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{test__linedit_8c_a3cb9f0894fab1c8fbb0753c9c7c2a8d9}{printf}~\hyperlink{linedit_8h_a3440af82042d594b86ed123701f58484}{Pl\+\_\+\+L\+E\+\_\+\+Printf}
+\item 
+\#define \hyperlink{test__linedit_8c_a6cb1f6e42b15f4cc16f7db6e7c2eb4b0}{E\+N\+G\+I\+N\+E\+\_\+\+F\+I\+LE}~/$\ast$ to define stacks data $\ast$/
+\item 
+\#define \hyperlink{test__linedit_8c_a0592dba56693fad79136250c11e5a7fe}{M\+A\+X\+\_\+\+S\+I\+ZE}~500000
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{test__linedit_8c_a9a46eb06d5809387a46d0c90942f798c}{Wam\+Word}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{test__linedit_8c_aff54f72a936c24930b5fee97f82033d5}{Ctrl\+\_\+\+C\+\_\+\+Manager} (int \hyperlink{ctrl__c_8c_a88814075287adeb95d9533103e79bd8e}{from\+\_\+callback})
+\item 
+void \hyperlink{test__linedit_8c_a11e70ba15a220a2815e26ec3db05ec46}{Set\+\_\+\+Test\+\_\+\+Locale} (void)
+\item 
+int \hyperlink{test__linedit_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{test__linedit_8c_a8e4f0e718de8607ebb354ec646583845}{pl\+\_\+max\+\_\+atom}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{test\+\_\+linedit.\+c@{test\+\_\+linedit.\+c}!E\+N\+G\+I\+N\+E\+\_\+\+F\+I\+LE@{E\+N\+G\+I\+N\+E\+\_\+\+F\+I\+LE}}
+\index{E\+N\+G\+I\+N\+E\+\_\+\+F\+I\+LE@{E\+N\+G\+I\+N\+E\+\_\+\+F\+I\+LE}!test\+\_\+linedit.\+c@{test\+\_\+linedit.\+c}}
+\subsubsection[{\texorpdfstring{E\+N\+G\+I\+N\+E\+\_\+\+F\+I\+LE}{ENGINE_FILE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+N\+G\+I\+N\+E\+\_\+\+F\+I\+LE~/$\ast$ to define stacks data $\ast$/}\hypertarget{test__linedit_8c_a6cb1f6e42b15f4cc16f7db6e7c2eb4b0}{}\label{test__linedit_8c_a6cb1f6e42b15f4cc16f7db6e7c2eb4b0}
+\index{test\+\_\+linedit.\+c@{test\+\_\+linedit.\+c}!M\+A\+X\+\_\+\+S\+I\+ZE@{M\+A\+X\+\_\+\+S\+I\+ZE}}
+\index{M\+A\+X\+\_\+\+S\+I\+ZE@{M\+A\+X\+\_\+\+S\+I\+ZE}!test\+\_\+linedit.\+c@{test\+\_\+linedit.\+c}}
+\subsubsection[{\texorpdfstring{M\+A\+X\+\_\+\+S\+I\+ZE}{MAX_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X\+\_\+\+S\+I\+ZE~500000}\hypertarget{test__linedit_8c_a0592dba56693fad79136250c11e5a7fe}{}\label{test__linedit_8c_a0592dba56693fad79136250c11e5a7fe}
+\index{test\+\_\+linedit.\+c@{test\+\_\+linedit.\+c}!printf@{printf}}
+\index{printf@{printf}!test\+\_\+linedit.\+c@{test\+\_\+linedit.\+c}}
+\subsubsection[{\texorpdfstring{printf}{printf}}]{\setlength{\rightskip}{0pt plus 5cm}\#define printf~{\bf Pl\+\_\+\+L\+E\+\_\+\+Printf}}\hypertarget{test__linedit_8c_a3cb9f0894fab1c8fbb0753c9c7c2a8d9}{}\label{test__linedit_8c_a3cb9f0894fab1c8fbb0753c9c7c2a8d9}
+
+
+\subsection{Typedef Documentation}
+\index{test\+\_\+linedit.\+c@{test\+\_\+linedit.\+c}!Wam\+Word@{Wam\+Word}}
+\index{Wam\+Word@{Wam\+Word}!test\+\_\+linedit.\+c@{test\+\_\+linedit.\+c}}
+\subsubsection[{\texorpdfstring{Wam\+Word}{WamWord}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Pl\+Long} {\bf Wam\+Word}}\hypertarget{test__linedit_8c_a9a46eb06d5809387a46d0c90942f798c}{}\label{test__linedit_8c_a9a46eb06d5809387a46d0c90942f798c}
+
+
+\subsection{Function Documentation}
+\index{test\+\_\+linedit.\+c@{test\+\_\+linedit.\+c}!Ctrl\+\_\+\+C\+\_\+\+Manager@{Ctrl\+\_\+\+C\+\_\+\+Manager}}
+\index{Ctrl\+\_\+\+C\+\_\+\+Manager@{Ctrl\+\_\+\+C\+\_\+\+Manager}!test\+\_\+linedit.\+c@{test\+\_\+linedit.\+c}}
+\subsubsection[{\texorpdfstring{Ctrl\+\_\+\+C\+\_\+\+Manager(int from\+\_\+callback)}{Ctrl_C_Manager(int from_callback)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pl\+Long} Ctrl\+\_\+\+C\+\_\+\+Manager (
+\begin{DoxyParamCaption}
+\item[{int}]{from\+\_\+callback}
+\end{DoxyParamCaption}
+)}\hypertarget{test__linedit_8c_aff54f72a936c24930b5fee97f82033d5}{}\label{test__linedit_8c_aff54f72a936c24930b5fee97f82033d5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__linedit_8c_aff54f72a936c24930b5fee97f82033d5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{test__linedit_8c_aff54f72a936c24930b5fee97f82033d5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{test\+\_\+linedit.\+c@{test\+\_\+linedit.\+c}!main@{main}}
+\index{main@{main}!test\+\_\+linedit.\+c@{test\+\_\+linedit.\+c}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{test__linedit_8c_a0ddf1224851353fc92bfbff6f499fa97}{}\label{test__linedit_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__linedit_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{test\+\_\+linedit.\+c@{test\+\_\+linedit.\+c}!Set\+\_\+\+Test\+\_\+\+Locale@{Set\+\_\+\+Test\+\_\+\+Locale}}
+\index{Set\+\_\+\+Test\+\_\+\+Locale@{Set\+\_\+\+Test\+\_\+\+Locale}!test\+\_\+linedit.\+c@{test\+\_\+linedit.\+c}}
+\subsubsection[{\texorpdfstring{Set\+\_\+\+Test\+\_\+\+Locale(void)}{Set_Test_Locale(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Set\+\_\+\+Test\+\_\+\+Locale (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{test__linedit_8c_a11e70ba15a220a2815e26ec3db05ec46}{}\label{test__linedit_8c_a11e70ba15a220a2815e26ec3db05ec46}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{test__linedit_8c_a11e70ba15a220a2815e26ec3db05ec46_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{test__linedit_8c_a11e70ba15a220a2815e26ec3db05ec46_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{test\+\_\+linedit.\+c@{test\+\_\+linedit.\+c}!pl\+\_\+max\+\_\+atom@{pl\+\_\+max\+\_\+atom}}
+\index{pl\+\_\+max\+\_\+atom@{pl\+\_\+max\+\_\+atom}!test\+\_\+linedit.\+c@{test\+\_\+linedit.\+c}}
+\subsubsection[{\texorpdfstring{pl\+\_\+max\+\_\+atom}{pl_max_atom}}]{\setlength{\rightskip}{0pt plus 5cm}int pl\+\_\+max\+\_\+atom}\hypertarget{test__linedit_8c_a8e4f0e718de8607ebb354ec646583845}{}\label{test__linedit_8c_a8e4f0e718de8607ebb354ec646583845}

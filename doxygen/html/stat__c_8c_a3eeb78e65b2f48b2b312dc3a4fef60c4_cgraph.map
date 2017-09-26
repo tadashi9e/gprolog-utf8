@@ -1,0 +1,8 @@
+<map id="Pl_Statistics_Cpu_Time_2" name="Pl_Statistics_Cpu_Time_2">
+<area shape="rect" id="node2" href="$machine_8c.html#a49c3210d01108defd9d8a0b6ea624f95" title="Pl_M_User_Time" alt="" coords="245,5,367,32"/>
+<area shape="rect" id="node4" href="$machine_8c.html#a11f5fe79e24625b351bddd83a9c58b5a" title="Pl_M_System_Time" alt="" coords="236,56,376,83"/>
+<area shape="rect" id="node5" href="$c__supp_8c.html#a40ef471273ae7fee7aa952ae43112cd1" title="Pl_Un_Integer_Check" alt="" coords="231,107,381,133"/>
+<area shape="rect" id="node3" href="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907" title="Pl_Fatal_Error" alt="" coords="431,31,537,57"/>
+<area shape="rect" id="node6" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="429,107,539,133"/>
+<area shape="rect" id="node7" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="587,107,745,133"/>
+</map>

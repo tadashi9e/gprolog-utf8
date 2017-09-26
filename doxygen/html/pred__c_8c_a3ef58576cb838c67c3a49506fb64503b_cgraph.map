@@ -1,0 +1,8 @@
+<map id="Pl_Pred_Prop_Prolog_Line_3" name="Pl_Pred_Prop_Prolog_Line_3">
+<area shape="rect" id="node2" href="$c__supp_8c.html#ac23e92016d9ea9c59e54aec3dbb4ca10" title="Pl_Rd_Atom" alt="" coords="227,5,323,32"/>
+<area shape="rect" id="node3" href="$c__supp_8c.html#acd14b723a410bb965ba827e7b2e88786" title="Pl_Rd_Integer" alt="" coords="223,56,328,83"/>
+<area shape="rect" id="node4" href="$pred_8c.html#aa8ebf08b93ec7e4bde2c544c70ba4c39" title="Pl_Lookup_Pred" alt="" coords="217,107,334,133"/>
+<area shape="rect" id="node5" href="$c__supp_8c.html#a40ef471273ae7fee7aa952ae43112cd1" title="Pl_Un_Integer_Check" alt="" coords="200,157,351,184"/>
+<area shape="rect" id="node6" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="399,157,508,184"/>
+<area shape="rect" id="node7" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="556,157,715,184"/>
+</map>

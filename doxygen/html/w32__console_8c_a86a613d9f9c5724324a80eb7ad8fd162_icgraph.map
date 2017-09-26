@@ -1,0 +1,12 @@
+<map id="SubClassEdit" name="SubClassEdit">
+<area shape="rect" id="node2" href="$w32__console_8c.html#ae21b20c73fc3d1b2301ac435d6ffefb8" title="SubClassEditField" alt="" coords="156,5,287,32"/>
+<area shape="rect" id="node3" href="$w32__console_8c.html#a4d3fc2c91e2a42d1ee0ab9afb8b25934" title="Create_Edit_Control" alt="" coords="335,5,475,32"/>
+<area shape="rect" id="node4" href="$w32__console_8c.html#ab023aa0285ba796fb7809eed2e6cdbe1" title="MainWndProc" alt="" coords="945,5,1049,32"/>
+<area shape="rect" id="node10" href="$w32__console_8c.html#af8f874a72209a2c5b9ccc57df9c3684b" title="Toggle_Wrap_Mode" alt="" coords="523,31,661,57"/>
+<area shape="rect" id="node5" href="$w32__console_8c.html#aea7abcb71562352e8ff9c3efd95c505b" title="InitApplication" alt="" coords="1097,5,1201,32"/>
+<area shape="rect" id="node6" href="$w32__console_8c.html#a2363368e7d52d5df8c4f20cb13283faa" title="StartWinMain" alt="" coords="1249,5,1351,32"/>
+<area shape="rect" id="node7" href="$w32__console_8c.html#a3e359465ba75ec15014d5af9c09d3db9" title="CallMain" alt="" coords="1399,5,1472,32"/>
+<area shape="rect" id="node8" href="$w32__console_8c.html#a4df61e90931602252f4bd1addb17902f" title="W32GC_Start_Window" alt="" coords="1520,5,1679,32"/>
+<area shape="rect" id="node9" href="$w32gc__interf_8c.html#a9bbe083e9a45c3fda6abf2737bebc2ad" title="__declspec" alt="" coords="1727,5,1815,32"/>
+<area shape="rect" id="node11" href="$w32__console_8c.html#aabb62b5ceb8b73f54c4478021cedf130" title="MainWndProc_OnCommand" alt="" coords="709,31,897,57"/>
+</map>

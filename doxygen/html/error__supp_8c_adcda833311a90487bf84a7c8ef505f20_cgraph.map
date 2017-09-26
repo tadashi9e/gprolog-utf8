@@ -1,0 +1,10 @@
+<map id="Pl_Context_Error_1" name="Pl_Context_Error_1">
+<area shape="rect" id="node2" href="$wam__inst_8c.html#a3142e85c3603983f78392e0a0498106b" title="Pl_Get_Structure" alt="" coords="189,5,312,32"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#a9d87a5b4acfffab877517842b1fa4055" title="Pl_Unify_Atom" alt="" coords="195,56,306,83"/>
+<area shape="rect" id="node6" href="$wam__inst_8c.html#a6ec65d8b59b5c6b865ad0e4f1b23b73e" title="Pl_Unify_Integer" alt="" coords="191,107,310,133"/>
+<area shape="rect" id="node8" href="$wam__inst_8c.html#a78229c8d23053191e0fee7952757f9c7" title="Pl_Get_Atom" alt="" coords="201,157,301,184"/>
+<area shape="rect" id="node3" href="$wam__inst_8c.html#a2c65ef3714c1e3ff114311255eb080ff" title="Pl_Get_Structure_Tagged" alt="" coords="360,5,532,32"/>
+<area shape="rect" id="node5" href="$wam__inst_8c.html#a656e0931247533aa8d30c3e0398513fe" title="Pl_Unify_Atom_Tagged" alt="" coords="366,56,526,83"/>
+<area shape="rect" id="node7" href="$wam__inst_8c.html#a3be80b778e2bf523f0d512323c9f3125" title="Pl_Unify_Integer_Tagged" alt="" coords="361,107,531,133"/>
+<area shape="rect" id="node9" href="$wam__inst_8c.html#a89d8aba44029f2a5f548a2ae5f6eb574" title="Pl_Get_Atom_Tagged" alt="" coords="371,157,521,184"/>
+</map>

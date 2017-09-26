@@ -1,0 +1,15 @@
+<map id="Move_Caret_To" name="Move_Caret_To">
+<area shape="rect" id="node2" href="$w32__console_8c.html#a3480ea2b3116aeb824aac0df6d68da83" title="Move_Caret_From_Mouse" alt="" coords="168,5,344,32"/>
+<area shape="rect" id="node14" href="$w32__console_8c.html#adaf1402815a745cc420a50b850400d4e" title="Delete_Selection" alt="" coords="195,56,317,83"/>
+<area shape="rect" id="node3" href="$w32__console_8c.html#a86a613d9f9c5724324a80eb7ad8fd162" title="SubClassEdit" alt="" coords="392,31,495,57"/>
+<area shape="rect" id="node4" href="$w32__console_8c.html#ae21b20c73fc3d1b2301ac435d6ffefb8" title="SubClassEditField" alt="" coords="543,31,673,57"/>
+<area shape="rect" id="node5" href="$w32__console_8c.html#a4d3fc2c91e2a42d1ee0ab9afb8b25934" title="Create_Edit_Control" alt="" coords="721,31,861,57"/>
+<area shape="rect" id="node6" href="$w32__console_8c.html#ab023aa0285ba796fb7809eed2e6cdbe1" title="MainWndProc" alt="" coords="1332,31,1436,57"/>
+<area shape="rect" id="node12" href="$w32__console_8c.html#af8f874a72209a2c5b9ccc57df9c3684b" title="Toggle_Wrap_Mode" alt="" coords="909,56,1048,83"/>
+<area shape="rect" id="node7" href="$w32__console_8c.html#aea7abcb71562352e8ff9c3efd95c505b" title="InitApplication" alt="" coords="1484,31,1588,57"/>
+<area shape="rect" id="node8" href="$w32__console_8c.html#a2363368e7d52d5df8c4f20cb13283faa" title="StartWinMain" alt="" coords="1636,31,1737,57"/>
+<area shape="rect" id="node9" href="$w32__console_8c.html#a3e359465ba75ec15014d5af9c09d3db9" title="CallMain" alt="" coords="1785,31,1859,57"/>
+<area shape="rect" id="node10" href="$w32__console_8c.html#a4df61e90931602252f4bd1addb17902f" title="W32GC_Start_Window" alt="" coords="1907,31,2065,57"/>
+<area shape="rect" id="node11" href="$w32gc__interf_8c.html#a9bbe083e9a45c3fda6abf2737bebc2ad" title="__declspec" alt="" coords="2113,31,2201,57"/>
+<area shape="rect" id="node13" href="$w32__console_8c.html#aabb62b5ceb8b73f54c4478021cedf130" title="MainWndProc_OnCommand" alt="" coords="1096,56,1284,83"/>
+</map>

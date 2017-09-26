@@ -1,0 +1,7 @@
+<map id="W32GC_Backd" name="W32GC_Backd">
+<area shape="rect" id="node2" href="$w32__console_8c.html#a2764af0c7408a134e5da5fa101b6dabe" title="Display_Text" alt="" coords="167,81,265,108"/>
+<area shape="rect" id="node3" href="$w32__console_8c.html#a20ec3600d3c3a15b3c44a9e6f8b1fb83" title="W32GC_Flush" alt="" coords="325,5,433,32"/>
+<area shape="rect" id="node4" href="$w32__console_8c.html#ab7e93fe5f4ce7f900e82d8329b82a57c" title="W32GC_Put_Char" alt="" coords="313,56,444,83"/>
+<area shape="rect" id="node5" href="$w32__console_8c.html#a3e0fd465d2d216a3886763f28a47c4de" title="W32GC_Displ" alt="" coords="325,107,432,133"/>
+<area shape="rect" id="node6" href="$w32__console_8c.html#a44456e0e0343737fa2419814cf095fa4" title="W32GC_Displ_Str" alt="" coords="313,157,444,184"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Insert_File_Name" name="Insert_File_Name">
+<area shape="rect" id="node2" href="$w32__console_8c.html#aabb62b5ceb8b73f54c4478021cedf130" title="MainWndProc_OnCommand" alt="" coords="179,5,367,32"/>
+<area shape="rect" id="node3" href="$w32__console_8c.html#ab023aa0285ba796fb7809eed2e6cdbe1" title="MainWndProc" alt="" coords="415,5,519,32"/>
+<area shape="rect" id="node4" href="$w32__console_8c.html#aea7abcb71562352e8ff9c3efd95c505b" title="InitApplication" alt="" coords="567,5,671,32"/>
+<area shape="rect" id="node5" href="$w32__console_8c.html#a2363368e7d52d5df8c4f20cb13283faa" title="StartWinMain" alt="" coords="719,5,820,32"/>
+<area shape="rect" id="node6" href="$w32__console_8c.html#a3e359465ba75ec15014d5af9c09d3db9" title="CallMain" alt="" coords="868,5,941,32"/>
+<area shape="rect" id="node7" href="$w32__console_8c.html#a4df61e90931602252f4bd1addb17902f" title="W32GC_Start_Window" alt="" coords="989,5,1148,32"/>
+<area shape="rect" id="node8" href="$w32gc__interf_8c.html#a9bbe083e9a45c3fda6abf2737bebc2ad" title="__declspec" alt="" coords="1196,5,1284,32"/>
+</map>

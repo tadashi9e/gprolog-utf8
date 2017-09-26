@@ -12,68 +12,111 @@ Collaboration diagram for malloc\+\_\+state\+:\nopagebreak
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-binmap\+\_\+t {\bfseries smallmap}\hypertarget{structmalloc__state_a9e597125e4a96b39d3859c59fee38c49}{}\label{structmalloc__state_a9e597125e4a96b39d3859c59fee38c49}
-
+\hyperlink{dl__malloc_8c_a2714ff4b4994bc59cce3c3dce1e60c27}{binmap\+\_\+t} \hyperlink{structmalloc__state_a9e597125e4a96b39d3859c59fee38c49}{smallmap}
 \item 
-binmap\+\_\+t {\bfseries treemap}\hypertarget{structmalloc__state_ae20bf1bcda1838e5bc07d2395ba72283}{}\label{structmalloc__state_ae20bf1bcda1838e5bc07d2395ba72283}
-
+\hyperlink{dl__malloc_8c_a2714ff4b4994bc59cce3c3dce1e60c27}{binmap\+\_\+t} \hyperlink{structmalloc__state_ae20bf1bcda1838e5bc07d2395ba72283}{treemap}
 \item 
-size\+\_\+t {\bfseries dvsize}\hypertarget{structmalloc__state_ae2e6a3ed8e8abaf03e47917057f1012d}{}\label{structmalloc__state_ae2e6a3ed8e8abaf03e47917057f1012d}
-
+size\+\_\+t \hyperlink{structmalloc__state_ae2e6a3ed8e8abaf03e47917057f1012d}{dvsize}
 \item 
-size\+\_\+t {\bfseries topsize}\hypertarget{structmalloc__state_aa93901fa8e414a7d7881ee968b097eea}{}\label{structmalloc__state_aa93901fa8e414a7d7881ee968b097eea}
-
+size\+\_\+t \hyperlink{structmalloc__state_aa93901fa8e414a7d7881ee968b097eea}{topsize}
 \item 
-char $\ast$ {\bfseries least\+\_\+addr}\hypertarget{structmalloc__state_af9a424730d25d685373ab736a29560b5}{}\label{structmalloc__state_af9a424730d25d685373ab736a29560b5}
-
+char $\ast$ \hyperlink{structmalloc__state_af9a424730d25d685373ab736a29560b5}{least\+\_\+addr}
 \item 
-\hyperlink{structmalloc__chunk}{mchunkptr} {\bfseries dv}\hypertarget{structmalloc__state_a840943ad4baaddbaaa5defe954ec06b9}{}\label{structmalloc__state_a840943ad4baaddbaaa5defe954ec06b9}
-
+\hyperlink{dl__malloc_8c_aab2c188a259d6c4bd443ed712a92714c}{mchunkptr} \hyperlink{structmalloc__state_a840943ad4baaddbaaa5defe954ec06b9}{dv}
 \item 
-\hyperlink{structmalloc__chunk}{mchunkptr} {\bfseries top}\hypertarget{structmalloc__state_a594c4d03c189612e0ce91f7aba8dae77}{}\label{structmalloc__state_a594c4d03c189612e0ce91f7aba8dae77}
-
+\hyperlink{dl__malloc_8c_aab2c188a259d6c4bd443ed712a92714c}{mchunkptr} \hyperlink{structmalloc__state_a594c4d03c189612e0ce91f7aba8dae77}{top}
 \item 
-size\+\_\+t {\bfseries trim\+\_\+check}\hypertarget{structmalloc__state_a30209a5277132d0f207c7a850d225324}{}\label{structmalloc__state_a30209a5277132d0f207c7a850d225324}
-
+size\+\_\+t \hyperlink{structmalloc__state_a30209a5277132d0f207c7a850d225324}{trim\+\_\+check}
 \item 
-size\+\_\+t {\bfseries release\+\_\+checks}\hypertarget{structmalloc__state_af2afbe4faf64185994d9c10cef2e0a3a}{}\label{structmalloc__state_af2afbe4faf64185994d9c10cef2e0a3a}
-
+size\+\_\+t \hyperlink{structmalloc__state_af2afbe4faf64185994d9c10cef2e0a3a}{release\+\_\+checks}
 \item 
-size\+\_\+t {\bfseries magic}\hypertarget{structmalloc__state_ac19e13bf018dc22419c38d8cbe839b62}{}\label{structmalloc__state_ac19e13bf018dc22419c38d8cbe839b62}
-
+size\+\_\+t \hyperlink{structmalloc__state_ac19e13bf018dc22419c38d8cbe839b62}{magic}
 \item 
-\hyperlink{structmalloc__chunk}{mchunkptr} {\bfseries smallbins} \mbox{[}(N\+S\+M\+A\+L\+L\+B\+I\+NS+1)$\ast$2\mbox{]}\hypertarget{structmalloc__state_ade50b83b94e4f09d372a18ae51c13f70}{}\label{structmalloc__state_ade50b83b94e4f09d372a18ae51c13f70}
-
+\hyperlink{dl__malloc_8c_aab2c188a259d6c4bd443ed712a92714c}{mchunkptr} \hyperlink{structmalloc__state_ade50b83b94e4f09d372a18ae51c13f70}{smallbins} \mbox{[}(\hyperlink{dl__malloc_8c_afe898942dfe9b3557981d0dc935fddde}{N\+S\+M\+A\+L\+L\+B\+I\+NS}+1)$\ast$2\mbox{]}
 \item 
-\hyperlink{structmalloc__tree__chunk}{tbinptr} {\bfseries treebins} \mbox{[}N\+T\+R\+E\+E\+B\+I\+NS\mbox{]}\hypertarget{structmalloc__state_a7ccf88dffa5e3287b7c9dd290ea1a0cb}{}\label{structmalloc__state_a7ccf88dffa5e3287b7c9dd290ea1a0cb}
-
+\hyperlink{dl__malloc_8c_a1a975f80818075b2e6dc1e778144d14a}{tbinptr} \hyperlink{structmalloc__state_a7ccf88dffa5e3287b7c9dd290ea1a0cb}{treebins} \mbox{[}\hyperlink{dl__malloc_8c_a187fe34f71c63b486f6d79ac51117061}{N\+T\+R\+E\+E\+B\+I\+NS}\mbox{]}
 \item 
-size\+\_\+t {\bfseries footprint}\hypertarget{structmalloc__state_a77ec93dc40bb85bd7a3c4e9b26547d11}{}\label{structmalloc__state_a77ec93dc40bb85bd7a3c4e9b26547d11}
-
+size\+\_\+t \hyperlink{structmalloc__state_a77ec93dc40bb85bd7a3c4e9b26547d11}{footprint}
 \item 
-size\+\_\+t {\bfseries max\+\_\+footprint}\hypertarget{structmalloc__state_ac5c720358079598dfb5d699124e761c8}{}\label{structmalloc__state_ac5c720358079598dfb5d699124e761c8}
-
+size\+\_\+t \hyperlink{structmalloc__state_ac5c720358079598dfb5d699124e761c8}{max\+\_\+footprint}
 \item 
-size\+\_\+t {\bfseries footprint\+\_\+limit}\hypertarget{structmalloc__state_ab589c6129376d79aab99babfe55fe048}{}\label{structmalloc__state_ab589c6129376d79aab99babfe55fe048}
-
+size\+\_\+t \hyperlink{structmalloc__state_ab589c6129376d79aab99babfe55fe048}{footprint\+\_\+limit}
 \item 
-flag\+\_\+t {\bfseries mflags}\hypertarget{structmalloc__state_a44ff83ca07796cad96f2289471c88d2d}{}\label{structmalloc__state_a44ff83ca07796cad96f2289471c88d2d}
-
+\hyperlink{dl__malloc_8c_a98d45780d5103f1a6b54a549a3d12de2}{flag\+\_\+t} \hyperlink{structmalloc__state_a44ff83ca07796cad96f2289471c88d2d}{mflags}
 \item 
-M\+L\+O\+C\+K\+\_\+T {\bfseries mutex}\hypertarget{structmalloc__state_aafbde3a2fbb7df9480eb14521e5624da}{}\label{structmalloc__state_aafbde3a2fbb7df9480eb14521e5624da}
-
+\hyperlink{dl__malloc_8c_a530e2a673707b46623919e33d02ebdd2}{M\+L\+O\+C\+K\+\_\+T} \hyperlink{structmalloc__state_aafbde3a2fbb7df9480eb14521e5624da}{mutex}
 \item 
-\hyperlink{structmalloc__segment}{msegment} {\bfseries seg}\hypertarget{structmalloc__state_a899c69eca79f165b03913063a93d973a}{}\label{structmalloc__state_a899c69eca79f165b03913063a93d973a}
-
+\hyperlink{dl__malloc_8c_aefb4243356502f3504318b435638ba57}{msegment} \hyperlink{structmalloc__state_a899c69eca79f165b03913063a93d973a}{seg}
 \item 
-void $\ast$ {\bfseries extp}\hypertarget{structmalloc__state_aa605a719561fc44ce2ce7165e6dcb897}{}\label{structmalloc__state_aa605a719561fc44ce2ce7165e6dcb897}
-
+void $\ast$ \hyperlink{structmalloc__state_aa605a719561fc44ce2ce7165e6dcb897}{extp}
 \item 
-size\+\_\+t {\bfseries exts}\hypertarget{structmalloc__state_af3c1e272f4107a5006ee10429cb2232a}{}\label{structmalloc__state_af3c1e272f4107a5006ee10429cb2232a}
-
+size\+\_\+t \hyperlink{structmalloc__state_af3c1e272f4107a5006ee10429cb2232a}{exts}
 \end{DoxyCompactItemize}
+
+
+\subsection{Field Documentation}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!dv@{dv}}
+\index{dv@{dv}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{dv}{dv}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mchunkptr} malloc\+\_\+state\+::dv}\hypertarget{structmalloc__state_a840943ad4baaddbaaa5defe954ec06b9}{}\label{structmalloc__state_a840943ad4baaddbaaa5defe954ec06b9}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!dvsize@{dvsize}}
+\index{dvsize@{dvsize}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{dvsize}{dvsize}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t malloc\+\_\+state\+::dvsize}\hypertarget{structmalloc__state_ae2e6a3ed8e8abaf03e47917057f1012d}{}\label{structmalloc__state_ae2e6a3ed8e8abaf03e47917057f1012d}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!extp@{extp}}
+\index{extp@{extp}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{extp}{extp}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ malloc\+\_\+state\+::extp}\hypertarget{structmalloc__state_aa605a719561fc44ce2ce7165e6dcb897}{}\label{structmalloc__state_aa605a719561fc44ce2ce7165e6dcb897}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!exts@{exts}}
+\index{exts@{exts}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{exts}{exts}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t malloc\+\_\+state\+::exts}\hypertarget{structmalloc__state_af3c1e272f4107a5006ee10429cb2232a}{}\label{structmalloc__state_af3c1e272f4107a5006ee10429cb2232a}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!footprint@{footprint}}
+\index{footprint@{footprint}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{footprint}{footprint}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t malloc\+\_\+state\+::footprint}\hypertarget{structmalloc__state_a77ec93dc40bb85bd7a3c4e9b26547d11}{}\label{structmalloc__state_a77ec93dc40bb85bd7a3c4e9b26547d11}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!footprint\+\_\+limit@{footprint\+\_\+limit}}
+\index{footprint\+\_\+limit@{footprint\+\_\+limit}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{footprint\+\_\+limit}{footprint_limit}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t malloc\+\_\+state\+::footprint\+\_\+limit}\hypertarget{structmalloc__state_ab589c6129376d79aab99babfe55fe048}{}\label{structmalloc__state_ab589c6129376d79aab99babfe55fe048}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!least\+\_\+addr@{least\+\_\+addr}}
+\index{least\+\_\+addr@{least\+\_\+addr}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{least\+\_\+addr}{least_addr}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ malloc\+\_\+state\+::least\+\_\+addr}\hypertarget{structmalloc__state_af9a424730d25d685373ab736a29560b5}{}\label{structmalloc__state_af9a424730d25d685373ab736a29560b5}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!magic@{magic}}
+\index{magic@{magic}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{magic}{magic}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t malloc\+\_\+state\+::magic}\hypertarget{structmalloc__state_ac19e13bf018dc22419c38d8cbe839b62}{}\label{structmalloc__state_ac19e13bf018dc22419c38d8cbe839b62}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!max\+\_\+footprint@{max\+\_\+footprint}}
+\index{max\+\_\+footprint@{max\+\_\+footprint}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{max\+\_\+footprint}{max_footprint}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t malloc\+\_\+state\+::max\+\_\+footprint}\hypertarget{structmalloc__state_ac5c720358079598dfb5d699124e761c8}{}\label{structmalloc__state_ac5c720358079598dfb5d699124e761c8}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!mflags@{mflags}}
+\index{mflags@{mflags}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{mflags}{mflags}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf flag\+\_\+t} malloc\+\_\+state\+::mflags}\hypertarget{structmalloc__state_a44ff83ca07796cad96f2289471c88d2d}{}\label{structmalloc__state_a44ff83ca07796cad96f2289471c88d2d}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!mutex@{mutex}}
+\index{mutex@{mutex}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{mutex}{mutex}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+L\+O\+C\+K\+\_\+T} malloc\+\_\+state\+::mutex}\hypertarget{structmalloc__state_aafbde3a2fbb7df9480eb14521e5624da}{}\label{structmalloc__state_aafbde3a2fbb7df9480eb14521e5624da}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!release\+\_\+checks@{release\+\_\+checks}}
+\index{release\+\_\+checks@{release\+\_\+checks}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{release\+\_\+checks}{release_checks}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t malloc\+\_\+state\+::release\+\_\+checks}\hypertarget{structmalloc__state_af2afbe4faf64185994d9c10cef2e0a3a}{}\label{structmalloc__state_af2afbe4faf64185994d9c10cef2e0a3a}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!seg@{seg}}
+\index{seg@{seg}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{seg}{seg}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf msegment} malloc\+\_\+state\+::seg}\hypertarget{structmalloc__state_a899c69eca79f165b03913063a93d973a}{}\label{structmalloc__state_a899c69eca79f165b03913063a93d973a}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!smallbins@{smallbins}}
+\index{smallbins@{smallbins}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{smallbins}{smallbins}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mchunkptr} malloc\+\_\+state\+::smallbins\mbox{[}({\bf N\+S\+M\+A\+L\+L\+B\+I\+NS}+1)$\ast$2\mbox{]}}\hypertarget{structmalloc__state_ade50b83b94e4f09d372a18ae51c13f70}{}\label{structmalloc__state_ade50b83b94e4f09d372a18ae51c13f70}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!smallmap@{smallmap}}
+\index{smallmap@{smallmap}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{smallmap}{smallmap}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf binmap\+\_\+t} malloc\+\_\+state\+::smallmap}\hypertarget{structmalloc__state_a9e597125e4a96b39d3859c59fee38c49}{}\label{structmalloc__state_a9e597125e4a96b39d3859c59fee38c49}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!top@{top}}
+\index{top@{top}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{top}{top}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mchunkptr} malloc\+\_\+state\+::top}\hypertarget{structmalloc__state_a594c4d03c189612e0ce91f7aba8dae77}{}\label{structmalloc__state_a594c4d03c189612e0ce91f7aba8dae77}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!topsize@{topsize}}
+\index{topsize@{topsize}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{topsize}{topsize}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t malloc\+\_\+state\+::topsize}\hypertarget{structmalloc__state_aa93901fa8e414a7d7881ee968b097eea}{}\label{structmalloc__state_aa93901fa8e414a7d7881ee968b097eea}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!treebins@{treebins}}
+\index{treebins@{treebins}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{treebins}{treebins}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tbinptr} malloc\+\_\+state\+::treebins\mbox{[}{\bf N\+T\+R\+E\+E\+B\+I\+NS}\mbox{]}}\hypertarget{structmalloc__state_a7ccf88dffa5e3287b7c9dd290ea1a0cb}{}\label{structmalloc__state_a7ccf88dffa5e3287b7c9dd290ea1a0cb}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!treemap@{treemap}}
+\index{treemap@{treemap}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{treemap}{treemap}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf binmap\+\_\+t} malloc\+\_\+state\+::treemap}\hypertarget{structmalloc__state_ae20bf1bcda1838e5bc07d2395ba72283}{}\label{structmalloc__state_ae20bf1bcda1838e5bc07d2395ba72283}
+\index{malloc\+\_\+state@{malloc\+\_\+state}!trim\+\_\+check@{trim\+\_\+check}}
+\index{trim\+\_\+check@{trim\+\_\+check}!malloc\+\_\+state@{malloc\+\_\+state}}
+\subsubsection[{\texorpdfstring{trim\+\_\+check}{trim_check}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t malloc\+\_\+state\+::trim\+\_\+check}\hypertarget{structmalloc__state_a30209a5277132d0f207c7a850d225324}{}\label{structmalloc__state_a30209a5277132d0f207c7a850d225324}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-gprolog-\/utf8-\/tree/src/\+Engine\+Pl/dl\+\_\+malloc.\+c\end{DoxyCompactItemize}
+gprolog-\/utf8-\/tree/src/\+Engine\+Pl/\hyperlink{dl__malloc_8c}{dl\+\_\+malloc.\+c}\end{DoxyCompactItemize}

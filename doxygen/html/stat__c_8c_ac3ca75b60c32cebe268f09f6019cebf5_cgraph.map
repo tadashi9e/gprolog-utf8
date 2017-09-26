@@ -1,0 +1,10 @@
+<map id="Pl_Statistics_0" name="Pl_Statistics_0">
+<area shape="rect" id="node2" href="$stream__supp_8c.html#aa0a1fdfbaae9e476151527d87510c0eb" title="Pl_Stream_Printf" alt="" coords="173,5,295,32"/>
+<area shape="rect" id="node5" href="$stat__c_8c.html#a5fee90cde99a3da0b758b37cd33f386f" title="Stack_Size" alt="" coords="189,56,279,83"/>
+<area shape="rect" id="node6" href="$machine_8c.html#a49c3210d01108defd9d8a0b6ea624f95" title="Pl_M_User_Time" alt="" coords="173,107,295,133"/>
+<area shape="rect" id="node8" href="$machine_8c.html#a11f5fe79e24625b351bddd83a9c58b5a" title="Pl_M_System_Time" alt="" coords="164,157,304,184"/>
+<area shape="rect" id="node9" href="$machine_8c.html#ae18414c738bea5a3710adc972fa478ef" title="Pl_M_Real_Time" alt="" coords="173,208,295,235"/>
+<area shape="rect" id="node3" href="$stream__supp_8c.html#a06ceb4f7e59898ddb42f1fa50d29d140" title="Basic_Call_Fct_Putc" alt="" coords="352,5,497,32"/>
+<area shape="rect" id="node4" href="$stream__supp_8c.html#a84ba976a14dadde6efb09d408c88873a" title="Pl_Stream_Putc" alt="" coords="545,5,663,32"/>
+<area shape="rect" id="node7" href="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907" title="Pl_Fatal_Error" alt="" coords="372,157,477,184"/>
+</map>

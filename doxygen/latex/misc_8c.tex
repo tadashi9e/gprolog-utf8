@@ -1,0 +1,277 @@
+\hypertarget{misc_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/misc.c File Reference}
+\label{misc_8c}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/misc.\+c@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/misc.\+c}}
+{\ttfamily \#include \char`\"{}gp\+\_\+config.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}machine.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdarg.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}engine\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../\+Linedit/linedit.\+h\char`\"{}}\\*
+Include dependency graph for misc.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{misc_8c_a9ddeaeab6157451e629d9a097386c6c5}{E\+R\+R\+\_\+\+A\+L\+L\+O\+C\+\_\+\+F\+A\+U\+LT}~\char`\"{}Memory allocation fault (\%s) in \%s\+:\%\hyperlink{asm_8c_a873684cefeb665f3d5e6b495de57fc0d}{d}\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{misc_8c_acf0bfa3dd2808d6bb1a21be1e442db48}{Pl\+\_\+\+Malloc\+\_\+\+Check} (unsigned size, char $\ast$src\+\_\+file, int src\+\_\+line)
+\item 
+char $\ast$ \hyperlink{misc_8c_a4ef7048a1545d02110d113f511a6e62c}{Pl\+\_\+\+Calloc\+\_\+\+Check} (unsigned nb, unsigned size, char $\ast$src\+\_\+file, int src\+\_\+line)
+\item 
+char $\ast$ \hyperlink{misc_8c_a9f7e7bff74f9a70bfb360cf636389953}{Pl\+\_\+\+Realloc\+\_\+\+Check} (char $\ast$ptr, unsigned size, char $\ast$src\+\_\+file, int src\+\_\+line)
+\item 
+char $\ast$ \hyperlink{misc_8c_aa02ec18e539fc8351ab75a2285f8451b}{Pl\+\_\+\+Strdup\+\_\+\+Check} (char $\ast$str, char $\ast$src\+\_\+file, int src\+\_\+line)
+\item 
+void \hyperlink{misc_8c_a623a56eb127eb18ff99bc4737ebc100b}{Pl\+\_\+\+Extend\+\_\+\+Table\+\_\+\+If\+\_\+\+Needed} (char $\ast$$\ast$hash\+\_\+tbl)
+\item 
+void \hyperlink{misc_8c_a2f56b2c86f0305e8b7e13e6150578d36}{Pl\+\_\+\+Extend\+\_\+\+Array} (char $\ast$$\ast$ptbl, int $\ast$nb\+\_\+elem, int elem\+\_\+size, \hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} bzero)
+\item 
+void \hyperlink{misc_8c_a8099040b9286fee033483072ff631476}{Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Value} (int \hyperlink{ctrl__c_8c_a9339caf9d89a9cb57727dfe245702ae3}{ret\+\_\+val})
+\item 
+void \hyperlink{misc_8c_a190fea7904d7245d4fdc5e9404a07907}{Pl\+\_\+\+Fatal\+\_\+\+Error} (char $\ast$\hyperlink{hexfilter_8c_a5407a229a5e1a319d75fb29542c83eae}{format},...)
+\item 
+int \hyperlink{misc_8c_afb6466a24e29e10af1bc44d47dac542d}{Pl\+\_\+\+L\+SB} (\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+int \hyperlink{misc_8c_acad7fd9325e6b75d73602362db3e3247}{Pl\+\_\+\+M\+SB} (\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+int \hyperlink{misc_8c_a3ee275fe1627270028c93d2082786284}{Pl\+\_\+\+Popcount} (\hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{asm__inst_8c_a6150e0515f7202e2fb518f7206ed97dc}{x})
+\item 
+void $\ast$ \hyperlink{misc_8c_aae9007e689a787822f7c6e98322ed456}{Pl\+\_\+\+Dummy\+\_\+\+Ptr} (void $\ast$p)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{misc.\+c@{misc.\+c}!E\+R\+R\+\_\+\+A\+L\+L\+O\+C\+\_\+\+F\+A\+U\+LT@{E\+R\+R\+\_\+\+A\+L\+L\+O\+C\+\_\+\+F\+A\+U\+LT}}
+\index{E\+R\+R\+\_\+\+A\+L\+L\+O\+C\+\_\+\+F\+A\+U\+LT@{E\+R\+R\+\_\+\+A\+L\+L\+O\+C\+\_\+\+F\+A\+U\+LT}!misc.\+c@{misc.\+c}}
+\subsubsection[{\texorpdfstring{E\+R\+R\+\_\+\+A\+L\+L\+O\+C\+\_\+\+F\+A\+U\+LT}{ERR_ALLOC_FAULT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\+R\+R\+\_\+\+A\+L\+L\+O\+C\+\_\+\+F\+A\+U\+LT~\char`\"{}Memory allocation fault (\%s) in \%s\+:\%{\bf d}\char`\"{}}\hypertarget{misc_8c_a9ddeaeab6157451e629d9a097386c6c5}{}\label{misc_8c_a9ddeaeab6157451e629d9a097386c6c5}
+
+
+\subsection{Function Documentation}
+\index{misc.\+c@{misc.\+c}!Pl\+\_\+\+Calloc\+\_\+\+Check@{Pl\+\_\+\+Calloc\+\_\+\+Check}}
+\index{Pl\+\_\+\+Calloc\+\_\+\+Check@{Pl\+\_\+\+Calloc\+\_\+\+Check}!misc.\+c@{misc.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Calloc\+\_\+\+Check(unsigned nb, unsigned size, char $\ast$src\+\_\+file, int src\+\_\+line)}{Pl_Calloc_Check(unsigned nb, unsigned size, char *src_file, int src_line)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+Calloc\+\_\+\+Check (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{nb, }
+\item[{unsigned}]{size, }
+\item[{char $\ast$}]{src\+\_\+file, }
+\item[{int}]{src\+\_\+line}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8c_a4ef7048a1545d02110d113f511a6e62c}{}\label{misc_8c_a4ef7048a1545d02110d113f511a6e62c}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{misc_8c_a4ef7048a1545d02110d113f511a6e62c_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{misc.\+c@{misc.\+c}!Pl\+\_\+\+Dummy\+\_\+\+Ptr@{Pl\+\_\+\+Dummy\+\_\+\+Ptr}}
+\index{Pl\+\_\+\+Dummy\+\_\+\+Ptr@{Pl\+\_\+\+Dummy\+\_\+\+Ptr}!misc.\+c@{misc.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Dummy\+\_\+\+Ptr(void $\ast$p)}{Pl_Dummy_Ptr(void *p)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ Pl\+\_\+\+Dummy\+\_\+\+Ptr (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8c_aae9007e689a787822f7c6e98322ed456}{}\label{misc_8c_aae9007e689a787822f7c6e98322ed456}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_aae9007e689a787822f7c6e98322ed456_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{misc.\+c@{misc.\+c}!Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Value@{Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Value}}
+\index{Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Value@{Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Value}!misc.\+c@{misc.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Value(int ret\+\_\+val)}{Pl_Exit_With_Value(int ret_val)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Exit\+\_\+\+With\+\_\+\+Value (
+\begin{DoxyParamCaption}
+\item[{int}]{ret\+\_\+val}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8c_a8099040b9286fee033483072ff631476}{}\label{misc_8c_a8099040b9286fee033483072ff631476}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{misc_8c_a8099040b9286fee033483072ff631476_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{misc.\+c@{misc.\+c}!Pl\+\_\+\+Extend\+\_\+\+Array@{Pl\+\_\+\+Extend\+\_\+\+Array}}
+\index{Pl\+\_\+\+Extend\+\_\+\+Array@{Pl\+\_\+\+Extend\+\_\+\+Array}!misc.\+c@{misc.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Extend\+\_\+\+Array(char $\ast$$\ast$ptbl, int $\ast$nb\+\_\+elem, int elem\+\_\+size, Bool bzero)}{Pl_Extend_Array(char **ptbl, int *nb_elem, int elem_size, Bool bzero)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Extend\+\_\+\+Array (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{ptbl, }
+\item[{int $\ast$}]{nb\+\_\+elem, }
+\item[{int}]{elem\+\_\+size, }
+\item[{{\bf Bool}}]{bzero}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8c_a2f56b2c86f0305e8b7e13e6150578d36}{}\label{misc_8c_a2f56b2c86f0305e8b7e13e6150578d36}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_a2f56b2c86f0305e8b7e13e6150578d36_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{misc.\+c@{misc.\+c}!Pl\+\_\+\+Extend\+\_\+\+Table\+\_\+\+If\+\_\+\+Needed@{Pl\+\_\+\+Extend\+\_\+\+Table\+\_\+\+If\+\_\+\+Needed}}
+\index{Pl\+\_\+\+Extend\+\_\+\+Table\+\_\+\+If\+\_\+\+Needed@{Pl\+\_\+\+Extend\+\_\+\+Table\+\_\+\+If\+\_\+\+Needed}!misc.\+c@{misc.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Extend\+\_\+\+Table\+\_\+\+If\+\_\+\+Needed(char $\ast$$\ast$hash\+\_\+tbl)}{Pl_Extend_Table_If_Needed(char **hash_tbl)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Extend\+\_\+\+Table\+\_\+\+If\+\_\+\+Needed (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{hash\+\_\+tbl}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8c_a623a56eb127eb18ff99bc4737ebc100b}{}\label{misc_8c_a623a56eb127eb18ff99bc4737ebc100b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_a623a56eb127eb18ff99bc4737ebc100b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{misc_8c_a623a56eb127eb18ff99bc4737ebc100b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{misc.\+c@{misc.\+c}!Pl\+\_\+\+Fatal\+\_\+\+Error@{Pl\+\_\+\+Fatal\+\_\+\+Error}}
+\index{Pl\+\_\+\+Fatal\+\_\+\+Error@{Pl\+\_\+\+Fatal\+\_\+\+Error}!misc.\+c@{misc.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Fatal\+\_\+\+Error(char $\ast$format,...)}{Pl_Fatal_Error(char *format,...)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Fatal\+\_\+\+Error (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{format, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8c_a190fea7904d7245d4fdc5e9404a07907}{}\label{misc_8c_a190fea7904d7245d4fdc5e9404a07907}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{misc_8c_a190fea7904d7245d4fdc5e9404a07907_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{misc.\+c@{misc.\+c}!Pl\+\_\+\+L\+SB@{Pl\+\_\+\+L\+SB}}
+\index{Pl\+\_\+\+L\+SB@{Pl\+\_\+\+L\+SB}!misc.\+c@{misc.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+L\+S\+B(\+Pl\+Long x)}{Pl_LSB(PlLong x)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+L\+SB (
+\begin{DoxyParamCaption}
+\item[{{\bf Pl\+Long}}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8c_afb6466a24e29e10af1bc44d47dac542d}{}\label{misc_8c_afb6466a24e29e10af1bc44d47dac542d}
+\index{misc.\+c@{misc.\+c}!Pl\+\_\+\+Malloc\+\_\+\+Check@{Pl\+\_\+\+Malloc\+\_\+\+Check}}
+\index{Pl\+\_\+\+Malloc\+\_\+\+Check@{Pl\+\_\+\+Malloc\+\_\+\+Check}!misc.\+c@{misc.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Malloc\+\_\+\+Check(unsigned size, char $\ast$src\+\_\+file, int src\+\_\+line)}{Pl_Malloc_Check(unsigned size, char *src_file, int src_line)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+Malloc\+\_\+\+Check (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{size, }
+\item[{char $\ast$}]{src\+\_\+file, }
+\item[{int}]{src\+\_\+line}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8c_acf0bfa3dd2808d6bb1a21be1e442db48}{}\label{misc_8c_acf0bfa3dd2808d6bb1a21be1e442db48}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{misc_8c_acf0bfa3dd2808d6bb1a21be1e442db48_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{misc.\+c@{misc.\+c}!Pl\+\_\+\+M\+SB@{Pl\+\_\+\+M\+SB}}
+\index{Pl\+\_\+\+M\+SB@{Pl\+\_\+\+M\+SB}!misc.\+c@{misc.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+M\+S\+B(\+Pl\+Long x)}{Pl_MSB(PlLong x)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+M\+SB (
+\begin{DoxyParamCaption}
+\item[{{\bf Pl\+Long}}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8c_acad7fd9325e6b75d73602362db3e3247}{}\label{misc_8c_acad7fd9325e6b75d73602362db3e3247}
+\index{misc.\+c@{misc.\+c}!Pl\+\_\+\+Popcount@{Pl\+\_\+\+Popcount}}
+\index{Pl\+\_\+\+Popcount@{Pl\+\_\+\+Popcount}!misc.\+c@{misc.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Popcount(\+Pl\+Long x)}{Pl_Popcount(PlLong x)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Popcount (
+\begin{DoxyParamCaption}
+\item[{{\bf Pl\+Long}}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8c_a3ee275fe1627270028c93d2082786284}{}\label{misc_8c_a3ee275fe1627270028c93d2082786284}
+\index{misc.\+c@{misc.\+c}!Pl\+\_\+\+Realloc\+\_\+\+Check@{Pl\+\_\+\+Realloc\+\_\+\+Check}}
+\index{Pl\+\_\+\+Realloc\+\_\+\+Check@{Pl\+\_\+\+Realloc\+\_\+\+Check}!misc.\+c@{misc.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Realloc\+\_\+\+Check(char $\ast$ptr, unsigned size, char $\ast$src\+\_\+file, int src\+\_\+line)}{Pl_Realloc_Check(char *ptr, unsigned size, char *src_file, int src_line)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+Realloc\+\_\+\+Check (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ptr, }
+\item[{unsigned}]{size, }
+\item[{char $\ast$}]{src\+\_\+file, }
+\item[{int}]{src\+\_\+line}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8c_a9f7e7bff74f9a70bfb360cf636389953}{}\label{misc_8c_a9f7e7bff74f9a70bfb360cf636389953}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{misc_8c_a9f7e7bff74f9a70bfb360cf636389953_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{misc.\+c@{misc.\+c}!Pl\+\_\+\+Strdup\+\_\+\+Check@{Pl\+\_\+\+Strdup\+\_\+\+Check}}
+\index{Pl\+\_\+\+Strdup\+\_\+\+Check@{Pl\+\_\+\+Strdup\+\_\+\+Check}!misc.\+c@{misc.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Strdup\+\_\+\+Check(char $\ast$str, char $\ast$src\+\_\+file, int src\+\_\+line)}{Pl_Strdup_Check(char *str, char *src_file, int src_line)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Pl\+\_\+\+Strdup\+\_\+\+Check (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{char $\ast$}]{src\+\_\+file, }
+\item[{int}]{src\+\_\+line}
+\end{DoxyParamCaption}
+)}\hypertarget{misc_8c_aa02ec18e539fc8351ab75a2285f8451b}{}\label{misc_8c_aa02ec18e539fc8351ab75a2285f8451b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{misc_8c_aa02ec18e539fc8351ab75a2285f8451b_cgraph}
+\end{center}
+\end{figure}
+
+

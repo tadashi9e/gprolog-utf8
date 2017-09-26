@@ -1,0 +1,9 @@
+<map id="Pl_Deallocate" name="Pl_Deallocate">
+<area shape="rect" id="node2" href="$bc__supp_8c.html#a76dfe05d2b8c2759f785c9a9a003b782" title="BC_Emulate_Byte_Code" alt="" coords="156,104,324,131"/>
+<area shape="rect" id="node3" href="$bc__supp_8c.html#a77ff26a73bb5736aff1d2c5d97400be5" title="BC_Emulate_Clause" alt="" coords="372,64,516,91"/>
+<area shape="rect" id="node7" href="$bc__supp_8c.html#a3eaaadb92bd63dd9a3f63436a81a3dcc" title="Pl_BC_Emulate_Cont_0" alt="" coords="761,173,925,200"/>
+<area shape="rect" id="node4" href="$bc__supp_8h.html#a8a045e53639fe083b9e018f119e754e4" title="Pl_BC_Emulate_Pred" alt="" coords="564,64,713,91"/>
+<area shape="rect" id="node6" href="$bc__supp_8c.html#af5eb08f345855ac14975d4366243dbc5" title="BC_Emulate_Pred_Alt" alt="" coords="767,5,920,32"/>
+<area shape="rect" id="node5" href="$bc__supp_8c.html#a972dcf547f043fb0988173c77a2f521f" title="Pl_BC_Call_Terminal\l_Pred_3" alt="" coords="770,57,917,98"/>
+<area shape="rect" id="node8" href="$call__args__c_8c.html#af6fb473d73263063c7c2361e4c6a8981" title="Pl_Call_Closure" alt="" coords="785,123,901,149"/>
+</map>

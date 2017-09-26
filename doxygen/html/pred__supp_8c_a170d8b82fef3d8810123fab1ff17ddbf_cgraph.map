@@ -1,0 +1,5 @@
+<map id="Pl_Emit_BC_Execute_Wrapper" name="Pl_Emit_BC_Execute_Wrapper">
+<area shape="rect" id="node2" href="$bc__supp_8c.html#a4e9c9f6d5d48cc5bd8d40c6e2507c855" title="Pl_BC_Start_Emit_0" alt="" coords="221,5,363,32"/>
+<area shape="rect" id="node3" href="$bc__supp_8c.html#acbc4f81776761453be259a864f48e724" title="Pl_BC_Emit_Inst_Execute\l_Native" alt="" coords="203,57,381,98"/>
+<area shape="rect" id="node4" href="$bc__supp_8c.html#a57fe068b952d98d64a89dddd23a31c5b" title="Pl_BC_Stop_Emit_0" alt="" coords="221,123,363,149"/>
+</map>

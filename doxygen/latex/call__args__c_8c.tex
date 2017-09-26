@@ -1,0 +1,104 @@
+\hypertarget{call__args__c_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/call\+\_\+args\+\_\+c.c File Reference}
+\label{call__args__c_8c}\index{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/call\+\_\+args\+\_\+c.\+c@{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/call\+\_\+args\+\_\+c.\+c}}
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}engine\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bips\+\_\+pl.\+h\char`\"{}}\\*
+Include dependency graph for call\+\_\+args\+\_\+c.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{call__args__c_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{call__args__c_8c_ac2238956c2b28a02adaeaf890fbc4bf5}{O\+B\+J\+\_\+\+I\+N\+IT}~\hyperlink{call__args__c_8c_adb02a3d568683af7698f8ab63889b9bb}{Call\+\_\+\+Args\+\_\+\+Initializer}
+\item 
+\#define \hyperlink{call__args__c_8c_a6ad3ecbf16a0712f68a1a2c8c9a7d7b0}{C\+A\+L\+L\+\_\+\+I\+N\+T\+E\+R\+N\+AL}~X1\+\_\+2463616\+C6\+C5\+F696\+E7465726\+E616C
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{call__args__c_8c_a8a3b6aa36c06c0e12ac23eb5e0eb29e4}{Prolog\+\_\+\+Prototype} (\hyperlink{foreign__supp_8c_a6ad3ecbf16a0712f68a1a2c8c9a7d7b0}{C\+A\+L\+L\+\_\+\+I\+N\+T\+E\+R\+N\+AL}, 2)
+\item 
+static void \hyperlink{call__args__c_8c_adb02a3d568683af7698f8ab63889b9bb}{Call\+\_\+\+Args\+\_\+\+Initializer} (void)
+\item 
+Wam\+Cont \hyperlink{call__args__c_8c_af6fb473d73263063c7c2361e4c6a8981}{Pl\+\_\+\+Call\+\_\+\+Closure} (int atom\+\_\+bip, int arity\+\_\+rest)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{call__args__c_8c_a4b491f751423d0c287aad69038e5c9ef}{atom\+\_\+call\+\_\+with\+\_\+args}
+\item 
+static int \hyperlink{call__args__c_8c_aa6905e8e180d7c2c1a27da058a0dff10}{atom\+\_\+call}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{call\+\_\+args\+\_\+c.\+c@{call\+\_\+args\+\_\+c.\+c}!C\+A\+L\+L\+\_\+\+I\+N\+T\+E\+R\+N\+AL@{C\+A\+L\+L\+\_\+\+I\+N\+T\+E\+R\+N\+AL}}
+\index{C\+A\+L\+L\+\_\+\+I\+N\+T\+E\+R\+N\+AL@{C\+A\+L\+L\+\_\+\+I\+N\+T\+E\+R\+N\+AL}!call\+\_\+args\+\_\+c.\+c@{call\+\_\+args\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{C\+A\+L\+L\+\_\+\+I\+N\+T\+E\+R\+N\+AL}{CALL_INTERNAL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+L\+L\+\_\+\+I\+N\+T\+E\+R\+N\+AL~X1\+\_\+2463616\+C6\+C5\+F696\+E7465726\+E616C}\hypertarget{call__args__c_8c_a6ad3ecbf16a0712f68a1a2c8c9a7d7b0}{}\label{call__args__c_8c_a6ad3ecbf16a0712f68a1a2c8c9a7d7b0}
+\index{call\+\_\+args\+\_\+c.\+c@{call\+\_\+args\+\_\+c.\+c}!O\+B\+J\+\_\+\+I\+N\+IT@{O\+B\+J\+\_\+\+I\+N\+IT}}
+\index{O\+B\+J\+\_\+\+I\+N\+IT@{O\+B\+J\+\_\+\+I\+N\+IT}!call\+\_\+args\+\_\+c.\+c@{call\+\_\+args\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{O\+B\+J\+\_\+\+I\+N\+IT}{OBJ_INIT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+B\+J\+\_\+\+I\+N\+IT~{\bf Call\+\_\+\+Args\+\_\+\+Initializer}}\hypertarget{call__args__c_8c_ac2238956c2b28a02adaeaf890fbc4bf5}{}\label{call__args__c_8c_ac2238956c2b28a02adaeaf890fbc4bf5}
+
+
+\subsection{Function Documentation}
+\index{call\+\_\+args\+\_\+c.\+c@{call\+\_\+args\+\_\+c.\+c}!Call\+\_\+\+Args\+\_\+\+Initializer@{Call\+\_\+\+Args\+\_\+\+Initializer}}
+\index{Call\+\_\+\+Args\+\_\+\+Initializer@{Call\+\_\+\+Args\+\_\+\+Initializer}!call\+\_\+args\+\_\+c.\+c@{call\+\_\+args\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Call\+\_\+\+Args\+\_\+\+Initializer(void)}{Call_Args_Initializer(void)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Call\+\_\+\+Args\+\_\+\+Initializer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{call__args__c_8c_adb02a3d568683af7698f8ab63889b9bb}{}\label{call__args__c_8c_adb02a3d568683af7698f8ab63889b9bb}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{call__args__c_8c_adb02a3d568683af7698f8ab63889b9bb_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{call\+\_\+args\+\_\+c.\+c@{call\+\_\+args\+\_\+c.\+c}!Pl\+\_\+\+Call\+\_\+\+Closure@{Pl\+\_\+\+Call\+\_\+\+Closure}}
+\index{Pl\+\_\+\+Call\+\_\+\+Closure@{Pl\+\_\+\+Call\+\_\+\+Closure}!call\+\_\+args\+\_\+c.\+c@{call\+\_\+args\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Call\+\_\+\+Closure(int atom\+\_\+bip, int arity\+\_\+rest)}{Pl_Call_Closure(int atom_bip, int arity_rest)}}]{\setlength{\rightskip}{0pt plus 5cm}Wam\+Cont Pl\+\_\+\+Call\+\_\+\+Closure (
+\begin{DoxyParamCaption}
+\item[{int}]{atom\+\_\+bip, }
+\item[{int}]{arity\+\_\+rest}
+\end{DoxyParamCaption}
+)}\hypertarget{call__args__c_8c_af6fb473d73263063c7c2361e4c6a8981}{}\label{call__args__c_8c_af6fb473d73263063c7c2361e4c6a8981}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{call__args__c_8c_af6fb473d73263063c7c2361e4c6a8981_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{call\+\_\+args\+\_\+c.\+c@{call\+\_\+args\+\_\+c.\+c}!Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}}
+\index{Prolog\+\_\+\+Prototype@{Prolog\+\_\+\+Prototype}!call\+\_\+args\+\_\+c.\+c@{call\+\_\+args\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Prolog\+\_\+\+Prototype(\+C\+A\+L\+L\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L, 2)}{Prolog_Prototype(CALL_INTERNAL, 2)}}]{\setlength{\rightskip}{0pt plus 5cm}Prolog\+\_\+\+Prototype (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+A\+L\+L\+\_\+\+I\+N\+T\+E\+R\+N\+AL}}]{, }
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{call__args__c_8c_a8a3b6aa36c06c0e12ac23eb5e0eb29e4}{}\label{call__args__c_8c_a8a3b6aa36c06c0e12ac23eb5e0eb29e4}
+
+
+\subsection{Variable Documentation}
+\index{call\+\_\+args\+\_\+c.\+c@{call\+\_\+args\+\_\+c.\+c}!atom\+\_\+call@{atom\+\_\+call}}
+\index{atom\+\_\+call@{atom\+\_\+call}!call\+\_\+args\+\_\+c.\+c@{call\+\_\+args\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{atom\+\_\+call}{atom_call}}]{\setlength{\rightskip}{0pt plus 5cm}int atom\+\_\+call\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{call__args__c_8c_aa6905e8e180d7c2c1a27da058a0dff10}{}\label{call__args__c_8c_aa6905e8e180d7c2c1a27da058a0dff10}
+\index{call\+\_\+args\+\_\+c.\+c@{call\+\_\+args\+\_\+c.\+c}!atom\+\_\+call\+\_\+with\+\_\+args@{atom\+\_\+call\+\_\+with\+\_\+args}}
+\index{atom\+\_\+call\+\_\+with\+\_\+args@{atom\+\_\+call\+\_\+with\+\_\+args}!call\+\_\+args\+\_\+c.\+c@{call\+\_\+args\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{atom\+\_\+call\+\_\+with\+\_\+args}{atom_call_with_args}}]{\setlength{\rightskip}{0pt plus 5cm}int atom\+\_\+call\+\_\+with\+\_\+args\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{call__args__c_8c_a4b491f751423d0c287aad69038e5c9ef}{}\label{call__args__c_8c_a4b491f751423d0c287aad69038e5c9ef}

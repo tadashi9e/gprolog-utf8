@@ -1,0 +1,15 @@
+<map id="Del_Aliases_Of_Stream" name="Del_Aliases_Of_Stream">
+<area shape="rect" id="node2" href="$stream__supp_8h.html#ada95549b17c11bebd2aa07585a16936f" title="Pl_Delete_Stream" alt="" coords="216,120,344,147"/>
+<area shape="rect" id="node3" href="$stream__supp_8h.html#a01dbc066c1deba3a188650ba699b7f01" title="Pl_Close_Stm" alt="" coords="415,81,521,108"/>
+<area shape="rect" id="node7" href="$stream__supp_8h.html#ae738b1f1a01cc31e1d06d244b2b28831" title="Pl_Delete_Str_Stream" alt="" coords="392,187,544,213"/>
+<area shape="rect" id="node4" href="$src__rdr__c_8c.html#a9bd17edd807337f25b335d86f826e75d" title="Pl_SR_Close_1" alt="" coords="614,5,729,32"/>
+<area shape="rect" id="node5" href="$src__rdr__c_8c.html#a260024335c542b6e1dacb6252ab5e1cc" title="Pl_SR_New_Pass_1" alt="" coords="599,56,744,83"/>
+<area shape="rect" id="node6" href="$stream__c_8c.html#a4c24c2f444575a196cc4a5be2e687743" title="Pl_Close_1" alt="" coords="627,107,716,133"/>
+<area shape="rect" id="node8" href="$atom__c_8c.html#a45d43288afc4447eb5e8a1bced9fd5a3" title="String_To_Number" alt="" coords="606,157,737,184"/>
+<area shape="rect" id="node13" href="$stream__c_8c.html#a8b751483479b30807efdda8bd1664c5b" title="Pl_Close_Input_Term\l_Stream_1" alt="" coords="597,209,745,250"/>
+<area shape="rect" id="node14" href="$stream__c_8c.html#a1f13fab2c67dc519c098795427b0cc02" title="Pl_Close_Output_Term\l_Stream_2" alt="" coords="592,274,751,315"/>
+<area shape="rect" id="node9" href="$atom__c_8c.html#adc47dd028d6500b7136923c50fb7f0ab" title="Pl_Number_Atom_2" alt="" coords="803,81,941,108"/>
+<area shape="rect" id="node10" href="$atom__c_8c.html#a227fc472d79309e81af1f91e7e236951" title="Pl_Number_Chars_2" alt="" coords="801,132,943,159"/>
+<area shape="rect" id="node11" href="$atom__c_8c.html#ae89fe3df220d385008f49c583dc41d32" title="Pl_Number_Codes_2" alt="" coords="799,183,945,209"/>
+<area shape="rect" id="node12" href="$atom__c_8c.html#af3d13cb1d0fbb3208789ea87cf806fdb" title="Pl_Name_2" alt="" coords="993,208,1084,235"/>
+</map>

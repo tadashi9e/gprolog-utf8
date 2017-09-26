@@ -1,0 +1,6 @@
+<map id="Pl_Sys_Var_Get_Bit_3" name="Pl_Sys_Var_Get_Bit_3">
+<area shape="rect" id="node2" href="$c__supp_8c.html#acd14b723a410bb965ba827e7b2e88786" title="Pl_Rd_Integer" alt="" coords="209,5,315,32"/>
+<area shape="rect" id="node3" href="$c__supp_8c.html#ad0742d08428fc63f69ebb517b99cabc6" title="Pl_Un_Integer" alt="" coords="209,56,315,83"/>
+<area shape="rect" id="node4" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="363,56,472,83"/>
+<area shape="rect" id="node5" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="520,56,679,83"/>
+</map>

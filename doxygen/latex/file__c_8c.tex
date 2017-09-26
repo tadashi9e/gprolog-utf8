@@ -1,0 +1,186 @@
+\hypertarget{file__c_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/file\+\_\+c.c File Reference}
+\label{file__c_8c}\index{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/file\+\_\+c.\+c@{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/file\+\_\+c.\+c}}
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}engine\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bips\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$sys/param.\+h$>$}\\*
+Include dependency graph for file\+\_\+c.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{file__c_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static char $\ast$ \hyperlink{file__c_8c_a95b4478d519a76ecc07e65c514f272a1}{Find\+\_\+\+Suffix} (char $\ast$\hyperlink{top__comp_8c_ada7d63ec6591c3fe16086c527d0e2565}{suffixes}, char $\ast$suffix)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{file__c_8c_aa3ed85b99cdef305f8a17e2e4147e5a9}{Pl\+\_\+\+Absolute\+\_\+\+File\+\_\+\+Name\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} path1\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} path2\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{file__c_8c_a19a116ad51405b0422bbbbc852d65749}{Pl\+\_\+\+Is\+\_\+\+Absolute\+\_\+\+File\+\_\+\+Name\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} path\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{file__c_8c_a8d17128e77751e3b7331319d85ddca24}{Pl\+\_\+\+Is\+\_\+\+Relative\+\_\+\+File\+\_\+\+Name\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} path\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{file__c_8c_a3d49b903c0509a60b743eccbe94a252f}{Pl\+\_\+\+Decompose\+\_\+\+File\+\_\+\+Name\+\_\+4} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} path\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} dir\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} prefix\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} suffix\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{file__c_8c_a75587386067a0455fe0fc145edd38378}{Pl\+\_\+\+Prolog\+\_\+\+File\+\_\+\+Name\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} path1\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} path2\+\_\+word)
+\item 
+\hyperlink{bool_8h_afdcfe6db5bea87bd493a3fe2c513d5ef}{Bool} \hyperlink{file__c_8c_af8d6172a45bc230be72d9af05552d8dc}{Pl\+\_\+\+Prolog\+\_\+\+File\+\_\+\+Suffix\+\_\+1} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} suffix\+\_\+word)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{file\+\_\+c.\+c@{file\+\_\+c.\+c}!Find\+\_\+\+Suffix@{Find\+\_\+\+Suffix}}
+\index{Find\+\_\+\+Suffix@{Find\+\_\+\+Suffix}!file\+\_\+c.\+c@{file\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Find\+\_\+\+Suffix(char $\ast$suffixes, char $\ast$suffix)}{Find_Suffix(char *suffixes, char *suffix)}}]{\setlength{\rightskip}{0pt plus 5cm}static char $\ast$ Find\+\_\+\+Suffix (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{suffixes, }
+\item[{char $\ast$}]{suffix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{file__c_8c_a95b4478d519a76ecc07e65c514f272a1}{}\label{file__c_8c_a95b4478d519a76ecc07e65c514f272a1}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{file__c_8c_a95b4478d519a76ecc07e65c514f272a1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{file\+\_\+c.\+c@{file\+\_\+c.\+c}!Pl\+\_\+\+Absolute\+\_\+\+File\+\_\+\+Name\+\_\+2@{Pl\+\_\+\+Absolute\+\_\+\+File\+\_\+\+Name\+\_\+2}}
+\index{Pl\+\_\+\+Absolute\+\_\+\+File\+\_\+\+Name\+\_\+2@{Pl\+\_\+\+Absolute\+\_\+\+File\+\_\+\+Name\+\_\+2}!file\+\_\+c.\+c@{file\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Absolute\+\_\+\+File\+\_\+\+Name\+\_\+2(\+Wam\+Word path1\+\_\+word, Wam\+Word path2\+\_\+word)}{Pl_Absolute_File_Name_2(WamWord path1_word, WamWord path2_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Absolute\+\_\+\+File\+\_\+\+Name\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{path1\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{path2\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{file__c_8c_aa3ed85b99cdef305f8a17e2e4147e5a9}{}\label{file__c_8c_aa3ed85b99cdef305f8a17e2e4147e5a9}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{file__c_8c_aa3ed85b99cdef305f8a17e2e4147e5a9_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{file\+\_\+c.\+c@{file\+\_\+c.\+c}!Pl\+\_\+\+Decompose\+\_\+\+File\+\_\+\+Name\+\_\+4@{Pl\+\_\+\+Decompose\+\_\+\+File\+\_\+\+Name\+\_\+4}}
+\index{Pl\+\_\+\+Decompose\+\_\+\+File\+\_\+\+Name\+\_\+4@{Pl\+\_\+\+Decompose\+\_\+\+File\+\_\+\+Name\+\_\+4}!file\+\_\+c.\+c@{file\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Decompose\+\_\+\+File\+\_\+\+Name\+\_\+4(\+Wam\+Word path\+\_\+word, Wam\+Word dir\+\_\+word, Wam\+Word prefix\+\_\+word, Wam\+Word suffix\+\_\+word)}{Pl_Decompose_File_Name_4(WamWord path_word, WamWord dir_word, WamWord prefix_word, WamWord suffix_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Decompose\+\_\+\+File\+\_\+\+Name\+\_\+4 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{path\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{dir\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{prefix\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{suffix\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{file__c_8c_a3d49b903c0509a60b743eccbe94a252f}{}\label{file__c_8c_a3d49b903c0509a60b743eccbe94a252f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{file__c_8c_a3d49b903c0509a60b743eccbe94a252f_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{file\+\_\+c.\+c@{file\+\_\+c.\+c}!Pl\+\_\+\+Is\+\_\+\+Absolute\+\_\+\+File\+\_\+\+Name\+\_\+1@{Pl\+\_\+\+Is\+\_\+\+Absolute\+\_\+\+File\+\_\+\+Name\+\_\+1}}
+\index{Pl\+\_\+\+Is\+\_\+\+Absolute\+\_\+\+File\+\_\+\+Name\+\_\+1@{Pl\+\_\+\+Is\+\_\+\+Absolute\+\_\+\+File\+\_\+\+Name\+\_\+1}!file\+\_\+c.\+c@{file\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Is\+\_\+\+Absolute\+\_\+\+File\+\_\+\+Name\+\_\+1(\+Wam\+Word path\+\_\+word)}{Pl_Is_Absolute_File_Name_1(WamWord path_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Is\+\_\+\+Absolute\+\_\+\+File\+\_\+\+Name\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{path\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{file__c_8c_a19a116ad51405b0422bbbbc852d65749}{}\label{file__c_8c_a19a116ad51405b0422bbbbc852d65749}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{file__c_8c_a19a116ad51405b0422bbbbc852d65749_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{file__c_8c_a19a116ad51405b0422bbbbc852d65749_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{file\+\_\+c.\+c@{file\+\_\+c.\+c}!Pl\+\_\+\+Is\+\_\+\+Relative\+\_\+\+File\+\_\+\+Name\+\_\+1@{Pl\+\_\+\+Is\+\_\+\+Relative\+\_\+\+File\+\_\+\+Name\+\_\+1}}
+\index{Pl\+\_\+\+Is\+\_\+\+Relative\+\_\+\+File\+\_\+\+Name\+\_\+1@{Pl\+\_\+\+Is\+\_\+\+Relative\+\_\+\+File\+\_\+\+Name\+\_\+1}!file\+\_\+c.\+c@{file\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Is\+\_\+\+Relative\+\_\+\+File\+\_\+\+Name\+\_\+1(\+Wam\+Word path\+\_\+word)}{Pl_Is_Relative_File_Name_1(WamWord path_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Is\+\_\+\+Relative\+\_\+\+File\+\_\+\+Name\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{path\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{file__c_8c_a8d17128e77751e3b7331319d85ddca24}{}\label{file__c_8c_a8d17128e77751e3b7331319d85ddca24}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{file__c_8c_a8d17128e77751e3b7331319d85ddca24_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{file\+\_\+c.\+c@{file\+\_\+c.\+c}!Pl\+\_\+\+Prolog\+\_\+\+File\+\_\+\+Name\+\_\+2@{Pl\+\_\+\+Prolog\+\_\+\+File\+\_\+\+Name\+\_\+2}}
+\index{Pl\+\_\+\+Prolog\+\_\+\+File\+\_\+\+Name\+\_\+2@{Pl\+\_\+\+Prolog\+\_\+\+File\+\_\+\+Name\+\_\+2}!file\+\_\+c.\+c@{file\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Prolog\+\_\+\+File\+\_\+\+Name\+\_\+2(\+Wam\+Word path1\+\_\+word, Wam\+Word path2\+\_\+word)}{Pl_Prolog_File_Name_2(WamWord path1_word, WamWord path2_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Prolog\+\_\+\+File\+\_\+\+Name\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{path1\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{path2\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{file__c_8c_a75587386067a0455fe0fc145edd38378}{}\label{file__c_8c_a75587386067a0455fe0fc145edd38378}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{file__c_8c_a75587386067a0455fe0fc145edd38378_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{file\+\_\+c.\+c@{file\+\_\+c.\+c}!Pl\+\_\+\+Prolog\+\_\+\+File\+\_\+\+Suffix\+\_\+1@{Pl\+\_\+\+Prolog\+\_\+\+File\+\_\+\+Suffix\+\_\+1}}
+\index{Pl\+\_\+\+Prolog\+\_\+\+File\+\_\+\+Suffix\+\_\+1@{Pl\+\_\+\+Prolog\+\_\+\+File\+\_\+\+Suffix\+\_\+1}!file\+\_\+c.\+c@{file\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Prolog\+\_\+\+File\+\_\+\+Suffix\+\_\+1(\+Wam\+Word suffix\+\_\+word)}{Pl_Prolog_File_Suffix_1(WamWord suffix_word)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bool} Pl\+\_\+\+Prolog\+\_\+\+File\+\_\+\+Suffix\+\_\+1 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{suffix\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{file__c_8c_af8d6172a45bc230be72d9af05552d8dc}{}\label{file__c_8c_af8d6172a45bc230be72d9af05552d8dc}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{file__c_8c_af8d6172a45bc230be72d9af05552d8dc_cgraph}
+\end{center}
+\end{figure}
+
+

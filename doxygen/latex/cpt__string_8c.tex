@@ -1,0 +1,702 @@
+\hypertarget{cpt__string_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/cpt\+\_\+string.c File Reference}
+\label{cpt__string_8c}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/cpt\+\_\+string.\+c@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/cpt\+\_\+string.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+Include dependency graph for cpt\+\_\+string.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{cpt__string_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcptcell}{cptcell}
+\item 
+struct \hyperlink{structcptnode}{cptnode}
+\item 
+struct \hyperlink{structCPTMatch}{C\+P\+T\+Match}
+\item 
+struct \hyperlink{structCPTStat}{C\+P\+T\+Stat}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cpt__string_8c_a3607793749c8615fb48c9cd6e274969f}{U\+S\+E\+\_\+\+A\+L\+O\+NE}
+\item 
+\#define \hyperlink{cpt__string_8c_ad37b52cd948f7aef2160b9151cddf10a}{Malloc}(size)~malloc(size)
+\item 
+\#define \hyperlink{cpt__string_8c_a678f7037af354c9ba9ca405aa633d149}{Calloc}(nb,  size)~calloc(nb, size)
+\item 
+\#define \hyperlink{cpt__string_8c_a4214f70e3bc7e99bc7474e34a43c1294}{Realloc}(ptr,  size)~realloc(ptr, size)
+\item 
+\#define \hyperlink{cpt__string_8c_a0b8e3b7d52eecc10d64e8242fc30c816}{Free}(ptr)~free(ptr)
+\item 
+\#define \hyperlink{cpt__string_8c_a9d18c1884d2a82cf1e921d320c42dde0}{G\+E\+N\+S\+Y\+M\+\_\+\+C\+H\+A\+RS}~\char`\"{}0123456789\+A\+B\+C\+D\+E\+F\+G\+H\+I\+J\+K\+L\+M\+N\+O\+P\+Q\+R\+S\+T\+U\+V\+W\+X\+Y\+Zabcdefghijklmnopqrstuvwxyz\char`\"{}
+\item 
+\#define \hyperlink{cpt__string_8c_a6c7cd32e1bac137f05e4a752b4ad10af}{B\+U\+F\+F\+\_\+\+S\+I\+ZE}~1024
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structcptnode}{cptnode} $\ast$ \hyperlink{cpt__string_8c_ab66488a4813896c44d2e4bbcf8d43a86}{C\+P\+T\+Tree}
+\item 
+typedef struct \hyperlink{structcptcell}{cptcell} $\ast$ \hyperlink{cpt__string_8c_ab32bc138599911e22c2be201414b53e7}{C\+P\+T\+List}
+\item 
+typedef struct \hyperlink{structcptcell}{cptcell} \hyperlink{cpt__string_8c_ae6f4c8366dd2f55d198cda80f7d3aafd}{C\+P\+T\+Cell}
+\item 
+typedef struct \hyperlink{structcptnode}{cptnode} \hyperlink{cpt__string_8c_ae820ff9716ba539775795cc521ef3e83}{C\+P\+T\+Node}
+\item 
+typedef \hyperlink{cpt__string_8c_ab66488a4813896c44d2e4bbcf8d43a86}{C\+P\+T\+Tree} \hyperlink{cpt__string_8c_ac00f91977fae6ebc6a212a7efafa2888}{C\+PT}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{cpt__string_8c_ac00f91977fae6ebc6a212a7efafa2888}{C\+PT} \hyperlink{cpt__string_8c_a575b296780005be9b354feeefb0e980b}{C\+P\+T\+\_\+\+Init} (void)
+\item 
+int \hyperlink{cpt__string_8c_a3f2267c147175838ed32cfd33de04695}{C\+P\+T\+\_\+\+Add\+\_\+\+Word} (\hyperlink{cpt__string_8c_ac00f91977fae6ebc6a212a7efafa2888}{C\+PT} cpt, char $\ast$word, int length)
+\item 
+static int \hyperlink{cpt__string_8c_a5c99bc06a40e98079a47af63305cac3f}{Common\+\_\+\+Prefix\+\_\+\+Length} (char $\ast$str1, int l1, char $\ast$str2, int l2)
+\item 
+static \hyperlink{cpt__string_8c_ab66488a4813896c44d2e4bbcf8d43a86}{C\+P\+T\+Tree} \hyperlink{cpt__string_8c_abbb18633c28ed8708432ff78583e5a78}{Create\+\_\+\+Node} (char $\ast$word, int length, int end, \hyperlink{cpt__string_8c_ab32bc138599911e22c2be201414b53e7}{C\+P\+T\+List} list)
+\item 
+static \hyperlink{cpt__string_8c_ab32bc138599911e22c2be201414b53e7}{C\+P\+T\+List} \hyperlink{cpt__string_8c_a4d6390848610b17157b5a80b252b915f}{Create\+\_\+\+Cell} (\hyperlink{cpt__string_8c_ab66488a4813896c44d2e4bbcf8d43a86}{C\+P\+T\+Tree} tree, \hyperlink{cpt__string_8c_ab32bc138599911e22c2be201414b53e7}{C\+P\+T\+List} next)
+\item 
+int \hyperlink{cpt__string_8c_a6fff2e79f96ba3c92e8c01bf8b18baaf}{C\+P\+T\+\_\+\+Search\+\_\+\+Word} (\hyperlink{cpt__string_8c_ac00f91977fae6ebc6a212a7efafa2888}{C\+PT} tree, char $\ast$word, int length)
+\item 
+\hyperlink{structCPTMatch}{C\+P\+T\+Match} $\ast$ \hyperlink{cpt__string_8c_a405cb23bcaa5e69e50735f0b0f6756ba}{C\+P\+T\+\_\+\+Init\+\_\+\+Match} (\hyperlink{cpt__string_8c_ac00f91977fae6ebc6a212a7efafa2888}{C\+PT} tree, char $\ast$prefix, int prefix\+\_\+length, char $\ast$\hyperlink{sparc64__any_8c_a718512b34ac927fdf021953ca4bb1967}{buff}, int($\ast$\hyperlink{extract__asm_8c_a849db728d9239b130558864aae79168f}{fct})())
+\item 
+int \hyperlink{cpt__string_8c_a8c346afe243ddb8e2666a380e981b43f}{C\+P\+T\+\_\+\+Do\+\_\+\+Match} (\hyperlink{structCPTMatch}{C\+P\+T\+Match} $\ast$\hyperlink{cpt__string_8c_ab45c63f0303760e224a85ee4ed083d4a}{match})
+\item 
+static int \hyperlink{cpt__string_8c_a6a3d5aaa46a96923315a716c7a3c290e}{Do\+\_\+\+Match\+\_\+\+Rec} (\hyperlink{cpt__string_8c_ab66488a4813896c44d2e4bbcf8d43a86}{C\+P\+T\+Tree} tree, char $\ast$\hyperlink{sparc64__any_8c_a718512b34ac927fdf021953ca4bb1967}{buff}, int length, int($\ast$\hyperlink{extract__asm_8c_a849db728d9239b130558864aae79168f}{fct})(), int \hyperlink{test__oc__defs_8h_a196206e0ab201e18d79c3878336d7d20}{no}, int $\ast$cont)
+\item 
+char $\ast$ \hyperlink{cpt__string_8c_a363bd1a1b159adc5e2957ab975974368}{C\+P\+T\+\_\+\+Match\+\_\+\+Info} (\hyperlink{structCPTMatch}{C\+P\+T\+Match} $\ast$\hyperlink{cpt__string_8c_ab45c63f0303760e224a85ee4ed083d4a}{match}, int $\ast$prefix\+\_\+length, int $\ast$nb\+\_\+words, int $\ast$max\+\_\+length)
+\item 
+static int \hyperlink{cpt__string_8c_ad1c4fbc7eb736e42636dc879026fa132}{Match\+\_\+\+Info\+\_\+\+Rec} (\hyperlink{cpt__string_8c_ab66488a4813896c44d2e4bbcf8d43a86}{C\+P\+T\+Tree} tree, int length, int $\ast$max\+\_\+length)
+\item 
+\hyperlink{structCPTStat}{C\+P\+T\+Stat} $\ast$ \hyperlink{cpt__string_8c_ab77720581c797309ea3f537835483838}{C\+P\+T\+\_\+\+Statistics} (\hyperlink{cpt__string_8c_ac00f91977fae6ebc6a212a7efafa2888}{C\+PT} tree)
+\item 
+static void \hyperlink{cpt__string_8c_a15c935fe1d7b53c3bf6f8d5fcbe1920c}{Statistics\+\_\+\+Rec} (\hyperlink{cpt__string_8c_ac00f91977fae6ebc6a212a7efafa2888}{C\+PT} tree, int depth, int prefix\+\_\+length)
+\item 
+int \hyperlink{cpt__string_8c_a64ad1e9be1c63c401f74f82c5baa72d8}{C\+P\+T\+\_\+\+Remove\+\_\+\+Word} (\hyperlink{cpt__string_8c_ab66488a4813896c44d2e4bbcf8d43a86}{C\+P\+T\+Tree} tree, char $\ast$word, int length)
+\item 
+int \hyperlink{cpt__string_8c_aca0cf1c2329abbf98204b91fa00611d2}{C\+P\+T\+\_\+\+Gensym} (\hyperlink{cpt__string_8c_ab66488a4813896c44d2e4bbcf8d43a86}{C\+P\+T\+Tree} tree, char $\ast$prefix, int prefix\+\_\+length, char $\ast$\hyperlink{sparc64__any_8c_a718512b34ac927fdf021953ca4bb1967}{buff})
+\item 
+void \hyperlink{cpt__string_8c_a522b262eb10929264ae8784ef1dab168}{Show\+\_\+\+Words} (\hyperlink{cpt__string_8c_ac00f91977fae6ebc6a212a7efafa2888}{C\+PT} tree)
+\item 
+void \hyperlink{cpt__string_8c_a355ad7c99916de4dee30f6ec7b7ce3b2}{Show\+\_\+\+Words\+\_\+\+Rec} (\hyperlink{cpt__string_8c_ac00f91977fae6ebc6a212a7efafa2888}{C\+PT} tree, char $\ast$prefix, int length)
+\item 
+void \hyperlink{cpt__string_8c_ac8ef9a332a153ee858201c4655ffdc84}{Show\+\_\+\+Tree} (\hyperlink{cpt__string_8c_ac00f91977fae6ebc6a212a7efafa2888}{C\+PT} tree, int level)
+\item 
+int \hyperlink{cpt__string_8c_ad28d2bbb21111e2c4bf052aff100a49b}{Display\+\_\+\+Completion} (char $\ast$str, int length, int \hyperlink{test__oc__defs_8h_a196206e0ab201e18d79c3878336d7d20}{no})
+\item 
+int \hyperlink{cpt__string_8c_a83d890fc7de55e95658177459dc56ae8}{Read\+\_\+\+String} (F\+I\+LE $\ast$\hyperlink{asm_8c_ad1351d85ffec3c1176dc31d8e8f8e28a}{f}, char $\ast$str)
+\item 
+int \hyperlink{cpt__string_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structCPTMatch}{C\+P\+T\+Match} \hyperlink{cpt__string_8c_ab45c63f0303760e224a85ee4ed083d4a}{match}
+\item 
+static \hyperlink{structCPTStat}{C\+P\+T\+Stat} \hyperlink{cpt__string_8c_a6d7eba9c6bdb0c6a0373a72c4e91b4ed}{stat}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!B\+U\+F\+F\+\_\+\+S\+I\+ZE@{B\+U\+F\+F\+\_\+\+S\+I\+ZE}}
+\index{B\+U\+F\+F\+\_\+\+S\+I\+ZE@{B\+U\+F\+F\+\_\+\+S\+I\+ZE}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{B\+U\+F\+F\+\_\+\+S\+I\+ZE}{BUFF_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+U\+F\+F\+\_\+\+S\+I\+ZE~1024}\hypertarget{cpt__string_8c_a6c7cd32e1bac137f05e4a752b4ad10af}{}\label{cpt__string_8c_a6c7cd32e1bac137f05e4a752b4ad10af}
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!Calloc@{Calloc}}
+\index{Calloc@{Calloc}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{Calloc}{Calloc}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Calloc(
+\begin{DoxyParamCaption}
+\item[{}]{nb, }
+\item[{}]{size}
+\end{DoxyParamCaption}
+)~calloc(nb, size)}\hypertarget{cpt__string_8c_a678f7037af354c9ba9ca405aa633d149}{}\label{cpt__string_8c_a678f7037af354c9ba9ca405aa633d149}
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!Free@{Free}}
+\index{Free@{Free}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{Free}{Free}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Free(
+\begin{DoxyParamCaption}
+\item[{}]{ptr}
+\end{DoxyParamCaption}
+)~free(ptr)}\hypertarget{cpt__string_8c_a0b8e3b7d52eecc10d64e8242fc30c816}{}\label{cpt__string_8c_a0b8e3b7d52eecc10d64e8242fc30c816}
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!G\+E\+N\+S\+Y\+M\+\_\+\+C\+H\+A\+RS@{G\+E\+N\+S\+Y\+M\+\_\+\+C\+H\+A\+RS}}
+\index{G\+E\+N\+S\+Y\+M\+\_\+\+C\+H\+A\+RS@{G\+E\+N\+S\+Y\+M\+\_\+\+C\+H\+A\+RS}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{G\+E\+N\+S\+Y\+M\+\_\+\+C\+H\+A\+RS}{GENSYM_CHARS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+N\+S\+Y\+M\+\_\+\+C\+H\+A\+RS~\char`\"{}0123456789\+A\+B\+C\+D\+E\+F\+G\+H\+I\+J\+K\+L\+M\+N\+O\+P\+Q\+R\+S\+T\+U\+V\+W\+X\+Y\+Zabcdefghijklmnopqrstuvwxyz\char`\"{}}\hypertarget{cpt__string_8c_a9d18c1884d2a82cf1e921d320c42dde0}{}\label{cpt__string_8c_a9d18c1884d2a82cf1e921d320c42dde0}
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!Malloc@{Malloc}}
+\index{Malloc@{Malloc}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{Malloc}{Malloc}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Malloc(
+\begin{DoxyParamCaption}
+\item[{}]{size}
+\end{DoxyParamCaption}
+)~malloc(size)}\hypertarget{cpt__string_8c_ad37b52cd948f7aef2160b9151cddf10a}{}\label{cpt__string_8c_ad37b52cd948f7aef2160b9151cddf10a}
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!Realloc@{Realloc}}
+\index{Realloc@{Realloc}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{Realloc}{Realloc}}]{\setlength{\rightskip}{0pt plus 5cm}\#define Realloc(
+\begin{DoxyParamCaption}
+\item[{}]{ptr, }
+\item[{}]{size}
+\end{DoxyParamCaption}
+)~realloc(ptr, size)}\hypertarget{cpt__string_8c_a4214f70e3bc7e99bc7474e34a43c1294}{}\label{cpt__string_8c_a4214f70e3bc7e99bc7474e34a43c1294}
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!U\+S\+E\+\_\+\+A\+L\+O\+NE@{U\+S\+E\+\_\+\+A\+L\+O\+NE}}
+\index{U\+S\+E\+\_\+\+A\+L\+O\+NE@{U\+S\+E\+\_\+\+A\+L\+O\+NE}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{U\+S\+E\+\_\+\+A\+L\+O\+NE}{USE_ALONE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+E\+\_\+\+A\+L\+O\+NE}\hypertarget{cpt__string_8c_a3607793749c8615fb48c9cd6e274969f}{}\label{cpt__string_8c_a3607793749c8615fb48c9cd6e274969f}
+
+
+\subsection{Typedef Documentation}
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!C\+PT@{C\+PT}}
+\index{C\+PT@{C\+PT}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{C\+PT}{CPT}}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf C\+P\+T\+Tree} {\bf C\+PT}}\hypertarget{cpt__string_8c_ac00f91977fae6ebc6a212a7efafa2888}{}\label{cpt__string_8c_ac00f91977fae6ebc6a212a7efafa2888}
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!C\+P\+T\+Cell@{C\+P\+T\+Cell}}
+\index{C\+P\+T\+Cell@{C\+P\+T\+Cell}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{C\+P\+T\+Cell}{CPTCell}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cptcell}
+ {\bf C\+P\+T\+Cell}}\hypertarget{cpt__string_8c_ae6f4c8366dd2f55d198cda80f7d3aafd}{}\label{cpt__string_8c_ae6f4c8366dd2f55d198cda80f7d3aafd}
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!C\+P\+T\+List@{C\+P\+T\+List}}
+\index{C\+P\+T\+List@{C\+P\+T\+List}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{C\+P\+T\+List}{CPTList}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cptcell}$\ast$ {\bf C\+P\+T\+List}}\hypertarget{cpt__string_8c_ab32bc138599911e22c2be201414b53e7}{}\label{cpt__string_8c_ab32bc138599911e22c2be201414b53e7}
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!C\+P\+T\+Node@{C\+P\+T\+Node}}
+\index{C\+P\+T\+Node@{C\+P\+T\+Node}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{C\+P\+T\+Node}{CPTNode}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cptnode}
+ {\bf C\+P\+T\+Node}}\hypertarget{cpt__string_8c_ae820ff9716ba539775795cc521ef3e83}{}\label{cpt__string_8c_ae820ff9716ba539775795cc521ef3e83}
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!C\+P\+T\+Tree@{C\+P\+T\+Tree}}
+\index{C\+P\+T\+Tree@{C\+P\+T\+Tree}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{C\+P\+T\+Tree}{CPTTree}}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cptnode}$\ast$ {\bf C\+P\+T\+Tree}}\hypertarget{cpt__string_8c_ab66488a4813896c44d2e4bbcf8d43a86}{}\label{cpt__string_8c_ab66488a4813896c44d2e4bbcf8d43a86}
+
+
+\subsection{Function Documentation}
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!Common\+\_\+\+Prefix\+\_\+\+Length@{Common\+\_\+\+Prefix\+\_\+\+Length}}
+\index{Common\+\_\+\+Prefix\+\_\+\+Length@{Common\+\_\+\+Prefix\+\_\+\+Length}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{Common\+\_\+\+Prefix\+\_\+\+Length(char $\ast$str1, int l1, char $\ast$str2, int l2)}{Common_Prefix_Length(char *str1, int l1, char *str2, int l2)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Common\+\_\+\+Prefix\+\_\+\+Length (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str1, }
+\item[{int}]{l1, }
+\item[{char $\ast$}]{str2, }
+\item[{int}]{l2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{cpt__string_8c_a5c99bc06a40e98079a47af63305cac3f}{}\label{cpt__string_8c_a5c99bc06a40e98079a47af63305cac3f}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cpt__string_8c_a5c99bc06a40e98079a47af63305cac3f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!C\+P\+T\+\_\+\+Add\+\_\+\+Word@{C\+P\+T\+\_\+\+Add\+\_\+\+Word}}
+\index{C\+P\+T\+\_\+\+Add\+\_\+\+Word@{C\+P\+T\+\_\+\+Add\+\_\+\+Word}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{C\+P\+T\+\_\+\+Add\+\_\+\+Word(\+C\+P\+T cpt, char $\ast$word, int length)}{CPT_Add_Word(CPT cpt, char *word, int length)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+T\+\_\+\+Add\+\_\+\+Word (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+PT}}]{cpt, }
+\item[{char $\ast$}]{word, }
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}\hypertarget{cpt__string_8c_a3f2267c147175838ed32cfd33de04695}{}\label{cpt__string_8c_a3f2267c147175838ed32cfd33de04695}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{cpt__string_8c_a3f2267c147175838ed32cfd33de04695_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{cpt__string_8c_a3f2267c147175838ed32cfd33de04695_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!C\+P\+T\+\_\+\+Do\+\_\+\+Match@{C\+P\+T\+\_\+\+Do\+\_\+\+Match}}
+\index{C\+P\+T\+\_\+\+Do\+\_\+\+Match@{C\+P\+T\+\_\+\+Do\+\_\+\+Match}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{C\+P\+T\+\_\+\+Do\+\_\+\+Match(\+C\+P\+T\+Match $\ast$match)}{CPT_Do_Match(CPTMatch *match)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+T\+\_\+\+Do\+\_\+\+Match (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+P\+T\+Match} $\ast$}]{match}
+\end{DoxyParamCaption}
+)}\hypertarget{cpt__string_8c_a8c346afe243ddb8e2666a380e981b43f}{}\label{cpt__string_8c_a8c346afe243ddb8e2666a380e981b43f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{cpt__string_8c_a8c346afe243ddb8e2666a380e981b43f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{cpt__string_8c_a8c346afe243ddb8e2666a380e981b43f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!C\+P\+T\+\_\+\+Gensym@{C\+P\+T\+\_\+\+Gensym}}
+\index{C\+P\+T\+\_\+\+Gensym@{C\+P\+T\+\_\+\+Gensym}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{C\+P\+T\+\_\+\+Gensym(\+C\+P\+T\+Tree tree, char $\ast$prefix, int prefix\+\_\+length, char $\ast$buff)}{CPT_Gensym(CPTTree tree, char *prefix, int prefix_length, char *buff)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+T\+\_\+\+Gensym (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+P\+T\+Tree}}]{tree, }
+\item[{char $\ast$}]{prefix, }
+\item[{int}]{prefix\+\_\+length, }
+\item[{char $\ast$}]{buff}
+\end{DoxyParamCaption}
+)}\hypertarget{cpt__string_8c_aca0cf1c2329abbf98204b91fa00611d2}{}\label{cpt__string_8c_aca0cf1c2329abbf98204b91fa00611d2}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{cpt__string_8c_aca0cf1c2329abbf98204b91fa00611d2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!C\+P\+T\+\_\+\+Init@{C\+P\+T\+\_\+\+Init}}
+\index{C\+P\+T\+\_\+\+Init@{C\+P\+T\+\_\+\+Init}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{C\+P\+T\+\_\+\+Init(void)}{CPT_Init(void)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+PT} C\+P\+T\+\_\+\+Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{cpt__string_8c_a575b296780005be9b354feeefb0e980b}{}\label{cpt__string_8c_a575b296780005be9b354feeefb0e980b}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{cpt__string_8c_a575b296780005be9b354feeefb0e980b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{cpt__string_8c_a575b296780005be9b354feeefb0e980b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!C\+P\+T\+\_\+\+Init\+\_\+\+Match@{C\+P\+T\+\_\+\+Init\+\_\+\+Match}}
+\index{C\+P\+T\+\_\+\+Init\+\_\+\+Match@{C\+P\+T\+\_\+\+Init\+\_\+\+Match}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{C\+P\+T\+\_\+\+Init\+\_\+\+Match(\+C\+P\+T tree, char $\ast$prefix, int prefix\+\_\+length, char $\ast$buff, int($\ast$fct)())}{CPT_Init_Match(CPT tree, char *prefix, int prefix_length, char *buff, int(*fct)())}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+P\+T\+Match} $\ast$ C\+P\+T\+\_\+\+Init\+\_\+\+Match (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+PT}}]{tree, }
+\item[{char $\ast$}]{prefix, }
+\item[{int}]{prefix\+\_\+length, }
+\item[{char $\ast$}]{buff, }
+\item[{int($\ast$)()}]{fct}
+\end{DoxyParamCaption}
+)}\hypertarget{cpt__string_8c_a405cb23bcaa5e69e50735f0b0f6756ba}{}\label{cpt__string_8c_a405cb23bcaa5e69e50735f0b0f6756ba}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{cpt__string_8c_a405cb23bcaa5e69e50735f0b0f6756ba_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{cpt__string_8c_a405cb23bcaa5e69e50735f0b0f6756ba_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!C\+P\+T\+\_\+\+Match\+\_\+\+Info@{C\+P\+T\+\_\+\+Match\+\_\+\+Info}}
+\index{C\+P\+T\+\_\+\+Match\+\_\+\+Info@{C\+P\+T\+\_\+\+Match\+\_\+\+Info}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{C\+P\+T\+\_\+\+Match\+\_\+\+Info(\+C\+P\+T\+Match $\ast$match, int $\ast$prefix\+\_\+length, int $\ast$nb\+\_\+words, int $\ast$max\+\_\+length)}{CPT_Match_Info(CPTMatch *match, int *prefix_length, int *nb_words, int *max_length)}}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ C\+P\+T\+\_\+\+Match\+\_\+\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+P\+T\+Match} $\ast$}]{match, }
+\item[{int $\ast$}]{prefix\+\_\+length, }
+\item[{int $\ast$}]{nb\+\_\+words, }
+\item[{int $\ast$}]{max\+\_\+length}
+\end{DoxyParamCaption}
+)}\hypertarget{cpt__string_8c_a363bd1a1b159adc5e2957ab975974368}{}\label{cpt__string_8c_a363bd1a1b159adc5e2957ab975974368}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{cpt__string_8c_a363bd1a1b159adc5e2957ab975974368_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{cpt__string_8c_a363bd1a1b159adc5e2957ab975974368_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!C\+P\+T\+\_\+\+Remove\+\_\+\+Word@{C\+P\+T\+\_\+\+Remove\+\_\+\+Word}}
+\index{C\+P\+T\+\_\+\+Remove\+\_\+\+Word@{C\+P\+T\+\_\+\+Remove\+\_\+\+Word}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{C\+P\+T\+\_\+\+Remove\+\_\+\+Word(\+C\+P\+T\+Tree tree, char $\ast$word, int length)}{CPT_Remove_Word(CPTTree tree, char *word, int length)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+T\+\_\+\+Remove\+\_\+\+Word (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+P\+T\+Tree}}]{tree, }
+\item[{char $\ast$}]{word, }
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}\hypertarget{cpt__string_8c_a64ad1e9be1c63c401f74f82c5baa72d8}{}\label{cpt__string_8c_a64ad1e9be1c63c401f74f82c5baa72d8}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{cpt__string_8c_a64ad1e9be1c63c401f74f82c5baa72d8_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!C\+P\+T\+\_\+\+Search\+\_\+\+Word@{C\+P\+T\+\_\+\+Search\+\_\+\+Word}}
+\index{C\+P\+T\+\_\+\+Search\+\_\+\+Word@{C\+P\+T\+\_\+\+Search\+\_\+\+Word}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{C\+P\+T\+\_\+\+Search\+\_\+\+Word(\+C\+P\+T tree, char $\ast$word, int length)}{CPT_Search_Word(CPT tree, char *word, int length)}}]{\setlength{\rightskip}{0pt plus 5cm}int C\+P\+T\+\_\+\+Search\+\_\+\+Word (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+PT}}]{tree, }
+\item[{char $\ast$}]{word, }
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}\hypertarget{cpt__string_8c_a6fff2e79f96ba3c92e8c01bf8b18baaf}{}\label{cpt__string_8c_a6fff2e79f96ba3c92e8c01bf8b18baaf}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{cpt__string_8c_a6fff2e79f96ba3c92e8c01bf8b18baaf_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!C\+P\+T\+\_\+\+Statistics@{C\+P\+T\+\_\+\+Statistics}}
+\index{C\+P\+T\+\_\+\+Statistics@{C\+P\+T\+\_\+\+Statistics}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{C\+P\+T\+\_\+\+Statistics(\+C\+P\+T tree)}{CPT_Statistics(CPT tree)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+P\+T\+Stat} $\ast$ C\+P\+T\+\_\+\+Statistics (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+PT}}]{tree}
+\end{DoxyParamCaption}
+)}\hypertarget{cpt__string_8c_ab77720581c797309ea3f537835483838}{}\label{cpt__string_8c_ab77720581c797309ea3f537835483838}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{cpt__string_8c_ab77720581c797309ea3f537835483838_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{cpt__string_8c_ab77720581c797309ea3f537835483838_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!Create\+\_\+\+Cell@{Create\+\_\+\+Cell}}
+\index{Create\+\_\+\+Cell@{Create\+\_\+\+Cell}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{Create\+\_\+\+Cell(\+C\+P\+T\+Tree tree, C\+P\+T\+List next)}{Create_Cell(CPTTree tree, CPTList next)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf C\+P\+T\+List} Create\+\_\+\+Cell (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+P\+T\+Tree}}]{tree, }
+\item[{{\bf C\+P\+T\+List}}]{next}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{cpt__string_8c_a4d6390848610b17157b5a80b252b915f}{}\label{cpt__string_8c_a4d6390848610b17157b5a80b252b915f}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{cpt__string_8c_a4d6390848610b17157b5a80b252b915f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!Create\+\_\+\+Node@{Create\+\_\+\+Node}}
+\index{Create\+\_\+\+Node@{Create\+\_\+\+Node}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{Create\+\_\+\+Node(char $\ast$word, int length, int end, C\+P\+T\+List list)}{Create_Node(char *word, int length, int end, CPTList list)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf C\+P\+T\+Tree} Create\+\_\+\+Node (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{word, }
+\item[{int}]{length, }
+\item[{int}]{end, }
+\item[{{\bf C\+P\+T\+List}}]{list}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{cpt__string_8c_abbb18633c28ed8708432ff78583e5a78}{}\label{cpt__string_8c_abbb18633c28ed8708432ff78583e5a78}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cpt__string_8c_abbb18633c28ed8708432ff78583e5a78_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!Display\+\_\+\+Completion@{Display\+\_\+\+Completion}}
+\index{Display\+\_\+\+Completion@{Display\+\_\+\+Completion}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{Display\+\_\+\+Completion(char $\ast$str, int length, int no)}{Display_Completion(char *str, int length, int no)}}]{\setlength{\rightskip}{0pt plus 5cm}int Display\+\_\+\+Completion (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{int}]{length, }
+\item[{int}]{no}
+\end{DoxyParamCaption}
+)}\hypertarget{cpt__string_8c_ad28d2bbb21111e2c4bf052aff100a49b}{}\label{cpt__string_8c_ad28d2bbb21111e2c4bf052aff100a49b}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{cpt__string_8c_ad28d2bbb21111e2c4bf052aff100a49b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!Do\+\_\+\+Match\+\_\+\+Rec@{Do\+\_\+\+Match\+\_\+\+Rec}}
+\index{Do\+\_\+\+Match\+\_\+\+Rec@{Do\+\_\+\+Match\+\_\+\+Rec}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{Do\+\_\+\+Match\+\_\+\+Rec(\+C\+P\+T\+Tree tree, char $\ast$buff, int length, int($\ast$fct)(), int no, int $\ast$cont)}{Do_Match_Rec(CPTTree tree, char *buff, int length, int(*fct)(), int no, int *cont)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Do\+\_\+\+Match\+\_\+\+Rec (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+P\+T\+Tree}}]{tree, }
+\item[{char $\ast$}]{buff, }
+\item[{int}]{length, }
+\item[{int($\ast$)()}]{fct, }
+\item[{int}]{no, }
+\item[{int $\ast$}]{cont}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{cpt__string_8c_a6a3d5aaa46a96923315a716c7a3c290e}{}\label{cpt__string_8c_a6a3d5aaa46a96923315a716c7a3c290e}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cpt__string_8c_a6a3d5aaa46a96923315a716c7a3c290e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!main@{main}}
+\index{main@{main}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{cpt__string_8c_a0ddf1224851353fc92bfbff6f499fa97}{}\label{cpt__string_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cpt__string_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!Match\+\_\+\+Info\+\_\+\+Rec@{Match\+\_\+\+Info\+\_\+\+Rec}}
+\index{Match\+\_\+\+Info\+\_\+\+Rec@{Match\+\_\+\+Info\+\_\+\+Rec}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{Match\+\_\+\+Info\+\_\+\+Rec(\+C\+P\+T\+Tree tree, int length, int $\ast$max\+\_\+length)}{Match_Info_Rec(CPTTree tree, int length, int *max_length)}}]{\setlength{\rightskip}{0pt plus 5cm}static int Match\+\_\+\+Info\+\_\+\+Rec (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+P\+T\+Tree}}]{tree, }
+\item[{int}]{length, }
+\item[{int $\ast$}]{max\+\_\+length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{cpt__string_8c_ad1c4fbc7eb736e42636dc879026fa132}{}\label{cpt__string_8c_ad1c4fbc7eb736e42636dc879026fa132}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cpt__string_8c_ad1c4fbc7eb736e42636dc879026fa132_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!Read\+\_\+\+String@{Read\+\_\+\+String}}
+\index{Read\+\_\+\+String@{Read\+\_\+\+String}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{Read\+\_\+\+String(\+F\+I\+L\+E $\ast$f, char $\ast$str)}{Read_String(FILE *f, char *str)}}]{\setlength{\rightskip}{0pt plus 5cm}int Read\+\_\+\+String (
+\begin{DoxyParamCaption}
+\item[{F\+I\+LE $\ast$}]{f, }
+\item[{char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}\hypertarget{cpt__string_8c_a83d890fc7de55e95658177459dc56ae8}{}\label{cpt__string_8c_a83d890fc7de55e95658177459dc56ae8}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{cpt__string_8c_a83d890fc7de55e95658177459dc56ae8_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!Show\+\_\+\+Tree@{Show\+\_\+\+Tree}}
+\index{Show\+\_\+\+Tree@{Show\+\_\+\+Tree}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{Show\+\_\+\+Tree(\+C\+P\+T tree, int level)}{Show_Tree(CPT tree, int level)}}]{\setlength{\rightskip}{0pt plus 5cm}void Show\+\_\+\+Tree (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+PT}}]{tree, }
+\item[{int}]{level}
+\end{DoxyParamCaption}
+)}\hypertarget{cpt__string_8c_ac8ef9a332a153ee858201c4655ffdc84}{}\label{cpt__string_8c_ac8ef9a332a153ee858201c4655ffdc84}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{cpt__string_8c_ac8ef9a332a153ee858201c4655ffdc84_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!Show\+\_\+\+Words@{Show\+\_\+\+Words}}
+\index{Show\+\_\+\+Words@{Show\+\_\+\+Words}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{Show\+\_\+\+Words(\+C\+P\+T tree)}{Show_Words(CPT tree)}}]{\setlength{\rightskip}{0pt plus 5cm}void Show\+\_\+\+Words (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+PT}}]{tree}
+\end{DoxyParamCaption}
+)}\hypertarget{cpt__string_8c_a522b262eb10929264ae8784ef1dab168}{}\label{cpt__string_8c_a522b262eb10929264ae8784ef1dab168}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{cpt__string_8c_a522b262eb10929264ae8784ef1dab168_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{cpt__string_8c_a522b262eb10929264ae8784ef1dab168_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!Show\+\_\+\+Words\+\_\+\+Rec@{Show\+\_\+\+Words\+\_\+\+Rec}}
+\index{Show\+\_\+\+Words\+\_\+\+Rec@{Show\+\_\+\+Words\+\_\+\+Rec}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{Show\+\_\+\+Words\+\_\+\+Rec(\+C\+P\+T tree, char $\ast$prefix, int length)}{Show_Words_Rec(CPT tree, char *prefix, int length)}}]{\setlength{\rightskip}{0pt plus 5cm}void Show\+\_\+\+Words\+\_\+\+Rec (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+PT}}]{tree, }
+\item[{char $\ast$}]{prefix, }
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}\hypertarget{cpt__string_8c_a355ad7c99916de4dee30f6ec7b7ce3b2}{}\label{cpt__string_8c_a355ad7c99916de4dee30f6ec7b7ce3b2}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cpt__string_8c_a355ad7c99916de4dee30f6ec7b7ce3b2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!Statistics\+\_\+\+Rec@{Statistics\+\_\+\+Rec}}
+\index{Statistics\+\_\+\+Rec@{Statistics\+\_\+\+Rec}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{Statistics\+\_\+\+Rec(\+C\+P\+T tree, int depth, int prefix\+\_\+length)}{Statistics_Rec(CPT tree, int depth, int prefix_length)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Statistics\+\_\+\+Rec (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+PT}}]{tree, }
+\item[{int}]{depth, }
+\item[{int}]{prefix\+\_\+length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{cpt__string_8c_a15c935fe1d7b53c3bf6f8d5fcbe1920c}{}\label{cpt__string_8c_a15c935fe1d7b53c3bf6f8d5fcbe1920c}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cpt__string_8c_a15c935fe1d7b53c3bf6f8d5fcbe1920c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!match@{match}}
+\index{match@{match}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{match}{match}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+P\+T\+Match} match\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{cpt__string_8c_ab45c63f0303760e224a85ee4ed083d4a}{}\label{cpt__string_8c_ab45c63f0303760e224a85ee4ed083d4a}
+\index{cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}!stat@{stat}}
+\index{stat@{stat}!cpt\+\_\+string.\+c@{cpt\+\_\+string.\+c}}
+\subsubsection[{\texorpdfstring{stat}{stat}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+P\+T\+Stat} stat\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{cpt__string_8c_a6d7eba9c6bdb0c6a0373a72c4e91b4ed}{}\label{cpt__string_8c_a6d7eba9c6bdb0c6a0373a72c4e91b4ed}

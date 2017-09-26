@@ -1,0 +1,256 @@
+\hypertarget{format__c_8c}{}\section{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/format\+\_\+c.c File Reference}
+\label{format__c_8c}\index{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/format\+\_\+c.\+c@{gprolog-\/utf8-\/tree/src/\+Bips\+Pl/format\+\_\+c.\+c}}
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}engine\+\_\+pl.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}bips\+\_\+pl.\+h\char`\"{}}\\*
+Include dependency graph for format\+\_\+c.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{format__c_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{format__c_8c_a92fe5e323441be36ae37e8cb34ae4009}{I\+M\+P\+O\+SS}~-\/12345678
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{format__c_8c_aa12dcc50db0f65e767ec82fac2354c1f}{Format} (\hyperlink{stream__supp_8h_aaf7f88cb596ec47c270f8b2f79035a96}{Stm\+Inf} $\ast$pstm, char $\ast$\hyperlink{hexfilter_8c_a5407a229a5e1a319d75fb29542c83eae}{format}, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$lst\+\_\+adr)
+\item 
+static \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} \hyperlink{format__c_8c_a5d8a09114be84af3b6026fb4d69087a3}{Read\+\_\+\+Arg} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$$\ast$lst\+\_\+adr)
+\item 
+static char $\ast$ \hyperlink{format__c_8c_a300629a168a1b42baabec64c1c69e81f}{Arg\+\_\+\+Atom} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$$\ast$lst\+\_\+adr)
+\item 
+static \hyperlink{gprolog_8h_a4d005b136d7fb28537eb1815f7868b63}{Pl\+Long} \hyperlink{format__c_8c_a80aaa4e9bc405d96dacf348bcc3f2b12}{Arg\+\_\+\+Integer} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$$\ast$lst\+\_\+adr)
+\item 
+static double \hyperlink{format__c_8c_af9a6e2c8c4bd122d4afc1289b7ebb911}{Arg\+\_\+\+Float} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} $\ast$$\ast$lst\+\_\+adr)
+\item 
+void \hyperlink{format__c_8c_a20338d45bcffed5bd8c0b0e854e2df77}{Pl\+\_\+\+Format\+\_\+3} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} sora\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} format\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} args\+\_\+word)
+\item 
+void \hyperlink{format__c_8c_abff47fc1afcb4e841ee56816e84d37c5}{Pl\+\_\+\+Format\+\_\+2} (\hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} format\+\_\+word, \hyperlink{LINUX__SIGSEGV_8c_a10ea8be8823feb38875b8a9326cbb424}{Wam\+Word} args\+\_\+word)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{format\+\_\+c.\+c@{format\+\_\+c.\+c}!I\+M\+P\+O\+SS@{I\+M\+P\+O\+SS}}
+\index{I\+M\+P\+O\+SS@{I\+M\+P\+O\+SS}!format\+\_\+c.\+c@{format\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{I\+M\+P\+O\+SS}{IMPOSS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+M\+P\+O\+SS~-\/12345678}\hypertarget{format__c_8c_a92fe5e323441be36ae37e8cb34ae4009}{}\label{format__c_8c_a92fe5e323441be36ae37e8cb34ae4009}
+
+
+\subsection{Function Documentation}
+\index{format\+\_\+c.\+c@{format\+\_\+c.\+c}!Arg\+\_\+\+Atom@{Arg\+\_\+\+Atom}}
+\index{Arg\+\_\+\+Atom@{Arg\+\_\+\+Atom}!format\+\_\+c.\+c@{format\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Arg\+\_\+\+Atom(\+Wam\+Word $\ast$$\ast$lst\+\_\+adr)}{Arg_Atom(WamWord **lst_adr)}}]{\setlength{\rightskip}{0pt plus 5cm}static char $\ast$ Arg\+\_\+\+Atom (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word} $\ast$$\ast$}]{lst\+\_\+adr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{format__c_8c_a300629a168a1b42baabec64c1c69e81f}{}\label{format__c_8c_a300629a168a1b42baabec64c1c69e81f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{format__c_8c_a300629a168a1b42baabec64c1c69e81f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{format__c_8c_a300629a168a1b42baabec64c1c69e81f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{format\+\_\+c.\+c@{format\+\_\+c.\+c}!Arg\+\_\+\+Float@{Arg\+\_\+\+Float}}
+\index{Arg\+\_\+\+Float@{Arg\+\_\+\+Float}!format\+\_\+c.\+c@{format\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Arg\+\_\+\+Float(\+Wam\+Word $\ast$$\ast$lst\+\_\+adr)}{Arg_Float(WamWord **lst_adr)}}]{\setlength{\rightskip}{0pt plus 5cm}static double Arg\+\_\+\+Float (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word} $\ast$$\ast$}]{lst\+\_\+adr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{format__c_8c_af9a6e2c8c4bd122d4afc1289b7ebb911}{}\label{format__c_8c_af9a6e2c8c4bd122d4afc1289b7ebb911}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{format__c_8c_af9a6e2c8c4bd122d4afc1289b7ebb911_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{format__c_8c_af9a6e2c8c4bd122d4afc1289b7ebb911_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{format\+\_\+c.\+c@{format\+\_\+c.\+c}!Arg\+\_\+\+Integer@{Arg\+\_\+\+Integer}}
+\index{Arg\+\_\+\+Integer@{Arg\+\_\+\+Integer}!format\+\_\+c.\+c@{format\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Arg\+\_\+\+Integer(\+Wam\+Word $\ast$$\ast$lst\+\_\+adr)}{Arg_Integer(WamWord **lst_adr)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Pl\+Long} Arg\+\_\+\+Integer (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word} $\ast$$\ast$}]{lst\+\_\+adr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{format__c_8c_a80aaa4e9bc405d96dacf348bcc3f2b12}{}\label{format__c_8c_a80aaa4e9bc405d96dacf348bcc3f2b12}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{format__c_8c_a80aaa4e9bc405d96dacf348bcc3f2b12_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{format__c_8c_a80aaa4e9bc405d96dacf348bcc3f2b12_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{format\+\_\+c.\+c@{format\+\_\+c.\+c}!Format@{Format}}
+\index{Format@{Format}!format\+\_\+c.\+c@{format\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Format(\+Stm\+Inf $\ast$pstm, char $\ast$format, Wam\+Word $\ast$lst\+\_\+adr)}{Format(StmInf *pstm, char *format, WamWord *lst_adr)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Format (
+\begin{DoxyParamCaption}
+\item[{{\bf Stm\+Inf} $\ast$}]{pstm, }
+\item[{char $\ast$}]{format, }
+\item[{{\bf Wam\+Word} $\ast$}]{lst\+\_\+adr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{format__c_8c_aa12dcc50db0f65e767ec82fac2354c1f}{}\label{format__c_8c_aa12dcc50db0f65e767ec82fac2354c1f}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{format__c_8c_aa12dcc50db0f65e767ec82fac2354c1f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{format__c_8c_aa12dcc50db0f65e767ec82fac2354c1f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{format\+\_\+c.\+c@{format\+\_\+c.\+c}!Pl\+\_\+\+Format\+\_\+2@{Pl\+\_\+\+Format\+\_\+2}}
+\index{Pl\+\_\+\+Format\+\_\+2@{Pl\+\_\+\+Format\+\_\+2}!format\+\_\+c.\+c@{format\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Format\+\_\+2(\+Wam\+Word format\+\_\+word, Wam\+Word args\+\_\+word)}{Pl_Format_2(WamWord format_word, WamWord args_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Format\+\_\+2 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{format\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{args\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{format__c_8c_abff47fc1afcb4e841ee56816e84d37c5}{}\label{format__c_8c_abff47fc1afcb4e841ee56816e84d37c5}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{format__c_8c_abff47fc1afcb4e841ee56816e84d37c5_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{format\+\_\+c.\+c@{format\+\_\+c.\+c}!Pl\+\_\+\+Format\+\_\+3@{Pl\+\_\+\+Format\+\_\+3}}
+\index{Pl\+\_\+\+Format\+\_\+3@{Pl\+\_\+\+Format\+\_\+3}!format\+\_\+c.\+c@{format\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Pl\+\_\+\+Format\+\_\+3(\+Wam\+Word sora\+\_\+word, Wam\+Word format\+\_\+word, Wam\+Word args\+\_\+word)}{Pl_Format_3(WamWord sora_word, WamWord format_word, WamWord args_word)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pl\+\_\+\+Format\+\_\+3 (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word}}]{sora\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{format\+\_\+word, }
+\item[{{\bf Wam\+Word}}]{args\+\_\+word}
+\end{DoxyParamCaption}
+)}\hypertarget{format__c_8c_a20338d45bcffed5bd8c0b0e854e2df77}{}\label{format__c_8c_a20338d45bcffed5bd8c0b0e854e2df77}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{format__c_8c_a20338d45bcffed5bd8c0b0e854e2df77_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{format__c_8c_a20338d45bcffed5bd8c0b0e854e2df77_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{format\+\_\+c.\+c@{format\+\_\+c.\+c}!Read\+\_\+\+Arg@{Read\+\_\+\+Arg}}
+\index{Read\+\_\+\+Arg@{Read\+\_\+\+Arg}!format\+\_\+c.\+c@{format\+\_\+c.\+c}}
+\subsubsection[{\texorpdfstring{Read\+\_\+\+Arg(\+Wam\+Word $\ast$$\ast$lst\+\_\+adr)}{Read_Arg(WamWord **lst_adr)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Wam\+Word} Read\+\_\+\+Arg (
+\begin{DoxyParamCaption}
+\item[{{\bf Wam\+Word} $\ast$$\ast$}]{lst\+\_\+adr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{format__c_8c_a5d8a09114be84af3b6026fb4d69087a3}{}\label{format__c_8c_a5d8a09114be84af3b6026fb4d69087a3}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{format__c_8c_a5d8a09114be84af3b6026fb4d69087a3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{format__c_8c_a5d8a09114be84af3b6026fb4d69087a3_icgraph}
+\end{center}
+\end{figure}
+
+

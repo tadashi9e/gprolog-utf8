@@ -1,0 +1,10 @@
+<map id="Set_Nimply" name="Set_Nimply">
+<area shape="rect" id="node2" href="$fd__bool__c_8c.html#a57de1f881f34824fc0001b63989af13e" title="Set_Imply" alt="" coords="173,56,255,83"/>
+<area shape="rect" id="node3" href="$fd__bool__c_8c.html#a777cdb1b2fda63d69b759553fd15ea75" title="Load_Bool_Into_Word" alt="" coords="332,5,483,32"/>
+<area shape="rect" id="node9" href="$math__supp_8h.html#a4aa01329bfd333d6373e68686fde41ad" title="pl_x_nimply_y_eq_b" alt="" coords="144,107,284,133"/>
+<area shape="rect" id="node7" href="$math__supp_8h.html#a530a7e19638abeaac47921afccc43a3f" title="pl_x_imply_y_eq_1" alt="" coords="341,56,474,83"/>
+<area shape="rect" id="node8" href="$math__supp_8h.html#a65bd3772190aad9ac00c084e1af8d79b" title="pl_x_imply_y_eq_b" alt="" coords="341,107,474,133"/>
+<area shape="rect" id="node4" href="$fd__bool__c_8c.html#a2da4a05b71952a4d0899d530d62fcc05" title="Set_Var" alt="" coords="531,5,600,32"/>
+<area shape="rect" id="node5" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="648,5,757,32"/>
+<area shape="rect" id="node6" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="805,5,964,32"/>
+</map>

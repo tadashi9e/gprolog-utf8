@@ -1,0 +1,10 @@
+<map id="Pl_Power" name="Pl_Power">
+<area shape="rect" id="node2" href="$math__supp_8c.html#a2a487a9ae3e085fb7597cbabe7b5b480" title="Normalize" alt="" coords="177,5,259,32"/>
+<area shape="rect" id="node4" href="$oper__supp_8h.html#ae5bd331b0c79e3c9cc5842dabbb22d1f" title="Pl_Nth_Root_Dn" alt="" coords="157,107,279,133"/>
+<area shape="rect" id="node5" href="$oper__supp_8h.html#a39e2cad4623000df07919778b0e469ea" title="Pl_Nth_Root_Up" alt="" coords="365,81,487,108"/>
+<area shape="rect" id="node6" href="$oper__supp_8h.html#af7f6282deb2250da4d7e67cf73104df9" title="Pl_Nth_Root_Exact" alt="" coords="357,144,495,171"/>
+<area shape="rect" id="node8" href="$oper__supp_8h.html#ac9a0cd94d5df4a7aeb37c4b2d61a07e7" title="Pl_Full_Coeff_Power_Var" alt="" coords="132,208,304,235"/>
+<area shape="rect" id="node9" href="$oper__supp_8h.html#ae26c4a572baccb2d4c4b437e1deb0e21" title="Pl_Full_Var_Power_Coeff" alt="" coords="132,259,304,285"/>
+<area shape="rect" id="node3" href="$math__supp_8c.html#a170afe50ec622c8a0db941c1ce08f322" title="Load_Left_Right_Rec" alt="" coords="352,5,500,32"/>
+<area shape="rect" id="node7" href="$oper__supp_8h.html#af9c9a27aecbd33f44b5d422c36a2288c" title="Pl_Full_Nth_Root" alt="" coords="548,144,673,171"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="Label" name="Label">
+<area shape="rect" id="node2" href="$ma__protos_8h.html#a0c77cb830e2b388fcc1fb5322d5c3f13" title="Code_Start" alt="" coords="249,5,337,32"/>
+<area shape="rect" id="node3" href="$ma__parser_8c.html#a3dbe66c5fada4cfd6e6d6d8f775e0caf" title="Parser" alt="" coords="387,56,447,83"/>
+<area shape="rect" id="node6" href="$ix86__any_8c.html#ac7bdb0538e4f03ec069405cf88f1de4f" title="Asm_Start" alt="" coords="111,107,195,133"/>
+<area shape="rect" id="node7" href="$ma2asm_8c.html#a0f86decae28359b4f5374e06ca747d77" title="Switch_Rec" alt="" coords="107,157,200,184"/>
+<area shape="rect" id="node9" href="$sparc64__any_8c.html#a1ccda0b345383d8f415326878884a88c" title="Asm_Stop" alt="" coords="112,208,195,235"/>
+<area shape="rect" id="node4" href="$ma__parser_8h.html#a4f91bc7ddfc80bc559642b19019052a1" title="Parse_Ma_File" alt="" coords="495,56,604,83"/>
+<area shape="rect" id="node5" href="$ma2asm_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="652,56,703,83"/>
+<area shape="rect" id="node8" href="$ma__protos_8h.html#ab348042c2e4626c2e75741315166aed5" title="Switch_Ret" alt="" coords="248,132,339,159"/>
+</map>

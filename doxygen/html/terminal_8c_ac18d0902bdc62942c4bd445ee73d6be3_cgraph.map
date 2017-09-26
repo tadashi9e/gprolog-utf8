@@ -1,0 +1,14 @@
+<map id="Pl_LE_Initialize" name="Pl_LE_Initialize">
+<area shape="rect" id="node2" href="$terminal_8c.html#acae08e63a234477bf1257da8b7aed42c" title="Parse_Env_Var" alt="" coords="198,5,311,32"/>
+<area shape="rect" id="node3" href="$terminal_8c.html#a469ee04c4859e98fe1f6db021e90bfb9" title="Pl_LE_Screen_Size" alt="" coords="185,56,324,83"/>
+<area shape="rect" id="node4" href="$terminal_8c.html#aad5032ec003db7a3e1a4ead642d2b1c9" title="Pl_LE_Kbd_Is_Not_Empty" alt="" coords="165,107,344,133"/>
+<area shape="rect" id="node5" href="$terminal_8c.html#a590b70bbd0e7ba502d794565a3652c9f" title="Pl_LE_Put_Char" alt="" coords="392,233,511,260"/>
+<area shape="rect" id="node6" href="$terminal_8c.html#a3ad10c9f5ddd471af1f250302534f4dd" title="LE_Get_Char0" alt="" coords="201,208,309,235"/>
+<area shape="rect" id="node7" href="$terminal_8c.html#a6cb08cdfcbb59cbdd3d55c4b3e282c6c" title="Pl_LE_Ins_Mode" alt="" coords="194,259,315,285"/>
+<area shape="rect" id="node8" href="$terminal_8c.html#aa38becdbe98fa5a404ff0ef7d9bbeb34" title="Pl_LE_Emit_Beep" alt="" coords="191,309,319,336"/>
+<area shape="rect" id="node9" href="$terminal_8c.html#a5509aba58312f5bbb8ab5392cc98a19c" title="Backd" alt="" coords="225,360,284,387"/>
+<area shape="rect" id="node10" href="$terminal_8c.html#ad618abf9b110b77f60d00d7406fc31e1" title="Forwd" alt="" coords="225,411,284,437"/>
+<area shape="rect" id="node11" href="$terminal_8c.html#a1df289842cb88ce5520533c6a2797a4a" title="Displ" alt="" coords="229,461,281,488"/>
+<area shape="rect" id="node12" href="$terminal_8c.html#affbb006cd6d0f1e67633b91508894e9d" title="Erase" alt="" coords="227,512,283,539"/>
+<area shape="rect" id="node13" href="$terminal_8c.html#a8123f431a3b3a083d2f9b5f4396a31ee" title="Displ_Str" alt="" coords="217,563,293,589"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Move_From_Reg_X" name="Move_From_Reg_X">
+<area shape="rect" id="node2" href="$ma2asm_8c.html#afeaa1e73d1371e09e196c12b114b9845" title="Inst_Printf" alt="" coords="224,5,307,32"/>
+<area shape="rect" id="node3" href="$ix86__any_8c.html#aab686898f03d34812752021cc286a934" title="Off_Reg_Bank" alt="" coords="211,56,319,83"/>
+<area shape="rect" id="node4" href="$sparc64__any_8c.html#ac8081cdc260d72a598c1486b62353af2" title="Load_Mem_Into_Reg" alt="" coords="192,107,339,133"/>
+<area shape="rect" id="node5" href="$sparc64__any_8c.html#a094fd54e2a708195a6a463d35639eb70" title="Load_Long_Into_Reg" alt="" coords="387,81,532,108"/>
+<area shape="rect" id="node7" href="$sparc64__any_8c.html#a7884ec03fffa38e282f499d97aac3ee2" title="Delay_Printf" alt="" coords="747,107,841,133"/>
+<area shape="rect" id="node6" href="$sparc64__any_8c.html#a7c17750a2367a1023769b227884b760c" title="Synthetize_Setx" alt="" coords="580,81,699,108"/>
+<area shape="rect" id="node8" href="$ma2asm_8c.html#a9608e324baa0506520d6ae9b95ae89ab" title="Inst_Out" alt="" coords="889,107,961,133"/>
+</map>

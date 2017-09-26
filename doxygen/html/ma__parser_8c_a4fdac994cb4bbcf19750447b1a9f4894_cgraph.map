@@ -1,0 +1,9 @@
+<map id="Read_Function" name="Read_Function">
+<area shape="rect" id="node2" href="$ma__parser_8c.html#a80d49cb24fd69d9eb23932a996e2c647" title="Read_Token" alt="" coords="499,79,595,106"/>
+<area shape="rect" id="node3" href="$ma__parser_8c.html#ab7c2794ba668d94c59a045d90a086622" title="Scanner" alt="" coords="657,49,727,75"/>
+<area shape="rect" id="node6" href="$ma__parser_8c.html#a00f9ed3bd2f87261ec6e2f0fa667dfce" title="Syntax_Error" alt="" coords="643,111,741,138"/>
+<area shape="rect" id="node7" href="$ma__parser_8c.html#a1d93f4cff3616dbb0ea5ac3c04297128" title="Read_Optional_Index" alt="" coords="164,54,311,81"/>
+<area shape="rect" id="node8" href="$ma__parser_8c.html#a397482d143c8994ae2c6e8cf3d3d0589" title="Read_Index" alt="" coords="359,54,451,81"/>
+<area shape="rect" id="node4" href="$ma2asm_8c.html#a55647b9192e0e0e7eb3e53f712402558" title="Label_Printf" alt="" coords="821,23,911,50"/>
+<area shape="rect" id="node5" href="$alpha__any_8c.html#a53bd6fca87a2fd6ae394bd63c5689edf" title="Reload_E_In_Register" alt="" coords="789,74,943,101"/>
+</map>

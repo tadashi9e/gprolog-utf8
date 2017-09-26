@@ -1,0 +1,8 @@
+<map id="Handle_Bad_Address" name="Handle_Bad_Address">
+<area shape="rect" id="node2" href="$stacks__sigsegv_8h.html#aee65d332f1e4ff3a8796bda38d329766" title="Pl_Allocate_Stacks" alt="" coords="649,5,785,32"/>
+<area shape="rect" id="node6" href="$stacks__sigsegv_8c.html#af3b6f4399924cfa2493fd581e588b4cf" title="Win32_Exception_Handler" alt="" coords="201,31,377,57"/>
+<area shape="rect" id="node3" href="$gprolog_8h.html#a79163a775d949cf493a9f7b28bf4fc09" title="Pl_Start_Prolog" alt="" coords="833,5,947,32"/>
+<area shape="rect" id="node4" href="$main_8c.html#a335bb6fe70cf4c383aec5baef5f39e47" title="Main_Wrapper" alt="" coords="995,5,1101,32"/>
+<area shape="rect" id="node5" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="1149,5,1200,32"/>
+<area shape="rect" id="node7" href="$stacks__sigsegv_8c.html#a80590c360772a0ae63e625478e2bffcf" title="Install_SIGSEGV_Handler" alt="" coords="425,31,601,57"/>
+</map>

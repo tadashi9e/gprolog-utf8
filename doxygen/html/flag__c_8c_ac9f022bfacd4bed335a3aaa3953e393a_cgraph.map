@@ -1,0 +1,9 @@
+<map id="Fct_Set_Debug" name="Fct_Set_Debug">
+<area shape="rect" id="node2" href="$pred_8c.html#aa8ebf08b93ec7e4bde2c544c70ba4c39" title="Pl_Lookup_Pred" alt="" coords="167,5,285,32"/>
+<area shape="rect" id="node3" href="$atom_8c.html#a068c993d95113a2ba7643918e68eedb3" title="Pl_Create_Atom" alt="" coords="167,56,285,83"/>
+<area shape="rect" id="node4" href="$engine_8c.html#a837196745e0fb6af03ee5e5d062e1087" title="Pl_Call_Prolog" alt="" coords="172,107,280,133"/>
+<area shape="rect" id="node5" href="$engine_8c.html#accfe7947a971f240bf7b8b2bedc59e29" title="Call_Prolog_Fail" alt="" coords="348,56,465,83"/>
+<area shape="rect" id="node6" href="$engine_8c.html#ae7d5f8d0ac490ede3fcb48af7cceec55" title="Call_Prolog_Success" alt="" coords="333,107,480,133"/>
+<area shape="rect" id="node7" href="$engine_8c.html#a5f34f0c2b928a4bfe7057ced6cd446c8" title="Call_Next" alt="" coords="367,157,447,184"/>
+<area shape="rect" id="node8" href="$engine_8c.html#a598600283dd767c2b3d11e798384023c" title="Pl_Call_Compiled" alt="" coords="528,157,655,184"/>
+</map>
