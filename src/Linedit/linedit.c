@@ -805,8 +805,7 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
 
 
         default:
-#if 0
-          if ((unsigned) c > 255 || !isprint(c))
+          if (!iswprint(c))
             {
               n = c;
               EMIT_BEEP;
@@ -815,7 +814,6 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
                 goto one_char;
               goto display_help;
             }
-#endif
 
           if (!New_Char(c, str, size, &pos, &end))
             goto error;
@@ -1607,11 +1605,7 @@ start:
     }
   }
   if (echo) {
-    if ((unsigned) c < 0x80) {
-      if (isprint(c)) {
-	PUT_CHAR(c);
-      }
-    } else {
+    if (iswprint(c)) {
       char s[MAX_WCHAR_BYTES+1];
       int i;
       put_wchar_eof(s, sizeof(s), c);

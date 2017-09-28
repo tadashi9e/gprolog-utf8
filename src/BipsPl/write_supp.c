@@ -669,12 +669,8 @@ Show_Atom(int context, int atom)
 	      {
                 i = count_wchar_bytes(p, p - pl_atom_tbl[atom].name);
                 if (i == 1) {
-                  if (isprint(*p)) {
-                    Out_Char(*p);
-                  } else {
-                    sprintf(str, "\\x%x\\", (unsigned) (unsigned char) *p);
-                    Out_String(str);
-                  }
+                  sprintf(str, "\\x%x\\", (unsigned) (unsigned char) *p);
+                  Out_String(str);
                 } else if (i > 1) {
                   for(;i > 1;i--) {
                     Out_Char((*p++) & 0xff);

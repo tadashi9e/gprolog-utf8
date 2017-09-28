@@ -1,5 +1,6 @@
 #include "pl_wchar.h"
 #include <stddef.h>
+#include <ctype.h>
 
 /*-------------------------------------------------------------------------*
  * contains_wchar                                                          *
@@ -304,3 +305,10 @@ wchar_bytes_of_chars(const char* s, int slen, int chars) {
   return bytes;
 }
 
+int
+iswprint(CHAR32_T c) {
+  if ((c & 0xfffff000) != 0) {
+    return 1;
+  }
+  return isprint(c);
+}
