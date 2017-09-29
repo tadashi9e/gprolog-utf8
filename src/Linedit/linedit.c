@@ -173,7 +173,8 @@ static CompNode *comp_cur_match;
  * Function Prototypes             *
  *---------------------------------*/
 
-static int New_Char(int c, char *str, int size, char **p_pos, char **p_end);
+static int New_Char(int c, char *str, int size, char **p_pos, char **p_end,
+                    char *prompt, int display_prompt);
 
 static char *Skip(char *from, char *limit, int res_sep_cmp, int direction);
 
@@ -226,7 +227,13 @@ do {                             \
     DISPL_STR(prompt);           \
                                  \
   DISPL(end - str, str);         \
-  BACKD(end - pos);              \
+  if (contains_wchar(str, end-str)) {           \
+    GO_HOME;                                    \
+    if (prompt && display_prompt)               \
+      DISPL_STR(prompt);                        \
+  } else {                                      \
+    BACKD(end - pos);                           \
+  }                                             \
 } while(0)
 
 
@@ -376,9 +383,7 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
         case KEY_EXT_HOME:
           if (contains_wchar(str, pos-str)) {
             GO_HOME;
-            FORWD(end - str, str);
-            ERASE(prompt_length);
-            GO_HOME;
+            RE_DISPLAY_LINE;
           } else {
             BACKD(pos - str);
           }
@@ -388,13 +393,7 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
 
         case KEY_CTRL('E'):     /* go to end of line */
         case KEY_EXT_END:
-          if (contains_wchar(pos, end-pos)) {
-            GO_HOME;
-            FORWD(end - str, str);
-            ERASE(prompt_length);
-          } else {
-            FORWD(end - pos, pos);
-          }
+          FORWD(end - pos, pos);
           pos = end;
           continue;
 
@@ -406,9 +405,7 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
           int i = count_wchar_bytes_back(pos);
           if (i > 1) {
             GO_HOME;
-            FORWD(end - str, str);
-            ERASE(prompt_length);
-            GO_HOME;
+            RE_DISPLAY_LINE;
             pos -= i;
             FORWD(normalize_pos(pos - str, str), str);
           } else {
@@ -423,17 +420,8 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
           if (pos == end)
             goto error;
           i = count_wchar_bytes(pos, end-pos);
-          if (i > 1) {
-            GO_HOME;
-            FORWD(end - str, str);
-            ERASE(prompt_length);
-            GO_HOME;
-            pos += i;
-            FORWD(normalize_pos(pos - str, str), str);
-          } else {
-            FORWD(1, pos);
-            pos++;
-          }
+          FORWD(i, pos);
+          pos += i;
           continue;
 
 
@@ -448,10 +436,9 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
             pos -= i;
             end -= i;
             *end = '\0';
+            ERASE(end-pos+i);
             GO_HOME;
-            FORWD(end - str, str);
-            ERASE(i + prompt_length);
-            GO_HOME;
+            RE_DISPLAY_LINE;
             FORWD(normalize_pos(pos - str, str), str);
           } else {
             for (p = pos; p < end; p++)
@@ -521,7 +508,8 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
             for(p = clipboard;*p != '\0';) {
               int len = count_wchar_bytes_without_slen(p);
               CHAR32_T c = get_wchar(p, len);
-              if (!New_Char(c, str, size, &pos, &end)) {
+              if (!New_Char(c, str, size, &pos, &end,
+                            prompt, display_prompt)) {
                 goto error;
               }
               p += len;
@@ -657,7 +645,8 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
             while(*p != '\0' && rest_length > 0) {
               int len = count_wchar_bytes_without_slen(p);
               CHAR32_T c = get_wchar(p, len);
-              if (!New_Char(c, str, size, &pos, &end)) {
+              if (!New_Char(c, str, size, &pos, &end,
+                            prompt, display_prompt)) {
                 goto error;
               }
               p += len;
@@ -676,7 +665,8 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
 
         case KEY_ESC('\t'):     /* transform a tab to spaces */
           for (n = Tab_To_Spaces(pos - str); n; n--)
-            if (!New_Char(' ', str, size, &pos, &end))
+            if (!New_Char(' ', str, size, &pos, &end,
+                          prompt, display_prompt))
               goto error;
           continue;
 
@@ -815,7 +805,8 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
               goto display_help;
             }
 
-          if (!New_Char(c, str, size, &pos, &end))
+          if (!New_Char(c, str, size, &pos, &end,
+                        prompt, display_prompt))
             goto error;
           /* brackets ([{ }]): matching */
           if (KBD_IS_NOT_EMPTY || (n = Search_Bracket(CLOSE_BRACKET, c)) < 0)
@@ -859,9 +850,7 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
           q = pos;
 	  if (contains_wchar(p, end-p)) {
             GO_HOME;
-            FORWD(normalize_pos(end - str, str), str);
-            ERASE(prompt_length);
-            GO_HOME;
+            RE_DISPLAY_LINE;
 	    FORWD(normalize_pos(p - str, str), str);
 	  } else {
 	    BACKD(n);
@@ -922,7 +911,8 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
  *                                                                         *
  *-------------------------------------------------------------------------*/
 static int
-New_Char(int c, char *str, int size, char **p_pos, char **p_end)
+New_Char(int c, char *str, int size, char **p_pos, char **p_end,
+         char *prompt, int display_prompt)
 {
   int i;
   char *pos = *p_pos;
@@ -944,11 +934,8 @@ New_Char(int c, char *str, int size, char **p_pos, char **p_end)
           }
           put_wchar(pos, i, c);
           if (i != j) {
-            /* re-display */
             GO_HOME;
-            FORWD(end - str, str);
-            ERASE(prompt_length);
-            GO_HOME;
+            RE_DISPLAY_LINE;
             FORWD(normalize_pos(pos - str, str), str);
           } else {
             /* overwrite single character */
@@ -973,11 +960,8 @@ New_Char(int c, char *str, int size, char **p_pos, char **p_end)
           put_wchar(pos, i, c);
           pos += i;
           end += i;
-          /* re-display */
           GO_HOME;
-          FORWD(end - str, str);
-          ERASE(prompt_length);
-          GO_HOME;
+          RE_DISPLAY_LINE;
           FORWD(normalize_pos(pos - str, str), str);
         } else {
           put_wchar(pos, i, c);

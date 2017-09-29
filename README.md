@@ -3,13 +3,12 @@ GNU PROLOG with UTF-8 support
 
     git clone https://github.com/tadashi9e/gprolog-utf8.git
 
-    (cd doc && make all)
-
     cd src
     autoconf
     ./configure
+    (cd doc && make all)
     make
-    make install
+    sudo make install
 
 Examples
 --------

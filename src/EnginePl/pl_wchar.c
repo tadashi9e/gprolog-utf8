@@ -263,15 +263,17 @@ int fill_wchar(CHAR32_T* cp, int* modep, CHAR32_T c0) {
       *cp = c0;
       return 1;
     }
-    *cp = c0 & 0xff;
-    if ((c0 & 0xff) < 0x80) {
-      return 1;
-    } else if ((c0 & 0xff) < 0xE0) {
-      *modep = 1;
-    } else if ((c0 & 0xff) < 0xF0) {
-      *modep = 2;
+    *cp = c0;
+    if (c0 < 0x80) {
+      return 1; // done  (single byte character)
+    } else if (c0 < 0xE0) {
+      *modep = 1; // conrinue ( one more character)
+    } else if (c0 < 0xF0) {
+      *modep = 2; // continue ( two more characters)
+    } else if (c0 < 0xF8) {
+      *modep = 3; // continue ( three more characters)
     } else {
-      *modep = 3;
+      return 1; // done (key code with modifiers or escape)
     }
     return 0;
   }
