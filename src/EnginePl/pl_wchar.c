@@ -119,10 +119,12 @@ int get_wchar_bytes(CHAR32_T c) {
   if (c < 0x80) {
     return 1;
   }
-  if (c < 0xE000) {
+  if (c < 0x00002000) {
     return 2;
-  } else if (c < 0xF00000) {
+  } else if (c < 0x00020000) {
     return 3;
+  } else if (c < 0x00200000) {
+    return 4;
   }
   return 4;
 }
@@ -145,61 +147,63 @@ count_wchars(char* s, int slen) {
 CHAR32_T
 get_wchar(const char* s, int slen) {
   int i;
-  CHAR32_T c;
+  CHAR32_T c0, c;
   if (s == NULL || slen < 1 || s[0] == '\0') {
     return 0;
   }
-  c = s[0] & 0xff;
-  if ((c & 0xc0) == 0x80) {
+  c0 = s[0] & 0xff;
+  c = c0;
+  if ((c0 & 0xc0) == 0x80) {
     /* detected broken character sequence */
     for(i = 1;i < slen && (s[i] & 0xc0) == 0x80;i++) {
-      c = (c << 8) | (s[i] & 0xff);
+      c = (c << 6) | (s[i] & 0x3f);
     }
     return c;
   }
-  if (c < 0x80 || slen < 2 || s[1] == '\0') {
-    return c;
+  if (c0 < 0x80 || slen < 2 || s[1] == '\0') {
+    return c0;
   }
-  c = (c << 8) | (s[1] & 0xff);
-  if (c < 0xE0 || slen < 3 || s[2] == '\0') {
-    return c;
+  c = (c << 6) | (s[1] & 0x3f);
+  if (c0 < 0xE0 || slen < 3 || s[2] == '\0') {
+    return c & 0x00001fff;
   }
-  c = (c << 8) | (s[2] & 0xff);
-  if (c < 0xF0 || slen < 4 || s[3] == '\0') {
-    return c;
+  c = (c << 6) | (s[2] & 0x3f);
+  if (c0 < 0xF0 || slen < 4 || s[3] == '\0') {
+    return c & 0x0001ffff;
   }
-  c = (c << 8) | (s[3] & 0xff);
-  return c;
+  c = (c << 6) | (s[3] & 0x3f);
+  return c & 0x001fffff;
 }
 
 CHAR32_T
 get_wchar_without_slen(const char* s) {
   int i;
-  CHAR32_T c;
+  CHAR32_T c0, c;
   if (s == NULL || s[0] == '\0') {
     return 0;
   }
-  c = s[0] & 0xff;
-  if ((c & 0xc0) == 0x80) {
+  c0 = s[0] & 0xff;
+  c = c0;
+  if ((c0 & 0xc0) == 0x80) {
     /* detected broken character sequence */
     for(i = 1;(s[i] & 0xc0) == 0x80;i++) {
-      c = (c << 8) | (s[i] & 0xff);
+      c = (c << 6) | (s[i] & 0x3f);
     }
     return c;
   }
-  if (c < 0x80 || s[1] == '\0') {
+  if (c0 < 0x80 || s[1] == '\0') {
     return c;
   }
-  c = (c << 8) | (s[1] & 0xff);
-  if (c < 0xE0 || s[2] == '\0') {
-    return c;
+  c = (c << 6) | (s[1] & 0x3f);
+  if (c0 < 0xE0 || s[2] == '\0') {
+    return c & 0x00001fff;
   }
-  c = (c << 8) | (s[2] & 0xff);
-  if (c < 0xF0 || s[3] == '\0') {
-    return c;
+  c = (c << 6) | (s[2] & 0x3f);
+  if (c0 < 0xF0 || s[3] == '\0') {
+    return c & 0x0001ffff;
   }
-  c = (c << 8) | (s[3] & 0xff);
-  return c;
+  c = (c << 6) | (s[3] & 0x3f);
+  return c & 0x001fffff;
 }
 
 int put_wchar(char* s, int slen, CHAR32_T c) {
@@ -207,20 +211,20 @@ int put_wchar(char* s, int slen, CHAR32_T c) {
     s[0] = c;
     return 1;
   }
-  if (slen > 1 && c < 0xE000) {
-    s[0] = 0xff & (c >> 8);
-    s[1] = 0xff &  c      ;
+  if (slen > 1 && c < 0x00002000) {
+    s[0] = (0x1f & (c >> 6)) | 0xc0;
+    s[1] = (0x3f &  c      ) | 0x80;
     return 2;
-  } else if (slen > 2 && c < 0xF00000) {
-    s[0] = 0xff & (c >> 16);
-    s[1] = 0xff & (c >>  8);
-    s[2] = 0xff &  c       ;
+  } else if (slen > 2 && c < 0x00020000) {
+    s[0] = (0x0f & (c >> 12)) | 0xe0;
+    s[1] = (0x3f & (c >>  6)) | 0x80;
+    s[2] = (0x3f &  c       ) | 0x80;
     return 3;
-  } else if (slen > 3) {
-    s[0] = 0xff & (c >> 24);
-    s[1] = 0xff & (c >> 16);
-    s[2] = 0xff & (c >>  8);
-    s[3] = 0xff &  c       ;
+  } else if (slen > 3 && c < 0x00200000) {
+    s[0] = (0x07 & (c >> 18)) | 0xf0;
+    s[1] = (0x3f & (c >> 12)) | 0x80;
+    s[2] = (0x3f & (c >>  6)) | 0x80;
+    s[3] = (0x3f &  c       ) | 0x80;
     return 4;
   }
   return 0;
@@ -231,20 +235,20 @@ int put_wchar_without_slen(char* s, CHAR32_T c) {
     s[0] = c;
     return 1;
   }
-  if (c < 0xE000) {
-    s[0] = 0xff & (c >> 8);
-    s[1] = 0xff &  c      ;
+  if (c < 0x00002000) {
+    s[0] = (0x1f & (c >> 6)) | 0xc0;
+    s[1] = (0x3f &  c      ) | 0x80;
     return 2;
-  } else if (c < 0xF00000) {
-    s[0] = 0xff & (c >> 16);
-    s[1] = 0xff & (c >>  8);
-    s[2] = 0xff &  c       ;
+  } else if (c < 0x00020000) {
+    s[0] = (0x0f & (c >> 12)) | 0xe0;
+    s[1] = (0x3f & (c >>  6)) | 0x80;
+    s[2] = (0x3f &  c       ) | 0x80;
     return 3;
-  } else {
-    s[0] = 0xff & (c >> 24);
-    s[1] = 0xff & (c >> 16);
-    s[2] = 0xff & (c >>  8);
-    s[3] = 0xff &  c       ;
+  } else if (c < 0x00200000) {
+    s[0] = (0x07 & (c >> 18)) | 0xf0;
+    s[1] = (0x3f & (c >> 12)) | 0x80;
+    s[2] = (0x3f & (c >>  6)) | 0x80;
+    s[3] = (0x3f &  c       ) | 0x80;
     return 4;
   }
   return 0;
@@ -263,21 +267,24 @@ int fill_wchar(CHAR32_T* cp, int* modep, CHAR32_T c0) {
       *cp = c0;
       return 1;
     }
-    *cp = c0;
     if (c0 < 0x80) {
+      *cp = c0;
       return 1; // done  (single byte character)
     } else if (c0 < 0xE0) {
+      *cp = c0 & 0x1f;
       *modep = 1; // conrinue ( one more character)
     } else if (c0 < 0xF0) {
+      *cp = c0 & 0x0f;
       *modep = 2; // continue ( two more characters)
     } else if (c0 < 0xF8) {
+      *cp = c0 & 0x07;
       *modep = 3; // continue ( three more characters)
     } else {
       return 1; // done (key code with modifiers or escape)
     }
     return 0;
   }
-  *cp = (*cp << 8) | (c0 & 0xff);
+  *cp = (*cp << 6) | (c0 & 0x3f);
   --(*modep);
   if (*modep <= 0) {
     *modep = FILL_WCHAR_MODE_INIT;

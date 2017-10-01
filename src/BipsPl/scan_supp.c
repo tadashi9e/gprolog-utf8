@@ -124,7 +124,7 @@ Read_Next_Char(StmInf *pstm, Bool convert)
     {
       if (convert)
         c = Char_Conversion(c);
-      if ((c & 0xff) >= 0x80) {
+      if (c >= 0x80) {
         c_type = SL;
       } else {
         c_type = pl_char_type[c];
