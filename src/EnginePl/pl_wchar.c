@@ -2,6 +2,12 @@
 #include <stddef.h>
 #include <ctype.h>
 
+/* Bits for code point */
+#define CPBITS_2 (((CHAR32_T)1)<<12)-1
+#define CPBITS_3 (((CHAR32_T)1)<<17)-1
+#define CPBITS_4 (((CHAR32_T)1)<<22)-1
+#define CPBITS_5 (((CHAR32_T)1)<<27)-1
+
 /*-------------------------------------------------------------------------*
  * contains_wchar                                                          *
  *                                                                         *
@@ -119,11 +125,11 @@ int get_wchar_bytes(CHAR32_T c) {
   if (c < 0x80) {
     return 1;
   }
-  if (c < 0x00002000) {
+  if (c < CPBITS_2+1) {
     return 2;
-  } else if (c < 0x00020000) {
+  } else if (c < CPBITS_3+1) {
     return 3;
-  } else if (c < 0x00200000) {
+  } else if (c < CPBITS_4+1) {
     return 4;
   }
   return 4;
@@ -165,14 +171,14 @@ get_wchar(const char* s, int slen) {
   }
   c = (c << 6) | (s[1] & 0x3f);
   if (c0 < 0xE0 || slen < 3 || s[2] == '\0') {
-    return c & 0x00001fff;
+    return c & CPBITS_2;
   }
   c = (c << 6) | (s[2] & 0x3f);
   if (c0 < 0xF0 || slen < 4 || s[3] == '\0') {
-    return c & 0x0001ffff;
+    return c & CPBITS_3;
   }
   c = (c << 6) | (s[3] & 0x3f);
-  return c & 0x001fffff;
+  return c & CPBITS_4;
 }
 
 CHAR32_T
@@ -196,14 +202,14 @@ get_wchar_without_slen(const char* s) {
   }
   c = (c << 6) | (s[1] & 0x3f);
   if (c0 < 0xE0 || s[2] == '\0') {
-    return c & 0x00001fff;
+    return c & CPBITS_2;
   }
   c = (c << 6) | (s[2] & 0x3f);
   if (c0 < 0xF0 || s[3] == '\0') {
-    return c & 0x0001ffff;
+    return c & CPBITS_3;
   }
   c = (c << 6) | (s[3] & 0x3f);
-  return c & 0x001fffff;
+  return c & CPBITS_4;
 }
 
 int put_wchar(char* s, int slen, CHAR32_T c) {
@@ -211,16 +217,16 @@ int put_wchar(char* s, int slen, CHAR32_T c) {
     s[0] = c;
     return 1;
   }
-  if (slen > 1 && c < 0x00002000) {
+  if (slen > 1 && c < CPBITS_2+1) {
     s[0] = (0x1f & (c >> 6)) | 0xc0;
     s[1] = (0x3f &  c      ) | 0x80;
     return 2;
-  } else if (slen > 2 && c < 0x00020000) {
+  } else if (slen > 2 && c < CPBITS_3+1) {
     s[0] = (0x0f & (c >> 12)) | 0xe0;
     s[1] = (0x3f & (c >>  6)) | 0x80;
     s[2] = (0x3f &  c       ) | 0x80;
     return 3;
-  } else if (slen > 3 && c < 0x00200000) {
+  } else if (slen > 3 && c < CPBITS_4+1) {
     s[0] = (0x07 & (c >> 18)) | 0xf0;
     s[1] = (0x3f & (c >> 12)) | 0x80;
     s[2] = (0x3f & (c >>  6)) | 0x80;
@@ -235,16 +241,16 @@ int put_wchar_without_slen(char* s, CHAR32_T c) {
     s[0] = c;
     return 1;
   }
-  if (c < 0x00002000) {
+  if (c < CPBITS_2+1) {
     s[0] = (0x1f & (c >> 6)) | 0xc0;
     s[1] = (0x3f &  c      ) | 0x80;
     return 2;
-  } else if (c < 0x00020000) {
+  } else if (c < CPBITS_3+1) {
     s[0] = (0x0f & (c >> 12)) | 0xe0;
     s[1] = (0x3f & (c >>  6)) | 0x80;
     s[2] = (0x3f &  c       ) | 0x80;
     return 3;
-  } else if (c < 0x00200000) {
+  } else if (c < CPBITS_4+1) {
     s[0] = (0x07 & (c >> 18)) | 0xf0;
     s[1] = (0x3f & (c >> 12)) | 0x80;
     s[2] = (0x3f & (c >>  6)) | 0x80;
