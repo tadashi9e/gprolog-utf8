@@ -3,10 +3,10 @@
 #include <ctype.h>
 
 /* Bits for code point */
-#define CPBITS_2 (((CHAR32_T)1)<<12)-1
-#define CPBITS_3 (((CHAR32_T)1)<<17)-1
-#define CPBITS_4 (((CHAR32_T)1)<<22)-1
-#define CPBITS_5 (((CHAR32_T)1)<<27)-1
+#define CPBITS_2 ((((CHAR32_T)1)<<11)-1)
+#define CPBITS_3 ((((CHAR32_T)1)<<16)-1)
+#define CPBITS_4 ((((CHAR32_T)1)<<21)-1)
+#define CPBITS_5 ((((CHAR32_T)1)<<26)-1)
 
 /*-------------------------------------------------------------------------*
  * contains_wchar                                                          *
@@ -87,7 +87,10 @@ count_wchar_bytes(const char* s, int slen) {
   if (c < 0xF0 || slen < 4 || s[3] == '\0') {
     return 3;
   }
-  return 4;
+  if (c < 0xF1 || slen < 5 || s[4] == '\0') {
+    return 4;
+  }
+  return 5;
 }
 int
 count_wchar_bytes_without_slen(const char* s) {
@@ -111,7 +114,10 @@ count_wchar_bytes_without_slen(const char* s) {
   if (c < 0xF0 || s[3] == '\0') {
     return 3;
   }
-  return 4;
+  if (c < 0xF1 || s[4] == '\0') {
+    return 4;
+  }
+  return 5;
 }
 
 int
@@ -131,6 +137,8 @@ int get_wchar_bytes(CHAR32_T c) {
     return 3;
   } else if (c < CPBITS_4+1) {
     return 4;
+  } else if (c < CPBITS_5+1) {
+    return 5;
   }
   return 4;
 }
@@ -178,7 +186,11 @@ get_wchar(const char* s, int slen) {
     return c & CPBITS_3;
   }
   c = (c << 6) | (s[3] & 0x3f);
-  return c & CPBITS_4;
+  if (c0 < 0xF8 || slen < 4 || s[4] == '\0') {
+    return c & CPBITS_4;
+  }
+  c = (c << 6) | (s[4] & 0x3f);
+  return c & CPBITS_5;
 }
 
 CHAR32_T
@@ -209,7 +221,10 @@ get_wchar_without_slen(const char* s) {
     return c & CPBITS_3;
   }
   c = (c << 6) | (s[3] & 0x3f);
-  return c & CPBITS_4;
+  if (c0 < 0xF8 || s[4] == '\0') {
+    return c & CPBITS_4;
+  }
+  return c & CPBITS_5;
 }
 
 int put_wchar(char* s, int slen, CHAR32_T c) {
@@ -232,6 +247,13 @@ int put_wchar(char* s, int slen, CHAR32_T c) {
     s[2] = (0x3f & (c >>  6)) | 0x80;
     s[3] = (0x3f &  c       ) | 0x80;
     return 4;
+  } else if (slen > 3 && c < CPBITS_5+1) {
+    s[0] = (0x03 & (c >> 24)) | 0xf8;
+    s[1] = (0x3f & (c >> 18)) | 0x80;
+    s[2] = (0x3f & (c >> 12)) | 0x80;
+    s[3] = (0x3f & (c >>  6)) | 0x80;
+    s[4] = (0x3f &  c       ) | 0x80;
+    return 5;
   }
   return 0;
 }
@@ -256,6 +278,13 @@ int put_wchar_without_slen(char* s, CHAR32_T c) {
     s[2] = (0x3f & (c >>  6)) | 0x80;
     s[3] = (0x3f &  c       ) | 0x80;
     return 4;
+  } else if (c < CPBITS_5+1) {
+    s[0] = (0x03 & (c >> 24)) | 0xf8;
+    s[1] = (0x3f & (c >> 18)) | 0x80;
+    s[2] = (0x3f & (c >> 12)) | 0x80;
+    s[3] = (0x3f & (c >>  6)) | 0x80;
+    s[4] = (0x3f &  c       ) | 0x80;
+    return 5;
   }
   return 0;
 }
@@ -269,10 +298,6 @@ int put_wchar_eof(char* s, int slen, CHAR32_T c) {
 
 int fill_wchar(CHAR32_T* cp, int* modep, CHAR32_T c0) {
   if (*modep == FILL_WCHAR_MODE_INIT) {
-    if ((c0 & 0xc0) == 0x80) {
-      *cp = c0;
-      return 1;
-    }
     if (c0 < 0x80) {
       *cp = c0;
       return 1; // done  (single byte character)
@@ -285,7 +310,11 @@ int fill_wchar(CHAR32_T* cp, int* modep, CHAR32_T c0) {
     } else if (c0 < 0xF8) {
       *cp = c0 & 0x07;
       *modep = 3; // continue ( three more characters)
+    } else if (c0 < 0xFC) {
+      *cp = c0 & 0x03;
+      *modep = 4; // continue ( three more characters)
     } else {
+      *cp = c0;
       return 1; // done (key code with modifiers or escape)
     }
     return 0;
@@ -322,7 +351,7 @@ wchar_bytes_of_chars(const char* s, int slen, int chars) {
 
 int
 iswprint(CHAR32_T c) {
-  if ((c & 0xfffff000) != 0) {
+  if ((c & 0xffffff00) != 0) {
     return 1;
   }
   return isprint(c);
