@@ -879,7 +879,7 @@ LE_Get_Char0(void)
 static void
 Backd(int n)
 {
-  while (n--)
+  while (n-- > 0)
     PUT_CHAR('\b');
 }
 
@@ -893,7 +893,7 @@ Backd(int n)
 static void
 Forwd(int n, char *str)
 {
-  while (n--)
+  while (n-- > 0)
     PUT_CHAR(*str++);
 }
 
@@ -907,7 +907,7 @@ Forwd(int n, char *str)
 static void
 Displ(int n, char *str)
 {
-  while (n--)
+  while (n-- > 0)
     PUT_CHAR(*str++);
 }
 
@@ -923,7 +923,7 @@ Erase(int n)
 {
   int n0 = n;
 
-  while (n--)
+  while (n-- > 0)
     PUT_CHAR(' ');
 
   BACKD(n0);

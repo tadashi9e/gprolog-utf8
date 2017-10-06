@@ -149,7 +149,7 @@ static void TTY_Clearerr(void);
 
 static CHAR32_T Basic_Call_Fct_Getc(StmInf *pstm);
 
-static void Basic_Call_Fct_Putc(int c, StmInf *pstm);
+static void Basic_Call_Fct_Putc(CHAR32_T c, StmInf *pstm);
 
 static int Str_Stream_Getc(StrSInf *str_stream);
 
@@ -1241,7 +1241,7 @@ Basic_Call_Fct_Getc(StmInf *pstm)
  *                                                                         *
  *-------------------------------------------------------------------------*/
 static void
-Basic_Call_Fct_Putc(int c, StmInf *pstm)
+Basic_Call_Fct_Putc(CHAR32_T c, StmInf *pstm)
 {
   StmLst *m;
 
@@ -1509,10 +1509,15 @@ Pl_Stream_Gets_Prompt(char *prompt, StmInf *pstm_o,
  *                                                                         *
  *-------------------------------------------------------------------------*/
 void
-Pl_Stream_Putc(int c, StmInf *pstm)
+Pl_Stream_Putc(CHAR32_T c, StmInf *pstm)
 {
-  Basic_Call_Fct_Putc(c, pstm);
-  Update_Counters(pstm, c);
+  int i, sz;
+  char buf[8];
+  sz = put_wchar(buf, sizeof(buf), c);
+  for(i = 0;i < sz;i++) {
+    Basic_Call_Fct_Putc(buf[i], pstm);
+    Update_Counters(pstm, buf[i]);
+  }
 }
 
 
