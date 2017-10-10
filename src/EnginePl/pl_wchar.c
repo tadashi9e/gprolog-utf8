@@ -350,7 +350,7 @@ wchar_bytes_of_chars(const char* s, int slen, int chars) {
 }
 
 int
-iswprint(CHAR32_T c) {
+is_wchar_print(CHAR32_T c) {
   if ((c & 0xffffff00) != 0) {
     return 1;
   }

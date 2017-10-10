@@ -758,7 +758,7 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
 
 
         default:
-          if (!iswprint(c))
+          if (!is_wchar_print(c))
             {
               n = c;
               EMIT_BEEP;
@@ -871,7 +871,6 @@ New_Char(int c, char *str, int size, char **p_pos, char **p_end,
   int i;
   char *pos = *p_pos;
   char *end = *p_end;
-  char *p;
 
   if ((ins_mode || pos == end) && end - str >= size)
     return 0;
@@ -1527,7 +1526,7 @@ start:
     }
   }
   if (echo) {
-    if (iswprint(c)) {
+    if (is_wchar_print(c)) {
       char s[MAX_WCHAR_BYTES+1];
       int i;
       put_wchar_eof(s, sizeof(s), c);

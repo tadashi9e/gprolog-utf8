@@ -105,7 +105,7 @@ extern TokInf pl_token;
  * Function Prototypes             *
  *---------------------------------*/
 
-int Pl_Scan_Peek_Char(StmInf *pstm, Bool convert);
+CHAR32_T Pl_Scan_Peek_Char(StmInf *pstm, Bool convert);
 
 
 

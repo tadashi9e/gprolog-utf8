@@ -389,7 +389,7 @@ char *Pl_Stream_Gets(char *str, int size, StmInf *pstm);
 char *Pl_Stream_Gets_Prompt(char *prompt, StmInf *pstm_o,
 			 char *str, int size, StmInf *pstm_i);
 
-void Pl_Stream_Putc(int c, StmInf *pstm);
+void Pl_Stream_Putc(CHAR32_T c, StmInf *pstm);
 
 int Pl_Stream_Puts(char *str, StmInf *pstm);
 
