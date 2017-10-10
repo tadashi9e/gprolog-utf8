@@ -2,14 +2,25 @@
 \label{pl__wchar_8c}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/pl\+\_\+wchar.\+c@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/pl\+\_\+wchar.\+c}}
 {\ttfamily \#include \char`\"{}pl\+\_\+wchar.\+h\char`\"{}}\\*
 {\ttfamily \#include $<$stddef.\+h$>$}\\*
-Include dependency graph for pl\+\_\+wchar.\+c\+:
-\nopagebreak
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+Include dependency graph for pl\+\_\+wchar.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=214pt]{pl__wchar_8c__incl}
 \end{center}
 \end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pl__wchar_8c_a4e4f18ee5ce65f15ff2a570d40e20829}{C\+P\+B\+I\+T\+S\+\_\+2}~((((\hyperlink{pl__wchar_8h_aefdbdd739a151d0918c62cfe9b00c0ae}{C\+H\+A\+R32\+\_\+T})1)$<$$<$11)-\/1)
+\item 
+\#define \hyperlink{pl__wchar_8c_a5fa7a85b6d0341798f2bb9e4ff937131}{C\+P\+B\+I\+T\+S\+\_\+3}~((((\hyperlink{pl__wchar_8h_aefdbdd739a151d0918c62cfe9b00c0ae}{C\+H\+A\+R32\+\_\+T})1)$<$$<$16)-\/1)
+\item 
+\#define \hyperlink{pl__wchar_8c_a443ade4b522b6e9ad3e3df7e5b01c696}{C\+P\+B\+I\+T\+S\+\_\+4}~((((\hyperlink{pl__wchar_8h_aefdbdd739a151d0918c62cfe9b00c0ae}{C\+H\+A\+R32\+\_\+T})1)$<$$<$21)-\/1)
+\item 
+\#define \hyperlink{pl__wchar_8c_a05b7038bf96511ec12db7f8eb52684f9}{C\+P\+B\+I\+T\+S\+\_\+5}~((((\hyperlink{pl__wchar_8h_aefdbdd739a151d0918c62cfe9b00c0ae}{C\+H\+A\+R32\+\_\+T})1)$<$$<$26)-\/1)
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -40,7 +51,24 @@ int \hyperlink{pl__wchar_8c_a0e3acef785ce9c91e56ba566193d4cee}{put\+\_\+wchar\+\
 int \hyperlink{pl__wchar_8c_a5df5e221fa5cbadce849a7e73c5dc4ad}{fill\+\_\+wchar} (\hyperlink{pl__wchar_8h_aefdbdd739a151d0918c62cfe9b00c0ae}{C\+H\+A\+R32\+\_\+T} $\ast$cp, int $\ast$modep, \hyperlink{pl__wchar_8h_aefdbdd739a151d0918c62cfe9b00c0ae}{C\+H\+A\+R32\+\_\+T} c0)
 \item 
 int \hyperlink{pl__wchar_8c_a961a9ac7d7be7b35fd1632111c552b91}{wchar\+\_\+bytes\+\_\+of\+\_\+chars} (const char $\ast$s, int slen, int chars)
+\item 
+int \hyperlink{pl__wchar_8c_ab651da38c28b6407c6fe7a1f50260a1a}{is\+\_\+wchar\+\_\+print} (\hyperlink{pl__wchar_8h_aefdbdd739a151d0918c62cfe9b00c0ae}{C\+H\+A\+R32\+\_\+T} \hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c})
 \end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{pl\+\_\+wchar.\+c@{pl\+\_\+wchar.\+c}!C\+P\+B\+I\+T\+S\+\_\+2@{C\+P\+B\+I\+T\+S\+\_\+2}}
+\index{C\+P\+B\+I\+T\+S\+\_\+2@{C\+P\+B\+I\+T\+S\+\_\+2}!pl\+\_\+wchar.\+c@{pl\+\_\+wchar.\+c}}
+\subsubsection[{\texorpdfstring{C\+P\+B\+I\+T\+S\+\_\+2}{CPBITS_2}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+P\+B\+I\+T\+S\+\_\+2~(((({\bf C\+H\+A\+R32\+\_\+T})1)$<$$<$11)-\/1)}\hypertarget{pl__wchar_8c_a4e4f18ee5ce65f15ff2a570d40e20829}{}\label{pl__wchar_8c_a4e4f18ee5ce65f15ff2a570d40e20829}
+\index{pl\+\_\+wchar.\+c@{pl\+\_\+wchar.\+c}!C\+P\+B\+I\+T\+S\+\_\+3@{C\+P\+B\+I\+T\+S\+\_\+3}}
+\index{C\+P\+B\+I\+T\+S\+\_\+3@{C\+P\+B\+I\+T\+S\+\_\+3}!pl\+\_\+wchar.\+c@{pl\+\_\+wchar.\+c}}
+\subsubsection[{\texorpdfstring{C\+P\+B\+I\+T\+S\+\_\+3}{CPBITS_3}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+P\+B\+I\+T\+S\+\_\+3~(((({\bf C\+H\+A\+R32\+\_\+T})1)$<$$<$16)-\/1)}\hypertarget{pl__wchar_8c_a5fa7a85b6d0341798f2bb9e4ff937131}{}\label{pl__wchar_8c_a5fa7a85b6d0341798f2bb9e4ff937131}
+\index{pl\+\_\+wchar.\+c@{pl\+\_\+wchar.\+c}!C\+P\+B\+I\+T\+S\+\_\+4@{C\+P\+B\+I\+T\+S\+\_\+4}}
+\index{C\+P\+B\+I\+T\+S\+\_\+4@{C\+P\+B\+I\+T\+S\+\_\+4}!pl\+\_\+wchar.\+c@{pl\+\_\+wchar.\+c}}
+\subsubsection[{\texorpdfstring{C\+P\+B\+I\+T\+S\+\_\+4}{CPBITS_4}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+P\+B\+I\+T\+S\+\_\+4~(((({\bf C\+H\+A\+R32\+\_\+T})1)$<$$<$21)-\/1)}\hypertarget{pl__wchar_8c_a443ade4b522b6e9ad3e3df7e5b01c696}{}\label{pl__wchar_8c_a443ade4b522b6e9ad3e3df7e5b01c696}
+\index{pl\+\_\+wchar.\+c@{pl\+\_\+wchar.\+c}!C\+P\+B\+I\+T\+S\+\_\+5@{C\+P\+B\+I\+T\+S\+\_\+5}}
+\index{C\+P\+B\+I\+T\+S\+\_\+5@{C\+P\+B\+I\+T\+S\+\_\+5}!pl\+\_\+wchar.\+c@{pl\+\_\+wchar.\+c}}
+\subsubsection[{\texorpdfstring{C\+P\+B\+I\+T\+S\+\_\+5}{CPBITS_5}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+P\+B\+I\+T\+S\+\_\+5~(((({\bf C\+H\+A\+R32\+\_\+T})1)$<$$<$26)-\/1)}\hypertarget{pl__wchar_8c_a05b7038bf96511ec12db7f8eb52684f9}{}\label{pl__wchar_8c_a05b7038bf96511ec12db7f8eb52684f9}
 
 
 \subsection{Function Documentation}
@@ -52,18 +80,6 @@ int \hyperlink{pl__wchar_8c_a961a9ac7d7be7b35fd1632111c552b91}{wchar\+\_\+bytes\
 \item[{int}]{slen}
 \end{DoxyParamCaption}
 )}\hypertarget{pl__wchar_8c_a0cfe09c58e68b6f0d9b754c1d81381a0}{}\label{pl__wchar_8c_a0cfe09c58e68b6f0d9b754c1d81381a0}
-
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{pl__wchar_8c_a0cfe09c58e68b6f0d9b754c1d81381a0_icgraph}
-\end{center}
-\end{figure}
-
-
 \index{pl\+\_\+wchar.\+c@{pl\+\_\+wchar.\+c}!count\+\_\+wchar\+\_\+bytes@{count\+\_\+wchar\+\_\+bytes}}
 \index{count\+\_\+wchar\+\_\+bytes@{count\+\_\+wchar\+\_\+bytes}!pl\+\_\+wchar.\+c@{pl\+\_\+wchar.\+c}}
 \subsubsection[{\texorpdfstring{count\+\_\+wchar\+\_\+bytes(const char $\ast$s, int slen)}{count_wchar_bytes(const char *s, int slen)}}]{\setlength{\rightskip}{0pt plus 5cm}int count\+\_\+wchar\+\_\+bytes (
@@ -74,8 +90,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{pl__wchar_8c_afa9feb443cef2f8da40dd45a8c0e273d}{}\label{pl__wchar_8c_afa9feb443cef2f8da40dd45a8c0e273d}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -93,8 +108,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{pl__wchar_8c_ab0dd4afe17e311d855c11aee577eecdb}{}\label{pl__wchar_8c_ab0dd4afe17e311d855c11aee577eecdb}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -112,8 +126,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{pl__wchar_8c_a118e1ed8186e82a376d922702a7a8a82}{}\label{pl__wchar_8c_a118e1ed8186e82a376d922702a7a8a82}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -132,8 +145,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{pl__wchar_8c_a55a0d7269a65645bbd4c978385b0c7a3}{}\label{pl__wchar_8c_a55a0d7269a65645bbd4c978385b0c7a3}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -144,8 +156,7 @@ Here is the call graph for this function\+:
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -165,8 +176,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{pl__wchar_8c_a5df5e221fa5cbadce849a7e73c5dc4ad}{}\label{pl__wchar_8c_a5df5e221fa5cbadce849a7e73c5dc4ad}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -185,8 +195,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{pl__wchar_8c_aae8b097c7c2a9e49a67ea8a905051904}{}\label{pl__wchar_8c_aae8b097c7c2a9e49a67ea8a905051904}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -204,8 +213,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{pl__wchar_8c_addb2416249b2b193fb9f904199551a92}{}\label{pl__wchar_8c_addb2416249b2b193fb9f904199551a92}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -221,6 +229,25 @@ Here is the caller graph for this function\+:
 \item[{const char $\ast$}]{s}
 \end{DoxyParamCaption}
 )}\hypertarget{pl__wchar_8c_a3ae14a6b40fc7ab0c360b78dda5f53c4}{}\label{pl__wchar_8c_a3ae14a6b40fc7ab0c360b78dda5f53c4}
+\index{pl\+\_\+wchar.\+c@{pl\+\_\+wchar.\+c}!is\+\_\+wchar\+\_\+print@{is\+\_\+wchar\+\_\+print}}
+\index{is\+\_\+wchar\+\_\+print@{is\+\_\+wchar\+\_\+print}!pl\+\_\+wchar.\+c@{pl\+\_\+wchar.\+c}}
+\subsubsection[{\texorpdfstring{is\+\_\+wchar\+\_\+print(\+C\+H\+A\+R32\+\_\+\+T c)}{is_wchar_print(CHAR32_T c)}}]{\setlength{\rightskip}{0pt plus 5cm}int is\+\_\+wchar\+\_\+print (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+H\+A\+R32\+\_\+T}}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{pl__wchar_8c_ab651da38c28b6407c6fe7a1f50260a1a}{}\label{pl__wchar_8c_ab651da38c28b6407c6fe7a1f50260a1a}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{pl__wchar_8c_ab651da38c28b6407c6fe7a1f50260a1a_icgraph}
+\end{center}
+\end{figure}
+
+
 \index{pl\+\_\+wchar.\+c@{pl\+\_\+wchar.\+c}!normalize\+\_\+pos@{normalize\+\_\+pos}}
 \index{normalize\+\_\+pos@{normalize\+\_\+pos}!pl\+\_\+wchar.\+c@{pl\+\_\+wchar.\+c}}
 \subsubsection[{\texorpdfstring{normalize\+\_\+pos(int pos, const char $\ast$s)}{normalize_pos(int pos, const char *s)}}]{\setlength{\rightskip}{0pt plus 5cm}int normalize\+\_\+pos (
@@ -231,8 +258,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{pl__wchar_8c_ab4f7df4ce3b6d8919738adc13f0fc2fb}{}\label{pl__wchar_8c_ab4f7df4ce3b6d8919738adc13f0fc2fb}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -252,8 +278,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{pl__wchar_8c_a31bcb7c7ad4174170702cb4399feb8e3}{}\label{pl__wchar_8c_a31bcb7c7ad4174170702cb4399feb8e3}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -273,8 +298,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{pl__wchar_8c_a0e3acef785ce9c91e56ba566193d4cee}{}\label{pl__wchar_8c_a0e3acef785ce9c91e56ba566193d4cee}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -285,8 +309,7 @@ Here is the call graph for this function\+:
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -305,8 +328,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{pl__wchar_8c_aff43479f3fd642f29282b8a434c29265}{}\label{pl__wchar_8c_aff43479f3fd642f29282b8a434c29265}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -326,8 +348,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{pl__wchar_8c_a961a9ac7d7be7b35fd1632111c552b91}{}\label{pl__wchar_8c_a961a9ac7d7be7b35fd1632111c552b91}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -338,8 +359,7 @@ Here is the call graph for this function\+:
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

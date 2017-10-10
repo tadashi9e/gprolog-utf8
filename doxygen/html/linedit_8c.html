@@ -172,8 +172,8 @@ Macros</h2></td></tr>
 <tr class="separator:ab63dbcf3a2c1b3e718d10a630b148a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4217c1486f1b8b4ab3cbd02a19c5f78e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linedit_8c.html#a4217c1486f1b8b4ab3cbd02a19c5f78e">Hist_Is_Empty</a>()&#160;&#160;&#160;(<a class="el" href="linedit_8c.html#a847690978e34a64b5226bdbb8cf8cab0">hist_start</a> == <a class="el" href="linedit_8c.html#a267ffb4096e066f3e902d67c79d0a9ff">hist_end</a>)</td></tr>
 <tr class="separator:a4217c1486f1b8b4ab3cbd02a19c5f78e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7678db13492249bc88f171ea96155401"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linedit_8c.html#a7678db13492249bc88f171ea96155401">RE_DISPLAY_LINE</a></td></tr>
-<tr class="separator:a7678db13492249bc88f171ea96155401"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0d8183f01e4db1dcfe949e206946422"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linedit_8c.html#aa0d8183f01e4db1dcfe949e206946422">RE_DISPLAY_LINE</a>(ers)</td></tr>
+<tr class="separator:aa0d8183f01e4db1dcfe949e206946422"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a3b7ff0133132a30efceb60960808c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linedit_8c.html#a6a3b7ff0133132a30efceb60960808c7">L</a>(msg)&#160;&#160;&#160;DISPL_STR(msg); <a class="el" href="linedit_8c.html#ad0e248659cc2f465be3830298b5b13dc">NewLn</a>()</td></tr>
 <tr class="separator:a6a3b7ff0133132a30efceb60960808c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -184,8 +184,8 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1fdf0013b3dff967a8cff23afff87924"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linedit_8c.html#a1fdf0013b3dff967a8cff23afff87924">New_Char</a> (int <a class="el" href="scan__supp_8c.html#a2fef2e3afaac7989cb73365a6cae5985">c</a>, char *str, int size, char **p_pos, char **p_end)</td></tr>
-<tr class="separator:a1fdf0013b3dff967a8cff23afff87924"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb161ce36a3dd90b7acd272e2c91df0"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linedit_8c.html#aebb161ce36a3dd90b7acd272e2c91df0">New_Char</a> (int <a class="el" href="scan__supp_8c.html#a2fef2e3afaac7989cb73365a6cae5985">c</a>, char *str, int size, char **p_pos, char **p_end, char *prompt, int display_prompt)</td></tr>
+<tr class="separator:aebb161ce36a3dd90b7acd272e2c91df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4aaf04c5cf36f808274012b7efe59d9d"><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linedit_8c.html#a4aaf04c5cf36f808274012b7efe59d9d">Skip</a> (char *from, char *limit, int res_sep_cmp, int direction)</td></tr>
 <tr class="separator:a4aaf04c5cf36f808274012b7efe59d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ea5295db8faa5611cbecadb2bdac046"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linedit_8c.html#a4ea5295db8faa5611cbecadb2bdac046">Is_A_Separator</a> (char <a class="el" href="scan__supp_8c.html#a2fef2e3afaac7989cb73365a6cae5985">c</a>)</td></tr>
@@ -569,16 +569,21 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a7678db13492249bc88f171ea96155401"></a>
+<a class="anchor" id="aa0d8183f01e4db1dcfe949e206946422"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">#define RE_DISPLAY_LINE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ers</td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                             \</div><div class="line">  if (prompt &amp;&amp; display_prompt)  \</div><div class="line">    DISPL_STR(prompt);           \</div><div class="line">                                 \</div><div class="line">  DISPL(end - str, str);         \</div><div class="line">  BACKD(end - pos);              \</div><div class="line">} <span class="keywordflow">while</span>(0)</div></div><!-- fragment -->
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> {                    <a class="code" href="linedit_8c.html#a782bf4d234db5721cd2ee87e1c696bdc">\</a></div><div class="line"><a class="code" href="linedit_8c.html#a782bf4d234db5721cd2ee87e1c696bdc">    GO_HOME</a>;                \</div><div class="line">    if (prompt &amp;&amp; display_prompt)   \</div><div class="line">      DISPL_STR(prompt);        \</div><div class="line">    DISPL(end - str, str);      \</div><div class="line">    ERASE(ers);             <a class="code" href="linedit_8c.html#a782bf4d234db5721cd2ee87e1c696bdc">\</a></div><div class="line"><a class="code" href="linedit_8c.html#a782bf4d234db5721cd2ee87e1c696bdc">    GO_HOME</a>;                \</div><div class="line">    if (prompt &amp;&amp; display_prompt)   \</div><div class="line">      DISPL_STR(prompt);        \</div><div class="line">  } <span class="keywordflow">while</span>(0)</div><div class="ttc" id="linedit_8c_html_a782bf4d234db5721cd2ee87e1c696bdc"><div class="ttname"><a href="linedit_8c.html#a782bf4d234db5721cd2ee87e1c696bdc">GO_HOME</a></div><div class="ttdeci">#define GO_HOME</div><div class="ttdef"><b>Definition:</b> linedit.c:84</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a4c965e92faaadd5612510c747e1f16cf"></a>
@@ -1034,7 +1039,7 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a1fdf0013b3dff967a8cff23afff87924"></a>
+<a class="anchor" id="aebb161ce36a3dd90b7acd272e2c91df0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1069,7 +1074,19 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>p_end</em>&#160;</td>
+          <td class="paramname"><em>p_end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>prompt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>display_prompt</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1087,12 +1104,12 @@ Here is the caller graph for this function:</div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="linedit_8c_a1fdf0013b3dff967a8cff23afff87924_cgraph.png" border="0" usemap="#linedit_8c_a1fdf0013b3dff967a8cff23afff87924_cgraph" alt=""/></div>
-<map name="linedit_8c_a1fdf0013b3dff967a8cff23afff87924_cgraph" id="linedit_8c_a1fdf0013b3dff967a8cff23afff87924_cgraph">
+<div class="center"><img src="linedit_8c_aebb161ce36a3dd90b7acd272e2c91df0_cgraph.png" border="0" usemap="#linedit_8c_aebb161ce36a3dd90b7acd272e2c91df0_cgraph" alt=""/></div>
+<map name="linedit_8c_aebb161ce36a3dd90b7acd272e2c91df0_cgraph" id="linedit_8c_aebb161ce36a3dd90b7acd272e2c91df0_cgraph">
 <area shape="rect" id="node2" href="pl__wchar_8c.html#addb2416249b2b193fb9f904199551a92" title="get_wchar_bytes" alt="" coords="144,5,265,32"/>
-<area shape="rect" id="node3" href="pl__wchar_8c.html#a0cfe09c58e68b6f0d9b754c1d81381a0" title="contains_wchar" alt="" coords="148,56,261,83"/>
-<area shape="rect" id="node4" href="pl__wchar_8c.html#afa9feb443cef2f8da40dd45a8c0e273d" title="count_wchar_bytes" alt="" coords="137,107,272,133"/>
-<area shape="rect" id="node5" href="pl__wchar_8c.html#a31bcb7c7ad4174170702cb4399feb8e3" title="put_wchar" alt="" coords="163,157,246,184"/>
+<area shape="rect" id="node3" href="pl__wchar_8c.html#afa9feb443cef2f8da40dd45a8c0e273d" title="count_wchar_bytes" alt="" coords="137,56,272,83"/>
+<area shape="rect" id="node4" href="pl__wchar_8c.html#a31bcb7c7ad4174170702cb4399feb8e3" title="put_wchar" alt="" coords="320,132,403,159"/>
+<area shape="rect" id="node5" href="pl__wchar_8c.html#a0e3acef785ce9c91e56ba566193d4cee" title="put_wchar_eof" alt="" coords="151,157,258,184"/>
 <area shape="rect" id="node6" href="pl__wchar_8c.html#ab4f7df4ce3b6d8919738adc13f0fc2fb" title="normalize_pos" alt="" coords="151,208,258,235"/>
 </map>
 </div>
@@ -1101,8 +1118,8 @@ Here is the call graph for this function:</div>
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="linedit_8c_a1fdf0013b3dff967a8cff23afff87924_icgraph.png" border="0" usemap="#linedit_8c_a1fdf0013b3dff967a8cff23afff87924_icgraph" alt=""/></div>
-<map name="linedit_8c_a1fdf0013b3dff967a8cff23afff87924_icgraph" id="linedit_8c_a1fdf0013b3dff967a8cff23afff87924_icgraph">
+<div class="center"><img src="linedit_8c_aebb161ce36a3dd90b7acd272e2c91df0_icgraph.png" border="0" usemap="#linedit_8c_aebb161ce36a3dd90b7acd272e2c91df0_icgraph" alt=""/></div>
+<map name="linedit_8c_aebb161ce36a3dd90b7acd272e2c91df0_icgraph" id="linedit_8c_aebb161ce36a3dd90b7acd272e2c91df0_icgraph">
 <area shape="rect" id="node2" href="linedit_8h.html#afc3f434a6c8f1502ac218732fbc625f5" title="Pl_LE_FGets" alt="" coords="137,208,237,235"/>
 <area shape="rect" id="node3" href="stream__supp_8c.html#af724b584a512fb1443bbf02c4ae0d153" title="TTY_Getc" alt="" coords="290,56,373,83"/>
 <area shape="rect" id="node10" href="linedit_8h.html#aaa0d7627c7e48ff6b19dea876609eaf5" title="Pl_LE_Gets" alt="" coords="285,208,377,235"/>

@@ -2,8 +2,9 @@
 <area shape="rect" id="node2" href="$fd__range_8c.html#a7fc73a524441f6f5357f8a6a369ac92e" title="Pl_Range_Test_Value" alt="" coords="342,5,494,32"/>
 <area shape="rect" id="node3" href="$fd__inst_8c.html#a0a8a46c82ba8e9c618492db1fb1e3c33" title="Pl_Fd_Tell_Value" alt="" coords="157,56,281,83"/>
 <area shape="rect" id="node4" href="$fd__inst_8c.html#add219032fa58602f56ac1ba1ce87ac5a" title="Pl_Fd_Display_Extra_Cstr" alt="" coords="329,56,507,83"/>
-<area shape="rect" id="node8" href="$fd__inst_8c.html#aa996278d5ff80b14d5fbbc4b8900670b" title="All_Propagations" alt="" coords="358,107,478,133"/>
+<area shape="rect" id="node9" href="$fd__inst_8c.html#aa996278d5ff80b14d5fbbc4b8900670b" title="All_Propagations" alt="" coords="358,107,478,133"/>
 <area shape="rect" id="node5" href="$stream__supp_8c.html#aa0a1fdfbaae9e476151527d87510c0eb" title="Pl_Stream_Printf" alt="" coords="555,56,676,83"/>
-<area shape="rect" id="node6" href="$stream__supp_8c.html#a06ceb4f7e59898ddb42f1fa50d29d140" title="Basic_Call_Fct_Putc" alt="" coords="724,56,869,83"/>
-<area shape="rect" id="node7" href="$stream__supp_8c.html#a84ba976a14dadde6efb09d408c88873a" title="Pl_Stream_Putc" alt="" coords="917,56,1035,83"/>
+<area shape="rect" id="node6" href="$stream__supp_8c.html#a8f331c65c933f08991e3d6622ffe538f" title="Basic_Call_Fct_Putc" alt="" coords="724,56,869,83"/>
+<area shape="rect" id="node7" href="$stream__supp_8c.html#aaa89ed2e422788cf2648a9228868c1b6" title="Pl_Stream_Putc" alt="" coords="917,56,1035,83"/>
+<area shape="rect" id="node8" href="$pl__wchar_8c.html#a31bcb7c7ad4174170702cb4399feb8e3" title="put_wchar" alt="" coords="1083,56,1165,83"/>
 </map>

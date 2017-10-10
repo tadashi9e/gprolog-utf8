@@ -276,7 +276,7 @@ var searchData=
   ['swttbl',['SwtTbl',['../wam__inst_8h.html#a19e4cdaf3d7b5228784d74de87e0580b',1,'SwtTbl():&#160;wam_inst.h'],['../wam2ma_8c.html#a18ff61a4b7bf28123f2f382f74a1c378',1,'SwtTbl():&#160;wam2ma.c']]],
   ['syn_5fsugar_2epl',['syn_sugar.pl',['../syn__sugar_8pl.html',1,'']]],
   ['syntax_5ferror',['Syntax_Error',['../ma__parser_8c.html#a00f9ed3bd2f87261ec6e2f0fa667dfce',1,'Syntax_Error(char *s):&#160;ma_parser.c'],['../ma__parser_8h.html#a00f9ed3bd2f87261ec6e2f0fa667dfce',1,'Syntax_Error(char *s):&#160;ma_parser.c'],['../wam__parser_8c.html#a00f9ed3bd2f87261ec6e2f0fa667dfce',1,'Syntax_Error(char *s):&#160;wam_parser.c'],['../wam__parser_8h.html#a00f9ed3bd2f87261ec6e2f0fa667dfce',1,'Syntax_Error(char *s):&#160;ma_parser.c']]],
-  ['synthetize_5fsetx',['Synthetize_Setx',['../sparc64__any_8c.html#a7c17750a2367a1023769b227884b760c',1,'Synthetize_Setx(long value, char *tmpreg, char *dstreg):&#160;sparc64_any.c'],['../sparc64-setx_8c.html#a3398214a4ab7a354bb57e5e715c4ba12',1,'synthetize_setx(long value, char *dstreg):&#160;sparc64-setx.c']]],
+  ['synthetize_5fsetx',['synthetize_setx',['../sparc64-setx_8c.html#a3398214a4ab7a354bb57e5e715c4ba12',1,'synthetize_setx(long value, char *dstreg):&#160;sparc64-setx.c'],['../sparc64__any_8c.html#a7c17750a2367a1023769b227884b760c',1,'Synthetize_Setx(long value, char *tmpreg, char *dstreg):&#160;sparc64_any.c']]],
   ['sys_5falloc',['sys_alloc',['../dl__malloc_8c.html#a8bb55b23b1f7e313756913fedf9d3a98',1,'dl_malloc.c']]],
   ['sys_5falloc_5fpadding',['SYS_ALLOC_PADDING',['../dl__malloc_8c.html#ac40b2081de834d5d7e140d79592cd4df',1,'dl_malloc.c']]],
   ['sys_5ftrim',['sys_trim',['../dl__malloc_8c.html#a3de256edbbbbd4018cd3563f55ee50ab',1,'dl_malloc.c']]],

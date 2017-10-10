@@ -52,7 +52,7 @@ var searchData=
   ['neq',['NEQ',['../fd__bool__c_8c.html#a2b6ba3ea1fe3e8cc970ad05cd05d703b',1,'fd_bool_c.c']]],
   ['neq_5ff',['NEQ_F',['../fd__bool__c_8c.html#a093a6a7e5007368364cd72b8f6660db9',1,'fd_bool_c.c']]],
   ['nequiv',['NEQUIV',['../fd__bool__c_8c.html#a9aad42e0c22fbfcbfb548e91ef74dea7',1,'fd_bool_c.c']]],
-  ['new_5fchar',['New_Char',['../linedit_8c.html#a1fdf0013b3dff967a8cff23afff87924',1,'linedit.c']]],
+  ['new_5fchar',['New_Char',['../linedit_8c.html#aebb161ce36a3dd90b7acd272e2c91df0',1,'linedit.c']]],
   ['new_5fflag_5fatom',['NEW_FLAG_ATOM',['../flag__supp_8h.html#a219fea85ce6f625cf7bc0c64597b63e6',1,'flag_supp.h']]],
   ['new_5fflag_5fatom_5fa',['NEW_FLAG_ATOM_A',['../flag__supp_8h.html#a0d15e813d4a2de49874f8148e0c2d63b',1,'flag_supp.h']]],
   ['new_5fflag_5fbool',['NEW_FLAG_BOOL',['../flag__supp_8h.html#a9baf6307587f4f0c73f731d49de7a355',1,'flag_supp.h']]],

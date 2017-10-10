@@ -114,19 +114,19 @@ Macros</h2></td></tr>
 <tr class="separator:a1d654db2e04ad94a58f880fb9e127ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6b706baed86b0a717bea2869e82dfb1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8h.html#ad6b706baed86b0a717bea2869e82dfb1">KEY_ID</a>(code)&#160;&#160;&#160;<a class="el" href="terminal_8h.html#a0a5040b0745bb60f461a208f4f4d8d9c">KEY_ID2</a>(<a class="el" href="terminal_8h.html#a9f42059a207b3daf8e642a249eb3865d">KEY_MODIF_NONE</a>, code)</td></tr>
 <tr class="separator:ad6b706baed86b0a717bea2869e82dfb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a5040b0745bb60f461a208f4f4d8d9c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8h.html#a0a5040b0745bb60f461a208f4f4d8d9c">KEY_ID2</a>(modif,  code)&#160;&#160;&#160;(((modif) &lt;&lt; 10) | ((1 &lt;&lt; 9) | ((code) &amp; 0xff)))</td></tr>
+<tr class="memitem:a0a5040b0745bb60f461a208f4f4d8d9c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8h.html#a0a5040b0745bb60f461a208f4f4d8d9c">KEY_ID2</a>(modif,  code)&#160;&#160;&#160;(((modif) &lt;&lt; 9) | ((1 &lt;&lt; 8) | ((code) &amp; 0x7f)))</td></tr>
 <tr class="separator:a0a5040b0745bb60f461a208f4f4d8d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a1a84dcc0156ce435945acb2d801796"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8h.html#a9a1a84dcc0156ce435945acb2d801796">GET_MODIF</a>(<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>)&#160;&#160;&#160;(((<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) &gt;&gt; 10) &amp; 7)</td></tr>
+<tr class="memitem:a9a1a84dcc0156ce435945acb2d801796"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8h.html#a9a1a84dcc0156ce435945acb2d801796">GET_MODIF</a>(<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>)&#160;&#160;&#160;(((<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) &gt;&gt; 9) &amp; 7)</td></tr>
 <tr class="separator:a9a1a84dcc0156ce435945acb2d801796"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae09b2733b81f35d364084c2c353e08c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8h.html#ae09b2733b81f35d364084c2c353e08c2">GET_CODE</a>(<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>)&#160;&#160;&#160;((<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) &amp; 0x3ff)</td></tr>
+<tr class="memitem:ae09b2733b81f35d364084c2c353e08c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8h.html#ae09b2733b81f35d364084c2c353e08c2">GET_CODE</a>(<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>)&#160;&#160;&#160;((<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) &amp; 0x1ff)</td></tr>
 <tr class="separator:ae09b2733b81f35d364084c2c353e08c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bd116321772e48e59dc46d24ad344d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8h.html#a3bd116321772e48e59dc46d24ad344d4">KEY_CTRL</a>(<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>)&#160;&#160;&#160;((<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) &amp; 0x1f)</td></tr>
 <tr class="separator:a3bd116321772e48e59dc46d24ad344d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76d9858801e721bccc465e81b77c91ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8h.html#a76d9858801e721bccc465e81b77c91ac">KEY_ESC</a>(<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>)&#160;&#160;&#160;<a class="el" href="terminal_8h.html#ad6b706baed86b0a717bea2869e82dfb1">KEY_ID</a>((1 &lt;&lt; 8) | (<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) | 0x20) /* 0x20 to be case insensitive */</td></tr>
+<tr class="memitem:a76d9858801e721bccc465e81b77c91ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8h.html#a76d9858801e721bccc465e81b77c91ac">KEY_ESC</a>(<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>)&#160;&#160;&#160;<a class="el" href="terminal_8h.html#ad6b706baed86b0a717bea2869e82dfb1">KEY_ID</a>((1 &lt;&lt; 7) | (<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) | 0x20) /* 0x20 to be case insensitive */</td></tr>
 <tr class="separator:a76d9858801e721bccc465e81b77c91ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abffeb1e29eedd324b598641b71275688"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8h.html#abffeb1e29eedd324b598641b71275688">IS_ESC_COMB</a>(<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>)&#160;&#160;&#160;((<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) &amp; (1 &lt;&lt; 8))</td></tr>
+<tr class="memitem:abffeb1e29eedd324b598641b71275688"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8h.html#abffeb1e29eedd324b598641b71275688">IS_ESC_COMB</a>(<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>)&#160;&#160;&#160;((<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) &amp; (1 &lt;&lt; 7))</td></tr>
 <tr class="separator:abffeb1e29eedd324b598641b71275688"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48e6a12d9c5d9d95989cc9631552f25a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8h.html#a48e6a12d9c5d9d95989cc9631552f25a">GET_ESC_COMB</a>(<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>)&#160;&#160;&#160;((<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) &amp; 0xff)</td></tr>
+<tr class="memitem:a48e6a12d9c5d9d95989cc9631552f25a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8h.html#a48e6a12d9c5d9d95989cc9631552f25a">GET_ESC_COMB</a>(<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>)&#160;&#160;&#160;((<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) &amp; 0x7f)</td></tr>
 <tr class="separator:a48e6a12d9c5d9d95989cc9631552f25a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f42059a207b3daf8e642a249eb3865d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="terminal_8h.html#a9f42059a207b3daf8e642a249eb3865d">KEY_MODIF_NONE</a>&#160;&#160;&#160;0  /* modifiers (additive) */</td></tr>
 <tr class="separator:a9f42059a207b3daf8e642a249eb3865d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,7 +170,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a></td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) &amp; 0x3ff)</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) &amp; 0x1ff)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -186,7 +186,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a></td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) &amp; 0xff)</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) &amp; 0x7f)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -202,7 +202,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a></td><td>)</td>
-          <td>&#160;&#160;&#160;(((<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) &gt;&gt; 10) &amp; 7)</td>
+          <td>&#160;&#160;&#160;(((<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) &gt;&gt; 9) &amp; 7)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -218,7 +218,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a></td><td>)</td>
-          <td>&#160;&#160;&#160;((<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) &amp; (1 &lt;&lt; 8))</td>
+          <td>&#160;&#160;&#160;((<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) &amp; (1 &lt;&lt; 7))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -274,7 +274,7 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a></td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="terminal_8h.html#ad6b706baed86b0a717bea2869e82dfb1">KEY_ID</a>((1 &lt;&lt; 8) | (<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) | 0x20) /* 0x20 to be case insensitive */</td>
+          <td>&#160;&#160;&#160;<a class="el" href="terminal_8h.html#ad6b706baed86b0a717bea2869e82dfb1">KEY_ID</a>((1 &lt;&lt; 7) | (<a class="el" href="asm__inst_8c.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>) | 0x20) /* 0x20 to be case insensitive */</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -316,7 +316,7 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;(((modif) &lt;&lt; 10) | ((1 &lt;&lt; 9) | ((code) &amp; 0xff)))</td>
+          <td></td><td>&#160;&#160;&#160;(((modif) &lt;&lt; 9) | ((1 &lt;&lt; 8) | ((code) &amp; 0x7f)))</td>
         </tr>
       </table>
 </div><div class="memdoc">

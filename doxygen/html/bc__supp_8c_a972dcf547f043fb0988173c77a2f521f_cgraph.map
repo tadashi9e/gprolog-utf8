@@ -26,8 +26,8 @@
 <area shape="rect" id="node20" href="$wam__inst_8c.html#a0979a8e2cad3f397d84bfea3ee5dfb0c" title="Pl_Put_Structure_Tagged" alt="" coords="1513,493,1684,520"/>
 <area shape="rect" id="node22" href="$wam__inst_8c.html#a656e0931247533aa8d30c3e0398513fe" title="Pl_Unify_Atom_Tagged" alt="" coords="1519,544,1679,571"/>
 <area shape="rect" id="node24" href="$wam__inst_8c.html#a3be80b778e2bf523f0d512323c9f3125" title="Pl_Unify_Integer_Tagged" alt="" coords="1514,595,1683,621"/>
-<area shape="rect" id="node27" href="$stream__supp_8c.html#a06ceb4f7e59898ddb42f1fa50d29d140" title="Basic_Call_Fct_Putc" alt="" coords="1526,443,1671,469"/>
-<area shape="rect" id="node28" href="$stream__supp_8c.html#a84ba976a14dadde6efb09d408c88873a" title="Pl_Stream_Putc" alt="" coords="1766,443,1883,469"/>
+<area shape="rect" id="node27" href="$stream__supp_8c.html#a8f331c65c933f08991e3d6622ffe538f" title="Basic_Call_Fct_Putc" alt="" coords="1526,443,1671,469"/>
+<area shape="rect" id="node28" href="$stream__supp_8c.html#aaa89ed2e422788cf2648a9228868c1b6" title="Pl_Stream_Putc" alt="" coords="1766,443,1883,469"/>
 <area shape="rect" id="node31" href="$wam__inst_8c.html#af06a1a3342769e7c5434a147c3f66748" title="Pl_Get_Current_Choice" alt="" coords="1093,1000,1253,1027"/>
 <area shape="rect" id="node32" href="$dynam__supp_8c.html#ad7b836ca5b36d7839115b035aa0d1944" title="Pl_Scan_Dynamic_Pred" alt="" coords="423,924,587,951"/>
 <area shape="rect" id="node39" href="$bc__supp_8c.html#af5eb08f345855ac14975d4366243dbc5" title="BC_Emulate_Pred_Alt" alt="" coords="428,747,581,773"/>

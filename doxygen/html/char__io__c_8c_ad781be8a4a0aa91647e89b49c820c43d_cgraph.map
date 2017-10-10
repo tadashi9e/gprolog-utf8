@@ -4,8 +4,8 @@
 <area shape="rect" id="node26" href="$stream__supp_8c.html#af9c8d004361eaa1b94a2b463049a2d56" title="Pl_Check_Stream_Type" alt="" coords="341,215,505,241"/>
 <area shape="rect" id="node27" href="$c__supp_8c.html#a1a7d8507ad4b4de611d8f96880d2930d" title="Pl_Check_For_Un_In_Code" alt="" coords="331,316,516,343"/>
 <area shape="rect" id="node28" href="$stream__supp_8c.html#a8889ae46064e72cc556ee7ba019f482f" title="Pl_Stream_Getc" alt="" coords="364,367,483,393"/>
-<area shape="rect" id="node33" href="$error__supp_8c.html#a63aa2b2bc9fdc48a57b03ce667140ac9" title="Pl_Err_Representation" alt="" coords="575,265,728,292"/>
-<area shape="rect" id="node34" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="369,417,478,444"/>
+<area shape="rect" id="node34" href="$error__supp_8c.html#a63aa2b2bc9fdc48a57b03ce667140ac9" title="Pl_Err_Representation" alt="" coords="575,265,728,292"/>
+<area shape="rect" id="node35" href="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7" title="Pl_Get_Integer" alt="" coords="369,417,478,444"/>
 <area shape="rect" id="node4" href="$stream__supp_8c.html#a3373c0be2228d65eab1110cfa6224b79" title="Pl_Find_Stream_By_Alias" alt="" coords="564,12,739,39"/>
 <area shape="rect" id="node7" href="$error__supp_8c.html#a17057fc5577da70316e8f62fca4743f7" title="Pl_Err_Instantiation" alt="" coords="583,63,719,89"/>
 <area shape="rect" id="node23" href="$error__supp_8c.html#a3e55bc25f2716a2492cdd6c8baddec88" title="Pl_Err_Domain" alt="" coords="596,113,707,140"/>
@@ -29,8 +29,9 @@
 <area shape="rect" id="node18" href="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907" title="Pl_Fatal_Error" alt="" coords="1620,157,1725,184"/>
 <area shape="rect" id="node20" href="$pl__wchar_8c.html#afa9feb443cef2f8da40dd45a8c0e273d" title="count_wchar_bytes" alt="" coords="1605,208,1740,235"/>
 <area shape="rect" id="node29" href="$stream__supp_8c.html#a60433157a606a8a781ead4648af6cc87" title="Basic_Call_Fct_Getc" alt="" coords="578,367,725,393"/>
-<area shape="rect" id="node32" href="$pl__wchar_8c.html#a5df5e221fa5cbadce849a7e73c5dc4ad" title="fill_wchar" alt="" coords="613,316,690,343"/>
-<area shape="rect" id="node30" href="$stream__supp_8c.html#a84ba976a14dadde6efb09d408c88873a" title="Pl_Stream_Putc" alt="" coords="821,367,938,393"/>
-<area shape="rect" id="node31" href="$stream__supp_8c.html#a06ceb4f7e59898ddb42f1fa50d29d140" title="Basic_Call_Fct_Putc" alt="" coords="1033,367,1179,393"/>
-<area shape="rect" id="node35" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="572,417,731,444"/>
+<area shape="rect" id="node33" href="$pl__wchar_8c.html#a5df5e221fa5cbadce849a7e73c5dc4ad" title="fill_wchar" alt="" coords="613,316,690,343"/>
+<area shape="rect" id="node30" href="$stream__supp_8c.html#aaa89ed2e422788cf2648a9228868c1b6" title="Pl_Stream_Putc" alt="" coords="821,367,938,393"/>
+<area shape="rect" id="node31" href="$pl__wchar_8c.html#a31bcb7c7ad4174170702cb4399feb8e3" title="put_wchar" alt="" coords="1065,316,1147,343"/>
+<area shape="rect" id="node32" href="$stream__supp_8c.html#a8f331c65c933f08991e3d6622ffe538f" title="Basic_Call_Fct_Putc" alt="" coords="1033,367,1179,393"/>
+<area shape="rect" id="node36" href="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d" title="Pl_Get_Integer_Tagged" alt="" coords="572,417,731,444"/>
 </map>

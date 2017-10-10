@@ -32,7 +32,7 @@
 <area shape="rect" id="node41" href="$write__supp_8c.html#a46188cb675250e1319c815a92d98d574" title="Show_Structure" alt="" coords="1277,917,1392,944"/>
 <area shape="rect" id="node27" href="$pl__wchar_8c.html#afa9feb443cef2f8da40dd45a8c0e273d" title="count_wchar_bytes" alt="" coords="1715,917,1849,944"/>
 <area shape="rect" id="node22" href="$write__supp_8c.html#a1accd85dd273c868523287f70409e55a" title="Need_Space" alt="" coords="1960,816,2057,843"/>
-<area shape="rect" id="node24" href="$stream__supp_8c.html#a84ba976a14dadde6efb09d408c88873a" title="Pl_Stream_Putc" alt="" coords="2277,841,2395,868"/>
+<area shape="rect" id="node24" href="$stream__supp_8c.html#aaa89ed2e422788cf2648a9228868c1b6" title="Pl_Stream_Putc" alt="" coords="2277,841,2395,868"/>
 <area shape="rect" id="node23" href="$write__supp_8c.html#a1b8fd4efcb94323a3da3336c022a49d3" title="Out_Space" alt="" coords="2143,816,2229,843"/>
 <area shape="rect" id="node26" href="$stream__supp_8c.html#a31eee9920a69a51c28e0eac5eb3adedb" title="Pl_Stream_Puts" alt="" coords="1950,765,2067,792"/>
 <area shape="rect" id="node29" href="$pred_8c.html#aa8ebf08b93ec7e4bde2c544c70ba4c39" title="Pl_Lookup_Pred" alt="" coords="1495,411,1613,437"/>

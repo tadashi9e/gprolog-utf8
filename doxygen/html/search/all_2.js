@@ -12,7 +12,7 @@ var searchData=
   ['base_5fcopy',['base_copy',['../term__supp_8c.html#a1961959381fc1b8025801a6518d1a07b',1,'term_supp.c']]],
   ['base_5fvar_5fptr',['base_var_ptr',['../term__inl__c_8c.html#a06ae908bdae09c16941157db7eb1bab0',1,'term_inl_c.c']]],
   ['basic_5fcall_5ffct_5fgetc',['Basic_Call_Fct_Getc',['../stream__supp_8c.html#a60433157a606a8a781ead4648af6cc87',1,'stream_supp.c']]],
-  ['basic_5fcall_5ffct_5fputc',['Basic_Call_Fct_Putc',['../stream__supp_8c.html#a06ceb4f7e59898ddb42f1fa50d29d140',1,'stream_supp.c']]],
+  ['basic_5fcall_5ffct_5fputc',['Basic_Call_Fct_Putc',['../stream__supp_8c.html#a8f331c65c933f08991e3d6622ffe538f',1,'stream_supp.c']]],
   ['baz',['baz',['../asm_8c.html#ae5216c208fccdb3b3737cf95aab9d670',1,'asm.c']]],
   ['bb',['BB',['../wam__inst_8h.html#a646a1a5e81ed0cbf65cfeec95e1fd6a7',1,'wam_inst.h']]],
   ['bc',['bc',['../bc__supp_8c.html#a7caec8c2920ca1702188d1ef7f90ab2a',1,'bc_supp.c']]],

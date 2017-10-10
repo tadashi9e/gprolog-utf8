@@ -2,6 +2,7 @@
 <area shape="rect" id="node2" href="$wam__inst_8c.html#a1f8b77617ef38000ca80700aaefbc694" title="Pl_Delete_Choice_Point" alt="" coords="201,5,365,32"/>
 <area shape="rect" id="node3" href="$fd__inst_8c.html#add219032fa58602f56ac1ba1ce87ac5a" title="Pl_Fd_Display_Extra_Cstr" alt="" coords="195,56,372,83"/>
 <area shape="rect" id="node4" href="$stream__supp_8c.html#aa0a1fdfbaae9e476151527d87510c0eb" title="Pl_Stream_Printf" alt="" coords="420,56,541,83"/>
-<area shape="rect" id="node5" href="$stream__supp_8c.html#a06ceb4f7e59898ddb42f1fa50d29d140" title="Basic_Call_Fct_Putc" alt="" coords="589,56,735,83"/>
-<area shape="rect" id="node6" href="$stream__supp_8c.html#a84ba976a14dadde6efb09d408c88873a" title="Pl_Stream_Putc" alt="" coords="783,56,900,83"/>
+<area shape="rect" id="node5" href="$stream__supp_8c.html#a8f331c65c933f08991e3d6622ffe538f" title="Basic_Call_Fct_Putc" alt="" coords="589,56,735,83"/>
+<area shape="rect" id="node6" href="$stream__supp_8c.html#aaa89ed2e422788cf2648a9228868c1b6" title="Pl_Stream_Putc" alt="" coords="783,56,900,83"/>
+<area shape="rect" id="node7" href="$pl__wchar_8c.html#a31bcb7c7ad4174170702cb4399feb8e3" title="put_wchar" alt="" coords="948,56,1031,83"/>
 </map>

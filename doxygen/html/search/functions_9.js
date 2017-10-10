@@ -33,5 +33,6 @@ var searchData=
   ['is_5flist_5for_5fpartial',['Is_List_Or_Partial',['../term__supp_8h.html#acd247284ca7073672c6ab4b231b20684',1,'term_supp.h']]],
   ['is_5fpartial_5flist',['Is_Partial_List',['../term__supp_8h.html#ab464bed92348388dae1e1433a800636b',1,'term_supp.h']]],
   ['is_5fvalid_5fvar_5fname',['Is_Valid_Var_Name',['../write__supp_8c.html#ae8fa2cc3af4278052d126446695704c4',1,'write_supp.c']]],
+  ['is_5fwchar_5fprint',['is_wchar_print',['../pl__wchar_8c.html#ab651da38c28b6407c6fe7a1f50260a1a',1,'is_wchar_print(CHAR32_T c):&#160;pl_wchar.c'],['../pl__wchar_8h.html#ab651da38c28b6407c6fe7a1f50260a1a',1,'is_wchar_print(CHAR32_T c):&#160;pl_wchar.c']]],
   ['is_5fwin32_5fsegv',['Is_Win32_SEGV',['../WIN32__SIGSEGV_8c.html#ad02e53c07c05866d5748ef250d31d0d0',1,'Is_Win32_SEGV(LPEXCEPTION_POINTERS err):&#160;WIN32_SIGSEGV.c'],['../chkma_8c.html#a9aa302a514197c55c9c8b52fb59ae9f3',1,'Is_Win32_SEGV(void *exp):&#160;chkma.c']]]
 ];

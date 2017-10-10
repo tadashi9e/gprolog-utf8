@@ -23,7 +23,7 @@
 <area shape="rect" id="node31" href="$write__supp_8c.html#a46188cb675250e1319c815a92d98d574" title="Show_Structure" alt="" coords="1084,172,1199,199"/>
 <area shape="rect" id="node11" href="$pl__wchar_8c.html#afa9feb443cef2f8da40dd45a8c0e273d" title="count_wchar_bytes" alt="" coords="1521,71,1656,97"/>
 <area shape="rect" id="node7" href="$write__supp_8c.html#a1accd85dd273c868523287f70409e55a" title="Need_Space" alt="" coords="1767,248,1864,275"/>
-<area shape="rect" id="node8" href="$stream__supp_8c.html#a84ba976a14dadde6efb09d408c88873a" title="Pl_Stream_Putc" alt="" coords="1757,197,1874,224"/>
+<area shape="rect" id="node8" href="$stream__supp_8c.html#aaa89ed2e422788cf2648a9228868c1b6" title="Pl_Stream_Putc" alt="" coords="1757,197,1874,224"/>
 <area shape="rect" id="node10" href="$stream__supp_8c.html#a31eee9920a69a51c28e0eac5eb3adedb" title="Pl_Stream_Puts" alt="" coords="1757,324,1874,351"/>
 <area shape="rect" id="node13" href="$pred_8c.html#aa8ebf08b93ec7e4bde2c544c70ba4c39" title="Pl_Lookup_Pred" alt="" coords="1302,476,1419,503"/>
 <area shape="rect" id="node14" href="$atom_8c.html#a068c993d95113a2ba7643918e68eedb3" title="Pl_Create_Atom" alt="" coords="1301,527,1420,553"/>

@@ -12,8 +12,7 @@
 {\ttfamily \#include \char`\"{}terminal.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}ctrl\+\_\+c.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}linedit.\+h\char`\"{}}\\*
-Include dependency graph for linedit.\+c\+:
-\nopagebreak
+Include dependency graph for linedit.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -74,7 +73,7 @@ struct \hyperlink{structcomp__node}{comp\+\_\+node}
 \item 
 \#define \hyperlink{linedit_8c_a4217c1486f1b8b4ab3cbd02a19c5f78e}{Hist\+\_\+\+Is\+\_\+\+Empty}()~(\hyperlink{linedit_8c_a847690978e34a64b5226bdbb8cf8cab0}{hist\+\_\+start} == \hyperlink{linedit_8c_a267ffb4096e066f3e902d67c79d0a9ff}{hist\+\_\+end})
 \item 
-\#define \hyperlink{linedit_8c_a7678db13492249bc88f171ea96155401}{R\+E\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+L\+I\+NE}
+\#define \hyperlink{linedit_8c_aa0d8183f01e4db1dcfe949e206946422}{R\+E\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+L\+I\+NE}(ers)
 \item 
 \#define \hyperlink{linedit_8c_a6a3b7ff0133132a30efceb60960808c7}{L}(msg)~D\+I\+S\+P\+L\+\_\+\+S\+TR(msg); \hyperlink{linedit_8c_ad0e248659cc2f465be3830298b5b13dc}{New\+Ln}()
 \end{DoxyCompactItemize}
@@ -86,7 +85,7 @@ typedef struct \hyperlink{structcomp__node}{comp\+\_\+node} \hyperlink{linedit_8
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-static int \hyperlink{linedit_8c_a1fdf0013b3dff967a8cff23afff87924}{New\+\_\+\+Char} (int \hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}, char $\ast$str, int size, char $\ast$$\ast$p\+\_\+pos, char $\ast$$\ast$p\+\_\+end)
+static int \hyperlink{linedit_8c_aebb161ce36a3dd90b7acd272e2c91df0}{New\+\_\+\+Char} (int \hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c}, char $\ast$str, int size, char $\ast$$\ast$p\+\_\+pos, char $\ast$$\ast$p\+\_\+end, char $\ast$prompt, int display\+\_\+prompt)
 \item 
 static char $\ast$ \hyperlink{linedit_8c_a4aaf04c5cf36f808274012b7efe59d9d}{Skip} (char $\ast$from, char $\ast$limit, int res\+\_\+sep\+\_\+cmp, int direction)
 \item 
@@ -280,16 +279,23 @@ static \hyperlink{linedit_8c_aa67e449f274e66ffe693e5dd32615d2a}{Comp\+Node} $\as
 \subsubsection[{\texorpdfstring{O\+P\+E\+N\+\_\+\+B\+R\+A\+C\+K\+ET}{OPEN_BRACKET}}]{\setlength{\rightskip}{0pt plus 5cm}\#define O\+P\+E\+N\+\_\+\+B\+R\+A\+C\+K\+ET~\char`\"{}(\mbox{[}\{\char`\"{}}\hypertarget{linedit_8c_a675bc78c4ce5953cb39df8091fe2c698}{}\label{linedit_8c_a675bc78c4ce5953cb39df8091fe2c698}
 \index{linedit.\+c@{linedit.\+c}!R\+E\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+L\+I\+NE@{R\+E\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+L\+I\+NE}}
 \index{R\+E\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+L\+I\+NE@{R\+E\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+L\+I\+NE}!linedit.\+c@{linedit.\+c}}
-\subsubsection[{\texorpdfstring{R\+E\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+L\+I\+NE}{RE_DISPLAY_LINE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+L\+I\+NE}\hypertarget{linedit_8c_a7678db13492249bc88f171ea96155401}{}\label{linedit_8c_a7678db13492249bc88f171ea96155401}
+\subsubsection[{\texorpdfstring{R\+E\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+L\+I\+NE}{RE_DISPLAY_LINE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+L\+I\+NE(
+\begin{DoxyParamCaption}
+\item[{}]{ers}
+\end{DoxyParamCaption}
+)}\hypertarget{linedit_8c_aa0d8183f01e4db1dcfe949e206946422}{}\label{linedit_8c_aa0d8183f01e4db1dcfe949e206946422}
 {\bfseries Value\+:}
 \begin{DoxyCode}
-\textcolor{keywordflow}{do} \{                             \(\backslash\)
-  if (prompt && display\_prompt)  \(\backslash\)
-    DISPL\_STR(prompt);           \(\backslash\)
-                                 \(\backslash\)
-  DISPL(end - str, str);         \(\backslash\)
-  BACKD(end - pos);              \(\backslash\)
-\} \textcolor{keywordflow}{while}(0)
+\textcolor{keywordflow}{do} \{                    \hyperlink{linedit_8c_a782bf4d234db5721cd2ee87e1c696bdc}{\(\backslash\)}
+\hyperlink{linedit_8c_a782bf4d234db5721cd2ee87e1c696bdc}{    GO\_HOME};             \(\backslash\)
+    if (prompt && display\_prompt)   \(\backslash\)
+      DISPL\_STR(prompt);        \(\backslash\)
+    DISPL(end - str, str);      \(\backslash\)
+    ERASE(ers);             \hyperlink{linedit_8c_a782bf4d234db5721cd2ee87e1c696bdc}{\(\backslash\)}
+\hyperlink{linedit_8c_a782bf4d234db5721cd2ee87e1c696bdc}{    GO\_HOME};             \(\backslash\)
+    if (prompt && display\_prompt)   \(\backslash\)
+      DISPL\_STR(prompt);        \(\backslash\)
+  \} \textcolor{keywordflow}{while}(0)
 \end{DoxyCode}
 \index{linedit.\+c@{linedit.\+c}!T\+R\+E\+A\+T\+\_\+\+B\+U\+F\+F\+E\+R\+E\+D\+\_\+\+C\+H\+A\+RS@{T\+R\+E\+A\+T\+\_\+\+B\+U\+F\+F\+E\+R\+E\+D\+\_\+\+C\+H\+A\+RS}}
 \index{T\+R\+E\+A\+T\+\_\+\+B\+U\+F\+F\+E\+R\+E\+D\+\_\+\+C\+H\+A\+RS@{T\+R\+E\+A\+T\+\_\+\+B\+U\+F\+F\+E\+R\+E\+D\+\_\+\+C\+H\+A\+RS}!linedit.\+c@{linedit.\+c}}
@@ -314,8 +320,7 @@ static \hyperlink{linedit_8c_aa67e449f274e66ffe693e5dd32615d2a}{Comp\+Node} $\as
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{linedit_8c_a2b917181276549bd7ba1c57097754ad6}{}\label{linedit_8c_a2b917181276549bd7ba1c57097754ad6}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -333,8 +338,7 @@ Here is the caller graph for this function\+:
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{linedit_8c_adbd65989f4f07bd70b23ac9aeb99382f}{}\label{linedit_8c_adbd65989f4f07bd70b23ac9aeb99382f}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -345,8 +349,7 @@ Here is the call graph for this function\+:
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -364,8 +367,7 @@ Here is the caller graph for this function\+:
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{linedit_8c_a09be5e8eeb7b4aa4bd65000b7a7ea1e1}{}\label{linedit_8c_a09be5e8eeb7b4aa4bd65000b7a7ea1e1}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -384,8 +386,7 @@ Here is the caller graph for this function\+:
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{linedit_8c_a8357da237162c90ddc0049738856e46c}{}\label{linedit_8c_a8357da237162c90ddc0049738856e46c}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -396,8 +397,7 @@ Here is the call graph for this function\+:
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -416,8 +416,7 @@ Here is the caller graph for this function\+:
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{linedit_8c_afcfa248464c16c700dfac8420ef23e68}{}\label{linedit_8c_afcfa248464c16c700dfac8420ef23e68}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -437,8 +436,7 @@ Here is the caller graph for this function\+:
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{linedit_8c_afb0e5e386360e90f03053b6833026659}{}\label{linedit_8c_afb0e5e386360e90f03053b6833026659}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -456,8 +454,7 @@ Here is the caller graph for this function\+:
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{linedit_8c_a4ea5295db8faa5611cbecadb2bdac046}{}\label{linedit_8c_a4ea5295db8faa5611cbecadb2bdac046}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -468,15 +465,17 @@ Here is the caller graph for this function\+:
 
 \index{linedit.\+c@{linedit.\+c}!New\+\_\+\+Char@{New\+\_\+\+Char}}
 \index{New\+\_\+\+Char@{New\+\_\+\+Char}!linedit.\+c@{linedit.\+c}}
-\subsubsection[{\texorpdfstring{New\+\_\+\+Char(int c, char $\ast$str, int size, char $\ast$$\ast$p\+\_\+pos, char $\ast$$\ast$p\+\_\+end)}{New_Char(int c, char *str, int size, char **p_pos, char **p_end)}}]{\setlength{\rightskip}{0pt plus 5cm}static int New\+\_\+\+Char (
+\subsubsection[{\texorpdfstring{New\+\_\+\+Char(int c, char $\ast$str, int size, char $\ast$$\ast$p\+\_\+pos, char $\ast$$\ast$p\+\_\+end, char $\ast$prompt, int display\+\_\+prompt)}{New_Char(int c, char *str, int size, char **p_pos, char **p_end, char *prompt, int display_prompt)}}]{\setlength{\rightskip}{0pt plus 5cm}static int New\+\_\+\+Char (
 \begin{DoxyParamCaption}
 \item[{int}]{c, }
 \item[{char $\ast$}]{str, }
 \item[{int}]{size, }
 \item[{char $\ast$$\ast$}]{p\+\_\+pos, }
-\item[{char $\ast$$\ast$}]{p\+\_\+end}
+\item[{char $\ast$$\ast$}]{p\+\_\+end, }
+\item[{char $\ast$}]{prompt, }
+\item[{int}]{display\+\_\+prompt}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{linedit_8c_a1fdf0013b3dff967a8cff23afff87924}{}\label{linedit_8c_a1fdf0013b3dff967a8cff23afff87924}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{linedit_8c_aebb161ce36a3dd90b7acd272e2c91df0}{}\label{linedit_8c_aebb161ce36a3dd90b7acd272e2c91df0}
 
 
 Here is the call graph for this function\+:
@@ -484,7 +483,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=280pt]{linedit_8c_a1fdf0013b3dff967a8cff23afff87924_cgraph}
+\includegraphics[width=350pt]{linedit_8c_aebb161ce36a3dd90b7acd272e2c91df0_cgraph}
 \end{center}
 \end{figure}
 
@@ -496,7 +495,7 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{linedit_8c_a1fdf0013b3dff967a8cff23afff87924_icgraph}
+\includegraphics[width=350pt]{linedit_8c_aebb161ce36a3dd90b7acd272e2c91df0_icgraph}
 \end{center}
 \end{figure}
 
@@ -511,8 +510,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{linedit_8c_ab2a8db946ffd8187b5216ff4ac8cbe7c}{}\label{linedit_8c_ab2a8db946ffd8187b5216ff4ac8cbe7c}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -537,8 +535,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{linedit_8c_abe202e5da0cbda0e3875038a53b6f368}{}\label{linedit_8c_abe202e5da0cbda0e3875038a53b6f368}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -558,8 +555,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{linedit_8c_a366bf1352246b542e79953c24b39a70a}{}\label{linedit_8c_a366bf1352246b542e79953c24b39a70a}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -570,8 +566,7 @@ Here is the call graph for this function\+:
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -592,8 +587,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{linedit_8c_afc3f434a6c8f1502ac218732fbc625f5}{}\label{linedit_8c_afc3f434a6c8f1502ac218732fbc625f5}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -604,8 +598,7 @@ Here is the call graph for this function\+:
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -623,8 +616,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{linedit_8c_a984bc5e9cc15fffd69d6a5a95aedbe05}{}\label{linedit_8c_a984bc5e9cc15fffd69d6a5a95aedbe05}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -642,8 +634,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{linedit_8c_acf0e90d0f6cddd8bdc0e6589f29c20c0}{}\label{linedit_8c_acf0e90d0f6cddd8bdc0e6589f29c20c0}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -661,8 +652,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{linedit_8c_adc891ea7b5c4057020fe8390dad2caf1}{}\label{linedit_8c_adc891ea7b5c4057020fe8390dad2caf1}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -673,8 +663,7 @@ Here is the call graph for this function\+:
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -693,8 +682,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{linedit_8c_a4f1c0c59dd4227be9ac33ccc96c7d8d9}{}\label{linedit_8c_a4f1c0c59dd4227be9ac33ccc96c7d8d9}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -705,8 +693,7 @@ Here is the call graph for this function\+:
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -724,8 +711,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{linedit_8c_a46e3bf5b122308262f46641963396d2a}{}\label{linedit_8c_a46e3bf5b122308262f46641963396d2a}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -743,8 +729,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{linedit_8c_a462cf5c7ef255bcca09852769ac15a52}{}\label{linedit_8c_a462cf5c7ef255bcca09852769ac15a52}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -762,8 +747,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{linedit_8c_aaa0d7627c7e48ff6b19dea876609eaf5}{}\label{linedit_8c_aaa0d7627c7e48ff6b19dea876609eaf5}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -774,8 +758,7 @@ Here is the call graph for this function\+:
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -794,8 +777,7 @@ Here is the caller graph for this function\+:
 )}\hypertarget{linedit_8c_a3440af82042d594b86ed123701f58484}{}\label{linedit_8c_a3440af82042d594b86ed123701f58484}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -821,8 +803,7 @@ Here is the call graph for this function\+:
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{linedit_8c_ac5f90334dbe4af7b0efad01a1d73a016}{}\label{linedit_8c_ac5f90334dbe4af7b0efad01a1d73a016}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -843,8 +824,7 @@ Here is the caller graph for this function\+:
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{linedit_8c_a4aaf04c5cf36f808274012b7efe59d9d}{}\label{linedit_8c_a4aaf04c5cf36f808274012b7efe59d9d}
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -855,8 +835,7 @@ Here is the call graph for this function\+:
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -874,8 +853,7 @@ Here is the caller graph for this function\+:
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{linedit_8c_ad206710a078c5a14704d33b117268d95}{}\label{linedit_8c_ad206710a078c5a14704d33b117268d95}
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

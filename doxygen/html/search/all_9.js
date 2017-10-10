@@ -205,6 +205,7 @@ var searchData=
   ['is_5fvalid_5fvar_5fname',['Is_Valid_Var_Name',['../write__supp_8c.html#ae8fa2cc3af4278052d126446695704c4',1,'write_supp.c']]],
   ['is_5fvar',['is_var',['../structPlFIOArg.html#ad700005317887006bd276a4d1a177881',1,'PlFIOArg::is_var()'],['../structPlFIOArg.html#ab4d9b51a4575a50e1d9b8a3ec36a3f6e',1,'PlFIOArg::is_var()']]],
   ['is_5fvar_5fin_5fqueue',['Is_Var_In_Queue',['../fd__inst_8h.html#a6bac05773337a5cd4ad4491daf83dab9',1,'fd_inst.h']]],
+  ['is_5fwchar_5fprint',['is_wchar_print',['../pl__wchar_8c.html#ab651da38c28b6407c6fe7a1f50260a1a',1,'is_wchar_print(CHAR32_T c):&#160;pl_wchar.c'],['../pl__wchar_8h.html#ab651da38c28b6407c6fe7a1f50260a1a',1,'is_wchar_print(CHAR32_T c):&#160;pl_wchar.c']]],
   ['is_5fwin32_5fsegv',['Is_Win32_SEGV',['../WIN32__SIGSEGV_8c.html#ad02e53c07c05866d5748ef250d31d0d0',1,'Is_Win32_SEGV(LPEXCEPTION_POINTERS err):&#160;WIN32_SIGSEGV.c'],['../chkma_8c.html#a9aa302a514197c55c9c8b52fb59ae9f3',1,'Is_Win32_SEGV(void *exp):&#160;chkma.c']]],
   ['isvar',['IsVar',['../fd__bool__c_8c.html#a2ab2458112884b4f920c996c399dc747',1,'fd_bool_c.c']]],
   ['itoi',['ItoI',['../arith__inl__c_8c.html#a4365ba84b2d56df03d4dcb1163f63ca4',1,'arith_inl_c.c']]],
