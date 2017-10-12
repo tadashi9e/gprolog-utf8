@@ -35,7 +35,7 @@
  * not, see http://www.gnu.org/licenses/.                                  *
  *-------------------------------------------------------------------------*/
 
-
+#include "pl_wchar.h"
 #if 1
 #define OPTIM_1_CHAR_ATOM
 #endif
@@ -212,3 +212,4 @@ int Pl_Find_Next_Atom(int last_atom);
 
 #endif
 
+extern int ATOM_CHAR32(CHAR32_T c);

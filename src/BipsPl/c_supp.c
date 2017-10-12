@@ -1772,11 +1772,11 @@ Pl_Un_Boolean(int value, WamWord start_word)
  *                                                                         *
  *-------------------------------------------------------------------------*/
 Bool
-Pl_Un_Char_Check(int value, WamWord start_word)
+Pl_Un_Char_Check(CHAR32_T value, WamWord start_word)
 {
   CHECK_FOR_UN_CHAR;
 
-  return Pl_Get_Atom(ATOM_CHAR(value), word);
+  return Pl_Get_Atom(ATOM_CHAR32(value), word);
 }
 
 
@@ -1787,9 +1787,9 @@ Pl_Un_Char_Check(int value, WamWord start_word)
  *                                                                         *
  *-------------------------------------------------------------------------*/
 Bool
-Pl_Un_Char(int value, WamWord start_word)
+Pl_Un_Char(CHAR32_T value, WamWord start_word)
 {
-  return Pl_Get_Atom(ATOM_CHAR(value), start_word);
+  return Pl_Get_Atom(ATOM_CHAR32(value), start_word);
 }
 
 
@@ -1991,14 +1991,20 @@ Pl_Un_Chars_Check(char *str, WamWord start_word)
 Bool
 Pl_Un_Chars(char *str, WamWord start_word)
 {
-  for (; *str; str++)
-    {
-      if (!Pl_Get_List(start_word) || !Pl_Unify_Atom(ATOM_CHAR(*str)))
+  int mode = FILL_WCHAR_MODE_INIT;
+  CHAR32_T c;
+  while (*str != '\0') {
+    if (fill_wchar(&c, &mode, *str++ & 0xff)) {
+      if (!Pl_Get_List(start_word)) {
 	return FALSE;
-
+      }
+      if (!Pl_Unify_Atom(ATOM_CHAR32(c))) {
+	return FALSE;
+      }
       start_word = Pl_Unify_Variable();
     }
-
+  }
+  
   return Pl_Get_Nil(start_word);
 }
 
@@ -2436,19 +2442,21 @@ WamWord
 Pl_Mk_Chars(char *str)
 {
   WamWord res_word;
+  int mode = FILL_WCHAR_MODE_INIT;
+  CHAR32_T c;
 
   if (*str == '\0')
     return NIL_WORD;
 
   res_word = Pl_Put_List();
-  for (;;)
+  while (*str != '\0')
     {
-      Pl_Unify_Atom(ATOM_CHAR(*str));
-      str++;
-      if (*str == '\0')
-	break;
-
-      Pl_Unify_List();
+      if (fill_wchar(&c, &mode, *str++ & 0xff)) {
+	Pl_Unify_Atom(ATOM_CHAR32(c));
+	if (*str == '\0')
+	  break;
+	Pl_Unify_List();
+      }
     }
 
   Pl_Unify_Nil();

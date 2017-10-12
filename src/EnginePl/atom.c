@@ -612,3 +612,12 @@ Error_Table_Full(void)
     Pl_Fatal_Error(ERR_TABLE_FULL_ENV, pl_max_atom, ENV_VAR_MAX_ATOM);
 }
 
+int ATOM_CHAR32(CHAR32_T c)
+{
+  char tmp[8];
+  if (c < 0x80) {
+    return ATOM_CHAR(c);
+  }
+  put_wchar_eof(tmp, sizeof(tmp), c);
+  return Pl_Create_Allocate_Atom(tmp);
+}
