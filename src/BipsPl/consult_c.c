@@ -77,7 +77,9 @@ Pl_Consult_2(WamWord tmp_file_word, WamWord pl_file_word)
   FILE **pf_in;
   PlLong save;
   unsigned char *p = NULL;
-  int status, c;
+  int status;
+  CHAR32_T c;
+  int mode = FILL_WCHAR_MODE_INIT;
   int save_use_le_prompt;
   char *arg[] = { "pl2wam", "-w", "--compile-msg", "--no-redef-error",
 		  "--pl-state", tmp_file, "-o", tmp_file, pl_file,
@@ -124,13 +126,17 @@ Pl_Consult_2(WamWord tmp_file_word, WamWord pl_file_word)
   for (;;)
     {
 #if 1
-      c = fgetc(f_out);
+      int c1 = fgetc(f_out);
 #else
       char c0;
-      c = (read(fileno(f_out), &c0, 1) == 1) ? c0 : EOF;
+      int c1;
+      c1 = (read(fileno(f_out), &c0, 1) == 1) ? c0 : EOF;
 #endif
-      if (c == EOF)
+      if (c1 == EOF)
 	break;
+      if (!fill_wchar(&c, &mode, c1 & 0xff)) {
+	continue;
+      }
 
 #ifndef NO_USE_PIPED_STDIN_FOR_CONSULT
       if (c == CHAR_TO_EMIT_WHEN_CHAR)
