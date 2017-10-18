@@ -452,10 +452,8 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
 
           pos = str;
           end -= n;
-          BACKD(n);
-          DISPL(end - pos, pos);
-          ERASE(n);
-          BACKD(end - pos);
+	  RE_DISPLAY_LINE(n);
+	  FORWD(normalize_pos(pos - str, str), str);
           continue;
 
 
@@ -518,13 +516,10 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
           for (p = stop; p < end; p++)
             p[-n] = *p;
 
-          if (mark < pos)
-            BACKD(n);
           pos = start;
           end -= n;
-          DISPL(end - pos, pos);
-          ERASE(n);
-          BACKD(end - pos);
+	  RE_DISPLAY_LINE(n);
+	  FORWD(normalize_pos(pos - str, str), str);
           continue;
 
 
@@ -532,13 +527,15 @@ Pl_LE_FGets(char *str, int size, char *prompt, int display_prompt)
         case KEY_ID2(KEY_MODIF_CTRL, KEY_EXT_LEFT):
           if (pos == str) { /* to avoid start of a word */
             p = pos;
+	  } else {
 	    i = count_wchar_bytes_back(pos);
 	    p = pos - i;
           }
           p = Skip(p, str, 1, -1);      /* skip separators */
           p = Skip(p, str, 0, -1);      /* skip non separators */
           p = Skip(p, end, 1, +1);      /* skip separators */
-          BACKD(pos - p);
+	  RE_DISPLAY_LINE(0);
+	  FORWD(normalize_pos(p - str, str), str);
           pos = p;
           continue;
 
