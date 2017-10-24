@@ -1,0 +1,43 @@
+digraph "Pl_Allocate_Stacks"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_Allocate_Stacks",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="getpagesize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$WIN32__SIGSEGV_8c.html#a638757347bd9bf886b3d442b98033cf1"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Virtual_Mem_Alloc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stacks__sigsegv_8c.html#a122e90b05aa0d3b58bf7bd7b0d147be1"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Pl_Fatal_Error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907"];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Pl_M_Sys_Err_String",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$machine_8c.html#a9774325ac269ffeece1e5f266a410f2b"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Virtual_Mem_Protect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stacks__sigsegv_8c.html#ae160b208bf67b869ccfcbbd2a154ef98"];
+  Node6 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Install_SIGSEGV_Handler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stacks__sigsegv_8c.html#a80590c360772a0ae63e625478e2bffcf"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="SIGSEGV_Handler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stacks__sigsegv_8c.html#a1bb0e5039c09c36774850e4cbdab8c8b"];
+  Node7 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="Win32_Exception_Handler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stacks__sigsegv_8c.html#af3b6f4399924cfa2493fd581e588b4cf"];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="Handle_Bad_Address",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stacks__sigsegv_8c.html#a025866a50618e66535d50d040a135332"];
+  Node10 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="Pl_Push_SIGSEGV_Handler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stacks__sigsegv_8c.html#ab5ca8f915e148142d8a80723e05fad13"];
+  Node11 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="Default_SIGSEGV_Handler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stacks__sigsegv_8c.html#ae439f72edeb7fedd270526dd2519a49f"];
+  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="M_Check_Magic_Words",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$machine_8h.html#ae46b772453ee2fb2129534e131ab4e52"];
+  Node12 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="Stack_Overflow_Err_Msg",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stacks__sigsegv_8c.html#ad36ecfecd8b3a57e1a2629b3f8281342"];
+  Node12 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="Pl_Exit_With_Value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$misc_8c.html#a8099040b9286fee033483072ff631476"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+}

@@ -1,0 +1,25 @@
+digraph "Pl_Init_Oper"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_Init_Oper",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Pl_Hash_Alloc_Table",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hash_8c.html#aa2aa8948c25312cf1e00f3481ee782ee"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Pl_Create_Oper",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$oper_8c.html#aaea6f69a5ed64f5abc47f0abdfe0ee10"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Pl_Extend_Table_If\l_Needed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$misc_8c.html#a623a56eb127eb18ff99bc4737ebc100b"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Pl_Hash_Table_Size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hash_8c.html#a45b42ea1dd409db6c47fcffdfd91f7dd"];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Pl_Hash_Nb_Elements",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hash_8c.html#a8c963a8a2962687a4f80a908981d3b9a"];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Pl_Hash_Realloc_Table",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hash_8c.html#a086befd3e5d6b35e1b44bfec753f78c9"];
+  Node7 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Hash_Locate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hash_8c.html#a12948099c13cb849ed3575849492ac33"];
+  Node3 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Pl_Hash_Insert",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hash_8c.html#a4bd4cb026be9bb68e99fb14a6af20962"];
+  Node9 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

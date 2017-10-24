@@ -1,0 +1,13 @@
+digraph "Pl_Nth_Root_Dn"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_Nth_Root_Dn",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Pl_Nth_Root_Up",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$oper__supp_8h.html#a39e2cad4623000df07919778b0e469ea"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Pl_Nth_Root_Exact",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$oper__supp_8h.html#af7f6282deb2250da4d7e67cf73104df9"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Pl_Full_Nth_Root",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$oper__supp_8h.html#af9c9a27aecbd33f44b5d422c36a2288c"];
+}

@@ -1,0 +1,17 @@
+digraph "Stack_Size"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Stack_Size",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Pl_Statistics_0",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stat__c_8c.html#ac3ca75b60c32cebe268f09f6019cebf5"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Pl_Statistics_Local\l_Stack_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stat__c_8c.html#a3e68a8313e94fe52bad8685aa043d00a"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Pl_Statistics_Global\l_Stack_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stat__c_8c.html#a6b8f5db640099bf819d980ca579282a5"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Pl_Statistics_Trail\l_Stack_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stat__c_8c.html#accf11520ef5ad301c8a2abcbe3a4d0a0"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Pl_Statistics_Cstr\l_Stack_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stat__c_8c.html#a6510983acb8cce07f69f6f5b15001fa5"];
+}

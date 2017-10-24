@@ -1,0 +1,15 @@
+digraph "Pl_Init_Machine"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_Init_Machine",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Pl_M_User_Time",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$machine_8c.html#a49c3210d01108defd9d8a0b6ea624f95"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Pl_M_System_Time",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$machine_8c.html#a11f5fe79e24625b351bddd83a9c58b5a"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Pl_M_Real_Time",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$machine_8c.html#ae18414c738bea5a3710adc972fa478ef"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Pl_Init_Machine1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$machine1_8c.html#a65fbc5252410c14048b559d68349cdf6"];
+}

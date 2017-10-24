@@ -1,0 +1,13 @@
+digraph "Pl_Get_Print_Stm_1"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_Get_Print_Stm_1",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Pl_Find_Stream_From_PStm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stream__supp_8c.html#aec16e57a5deb906daf8dd1ec78a27ce9"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Pl_Get_Integer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Pl_Get_Integer_Tagged",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d"];
+}

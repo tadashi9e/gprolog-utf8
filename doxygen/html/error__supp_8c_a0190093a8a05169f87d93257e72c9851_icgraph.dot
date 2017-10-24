@@ -1,0 +1,46 @@
+digraph "Context_Error_String"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Context_Error_String",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Pl_Syntax_Error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$error__supp_8h.html#a8bf7bb96d18b2385eb5e549a7fc25ccb"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="String_To_Number",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$atom__c_8c.html#a45d43288afc4447eb5e8a1bced9fd5a3"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Pl_Number_Atom_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$atom__c_8c.html#adc47dd028d6500b7136923c50fb7f0ab"];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Pl_Number_Chars_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$atom__c_8c.html#a227fc472d79309e81af1f91e7e236951"];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Pl_Number_Codes_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$atom__c_8c.html#ae89fe3df220d385008f49c583dc41d32"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Pl_Name_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$atom__c_8c.html#af3d13cb1d0fbb3208789ea87cf806fdb"];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Pl_Emit_Syntax_Error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$gprolog_8h.html#a3edc88ccd75b60f148953314c514efef"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Pl_Unknown_Pred_Error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$error__supp_8h.html#af6bb192d80e33b33ee3af9741a84fd42"];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Pl_BC_Call_Terminal\l_Pred_3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8c.html#a972dcf547f043fb0988173c77a2f521f"];
+  Node9 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="BC_Emulate_Byte_Code",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8c.html#a76dfe05d2b8c2759f785c9a9a003b782"];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="BC_Emulate_Clause",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8c.html#a77ff26a73bb5736aff1d2c5d97400be5"];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="Pl_BC_Emulate_Pred",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8h.html#a8a045e53639fe083b9e018f119e754e4"];
+  Node13 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="BC_Emulate_Pred_Alt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8c.html#af5eb08f345855ac14975d4366243dbc5"];
+  Node14 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="Pl_BC_Emulate_Cont_0",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8c.html#a3eaaadb92bd63dd9a3f63436a81a3dcc"];
+  Node13 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="Pl_Call_Closure",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$call__args__c_8c.html#af6fb473d73263063c7c2361e4c6a8981"];
+  Node12 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="Pl_Os_Error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$error__supp_8h.html#a76830f502895027f89f5430f7dcdd159"];
+  Node17 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="Socket_Initializer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sockets__c_8c.html#abb60ff72f0ca874268bb3c7c51cc6e8b"];
+}

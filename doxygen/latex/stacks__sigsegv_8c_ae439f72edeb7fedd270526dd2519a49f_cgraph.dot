@@ -1,0 +1,15 @@
+digraph "Default_SIGSEGV_Handler"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Default_SIGSEGV_Handler",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="M_Check_Magic_Words",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$machine_8h.html#ae46b772453ee2fb2129534e131ab4e52"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Pl_Fatal_Error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Stack_Overflow_Err_Msg",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stacks__sigsegv_8c.html#ad36ecfecd8b3a57e1a2629b3f8281342"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Pl_Exit_With_Value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$misc_8c.html#a8099040b9286fee033483072ff631476"];
+}

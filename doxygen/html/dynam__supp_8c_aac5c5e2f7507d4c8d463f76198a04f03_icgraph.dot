@@ -1,0 +1,26 @@
+digraph "Scan_Dynamic_Pred_Next"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Scan_Dynamic_Pred_Next",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Pl_Scan_Dynamic_Pred",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dynam__supp_8h.html#ad7b836ca5b36d7839115b035aa0d1944"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Pl_Clause_3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$assert__c_8c.html#a8515a7d3fed2843f6596cff3dcf0b19a"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Pl_Retract_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$assert__c_8c.html#a3bb1c6a0ff26397bf50be7d9c49d64a6"];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Pl_BC_Emulate_Pred",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8h.html#a8a045e53639fe083b9e018f119e754e4"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Pl_BC_Call_Terminal\l_Pred_3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8c.html#a972dcf547f043fb0988173c77a2f521f"];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="BC_Emulate_Pred_Alt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8c.html#af5eb08f345855ac14975d4366243dbc5"];
+  Node7 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Pl_BC_Emulate_Cont_0",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8c.html#a3eaaadb92bd63dd9a3f63436a81a3dcc"];
+  Node5 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Pl_Call_Closure",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$call__args__c_8c.html#af6fb473d73263063c7c2361e4c6a8981"];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Pl_Scan_Dynamic_Pred\l_Alt_0",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dynam__supp_8c.html#a40b9fab632a61aea2e1a52ad1c1fa4c8"];
+}

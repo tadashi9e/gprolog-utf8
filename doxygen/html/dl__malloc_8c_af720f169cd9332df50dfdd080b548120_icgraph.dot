@@ -1,0 +1,11 @@
+digraph "internal_malloc_stats"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="internal_malloc_stats",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="dlmalloc_stats",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dl__malloc_8c.html#a7a3119e2d540f93ac410bbe64d51ce31"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="dlmalloc_usable_size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dl__malloc_8c.html#a8923af8a1039983906f9617a57022e98"];
+}

@@ -1,0 +1,9 @@
+digraph "Pl_Query_Begin"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_Query_Begin",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Pl_Query_Start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$foreign__supp_8h.html#ab5714945bbbea6062be0356d6705c8a9"];
+}

@@ -1,0 +1,34 @@
+digraph "Prolog_Flag_Lookup"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Prolog_Flag_Lookup",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Pl_Set_Prolog_Flag_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src__rdr__c_8c.html#a9ab9bfa4cfffc3352e99b72fba4955b6"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Exec_One_Directive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src__rdr__c_8c.html#a7ef84e25cd84c5961d096b2ddda6df98"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Pl_SR_Add_Directive_7",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src__rdr__c_8c.html#a421cb25150c80da420451dc77a0103f1"];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Do_Directives",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src__rdr__c_8c.html#abf7ac3719de56b13db4c6b8863b9196b"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Pl_SR_Start_Module_3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src__rdr__c_8c.html#a6bda16bcd2ea878e58cd1054b0355a2b"];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Undo_Directives",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src__rdr__c_8c.html#aabba005f79d5cdf767564c28d583cabb"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Common_Clean",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src__rdr__c_8c.html#aa2b766aaaa6b911f531a08bdbee67b52"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Pl_SR_Close_1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src__rdr__c_8c.html#a9bd17edd807337f25b335d86f826e75d"];
+  Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Pl_SR_New_Pass_1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src__rdr__c_8c.html#a260024335c542b6e1dacb6252ab5e1cc"];
+  Node7 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Close_Current_Module",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src__rdr__c_8c.html#ac535da1516f79bfe5f35e2650fda79c0"];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="Pl_SR_EOF_Reached_1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src__rdr__c_8c.html#a502c8bb8af0be04ef1c0edd4c1cec842"];
+  Node11 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="Pl_SR_Stop_Module_3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src__rdr__c_8c.html#aa9bd5e0d9fa50c972b6c7933bbfdb299"];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="Pl_Current_Prolog_Flag_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$flag__supp_8c.html#abc3b22003ca67aa0a76dee3b00c962d3"];
+}

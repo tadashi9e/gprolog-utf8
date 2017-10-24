@@ -1,0 +1,17 @@
+digraph "Pl_Push_SIGSEGV_Handler"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_Push_SIGSEGV_Handler",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Pl_Debug_Wam",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$debugger__c_8c.html#a11e816a7993314a8e53789bac9a67f53"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Pl_Allocate_Stacks",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stacks__sigsegv_8h.html#aee65d332f1e4ff3a8796bda38d329766"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Pl_Start_Prolog",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$gprolog_8h.html#a79163a775d949cf493a9f7b28bf4fc09"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Main_Wrapper",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#a335bb6fe70cf4c383aec5baef5f39e47"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97"];
+}

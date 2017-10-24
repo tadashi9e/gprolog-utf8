@@ -1,0 +1,33 @@
+digraph "Pl_Stdio_Is_Repositionable"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_Stdio_Is_Repositionable",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Pl_Add_Stream_For_Stdio_Desc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stream__supp_8h.html#af51b9456aea611c5b52f856cdbe23b50"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Pl_Popen_3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$os__interf__c_8c.html#a9d0485252a3b1c89182aa8c836af7343"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Pl_Exec_5",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$os__interf__c_8c.html#aded08a658582be142616062585180aaa"];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Pl_Create_Pipe_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$os__interf__c_8c.html#ab3f1eca6ee6babddf88815166e3c08ee"];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Create_Socket_Streams",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sockets__c_8c.html#a0d079005d2c64521c4431e8652047ec1"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Pl_Socket_Connect_4",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sockets__c_8c.html#abbe3fb80935b07d8fb995acffb3c9c94"];
+  Node6 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Pl_Socket_Accept_4",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sockets__c_8c.html#ae82e005638fc6d4c1cc9bb0fe3b3c6e3"];
+  Node6 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Pl_Assoc_Socket_Streams_3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sockets__c_8c.html#a6f439469b5fd39d24f5bca6ee6e0ba33"];
+  Node2 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Init_Stream_Supp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stream__supp_8c.html#a46a2de744d0ab922af4d2edc06e1ac48"];
+  Node2 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Pl_Add_Stream_For_Stdio_File",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stream__supp_8h.html#a4b575b16d8ce4212e975f935d57851f2"];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="Pl_SR_Open_File_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src__rdr__c_8c.html#ae6f2889304119849adebc18b8d5a305e"];
+  Node11 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="Pl_SR_New_Pass_1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src__rdr__c_8c.html#a260024335c542b6e1dacb6252ab5e1cc"];
+  Node11 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="Pl_Open_3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stream__c_8c.html#a2c2540e03dfb396a35d223d58ea53a29"];
+}

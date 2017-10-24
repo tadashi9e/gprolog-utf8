@@ -1,0 +1,15 @@
+digraph "Call_C_Arg_Double"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Call_C_Arg_Double",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Load_Long_Into_Reg",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a094fd54e2a708195a6a463d35639eb70"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Synthetize_Setx",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a7c17750a2367a1023769b227884b760c"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Delay_Printf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a7884ec03fffa38e282f499d97aac3ee2"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Inst_Out",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ma2asm_8c.html#a9608e324baa0506520d6ae9b95ae89ab"];
+}

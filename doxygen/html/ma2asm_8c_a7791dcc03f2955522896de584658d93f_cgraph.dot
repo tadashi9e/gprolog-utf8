@@ -1,0 +1,11 @@
+digraph "Switch_Equal"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Switch_Equal",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Cmp_Ret_And_Int",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$alpha__any_8c.html#a1ffc91a7b44d25369f51bbaa3dc38f50"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Jump_If_Equal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$alpha__any_8c.html#a03b5c60f9fcfa76f9de0046b8d568393"];
+}

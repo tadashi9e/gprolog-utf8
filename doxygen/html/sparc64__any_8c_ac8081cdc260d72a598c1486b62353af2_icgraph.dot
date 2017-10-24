@@ -1,0 +1,21 @@
+digraph "Load_Mem_Into_Reg"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Load_Mem_Into_Reg",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Move_From_Reg_X",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a26b1354d98d85d34703d36af84a2fa7f"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Move_From_Reg_Y",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#af58d895acfbf04e780eee5aa19d0ebd1"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Call_C_Arg_Mem_L",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a964a096b28818e43f7e51dd5dd6f76f0"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Call_C_Arg_Reg_X",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a2f2f15033fa151bd5b50ea330c95606f"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Call_C_Arg_Reg_Y",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a9336ef2973a657cc4140763f6bca9b55"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Call_C_Arg_Foreign_L",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a44157a3aa7743bec9bd4c63203183253"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Call_C_Arg_Foreign_D",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a74eac647b8a008ece21cc0eeffe98ef5"];
+}

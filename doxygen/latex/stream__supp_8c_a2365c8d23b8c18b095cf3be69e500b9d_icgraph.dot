@@ -1,0 +1,13 @@
+digraph "Pl_Stream_End_Of_Stream"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_Stream_End_Of_Stream",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Pl_Stream_Prop_End\l_Of_Stream_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stream__c_8c.html#acc4a57806cb036858a6feebd70954ce5"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Pl_At_End_Of_Stream_1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stream__c_8c.html#a7cdf9dcd94f5788a2b5d555a5e8f58e2"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Pl_At_End_Of_Stream_0",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stream__c_8c.html#a1b01afba2f1fde7bd9aa362a02d6f1be"];
+}

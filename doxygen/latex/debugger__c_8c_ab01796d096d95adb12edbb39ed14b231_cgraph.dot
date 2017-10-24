@@ -1,0 +1,21 @@
+digraph "Print_Wam_Word"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Print_Wam_Word",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Pl_Stream_Printf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stream__supp_8c.html#aa0a1fdfbaae9e476151527d87510c0eb"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Basic_Call_Fct_Putc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stream__supp_8c.html#a8f331c65c933f08991e3d6622ffe538f"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Pl_Stream_Putc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stream__supp_8c.html#aaa89ed2e422788cf2648a9228868c1b6"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="put_wchar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pl__wchar_8c.html#a31bcb7c7ad4174170702cb4399feb8e3"];
+  Node4 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Detect_Stack",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$debugger__c_8c.html#a0e115100109d8827bab44c5c844e35ca"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Print_Bank_Name_Offset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$debugger__c_8c.html#a33f88afc672c2184ae3c81f7eefd8687"];
+  Node7 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+}

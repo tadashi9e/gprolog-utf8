@@ -1,0 +1,23 @@
+digraph "Delay_Printf"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Delay_Printf",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Call_C_Arg_Int",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc__any_8c.html#a46b3150c744d1824cd10a2c6192d79cf"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Call_C_Arg_Double",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc__any_8c.html#a11185a9323ed03538b4967da01b3c5fd"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Call_C_Arg_String",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc__any_8c.html#a48c333fd83686535d30e1577e7368134"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Call_C_Arg_Mem_L",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc__any_8c.html#a964a096b28818e43f7e51dd5dd6f76f0"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Call_C_Arg_Reg_X",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc__any_8c.html#a2f2f15033fa151bd5b50ea330c95606f"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Call_C_Arg_Reg_Y",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc__any_8c.html#a9336ef2973a657cc4140763f6bca9b55"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="Call_C_Arg_Foreign_L",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc__any_8c.html#a44157a3aa7743bec9bd4c63203183253"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="Call_C_Arg_Foreign_D",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc__any_8c.html#a74eac647b8a008ece21cc0eeffe98ef5"];
+}

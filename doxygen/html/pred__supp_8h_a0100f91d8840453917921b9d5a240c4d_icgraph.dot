@@ -1,0 +1,40 @@
+digraph "Pl_Detect_If_Aux_Name"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_Detect_If_Aux_Name",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="BC_Emulate_Byte_Code",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8c.html#a76dfe05d2b8c2759f785c9a9a003b782"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="BC_Emulate_Clause",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8c.html#a77ff26a73bb5736aff1d2c5d97400be5"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Pl_BC_Emulate_Pred",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8h.html#a8a045e53639fe083b9e018f119e754e4"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Pl_BC_Call_Terminal\l_Pred_3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8c.html#a972dcf547f043fb0988173c77a2f521f"];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="BC_Emulate_Pred_Alt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8c.html#af5eb08f345855ac14975d4366243dbc5"];
+  Node6 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Pl_BC_Emulate_Cont_0",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8c.html#a3eaaadb92bd63dd9a3f63436a81a3dcc"];
+  Node4 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Pl_Call_Closure",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$call__args__c_8c.html#af6fb473d73263063c7c2361e4c6a8981"];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Pl_Aux_Name_1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pred__c_8c.html#a7a6652284b82031f91873bf9f1ea6a60"];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Pl_Father_Pred_Of_Aux",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pred__supp_8h.html#a11ee7ce76d2cf9ed954eb59086228d2e"];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Pl_Father_Of_Aux_Name_3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pred__c_8c.html#a92ad169cc36094af38731f5f54522866"];
+  Node10 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="Pl_Pred_Without_Aux",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pred__supp_8h.html#ac847f5319e19f0b8541980f358607b45"];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="Pl_BC_Start_Pred_8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8c.html#a78d4c74e8773ebb5cf2245f265114542"];
+  Node12 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="Pl_Pred_Without_Aux_4",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pred__c_8c.html#a1ab792a2bb64ef9bc2dce73d1c25d350"];
+  Node12 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="Pl_Make_Aux_Name",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pred__supp_8h.html#a0116518f3303db9779c6cc3f5c2d878b"];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="Pl_Make_Aux_Name_4",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pred__c_8c.html#ad5b6a73a755dbad8b85a60fb6880e0a5"];
+}

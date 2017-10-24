@@ -1,0 +1,16 @@
+digraph "Pl_Stream_Gets_Prompt"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_Stream_Gets_Prompt",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Pl_Debug_Wam",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$debugger__c_8c.html#a11e816a7993314a8e53789bac9a67f53"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Modify_Wam_Word",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$debugger__c_8c.html#a038a5ba206b2861a848c62b9ec060b65"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Write_Data_Modify",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$debugger__c_8c.html#acf94b4468a0d9f4b6e103f388bb3cb63"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Find_Function",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$debugger__c_8c.html#ae03520aa896def6dd036699b888bd0ef"];
+  Node5 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

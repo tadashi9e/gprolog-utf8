@@ -1,0 +1,21 @@
+digraph "Call_C_Arg_Foreign_D"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Call_C_Arg_Foreign_D",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Call_C_Arg_Mem_L",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ix86__any_8c.html#a964a096b28818e43f7e51dd5dd6f76f0"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Get_Long_Infos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ma2asm_8c.html#a51aa477632c8da9ce4fe91d0023f2819"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="BT_String_Lookup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bt__string_8c.html#a47df4899cd0db82d0843dbf52aa5e103"];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Is_Code_Defined",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ma2asm_8c.html#ae154ce5f2c10c79b40fe86078dd2a5ca"];
+  Node5 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="BT_String_Add",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bt__string_8c.html#a4d385a49b03f7aeac7c168ef48d492d0"];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Inst_Printf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ma2asm_8c.html#afeaa1e73d1371e09e196c12b114b9845"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

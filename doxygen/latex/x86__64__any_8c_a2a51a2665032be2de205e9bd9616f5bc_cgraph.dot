@@ -1,0 +1,17 @@
+digraph "Call_C_Invoke"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Call_C_Invoke",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="make_inline",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$alpha__any_8c.html#a47200cdbe6a906cbd8270942885940bb"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="String_Out",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ma2asm_8c.html#a0851dc0f6e6cf307d543061b3c1ae48d"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Int_Out",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ma2asm_8c.html#a5aaee1ed1c841a25da8a192705cc7352"];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Char_Out",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ma2asm_8c.html#af174ca051a6c219ac02476adf7c11b61"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Inst_Printf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ma2asm_8c.html#afeaa1e73d1371e09e196c12b114b9845"];
+}

@@ -1,0 +1,15 @@
+digraph "Read_Argument"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Read_Argument",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Parse_And_Treat_Decl\l_Or_Inst",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__parser_8c.html#a14d29063ebbd86cdcfd037234d4e9bef"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Parser",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__parser_8c.html#ae69e607bd93d255aa8b600bac488c6e9"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Parse_Wam_File",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__parser_8h.html#a9ac908258500841c7dcfc6adb3ee1f8d"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam2ma_8c.html#a0ddf1224851353fc92bfbff6f499fa97"];
+}

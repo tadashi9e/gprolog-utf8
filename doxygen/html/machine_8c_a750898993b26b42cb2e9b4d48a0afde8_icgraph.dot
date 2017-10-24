@@ -1,0 +1,17 @@
+digraph "Host_Name_From_Alias"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Host_Name_From_Alias",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Pl_M_Host_Name_From_Name",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$machine_8h.html#a210eac90420e943ad8d00077090228f7"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Pl_Host_Name_1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$os__interf__c_8c.html#a4324525419034fbe31a887925737400f"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Pl_Socket_Bind_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sockets__c_8c.html#aa1e6e178356d10d68da051d34dff64f1"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Pl_M_Host_Name_From_Adr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$machine_8h.html#a9933e53d707e91be57b69927792d6f8b"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Pl_Hostname_Address_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sockets__c_8c.html#a02b387d3828d48e5aa3a61314d715eb6"];
+}

@@ -1,0 +1,29 @@
+digraph "Pl_Memberchk_2"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_Memberchk_2",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Pl_Defeasible_Open",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#a4dd3742a9df7e98aa1647ef58cf7ff94"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Pl_Create_Choice_Point0",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#a791f7b0dc613619899bafd954471245b"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Pl_Get_List",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#ac053eb26fdee8a8e71ea9a5ac4079ab0"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Pl_Unify_Value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#acd2fdce00a3e2d6fa978b8a195c95746"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Pl_Unify",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8h.html#a098bda85a540e8ca5969063ccfd4ea20"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Pl_Unify_Void",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#a10bbafcdb34c6e41f239954f493e7cf0"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Pl_Defeasible_Undo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#a7f4e53f43f9bb41fcd70a02668fcc6cb"];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Pl_Update_Choice_Point0",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#af2fd4d15984ba8373ae8bb730e53c853"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Pl_Unify_Variable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#ab11181944ecf328d3ade45d83f7744d8"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Pl_Defeasible_Close",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#a3cac425c36009428de07a2110775a206"];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="Pl_Delete_Choice_Point0",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#a32e314a043b471003d40847581a419f7"];
+}

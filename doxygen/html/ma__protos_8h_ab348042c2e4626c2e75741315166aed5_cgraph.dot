@@ -1,0 +1,23 @@
+digraph "Switch_Ret"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Switch_Ret",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Switch_Cmp_Int",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ma2asm_8c.html#aaeb4aa55dcb92f57b7d957ef783a3d6d"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Switch_Rec",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ma2asm_8c.html#a0f86decae28359b4f5374e06ca747d77"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Switch_Equal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ma2asm_8c.html#a7791dcc03f2955522896de584658d93f"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Cmp_Ret_And_Int",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$alpha__any_8c.html#a1ffc91a7b44d25369f51bbaa3dc38f50"];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Jump_If_Equal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$alpha__any_8c.html#a03b5c60f9fcfa76f9de0046b8d568393"];
+  Node3 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Pl_Fail",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$alpha__any_8c.html#aa0fe7f41cd1793244610e87d597040f6"];
+  Node3 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Jump_If_Greater",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$alpha__any_8c.html#ad36811c58a29aee0cc50ac87a3d9898c"];
+  Node3 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Label",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$alpha__any_8c.html#a403d2e1c401f1ee3f0e08eea47524291"];
+}

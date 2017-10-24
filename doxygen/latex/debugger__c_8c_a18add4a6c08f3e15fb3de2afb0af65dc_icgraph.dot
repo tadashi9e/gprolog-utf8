@@ -1,0 +1,16 @@
+digraph "Detect_Pred_From_Code"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Detect_Pred_From_Code",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="What",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$debugger__c_8c.html#ae3548d2718c3c51e01cbf3aa9752ce17"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Find_Function",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$debugger__c_8c.html#ae03520aa896def6dd036699b888bd0ef"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Pl_Debug_Wam",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$debugger__c_8c.html#a11e816a7993314a8e53789bac9a67f53"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Backtrack",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$debugger__c_8c.html#af0c1c2a7e6feb8d41802e2e984dec8e3"];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

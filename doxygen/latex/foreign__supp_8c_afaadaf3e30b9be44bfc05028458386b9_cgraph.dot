@@ -1,0 +1,15 @@
+digraph "Pl_Query_End"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_Query_End",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Pl_Fatal_Error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Pl_Delete_Choice_Point",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#a1f8b77617ef38000ca80700aaefbc694"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Pl_Keep_Rest_For_Prolog",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$engine_8c.html#ad168aa88e74dd55cbce32c9c64683588"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Call_Prolog_Success",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$engine_8c.html#ae7d5f8d0ac490ede3fcb48af7cceec55"];
+}

@@ -1,0 +1,48 @@
+digraph "Get_Prolog_Path_From_Exec"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Get_Prolog_Path_From_Exec",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Get_Prolog_Path",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$prolog__path_8c.html#ab1fba1889b5219b65cfaedf8df2d4217"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Pl_Start_Prolog",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$gprolog_8h.html#a79163a775d949cf493a9f7b28bf4fc09"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Main_Wrapper",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#a335bb6fe70cf4c383aec5baef5f39e47"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97"];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Search_Path",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$prolog__path_8c.html#ab3203706c871e28d9b94c003406956a6"];
+  Node6 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$top__comp_8c.html#a0ddf1224851353fc92bfbff6f499fa97"];
+  Node2 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Get_CHM_Help_Path",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$w32__console_8c.html#a7c82a573b5e01698b2f8e86d4cef3702"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Show_Help",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$w32__console_8c.html#a4429f5179fe290e7469506c6287a46a5"];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="MainWndProc_OnCommand",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$w32__console_8c.html#aabb62b5ceb8b73f54c4478021cedf130"];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="MainWndProc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$w32__console_8c.html#ab023aa0285ba796fb7809eed2e6cdbe1"];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="InitApplication",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$w32__console_8c.html#aea7abcb71562352e8ff9c3efd95c505b"];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="StartWinMain",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$w32__console_8c.html#a2363368e7d52d5df8c4f20cb13283faa"];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="CallMain",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$w32__console_8c.html#a3e359465ba75ec15014d5af9c09d3db9"];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="W32GC_Start_Window",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$w32__console_8c.html#a4df61e90931602252f4bd1addb17902f"];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="__declspec",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$w32gc__interf_8c.html#a9bbe083e9a45c3fda6abf2737bebc2ad"];
+  Node9 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="SubClassEdit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$w32__console_8c.html#a86a613d9f9c5724324a80eb7ad8fd162"];
+  Node17 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="SubClassEditField",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$w32__console_8c.html#ae21b20c73fc3d1b2301ac435d6ffefb8"];
+  Node18 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="Create_Edit_Control",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$w32__console_8c.html#a4d3fc2c91e2a42d1ee0ab9afb8b25934"];
+  Node19 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="Toggle_Wrap_Mode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$w32__console_8c.html#af8f874a72209a2c5b9ccc57df9c3684b"];
+  Node20 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

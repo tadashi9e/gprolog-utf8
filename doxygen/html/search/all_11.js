@@ -1,7 +1,7 @@
 var searchData=
 [
   ['qt',['QT',['../atom_8h.html#a0f2ced1a0e36c519b2cb734e4fe49dd2',1,'atom.h']]],
-  ['query_5fstack',['Query_Stack',['../w32gc__interf_8c.html#a13711b0af0cbabd907c7aa9d3114dc90',1,'Query_Stack(QueryStackCmd cmd, int stack_no):&#160;w32gc_interf.c'],['../foreign__supp_8c.html#aa08c95993500d96dc53ae633e27f315b',1,'query_stack():&#160;foreign_supp.c']]],
+  ['query_5fstack',['query_stack',['../foreign__supp_8c.html#aa08c95993500d96dc53ae633e27f315b',1,'query_stack():&#160;foreign_supp.c'],['../w32gc__interf_8c.html#a13711b0af0cbabd907c7aa9d3114dc90',1,'Query_Stack(QueryStackCmd cmd, int stack_no):&#160;w32gc_interf.c']]],
   ['query_5fstack_5fget_5fdefault_5fsize',['QUERY_STACK_GET_DEFAULT_SIZE',['../w32gc__interf_8h.html#a3c0d0f70ee8780133709ad4b9b4c0758a3d05cee941ef471c9b3a59927eebe713',1,'w32gc_interf.h']]],
   ['query_5fstack_5fget_5fdesc',['QUERY_STACK_GET_DESC',['../w32gc__interf_8h.html#a3c0d0f70ee8780133709ad4b9b4c0758aad27cded7b2f3c7d2cb7b9bae6543a28',1,'w32gc_interf.h']]],
   ['query_5fstack_5fget_5fenv_5fvar_5fname',['QUERY_STACK_GET_ENV_VAR_NAME',['../w32gc__interf_8h.html#a3c0d0f70ee8780133709ad4b9b4c0758a56c1bcf31636f446d442e3c210e1540b',1,'w32gc_interf.h']]],

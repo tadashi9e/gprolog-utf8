@@ -1,0 +1,36 @@
+digraph "Generate_Archi"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Generate_Archi",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="g",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$asm_8c.html#a89db5465c8320ec25b0e6401c052b871"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="foo1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$asm__inst_8c.html#a888d87a9f8a6e3e80d5c45e838cc0416"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Pl_Fatal_Error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pl__config_8c.html#a190fea7904d7245d4fdc5e9404a07907"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Read_Identifier",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pl__config_8c.html#a751412acdfa946c17f72a519b4280e46"];
+  Node5 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Generate_Regs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pl__config_8c.html#aeff7ee96f0ca587183e1dc768d7ba42a"];
+  Node6 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Pl_Read_Integer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pl__config_8c.html#a7dcf339bd262324d753ebb92fa233066"];
+  Node7 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="Generate_Tags",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pl__config_8c.html#a5c1df4a2765b1a002dbed3820eacaf49"];
+  Node8 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="Generate_Stacks",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pl__config_8c.html#a0914aaa089130b53ca2c74e79b040d82"];
+  Node9 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="Read_String",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pl__config_8c.html#a4fe7df4918219a37a933c3a3050e2239"];
+  Node10 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+}

@@ -1,0 +1,33 @@
+digraph "segment_holding"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="segment_holding",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="change_mparam",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dl__malloc_8c.html#a99e26c45fc3b7bd05c627138d0d103fc"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="dlmallopt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dl__malloc_8c.html#a5fa93d3a16f6cd853ca26b8796112770"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="dlmalloc_usable_size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dl__malloc_8c.html#a8923af8a1039983906f9617a57022e98"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="add_segment",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dl__malloc_8c.html#aecee517bb2a61c5b79a745f3e0b4aa86"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="sys_alloc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dl__malloc_8c.html#a8bb55b23b1f7e313756913fedf9d3a98"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="dlmalloc",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dl__malloc_8c.html#a018ffd885ac72f4cb8ac0f972f6b4900"];
+  Node6 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="sys_trim",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dl__malloc_8c.html#a3de256edbbbbd4018cd3563f55ee50ab"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="dlfree",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dl__malloc_8c.html#a1b80f9ee2d497077e4741029c8e23700"];
+  Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="internal_bulk_free",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dl__malloc_8c.html#aa2888b3de06df35c3b18b31b1e15fe8c"];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="dlbulk_free",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dl__malloc_8c.html#a8e02204694aaa24ccc23b1cd2c403b7e"];
+  Node10 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="dlmalloc_trim",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dl__malloc_8c.html#a0cb0780a1d244f7541f85d2ece3999fc"];
+  Node8 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

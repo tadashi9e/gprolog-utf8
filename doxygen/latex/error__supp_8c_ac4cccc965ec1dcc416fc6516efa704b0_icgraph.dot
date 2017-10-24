@@ -1,0 +1,25 @@
+digraph "Pl_Err_System"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_Err_System",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Pl_Consult_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$consult__c_8c.html#a1aeea9f76cdfe478ce18d2262b45f36a"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Pl_Os_Error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$error__supp_8h.html#a76830f502895027f89f5430f7dcdd159"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Socket_Initializer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sockets__c_8c.html#abb60ff72f0ca874268bb3c7c51cc6e8b"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Pl_Spawn_3",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$os__interf__c_8c.html#aed2810d942c8bfb1e7912897451fb1e3"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Pl_Exec_5",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$os__interf__c_8c.html#aded08a658582be142616062585180aaa"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Pl_Close_Stm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stream__supp_8h.html#a01dbc066c1deba3a188650ba699b7f01"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="Pl_SR_Close_1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src__rdr__c_8c.html#a9bd17edd807337f25b335d86f826e75d"];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="Pl_SR_New_Pass_1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$src__rdr__c_8c.html#a260024335c542b6e1dacb6252ab5e1cc"];
+  Node7 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="Pl_Close_1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stream__c_8c.html#a4c24c2f444575a196cc4a5be2e687743"];
+}

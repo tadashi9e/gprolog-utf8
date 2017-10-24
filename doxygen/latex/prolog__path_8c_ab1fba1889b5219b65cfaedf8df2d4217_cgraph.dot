@@ -1,0 +1,19 @@
+digraph "Get_Prolog_Path"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Get_Prolog_Path",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Is_A_Valid_Root",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$prolog__path_8c.html#a86fe381e1f16682b85242a27356df7ca"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Get_Prolog_Path_From_Exec",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$prolog__path_8c.html#ad32a239b1d7b356e49ac366fd1583116"];
+  Node3 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Search_Path",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$prolog__path_8c.html#ab3203706c871e28d9b94c003406956a6"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cpp__headers_8c.html#a0ddf1224851353fc92bfbff6f499fa97"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Cpp_File",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cpp__headers_8c.html#af90754321baabe30d5f9a37c509ba2c7"];
+  Node4 -> Node1 [color="midnightblue",fontsize="10",style="solid"];
+}

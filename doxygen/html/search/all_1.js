@@ -130,6 +130,7 @@ var searchData=
   ['atom_5fcall',['atom_call',['../call__args__c_8c.html#aa6905e8e180d7c2c1a27da058a0dff10',1,'call_args_c.c']]],
   ['atom_5fcall_5fwith_5fargs',['atom_call_with_args',['../call__args__c_8c.html#a4b491f751423d0c287aad69038e5c9ef',1,'call_args_c.c']]],
   ['atom_5fchar',['ATOM_CHAR',['../atom_8h.html#ab298485bfc8207f63c3721efb4e85b4e',1,'ATOM_CHAR():&#160;atom.h'],['../gprolog_8h.html#ab298485bfc8207f63c3721efb4e85b4e',1,'ATOM_CHAR():&#160;gprolog.h']]],
+  ['atom_5fchar32',['ATOM_CHAR32',['../atom_8c.html#ae3755451560fb2286cda72948613200f',1,'ATOM_CHAR32(CHAR32_T c):&#160;atom.c'],['../atom_8h.html#ae3755451560fb2286cda72948613200f',1,'ATOM_CHAR32(CHAR32_T c):&#160;atom.c']]],
   ['atom_5fcharacter_5fdevice',['atom_character_device',['../os__interf__c_8c.html#a49587ca50b9f59aff72da94d8897dcb3',1,'os_interf_c.c']]],
   ['atom_5fchars',['atom_chars',['../flag__supp_8c.html#ac3eaa027057d6f0859eeab5b06455a9f',1,'flag_supp.c']]],
   ['atom_5fchars_5fno_5fescape',['atom_chars_no_escape',['../flag__supp_8c.html#a9b1d0ef51705874aa4967a59851bf71c',1,'flag_supp.c']]],

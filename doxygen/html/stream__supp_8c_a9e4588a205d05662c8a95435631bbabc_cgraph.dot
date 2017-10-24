@@ -1,0 +1,16 @@
+digraph "Del_Aliases_Of_Stream"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Del_Aliases_Of_Stream",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Pl_Hash_First",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hash_8c.html#a46cf8c018eb50003019707368304f1af"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Pl_Hash_Next",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hash_8c.html#adeeceb6b4217091511912cadfb332a06"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Pl_Hash_Delete",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hash_8c.html#aba073a491f0937450a3681a01f6d07a7"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Hash_Locate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hash_8c.html#a12948099c13cb849ed3575849492ac33"];
+}

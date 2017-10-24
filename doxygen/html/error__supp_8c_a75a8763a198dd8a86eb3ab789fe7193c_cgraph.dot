@@ -1,0 +1,23 @@
+digraph "Pl_Current_Bip_Name_2"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_Current_Bip_Name_2",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Pl_Set_C_Bip_Name",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$error__supp_8c.html#ab8256cda3ff04e0c94916c88bf464e79"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Pl_Un_Atom_Check",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$c__supp_8c.html#a8ee616a4c412a9b96ff9379610e1f2b9"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Pl_Get_Atom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#a78229c8d23053191e0fee7952757f9c7"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Pl_Get_Atom_Tagged",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#a89d8aba44029f2a5f548a2ae5f6eb574"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Pl_Un_Integer_Check",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$c__supp_8c.html#a40ef471273ae7fee7aa952ae43112cd1"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Pl_Get_Integer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#a4674b6fe0ab6340bbe076f8d485673e7"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Pl_Get_Integer_Tagged",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#a6fb0a22a4b407baa8bd1c6bb8f18675d"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Pl_Unset_C_Bip_Name",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$error__supp_8c.html#a984f5827dd2759c4b1dab06e8c4acaf5"];
+}

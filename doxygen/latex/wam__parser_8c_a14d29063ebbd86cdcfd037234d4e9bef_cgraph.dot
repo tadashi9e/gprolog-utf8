@@ -1,0 +1,26 @@
+digraph "Parse_And_Treat_Decl_Or_Inst"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Parse_And_Treat_Decl\l_Or_Inst",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Scanner",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__parser_8c.html#a64fdc935c8fc1d423009fe985ae51cc8"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Source_Line",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a2bd658adcb7b278aebdd8e39dd352d0f"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="count_wchar_bytes_without_slen",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pl__wchar_8c.html#a118e1ed8186e82a376d922702a7a8a82"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Syntax_Error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__parser_8c.html#a00f9ed3bd2f87261ec6e2f0fa667dfce"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Read_Token",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__parser_8c.html#a9f06f8fc45440614661af1d86d3d6f56"];
+  Node6 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Read_Argument",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__parser_8c.html#aa8a1c1096601e50a475d7f82b41562d9"];
+  Node7 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="Peek_Char",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__parser_8c.html#a22ad40923376159341c34e3b5e872d11"];
+}

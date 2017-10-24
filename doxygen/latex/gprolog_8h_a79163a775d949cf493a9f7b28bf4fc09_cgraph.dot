@@ -1,0 +1,47 @@
+digraph "Pl_Start_Prolog"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_Start_Prolog",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Pl_Dummy_Ptr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$misc_8c.html#aae9007e689a787822f7c6e98322ed456"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Set_Locale",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$set__locale_8h.html#a127cb8819297d9cc16a6169aafcb5b2f"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Get_Prolog_Path",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$prolog__path_8c.html#ab1fba1889b5219b65cfaedf8df2d4217"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Is_A_Valid_Root",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$prolog__path_8c.html#a86fe381e1f16682b85242a27356df7ca"];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Get_Prolog_Path_From_Exec",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$prolog__path_8c.html#ad32a239b1d7b356e49ac366fd1583116"];
+  Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Search_Path",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$prolog__path_8c.html#ab3203706c871e28d9b94c003406956a6"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cpp__headers_8c.html#a0ddf1224851353fc92bfbff6f499fa97"];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="Cpp_File",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cpp__headers_8c.html#af90754321baabe30d5f9a37c509ba2c7"];
+  Node7 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="Pl_Init_Machine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$machine_8c.html#a7ade20c3e93babe3edde8f66a51e3127"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="Pl_Allocate_Stacks",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stacks__sigsegv_8c.html#aee65d332f1e4ff3a8796bda38d329766"];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="Pl_Init_Atom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$atom_8c.html#a8ed160600ffd92b54cd6e0f16201c04e"];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="Pl_Init_Pred",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pred_8c.html#aa0fb875bb38ef710cad2276c7c843dc0"];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="Pl_Init_Oper",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$oper_8c.html#a3a22badced4bdb778f20f64863192492"];
+  Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="Pl_Reset_Prolog",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$engine_8c.html#a3cc65f95d082c9905c9eaf0821ace5a6"];
+  Node15 -> Node16 [color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="Pl_Create_Choice_Point",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#a482d0f0a0b2ac53fc463aaa753ce071e"];
+  Node15 -> Node17 [color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="Call_Prolog_Fail",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$engine_8c.html#accfe7947a971f240bf7b8b2bedc59e29"];
+  Node15 -> Node18 [color="midnightblue",fontsize="10",style="solid"];
+  Node18 [label="Pl_Fd_Reset_Solver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$if__no__fd_8c.html#af9ad0d76d0a941dd34530d628ec61eb0"];
+  Node1 -> Node19 [color="midnightblue",fontsize="10",style="solid"];
+  Node19 [label="Pl_Fd_Init_Solver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$if__no__fd_8c.html#a1f64da6d81a7799fe8411fffab098569"];
+  Node1 -> Node20 [color="midnightblue",fontsize="10",style="solid"];
+  Node20 [label="Pl_Find_Linked_Objects",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$obj__chain_8c.html#a061044c2c361926012bb09518f4428fa"];
+}

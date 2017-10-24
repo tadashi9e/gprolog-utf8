@@ -1,0 +1,23 @@
+digraph "Debug_Initializer"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Debug_Initializer",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Pl_New_Object",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$obj__chain_8c.html#a3b1f427fcf16e89ad83deb20cce086ec"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="My_System_Directives",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$debugger__c_8c.html#aa11d0ba3f5a83f5931cab90db271e8d1"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Pl_Call_Prolog",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$engine_8c.html#a837196745e0fb6af03ee5e5d062e1087"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Call_Prolog_Fail",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$engine_8c.html#accfe7947a971f240bf7b8b2bedc59e29"];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Call_Prolog_Success",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$engine_8c.html#ae7d5f8d0ac490ede3fcb48af7cceec55"];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Call_Next",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$engine_8c.html#a5f34f0c2b928a4bfe7057ced6cd446c8"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="Pl_Call_Compiled",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$engine_8c.html#a598600283dd767c2b3d11e798384023c"];
+  Node3 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="Pl_Set_Heap_Actual\l_Start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$engine_8c.html#afa48ed8c70e0b16a66b4f2d318de8cc0"];
+}

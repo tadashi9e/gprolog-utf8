@@ -1,0 +1,13 @@
+digraph "main"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="main",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="synthetize_setx",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64-setx_8c.html#a3398214a4ab7a354bb57e5e715c4ba12"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Delay_Printf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64-setx_8c.html#a7884ec03fffa38e282f499d97aac3ee2"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="as_disass",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64-setx_8c.html#a3bb8037d8545b0cca559b32a6a2b4e50"];
+}

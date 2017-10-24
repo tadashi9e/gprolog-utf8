@@ -1,0 +1,13 @@
+digraph "Pl_Reset_Prolog"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_Reset_Prolog",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Pl_Create_Choice_Point",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__inst_8c.html#a482d0f0a0b2ac53fc463aaa753ce071e"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Call_Prolog_Fail",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$engine_8c.html#accfe7947a971f240bf7b8b2bedc59e29"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Pl_Fd_Reset_Solver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$if__no__fd_8c.html#af9ad0d76d0a941dd34530d628ec61eb0"];
+}

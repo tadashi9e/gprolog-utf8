@@ -1,0 +1,45 @@
+digraph "Load_Long_Into_Reg"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Load_Long_Into_Reg",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Load_Mem_Into_Reg",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#ac8081cdc260d72a598c1486b62353af2"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Move_From_Reg_X",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a26b1354d98d85d34703d36af84a2fa7f"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Move_From_Reg_Y",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#af58d895acfbf04e780eee5aa19d0ebd1"];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Call_C_Arg_Mem_L",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a964a096b28818e43f7e51dd5dd6f76f0"];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Call_C_Arg_Reg_X",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a2f2f15033fa151bd5b50ea330c95606f"];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Call_C_Arg_Reg_Y",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a9336ef2973a657cc4140763f6bca9b55"];
+  Node2 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="Call_C_Arg_Foreign_L",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a44157a3aa7743bec9bd4c63203183253"];
+  Node2 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="Call_C_Arg_Foreign_D",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a74eac647b8a008ece21cc0eeffe98ef5"];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="Store_Reg_Into_Mem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a56d8aa2471bf221a24724f0938e716de"];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="Move_To_Reg_X",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#af7adcc007169701f8e570e632559068f"];
+  Node10 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="Move_To_Reg_Y",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a8dac9698ed961dd1619389ca09a5b0e4"];
+  Node10 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="Move_Ret_To_Mem_L",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#af58bf1aee8b9f42dedb80793943ab739"];
+  Node10 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="Move_Ret_To_Reg_X",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a4fd1cd87c4569f850eb69124553ad1c9"];
+  Node10 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="Move_Ret_To_Reg_Y",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a37f9d9f4b7eb11439b9beb940a5e676b"];
+  Node10 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="Move_Ret_To_Foreign_L",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a37323d79308784cb6bfa02eb3bffa5cd"];
+  Node10 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="Move_Ret_To_Foreign_D",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#ae6a5584e8dfe8bc0f63859d1f33febda"];
+  Node1 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node18 [label="Call_C_Arg_Int",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a46b3150c744d1824cd10a2c6192d79cf"];
+  Node1 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node19 [label="Call_C_Arg_Double",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a11185a9323ed03538b4967da01b3c5fd"];
+  Node1 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node20 [label="Cmp_Ret_And_Int",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a1ffc91a7b44d25369f51bbaa3dc38f50"];
+}

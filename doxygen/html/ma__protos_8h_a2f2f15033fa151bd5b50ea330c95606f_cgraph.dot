@@ -1,0 +1,25 @@
+digraph "Call_C_Arg_Reg_X"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Call_C_Arg_Reg_X",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Inst_Printf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ma2asm_8c.html#afeaa1e73d1371e09e196c12b114b9845"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Off_Reg_Bank",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ix86__any_8c.html#aab686898f03d34812752021cc286a934"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Load_Mem_Into_Reg",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#ac8081cdc260d72a598c1486b62353af2"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Load_Long_Into_Reg",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a094fd54e2a708195a6a463d35639eb70"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Synthetize_Setx",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a7c17750a2367a1023769b227884b760c"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Delay_Printf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc64__any_8c.html#a7884ec03fffa38e282f499d97aac3ee2"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Inst_Out",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ma2asm_8c.html#a9608e324baa0506520d6ae9b95ae89ab"];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Delay_Printf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sparc__any_8c.html#a7884ec03fffa38e282f499d97aac3ee2"];
+  Node9 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

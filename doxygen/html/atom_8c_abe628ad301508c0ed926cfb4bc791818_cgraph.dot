@@ -1,0 +1,17 @@
+digraph "Add_Atom"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Add_Atom",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Error_Table_Full",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$atom_8c.html#a37c733b7022eab8b9b95f0182591ee15"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Pl_Fatal_Error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$misc_8c.html#a190fea7904d7245d4fdc5e9404a07907"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="count_wchars",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pl__wchar_8c.html#a55a0d7269a65645bbd4c978385b0c7a3"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="count_wchar_bytes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pl__wchar_8c.html#afa9feb443cef2f8da40dd45a8c0e273d"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Pl_LE_Compl_Add_Word",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$linedit_8c.html#ab2a8db946ffd8187b5216ff4ac8cbe7c"];
+}

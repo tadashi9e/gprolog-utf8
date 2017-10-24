@@ -1,0 +1,30 @@
+digraph "Label_Printf"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Label_Printf",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Source_Line",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam2ma_8c.html#a2bd658adcb7b278aebdd8e39dd352d0f"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="F_predicate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__protos_8h.html#a2c26e0dde6a9c21dfb0beaf7c5581f63"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="F_directive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__protos_8h.html#a8527ee5c76a6aef9dc4676e181b98bf2"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="F_ensure_linked",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__protos_8h.html#a96e482b9b737419b38d39a5c9fd4068c"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="F_label",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__protos_8h.html#a991f243483f9d8ba16b6dee77e8985da"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="F_try",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__protos_8h.html#a0cc4d635d5d9b551432db1da6a5decd0"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="F_retry",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__protos_8h.html#a703d19edc68ee2200f105059a622682c"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="F_foreign_call_c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam__protos_8h.html#ad75a51d744ad2e6ee770770b48584a2b"];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Emit_Obj_Initializer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam2ma_8c.html#a9e02421db9cf0670b6f28e7d0882b7d6"];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam2ma_8c.html#a0ddf1224851353fc92bfbff6f499fa97"];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="Emit_Exec_Directives",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$wam2ma_8c.html#acded9e3923d310a3f85312c19cf08561"];
+  Node12 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

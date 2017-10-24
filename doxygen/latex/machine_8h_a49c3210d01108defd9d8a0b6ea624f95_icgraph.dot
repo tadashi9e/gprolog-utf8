@@ -1,0 +1,29 @@
+digraph "Pl_M_User_Time"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Pl_M_User_Time",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Pl_Statistics_0",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stat__c_8c.html#ac3ca75b60c32cebe268f09f6019cebf5"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Pl_Statistics_User\l_Time_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stat__c_8c.html#a31dd8b256e9eeead99b284ed63b00f5e"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Pl_Statistics_Cpu_Time_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stat__c_8c.html#a3eeb78e65b2f48b2b312dc3a4fef60c4"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Pl_User_Time_1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stat__c_8c.html#a70f11660e3724ecdaec39a13370c1e39"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Pl_Cpu_Time_1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stat__c_8c.html#ae151a14569d7fb2105a557689b0188d1"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Pl_Gen_New_Atom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$atom_8h.html#aa3ca6203017a3debae6d043cc6cc888f"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="Pl_New_Atom_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$atom__c_8c.html#afb2d1d0468197b3b586ef9ecee4eaa13"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="Pl_Init_Machine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$machine_8h.html#a7ade20c3e93babe3edde8f66a51e3127"];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="Pl_Start_Prolog",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$gprolog_8h.html#a79163a775d949cf493a9f7b28bf4fc09"];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="Main_Wrapper",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#a335bb6fe70cf4c383aec5baef5f39e47"];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97"];
+}

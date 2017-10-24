@@ -1,0 +1,34 @@
+digraph "Free_Clause"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Free_Clause",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Clean_Erased_Clauses",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dynam__supp_8c.html#afedf03617ad179356659ba12b748e57d"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Pl_Delete_Dynamic_Clause",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dynam__supp_8h.html#a156eab6644dca3b20880322814ee4451"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Pl_Retract_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$assert__c_8c.html#a3bb1c6a0ff26397bf50be7d9c49d64a6"];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Retract_Alt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$assert__c_8c.html#a0cac80d0ad5b9e80b1cc0b5014541ed2"];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Pl_Retract_Last_Found_0",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$assert__c_8c.html#ad9edad6d9b98e77061f5276ad8d0e01b"];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Erase_All_Clauses_Of_File",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dynam__supp_8c.html#a29c4a50b49c0c3135759e3b7689e9446"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Pl_Update_Dynamic_Pred",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dynam__supp_8h.html#af2cac5b4516a9be41cee52450df43a55"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Pl_Retractall_If_Empty\l_Head_1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$assert__c_8c.html#a48b4c6ae87da818c4dee0d898d19dc84"];
+  Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Pl_Abolish_1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$assert__c_8c.html#aadba7ac944c2f646d3a334f2599c59fe"];
+  Node8 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Pl_Remove_Predicate_2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$assert__c_8c.html#a9ab5ca765157760e5cd4e5d54e3d7b0f"];
+  Node8 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="Pl_BC_Start_Pred_8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bc__supp_8c.html#a78d4c74e8773ebb5cf2245f265114542"];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="Erase_All",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dynam__supp_8c.html#adeb8d2c522eca38ffe710f2cdefc5895"];
+  Node13 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

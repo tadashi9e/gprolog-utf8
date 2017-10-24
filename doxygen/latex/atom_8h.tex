@@ -1,5 +1,8 @@
 \hypertarget{atom_8h}{}\section{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/atom.h File Reference}
 \label{atom_8h}\index{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/atom.\+h@{gprolog-\/utf8-\/tree/src/\+Engine\+Pl/atom.\+h}}
+{\ttfamily \#include \char`\"{}pl\+\_\+wchar.\+h\char`\"{}}\\*
+Include dependency graph for atom.\+h\+:
+% FIG 0
 This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -79,6 +82,8 @@ int \hyperlink{atom_8h_a219d2c8a895fdc3aceee9cd609eb4ae3}{Pl\+\_\+\+Find\+\_\+\+
 int \hyperlink{atom_8h_aa3ca6203017a3debae6d043cc6cc888f}{Pl\+\_\+\+Gen\+\_\+\+New\+\_\+\+Atom} (char $\ast$prefix)
 \item 
 int \hyperlink{atom_8h_ab96ce4ee871c8158bfab7a7335e1f6d2}{Pl\+\_\+\+Find\+\_\+\+Next\+\_\+\+Atom} (int last\+\_\+atom)
+\item 
+int \hyperlink{atom_8h_ae3755451560fb2286cda72948613200f}{A\+T\+O\+M\+\_\+\+C\+H\+A\+R32} (\hyperlink{pl__wchar_8h_aefdbdd739a151d0918c62cfe9b00c0ae}{C\+H\+A\+R32\+\_\+T} \hyperlink{scan__supp_8c_a2fef2e3afaac7989cb73365a6cae5985}{c})
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -206,6 +211,25 @@ char \hyperlink{atom_8h_a074d3a080ca74d8670f0f808738e6e60}{pl\+\_\+escape\+\_\+c
 
 
 \subsection{Function Documentation}
+\index{atom.\+h@{atom.\+h}!A\+T\+O\+M\+\_\+\+C\+H\+A\+R32@{A\+T\+O\+M\+\_\+\+C\+H\+A\+R32}}
+\index{A\+T\+O\+M\+\_\+\+C\+H\+A\+R32@{A\+T\+O\+M\+\_\+\+C\+H\+A\+R32}!atom.\+h@{atom.\+h}}
+\subsubsection[{\texorpdfstring{A\+T\+O\+M\+\_\+\+C\+H\+A\+R32(\+C\+H\+A\+R32\+\_\+\+T c)}{ATOM_CHAR32(CHAR32_T c)}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+T\+O\+M\+\_\+\+C\+H\+A\+R32 (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+H\+A\+R32\+\_\+T}}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{atom_8h_ae3755451560fb2286cda72948613200f}{}\label{atom_8h_ae3755451560fb2286cda72948613200f}
+
+
+Here is the call graph for this function\+:
+% FIG 1
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
 \index{atom.\+h@{atom.\+h}!Pl\+\_\+\+Create\+\_\+\+Allocate\+\_\+\+Atom@{Pl\+\_\+\+Create\+\_\+\+Allocate\+\_\+\+Atom}}
 \index{Pl\+\_\+\+Create\+\_\+\+Allocate\+\_\+\+Atom@{Pl\+\_\+\+Create\+\_\+\+Allocate\+\_\+\+Atom}!atom.\+h@{atom.\+h}}
 \subsubsection[{\texorpdfstring{Pl\+\_\+\+Create\+\_\+\+Allocate\+\_\+\+Atom(char $\ast$name)}{Pl_Create_Allocate_Atom(char *name)}}]{\setlength{\rightskip}{0pt plus 5cm}int Pl\+\_\+\+Create\+\_\+\+Allocate\+\_\+\+Atom (
@@ -215,24 +239,14 @@ char \hyperlink{atom_8h_a074d3a080ca74d8670f0f808738e6e60}{pl\+\_\+escape\+\_\+c
 )}\hypertarget{atom_8h_a76a3983dda97458000ed903b9bc94f6c}{}\label{atom_8h_a76a3983dda97458000ed903b9bc94f6c}
 
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{atom_8h_a76a3983dda97458000ed903b9bc94f6c_cgraph}
-\end{center}
-\end{figure}
+Here is the call graph for this function\+:
+% FIG 3
 
 
 
 
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=550pt]{atom_8h_a76a3983dda97458000ed903b9bc94f6c_icgraph}
-\end{center}
-\end{figure}
+Here is the caller graph for this function\+:
+% FIG 4
 
 
 \index{atom.\+h@{atom.\+h}!Pl\+\_\+\+Create\+\_\+\+Atom@{Pl\+\_\+\+Create\+\_\+\+Atom}}
@@ -244,24 +258,14 @@ Here is the caller graph for this function\+:\nopagebreak
 )}\hypertarget{atom_8h_a068c993d95113a2ba7643918e68eedb3}{}\label{atom_8h_a068c993d95113a2ba7643918e68eedb3}
 
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{atom_8h_a068c993d95113a2ba7643918e68eedb3_cgraph}
-\end{center}
-\end{figure}
+Here is the call graph for this function\+:
+% FIG 5
 
 
 
 
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=550pt]{atom_8h_a068c993d95113a2ba7643918e68eedb3_icgraph}
-\end{center}
-\end{figure}
+Here is the caller graph for this function\+:
+% FIG 6
 
 
 \index{atom.\+h@{atom.\+h}!Pl\+\_\+\+Create\+\_\+\+Atom\+\_\+\+Tagged@{Pl\+\_\+\+Create\+\_\+\+Atom\+\_\+\+Tagged}}
@@ -356,13 +360,8 @@ Here is the caller graph for this function\+:\nopagebreak
 )}\hypertarget{atom_8h_a8ed160600ffd92b54cd6e0f16201c04e}{}\label{atom_8h_a8ed160600ffd92b54cd6e0f16201c04e}
 
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=278pt]{atom_8h_a8ed160600ffd92b54cd6e0f16201c04e_cgraph}
-\end{center}
-\end{figure}
+Here is the call graph for this function\+:
+% FIG 7
 
 
 
