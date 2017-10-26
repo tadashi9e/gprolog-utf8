@@ -6,7 +6,7 @@ UTF-8 ready variant of [GNU Prolog](http://gprolog.org/).
 Description
 -----------
 
-Almost same as original [GNU Prolog](http://gprolog.org/), additional features are:
+Almost same as original [GNU Prolog](http://gprolog.org/). Additional features are:
 - You can use UTF-8 strings in console.
 - You can convert UTF-8 atoms to list of 'Code Point' values (e.g.: atom_codes/2)
 - You can use identifiers which start with wide-characters as atoms.
@@ -15,6 +15,7 @@ Almost same as original [GNU Prolog](http://gprolog.org/), additional features a
 Many Japanese writes prolog codes in following rule:
 - Identifiers which start wide-character codes are atoms.
 - Identifiers which start with '_' + wide-character codes are variables.
+
 So, I modified GNU Prolog parser rule as above.
 
 Background
