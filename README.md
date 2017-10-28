@@ -24,7 +24,7 @@ Most prolog systems (and ISO standards) are case sensitive.
 Identifiers that start with uppercase are variables,
 identifiers that start with lowercase are atoms.
 
-But East asia languages (also known as 'CJK') characters are caseless caracters.
+But east asian languages (also known as 'CJK') characters are caseless characters.
 There are no 'Upper case characters' or 'Lower case characters' in Japanese.
 
 Examples
