@@ -1964,5 +1964,5 @@ Str_Stream_Putc(CHAR32_T c, StrSInf *str_stream)
       str_stream->ptr = str_stream->buff + size;
     }
 
-  put_wchar(str_stream->ptr, str_stream->buff_alloc_size - 1, c);
+  str_stream->ptr += put_wchar(str_stream->ptr, str_stream->buff_alloc_size - 1, c);
 }
