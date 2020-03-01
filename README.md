@@ -43,8 +43,7 @@ Install
     autoconf
     ./configure
     make
-    (cd doc && make all)
-    sudo make install
+    sudo make install-system install-links
 
 Requirements
 ------------
